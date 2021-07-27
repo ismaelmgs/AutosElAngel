@@ -1,0 +1,12 @@
+C:\Users\Home\Documents\Visual Studio 2010\Projects\Autos_SCC\Autos_SCC\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Home\Documents\Visual Studio 2010\Projects\Autos_SCC\Autos_SCC\bin\Autos_SCC.dll
+C:\Users\Home\Documents\Visual Studio 2010\Projects\Autos_SCC\Autos_SCC\bin\Autos_SCC.pdb
+C:\Users\Home\Documents\Visual Studio 2010\Projects\Autos_SCC\Autos_SCC\obj\Debug\Autos_SCC.dll
+C:\Users\Home\Documents\Visual Studio 2010\Projects\Autos_SCC\Autos_SCC\obj\Debug\Autos_SCC.pdb
+E:\MORVEL\Autos el Angel\Autos_SCC12022014\Autos_SCC\bin\Autos_SCC.dll
+E:\MORVEL\Autos el Angel\Autos_SCC12022014\Autos_SCC\bin\Autos_SCC.pdb
+E:\MORVEL\Autos el Angel\Autos_SCC12022014\Autos_SCC\obj\Debug\Autos_SCC.csprojAssemblyReference.cache
+E:\MORVEL\Autos el Angel\Autos_SCC12022014\Autos_SCC\obj\Debug\Autos_SCC.csproj.CoreCompileInputs.cache
+E:\MORVEL\Autos el Angel\Autos_SCC12022014\Autos_SCC\obj\Debug\Autos_SCC.csproj.CopyComplete
+E:\MORVEL\Autos el Angel\Autos_SCC12022014\Autos_SCC\obj\Debug\Autos_SCC.dll
+E:\MORVEL\Autos el Angel\Autos_SCC12022014\Autos_SCC\obj\Debug\Autos_SCC.pdb

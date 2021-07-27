@@ -1,0 +1,161 @@
+﻿.Cuerpo{
+	background-color:#ECF5FB;
+	background-image:url(../Images/Fondos/Stage_BG_btm.png);
+	background-position:center bottom;
+	background-repeat:repeat-x;
+	font-family: Trebuchet MS,Tahoma,Verdana,Segoe,sans-serif;
+	font-size:70%;
+	padding-bottom:20px;
+}
+
+.TituloEtiquetas
+{
+    text-align:center;
+    font-family: Trebuchet MS,Verdana, Arial, Sans-Serif;
+    font-size: 14pt;
+    color:White;
+}
+
+.EtiquetasDerecha
+{
+    text-align: right;
+    font-family: Trebuchet MS, Arial, Sans-Serif;
+    font-size: 9pt;
+    float:right;
+}
+
+.EtiquetaSimple
+{
+    text-align:left;
+    font-weight:bold;
+    font-size:small;
+    font-family:Trebuchet MS;
+}
+
+.ComboSimple
+{
+    width:95%;
+    height:22px;
+    font-family:Trebuchet MS;
+}
+
+.CajaSimple
+{
+    width:95%;
+    height:22px;
+    font-family:Trebuchet MS;
+}
+
+.TdSimpleIzquiera
+{
+    text-align:left;
+    width:35%;
+    height:30px;
+}
+
+.TdSimpleDerecha
+{
+    text-align:left;
+    width:65%;
+    height:30px;
+}
+
+.encabezado{
+	background:#cee8e9 url(../Images/Fondos/encabezado.jpg) bottom repeat-x;
+	height:70px;
+	border-bottom:#FFF 1px solid;
+}
+
+.derecha{
+	float:right;
+}
+
+.bienvenida{
+	background:url('../Images/Fondo/Banner.jpg') repeat-x left top ;
+	top:0px;
+	bottom:0px;
+	width:704px;
+	height:70px;
+	text-align:right;
+	font-size:14px;
+	font-weight:bold;
+}
+
+.Menu
+{
+    background-color:#4F2683;
+    height:"100%";
+    width:"100%";
+    font-family:Trebuchet MS;
+}
+
+
+.treeNode {
+    color: #070707;
+    font: 14px Arial, Sans-Serif;
+}
+
+.rootNode {
+    font-size: 18px;
+    width: 100%;
+    color: #f00;
+}
+
+.leafNode {
+    padding: 4px;
+    color: #070707;
+}
+
+.selectNode {
+    font-weight: bold;
+}
+
+.EstiloBotonCC3
+{
+    
+}
+
+.ButtonStyle
+{
+    background-color: #48489A;
+    background-image: none;
+    border-style:solid;
+    border-width:1;
+    border-color: Gray;
+    color:White;
+    font-family: Trebuchet MS;
+    font-size: 7pt;
+    height: 22px;
+    -moz-border-radius: 9px;
+    -webkit-border-radius: 9px;
+    background: -moz-linear-gradient(#3F75BB, #508BC3 35%, #27538A);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0, #3F75BB),color-stop(.35, #508BC3),color-stop(1, #27538A));
+    cursor:h
+}
+
+.DivBotones
+{
+    float:left;
+}
+
+.EtiquetaModal
+{
+    font-weight:bold;
+    font-family:Trebuchet MS;
+    font-size:small;
+    text-align:right;
+}
+
+.EtiquetaTituloModal
+{
+    font-weight:bold;
+    font-family:Trebuchet MS;
+    font-size:large;
+    text-align:right;
+}
+
+.CajaModal
+{
+    width:95%;
+    text-align:left;
+}
