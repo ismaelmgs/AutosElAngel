@@ -19,7 +19,7 @@ namespace Autos_SCC.DomainModel
                 {
                     List<Marca> oLst = new List<Marca>();
 
-                    oLst = oDB.tbc_MarcaAuto.Where(r => r.fi_Activo == 1).Select(r => new Marca()
+                    oLst = oDB.tbc_MarcaAuto.Select(r => new Marca()
                     {
                         iId = r.fi_Id,
                         sDescripcion = r.fc_Descripcion,
@@ -149,35 +149,15 @@ namespace Autos_SCC.DomainModel
             }
         }
 
-        public List<Marca> DBSearchObj(params object[] oArrFiltros)
+        public DataTable DBSearchObj(params object[] oArrFiltros)
         {
             try
             {
-                //DataTable dtTemp = oDB_SP.EjecutarDT("[Catalogos].[spS_FiltrosPonentes]", oArrFiltros);
-                List<Marca> oLst = new List<Marca>();
-
-                //if (dtTemp.Rows.Count > 0)
-                //{
-                //    oLst = dtTemp.AsEnumerable().Select(r => new Ponente()
-                //    {
-                //        iId = r["fiId"].S().I(),
-                //        iParte = r["fiParte"].S().I(),
-                //        sDescripcion = r["fcDescripcion"].S(),
-                //        iOrdenVisualizar = r["fiOrdenVisualizacion"].S().I(),
-                //        iActivo = r["fiActivo"].S().I(),
-                //        sLetraInicial = r["fiLetraIni"].S(),
-                //        sUsuario = r["fcUsuario"].S(),
-                //        dtFechaUltMov = r["fdFechaUltMovimiento"].Dt(),
-                //        sFechaUltMov = r["fdFechaUltMovimiento"].Dt().Day.ToString().PadLeft(2, '0') + "/" + r["fdFechaUltMovimiento"].Dt().Month.ToString().PadLeft(2, '0')
-                //                                                                                     + "/" + r["fdFechaUltMovimiento"].Dt().Year,
-                //    }).ToList();
-                //}
-
-                return oLst;
+                return oDB_SP.EjecutarDT("[Catalogos].[spS_ConsultaMarcasBusqueda]", oArrFiltros);
             }
             catch
             {
-                return new List<Marca>();
+                return new DataTable();
             }
         }
 

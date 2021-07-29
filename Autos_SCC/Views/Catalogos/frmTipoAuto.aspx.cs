@@ -22,18 +22,15 @@ namespace Autos_SCC.Views.Catalogos
         protected void Page_Load(object sender, EventArgs e)
         {
             oPresenter = new CatTipoAuto_Presenter(this, new DBTipoAuto());
-            Session["usuario"] = "iMorato";
 
             omb.OkButtonPressed += new ucModalConfirm.OkButtonPressedHandler(omb_OkButtonPressed);
             omb.CancelButtonPressed += new ucModalConfirm.CancelButtonPressedHandler(omb_CancelButtonPressed);
 
             if (!IsPostBack)
             {
-                //Response.Expires = 0;
-
                 if (Session["usuario"] == null)
                 {
-                    Response.Redirect("login.aspx");
+                    Response.Redirect("..//Default.aspx");
                 }
 
                 oPresenter.LoadObjects_Presenter();
@@ -64,7 +61,19 @@ namespace Autos_SCC.Views.Catalogos
 
         protected void btnExportar_Click(object sender, EventArgs e)
         {
+            Response.ClearContent();
+            Response.AddHeader("content-disposition", "attachment; filename=" + "CatalogoTiposAuto.xls");
+            Response.ContentType = "application/excel";
+            System.IO.StringWriter sw = new System.IO.StringWriter();
+            HtmlTextWriter htw = new HtmlTextWriter(sw);
+            gvCatalogo.RenderControl(htw);
+            Response.Write(sw.ToString());
+            Response.End();
+        }
 
+        public override void VerifyRenderingInServerForm(Control control)
+        {
+            //
         }
 
         protected void gvCatalogo_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -122,6 +131,12 @@ namespace Autos_SCC.Views.Catalogos
                 eDeleteObj(sender, e);
         }
 
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (eSearchObj != null)
+                eSearchObj(sender, e);
+        }
+
         #endregion
 
         #region METODOS
@@ -143,6 +158,11 @@ namespace Autos_SCC.Views.Catalogos
             ddlMarca.DataValueField = "iId";
             ddlMarca.DataTextField = "sDescripcion";
             ddlMarca.DataBind();
+
+            ddlMarcaBusqueda.DataSource = dtObjet;
+            ddlMarcaBusqueda.DataValueField = "iId";
+            ddlMarcaBusqueda.DataTextField = "sDescripcion";
+            ddlMarcaBusqueda.DataBind();
         }
 
         private void LimpiaControles()
@@ -224,8 +244,9 @@ namespace Autos_SCC.Views.Catalogos
             get
             {
                 return new object[]{
-                    "@fcDesc", "%" + txtBuqueda.Text.S() + "%",
-                    "@fcActivo", 1
+                    "@fc_Desc", "%" + txtBuqueda.Text.S() + "%",
+                    "@fi_IdMarca", ddlMarcaBusqueda.SelectedValue.S().I(),
+                    "@fi_IdActivo", rblActivo.SelectedValue.S().I()
                 };
             }
         }

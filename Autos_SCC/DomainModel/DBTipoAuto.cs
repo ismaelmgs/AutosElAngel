@@ -165,41 +165,15 @@ namespace Autos_SCC.DomainModel
             }
         }
 
-        public List<TipoAuto> DBSearchObj(object[] oArrFiltros)
+        public DataTable DBSearchObj(object[] oArrFiltros)
         {
             try
             {
-            //    DataTable dtTemp = oDB_SP.EjecutarDT("[Security].[spS_DescUsuario]", oArrFiltros); //"@fc_User", sDesc);
-            //    List<TipoAuto> oTempEjecut = null;
-
-            //    if (dtTemp.Rows.Count > 0)
-            //    {
-            //        oTempEjecut = dtTemp.AsEnumerable().Select(r => new TipoAuto()
-            //        {
-            //            iId = r["fi_Id"].S().I(),
-            //            sUser = r["fc_User"].S(),
-            //            sPassword = r["fc_Password"].S(),
-            //            iIdPerfil = r["fi_IdPerfil"].S().I(),
-            //            sDescIdPerfil = r["fc_DesPerfil"].S(),
-            //            sNombre = r["fc_Nombre"].S(),
-            //            sNombre2 = r["fc_Nombre2"].S(),
-            //            sApePaterno = r["fc_ApePaterno"].S(),
-            //            sApeMaterno = r["fc_ApeMaterno"].S(),
-            //            sDominio = r["fc_Dominio"].S(),
-            //            iActivo = r["fi_Activo"].S().I(),
-            //            sUsuario = r["fc_Usuario"].S(),
-            //            dtFechaUltMov = r["fd_FechaUltMovimiento"].Dt()
-            //        }).ToList();
-
-            //        return oTempEjecut;
-            //    }
-            //    else
-                    return new List<TipoAuto>();
-
+                return oDB_SP.EjecutarDT("[Catalogos].[spS_ConsultaTiposAutoBusqueda]", oArrFiltros);
             }
             catch
             {
-                return new List<TipoAuto>();
+                return new DataTable();
             }
         }
 

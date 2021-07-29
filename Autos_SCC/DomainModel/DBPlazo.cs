@@ -6,6 +6,7 @@ using Autos_SCC.Interfaces;
 using Autos_SCC.Objetos;
 using System.Data;
 using Autos_SCC.Clases;
+using NucleoBase.Core;
 
 namespace Autos_SCC.DomainModel
 {
@@ -17,20 +18,21 @@ namespace Autos_SCC.DomainModel
             {
                 try
                 {
-                    List<Plazo> oLst = new List<Plazo>();
+                    //List<Plazo> oLst = new List<Plazo>();
 
-                    oLst = oDB.tbc_Plazo.Where(r => r.fi_Activo == 1).Select(r => new Plazo()
-                    {
-                        iId = r.fi_Id,
-                        sDescripcion = r.fc_Descripcion,
-                        iActivo = r.fi_Activo,
-                        dtFechaUltMov = r.fd_FechaUltMovimiento,
-                        sFechaUltMov = r.fd_FechaUltMovimiento.Day.ToString().PadLeft(2, '0') + "/" + r.fd_FechaUltMovimiento.Month.ToString().PadLeft(2, '0')
-                                                                                              + "/" + r.fd_FechaUltMovimiento.Year,
-                        sUsuario = r.fc_Usuario
-                    }).ToList();
+                    //oLst = oDB.tbc_Plazo.Where(r => r.fi_Activo == 1).Select(r => new Plazo()
+                    //{
+                    //    iId = r.fi_Id,
+                    //    sDescripcion = r.fc_Descripcion,
+                    //    sValorDescripcion = r.fc_Descripcion  + " Meses",
+                    //    iActivo = r.fi_Activo,
+                    //    dtFechaUltMov = r.fd_FechaUltMovimiento,
+                    //    sFechaUltMov = r.fd_FechaUltMovimiento.Day.ToString().PadLeft(2, '0') + "/" + r.fd_FechaUltMovimiento.Month.ToString().PadLeft(2, '0')
+                    //                                                                          + "/" + r.fd_FechaUltMovimiento.Year,
+                    //    sUsuario = r.fc_Usuario
+                    //}).OrderBy(r => r.sDescripcion.S().I()).ToList();
 
-                    return oLst.ConvertListToDataTable();
+                    return oDB_SP.EjecutarDT("[Catalogos].[spS_ConsultaPlazosActivos]", "", ""); //oLst.ConvertListToDataTable();
                 }
                 catch
                 {
@@ -149,35 +151,15 @@ namespace Autos_SCC.DomainModel
             }
         }
 
-        public List<Plazo> DBSearchObj(params object[] oArrFiltros)
+        public DataTable DBSearchObj(params object[] oArrFiltros)
         {
             try
             {
-                //DataTable dtTemp = oDB_SP.EjecutarDT("[Catalogos].[spS_FiltrosPonentes]", oArrFiltros);
-                List<Plazo> oLst = new List<Plazo>();
-
-                //if (dtTemp.Rows.Count > 0)
-                //{
-                //    oLst = dtTemp.AsEnumerable().Select(r => new Ponente()
-                //    {
-                //        iId = r["fiId"].S().I(),
-                //        iParte = r["fiParte"].S().I(),
-                //        sDescripcion = r["fcDescripcion"].S(),
-                //        iOrdenVisualizar = r["fiOrdenVisualizacion"].S().I(),
-                //        iActivo = r["fiActivo"].S().I(),
-                //        sLetraInicial = r["fiLetraIni"].S(),
-                //        sUsuario = r["fcUsuario"].S(),
-                //        dtFechaUltMov = r["fdFechaUltMovimiento"].Dt(),
-                //        sFechaUltMov = r["fdFechaUltMovimiento"].Dt().Day.ToString().PadLeft(2, '0') + "/" + r["fdFechaUltMovimiento"].Dt().Month.ToString().PadLeft(2, '0')
-                //                                                                                     + "/" + r["fdFechaUltMovimiento"].Dt().Year,
-                //    }).ToList();
-                //}
-
-                return oLst;
+                return oDB_SP.EjecutarDT("[Catalogos].[spS_FiltrosPonentes]", oArrFiltros);
             }
             catch
             {
-                return new List<Plazo>();
+                return new DataTable();
             }
         }
 

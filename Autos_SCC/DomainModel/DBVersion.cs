@@ -83,8 +83,8 @@ namespace Autos_SCC.DomainModel
                     }
                     else
                     {
-                        if (DBExisteDesc(oCat.sDescripcion.Trim().ToUpper()) == null)
-                        {
+                        //if (DBExisteDesc(oCat.sDescripcion.Trim().ToUpper()) == null)
+                        //{
                             tbCat = new tbc_Version();
                             tbCat.fi_IdTipoAuto = oCat.iIdTipoAuto;
                             tbCat.fc_Descripcion = oCat.sDescripcion;
@@ -93,12 +93,12 @@ namespace Autos_SCC.DomainModel
                             tbCat.fc_Usuario = oCat.sUsuario;
                             oDB.tbc_Version.InsertOnSubmit(tbCat);
                             oDB.SubmitChanges();
-                        }
-                        else
-                        {
-                            oCat.oErr.bExisteError = true;
-                            oCat.oErr.sMsjError = "Ya se encuentra una Descripción con este nombre: " + oCat.sDescripcion.ToUpper();
-                        }
+                        //}
+                        //else
+                        //{
+                        //    oCat.oErr.bExisteError = true;
+                        //    oCat.oErr.sMsjError = "Ya se encuentra una Descripción con este nombre: " + oCat.sDescripcion.ToUpper();
+                        //}
                     }
 
                     oCat.iId = tbCat != null ? tbCat.fi_Id : -1; // regresamos el ID para su selección en GV
@@ -141,35 +141,15 @@ namespace Autos_SCC.DomainModel
             }
         }
 
-        public List<Versiones> DBSearchObj(params object[] oArrFiltros)
+        public DataTable DBSearchObj(params object[] oArrFiltros)
         {
             try
             {
-                //DataTable dtTemp = oDB_SP.EjecutarDT("[Catalogos].[spS_FiltrosPonentes]", oArrFiltros);
-                List<Versiones> oLst = new List<Versiones>();
-
-                //if (dtTemp.Rows.Count > 0)
-                //{
-                //    oLst = dtTemp.AsEnumerable().Select(r => new Ponente()
-                //    {
-                //        iId = r["fiId"].S().I(),
-                //        iParte = r["fiParte"].S().I(),
-                //        sDescripcion = r["fcDescripcion"].S(),
-                //        iOrdenVisualizar = r["fiOrdenVisualizacion"].S().I(),
-                //        iActivo = r["fiActivo"].S().I(),
-                //        sLetraInicial = r["fiLetraIni"].S(),
-                //        sUsuario = r["fcUsuario"].S(),
-                //        dtFechaUltMov = r["fdFechaUltMovimiento"].Dt(),
-                //        sFechaUltMov = r["fdFechaUltMovimiento"].Dt().Day.ToString().PadLeft(2, '0') + "/" + r["fdFechaUltMovimiento"].Dt().Month.ToString().PadLeft(2, '0')
-                //                                                                                     + "/" + r["fdFechaUltMovimiento"].Dt().Year,
-                //    }).ToList();
-                //}
-
-                return oLst;
+                return oDB_SP.EjecutarDT("[Catalogos].[spS_ConsultaVersionesBusqueda]", oArrFiltros);
             }
             catch
             {
-                return new List<Versiones>();
+                return new DataTable();
             }
         }
 

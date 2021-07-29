@@ -15,6 +15,6 @@ namespace Autos_SCC.Interfaces
         bool DBObjExists(int iId);
         void DBSaveObj(ref TObjCat oCat);
         void DBDeleteObj(ref TObjCat oCat);
-        List<TObjCat> DBSearchObj(object[] oArrFiltros);
+        DataTable DBSearchObj(object[] oArrFiltros);
     }
 }

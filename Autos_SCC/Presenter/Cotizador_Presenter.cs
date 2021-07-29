@@ -7,6 +7,7 @@ using Autos_SCC.DomainModel;
 using System.Data;
 using Autos_SCC.Objetos;
 using NucleoBase.Core;
+using System.ComponentModel.DataAnnotations;
 
 namespace Autos_SCC.Presenter
 {
@@ -21,7 +22,10 @@ namespace Autos_SCC.Presenter
 
             oIView.eCalculaCotizacion += eCalculaCotizacion_Presenter;
             oIView.eAgregaPagoIndividual += eAgregaPagoIndividual_Presenter;
-            CreaEstructuraTabla();
+            oIView.eLoadObjects += eLoadObjects_Presenter;
+            oIView.eGetMarcas += eGetMarcas_Presenter;
+            oIView.eGetBusquedaAuto += eGetBusquedaAuto_Presenter;
+            oIView.eSearchCliente += eSearchCliente_Presenter;
         }
 
         private void CreaEstructuraTabla()
@@ -39,16 +43,23 @@ namespace Autos_SCC.Presenter
         private void eCalculaCotizacion_Presenter(object sender, EventArgs e)
         {
             oIView.oParametro = new DBParametro().ConsultaParametro(1);
+            oIView.dtHeader = null;
             oIView.dtHeader = dtGetHeaderCotizacion();
         }
 
         private void eAgregaPagoIndividual_Presenter(object sender, EventArgs e)
         {
             DataRow row = oIView.dtPagosIndividuales.NewRow();
-            row["Importe"] = oIView.oPagoI.dImporte.S();
+            row["Importe"] = oIView.oPagoI.dMonto.S();
             row["Fecha"] = oIView.oPagoI.dtFechaPago;
 
             oIView.dtPagosIndividuales.Rows.Add(row);
+        }
+
+        private void eLoadObjects_Presenter(object sender, EventArgs e)
+        {
+            CreaEstructuraTabla();
+            LoadObjects();
         }
 
         private DataTable dtGetHeaderCotizacion()
@@ -73,6 +84,10 @@ namespace Autos_SCC.Presenter
                     dTasa = oIView.dTasaPreferencial;
                 else
                     dTasa = oIView.oParametro.sValor.I().Db();
+
+
+                if (oIView.bSinIntereses)
+                    dTasa = 0;
 
                 double dImporte = (oCot.dPrecio - oCot.dEnganche).Db();
                 double dPorcentajeI = dTasa / 100;
@@ -110,6 +125,55 @@ namespace Autos_SCC.Presenter
             {
                 return new DataTable();
             }
+        }
+
+        public void LoadObjects()
+        {
+            oIView.LoadObjects(new DBPlazo().dtObjsCat);
+            oIView.LoadSucursales(new DBSucursales().dtObj);
+        }
+
+        private void eGetMarcas_Presenter(object sender, EventArgs e)
+        {
+            oIView.dtMarcas = new DBMarca().dtObjsCat;
+        }
+
+        private void eGetBusquedaAuto_Presenter(object sender, EventArgs e)
+        {
+            oIView.dtBusquedaAuto = new DBAuto().DBGetBusquedaAuto(oIView.oArrFiltros[0].S(), oIView.oArrFiltros[1].S());
+        }
+
+        protected override void NewObj_Presenter(object sender, EventArgs e)
+        {
+            oIView.LimpiaDatos();
+        }
+
+        protected override void SaveObj_Presenter(object sender, EventArgs e) 
+        {
+            Cotizacion oTempCat = oIView.oCotizacion;
+            var oVldResults = new List<ValidationResult>();
+            var oVldContext = new ValidationContext(oTempCat, null, null);
+
+            if (Validator.TryValidateObject(oTempCat, oVldContext, oVldResults, true))
+            {
+                oIGestCat.DBSaveObj(ref oTempCat);
+                if (oTempCat.oErr.bExisteError)
+                    oIView.MostrarMensaje(oTempCat.oErr.sMsjError, "GUARDAR");
+                else
+                    oIView.MostrarMensaje("La Cotización con número: "+ oTempCat.iId.S() +" se guardo correctamente", "GUARDAR");
+
+                NewObj_Presenter(sender, e);
+            }
+            else
+            {
+                var sVldErrors = String.Join("\n", oVldResults.Select(t => String.Format("- {0}", t.ErrorMessage)));
+                oIView.MostrarMensaje(sVldErrors, "ERRORES EN VALIDACIONES ");
+            }
+        }
+
+        private void eSearchCliente_Presenter(object sender, EventArgs e)
+        {
+            oIView.CargaClientes(oIGestCat.DBSearchClientes(oIView.sNombreCli));
         }
     }
 }

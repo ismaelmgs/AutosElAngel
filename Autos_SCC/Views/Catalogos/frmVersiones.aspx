@@ -3,17 +3,12 @@
 <%@ Register src="../ControlesUsuario/ucModalConfirm.ascx" tagname="ucModalConfirm" tagprefix="uc1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
     <title></title>
-    <link href="../../Styles/EstilosGrid.css" rel="Stylesheet" type="text/css" />
-    <link href="../../Styles/StyleGeneral.css" rel="Stylesheet" type="text/css" />
-    <link href="../../Styles/EstilosModal.css" rel="Stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../../jquery/jquery-ui-1.9.2.custom.min.css" type="text/css" />
     <script type="text/javascript" src="../../jquery/jquery-1.8.3.js"></script>
     <script type="text/javascript" src="../../jquery/jquery-ui-1.9.2.custom.min.js"></script>
-    <link rel="stylesheet" href="../../jquery/jquery-ui-1.9.2.custom.min.css" type="text/css" />
-
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <script language="javascript" type="text/javascript">
         function MostrarMensaje(mensaje, titulo)
         {
@@ -47,7 +42,7 @@
                 <table width="99%">
                 <tr>
                     <td colspan="2" align="center">
-                        <asp:Label ID="lblTitulo" runat="server" CssClass="TituloEtiquetas" Text="Catálogo de Versiones"></asp:Label>
+                        <asp:Label ID="lblTitulo" runat="server" CssClass="labelTitle" Text="Catálogo de Versiones"></asp:Label>
                     </td>
                     <td>
                         <br />
@@ -63,51 +58,54 @@
                             <cc1:TabPanel runat="server" HeaderText="Registro de modelos" ID="TabPanel1">
                             <ContentTemplate>
                                 <br />
-                                <table width="100%">
+                                <table style="text-align:left; width:100%">
                                     <tr>
-                                        <td class="TdSimpleIzquiera">
-                                            <asp:Label ID="lblId" runat="server" Font-Bold="True" Text="Id:" CssClass="EtiquetaSimple"/>&nbsp;
+                                        <td style="text-align:left; width:35%">
+                                            <asp:Label ID="lblId" runat="server" Font-Bold="True" Text="Id:" CssClass="inputLabel"/>&nbsp;
                                         </td>
                 
-                                        <td class="TdSimpleDerecha">
-                                            <asp:TextBox ID="txtId" Width="95%" class="box" onkeyup="ValidaNum(this.id, this.value, this.id);"
-                                                runat="server" MaxLength="6" Enabled="false" CssClass="CajaSimple"></asp:TextBox>
+                                        <td style="text-align:left; width:65%">
+                                            <asp:TextBox ID="txtId" runat="server" Width="80%" Enabled="False" CssClass="inputCampo"></asp:TextBox>
                                         </td>
                                     </tr>
 
                                     <tr>
-                                        <td>
-                                            <asp:Label ID="lblMarca" runat="server" Font-Bold="True" Text="Descripción:" CssClass="EtiquetaSimple"/>&nbsp;
+                                        <td style="text-align:left">
+                                            <asp:Label ID="lblMarca" runat="server" Font-Bold="True" Text="Marca:" 
+                                                CssClass="inputLabel"/>&nbsp;
                                         </td>
                 
-                                        <td>
-                                            <asp:DropDownList ID="ddlMarca" runat="server" CssClass="ComboSimple" AutoPostBack="true" OnSelectedIndexChanged="ddlMarca_SelectedIndexChanged"></asp:DropDownList>
+                                        <td style="text-align:left">
+                                            <asp:DropDownList ID="ddlMarca" runat="server" CssClass="listInput" Width="88%"
+                                                AutoPostBack="True" OnSelectedIndexChanged="ddlMarca_SelectedIndexChanged"></asp:DropDownList>
                                         </td>
                                     </tr>
 
                                     <tr>
-                                        <td>
-                                            <asp:Label ID="lblTipoAuto" runat="server" Font-Bold="True" Text="Descripción:" CssClass="EtiquetaSimple"/>&nbsp;
+                                        <td style="text-align:left">
+                                            <asp:Label ID="lblTipoAuto" runat="server" Font-Bold="True" 
+                                                Text="Tipo de Auto:" CssClass="inputLabel"/>&nbsp;
                                         </td>
                 
-                                        <td>
-                                            <asp:DropDownList ID="ddlTipoAuto" runat="server" CssClass="ComboSimple"></asp:DropDownList>
+                                        <td style="text-align:left">
+                                            <asp:DropDownList ID="ddlTipoAuto" runat="server"  Width="88%" CssClass="listInput"></asp:DropDownList>
+                                        </td>
+                                    </tr>
+                
+                                    <tr>
+                                        <td style="text-align:left">
+                                            <asp:Label ID="lblNombre" runat="server" Font-Bold="True" Text="Descripción:" CssClass="inputLabel"/>&nbsp;
+                                        </td>
+                
+                                        <td style="text-align:left">
+                                            <asp:TextBox ID="txtDescripcion" runat="server" Width="80%"
+                                                Rows="5" TextMode="MultiLine" CssClass="CajaModal"></asp:TextBox>
                                         </td>
                                     </tr>
                 
                                     <tr>
                                         <td>
-                                            <asp:Label ID="lblNombre" runat="server" Font-Bold="True" Text="Descripción:" CssClass="EtiquetaSimple"/>&nbsp;
-                                        </td>
-                
-                                        <td>
-                                            <asp:TextBox ID="txtDescripcion" Width="95%" class="box" runat="server" Rows="4" TextMode="MultiLine" CssClass="CajaSimple"></asp:TextBox>
-                                        </td>
-                                    </tr>
-                
-                                    <tr>
-                                        <td>
-                                            <asp:Label ID="Activo" runat="server" Font-Bold="True" Text="¿Activo?" CssClass="EtiquetaSimple"/>&nbsp;
+                                            <asp:Label ID="Activo" runat="server" Font-Bold="True" Text="¿Activo?" CssClass="inputLabel"/>&nbsp;
                                         </td>
                 
                                         <td>
@@ -123,13 +121,27 @@
                                 <br />
                                 <table width="100%">
                                     <tr>
-                                        <td style="height: 30px;" align="right" width="35%">
-                                            <asp:Label ID="lblBusqueda" runat="server" Font-Bold="True" Text="Palabra a buscar:" CssClass="EtiquetaSimple"/>&nbsp;
+                                        <td width="40%">
+                                            <asp:Label ID="lblBusqueda" runat="server" Font-Bold="True" Text="Palabra a buscar:" CssClass="inputLabel"/>
                                         </td>
                 
-                                        <td width="65%">
-                                            <asp:TextBox ID="txtBuqueda" Width="95%" onkeyup="ValidaNum(this.id, this.value, this.id);"
-                                                runat="server" MaxLength="6" CssClass="CajaSimple"></asp:TextBox>
+                                        <td width="60%">
+                                            <asp:TextBox ID="txtBuqueda" runat="server" CssClass="inputCampo" Width="80%"></asp:TextBox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <asp:RadioButtonList ID="rblActivo" runat="server" Width="80%" RepeatDirection="Horizontal" CssClass="listInput">
+                                                <asp:ListItem Text="TODOS" Value="2" Selected="True"></asp:ListItem>
+                                                <asp:ListItem Text="  ACTIVOS  " Value="1"></asp:ListItem>
+                                                <asp:ListItem Text="  INACTIVOS  " Value="0"></asp:ListItem>
+                                            </asp:RadioButtonList>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <br />
+                                            <asp:Button ID="btnBuscar" runat="server" Text="BUSCAR" CssClass="button" OnClick="btnBuscar_Click" />
                                         </td>
                                     </tr>
                                 </table>
@@ -139,24 +151,29 @@
                     </td>
                     <td width="80%">
                         <div class="DivBotones">
-                            <asp:Button ID="btnNuevo" runat="server" Text=" NUEVO " 
-                                CssClass="ButtonStyle" OnClick="btnNuevo_Click" ToolTip="Prepara los campos para un registro nuevo" />
-                            &nbsp;<asp:Button ID="btnGuardar" runat="server" Text=" GUARDAR " 
-                                CssClass="ButtonStyle" onclick="btnGuardar_Click" ToolTip="Guarda los cambios realizados sobre el registro" />
-                            &nbsp;<asp:Button ID="btnEliminar" runat="server" Text=" ELIMINAR " 
-                                CssClass="ButtonStyle" onclick="btnEliminar_Click" ToolTip="Elimina el registro seleccionado" />
-                            &nbsp;<asp:Button ID="btnLimpiar" runat="server" Text=" LIMPIAR " 
-                                CssClass="ButtonStyle" onclick="btnLimpiar_Click" ToolTip="Limpia los campos para un registro nuevo" />
-                            &nbsp;<asp:Button ID="btnExportar" runat="server" Text=" EXPORTAR " 
-                                CssClass="ButtonStyle" onclick="btnExportar_Click" ToolTip="Exporta un grid a excel" />
+                            <asp:Button ID="btnNuevo" runat="server" Text="NUEVO" 
+                                CssClass="button" OnClick="btnNuevo_Click" ToolTip="Prepara los campos para un registro nuevo" />
+                            &nbsp;<asp:Button ID="btnGuardar" runat="server" Text="GUARDAR" 
+                                CssClass="button" onclick="btnGuardar_Click" ToolTip="Guarda los cambios realizados sobre el registro" />
+                            &nbsp;<asp:Button ID="btnEliminar" runat="server" Text="ELIMINAR" 
+                                CssClass="button" onclick="btnEliminar_Click" ToolTip="Elimina el registro seleccionado" />
+                            &nbsp;<asp:Button ID="btnLimpiar" runat="server" Text="LIMPIAR" 
+                                CssClass="button" onclick="btnLimpiar_Click" ToolTip="Limpia los campos para un registro nuevo" />
+                            &nbsp;<asp:Button ID="btnExportar" runat="server" Text="EXPORTAR" 
+                                CssClass="button" onclick="btnExportar_Click" ToolTip="Exporta un grid a excel" />
                         </div>
                     </td>
                 </tr>                                                                                                                                                                                                                                                                    <tr>
                     <td width="80%">
                         <asp:Panel ID="pnlCatalogo" runat="server" ScrollBars="Auto" Width="600px" Height="500px">
                             <asp:GridView ID="gvCatalogo" runat="server" AutoGenerateColumns="false" RowStyle-VerticalAlign="Top"
-                                CssClass="mGrid" PagerStyle-CssClass="pgr" AlternatingRowStyle-CssClass="alt" Width="100%"
-                                OnRowDataBound="gvCatalogo_RowDataBound" OnSelectedIndexChanged="gvCatalogo_SelectedIndexChanged">
+                                Width="100%" OnRowDataBound="gvCatalogo_RowDataBound" OnSelectedIndexChanged="gvCatalogo_SelectedIndexChanged" 
+                                BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464"
+                                HeaderStyle-ForeColor="white" AllowSorting="True">
+                                <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+                                <HeaderStyle BackColor="#01609F" CssClass="titleHeader" />
+                                <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" CssClass="" />
+                                <AlternatingRowStyle BackColor="White" />
                                 <Columns>
                                     <asp:BoundField DataField="fi_Id" HeaderText="Id" />
                                     <asp:BoundField DataField="fc_Marca" HeaderText="Marca" />
@@ -174,5 +191,9 @@
                 <uc1:ucModalConfirm ID="omb" runat="server" />
             </center>
         </ContentTemplate>
+        <Triggers>
+            <asp:PostBackTrigger ControlID="btnExportar" />
+        </Triggers>
     </asp:UpdatePanel>
+
 </asp:Content>

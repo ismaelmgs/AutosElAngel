@@ -24,12 +24,13 @@ namespace Autos_SCC.Presenter
             oIView.eGetGastosPorAuto += eGetGastosPorAuto_Presenter;
             oIView.eSaveGastoAuto += eSaveGastoAuto_Presenter;
             oIView.eDeleteGastoAuto += eDeleteGastoAuto_Presenter;
+            oIView.eSearchAutos += eSearchAutos_Presenter;
         }
 
         public void LoadObjects_Presenter()
         {
-            oIView.LoadMarcas(new DBMarca().dtObjsCat.Select("iActivo = 1").CopyToDataTable());            
-            oIView.LoadSucursales(new DBSucursales().dtObj.Select("fi_Activo = 1").CopyToDataTable());
+            oIView.LoadMarcas(new DBMarca().dtObjsCat);
+            oIView.LoadSucursales(new DBSucursales().dtObj);
             oIView.LoadEstatusAuto(new DBAuto().dtObjCatStatus.Select("iActivo = 1").CopyToDataTable());
             oIView.LoadObjects(oIGestCat.dtObjCat);
         }
@@ -151,5 +152,9 @@ namespace Autos_SCC.Presenter
             eGetGastosPorAuto_Presenter(sender, e);
         }
 
+        private void eSearchAutos_Presenter(object sender, EventArgs e)
+        {
+            oIView.dtDataSource = oIGestCat.DBSearchAutos(oIView.oArrFiltros);
+        }
     }
 }

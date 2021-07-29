@@ -17,6 +17,7 @@ namespace Autos_SCC.Objetos
         private string _sPlaca = string.Empty;
         private string _sNoSerie = string.Empty;
         private string _sColor = string.Empty;
+        private int _iModelo = 0;
         private int _iIdSucursal = 0;
         private decimal _dPrecio = 0;
         private int _iStatus = 0;
@@ -30,7 +31,7 @@ namespace Autos_SCC.Objetos
         [Range(1, Int32.MaxValue, ErrorMessage = "La Marca es obligatoria")]
         public int iIdMarca { get { return _iIdMarca; } set { _iIdMarca = value; } }
 
-        [Range(1, Int32.MaxValue, ErrorMessage = "La versión es obligatoria")]
+        //[Range(1, Int32.MaxValue, ErrorMessage = "La versión es obligatoria")]
         public int iIdVersion { get { return _iIdVersion; } set { _iIdVersion = value; } }
 
         [Range(1, Int32.MaxValue, ErrorMessage = "El Tipo de Auto es obligatorio")]
@@ -41,6 +42,8 @@ namespace Autos_SCC.Objetos
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "El Número de Serie es obligatorio.")]
         public string sNoSerie { get { return _sNoSerie; } set { _sNoSerie = value; } }
+
+        public int iModelo { get { return _iModelo; } set { _iModelo = value; } }
 
         public string sColor { get { return _sColor; } set { _sColor = value; } }
 

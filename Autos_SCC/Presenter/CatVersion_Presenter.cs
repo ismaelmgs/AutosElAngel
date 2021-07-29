@@ -7,6 +7,7 @@ using Autos_SCC.Interfaces;
 using NucleoBase.Core;
 using System.ComponentModel.DataAnnotations;
 using Autos_SCC.DomainModel;
+using System.Data;
 
 namespace Autos_SCC.Presenter
 {
@@ -93,16 +94,7 @@ namespace Autos_SCC.Presenter
 
         protected override void SearchObj_Presenter(object sender, EventArgs e)
         {
-            //List<Modelo> oLstRes = oIGestCat.DBSearchObj(oIView.oArrFiltros);
-            //oIView.LoadObjects(oLstRes);
-
-            //if (oLstRes.Count > 0)
-            //    oIView.oCatalogo = oLstRes.FirstOrDefault();
-            //else
-            //{
-            //    oIView.oCatalogo = new Modelo();
-            //    //Utils.MostrarMensajes("Búsqueda", "No se encontraron registros con los filtros solicitados. Por favor verfique su búsqueda.");
-            //}
+            oIView.LoadObjects(oIGestCat.DBSearchObj(oIView.oArrFiltros));
         }
 
         private void eGetTiposAuto_Presenter(object sender, EventArgs e)

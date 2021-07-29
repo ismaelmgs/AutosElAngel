@@ -16,6 +16,7 @@ namespace Autos_SCC.Interfaces
         object[] oArrFiltros { get; }
         DataTable dtGastosAuto { get; set; }
         int iAuto { get; set; }
+        DataTable dtDataSource { get; set; }
 
         void LoadObjects(DataTable dtObjCat);
         void LoadMarcas(DataTable dtMarcas);
@@ -30,5 +31,6 @@ namespace Autos_SCC.Interfaces
         event EventHandler eGetGastosPorAuto;
         event EventHandler eSaveGastoAuto;
         event EventHandler eDeleteGastoAuto;
+        event EventHandler eSearchAutos;
     }
 }

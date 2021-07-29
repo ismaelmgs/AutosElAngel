@@ -24,20 +24,79 @@ namespace Autos_SCC.Objetos
     }
 
     [Serializable]
-    public class PagoIndividual
+    public class Direcciones
     {
-        private decimal _dImporte;
-        private DateTime _dtFechaPago = new DateTime();
+        private int _iIdEstado = 0;
 
-        public decimal dImporte
+        public int iIdEstado
         {
-            get { return _dImporte; }
-            set { _dImporte = value; ; }
+            get { return _iIdEstado; }
+            set { _iIdEstado = value; }
         }
-        public DateTime dtFechaPago
+
+        private string _sMunicipio = string.Empty;
+
+        public string sMunicipio
         {
-            get { return _dtFechaPago; }
-            set { _dtFechaPago = value; }
+            get { return _sMunicipio; }
+            set { _sMunicipio = value; }
+        }
+
+        private string _sColonia = string.Empty;
+
+        public string sColonia
+        {
+            get { return _sColonia; }
+            set { _sColonia = value; }
+        }
+
+    }
+
+    [Serializable]
+    public class DataUserIndetity : BaseObjeto
+    {
+        private string _sUser = string.Empty;
+        private string _sEstatus = string.Empty;
+        private string _sNombre = string.Empty;
+        private string _sApellidos = string.Empty;
+        private string _sDominio = string.Empty;
+        private string _sPerfil = string.Empty;
+        private bool _bEncontrado = false;
+
+        public string sUser
+        {
+            get { return _sUser; }
+            set { _sUser = value; }
+        }
+
+        public string sNombre
+        {
+            get { return _sNombre; }
+            set { _sNombre = value; }
+        }
+
+        public string sApellidos
+        {
+            get { return _sApellidos; }
+            set { _sApellidos = value; }
+        }
+
+        public string sEstatus
+        {
+            get { return _sEstatus; }
+            set { _sEstatus = value; }
+        }
+
+        public string sPerfil
+        {
+            get { return _sPerfil; }
+            set { _sPerfil = value; }
+            }
+
+        public bool bEncontrado
+        {
+            get { return _bEncontrado; }
+            set { _bEncontrado = value; }
         }
     }
 }

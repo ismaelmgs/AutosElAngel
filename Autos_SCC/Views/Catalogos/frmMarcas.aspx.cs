@@ -26,18 +26,15 @@ namespace Autos_SCC.Views.Catalogos
         protected void Page_Load(object sender, EventArgs e)
         {
             oPresenter = new CatMarcas_Presenter(this, new DBMarca());
-            Session["usuario"] = "iMorato";
 
             omb.OkButtonPressed += new ucModalConfirm.OkButtonPressedHandler(omb_OkButtonPressed);
             omb.CancelButtonPressed += new ucModalConfirm.CancelButtonPressedHandler(omb_CancelButtonPressed);
 
             if (!IsPostBack)
             {
-                //Response.Expires = 0;
-
                 if (Session["usuario"] == null)
                 {
-                    Response.Redirect("login.aspx");
+                    Response.Redirect("..//Default.aspx");
                 }
 
                 oPresenter.LoadObjects_Presenter();
@@ -68,7 +65,19 @@ namespace Autos_SCC.Views.Catalogos
 
         protected void btnExportar_Click(object sender, EventArgs e)
         {
-
+            Response.ClearContent();
+            Response.AddHeader("content-disposition", "attachment; filename=" + "CatalogoMarcas.xls");
+            Response.ContentType = "application/excel";
+            System.IO.StringWriter sw = new System.IO.StringWriter();
+            HtmlTextWriter htw = new HtmlTextWriter(sw);
+            gvCatalogo.RenderControl(htw);
+            Response.Write(sw.ToString());
+            Response.End();
+        }
+        
+        public override void VerifyRenderingInServerForm(Control control)
+        {
+            //
         }
 
         protected void gvCatalogo_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -124,6 +133,12 @@ namespace Autos_SCC.Views.Catalogos
         {
             if (eDeleteObj != null)
                 eDeleteObj(sender, e);
+        }
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (eSearchObj != null)
+                eSearchObj(sender, e);
         }
 
         #endregion
@@ -217,8 +232,8 @@ namespace Autos_SCC.Views.Catalogos
             get
             {
                 return new object[]{
-                    "@fcDesc", "%" + txtBuqueda.Text.S() + "%",
-                    "@fcActivo", 1
+                    "@fc_Desc", "%" + txtBuqueda.Text.S() + "%",
+                    "@fi_IdActivo", rblActivo.SelectedValue.S().I()
                 };
             }
         }
@@ -240,7 +255,11 @@ namespace Autos_SCC.Views.Catalogos
                 string valor = value.S();
             }
         }
-
+        public DataTable dtDataSource
+        {
+            get;
+            set;
+        }
         #endregion
     }
 }

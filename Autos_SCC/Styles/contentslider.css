@@ -1,0 +1,49 @@
+.sliderwrapper{
+position: relative; /*leave as is*/
+overflow: hidden; /*leave as is*/
+border: 0px solid navy;
+border-bottom-width: 0px;
+width: 592px; /*width of featured content slider*/
+height: 207px;
+}
+
+
+
+.sliderwrapper .contentdiv{
+visibility: hidden; /*leave as is*/
+position: absolute; /*leave as is*/
+left: 0;  /*leave as is*/
+top: 0;  /*leave as is*/
+padding: 0px;
+background: white;
+width: 592px; /*width of content DIVs within slider. Total width should equal slider's inner width (390+5+5=400) */
+height: 100%;
+filter:progid:DXImageTransform.Microsoft.alpha(opacity=100);
+-moz-opacity: 1;
+opacity: 1;
+}
+
+.pagination{
+width: 592px; /*Width of pagination DIV. Total width should equal slider's outer width (400+10+10=420)*/
+text-align: right;
+background-color: #A0A2A1;
+padding: -10px -200px;
+font-family: Verdana; 
+font-size: 7pt;
+}
+
+.pagination a{
+padding: 0 0px;
+text-decoration: none; 
+color: #000000;
+background: #A0A2A1;
+font-family: Verdana; 
+font-size: 7pt;
+}
+
+.pagination a:hover, .pagination a.selected{
+color: #ffffff;
+background-color: #275674;
+font-family: Verdana; 
+font-size: 7pt;
+}

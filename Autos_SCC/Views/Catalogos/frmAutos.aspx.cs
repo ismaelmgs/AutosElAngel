@@ -12,6 +12,10 @@ using System.Drawing;
 using System.Data;
 using Autos_SCC.Objetos;
 using NucleoBase.Core;
+using System.Text;
+using System.IO;
+using System.Web.UI.HtmlControls;
+using Autos_SCC.Clases;
 
 namespace Autos_SCC.Views.Catalogos
 {
@@ -22,18 +26,15 @@ namespace Autos_SCC.Views.Catalogos
         protected void Page_Load(object sender, EventArgs e)
         {
             oPresenter = new Auto_Presenter(this, new DBAuto());
-            Session["usuario"] = "iMorato";
 
             omb.OkButtonPressed += new ucModalConfirm.OkButtonPressedHandler(omb_OkButtonPressed);
             omb.CancelButtonPressed += new ucModalConfirm.CancelButtonPressedHandler(omb_CancelButtonPressed);
 
             if (!IsPostBack)
             {
-                //Response.Expires = 0;
-
                 if (Session["usuario"] == null)
                 {
-                    Response.Redirect("login.aspx");
+                    Response.Redirect("..//Default.aspx");
                 }
 
                 oPresenter.LoadObjects_Presenter();
@@ -67,7 +68,7 @@ namespace Autos_SCC.Views.Catalogos
                 {
                     row.BackColor = ColorTranslator.FromHtml("#A1DCF2");
                     row.ToolTip = string.Empty;
-                    i = Convert.ToInt32(gvCatalogo.Rows[row.RowIndex].Cells[0].Text);
+                    i = Convert.ToInt32(gvCatalogo.Rows[row.RowIndex].Cells[1].Text);
                     ban = true;
                 }
                 else
@@ -114,9 +115,64 @@ namespace Autos_SCC.Views.Catalogos
 
         protected void btnExportar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                DataTable dt = new DataTable();
+                dt.Columns.Add("fi_Id");
+                dt.Columns.Add("fc_Marca");
+                dt.Columns.Add("fc_Version");
+                dt.Columns.Add("fc_TipoAuto");
+                dt.Columns.Add("fm_Precio");
+                dt.Columns.Add("fc_Placa");
+                dt.Columns.Add("fi_Modelo");
+                dt.Columns.Add("fc_NoSerie");
+                dt.Columns.Add("fc_Sucursal");
+                dt.Columns.Add("fc_Color");
+                dt.Columns.Add("fc_Usuario");
+                dt.Columns.Add("fd_FechaUltMovimiento");
 
+                foreach (GridViewRow row in gvCatalogo.Rows)
+                {
+                    DataRow dr = dt.NewRow();
+                    dr["fi_Id"] = row.Cells[1].Text.S();
+                    dr["fc_Marca"] = row.Cells[2].Text.S();
+                    dr["fc_Version"] = row.Cells[3].Text.S();
+                    dr["fc_TipoAuto"] = row.Cells[4].Text.S();
+                    dr["fm_Precio"] = row.Cells[5].Text.S();
+                    dr["fc_Placa"] = row.Cells[6].Text.S();
+                    dr["fi_Modelo"] = row.Cells[7].Text.S();
+                    dr["fc_NoSerie"] = row.Cells[8].Text.S();
+                    dr["fc_Sucursal"] = row.Cells[9].Text.S();
+                    dr["fc_Color"] = row.Cells[10].Text.S();
+                    dr["fc_Usuario"] = row.Cells[11].Text.S();
+                    dr["fd_FechaUltMovimiento"] = row.Cells[12].Text.S();
+
+                    dt.Rows.Add(dr);
+                }
+
+                gvCopia.DataSource = dt;
+                gvCopia.DataBind();
+
+                Response.ClearContent();
+                Response.AddHeader("content-disposition", "attachment; filename=" + "CatalogoAutos.xls");
+                Response.ContentType = "application/excel";
+                System.IO.StringWriter sw = new System.IO.StringWriter();
+                HtmlTextWriter htw = new HtmlTextWriter(sw);
+                gvCopia.RenderControl(htw);
+                Response.Write(sw.ToString());
+                Response.End();
+            }
+            catch (Exception ex)
+            {
+                MostrarMensaje("Ocurrio el siguiente error: " + ex.Message,"Error al exportar");
+            }
         }
 
+        public override void VerifyRenderingInServerForm(Control control)
+        {
+            //
+        }
+      
         protected void can_Click(object sender, EventArgs e)
         {
             mpeAgregarGasto.Hide();
@@ -205,6 +261,15 @@ namespace Autos_SCC.Views.Catalogos
              }
         }
 
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (eSearchAutos != null)
+                eSearchAutos(sender, e);
+
+            gvCatalogo.DataSource = dtDataSource;
+            gvCatalogo.DataBind();
+        }
+
         #endregion
 
         #region METODOS
@@ -240,6 +305,8 @@ namespace Autos_SCC.Views.Catalogos
         {
             if (dtObj.Rows.Count > 0)
             {
+                ddlTipoAuto.Items.Clear();
+
                 ddlTipoAuto.DataSource = dtObj;
                 ddlTipoAuto.DataValueField = "fi_Id";
                 ddlTipoAuto.DataTextField = "fc_Descripcion";
@@ -248,15 +315,29 @@ namespace Autos_SCC.Views.Catalogos
                 ddlTipoAuto_SelectedIndexChanged(null, EventArgs.Empty);
             }
             else
-                ddlTipoAuto.DataSource = null;
+            {
+                ddlTipoAuto.Items.Clear();
+                ddlTipoAuto.Items.Add(new ListItem("SIN TIPO", "0"));
+            }
+
         }
 
         public void LoadVersiones(DataTable dtObj)
         {
-            ddlVersion.DataSource = dtObj;
-            ddlVersion.DataValueField = "fi_Id";
-            ddlVersion.DataTextField = "fc_Descripcion";
-            ddlVersion.DataBind();
+            if (dtObj.Rows.Count > 0)
+            {
+                ddlVersion.Items.Clear();
+
+                ddlVersion.DataSource = dtObj;
+                ddlVersion.DataValueField = "fi_Id";
+                ddlVersion.DataTextField = "fc_Descripcion";
+                ddlVersion.DataBind();
+            }
+            else
+            {
+                ddlVersion.Items.Clear();
+                ddlVersion.Items.Add(new ListItem("SIN VERSION", "0"));
+            }
         }
 
         public void LoadSucursales(DataTable dtObj)
@@ -265,6 +346,11 @@ namespace Autos_SCC.Views.Catalogos
             ddlSucursal.DataValueField = "fi_Id";
             ddlSucursal.DataTextField = "fc_Descripcion";
             ddlSucursal.DataBind();
+
+            ddlSucursalBus.DataSource = dtObj;
+            ddlSucursalBus.DataValueField = "fi_Id";
+            ddlSucursalBus.DataTextField = "fc_Descripcion";
+            ddlSucursalBus.DataBind();
         }
 
         public void LoadEstatusAuto(DataTable dtObj)
@@ -273,6 +359,11 @@ namespace Autos_SCC.Views.Catalogos
             ddlEstatus.DataValueField = "iId";
             ddlEstatus.DataTextField = "sDescripcion";
             ddlEstatus.DataBind();
+
+            ddlEstatusBus.DataSource = dtObj;
+            ddlEstatusBus.DataValueField = "iId";
+            ddlEstatusBus.DataTextField = "sDescripcion";
+            ddlEstatusBus.DataBind();
         }
 
         private void LimpiaControles()
@@ -284,7 +375,9 @@ namespace Autos_SCC.Views.Catalogos
 
             ddlTipoAuto.Items.Clear();
 
+            txtPrecio.Text = string.Empty;
             txtPlaca.Text = string.Empty;
+            txtModelo.Text = string.Empty;
             txtNoSerie.Text = string.Empty;
             txtColor.Text = string.Empty;
             txtBuqueda.Text = string.Empty;
@@ -311,6 +404,7 @@ namespace Autos_SCC.Views.Catalogos
         public event EventHandler eGetGastosPorAuto;
         public event EventHandler eSaveGastoAuto;
         public event EventHandler eDeleteGastoAuto;
+        public event EventHandler eSearchAutos;
 
         public Auto oAuto
         {
@@ -320,10 +414,11 @@ namespace Autos_SCC.Views.Catalogos
                 {
                     iId = txtId.Text.S() == string.Empty ? -1 : txtId.Text.I(),
                     iIdMarca = ddlMarca.SelectedValue.S().I(),
-                    iIdVersion = ddlVersion.DataSource == null ? 0 : ddlVersion.SelectedValue.S().I(),
+                    iIdVersion = ddlVersion.SelectedValue == null ? 0 : ddlVersion.SelectedValue.S().I(),
                     iIdTipoAuto = ddlTipoAuto.SelectedValue.S().I(),
                     sPlaca = txtPlaca.Text.S(),
                     sNoSerie = txtNoSerie.Text.S(),
+                    iModelo = txtModelo.Text.S().I(),
                     sColor = txtColor.Text.S(),
                     iIdSucursal = ddlSucursal.SelectedValue.S().I(),
                     dPrecio = txtPrecio.Text.S().D(),
@@ -337,7 +432,7 @@ namespace Autos_SCC.Views.Catalogos
                 if (oCat != null)
                 {
                     txtId.Text = oCat.iId == -1 ? string.Empty : oCat.iId.S();
-                    ddlMarca.SelectedValue = oCat.iIdMarca.S();
+                    ddlMarca.SelectedValue = oCat.iIdMarca.S() != "0" ? oCat.iIdMarca.S() : ddlMarca.SelectedValue;
                     
                     if (eGetTiposAuto != null)
                         eGetTiposAuto(null, EventArgs.Empty);
@@ -348,6 +443,7 @@ namespace Autos_SCC.Views.Catalogos
                                         
                     txtPlaca.Text = oCat.sPlaca;
                     txtNoSerie.Text = oCat.sNoSerie;
+                    txtModelo.Text = oCat.iModelo.S();
                     txtColor.Text = oCat.sColor;
                     ddlSucursal.SelectedValue = oCat.iIdSucursal.S();
                     txtPrecio.Text = oCat.dPrecio.S();
@@ -391,7 +487,7 @@ namespace Autos_SCC.Views.Catalogos
                 if (iFila >= 0)
                 {
                     oCat = new Auto();
-                    oCat.iId = gvCatalogo.Rows[iFila].Cells[0].Text.S().I();
+                    oCat.iId = gvCatalogo.Rows[iFila].Cells[1].Text.S().I();
                 }
 
                 return oCat;
@@ -407,8 +503,9 @@ namespace Autos_SCC.Views.Catalogos
             get
             {
                 return new object[]{
-                    "@fcDesc", "%" + txtBuqueda.Text.S() + "%",
-                    "@fcActivo", 1
+                    "@fc_Desc", "%" + txtBuqueda.Text.S() + "%",
+                    "@fi_Sucursal", ddlSucursalBus.SelectedValue.S(),
+                    "@fi_Status", ddlEstatusBus.SelectedValue.S()
                 };
             }
         }
@@ -432,6 +529,12 @@ namespace Autos_SCC.Views.Catalogos
         {
             get { return (int)ViewState["GastoAuto"]; }
             set { ViewState["GastoAuto"] = value; }
+        }
+
+        public DataTable dtDataSource
+        {
+            get;
+            set;
         }
         #endregion
     }

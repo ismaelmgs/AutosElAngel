@@ -95,11 +95,11 @@
                                 <td class="text_blank" style="font-weight: bold; font-size: 10pt;" align="left">
                                     Bienvenido:
                                     <asp:Label ID="lblNomUsuario" runat="server" Font-Bold="True" ToolTip="Usuario Micronegocio Azteca"
-                                        Font-Size="Small"></asp:Label>
+                                         ></asp:Label>
                                 </td>
                                 <td class="text_blank" style="font-size: 10pt" align="center">
-                                    <asp:Label ID="lblPerfil" runat="server" Font-Bold="True" ForeColor="White" ToolTip="Perfil de Usuario" Font-Size="Small"></asp:Label>; &nbsp;
-                                    <asp:Label ID="lblNumSuc" runat="server" Font-Bold="True" ToolTip="Número y Nombre de la Sucursal" Font-Size="Small"></asp:Label>
+                                    <asp:Label ID="lblPerfil" runat="server" Font-Bold="True" ForeColor="White" ToolTip="Perfil de Usuario"  ></asp:Label>; &nbsp;
+                                    <asp:Label ID="lblNumSuc" runat="server" Font-Bold="True" ToolTip="Número y Nombre de la Sucursal"  ></asp:Label>
                                 </td>
                                 <td align="right" valign="bottom" class="text_blank_fecha">
                                     <asp:UpdatePanel ID="UpdatePanel3" runat="server" UpdateMode="Always">
@@ -212,7 +212,7 @@
     <form id="form1" runat="server">
         <div>
             <div id="EndSession" style="top: 4px; right: 20px; position:absolute;">
-                <asp:LinkButton ID="lknEndSession" runat="server" Font-Bold="True" Font-Size="Small" Font-Underline="False" ForeColor="#006F4E" BorderColor="White" BorderStyle="Ridge" OnClick="lknEndSession_Click" ToolTip="Cerrar Sesión">&nbsp;Cerrar Sesión&nbsp;</asp:LinkButton>
+                <asp:LinkButton ID="lknEndSession" runat="server" Font-Bold="True"   Font-Underline="False" ForeColor="#006F4E" BorderColor="White" BorderStyle="Ridge" OnClick="lknEndSession_Click" ToolTip="Cerrar Sesión">&nbsp;Cerrar Sesión&nbsp;</asp:LinkButton>
             </div>
 
             <table style="table-layout: auto; border-collapse: collapse;">

@@ -1,116 +1,331 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Autos_SCC.SiteMaster" %>
-<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Gestor de Creditos - Autos el Ángel de Puebla</title>
+    <%--<link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />--%>
+    <script src="../Recursos/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="Styles/MenuE.css" type="text/css" />
+    <link rel="stylesheet" href="Styles/Bootstrap/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="Styles/AUTOMaster.css" type="text/css" />
+    <link rel="stylesheet" href="Styles/overlay.css" type="text/css" />
+    <link rel="stylesheet" href="Styles/overlaty.css" type="text/css" />
+    <link rel="stylesheet" href="Styles/overlayCT.css" type="text/css" />
+    <link rel="stylesheet" href="Styles/overlayPro.css" type="text/css" />
+    
+    <script type="text/javascript">
+        function toggleOverlay() {
+            document.body.className = document.body.className.indexOf('overlaid') != -1 ? '' : 'overlaid';
+        }
+
+        var launch = false;
+        function launchModal() {
+            launch = true;
+        }
+
+        function pageLoad() {
+            if (launch) {
+                $find("mpe").show();
+            }
+        }
+  </script>
+
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form runat="server">
-    <cc1:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" EnableScriptGlobalization="true" EnableScriptLocalization="true"></cc1:ToolkitScriptManager>
-        
-            <div class="page">
-                <div class="header">
-                    <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
-                        <ContentTemplate>
-                            <div class="title">                
-                                <table width="90%" border="0" cellspacing="0" cellpadding="0" style="text-align:center">
-                                    <tr class="text_blank">
-                                        <td class="text_blank" style="font-weight: bold; font-size: 10pt;" align="left" width="300px">
-                                            <asp:Label ID="lblBienvenido" runat="server" Text=" Bienvenido: " ForeColor="White" Font-Names="Trebuchet MS"></asp:Label>
-                                            <asp:Label ID="lblNomUsuario" runat="server" Font-Bold="True" Text="Ismael Morato Gallegos" ToolTip="Usuario Autos el angel"  Font-Names="Trebuchet MS" ForeColor="White" Font-Size="Small"></asp:Label>
+    
+    <div id="divWrapper">
+        <form id="form1" runat="server">
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
+                <div id="divEncabezado">
+                    <table id="tblEncabezado" border="0" cellpadding="0" cellspacing="0" class="tablaHeaderMaster"
+                        width="918px">
+                        <tr>
+                            <td width="200px" class="tdImagenMaster">
+                                <a href="../Default.aspx">
+                                    <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/Fondos/logo.png" />
+                                </a>
+                            </td>
+                            <td align="right" valign="bottom">
+                                <div>
+                                    <table border="0" class="tblUserLogin">
+                                        <tr>
+                                            <td colspan="2" align="right">
+                                                <asp:Label ID="lblNomEmpresa" CssClass="empresa" runat="server" Text="Autos el Ángel de puebla"></asp:Label>
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right">
+                                                <asp:Label ID="lblUser1" runat="server" Text="Nombre: " Style="font-family: 'FuturaLight';
+                                                    font-size: 12pt; font-weight: bold;"></asp:Label>
+                                                &nbsp;
+                                                <asp:Label ID="lblUser2" runat="server" Style="font-family: 'FuturaLight';
+                                                    font-size: 12pt; font-weight: bold;"></asp:Label>
+                                            </td>
+                                            <td align="right">
+                                                <div style="width: 50px" id="divMenu" runat="server">
+                                                </div>
+                                            </td>
+                                            <td align="left">
+                                                |
+                                                <asp:LinkButton runat="server" ID="lkSalir" Text="Salir" OnClick="lkSalir_Click"
+                                                    Style="font-family: 'FuturaLight'; font-size: 10pt;" title="Cerrar sesión"></asp:LinkButton>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <table width="918px" class="tablaMenuMaster" cellpadding="0" cellspacing="0" border="0">
+                                    <tr>
+                                        <td style="width: 35px;" align="right">
+                                            <a href="../Default.aspx">
+                                                <asp:Image ID="Image2" runat="server" ImageUrl="~/Images/Header/homeICON.png" Height="20px"
+                                                    Width="20px" ToolTip="Inicio" />
+                                            </a>
                                         </td>
-                                        <td class="text_blank" style="font-size: 10pt" align="center" width="200px">
-                                            <asp:Label ID="lblPerfil" runat="server" Text="Perfil: Sistemas" Font-Bold="True" ForeColor="White" ToolTip="Perfil de Usuario" Font-Names="Trebuchet MS" Font-Size="Small"></asp:Label>; &nbsp;
-                                            <br /><asp:Label ID="lblNumSuc" runat="server" Text="Sucursal: Amozoc" Font-Bold="True" ToolTip="Número y Nombre de la Sucursal" Font-Size="Small" ForeColor="White" Font-Names="Trebuchet MS"></asp:Label>
-                                        </td>
-                                        <td align="right" valign="bottom" class="text_blank_fecha" width="200px">
-                                            <asp:UpdatePanel ID="UpdatePanel3" runat="server" UpdateMode="Always">
-                                                <ContentTemplate>
-                                                    <asp:Label ID="lblHora" runat="server" Font-Size="Smaller" Font-Bold="True" Width="250px"
-                                                        ToolTip="Fecha del Sistema" Height="20px"></asp:Label>
-                                                </ContentTemplate>
-                                            </asp:UpdatePanel>
+                                        <td style="width: auto;" align="left">
+                                            <asp:Menu ID="MenuUsuarios" runat="server" Orientation="Horizontal" StaticEnableDefaultPopOutImage="false"
+                                                OnMenuItemClick="Menu_MenuItemClick" ForeColor="#cccccc" Font-Names="FuturaLight"
+                                                Font-Size="11pt" Font-Bold="false">
+                                                <StaticMenuItemStyle HorizontalPadding="10px" VerticalPadding="2px" ForeColor="White" />
+                                                <DynamicHoverStyle BackColor="#808080" ForeColor="White" />
+                                                <DynamicMenuStyle BackColor="#919695" />
+                                                <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" ForeColor="White" />
+                                                <StaticHoverStyle BackColor="#808080" ForeColor="White" />
+                                                <LevelMenuItemStyles>
+                                                    <asp:MenuItemStyle ForeColor="White" Font-Underline="false" />
+                                                    <asp:MenuItemStyle ForeColor="White" CssClass="ItemsMenu" />
+                                                </LevelMenuItemStyles>
+                                                <LevelSubMenuStyles></LevelSubMenuStyles>
+                                                <Items>
+                                                    <%--<asp:MenuItem Text="Inicio" NavigateUrl="~/Default.aspx"/>--%>
+
+                                                    <asp:MenuItem Text="Documentos">
+                                                        <asp:MenuItem Text="Cotizador" NavigateUrl="~/Views/Principales/Cotizador.aspx"></asp:MenuItem>
+                                                        <asp:MenuItem Text="Clientes" NavigateUrl="~/Views/Principales/frmClientes.aspx"></asp:MenuItem>
+                                                        <asp:MenuItem Text="Formalización" NavigateUrl="~/Views/Principales/frmFormalizacion.aspx"></asp:MenuItem>
+                                                    </asp:MenuItem>
+                        
+                                                    <asp:MenuItem Text="Control de cartera">
+                                                        <asp:MenuItem Text="Monitor" NavigateUrl="~/Views/FuncionalidadAnexa/frmMonitor.aspx"></asp:MenuItem>
+                                                        <asp:MenuItem Text="Abonos" NavigateUrl="~/Views/Pays/frmAbonos.aspx"></asp:MenuItem>
+                                                        <asp:MenuItem Text="Cobranza" NavigateUrl="~/Views/Cobranza/frmCobranza.aspx"></asp:MenuItem>
+                                                    </asp:MenuItem>
+
+                                                    <asp:MenuItem Text="Reportes">
+                                                        <asp:MenuItem Text="Autos vendidos" NavigateUrl="~/Views/Report/frmAutosVen.aspx"></asp:MenuItem>
+                                                        <asp:MenuItem Text="Pagos recibidos" NavigateUrl="~/Views/Report/frmPaysPeriod.aspx"></asp:MenuItem>
+                                                    </asp:MenuItem>
+
+                                                    <asp:MenuItem Text="Catálogos">
+                                                        <asp:MenuItem Text="Autos" NavigateUrl="~/Views/Catalogos/frmAutos.aspx"></asp:MenuItem>
+                                                        <asp:MenuItem Text="Marcas" NavigateUrl="~/Views/Catalogos/frmMarcas.aspx"></asp:MenuItem>
+                                                        <asp:MenuItem Text="Tipos de Auto" NavigateUrl="~/Views/Catalogos/frmTipoAuto.aspx"></asp:MenuItem>
+                                                        <asp:MenuItem Text="Versiones" NavigateUrl="~/Views/Catalogos/frmVersiones.aspx"></asp:MenuItem>
+                                                    </asp:MenuItem>
+
+                                                    <asp:MenuItem NavigateUrl="~/About.aspx" Text="Acerca de"/>
+                                                </Items>
+                                            </asp:Menu>
                                         </td>
                                     </tr>
                                 </table>
-                                <%--<h1>
-                                    Mi aplicación ASP.NET
-                                </h1>--%>
-                            </div>
-                            <div class="title">
-                                <asp:UpdatePanel ID="upaHeader" runat="server">
-                                    <ContentTemplate>
-                                        <asp:Image ID="imHeader" runat="server" ImageUrl="Images/Fondos/FondoHeader.png" Width="960px" Height="90px" />
-                                    </ContentTemplate>
-                                </asp:UpdatePanel>                        
-                            </div>
-                            <div class="loginDisplay">
-                                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
-                                    <AnonymousTemplate>
-                                        [ <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">Iniciar sesión</a> ]
-                                    </AnonymousTemplate>
-                                    <LoggedInTemplate>
-                                        Pantalla de bienvenida <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
-                                        [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Cerrar sesión" LogoutPageUrl="~/"/> ]
-                                    </LoggedInTemplate>
-                                </asp:LoginView>
-                            </div>
-                            <div class="clear hideSkiplink">
-                                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
-                                    <Items>
-                                        <asp:MenuItem Text="Inicio" NavigateUrl="~/Default.aspx"/>
-                                        <asp:MenuItem Text="Documentos">
-                                            <asp:MenuItem Text="Cotizador" NavigateUrl="~/Views/Principales/Cotizador.aspx"></asp:MenuItem>
-                                            <asp:MenuItem Text="Formalización"></asp:MenuItem>
-                                        </asp:MenuItem>
-                        
-                                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Control de cartera">
-                                            <asp:MenuItem Text="Abonos"></asp:MenuItem>
-                                            <asp:MenuItem Text="Cobranza"></asp:MenuItem>
-                                        </asp:MenuItem>
-
-                                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Reportes">
-                                            <asp:MenuItem Text="Sucursal"></asp:MenuItem>
-                                            <asp:MenuItem Text="Empleados"></asp:MenuItem>
-                                        </asp:MenuItem>
-
-                                        <asp:MenuItem Text="Catálogos">
-                                            <asp:MenuItem Text="Autos" NavigateUrl="~/Views/Catalogos/frmAutos.aspx"></asp:MenuItem>
-                                            <asp:MenuItem Text="Marcas" NavigateUrl="~/Views/Catalogos/frmMarcas.aspx"></asp:MenuItem>
-                                            <asp:MenuItem Text="Tipos de Auto" NavigateUrl="~/Views/Catalogos/frmTipoAuto.aspx"></asp:MenuItem>
-                                            <asp:MenuItem Text="Versiones" NavigateUrl="~/Views/Catalogos/frmVersiones.aspx"></asp:MenuItem>
-                                        </asp:MenuItem>
-                                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="Acerca de"/>
-                                    </Items>
-                                </asp:Menu>
-                            </div>
-                        </ContentTemplate>
-                    </asp:UpdatePanel>
+                            </td>
+                        </tr>
+                    </table>
+                    <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" EnableScriptGlobalization="True">
+                    </asp:ToolkitScriptManager>
                 </div>
-                <div class="main">
-                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
-                        <asp:UpdatePanel ID="upaContent" runat="server">
-                            <ContentTemplate>
-                            </ContentTemplate>
-                            <Triggers>
-                                <asp:AsyncPostBackTrigger ControlID="NavigationMenu" EventName="MenuItemClick" />
-                            </Triggers>
-                        </asp:UpdatePanel>
+                <asp:Label ID="lblActual" runat="server" Text="Label" Visible="false"></asp:Label>
+                <div id="divContenido">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                     </asp:ContentPlaceHolder>
+                    <asp:UpdateProgress ID="UpdateProgress1" runat="server" DisplayAfter="0" AssociatedUpdatePanelID="UpdatePanel1">
+                        <ProgressTemplate>
+                            <div class="overlayy" />
+                            <div class="overlayyContent">
+                                <center>
+                                    <asp:Image ID="imLoading" runat="server" ImageUrl="Images/Header/ajax_loader.gif" ToolTip="Loading" />
+                                    <h2>
+                                        Procesando...</h2>
+                                </center>
+                            </div>
+                        </ProgressTemplate>
+                    </asp:UpdateProgress>
                 </div>
-                <div class="clear">
+                <!-- Fin de #divContenido -->
+                <%-- Modal--%>
+                <div class="overlay">
+                    <div class="wrap-outer">
+                        <div class="wrap">
+                            <div class="my-dialog">
+                                <%--<strong class="closebutton" title="Cerrar" onclick=''>X</strong>--%>
+                                <asp:Panel ID="Panel1" runat="server">
+                                    <div id="divLogin">
+                                        <center>
+                                            <table class="tblGridViews" width="350" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td align="center">
+                                                        <asp:Label ID="lblMsgExpire" runat="server" Text="Lo sentimos, su sesión ha caducado."
+                                                            Style="font-family: 'FuturaLight'; font-size: 14pt;"></asp:Label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="center" style="height: 50px;">
+                                                        <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" CssClass="button" OnClick="btnAceptar_Click" />
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </center>
+                                    </div>
+                                </asp:Panel>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <%--Fin de modal--%>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+        </form>
+        <div id="divfooter">
+            <table class="tblFooter">
+                <tr>
+                    <td class="footer">
+                        <asp:Label ID="LblFooter" runat="server" Text="" CssClass="legendFooter"></asp:Label>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!-- Fin de #divfooter -->
+    </div>
+    
+
+
+    <%-- DISEÑO ANTERIOR--%>
+    <%--
+    <form runat="server">
+        <cc1:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" EnableScriptGlobalization="true" EnableScriptLocalization="true"></cc1:ToolkitScriptManager>
+        <div class="page">
+            <div class="header">
+                <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+                    <ContentTemplate>
+                        <div class="title">                
+                            <table width="90%" border="0" cellspacing="0" cellpadding="0" style="text-align:center">
+                                <tr class="text_blank">
+                                    <td class="text_blank" style="font-weight: bold; font-size: 10pt;" align="left" width="300px">
+                                        <asp:Label ID="lblBienvenido" runat="server" Text="  Bienvenido: " ForeColor="White" Font-Names="Trebuchet MS"></asp:Label>
+                                        <asp:Label ID="lblNomUsuario" runat="server" Font-Bold="True" Text="Ismael Morato Gallegos" ToolTip="Usuario Autos el angel"  Font-Names="Trebuchet MS" ForeColor="White"  ></asp:Label>
+                                    </td>
+                                    <td class="text_blank" style="font-size: 10pt" align="center" width="200px">
+                                        <asp:Label ID="lblPerfil" runat="server" Text="Perfil: Sistemas" Font-Bold="True" ForeColor="White" ToolTip="Perfil de Usuario" Font-Names="Trebuchet MS"  ></asp:Label>; &nbsp;
+                                        <br /><asp:Label ID="lblNumSuc" runat="server" Text="Sucursal: Amozoc" Font-Bold="True" ToolTip="Número y Nombre de la Sucursal"   ForeColor="White" Font-Names="Trebuchet MS"></asp:Label>
+                                    </td>
+                                    <td align="right" valign="bottom" class="text_blank_fecha" width="200px">
+                                        <asp:UpdatePanel ID="UpdatePanel3" runat="server" UpdateMode="Always">
+                                            <ContentTemplate>
+                                                <asp:Label ID="lblHora" runat="server" Font-Size="Smaller" Font-Bold="True" Width="250px"
+                                                    ToolTip="Fecha del Sistema" Height="20px"></asp:Label>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                        </div>
+                        <div class="title">
+                            <asp:UpdatePanel ID="upaHeader" runat="server">
+                                <ContentTemplate>
+                                    <asp:Image ID="imHeader" runat="server" ImageUrl="Images/Fondos/FondoHeader.png" Width="960px" Height="90px" />
+                                </ContentTemplate>
+                            </asp:UpdatePanel>                        
+                        </div>
+                        <div class="loginDisplay">
+                            <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                                <AnonymousTemplate>
+                                    [ <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">Iniciar sesión</a> ]
+                                </AnonymousTemplate>
+                                <LoggedInTemplate>
+                                    Pantalla de bienvenida <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
+                                    [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Cerrar sesión" LogoutPageUrl="~/"/> ]
+                                </LoggedInTemplate>
+                            </asp:LoginView>
+                        </div>
+                        <div class="clear hideSkiplink">
+                            <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal"
+                                ForeColor="#cccccc" Font-Names="FuturaLight" Font-Size="11pt" Font-Bold="false">
+                                <Items>
+                                    <asp:MenuItem Text="Inicio" NavigateUrl="~/Default.aspx"/>
+                                    <asp:MenuItem Text="Documentos">
+                                        <asp:MenuItem Text="Cotizador" NavigateUrl="~/Views/Principales/Cotizador.aspx"></asp:MenuItem>
+                                        <asp:MenuItem Text="Clientes" NavigateUrl="~/Views/Principales/frmClientes.aspx"></asp:MenuItem>
+                                        <asp:MenuItem Text="Formalización" NavigateUrl="~/Views/Principales/frmFormalizacion.aspx"></asp:MenuItem>
+                                    </asp:MenuItem>
+                        
+                                    <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Control de cartera">
+                                        <asp:MenuItem Text="Abonos"></asp:MenuItem>
+                                        <asp:MenuItem Text="Cobranza"></asp:MenuItem>
+                                    </asp:MenuItem>
+
+                                    <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Reportes">
+                                        <asp:MenuItem Text="Sucursal"></asp:MenuItem>
+                                        <asp:MenuItem Text="Empleados"></asp:MenuItem>
+                                    </asp:MenuItem>
+
+                                    <asp:MenuItem Text="Catálogos">
+                                        <asp:MenuItem Text="Autos" NavigateUrl="~/Views/Catalogos/frmAutos.aspx"></asp:MenuItem>
+                                        <asp:MenuItem Text="Marcas" NavigateUrl="~/Views/Catalogos/frmMarcas.aspx"></asp:MenuItem>
+                                        <asp:MenuItem Text="Tipos de Auto" NavigateUrl="~/Views/Catalogos/frmTipoAuto.aspx"></asp:MenuItem>
+                                        <asp:MenuItem Text="Versiones" NavigateUrl="~/Views/Catalogos/frmVersiones.aspx"></asp:MenuItem>
+                                    </asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="~/About.aspx" Text="Acerca de"/>
+                                </Items>
+                                <StaticMenuItemStyle HorizontalPadding="10px" VerticalPadding="2px" 
+                                        ForeColor="White" />
+                                <DynamicHoverStyle BackColor="#808080" ForeColor="White" /> 
+                                <DynamicMenuStyle BackColor="#919695"/>
+                                <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" 
+                                        ForeColor="White" />
+                                <StaticHoverStyle BackColor="#808080" ForeColor="White" /> 
+                                                        
+                                <LevelMenuItemStyles>
+                                    <asp:MenuItemStyle ForeColor="White" Font-Underline="false"/>
+                                    <asp:MenuItemStyle forecolor="White" CssClass="ItemsMenu"/>
+                                </LevelMenuItemStyles>
+                                <LevelSubMenuStyles>
+                                </LevelSubMenuStyles>
+                            </asp:Menu>
+                        </div>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
             </div>
-            <div class="footer">
-        
+            <div class="main">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    <asp:UpdatePanel ID="upaContent" runat="server">
+                        <ContentTemplate>
+                        </ContentTemplate>
+                        <Triggers>
+                            <asp:AsyncPostBackTrigger ControlID="NavigationMenu" EventName="MenuItemClick" />
+                        </Triggers>
+                    </asp:UpdatePanel>
+                </asp:ContentPlaceHolder>
             </div>
-            
+            <div class="clear">
+            </div>
+        </div>
+        <div class="footer">
+        </div>
     </form>
+    --%>
+
 </body>
 </html>

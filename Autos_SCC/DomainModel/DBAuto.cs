@@ -9,7 +9,7 @@ using NucleoBase.Core;
 
 namespace Autos_SCC.DomainModel
 {
-    public class DBAuto:DBBase
+    public class DBAuto : DBBase
     {
         public DataTable dtObjCat
         {
@@ -96,6 +96,7 @@ namespace Autos_SCC.DomainModel
                     sColor = r["fc_Color"].S(),
                     iIdSucursal = r["fi_Sucursal"].S().I(),
                     dPrecio = r["fm_Precio"].S().D(),
+                    iModelo = r["fi_Modelo"].S().I(),
                     iStatus = r["fi_Status"].S().I(),
                     sUsuario = r["fc_Usuario"].S(),
                     dtFechaUltMov = r["fd_FechaUltMovimiento"].Dt(),
@@ -129,8 +130,10 @@ namespace Autos_SCC.DomainModel
                                                                                             "@fi_IdTipoAuto", oEjecut.iIdTipoAuto,
                                                                                             "@fc_Placa", oEjecut.sPlaca,
                                                                                             "@fc_NoSerie", oEjecut.sNoSerie,
+                                                                                            "@fi_Modelo", oEjecut.iModelo,
                                                                                             "@fc_Color", oEjecut.sColor,
                                                                                             "@fi_Sucursal", oEjecut.iIdSucursal,
+                                                                                            "@fm_Precio", oEjecut.dPrecio,
                                                                                             "@fi_Status", oEjecut.iStatus,
                                                                                             "@fc_Usuario", oEjecut.sUsuario);
                         }
@@ -154,16 +157,18 @@ namespace Autos_SCC.DomainModel
 
                         //if (oUs.iId == oEjecut.iId)
                         //{
-                            vNew = oDB_SP.EjecutarValor("[Catalogos].[spU_ActualizaAuto]", "@fi_Id", oEjecut.iId,
-                                                                                "@fi_IdMarca", oEjecut.iIdMarca,
-                                                                                "@fi_IdVersion", oEjecut.iIdVersion,
-                                                                                "@fi_IdTipoAuto", oEjecut.iIdTipoAuto,
-                                                                                "@fc_Placa", oEjecut.sPlaca,
-                                                                                "@fc_NoSerie", oEjecut.sNoSerie,
-                                                                                "@fc_Color", oEjecut.sColor,
-                                                                                "@fi_Sucursal", oEjecut.iIdSucursal,
-                                                                                "@fi_Status", oEjecut.iStatus,
-                                                                                "@fc_Usuario", oEjecut.sUsuario);
+                        vNew = oDB_SP.EjecutarValor("[Catalogos].[spU_ActualizaAuto]", "@fi_Id", oEjecut.iId,
+                                                                            "@fi_IdMarca", oEjecut.iIdMarca,
+                                                                            "@fi_IdVersion", oEjecut.iIdVersion,
+                                                                            "@fi_IdTipoAuto", oEjecut.iIdTipoAuto,
+                                                                            "@fc_Placa", oEjecut.sPlaca,
+                                                                            "@fc_NoSerie", oEjecut.sNoSerie,
+                                                                            "@fi_Modelo", oEjecut.iModelo,
+                                                                            "@fc_Color", oEjecut.sColor,
+                                                                            "@fi_Sucursal", oEjecut.iIdSucursal,
+                                                                            "@fm_Precio", oEjecut.dPrecio,
+                                                                            "@fi_Status", oEjecut.iStatus,
+                                                                            "@fc_Usuario", oEjecut.sUsuario);
 
                         //}
                         //else
@@ -269,7 +274,7 @@ namespace Autos_SCC.DomainModel
                 oDB.tbr_GastosAuto.InsertOnSubmit(tbCat);
                 oDB.SubmitChanges();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 oCat.oErr.bExisteError = true;
                 oCat.oErr.sMsjError = "Error al guardar (DBSaveGasto) => " + ex.Message;
@@ -306,5 +311,29 @@ namespace Autos_SCC.DomainModel
             }
         }
 
+        public DataTable DBGetBusquedaAuto(string sOpcion, string sParametro)
+        {
+            try
+            {
+                return oDB_SP.EjecutarDT("[Autos].[spS_ConsultaAutos]", "@fc_Opcion", sOpcion
+                                                                        , "@fc_Parametro", sParametro);
+            }
+            catch
+            {
+                return new DataTable();
+            }
+        }
+
+        public DataTable DBSearchAutos(object[] oArra)
+        {
+            try
+            {
+                return oDB_SP.EjecutarDT("[Catalogos].[spS_ConsultaAutosBusqueda]", oArra);
+            }
+            catch (Exception ex)
+            {
+                return new DataTable();
+            }
+        }
     }
 }
