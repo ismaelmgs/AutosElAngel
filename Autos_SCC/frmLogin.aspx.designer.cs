@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Autos_SCC {
-    
-    
-    public partial class frmLogin {
-        
+namespace Autos_SCC
+{
+
+
+    public partial class frmLogin
+    {
+
         /// <summary>
         /// Control form1.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Autos_SCC {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
         /// <summary>
         /// Control ToolkitScriptManager1.
         /// </summary>
@@ -29,7 +31,7 @@ namespace Autos_SCC {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AjaxControlToolkit.ToolkitScriptManager ToolkitScriptManager1;
-        
+
         /// <summary>
         /// Control upaPrincipal.
         /// </summary>
@@ -38,7 +40,7 @@ namespace Autos_SCC {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel upaPrincipal;
-        
+
         /// <summary>
         /// Control imLogo.
         /// </summary>
@@ -47,7 +49,7 @@ namespace Autos_SCC {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image imLogo;
-        
+
         /// <summary>
         /// Control txtUsuario.
         /// </summary>
@@ -56,7 +58,7 @@ namespace Autos_SCC {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtUsuario;
-        
+
         /// <summary>
         /// Control txtPassword.
         /// </summary>
@@ -65,7 +67,7 @@ namespace Autos_SCC {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPassword;
-        
+
         /// <summary>
         /// Control btnEntrar.
         /// </summary>

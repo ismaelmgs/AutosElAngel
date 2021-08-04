@@ -7,15 +7,39 @@
     </title>
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
-    <h2>
-        Política Autos el Ángel de Puebla.
-    </h2>
-    <p>
-        Nuestro personal está capacitado para atenderte con cualquier situación desde el personal de intendencia hasta los expertos estamos dispuestos a atenderte como te mereces.
-        Ya que nuestro compromiso principal es con el cliente.
-    </p>
-    <p>
-        Mas información consultas en <a href="http://www.autoselangel.com/"
-            title="Autos el angel de Puebla">Autos el angel de Puebla.</a>.
-    </p>
+    <div class="card">
+        <div class="card-block" style="text-align:center;">
+            <h3>Bienvenido</h3>
+        </div>
+    </div>
+    <div class="card">
+        <br />
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width:80%; margin: 0 auto; box-shadow:3px 3px 3px #0000001f; border-radius:20px;">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="d-block w-100" src="../images/Banner_1.jpg" alt="First slide" style="border-radius:20px;">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="../images/Banner_2.jpg" alt="Second slide" style="border-radius:20px;">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="../images/Banner_3.jpg" alt="Third slide" style="border-radius:20px;">
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+        <br />
+    </div>
 </asp:Content>

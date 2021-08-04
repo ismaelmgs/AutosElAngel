@@ -107,20 +107,37 @@
             <asp:HiddenField ID="HidTasa" Value="0" runat="server" />
             <asp:HiddenField ID="HidClienteE" Value="0" runat="server" />
             <asp:HiddenField ID="HidGenerar" Value="0" runat="server" />
-            <br />
-            <table width="100%">
-                <tr style="height:25px">
+            <!-- Button trigger modal -->
+            <div class="card">
+                <div class="card-block" style="text-align:center;">
+                    <h3>Cotizador</h3>
+                </div>
+            </div>
+            <div class="card">
+            <table class="table table-hover" style="width:90%;margin:0 auto;">
+                <tr>
+                    <td colspan="5">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr style="height:25px;">
                     <td width="5%">
                     </td>
-                    <td width="20%">
+                    <td>
                         <asp:Label ID="lblNombre" runat="server" Text="Nombre:" CssClass="inputLabel"></asp:Label>
                     </td>
-                    <td width="30%">
-                        <asp:TextBox ID="txtNombre" runat="server" Width="81%" CssClass="inputCampo"></asp:TextBox>
-                        <asp:ImageButton ID="imbBuscaCliente" runat="server" ImageUrl="~/Images/Botones/Find.ico" OnClick="imbBuscaCliente_Click"
+                    <td>
+                        <div class="row">
+                            <div class="col-md-11" style="text-align:right; padding-left:2.5%;">
+                                <asp:TextBox ID="txtNombre" runat="server" Width="" CssClass="form-control"></asp:TextBox>
+                            </div>
+                            <div class="col-md-1" style="text-align:left;">
+                                <asp:ImageButton ID="imbBuscaCliente" runat="server" ImageUrl="~/Images/Botones/Find.ico" OnClick="imbBuscaCliente_Click"
                             style="vertical-align:middle" ToolTip="Selecciona un auto existente"/>
+                            </div>
+                        </div>
                     </td>
-                    <td width="40%">
+                    <td width="1%">
                         <asp:Label ID="lblReqNombre" runat="server" Text="*" ForeColor="Red"></asp:Label>
                         &nbsp;&nbsp;<asp:RequiredFieldValidator ID="rfvNombre" runat="server" 
                             ControlToValidate="txtNombre" Display="Dynamic" 
@@ -137,7 +154,14 @@
                         <asp:Label ID="lblSegNombre" runat="server" Text="Segundo nombre:" CssClass="inputLabel"></asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox ID="txtSegNombre" runat="server" Width="90%" CssClass="inputCampo"></asp:TextBox>
+                        <div class="row">
+                            <div class="col-md-11" style="text-align:right; padding-left:2.5%;">
+                                <asp:TextBox ID="txtSegNombre" runat="server" Width="" CssClass="form-control"></asp:TextBox>
+                            </div>
+                            <div class="col-md-1" style="text-align:left;">
+                                &nbsp;
+                            </div>
+                        </div>
                     </td>
                     <td>
                     </td>
@@ -151,7 +175,14 @@
                         <asp:Label ID="lblApePaterno" runat="server" Text="Apellido paterno:" CssClass="inputLabel"></asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox ID="txtApePaterno" runat="server" Width="90%" CssClass="inputCampo"></asp:TextBox>
+                        <div class="row">
+                            <div class="col-md-11" style="text-align:right; padding-left:2.5%;">
+                                <asp:TextBox ID="txtApePaterno" runat="server" Width="" CssClass="form-control"></asp:TextBox>
+                            </div>
+                            <div class="col-md-1" style="text-align:left;">
+                                &nbsp;
+                            </div>
+                        </div>
                     </td>
                     <td>
                         <asp:Label ID="lblReqApePaterno" runat="server" Text="*" ForeColor="Red"></asp:Label>
@@ -171,7 +202,15 @@
                             CssClass="inputLabel"  ></asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox ID="txtApeMaterno" runat="server" Width="90%" CssClass="inputCampo"></asp:TextBox>
+                        <div class="row">
+                            <div class="col-md-11" style="text-align:right; padding-left:2.5%;">
+                                <asp:TextBox ID="txtApeMaterno" runat="server" Width="" CssClass="form-control"></asp:TextBox>
+                            </div>
+                            <div class="col-md-1" style="text-align:left;">
+                                &nbsp;
+                            </div>
+                        </div>
+                        
                     </td>
                     <td>
                     </td>
@@ -186,9 +225,15 @@
                             CssClass="inputLabel"  ></asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox ID="txtAuto" runat="server" Width="81%" CssClass="inputCampo" Enabled="false"></asp:TextBox>
-                        <asp:ImageButton ID="imbBuscarAuto" runat="server" ImageUrl="~/Images/Botones/Find.ico" OnClick="imbBuscarAuto_Click"
+                        <div class="row">
+                            <div class="col-md-11" style="text-align:right; padding-left:2.5%;">
+                                <asp:TextBox ID="txtAuto" runat="server" Width="" CssClass="form-control" Enabled="false"></asp:TextBox>
+                            </div>
+                            <div class="col-md-1" style="text-align:left;">
+                                <asp:ImageButton ID="imbBuscarAuto" runat="server" ImageUrl="~/Images/Botones/Find.ico" OnClick="imbBuscarAuto_Click"
                             style="vertical-align:middle" ToolTip="Selecciona un auto existente"/>
+                            </div>
+                        </div>
                     </td>
                     <td>
                         <asp:Label ID="lblReqAuto" runat="server" Text="*" ForeColor="Red"></asp:Label>
@@ -207,8 +252,15 @@
                              ></asp:Label>
                     </td>
                     <td>
-                        <asp:DropDownList ID="ddlPlazo" runat="server" Width="95%" CssClass="listInput">
+                        <div class="row">
+                            <div class="col-md-11" style="text-align:right; padding-left:2.5%;">
+                                <asp:DropDownList ID="ddlPlazo" runat="server" Width="95%" CssClass="form-control">
                         </asp:DropDownList>
+                            </div>
+                            <div class="col-md-1" style="text-align:left;">
+                                &nbsp;
+                            </div>
+                        </div>
                     </td>
                     <td>
                         <asp:Label ID="lblReqPlazo" runat="server" Text="*" ForeColor="Red"></asp:Label>
@@ -228,9 +280,17 @@
                             CssClass="inputLabel"  ></asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox ID="txtPrecio" runat="server" Width="50%" CssClass="inputCampo" Enabled="false"></asp:TextBox>
+                        <div class="row">
+                            <div class="col-md-11" style="text-align:right; padding-left:2.5%;">
+                                <asp:TextBox ID="txtPrecio" runat="server" Width="50%" CssClass="form-control" Enabled="false"></asp:TextBox>
                         <cc1:FilteredTextBoxExtender ID="ftbPrecio" runat="server" FilterMode="ValidChars" FilterType="Numbers"
                             ValidChars="0123456789" TargetControlID="txtPrecio"></cc1:FilteredTextBoxExtender>
+                            </div>
+                            <div class="col-md-1" style="text-align:left;">
+                                &nbsp;
+                            </div>
+                        </div>
+                        
                     </td>
                     <td>
                         <asp:Label ID="lblReqPrecio" runat="server" Text="*" ForeColor="Red"></asp:Label>
@@ -250,9 +310,16 @@
                             CssClass="inputLabel"  ></asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox ID="txtEnganche" runat="server" Width="50%" CssClass="inputCampo"></asp:TextBox>
+                        <div class="row">
+                            <div class="col-md-11" style="text-align:right; padding-left:2.5%;">
+                               <asp:TextBox ID="txtEnganche" runat="server" Width="50%" CssClass="form-control"></asp:TextBox>
                         <cc1:FilteredTextBoxExtender ID="rfbEngancge" runat="server" FilterMode="ValidChars" FilterType="Numbers"
-                            ValidChars="0123456789" TargetControlID="txtEnganche"></cc1:FilteredTextBoxExtender>
+                            ValidChars="0123456789" TargetControlID="txtEnganche"></cc1:FilteredTextBoxExtender> 
+                            </div>
+                            <div class="col-md-1" style="text-align:left;">
+                                &nbsp;
+                            </div>
+                        </div>
                     </td>
                     <td>
                         <asp:Label ID="lblReqEnganche" runat="server" Text="*" ForeColor="Red"></asp:Label>
@@ -271,8 +338,15 @@
                         <asp:Label ID="lblSucursal" runat="server" Text="Sucursal cotización:" CssClass="inputLabel"></asp:Label>
                     </td>
                     <td>
-                        <asp:DropDownList ID="ddlSucursal" runat="server" CssClass="listInput" 
+                        <div class="row">
+                            <div class="col-md-11" style="text-align:right; padding-left:2.5%;">
+                                <asp:DropDownList ID="ddlSucursal" runat="server" CssClass="form-control" 
                             Width="95%"></asp:DropDownList>
+                            </div>
+                            <div class="col-md-1" style="text-align:left;">
+                                &nbsp;
+                            </div>
+                        </div>
                     </td>
                     <td>
                         <asp:Label ID="lblReqSucursal" runat="server" Text="*" ForeColor="Red"></asp:Label>
@@ -292,7 +366,14 @@
                               Text="Correo electronico:"></asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox ID="txtCorreoElectronico" runat="server" CssClass="inputCampo" Width="90%"></asp:TextBox>
+                        <div class="row">
+                            <div class="col-md-11" style="text-align:right; padding-left:2.5%;">
+                                <asp:TextBox ID="txtCorreoElectronico" runat="server" CssClass="form-control" Width=""></asp:TextBox>
+                            </div>
+                            <div class="col-md-1" style="text-align:left;">
+                                &nbsp;
+                            </div>
+                        </div>
                     </td>
                     <td>
                     </td>
@@ -302,19 +383,7 @@
                 <tr>
                     <td>
                     </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                    </td>
-                    <td colspan="3">
+                    <td colspan="3" style="text-align:center;">
                         <asp:Label ID="lblInformacion" runat="server" Text="(Los campos marcados con * son obligatorios)" ForeColor="Red" CssClass="EtiquetaInformativa"></asp:Label>
                     </td>
                     <td>
@@ -404,21 +473,13 @@
                 <tr>
                     <td>
                     </td>
-                    <td colspan="3">
-                    </td>
-                    <td>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                    </td>
-                    <td colspan="2"  style="text-align:left">
+                    <td colspan="2"  style="text-align:center">
                         <asp:Button ID="btnGenerar" runat="server" Text=" GENERAR " OnClick="btnGenerar_Click"
-                            CssClass="button" Font-Size="X-Small" />
+                            CssClass="btn btn-primary" Font-Size="X-Small" />
                         &nbsp;<asp:Button ID="btnImprimir" runat="server" Text=" IMPRIMIR " OnClick="btnImprimir_Click"
-                            CssClass="button" Font-Size="X-Small" />
+                            CssClass="btn btn-primary" Font-Size="X-Small" />
                         &nbsp;<asp:Button ID="btnGuardar" runat="server" Text=" GUARDAR " 
-                            CssClass="button" Font-Size="X-Small" OnClick="btnGuardar_Click" />
+                            CssClass="btn btn-primary" Font-Size="X-Small" OnClick="btnGuardar_Click" />
                     </td>
                     <td>
                     </td>
@@ -529,6 +590,34 @@
                     </td>
                 </tr>
             </table>
+            </div>
+<!-- RLR Modal inicia-->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+              Abrir Modal
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Título Modal</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    ...
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Cerrar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+<!-- RLR Modal fin-->
+
+            
         </ContentTemplate>
         <Triggers>
             <asp:PostBackTrigger ControlID="btnImprimir" />
@@ -775,48 +864,50 @@
     </asp:Panel>
 
     <%--Modal Busqueda de cliente--%>
+    
     <asp:HiddenField ID="hdTargetBusCliente" runat="server" />
     <cc1:ModalPopupExtender ID="mpeBusquedaCliente" runat="server" TargetControlID="hdTargetBusCliente" 
         PopupControlID="pnlBusquedaCliente" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
-    <asp:Panel ID="pnlBusquedaCliente" runat="server" BorderColor="Black" BackColor="White" Height="400px"
-        Width="600px" HorizontalAlign="Center" Style="display: none">
+    <asp:Panel ID="pnlBusquedaCliente" runat="server" BorderColor="Black" BackColor="#eeeeee" Height="400px"
+        Width="820px" HorizontalAlign="Center" Style="display: none; border-radius:25px;">
         <asp:UpdatePanel ID="upaBusquedaCliente" runat="server">
             <ContentTemplate>
                 <table width="100%">
                     <tr>
                         <td colspan="2" style="text-align:center">
-                            <asp:Label ID="lblTituloBusCliente" runat="server" Text="Búsqueda de cliente" CssClass="labelTitleModal"></asp:Label>
+                            <h3><asp:Label ID="lblTituloBusCliente" runat="server" Text="Búsqueda de cliente" CssClass="modal-title"></asp:Label></h3>
                         </td>
                     </tr>
                 </table>
                 <br />
                 <center>
                     <table style="width:90%; text-align:center">
-                        <tr>
-                            <td width="90%" valign="middle">
-                                <asp:Label ID="lblBusCliNombre" runat="server" Text="Nombre:" CssClass="inputLabel"></asp:Label>                            
-                                <asp:TextBox ID="txtBusCliNombre" runat="server" Width="60%" CssClass="inputCampo" AutoPostBack="false"></asp:TextBox>
+                        <tr><td>
+                                <asp:Label ID="lblBusCliNombre" runat="server" Text="Nombre:" CssClass="inputLabel"></asp:Label> 
                             </td>
-                            <td width="10%" valign="middle">
-                                <asp:Button ID="btnBuscarBusCliente" runat="server" Text="BUSCAR" CssClass="button" OnClick="btnBuscarBusCliente_Click" />
+                            <td valign="middle">                         
+                                <asp:TextBox ID="txtBusCliNombre" runat="server" Width="" CssClass="form-control" AutoPostBack="false"></asp:TextBox>
+                            </td>
+                            <td valign="middle">
+                                <asp:Button ID="btnBuscarBusCliente" runat="server" Text="BUSCAR" CssClass="btn btn-primary" OnClick="btnBuscarBusCliente_Click" />
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="2">
-                                <fieldset style="text-align:left">
-                                    <legend>
+                            <td colspan="3">
+                                <fieldset><br />
+                                    <h4>
                                         <span>
                                             Resultados...
                                         </span>
-                                    </legend>
-                                        <asp:Panel ID="pnlBusCliente" runat="server" ScrollBars="Auto" Height="150px">
+                                    </h4>
+                                        <asp:Panel ID="pnlBusCliente" runat="server" ScrollBars="Auto" Height="150px" CssClass="form-control">
                                         <asp:GridView ID="gvBusClientes" runat="server" AutoGenerateColumns="false" Width="99%" Font-Size="10px" 
                                                     OnSelectedIndexChanged="gvBusClientes_SelectedIndexChanged"
                                                     PageSize="10" BorderStyle="None" BorderWidth="0px" 
-                                                    HeaderStyle-BackColor="#646464" HeaderStyle-ForeColor="white" AllowSorting="True" DataKeyNames="fi_Id">
+                                                    HeaderStyle-BackColor="#646464" HeaderStyle-ForeColor="white" AllowSorting="True" DataKeyNames="fi_Id" CssClass="table table-hover" style="border:1px solid #efefef;">
                                                 <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
-                                                <HeaderStyle BackColor="#01609F" CssClass="titleHeader" />
+                                                <HeaderStyle BackColor="#448aff" CssClass="titleHeader" />
                                                 <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" CssClass="" />
                                                 <AlternatingRowStyle BackColor="White" />
                                             <Columns>
@@ -838,8 +929,9 @@
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="2">
-                                <asp:Button ID="btnCancelarBusCliente" runat="server" Text=" CANCELAR " CssClass="button" OnClientClick="OcultaBusquedaCliente();" />
+                            <td colspan="3">
+                                <br />
+                                <asp:Button ID="btnCancelarBusCliente" runat="server" Text=" CANCELAR " CssClass="btn btn-primary" OnClientClick="OcultaBusquedaCliente();" />
                             </td>
                         </tr>
                     </table>

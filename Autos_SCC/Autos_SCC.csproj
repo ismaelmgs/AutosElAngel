@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -20,6 +21,11 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -29,6 +35,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -37,6 +44,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -61,40 +69,29 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\AjaxControlToolkit.dll</HintPath>
     </Reference>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <HintPath>..\packages\CrystalDecisions.CrystalReports.13.0.25.3158\lib\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
-    </Reference>
-    <Reference Include="CrystalDecisions.ReportAppServer.ClientDoc, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <HintPath>..\packages\CrystalDecisions.CrystalReports.13.0.25.3158\lib\CrystalDecisions.ReportAppServer.ClientDoc.dll</HintPath>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportAppServer.ClientDoc, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="CrystalDecisions.ReportAppServer.CommLayer, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <HintPath>..\packages\CrystalDecisions.CrystalReports.13.0.25.3158\lib\CrystalDecisions.ReportAppServer.CommLayer.dll</HintPath>
+    <Reference Include="CrystalDecisions.ReportAppServer.CommLayer, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="CrystalDecisions.ReportAppServer.CommonControls, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <HintPath>..\packages\CrystalDecisions.CrystalReports.13.0.25.3158\lib\CrystalDecisions.ReportAppServer.CommonControls.dll</HintPath>
+    <Reference Include="CrystalDecisions.ReportAppServer.CommonControls, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="CrystalDecisions.ReportAppServer.CommonObjectModel, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <HintPath>..\packages\CrystalDecisions.CrystalReports.13.0.25.3158\lib\CrystalDecisions.ReportAppServer.CommonObjectModel.dll</HintPath>
+    <Reference Include="CrystalDecisions.ReportAppServer.CommonObjectModel, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="CrystalDecisions.ReportAppServer.Controllers, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <HintPath>..\packages\CrystalDecisions.CrystalReports.13.0.25.3158\lib\CrystalDecisions.ReportAppServer.Controllers.dll</HintPath>
+    <Reference Include="CrystalDecisions.ReportAppServer.Controllers, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="CrystalDecisions.ReportAppServer.CubeDefModel, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <HintPath>..\packages\CrystalDecisions.CrystalReports.13.0.25.3158\lib\CrystalDecisions.ReportAppServer.CubeDefModel.dll</HintPath>
+    <Reference Include="CrystalDecisions.ReportAppServer.CubeDefModel, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="CrystalDecisions.ReportAppServer.DataDefModel, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <HintPath>..\packages\CrystalDecisions.CrystalReports.13.0.25.3158\lib\CrystalDecisions.ReportAppServer.DataDefModel.dll</HintPath>
+    <Reference Include="CrystalDecisions.ReportAppServer.DataDefModel, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="CrystalDecisions.ReportAppServer.DataSetConversion, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <HintPath>..\packages\CrystalDecisions.CrystalReports.13.0.25.3158\lib\CrystalDecisions.ReportAppServer.DataSetConversion.dll</HintPath>
-    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.DataSetConversion, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportAppServer.ObjectFactory, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <HintPath>..\packages\CrystalDecisions.CrystalReports.13.0.25.3158\lib\CrystalDecisions.ReportAppServer.ObjectFactory.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -103,20 +100,14 @@
       <HintPath>..\packages\CrystalDecisions.CrystalReports.13.0.25.3158\lib\CrystalDecisions.ReportAppServer.Prompting.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="CrystalDecisions.ReportAppServer.ReportDefModel, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <HintPath>..\packages\CrystalDecisions.CrystalReports.13.0.25.3158\lib\CrystalDecisions.ReportAppServer.ReportDefModel.dll</HintPath>
+    <Reference Include="CrystalDecisions.ReportAppServer.ReportDefModel, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="CrystalDecisions.ReportAppServer.XmlSerialize, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <HintPath>..\packages\CrystalDecisions.CrystalReports.13.0.25.3158\lib\CrystalDecisions.ReportAppServer.XmlSerialize.dll</HintPath>
+    <Reference Include="CrystalDecisions.ReportAppServer.XmlSerialize, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <HintPath>..\packages\CrystalDecisions.CrystalReports.13.0.25.3158\lib\CrystalDecisions.ReportSource.dll</HintPath>
-    </Reference>
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <HintPath>..\packages\CrystalDecisions.CrystalReports.13.0.25.3158\lib\CrystalDecisions.Shared.dll</HintPath>
-    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <HintPath>..\packages\CrystalDecisions.Web.1.0.1\lib\CrystalDecisions.Web.dll</HintPath>
       <Private>True</Private>
@@ -157,18 +148,164 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="accordion.html" />
     <Content Include="Account\ChangePassword.aspx" />
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="assets\css\animate.css\css\animate.css" />
+    <Content Include="assets\css\bootstrap\css\bootstrap.min.css" />
+    <Content Include="assets\css\chartist\chartist.css" />
+    <Content Include="assets\css\font-awesome.min.css" />
+    <Content Include="assets\css\ionicons.css" />
+    <Content Include="assets\css\jquery.mCustomScrollbar.css" />
+    <Content Include="assets\css\morris.js\css\morris.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\icon\font-awesome\css\font-awesome.css" />
+    <Content Include="assets\icon\font-awesome\css\font-awesome.min.css" />
+    <Content Include="assets\icon\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\icon\font-awesome\HELP-US-OUT.txt" />
+    <Content Include="assets\icon\font-awesome\scss\font-awesome.css" />
+    <Content Include="assets\icon\icofont\css\icofont.css" />
+    <Content Include="assets\icon\icofont\fonts\icofont.svg" />
+    <Content Include="assets\icon\themify-icons\fonts\themify.svg" />
+    <Content Include="assets\icon\themify-icons\themify-icons.css" />
+    <Content Include="assets\images\auth\logo-dark.png" />
+    <Content Include="assets\images\auth\Logo-small-bottom.png" />
+    <Content Include="assets\images\auth\logo.png" />
+    <Content Include="assets\images\avatar-1.jpg" />
+    <Content Include="assets\images\avatar-2.jpg" />
+    <Content Include="assets\images\avatar-3.jpg" />
+    <Content Include="assets\images\avatar-4.jpg" />
+    <Content Include="assets\images\avatar-5.jpg" />
+    <Content Include="assets\images\avatar-blank.jpg" />
+    <Content Include="assets\images\blog\blog-130.png" />
+    <Content Include="assets\images\blog\blog-r-1.jpg" />
+    <Content Include="assets\images\blog\blog-r-2.jpg" />
+    <Content Include="assets\images\blog\blog-r-3.jpg" />
+    <Content Include="assets\images\blog\blog-single-1.jpg" />
+    <Content Include="assets\images\blog\blog-single.jpg" />
+    <Content Include="assets\images\blog\blog-small-bg-1.png" />
+    <Content Include="assets\images\blog\st_gallery1.jpg" />
+    <Content Include="assets\images\blog\st_gallery2.jpg" />
+    <Content Include="assets\images\blog\st_gallery3.jpg" />
+    <Content Include="assets\images\breadcrumb-bg.jpg" />
+    <Content Include="assets\images\browser\chrome.png" />
+    <Content Include="assets\images\browser\firefox.png" />
+    <Content Include="assets\images\browser\ie.png" />
+    <Content Include="assets\images\browser\opera.png" />
+    <Content Include="assets\images\browser\safari.png" />
+    <Content Include="assets\images\details_close.png" />
+    <Content Include="assets\images\details_open.png" />
+    <Content Include="assets\images\faq_man.png" />
+    <Content Include="assets\images\favicon.ico" />
+    <Content Include="assets\images\logo-blue.png" />
+    <Content Include="assets\images\logo-compact.png" />
+    <Content Include="assets\images\logo.png" />
+    <Content Include="assets\images\mCSB_buttons.png" />
+    <Content Include="assets\images\mega-menu\01.jpg" />
+    <Content Include="assets\images\mega-menu\02.jpg" />
+    <Content Include="assets\images\mega-menu\03.jpg" />
+    <Content Include="assets\images\select-arrow.png" />
+    <Content Include="assets\images\tooltip\Euclid.png" />
+    <Content Include="assets\images\tooltip\shape1.svg" />
+    <Content Include="assets\images\tooltip\tooltip1.svg" />
+    <Content Include="assets\images\user-bg.jpg" />
+    <Content Include="assets\images\widget\AUSTRALIA.jpg" />
+    <Content Include="assets\images\widget\BRAZIL.jpg" />
+    <Content Include="assets\images\widget\DIGITALPEN.jpg" />
+    <Content Include="assets\images\widget\GERMANY.jpg" />
+    <Content Include="assets\images\widget\IPAD.jpg" />
+    <Content Include="assets\images\widget\PHONE1.jpg" />
+    <Content Include="assets\images\widget\PHONE2.jpg" />
+    <Content Include="assets\images\widget\PHONE3.jpg" />
+    <Content Include="assets\images\widget\PHONE4.jpg" />
+    <Content Include="assets\images\widget\prod1.jpg" />
+    <Content Include="assets\images\widget\prod2.jpg" />
+    <Content Include="assets\images\widget\prod3.jpg" />
+    <Content Include="assets\images\widget\prod4.jpg" />
+    <Content Include="assets\images\widget\TABLET.jpg" />
+    <Content Include="assets\images\widget\UK.jpg" />
+    <Content Include="assets\images\widget\USA.jpg" />
+    <Content Include="assets\images\widget\wather2bottom.png" />
+    <Content Include="assets\images\widget\wather2m.png" />
+    <Content Include="assets\images\widget\wather2star1.png" />
+    <Content Include="assets\images\widget\wather2star2.png" />
+    <Content Include="assets\images\widget\watherbottom.png" />
+    <Content Include="assets\images\widget\wathernature.png" />
+    <Content Include="assets\images\widget\watherstar1.png" />
+    <Content Include="assets\images\widget\watherstar2.png" />
+    <Content Include="assets\js\bootstrap-growl.min.js" />
+    <Content Include="assets\js\bootstrap\js\bootstrap.min.js" />
+    <Content Include="assets\js\chart.js\Chart.js" />
+    <Content Include="assets\js\common-pages.js" />
+    <Content Include="assets\js\jquery-slimscroll\jquery.slimscroll.js" />
+    <Content Include="assets\js\jquery-ui\jquery-ui.min.js" />
+    <Content Include="assets\js\jquery.mCustomScrollbar.concat.min.js" />
+    <Content Include="assets\js\jquery.mousewheel.min.js" />
+    <Content Include="assets\js\jquery\jquery.min.js" />
+    <Content Include="assets\js\modernizr\css-scrollbars.js" />
+    <Content Include="assets\js\modernizr\modernizr.js" />
+    <Content Include="assets\js\morris-custom-chart.js" />
+    <Content Include="assets\js\morris.js\morris.js" />
+    <Content Include="assets\js\pcoded.min.js" />
+    <Content Include="assets\js\popper.js\popper.min.js" />
+    <Content Include="assets\js\raphael\raphael.min.js" />
+    <Content Include="assets\js\script.js" />
+    <Content Include="assets\js\script.min.js" />
+    <Content Include="assets\js\SmoothScroll.js" />
+    <Content Include="assets\js\vertical-layout.min.js" />
+    <Content Include="assets\pages\accordion\accordion.js" />
+    <Content Include="assets\pages\accordion\accordion.min.js" />
+    <Content Include="assets\pages\dashboard\amchart\css\amchart.css" />
+    <Content Include="assets\pages\dashboard\amchart\css\export.css" />
+    <Content Include="assets\pages\dashboard\amchart\js\amcharts.js" />
+    <Content Include="assets\pages\dashboard\amchart\js\custom-amchart.js" />
+    <Content Include="assets\pages\dashboard\amchart\js\export.min.js" />
+    <Content Include="assets\pages\dashboard\amchart\js\images\dragIconRoundBig.svg" />
+    <Content Include="assets\pages\dashboard\amchart\js\images\dragIconRoundBigH.svg" />
+    <Content Include="assets\pages\dashboard\amchart\js\light.js" />
+    <Content Include="assets\pages\dashboard\amchart\js\serial.js" />
+    <Content Include="assets\pages\dashboard\custom-dashboard.js" />
+    <Content Include="assets\pages\google-maps\gmaps.js" />
+    <Content Include="assets\pages\google-maps\google-maps.js" />
+    <Content Include="assets\pages\icon-modal.js" />
+    <Content Include="assets\pages\notification\notification.css" />
+    <Content Include="assets\pages\notification\notification.js" />
+    <Content Include="assets\pages\todo\todo.js" />
+    <Content Include="assets\pages\waves\css\waves.min.css" />
+    <Content Include="assets\pages\waves\js\waves.min.js" />
+    <Content Include="assets\pages\widget\amchart\amcharts.js" />
+    <Content Include="assets\pages\widget\amchart\amcharts.min.js" />
+    <Content Include="assets\pages\widget\amchart\export.min.js" />
+    <Content Include="assets\pages\widget\amchart\gauge.js" />
+    <Content Include="assets\pages\widget\amchart\gauge.min.js" />
+    <Content Include="assets\pages\widget\amchart\light.js" />
+    <Content Include="assets\pages\widget\amchart\light.min.js" />
+    <Content Include="assets\pages\widget\amchart\pie.js" />
+    <Content Include="assets\pages\widget\amchart\pie.min.js" />
+    <Content Include="assets\pages\widget\amchart\serial.js" />
+    <Content Include="assets\pages\widget\amchart\serial.min.js" />
+    <Content Include="assets\pages\widget\excanvas.js" />
+    <Content Include="auth-normal-sign-in.html" />
+    <Content Include="auth-sign-up.html" />
+    <Content Include="breadcrumb.html" />
+    <Content Include="bs-basic-table.html" />
+    <Content Include="button.html" />
+    <Content Include="chart.html" />
+    <Content Include="color.html" />
     <Content Include="fonts\FuturaLight.svg" />
+    <Content Include="form-elements-component.html" />
     <Content Include="frmLogin.aspx" />
+    <Content Include="icon-themify.html" />
     <Content Include="Images\Ajax\loading2.gif" />
+    <Content Include="Images\avatar-4.jpg" />
     <Content Include="Images\bg_menu_gris.jpg" />
     <Content Include="Images\bg_principaltop.jpg" />
     <Content Include="Images\bg_prinder.jpg" />
     <Content Include="Images\bg_prinizq.jpg" />
     <Content Include="Images\bg_top2.jpg" />
+    <Content Include="Images\bkg_login.jpg" />
     <Content Include="Images\Botones\botn_editar.GIF" />
     <Content Include="Images\Botones\botn_elim.gif" />
     <Content Include="Images\Botones\botn_exportar_excel.gif" />
@@ -225,11 +362,19 @@
     <Content Include="Images\Mostrar.ico" />
     <Content Include="Images\Ocultar.ico" />
     <Content Include="Images\top_sup.jpg" />
+    <Content Include="Images\www.png" />
+    <Content Include="index.html" />
+    <Content Include="index2.html" />
     <Content Include="jquery\jquery-1.8.3.js" />
     <Content Include="jquery\jquery-ui-1.9.2.custom.min.css" />
     <Content Include="jquery\jquery-ui-1.9.2.custom.min.js" />
     <Content Include="Js\jsUpdateProgress.js" />
+    <Content Include="label-badge.html" />
+    <Content Include="map-google.html" />
+    <Content Include="notification.html" />
     <Content Include="pagvacia.htm" />
+    <Content Include="progress-bar.html" />
+    <Content Include="sample-page.html" />
     <Content Include="Styles\AUTOMaster.css" />
     <Content Include="Styles\AutosFlotilla.css" />
     <Content Include="Styles\Bootstrap\css\bootstrap-responsive.css" />
@@ -251,6 +396,12 @@
     <Content Include="Styles\overlayPro.css" />
     <Content Include="Styles\Site.css" />
     <Content Include="Styles\styles_login.css" />
+    <Content Include="tabs.html" />
+    <Content Include="tooltip.html" />
+    <Content Include="typography.html" />
+    <Content Include="Images\Banner_1.jpg" />
+    <Content Include="Images\Banner_2.jpg" />
+    <Content Include="Images\Banner_3.jpg" />
     <Content Include="Views\Cobranza\frmCobranza.aspx" />
     <Content Include="Views\Default.aspx" />
     <Content Include="Global.asax" />
@@ -263,6 +414,7 @@
     <Content Include="Views\Catalogos\frmVersiones.aspx" />
     <Content Include="Views\Catalogos\frmTipoAuto.aspx" />
     <Content Include="Views\ControlesUsuario\ucModalConfirm.ascx" />
+    <Content Include="Views\frmPolitica.aspx" />
     <Content Include="Views\FuncionalidadAnexa\frmMonitor.aspx" />
     <Content Include="Views\FuncionalidadAnexa\ucModMensaje.ascx" />
     <Content Include="Views\Header.aspx" />
@@ -476,6 +628,13 @@
     <Compile Include="Views\ControlesUsuario\ucModalConfirm.ascx.designer.cs">
       <DependentUpon>ucModalConfirm.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Views\frmPolitica.aspx.cs">
+      <DependentUpon>frmPolitica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\frmPolitica.aspx.designer.cs">
+      <DependentUpon>frmPolitica.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\FuncionalidadAnexa\frmMonitor.aspx.cs">
       <DependentUpon>frmMonitor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -569,6 +728,46 @@
     <Content Include="Site.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\icon\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\icon\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\icon\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\icon\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="assets\icon\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="assets\icon\font-awesome\less\animated.less" />
+    <Content Include="assets\icon\font-awesome\less\bordered-pulled.less" />
+    <Content Include="assets\icon\font-awesome\less\core.less" />
+    <Content Include="assets\icon\font-awesome\less\fixed-width.less" />
+    <Content Include="assets\icon\font-awesome\less\font-awesome.less" />
+    <Content Include="assets\icon\font-awesome\less\icons.less" />
+    <Content Include="assets\icon\font-awesome\less\larger.less" />
+    <Content Include="assets\icon\font-awesome\less\list.less" />
+    <Content Include="assets\icon\font-awesome\less\mixins.less" />
+    <Content Include="assets\icon\font-awesome\less\path.less" />
+    <Content Include="assets\icon\font-awesome\less\rotated-flipped.less" />
+    <Content Include="assets\icon\font-awesome\less\screen-reader.less" />
+    <Content Include="assets\icon\font-awesome\less\stacked.less" />
+    <Content Include="assets\icon\font-awesome\less\variables.less" />
+    <Content Include="assets\icon\font-awesome\scss\font-awesome.css.map" />
+    <Content Include="assets\icon\font-awesome\scss\font-awesome.scss" />
+    <Content Include="assets\icon\font-awesome\scss\_animated.scss" />
+    <Content Include="assets\icon\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="assets\icon\font-awesome\scss\_core.scss" />
+    <Content Include="assets\icon\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="assets\icon\font-awesome\scss\_icons.scss" />
+    <Content Include="assets\icon\font-awesome\scss\_larger.scss" />
+    <Content Include="assets\icon\font-awesome\scss\_list.scss" />
+    <Content Include="assets\icon\font-awesome\scss\_mixins.scss" />
+    <Content Include="assets\icon\font-awesome\scss\_path.scss" />
+    <Content Include="assets\icon\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="assets\icon\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="assets\icon\font-awesome\scss\_stacked.scss" />
+    <Content Include="assets\icon\font-awesome\scss\_variables.scss" />
+    <Content Include="assets\icon\icofont\fonts\icofont.eot" />
+    <Content Include="assets\icon\icofont\fonts\icofont.ttf" />
+    <Content Include="assets\icon\icofont\fonts\icofont.woff" />
+    <Content Include="assets\icon\themify-icons\fonts\themify.eot" />
+    <Content Include="assets\icon\themify-icons\fonts\themify.ttf" />
+    <Content Include="assets\icon\themify-icons\fonts\themify.woff" />
     <None Include="DomainModel\AAPDataContext.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>AAPDataContext.designer.cs</LastGenOutput>
@@ -609,8 +808,13 @@
       <LastGenOutput>InfPagares.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
