@@ -32,3 +32,23 @@ E:\Autos El Angel\AngelDefinitivo\Autos_SCC\bin\SAPBusinessObjects.WPF.ViewerSha
 E:\Autos El Angel\AngelDefinitivo\Autos_SCC\bin\FlashControlV71.dll
 E:\Autos El Angel\AngelDefinitivo\Autos_SCC\bin\ShockwaveFlashObjects.dll
 E:\Autos El Angel\AngelDefinitivo\Autos_SCC\bin\log4net.xml
+C:\wamp\www\Proyectos_ASP\autos\AutosElAngel\Autos_SCC\bin\Autos_SCC.dll.config
+C:\wamp\www\Proyectos_ASP\autos\AutosElAngel\Autos_SCC\bin\Autos_SCC.dll
+C:\wamp\www\Proyectos_ASP\autos\AutosElAngel\Autos_SCC\bin\Autos_SCC.pdb
+C:\wamp\www\Proyectos_ASP\autos\AutosElAngel\Autos_SCC\bin\CrystalDecisions.CrystalReports.Engine.dll
+C:\wamp\www\Proyectos_ASP\autos\AutosElAngel\Autos_SCC\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\wamp\www\Proyectos_ASP\autos\AutosElAngel\Autos_SCC\bin\CrystalDecisions.ReportSource.dll
+C:\wamp\www\Proyectos_ASP\autos\AutosElAngel\Autos_SCC\bin\CrystalDecisions.Shared.dll
+C:\wamp\www\Proyectos_ASP\autos\AutosElAngel\Autos_SCC\bin\CrystalDecisions.Web.dll
+C:\wamp\www\Proyectos_ASP\autos\AutosElAngel\Autos_SCC\bin\log4net.dll
+C:\wamp\www\Proyectos_ASP\autos\AutosElAngel\Autos_SCC\bin\SAPBusinessObjects.WPF.Viewer.dll
+C:\wamp\www\Proyectos_ASP\autos\AutosElAngel\Autos_SCC\bin\SAPBusinessObjects.WPF.ViewerShared.dll
+C:\wamp\www\Proyectos_ASP\autos\AutosElAngel\Autos_SCC\bin\FlashControlV71.dll
+C:\wamp\www\Proyectos_ASP\autos\AutosElAngel\Autos_SCC\bin\ShockwaveFlashObjects.dll
+C:\wamp\www\Proyectos_ASP\autos\AutosElAngel\Autos_SCC\bin\stdole.dll
+C:\wamp\www\Proyectos_ASP\autos\AutosElAngel\Autos_SCC\bin\log4net.xml
+C:\wamp\www\Proyectos_ASP\autos\AutosElAngel\Autos_SCC\obj\Debug\Autos_SCC.csproj.AssemblyReference.cache
+C:\wamp\www\Proyectos_ASP\autos\AutosElAngel\Autos_SCC\obj\Debug\Autos_SCC.csproj.CoreCompileInputs.cache
+C:\wamp\www\Proyectos_ASP\autos\AutosElAngel\Autos_SCC\obj\Debug\Autos_SCC.csproj.CopyComplete
+C:\wamp\www\Proyectos_ASP\autos\AutosElAngel\Autos_SCC\obj\Debug\Autos_SCC.dll
+C:\wamp\www\Proyectos_ASP\autos\AutosElAngel\Autos_SCC\obj\Debug\Autos_SCC.pdb

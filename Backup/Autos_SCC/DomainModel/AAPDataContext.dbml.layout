@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="AAPDataContext">
+  <DataContextMoniker Name="/AAPDataContextDataContext" />
+  <nestedChildShapes>
+    <classShape Id="5651fada-a3fb-4d45-a8ea-0db13bf0cf5c" absoluteBounds="0.5, 0.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/AAPDataContextDataContext/tbc_MarcaAuto" />
+      <nestedChildShapes>
+        <elementListCompartment Id="39c67281-df00-42cc-a4f5-9ccc54b0ce35" absoluteBounds="0.51499999999999968, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3bc86338-1f0c-4807-9283-f61636d8b232" absoluteBounds="0.5, 2.625, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/AAPDataContextDataContext/tbc_Sucursales" />
+      <nestedChildShapes>
+        <elementListCompartment Id="19fe4633-1e55-4ca4-8d84-2663796c3b74" absoluteBounds="0.515, 3.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3cc43440-c2dc-4497-af4d-05629bac96d9" absoluteBounds="2.75, 2.625, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/AAPDataContextDataContext/tbc_StatusAuto" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9e1b0ead-285c-4f5d-9b34-8493e9556bfb" absoluteBounds="2.765, 3.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="08e0f4c7-5b5c-48b9-84e9-43463c2d0019" absoluteBounds="2.75, 0.5, 2, 1.9631982421875">
+      <DataClassMoniker Name="/AAPDataContextDataContext/tbc_Version" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ec071fbf-e841-4e17-bbf7-eaf5e98ad493" absoluteBounds="2.765, 0.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="09f64629-17af-4f51-944b-8651edb37921" absoluteBounds="5, 0.5, 2, 1.9631982421875">
+      <DataClassMoniker Name="/AAPDataContextDataContext/tbc_TipoAuto" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c972ea80-2d6d-4404-b6d4-d1f9fd348853" absoluteBounds="5.015, 0.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1cf70d0b-66e7-4b2a-9b29-52f6cae52360" absoluteBounds="5, 2.625, 2, 1.9631982421875">
+      <DataClassMoniker Name="/AAPDataContextDataContext/tbr_GastosAuto" />
+      <nestedChildShapes>
+        <elementListCompartment Id="eb07ff3a-45cc-4dd5-9797-df905117ec44" absoluteBounds="5.015, 3.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e0e50fc0-c51d-46b0-ac3c-2f8f273074e1" absoluteBounds="5, 4.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/AAPDataContextDataContext/tbc_Plazo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5f34016e-a6a1-4af2-9a68-4d51431fdea5" absoluteBounds="5.015, 5.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

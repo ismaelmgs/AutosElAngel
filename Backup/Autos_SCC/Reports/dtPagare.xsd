@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dtPagare" targetNamespace="http://tempuri.org/dtPagare.xsd" xmlns:mstns="http://tempuri.org/dtPagare.xsd" xmlns="http://tempuri.org/dtPagare.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dtPagare" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dtPagare" msprop:Generator_UserDSName="dtPagare">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Pagare" msprop:Generator_TableClassName="PagareDataTable" msprop:Generator_TableVarName="tablePagare" msprop:Generator_TablePropName="Pagare" msprop:Generator_RowDeletingName="PagareRowDeleting" msprop:Generator_RowChangingName="PagareRowChanging" msprop:Generator_RowEvHandlerName="PagareRowChangeEventHandler" msprop:Generator_RowDeletedName="PagareRowDeleted" msprop:Generator_UserTableName="Pagare" msprop:Generator_RowChangedName="PagareRowChanged" msprop:Generator_RowEvArgName="PagareRowChangeEvent" msprop:Generator_RowClassName="PagareRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="iCotizacion" msprop:Generator_ColumnVarNameInTable="columniCotizacion" msprop:Generator_ColumnPropNameInRow="iCotizacion" msprop:Generator_ColumnPropNameInTable="iCotizacionColumn" msprop:Generator_UserColumnName="iCotizacion" type="xs:string" minOccurs="0" />
+              <xs:element name="iNoPago" msprop:Generator_ColumnVarNameInTable="columniNoPago" msprop:Generator_ColumnPropNameInRow="iNoPago" msprop:Generator_ColumnPropNameInTable="iNoPagoColumn" msprop:Generator_UserColumnName="iNoPago" type="xs:string" minOccurs="0" />
+              <xs:element name="dMonto" msprop:Generator_ColumnVarNameInTable="columndMonto" msprop:Generator_ColumnPropNameInRow="dMonto" msprop:Generator_ColumnPropNameInTable="dMontoColumn" msprop:Generator_UserColumnName="dMonto" type="xs:string" minOccurs="0" />
+              <xs:element name="dtFecha" msprop:Generator_ColumnVarNameInTable="columndtFecha" msprop:Generator_ColumnPropNameInRow="dtFecha" msprop:Generator_ColumnPropNameInTable="dtFechaColumn" msprop:Generator_UserColumnName="dtFecha" type="xs:string" minOccurs="0" />
+              <xs:element name="sAcreedor" msprop:Generator_ColumnVarNameInTable="columnsAcreedor" msprop:Generator_ColumnPropNameInRow="sAcreedor" msprop:Generator_ColumnPropNameInTable="sAcreedorColumn" msprop:Generator_UserColumnName="sAcreedor" type="xs:string" minOccurs="0" />
+              <xs:element name="sDireccion" msprop:Generator_ColumnVarNameInTable="columnsDireccion" msprop:Generator_ColumnPropNameInRow="sDireccion" msprop:Generator_ColumnPropNameInTable="sDireccionColumn" msprop:Generator_UserColumnName="sDireccion" type="xs:string" minOccurs="0" />
+              <xs:element name="sTelefono" msprop:Generator_ColumnVarNameInTable="columnsTelefono" msprop:Generator_ColumnPropNameInRow="sTelefono" msprop:Generator_ColumnPropNameInTable="sTelefonoColumn" msprop:Generator_UserColumnName="sTelefono" type="xs:string" minOccurs="0" />
+              <xs:element name="fc_NombreCliente" msprop:Generator_ColumnVarNameInTable="columnfc_NombreCliente" msprop:Generator_ColumnPropNameInRow="fc_NombreCliente" msprop:Generator_ColumnPropNameInTable="fc_NombreClienteColumn" msprop:Generator_UserColumnName="fc_NombreCliente" type="xs:string" minOccurs="0" />
+              <xs:element name="fc_NombreAval" msprop:Generator_ColumnVarNameInTable="columnfc_NombreAval" msprop:Generator_ColumnPropNameInRow="fc_NombreAval" msprop:Generator_ColumnPropNameInTable="fc_NombreAvalColumn" msprop:Generator_UserColumnName="fc_NombreAval" type="xs:string" minOccurs="0" />
+              <xs:element name="fc_DirCliente" msprop:Generator_ColumnVarNameInTable="columnfc_DirCliente" msprop:Generator_ColumnPropNameInRow="fc_DirCliente" msprop:Generator_ColumnPropNameInTable="fc_DirClienteColumn" msprop:Generator_UserColumnName="fc_DirCliente" type="xs:string" minOccurs="0" />
+              <xs:element name="fc_DirAval" msprop:Generator_ColumnVarNameInTable="columnfc_DirAval" msprop:Generator_ColumnPropNameInRow="fc_DirAval" msprop:Generator_ColumnPropNameInTable="fc_DirAvalColumn" msprop:Generator_UserColumnName="fc_DirAval" type="xs:string" minOccurs="0" />
+              <xs:element name="fc_IdentificacionCli" msprop:Generator_ColumnVarNameInTable="columnfc_IdentificacionCli" msprop:Generator_ColumnPropNameInRow="fc_IdentificacionCli" msprop:Generator_ColumnPropNameInTable="fc_IdentificacionCliColumn" msprop:Generator_UserColumnName="fc_IdentificacionCli" type="xs:string" minOccurs="0" />
+              <xs:element name="fc_IdentificacionAva" msprop:Generator_ColumnVarNameInTable="columnfc_IdentificacionAva" msprop:Generator_ColumnPropNameInRow="fc_IdentificacionAva" msprop:Generator_ColumnPropNameInTable="fc_IdentificacionAvaColumn" msprop:Generator_UserColumnName="fc_IdentificacionAva" type="xs:string" minOccurs="0" />
+              <xs:element name="NoIdentificacionCli" msprop:Generator_ColumnVarNameInTable="columnNoIdentificacionCli" msprop:Generator_ColumnPropNameInRow="NoIdentificacionCli" msprop:Generator_ColumnPropNameInTable="NoIdentificacionCliColumn" msprop:Generator_UserColumnName="NoIdentificacionCli" type="xs:string" minOccurs="0" />
+              <xs:element name="NoIdentificacionAva" msprop:Generator_ColumnVarNameInTable="columnNoIdentificacionAva" msprop:Generator_ColumnPropNameInRow="NoIdentificacionAva" msprop:Generator_ColumnPropNameInTable="NoIdentificacionAvaColumn" msprop:Generator_UserColumnName="NoIdentificacionAva" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

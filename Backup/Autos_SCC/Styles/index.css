@@ -1,0 +1,47 @@
+﻿*  
+{
+    margin:0;
+	padding:0;
+}
+/*body  
+{
+    background-color:#e8e8e8;
+}*/
+div#menu { margin:5px auto; }
+
+div#copyright 
+{
+	font:1px 'Trebuchet MS';
+	color:#ffffff;
+	text-indent:0px;
+	padding:0 0 0 0;
+}
+	
+div#copyright a { color:#ffffff; }
+div#copyright a:hover { color:#ffffff; }
+
+#divEncabezado
+{
+	position:relative;
+	margin:0 auto 0 auto;
+	width:1000px;
+	height:auto;
+	/*background-color:#E51837;*/
+}
+
+#divContenido
+{
+    position:relative;
+	margin:0 auto 0 auto;
+	width:1000px;
+	height:auto;
+}
+
+#divFooter
+{
+    position:relative;
+	margin:0 auto 0 auto;
+	width:1000px;
+	height:auto;
+}
+

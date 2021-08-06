@@ -112,7 +112,7 @@ b, strong {
 
 /*====== Ready to use Css End ======*/
 .card {
-  border-radius: 10px;
+  border-radius: 5px;
   -webkit-box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
           box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
   border: none;
@@ -5184,8 +5184,11 @@ select.form-control:not([size]):not([multiple]) {
   font-size: 12px;
   line-height: 1;
   margin-bottom: 0;
-  text-transform: capitalize; }
-
+  text-transform: capitalize;
+}
+label {
+    margin-bottom: 0px !important;
+}
 .label-primary {
   background: #448aff; }
 
@@ -6293,7 +6296,7 @@ table tbody .border-bottom-info td {
   position: relative; }
 
 .pcoded-inner-content {
-  padding: 10px;
+  padding: 4px;
 }
 
 .pcoded .pcoded-navbar .pcoded-item {
@@ -8545,7 +8548,7 @@ body.menu-bottom #collapse-menu {
   border-radius: 10px !important;
   text-transform: capitalize;
   font-size: 15px;
-  padding: 10px 19px;
+  /*padding: 10px 19px;*/
   cursor: pointer; }
   @media only screen and (max-width: 480px) {
     .btn {
@@ -9229,9 +9232,11 @@ body.menu-bottom #collapse-menu {
     outline: none; }
 
 .form-control {
-  font-size: 14px;
-  border-radius: 10px;
-  border: 1px solid #cccccc; }
+    font-size: 14px;
+    /*border-radius: 10px;*/
+    /*border: 1px solid #cccccc;*/
+    margin: 2px;
+}
   .form-control:focus {
     border: 1px solid #448aff; }
   .form-control.form-control-normal {
@@ -11532,6 +11537,9 @@ table.footable-paging-center > tfoot > tr.footable-paging > td {
   #checkbox-select tr td.select-checkbox:before, #checkbox-select tr td.select-checkbox:after, #checkbox-select tr th.select-checkbox:before, #checkbox-select tr th.select-checkbox:after {
     left: 15px; }
 /*RLR*/
+.table {
+    border: 1px solid #efefef !important;
+}
 .table td, .table th {
     border-top: 0px solid #e9ecef;
 }
@@ -11541,7 +11549,7 @@ table.footable-paging-center > tfoot > tr.footable-paging > td {
 }
 
 .table td, .table th {
-    /*RLR*/ padding: 0.1rem 0.1rem;
+    /*RLR*/ padding: 4px;
     /* padding: 1px;*/
 }
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
@@ -11561,8 +11569,9 @@ table.invoice-table td, table.invoice-table th {
   padding: 3px 0; }
 
 th {
-  font-weight: 500;
-  text-align:center;
+    font-weight: 500;
+    text-align: center;
+    background-color: #0098c9;
 }
 
 .per-task-card .card-block {

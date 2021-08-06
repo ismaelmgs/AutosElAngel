@@ -4,10 +4,14 @@
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
-    <h2>
-        Acerca de
-    </h2>
-    <p>
-        Coloque contenido aquí.
-    </p>
+    <div class="card">
+                <div class="card-block" style="text-align:center;">
+                    <h3>Acerca de</h3>
+                </div>
+            </div>
+    <div class="card" style="min-height:50vh;">
+        <p>
+            Coloque contenido aquí.
+        </p>
+    </div>
 </asp:Content>
