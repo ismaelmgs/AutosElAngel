@@ -7,7 +7,7 @@
 </ajax:ModalPopupExtender>
 
 <asp:Panel ID="pnlPopup" runat="server" BackColor="" Style="display: none; background-color:#00000073; width:100%; height:100%;" DefaultButton="btnOk">
-    <div class="card" style=" background-color:#eeeeee; border-radius:20px; padding:10px; width:40%; margin:0 auto; margin-top:10%;">
+    <div class="card" style=" background-color:#e4e4e4; border-radius:20px; padding:10px; width:40%; margin:0 auto; margin-top:10%;">
         <table width="100%">
             <tr class="topHandle">
                 <td colspan="2" align="center" runat="server" id="tdCaption" style="background-color:#01609F">
