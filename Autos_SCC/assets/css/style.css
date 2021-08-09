@@ -1,6 +1,6 @@
 body {
   background-color: #ffffff !important;
-  font-size: 0.875em;
+  font-size: 12px;
   overflow-x: hidden;
   color: #455a64;
   font-family: "Roboto", sans-serif;
@@ -117,7 +117,7 @@ b, strong {
           box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
   border: none;
   margin: 10px;
-  padding: 10px;
+  padding: 15px;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out; }
   .card .card-footer {
@@ -307,11 +307,13 @@ b, strong {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg); } }
 .page-header {
-  background-image: url("../images/breadcrumb-bg.jpg");
-  background-size: cover;
-  position: relative;
-  border-radius: 0;
-  color: #fff; }
+    background-image: url("../images/breadcrumb-bg.jpg");
+    background-size: cover;
+    position: relative;
+    border-radius: 0;
+    color: #fff;
+    height: 90px;
+}
   .page-header:before {
     content: "";
     background-color: rgba(0, 0, 0, 0.5);
@@ -321,7 +323,7 @@ b, strong {
     top: 0;
     left: 0; }
   .page-header .page-block {
-    padding: 35px 40px; }
+    padding: 20px 40px; }
     .page-header .page-block .breadcrumb-title {
       float: right; }
       .page-header .page-block .breadcrumb-title a {
@@ -5975,7 +5977,7 @@ table tbody .border-bottom-info td {
     .main-menu {
       height: 100% !important; } }
 .main-menu .main-menu-header {
-    padding: 24px 24px 27px 24px;
+    padding: 10px 24px 10px 24px;
     background-image: url("../images/user-bg.jpg");
     background-size: cover;
     text-align: center;
@@ -9232,7 +9234,7 @@ body.menu-bottom #collapse-menu {
     outline: none; }
 
 .form-control {
-    font-size: 14px;
+    font-size: 12px;
     /*border-radius: 10px;*/
     /*border: 1px solid #cccccc;*/
     margin: 2px;
@@ -16469,4 +16471,10 @@ body.dark {
 /* RLR */
 [class^="ti-"], [class*=" ti-"] {
     color: #1c3662 !important;
+}
+.ui-widget-overlay {
+    display:none !important;
+}
+.inputLabel {
+    font-size:12px;
 }

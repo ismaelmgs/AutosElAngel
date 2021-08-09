@@ -882,8 +882,9 @@
                 </table>
                 <br />
                 <center>
-                    <table style="width:90%; text-align:center">
-                        <tr><td>
+                    <table style="width:100%; text-align:center">
+                        <tr>
+                            <td>
                                 <asp:Label ID="lblBusCliNombre" runat="server" Text="Nombre:" CssClass="inputLabel"></asp:Label> 
                             </td>
                             <td valign="middle">                         

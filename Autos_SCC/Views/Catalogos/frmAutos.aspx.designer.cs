@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Autos_SCC.Views.Catalogos {
-    
-    
-    public partial class frmAutos {
-        
+namespace Autos_SCC.Views.Catalogos
+{
+
+
+    public partial class frmAutos
+    {
+
         /// <summary>
         /// Control upaTab.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel upaTab;
-        
+
         /// <summary>
         /// Control lblTitulo.
         /// </summary>
@@ -29,25 +31,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTitulo;
-        
-        /// <summary>
-        /// Control TabContainer1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::AjaxControlToolkit.TabContainer TabContainer1;
-        
-        /// <summary>
-        /// Control TabPanel1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::AjaxControlToolkit.TabPanel TabPanel1;
-        
+
         /// <summary>
         /// Control lblId.
         /// </summary>
@@ -56,7 +40,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblId;
-        
+
         /// <summary>
         /// Control txtId.
         /// </summary>
@@ -65,7 +49,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtId;
-        
+
         /// <summary>
         /// Control lblMarca.
         /// </summary>
@@ -74,7 +58,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMarca;
-        
+
         /// <summary>
         /// Control ddlMarca.
         /// </summary>
@@ -83,7 +67,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlMarca;
-        
+
         /// <summary>
         /// Control lblTipoAuto.
         /// </summary>
@@ -92,7 +76,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTipoAuto;
-        
+
         /// <summary>
         /// Control ddlTipoAuto.
         /// </summary>
@@ -101,7 +85,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlTipoAuto;
-        
+
         /// <summary>
         /// Control lblVersion.
         /// </summary>
@@ -110,7 +94,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblVersion;
-        
+
         /// <summary>
         /// Control ddlVersion.
         /// </summary>
@@ -119,7 +103,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlVersion;
-        
+
         /// <summary>
         /// Control lblPlaca.
         /// </summary>
@@ -128,7 +112,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPlaca;
-        
+
         /// <summary>
         /// Control txtPlaca.
         /// </summary>
@@ -137,7 +121,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPlaca;
-        
+
         /// <summary>
         /// Control lblNoSerie.
         /// </summary>
@@ -146,7 +130,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblNoSerie;
-        
+
         /// <summary>
         /// Control txtNoSerie.
         /// </summary>
@@ -155,7 +139,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNoSerie;
-        
+
         /// <summary>
         /// Control lblModelo.
         /// </summary>
@@ -164,7 +148,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblModelo;
-        
+
         /// <summary>
         /// Control txtModelo.
         /// </summary>
@@ -173,7 +157,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtModelo;
-        
+
         /// <summary>
         /// Control ftbModelo.
         /// </summary>
@@ -182,7 +166,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AjaxControlToolkit.FilteredTextBoxExtender ftbModelo;
-        
+
         /// <summary>
         /// Control lblColor.
         /// </summary>
@@ -191,7 +175,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblColor;
-        
+
         /// <summary>
         /// Control txtColor.
         /// </summary>
@@ -200,7 +184,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtColor;
-        
+
         /// <summary>
         /// Control lblSucursal.
         /// </summary>
@@ -209,7 +193,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSucursal;
-        
+
         /// <summary>
         /// Control ddlSucursal.
         /// </summary>
@@ -218,7 +202,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlSucursal;
-        
+
         /// <summary>
         /// Control lblEstatus.
         /// </summary>
@@ -227,7 +211,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblEstatus;
-        
+
         /// <summary>
         /// Control ddlEstatus.
         /// </summary>
@@ -236,7 +220,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlEstatus;
-        
+
         /// <summary>
         /// Control lblPrecio.
         /// </summary>
@@ -245,7 +229,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPrecio;
-        
+
         /// <summary>
         /// Control txtPrecio.
         /// </summary>
@@ -254,16 +238,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPrecio;
-        
-        /// <summary>
-        /// Control TabPanel2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::AjaxControlToolkit.TabPanel TabPanel2;
-        
+
         /// <summary>
         /// Control lblBusqueda.
         /// </summary>
@@ -272,7 +247,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblBusqueda;
-        
+
         /// <summary>
         /// Control txtBuqueda.
         /// </summary>
@@ -281,7 +256,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtBuqueda;
-        
+
         /// <summary>
         /// Control lblSucursalBus.
         /// </summary>
@@ -290,7 +265,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSucursalBus;
-        
+
         /// <summary>
         /// Control ddlSucursalBus.
         /// </summary>
@@ -299,7 +274,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlSucursalBus;
-        
+
         /// <summary>
         /// Control lblStatusBus.
         /// </summary>
@@ -308,7 +283,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblStatusBus;
-        
+
         /// <summary>
         /// Control ddlEstatusBus.
         /// </summary>
@@ -317,7 +292,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlEstatusBus;
-        
+
         /// <summary>
         /// Control btnBuscar.
         /// </summary>
@@ -326,7 +301,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnBuscar;
-        
+
         /// <summary>
         /// Control btnNuevo.
         /// </summary>
@@ -335,7 +310,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnNuevo;
-        
+
         /// <summary>
         /// Control btnGuardar.
         /// </summary>
@@ -344,7 +319,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnGuardar;
-        
+
         /// <summary>
         /// Control btnEliminar.
         /// </summary>
@@ -353,7 +328,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnEliminar;
-        
+
         /// <summary>
         /// Control btnLimpiar.
         /// </summary>
@@ -362,7 +337,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnLimpiar;
-        
+
         /// <summary>
         /// Control btnExportar.
         /// </summary>
@@ -371,7 +346,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnExportar;
-        
+
         /// <summary>
         /// Control pnlCatalogo.
         /// </summary>
@@ -380,7 +355,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlCatalogo;
-        
+
         /// <summary>
         /// Control gvCatalogo.
         /// </summary>
@@ -389,7 +364,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvCatalogo;
-        
+
         /// <summary>
         /// Control gvCopia.
         /// </summary>
@@ -398,7 +373,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvCopia;
-        
+
         /// <summary>
         /// Control omb.
         /// </summary>
@@ -407,7 +382,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::Autos_SCC.Views.ControlesUsuario.ucModalConfirm omb;
-        
+
         /// <summary>
         /// Control hdTarget.
         /// </summary>
@@ -416,7 +391,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hdTarget;
-        
+
         /// <summary>
         /// Control mpeAgregarGasto.
         /// </summary>
@@ -425,7 +400,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AjaxControlToolkit.ModalPopupExtender mpeAgregarGasto;
-        
+
         /// <summary>
         /// Control Panel1.
         /// </summary>
@@ -434,7 +409,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel Panel1;
-        
+
         /// <summary>
         /// Control UpdatePanel1.
         /// </summary>
@@ -443,7 +418,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
-        
+
         /// <summary>
         /// Control lblCaption.
         /// </summary>
@@ -452,7 +427,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCaption;
-        
+
         /// <summary>
         /// Control lblDescripcionGasto.
         /// </summary>
@@ -461,7 +436,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDescripcionGasto;
-        
+
         /// <summary>
         /// Control txtDescripcionGasto.
         /// </summary>
@@ -470,7 +445,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDescripcionGasto;
-        
+
         /// <summary>
         /// Control lblMonto.
         /// </summary>
@@ -479,7 +454,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMonto;
-        
+
         /// <summary>
         /// Control txtMonto.
         /// </summary>
@@ -488,7 +463,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtMonto;
-        
+
         /// <summary>
         /// Control btnGuardarGasto.
         /// </summary>
@@ -497,7 +472,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnGuardarGasto;
-        
+
         /// <summary>
         /// Control pnlGastos.
         /// </summary>
@@ -506,7 +481,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlGastos;
-        
+
         /// <summary>
         /// Control gvGastos.
         /// </summary>
@@ -515,7 +490,7 @@ namespace Autos_SCC.Views.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvGastos;
-        
+
         /// <summary>
         /// Control can.
         /// </summary>

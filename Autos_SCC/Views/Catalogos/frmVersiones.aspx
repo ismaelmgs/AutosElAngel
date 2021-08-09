@@ -4,9 +4,9 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <title></title>
-<%--    <link rel="stylesheet" href="../../jquery/jquery-ui-1.9.2.custom.min.css" type="text/css" />
+<link rel="stylesheet" href="../../jquery/jquery-ui-1.9.2.custom.min.css" type="text/css" />
     <script type="text/javascript" src="../../jquery/jquery-1.8.3.js"></script>
-    <script type="text/javascript" src="../../jquery/jquery-ui-1.9.2.custom.min.js"></script>--%>
+    <script type="text/javascript" src="../../jquery/jquery-ui-1.9.2.custom.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <script language="javascript" type="text/javascript">
@@ -83,11 +83,11 @@
                                     </div>
                 
                                     <div class="row">
-                                        <div class="col-md-3" style="text-align:left">
+                                        <div class="col-md-2" style="text-align:left">
                                             <asp:Label ID="lblNombre" runat="server" Font-Bold="True" Text="Descripción:" CssClass="inputLabel"/>&nbsp;
                                         </div>
                 
-                                        <div class="col-md-9" style="text-align:left">
+                                        <div class="col-md-10" style="text-align:left">
                                             <asp:TextBox ID="txtDescripcion" runat="server" Width="100%" Rows="2" TextMode="MultiLine" CssClass="form-control"></asp:TextBox>
                                         </div>
                                     </div>
@@ -106,7 +106,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="card" style="min-height:225px;">
+                        <div class="card" style="min-height:220px;">
                             <h3 style="text-align:center;">Búsqueda</h3>
                             <ContentTemplate>  
                                             <br />
@@ -126,9 +126,9 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <asp:RadioButtonList ID="rblActivo" runat="server" Width="100%" RepeatDirection="Horizontal" CssClass="form-control">
-                                                        <asp:ListItem Text="TODOS" Value="2" Selected="True"></asp:ListItem>
-                                                        <asp:ListItem Text="  ACTIVOS  " Value="1"></asp:ListItem>
-                                                        <asp:ListItem Text="  INACTIVOS  " Value="0"></asp:ListItem>
+                                                        <asp:ListItem Text="TODOS&nbsp;&nbsp;" Value="2" Selected="True"></asp:ListItem>
+                                                        <asp:ListItem Text="ACTIVOS&nbsp;&nbsp;" Value="1"></asp:ListItem>
+                                                        <asp:ListItem Text="INACTIVOS&nbsp;&nbsp;" Value="0"></asp:ListItem>
                                                     </asp:RadioButtonList>
                                                 </div>
                                             </div>

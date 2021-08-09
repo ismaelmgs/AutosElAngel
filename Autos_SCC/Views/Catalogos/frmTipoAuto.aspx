@@ -37,25 +37,16 @@
 
     <asp:UpdatePanel ID="upaTab" runat="server">
         <ContentTemplate>
-            <center>
-                <table width="99%">
-                <tr>
-                    <td colspan="2" align="center">
-                        <asp:Label ID="lblTitulo" runat="server" CssClass="labelTitle" Text="Catálogo de Tipos de Auto"></asp:Label>
-                    </td>
-                    <td>
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                    </td>
-                </tr>
-                <tr>
-                    <td width="20%" rowspan="2">
-                        <cc1:TabContainer ID="TabContainer1" Width="300px" Height="500px" runat="server"
-                            ActiveTabIndex="0">
-                            <cc1:TabPanel runat="server" HeaderText="Registro de tipos de auto" ID="TabPanel1">
-                                <ContentTemplate>
+            <div class="card">
+                <div class="card-block" style="text-align:center;">
+                    <h3><asp:Label ID="lblTitulo" runat="server" CssClass="labelTitle" Text="Catálogo de Tipos de Auto"></asp:Label></h3>
+                </div>
+            </div>
+            <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <h3 style="text-align:center;">Registro de Tipos</h3>
+                            <ContentTemplate>
                                     <br />
                                     <table width="100%">
                                         <tr>
@@ -63,7 +54,7 @@
                                                 <asp:Label ID="lblId" runat="server" Font-Bold="True" Text="Id:" CssClass="inputLabel"/>
                                             </td>
                                             <td style="text-align:left; width:65%">
-                                                <asp:TextBox ID="txtId" runat="server" Width="80%" Enabled="false" CssClass="inputCampo"></asp:TextBox>
+                                                <asp:TextBox ID="txtId" runat="server" Width="100%" Enabled="false" CssClass="form-control"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -71,7 +62,7 @@
                                                 <asp:Label ID="lblMarca" runat="server" Font-Bold="True" Text="Marca:" CssClass="inputLabel" />
                                             </td>
                                             <td style="text-align:left">
-                                                <asp:DropDownList ID="ddlMarca" runat="server" Width="88%" CssClass="listInput">
+                                                <asp:DropDownList ID="ddlMarca" runat="server" Width="100%" CssClass="form-control">
                                                 </asp:DropDownList>
                                             </td>
                                         </tr>
@@ -80,7 +71,7 @@
                                                 <asp:Label ID="lblDescripcion" runat="server" Font-Bold="True" Text="Descripción:" CssClass="inputLabel" />
                                             </td>
                                             <td style="text-align:left">
-                                                <asp:TextBox ID="txtDescripcion" runat="server" Width="80%" Rows="4" TextMode="MultiLine" CssClass="inputCampo"></asp:TextBox>
+                                                <asp:TextBox ID="txtDescripcion" runat="server" Width="100%" Rows="4" TextMode="MultiLine" CssClass="form-control"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -93,86 +84,101 @@
                                         </tr>
                                     </table>
                                 </ContentTemplate>
-                            </cc1:TabPanel>
-                            <cc1:TabPanel ID="TabPanel2" runat="server" HeaderText="Búsqueda">
-                                <ContentTemplate>
-                                    <br />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card" style="min-height:260px;">
+                            <h3 style="text-align:center;">Búsqueda</h3>
+                           <ContentTemplate><br />
+                                    <div class="row">
+                                       <div class="col-md-12">
                                     <table width="100%">
                                         <tr>
                                             <td width="40%">
                                                 <asp:Label ID="lblMarcaBusqueda" runat="server" Font-Bold="True" Text="Marca:" CssClass="inputLabel" />&nbsp;
                                             </td>
                                             <td width="60%">
-                                                <asp:DropDownList ID="ddlMarcaBusqueda" runat="server" CssClass="listInput" Width="87%"></asp:DropDownList>
+                                                <asp:DropDownList ID="ddlMarcaBusqueda" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
                                             </td>
                                         </tr>
-                                        <tr>
+                                        </table>
+                                           </div>
+                                        </div>
+                                        <div class="row">
+                                       <div class="col-md-6">
+                                           <table>
+                                         <tr>
                                             <td>
                                                 <asp:Label ID="lblBusqueda" runat="server" Font-Bold="True" Text="Palabra a buscar:" CssClass="inputLabel" />
                                             </td>
                                             <td>
-                                                <asp:TextBox ID="txtBuqueda" runat="server" Width="80%" CssClass="inputCampo"></asp:TextBox>
+                                                <asp:TextBox ID="txtBuqueda" runat="server" Width="100%" CssClass="form-control"></asp:TextBox>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td colspan="2">
-                                                <asp:RadioButtonList ID="rblActivo" runat="server" Width="80%" RepeatDirection="Horizontal" CssClass="listInput">
-                                                    <asp:ListItem Text="TODOS" Value="2" Selected="True"></asp:ListItem>
-                                                    <asp:ListItem Text="  ACTIVOS  " Value="1"></asp:ListItem>
-                                                    <asp:ListItem Text="  INACTIVOS  " Value="0"></asp:ListItem>
+                                        </table>
+                                        </div>
+                                        <div class="col-md-6">
+                                                <asp:RadioButtonList ID="rblActivo" runat="server" Width="100%" RepeatDirection="Horizontal" CssClass="form-control">
+                                                    <asp:ListItem Text="TODOS&nbsp;&nbsp;" Value="2" Selected="True"></asp:ListItem>
+                                                    <asp:ListItem Text="ACTIVOS&nbsp;&nbsp;" Value="1"></asp:ListItem>
+                                                    <asp:ListItem Text="INACTIVOS&nbsp;&nbsp;" Value="0"></asp:ListItem>
                                                 </asp:RadioButtonList>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="2">
-                                                <br />
-                                                <asp:Button ID="btnBuscar" runat="server" Text="BUSCAR" CssClass="button" OnClick="btnBuscar_Click" />
-                                            </td>
-                                        </tr>
-                                    </table>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                                <div class="col-md-12" style="text-align:center;">
+                                                    <br /><br />
+                                                <asp:Button ID="btnBuscar" runat="server" Text="BUSCAR" CssClass="btn" OnClick="btnBuscar_Click" />
+                                            </div>
+                                        </div>
                                 </ContentTemplate>
-                            </cc1:TabPanel>
-                        </cc1:TabContainer>
-                    </td>
-                    <td width="80%">
-                        <div class="DivBotones">
-                            <asp:Button ID="btnNuevo" runat="server" Text="NUEVO" CssClass="button" OnClick="btnNuevo_Click"
-                                ToolTip="Prepara los campos para un registro nuevo" />
-                            &nbsp;<asp:Button ID="btnGuardar" runat="server" Text="GUARDAR" CssClass="button"
-                                OnClick="btnGuardar_Click" ToolTip="Guarda los cambios realizados sobre el registro" />
-                            &nbsp;<asp:Button ID="btnEliminar" runat="server" Text="ELIMINAR" CssClass="button"
-                                OnClick="btnEliminar_Click" ToolTip="Elimina el registro seleccionado" />
-                            &nbsp;<asp:Button ID="btnLimpiar" runat="server" Text="LIMPIAR" CssClass="button"
-                                OnClick="btnLimpiar_Click" ToolTip="Limpia los campos para un registro nuevo" />
-                            &nbsp;<asp:Button ID="btnExportar" runat="server" Text="EXPORTAR" CssClass="button"
-                                OnClick="btnExportar_Click" ToolTip="Exporta un grid a excel" />
                         </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td width="80%">
-                        <asp:Panel ID="pnlCatalogo" runat="server" ScrollBars="Auto" Width="600px" Height="500px">
-                            <asp:GridView ID="gvCatalogo" runat="server" AutoGenerateColumns="false" RowStyle-VerticalAlign="Middle"
-                                Width="100%" OnRowDataBound="gvCatalogo_RowDataBound" OnSelectedIndexChanged="gvCatalogo1_SelectedIndexChanged"
-                                BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464"
-                                HeaderStyle-ForeColor="white" AllowSorting="True">
-                                <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
-                                <HeaderStyle BackColor="#01609F" CssClass="titleHeader" />
-                                <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" CssClass="" />
-                                <AlternatingRowStyle BackColor="White" />
-                                <Columns>
-                                    <asp:BoundField DataField="fi_Id" HeaderText="Id" />
-                                    <asp:BoundField DataField="fc_Marca" HeaderText="Marca" />
-                                    <asp:BoundField DataField="fc_Descripcion" HeaderText="Descripción" />
-                                    <asp:BoundField DataField="fi_Activo" HeaderText="¿Activo?" />
-                                    <asp:BoundField DataField="fc_Usuario" HeaderText="Usuario modifico" />
-                                    <asp:BoundField DataField="fd_FechaUltMovimiento" HeaderText="Fecha Ult. Movimiento" />
-                                </Columns>
-                            </asp:GridView>
-                        </asp:Panel>
-                    </td>
-                </tr>
-            </table>
+                     </div>
+                </div>
+            <center>
+
+            <div class="DivBotones">
+                <asp:Button ID="btnNuevo" runat="server" Text="NUEVO" CssClass="btn btn-success" OnClick="btnNuevo_Click"
+                    ToolTip="Prepara los campos para un registro nuevo" />
+                &nbsp;<asp:Button ID="btnGuardar" runat="server" Text="GUARDAR" CssClass="btn btn-primary"
+                    OnClick="btnGuardar_Click" ToolTip="Guarda los cambios realizados sobre el registro" />
+                &nbsp;<asp:Button ID="btnEliminar" runat="server" Text="ELIMINAR" CssClass="btn btn-danger"
+                    OnClick="btnEliminar_Click" ToolTip="Elimina el registro seleccionado" />
+                &nbsp;<asp:Button ID="btnLimpiar" runat="server" Text="LIMPIAR" CssClass="btn btn-info"
+                    OnClick="btnLimpiar_Click" ToolTip="Limpia los campos para un registro nuevo" />
+                &nbsp;<asp:Button ID="btnExportar" runat="server" Text="EXPORTAR" CssClass="btn btn-inverse"
+                    OnClick="btnExportar_Click" ToolTip="Exporta un grid a excel" />
+            </div>
+            <div class="card">
+                <table>
+                    <tr>
+                        <td width="100%">
+                            <asp:Panel ID="pnlCatalogo" runat="server" ScrollBars="Auto" Width="100%" Height="500px">
+                                <div class="table">
+                                <asp:GridView ID="gvCatalogo" runat="server" AutoGenerateColumns="false" RowStyle-VerticalAlign="Middle"
+                                    Width="100%" OnRowDataBound="gvCatalogo_RowDataBound" OnSelectedIndexChanged="gvCatalogo1_SelectedIndexChanged"
+                                    BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464"
+                                    HeaderStyle-ForeColor="white" AllowSorting="True">
+                                    <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+                                    <HeaderStyle BackColor="#01609F" CssClass="titleHeader" />
+                                    <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" CssClass="" />
+                                    <AlternatingRowStyle BackColor="White" />
+                                    <Columns>
+                                        <asp:BoundField DataField="fi_Id" HeaderText="Id" />
+                                        <asp:BoundField DataField="fc_Marca" HeaderText="Marca" />
+                                        <asp:BoundField DataField="fc_Descripcion" HeaderText="Descripción" />
+                                        <asp:BoundField DataField="fi_Activo" HeaderText="¿Activo?" />
+                                        <asp:BoundField DataField="fc_Usuario" HeaderText="Usuario modifico" />
+                                        <asp:BoundField DataField="fd_FechaUltMovimiento" HeaderText="Fecha Ult. Movimiento" />
+                                    </Columns>
+                                </asp:GridView>
+                                    </div>
+                            </asp:Panel>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+                
                 <uc1:ucModalConfirm ID="omb" runat="server" />
             </center>
         </ContentTemplate>
