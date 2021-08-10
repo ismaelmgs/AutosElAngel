@@ -23,34 +23,31 @@
     </script>
     <asp:UpdatePanel ID="upaCotizacion" runat="server">
         <ContentTemplate>
-            <table width="100%">
-                <tr>
-                    <td style="text-align:center; width:100%">
-                        <br />
-                    </td>
-                </tr>
-                <tr>
-                    <td style="text-align:center; width:100%">
-                        <asp:Label ID="lblTituloPantalla" runat="server" Text="Reporte de Pagos Recibidos" CssClass="labelTitle"></asp:Label>
-                    </td>
-                </tr>
-            </table>
+             <div class="card">
+                <div class="card-block" style="text-align:center;">
+                    <h3><asp:Label ID="lblTituloPantalla" runat="server" Text="Reporte de Pagos Recibidos" CssClass="labelTitle"></asp:Label></h3>
+                </div>
+            </div>
+            <div class="card">
             <fieldset style="text-align:left">
-                <legend>
-                    <span>
+                <div style="width:100%; text-align:center;">
+                    <h4>
                         Periodo de reporte
-                    </span>
-                </legend>
-                    <table style="width:100%">
-                        <tr>
-                            <td style="width:5%">
-                            </td>
-                            <td style="width:10%">
-                                <asp:Label ID="lblFechaInicial" runat="server" Text="Fecha inicial:" 
-                                    CssClass="inputLabel"></asp:Label>
-                            </td>
-                            <td style="width:20%; vertical-align:top">
-                                <asp:TextBox ID="txtFechaInicial" runat="server" CssClass="inputCampo" Width="70%" ReadOnly="true"></asp:TextBox>
+                    </h4>
+                </div><br />
+                <div class="row">
+                    <div class="col-md-1">
+                        &nbsp;
+                    </div>
+                    <div class="col-md-5">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <asp:Label ID="lblFechaInicial" runat="server" Text="Fecha inicial:" CssClass="inputLabel"></asp:Label>
+                            </div>
+                            <div class="col-md-8">
+                                <asp:TextBox ID="txtFechaInicial" runat="server" CssClass="form-control" Width="100%" ReadOnly="true"></asp:TextBox>
+                            </div>
+                            <div class="col-md-1">
                                 <asp:ImageButton ID="imbFechaInicial" runat="server" ImageUrl="~/Images/Botones/Calendar.ico" Width="24px" Height="24px" />
                                 <cc1:CalendarExtender ID="calFechaInicial" runat="server" Enabled="True" Format="dd/MM/yyyy"
                                         PopupButtonID="imbFechaInicial" TargetControlID="txtFechaInicial">
@@ -61,15 +58,18 @@
                                     CultureTimePlaceholder="" Enabled="True" Mask="99/99/9999" MaskType="Date" TargetControlID="txtFechaInicial"
                                     UserDateFormat="DayMonthYear">
                                 </cc1:MaskedEditExtender>
-                            </td>    
-                            <td style="width:2%">
-                            </td>
-                            <td style="width:10%">
-                                <asp:Label ID="lblFechaFinal" runat="server" Text="Fecha final:" 
-                                    CssClass="inputLabel"></asp:Label>
-                            </td>
-                            <td style="width:20%; vertical-align:top">
-                                <asp:TextBox ID="txtFechaFinal" runat="server" CssClass="inputCampo" Width="70%" ReadOnly="true"></asp:TextBox>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <asp:Label ID="lblFechaFinal" runat="server" Text="Fecha final:" CssClass="inputLabel"></asp:Label>
+                            </div>
+                            <div class="col-md-8">
+                        <asp:TextBox ID="txtFechaFinal" runat="server" CssClass="form-control" Width="100%" ReadOnly="true"></asp:TextBox>
+                            </div>
+                            <div class="col-md-1">
                                 <asp:ImageButton ID="imbFechaFinal" runat="server" ImageUrl="~/Images/Botones/Calendar.ico" Width="24px" Height="24px" />
                                 <cc1:CalendarExtender ID="calFechaFinal" runat="server" Enabled="True" Format="dd/MM/yyyy"
                                         PopupButtonID="imbFechaFinal" TargetControlID="txtFechaFinal">
@@ -80,65 +80,54 @@
                                     CultureTimePlaceholder="" Enabled="True" Mask="99/99/9999" MaskType="Date" TargetControlID="txtFechaFinal"
                                     UserDateFormat="DayMonthYear">
                                 </cc1:MaskedEditExtender>
-                            </td>
-                            <td style="width:2%">
-                            </td>
-                            <td style="width:10%">
-                                <asp:Button ID="btnBuscar" runat="server" Text="Buscar" CssClass="button" OnClick="btnBuscar_Click" />
-                            </td>
-                            <td style="width:5%">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="width:5%">
-                                &nbsp;</td>
-                            <td style="width:10%">
-                                <asp:Label ID="lblTodasFechas" runat="server" Text ="Todas las Fechas" CssClass="inputLabel"></asp:Label>
-                            </td>
-                            <td style="width:20%; vertical-align:top">
-                                <asp:CheckBox ID="chkTodas" runat="server" AutoPostBack="true" OnCheckedChanged="chkTodas_CheckedChanged" />
-                            </td>
-                            <td style="width:2%">
-                                &nbsp;</td>
-                            <td style="width:10%">
-                                &nbsp;</td>
-                            <td style="width:20%; vertical-align:top">
-                                &nbsp;</td>
-                            <td style="width:2%">
-                                &nbsp;</td>
-                            <td style="width:10%">
-                                &nbsp;</td>
-                            <td style="width:5%">
-                                &nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td>
-                            </td>
-                            <td>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        &nbsp;
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-1">
+                        &nbsp;
+                    </div>
+                    <div class="col-md-3" style="text-align:center;">
+                        <asp:Label ID="lblTodasFechas" runat="server" Text ="Todas las Fechas" CssClass="inputLabel"></asp:Label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<asp:CheckBox ID="chkTodas" runat="server" AutoPostBack="true" OnCheckedChanged="chkTodas_CheckedChanged" />
+                    </div>
+                    <div class="col-md-5" style="text-align:center;">
+                        <div class="row">
+                            <div class="col-md-2">
                                 <asp:Label ID="lblSucursal" runat="server" Text="Sucursal:" CssClass="inputLabel"></asp:Label>
-                            </td>
-                            <td colspan="6">
-                                <asp:DropDownList ID="ddlSucursal" runat="server" CssClass="listInput" Width="200">
+                            </div>
+                            <div class="col-md-10">
+                                <asp:DropDownList ID="ddlSucursal" runat="server" CssClass="form-control" Width="100%">
                                 </asp:DropDownList>
-                            </td>
-                            <td>
-                            </td>
-                        </tr>
-                    </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2" style="text-align:center;">
+                        <asp:Button ID="btnBuscar" runat="server" Text="Buscar" CssClass="btn" OnClick="btnBuscar_Click" />
+                    </div>
+                    <div class="col-md-1">
+                        &nbsp;
+                    </div>
+                </div>
             </fieldset>
 
             <asp:Panel ID="pnlReporte" runat="server" Visible="false">
             <fieldset style="text-align:left" >
-                <legend>
-                    <span>
+                <div style="width:100%; text-align:center;">
+                    <h4>
                         Reporte
-                    </span>
-                </legend>
+                    </h4>
+                </div>
                     <table style="width:100%">
                         <tr>
                             <td style="width:1%"></td>
                             <td style="width:98%; text-align:right">
-                            <asp:Button ID="btnExportar" runat="server" Text="Exportar a Excel" OnClick="btnExportar_Click" CssClass="button"/>
+                            <asp:Button ID="btnExportar" runat="server" Text="Exportar a Excel" OnClick="btnExportar_Click" CssClass="btn btn-success"/>
                             </td>
                             <td style="width:1%"></td>
                         </tr>
@@ -234,6 +223,8 @@
                     </asp:UpdatePanel>
             </fieldset>
             </asp:Panel>
+            </div>
+            
         </ContentTemplate>
         <Triggers>
             <asp:AsyncPostBackTrigger ControlID="btnBuscar" EventName="Click" />

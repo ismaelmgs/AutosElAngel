@@ -16478,3 +16478,13 @@ body.dark {
 .inputLabel {
     font-size:12px;
 }
+.ajax__calendar .ajax__calendar_container {
+    border: 1px solid #646464;
+    background-color: #ffffff;
+    color: #000000;
+    z-index: 100;
+    width:250px;
+}
+.inputLabel {
+    margin-top:20px !important;
+}
