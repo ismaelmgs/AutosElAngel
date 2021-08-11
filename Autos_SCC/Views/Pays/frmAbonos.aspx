@@ -52,21 +52,19 @@
             <asp:HiddenField ID="HidIdCliente" runat="server" Value="0" />
             <asp:HiddenField ID="HidIdCP" runat="server" Value="0" />
             <asp:HiddenField ID="HidIdCPAval" runat="server" Value="0" />
-            <br />
-            <table width="100%">
-                <tr>
-                    <td style="text-align:center; width:100%">
-                        <asp:Label ID="lblTituloPantalla" runat="server" Text="Módulo de Abonos" CssClass="labelTitle"></asp:Label>
-                    </td>
-                </tr>
-            </table>
+            <div class="card">
+                <div class="card-block" style="text-align:center;">
+                    <h3><asp:Label ID="lblTituloPantalla" runat="server" Text="Módulo de Abonos" CssClass="labelTitle"></asp:Label></h3>
+                </div>
+            </div>
+            <div class="card" style="height:70vh;">
             <fieldset style="text-align:left">
-                <legend>
-                    <span>
+                <div style="width:100%; text-align:center;">
+                    <h4>
                         Búsqueda cliente
-                    </span>
-                </legend>
-                    
+                    </h4>
+                </div>
+                    <br />
                     <table style="width:100%">
                         <tr>
                             <td style="width:20%">
@@ -76,7 +74,7 @@
                                     CssClass="inputLabel"></asp:Label>
                             </td>
                             <td style="width:20%">
-                                <asp:DropDownList ID="ddlOpcion" runat="server" AutoPostBack="true" CssClass="listInput" OnSelectedIndexChanged="ddlOpcion_SelectedIndexChanged" Width="97%">
+                                <asp:DropDownList ID="ddlOpcion" runat="server" AutoPostBack="true" CssClass="form-control" OnSelectedIndexChanged="ddlOpcion_SelectedIndexChanged" Width="97%">
                                 <asp:ListItem Text="Seleccione" Value="0"></asp:ListItem>
                                 <asp:ListItem Text="No. Cotización" Value="1"></asp:ListItem>
                                 <asp:ListItem Text="Por Sucursal" Value="2"></asp:ListItem>
@@ -95,12 +93,12 @@
                                 <asp:Label ID="lblSucursal" runat="server" CssClass="inputLabel" Text="Sucursal:" Visible="false"></asp:Label>
                             </td>
                             <td style="width:20%">
-                                <asp:TextBox ID="txtNoCotizacion" runat="server" CssClass="inputCampo" AutoPostBack="true"
+                                <asp:TextBox ID="txtNoCotizacion" runat="server" CssClass="form-control" AutoPostBack="true"
                                     Visible="false" Width="75%"></asp:TextBox>
                                 <asp:ImageButton ID="imbBuscaCliente" runat="server" ImageUrl="~/Images/Botones/Find.ico" OnClick="imbBuscaCliente_Click"
                                     style="vertical-align:middle" ToolTip="Selecciona un auto existente" Visible="false"/>
                                 <asp:DropDownList ID="ddlSucursal" runat="server" AutoPostBack="true" 
-                                    CssClass="listInput" OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged" 
+                                    CssClass="form-control" OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged" 
                                     Width="97%" Visible="false">
                                 </asp:DropDownList>
                             </td>
@@ -116,7 +114,7 @@
                                 <asp:Label ID="lblCotizacion" runat="server" Text="Cotización:" CssClass="inputLabel" Visible="false"></asp:Label>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlCotizacion" runat="server" Width="97%" CssClass="listInput" Visible="false"
+                                <asp:DropDownList ID="ddlCotizacion" runat="server" Width="97%" CssClass="form-control" Visible="false"
                                      AutoPostBack="true" OnSelectedIndexChanged="ddlCotizacion_SelectedIndexChanged">
                                 </asp:DropDownList>
                             </td>
@@ -144,18 +142,19 @@
                     </table>
             </fieldset>
 
-            <fieldset style="text-align:left">
-                <legend>
-                    <span>
+            <fieldset style="text-align:left"><br />
+                <div style="width:100%; text-align:center;">
+                    <h4>
                         Resultados...
-                    </span>
-                </legend>
+                    </h4>
+                </div><br />
                     <center>
-                        <asp:GridView ID="gvClientes" runat="server" AutoGenerateColumns="false" Width="80%" 
+                        <div class="table">
+                        <asp:GridView ID="gvClientes" runat="server" AutoGenerateColumns="false" Width="100%" 
                             Font-Size="10px" PageSize="10" BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464" 
                             HeaderStyle-ForeColor="white" AllowSorting="True" 
                             DataKeyNames="fi_IdCotizacion" OnRowDataBound="gvClientes_RowDataBound" 
-                            onrowcommand="gvClientes_RowCommand">
+                            onrowcommand="gvClientes_RowCommand" CssClass="table table-hover">
                             <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
                             <HeaderStyle BackColor="#01609F" CssClass="titleHeader" />
                             <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" CssClass="" />
@@ -181,18 +180,19 @@
                                 <asp:BoundField DataField="DeudaAlDia" HeaderText="Deuda al día" DataFormatString="{0:c}" />
                                 <asp:TemplateField HeaderText="Acciones" ItemStyle-HorizontalAlign="Center">
                                     <ItemTemplate>
-                                        <asp:Button ID="btnAbonar" runat="server" CommandName="Abonar" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" Text="Abonar" CssClass="button" />
+                                        <asp:Button ID="btnAbonar" runat="server" CommandName="Abonar" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" Text="Abonar" CssClass="btn btn-success btn-mini waves-effect waves-light" />
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField>
                                     <itemtemplate>
                                         <tr>
                                             <td colspan="100%" align="left">
-                                                <div id="div<%# Eval("fi_IdCotizacion") %>" style="display:none;position:relative;left:100px;"  >
-                                                    <asp:GridView ID="gvDetalle" runat="server" Width="80%"
+                                                <div id="div<%# Eval("fi_IdCotizacion") %>" style="display:none;position:relative;"  >
+                                                    <div class="table">
+                                                    <asp:GridView ID="gvDetalle" runat="server" Width="100%"
                                                         AutoGenerateColumns="false" ShowFooter = "true" OnRowDataBound="gvDetalle_RowDataBound" 
                                                         EmptyDataText="No hay resultados para esta busqueda." PageSize="10" 
-                                                        BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464" HeaderStyle-ForeColor="white" AllowSorting="True">
+                                                        BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464" HeaderStyle-ForeColor="white" AllowSorting="True"  CssClass="table table-hover">
                                                         <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
                                                         <HeaderStyle BackColor="#01609F" CssClass="titleHeader" />
                                                         <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" CssClass="" />
@@ -204,6 +204,7 @@
                                                             <asp:BoundField DataField="fd_FechaCreacion" HeaderText="Fecha de registro"/>
                                                         </Columns>
                                                     </asp:GridView>
+                                                    </div>
                                                 </div>
                                             </td>
                                         </tr>
@@ -214,14 +215,16 @@
                                 No se encontraron registros
                             </EmptyDataTemplate>
                         </asp:GridView>
+                        </div>
                         <br />
                         <br />
-                        <div style="text-align:left; width:80%">
+                        <div style="text-align:center; width:100%;">
                             <asp:Label ID="lblTituloPagosInd" runat="server" Text="Pagos Individuales" CssClass="labelSubTitle"></asp:Label>
                         </div>
-                        <asp:GridView ID="gvPagosInd" runat="server" AutoGenerateColumns="false" Width="80%" 
+                        <div class="table">
+                        <asp:GridView ID="gvPagosInd" runat="server" AutoGenerateColumns="false" Width="100%" 
                             Font-Size="10px" PageSize="10" BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464" OnRowDataBound="gvPagosInd_RowDataBound"
-                            HeaderStyle-ForeColor="white" AllowSorting="True" DataKeyNames="fi_IdAMortizacion,fi_IdCotizacion" onrowcommand="gvPagosInd_RowCommand">
+                            HeaderStyle-ForeColor="white" AllowSorting="True" DataKeyNames="fi_IdAMortizacion,fi_IdCotizacion" onrowcommand="gvPagosInd_RowCommand" CssClass="table table-hover">
                             <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
                             <HeaderStyle BackColor="#01609F" CssClass="titleHeader" />
                             <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" CssClass="" />
@@ -239,7 +242,7 @@
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Acciones" ItemStyle-HorizontalAlign="Center">
                                     <ItemTemplate>
-                                        <asp:Button ID="btnAbonarInd" runat="server" CommandName="Abonar" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" Text="Abonar" CssClass="button" />
+                                        <asp:Button ID="btnAbonarInd" runat="server" CommandName="Abonar" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" Text="Abonar" CssClass="btn btn-success btn-mini waves-effect waves-light" />
                                     </ItemTemplate>
                                 </asp:TemplateField>
                             </Columns>
@@ -247,9 +250,10 @@
                                 No se encontraron registros
                             </EmptyDataTemplate>
                         </asp:GridView>
+                        </div>
                     </center>
             </fieldset>
-
+            </div>
         </ContentTemplate>
         <Triggers>
             <asp:AsyncPostBackTrigger ControlID="ddlSucursal" EventName="SelectedIndexChanged" />
@@ -262,8 +266,8 @@
     <cc1:ModalPopupExtender ID="mpePagos" runat="server" TargetControlID="hdTargetPago" 
         PopupControlID="pnlPagos" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
-    <asp:Panel ID="pnlPagos" runat="server" BorderColor="Black" BackColor="White" Height="180px"
-        Width="330px" HorizontalAlign="Center" Style="display: none">
+    <asp:Panel ID="pnlPagos" runat="server" BorderColor="Black" BackColor="#e4e4e4" Height="400px"
+        Width="820px" HorizontalAlign="Center" Style="display: none; border-radius:25px;">
         <asp:UpdatePanel ID="upaPagos" runat="server">
             <ContentTemplate>
                 <table width="100%">
@@ -289,7 +293,7 @@
                             <asp:Label ID="lblTipoMov" runat="server" Text="Tipo movimiento:" CssClass="inputLabel"></asp:Label>
                         </td>
                         <td style="text-align:left">
-                            <asp:DropDownList ID="ddlTipoMov" runat="server" CssClass="listInput" Width="173">
+                            <asp:DropDownList ID="ddlTipoMov" runat="server" CssClass="form-control" Width="173">
                                 <asp:ListItem Text="PAGO" Value="PAY"></asp:ListItem>
                                 <asp:ListItem Text="REVERSO" Value="RPAY"></asp:ListItem>
                             </asp:DropDownList>
@@ -300,7 +304,7 @@
                             <asp:Label ID="lblImporte" runat="server" Text="Importe:" CssClass="inputLabel"></asp:Label>
                         </td>
                         <td style="text-align:left">
-                            <asp:TextBox ID="txtImporte" runat="server" CssClass="inputCampo" Width="160" MaxLength="15"></asp:TextBox>
+                            <asp:TextBox ID="txtImporte" runat="server" CssClass="form-control" Width="160" MaxLength="15"></asp:TextBox>
                             <cc1:FilteredTextBoxExtender ID="ftbImporte" runat="server" ValidChars="-.0123456789"
                                 TargetControlID="txtImporte" FilterMode="ValidChars"></cc1:FilteredTextBoxExtender>
                         </td>
@@ -313,10 +317,10 @@
                 <table width="100%">
                     <tr>
                         <td style="text-align:right; width:165">
-                            <asp:Button ID="btnAceptarPago" runat="server" Text="Aceptar" OnClick="btnAceptarPago_Click" CssClass="button" />
+                            <asp:Button ID="btnAceptarPago" runat="server" Text="Aceptar" OnClick="btnAceptarPago_Click" CssClass="btn btn-success" />
                         </td>
                         <td style="text-align:left; width:165">
-                            <asp:Button ID="btnCancelarPago" runat="server" Text="Cancelar" OnClick="btnCancelarPago_Click" CssClass="button" />
+                            <asp:Button ID="btnCancelarPago" runat="server" Text="Cancelar" OnClick="btnCancelarPago_Click" CssClass="btn btn-danger" />
                         </td>
                     </tr>
                 </table>
