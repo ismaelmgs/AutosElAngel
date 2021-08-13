@@ -114,10 +114,10 @@
                 </div>
             </div>
             <div class="card" style="min-height:70vh;">
-                <div style="width:80%; margin:0 auto;">
+                <div style="width:70%; margin:0 auto;">
                 <div class="row">
                     <div class="col-md-2">
-                        <asp:Label ID="lblNombre" runat="server" Text="Nombre:" CssClass="inputLabel"></asp:Label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="lblNombre" runat="server" Text="Nombre:" CssClass="inputLabel"></asp:Label>
                     </div>
                     <div class="col-md-4">
                             <div class="row">
@@ -139,7 +139,7 @@
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <asp:Label ID="lblSegNombre" runat="server" Text="Segundo nombre:" CssClass="inputLabel"></asp:Label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="lblSegNombre" runat="server" Text="Segundo nombre:" CssClass="inputLabel"></asp:Label>
                     </div>
                     <div class="col-md-4">
                         <asp:TextBox ID="txtSegNombre" runat="server" Width="100%" CssClass="form-control"></asp:TextBox>
@@ -147,7 +147,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-2">
-                        <asp:Label ID="lblApePaterno" runat="server" Text="Apellido paterno:" CssClass="inputLabel"></asp:Label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="lblApePaterno" runat="server" Text="Apellido paterno:" CssClass="inputLabel"></asp:Label>
                     </div>
                     <div class="col-md-4">
                         <div class="row">
@@ -165,7 +165,7 @@
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <asp:Label ID="lblApeMaterno" runat="server" Text="Apellido materno:" 
+                        &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="lblApeMaterno" runat="server" Text="Apellido materno:" 
                             CssClass="inputLabel"  ></asp:Label>
                     </div>
                     <div class="col-md-4">
@@ -174,7 +174,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-2">
-                        <asp:Label ID="lblSeleccionaAuto" runat="server" Text="Selecciona auto:" 
+                        &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="lblSeleccionaAuto" runat="server" Text="Selecciona auto:" 
                             CssClass="inputLabel"  ></asp:Label>
                     </div>
                     <div class="col-md-4">
@@ -196,7 +196,7 @@
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <asp:Label ID="lblPlazo" runat="server" Text="Plazo:" CssClass="inputLabel" ></asp:Label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="lblPlazo" runat="server" Text="Plazo:" CssClass="inputLabel" ></asp:Label>
                     </div>
                     <div class="col-md-4">
                         <div class="row">
@@ -218,7 +218,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-2">
-                        <asp:Label ID="lblPecio" runat="server" Text="Precio:" CssClass="inputLabel"  ></asp:Label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="lblPecio" runat="server" Text="Precio:" CssClass="inputLabel"  ></asp:Label>
                     </div>
                     <div class="col-md-4">
                         <div class="row">
@@ -235,7 +235,7 @@
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <asp:Label ID="lblEnganche" runat="server" Text="Enganche:" CssClass="inputLabel"  ></asp:Label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="lblEnganche" runat="server" Text="Enganche:" CssClass="inputLabel"  ></asp:Label>
                     </div>
                     <div class="col-md-4">
                         <div class="row">
@@ -257,7 +257,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-2">
-                        <asp:Label ID="lblSucursal" runat="server" Text="Sucursal cotización:" CssClass="inputLabel"></asp:Label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="lblSucursal" runat="server" Text="Sucursal cotización:" CssClass="inputLabel"></asp:Label>
                     </div>
                     <div class="col-md-4">
                         <div class="row">
@@ -275,7 +275,7 @@
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <asp:Label ID="lblCorreoElectronico" runat="server" CssClass="inputLabel" 
+                        &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="lblCorreoElectronico" runat="server" CssClass="inputLabel" 
                               Text="E-mail:"></asp:Label>
                     </div>
                     <div class="col-md-4">
