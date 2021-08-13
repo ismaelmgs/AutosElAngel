@@ -113,7 +113,7 @@
                     <h3>Cotizador</h3>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" style="min-height:70vh;">
                 <div class="row">
                     <div class="col-md-2">
                         <asp:Label ID="lblNombre" runat="server" Text="Nombre:" CssClass="inputLabel"></asp:Label>
@@ -199,7 +199,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="row">
-                            <div class="col-md-11" style="text-align:right; padding-left:4%;">
+                            <div class="col-md-11" style="text-align:right; padding-left:0%;">
                             <asp:DropDownList ID="ddlPlazo" runat="server" Width="100%" CssClass="form-control">
                         </asp:DropDownList>   
                                 <asp:RequiredFieldValidator ID="rfvPlazo" runat="server" 
@@ -221,14 +221,14 @@
                     </div>
                     <div class="col-md-4">
                         <div class="row">
-                            <div class="col-md-11" style="text-align:right; padding-left:2.5%;">
+                            <div class="col-md-11" style="text-align:right; padding-left:2%;">
                                 <asp:TextBox ID="txtPrecio" runat="server" Width="100%" CssClass="form-control" Enabled="false"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="rfvPrecio" runat="server" ControlToValidate="txtPrecio" Display="Dynamic" 
                             ErrorMessage="El precio es requerido" ForeColor="Red" ValidationGroup="VCotizar"></asp:RequiredFieldValidator>
                         <cc1:FilteredTextBoxExtender ID="ftbPrecio" runat="server" FilterMode="ValidChars" FilterType="Numbers"
                             ValidChars="0123456789" TargetControlID="txtPrecio"></cc1:FilteredTextBoxExtender>
                             </div>
-                            <div class="col-md-1" style="text-align:right;">
+                            <div class="col-md-1" style="text-align:left;">
                             <asp:Label ID="lblReqPrecio" runat="server" Text="*" ForeColor="Red"></asp:Label>
                             </div>
                         </div>
@@ -238,7 +238,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="row">
-                            <div class="col-md-11" style="text-align:right; padding-left:4%;">
+                            <div class="col-md-11" style="text-align:left; padding-left:0%;">
                             <asp:TextBox ID="txtEnganche" runat="server" Width="100%" CssClass="form-control"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="rfvEnganche" runat="server" 
                             ControlToValidate="txtEnganche" Display="Dynamic" 
@@ -247,7 +247,7 @@
                         <cc1:FilteredTextBoxExtender ID="rfbEngancge" runat="server" FilterMode="ValidChars" FilterType="Numbers"
                             ValidChars="0123456789" TargetControlID="txtEnganche"></cc1:FilteredTextBoxExtender> 
                             </div>
-                            <div class="col-md-1" style="text-align:right;">
+                            <div class="col-md-1" style="text-align:left;">
                             <asp:Label ID="lblReqEnganche" runat="server" Text="*" ForeColor="Red"></asp:Label>
                         
                             </div>
@@ -267,7 +267,7 @@
                                 ErrorMessage="La sucursal es requerida" ForeColor="Red" 
                                 ValidationGroup="VCotizar"></asp:RequiredFieldValidator>
                             </div>
-                            <div class="col-md-1" style="text-align:right;">
+                            <div class="col-md-1" style="text-align:left;">
                                 <asp:Label ID="lblReqSucursal" runat="server" Text="*" ForeColor="Red"></asp:Label>
                             
                             </div>
@@ -391,7 +391,7 @@
                                 <asp:AsyncPostBackTrigger ControlID="btnGenerar" EventName="Click" />
                             </Triggers>
                         </asp:updatepanel>
-                        <div style="text-align:right; width:100%;">
+                        <div style="text-align:center; width:100%;">
                             <asp:Label ID="lblInformacion" runat="server" Text="(Los campos marcados con * son obligatorios)" ForeColor="Red" CssClass="EtiquetaInformativa"></asp:Label><br /><br />
                         </div>
             <table class="table" style="width:90%;margin:0 auto;">
@@ -400,7 +400,7 @@
                         <asp:Button ID="btnGenerar" runat="server" Text=" GENERAR " OnClick="btnGenerar_Click"
                             CssClass="btn btn-success" Font-Size="X-Small" />
                         &nbsp;<asp:Button ID="btnImprimir" runat="server" Text=" IMPRIMIR " OnClick="btnImprimir_Click"
-                            CssClass="btn btn-inverse" Font-Size="X-Small" />
+                            CssClass="btn btn-secondary" Font-Size="X-Small" />
                         &nbsp;<asp:Button ID="btnGuardar" runat="server" Text=" GUARDAR " 
                             CssClass="btn btn-primary" Font-Size="X-Small" OnClick="btnGuardar_Click" />
                     </td>
@@ -521,8 +521,8 @@
     <cc1:ModalPopupExtender ID="mpeBuscarAuto" runat="server" TargetControlID="hdTargetBAuto" 
         PopupControlID="pnlBuscaAuto" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
-    <asp:Panel ID="pnlBuscaAuto" runat="server" BorderColor="Black" BackColor="#e4e4e4" Height="400px"
-        Width="820px" HorizontalAlign="Center" Style="display: none; border-radius:25px;">
+    <asp:Panel ID="pnlBuscaAuto" runat="server" BorderColor="Black" BackColor="#e4e4e4" Height="450px"
+        Width="820px" HorizontalAlign="Center" Style="display: none; border-radius:25px; box-shadow:3px 3px 3px #00000030;">
         <asp:UpdatePanel ID="upaBuscaAuto" runat="server">
             <ContentTemplate>
                 <table width="100%">
@@ -536,7 +536,7 @@
                 <center>
                     <table width="99%">
                         <tr>
-                            <td style="text-align:left; width:25%">
+                            <td style="text-align:center; width:25%">
                                 <asp:Label ID="lblBusquedaPor" runat="server" Text="Búsqueda por:" CssClass="inputLabel"></asp:Label>
                             </td>
                             <td style="text-align:left; width:45%">
@@ -561,7 +561,7 @@
                                 <asp:TextBox ID="txtTextoBusqueda" runat="server" Width="97%" CssClass="form-control" Visible="false"></asp:TextBox>
                             </td>
                             <td width="20%">
-                                <asp:Button ID="btnBuscarAuto" runat="server" Text=" BUSCAR " CssClass="btn"
+                                <asp:Button ID="btnBuscarAuto" runat="server" Text=" BUSCAR " CssClass="btn btn-success"
                                     OnClick="btnBuscarAuto_Click"/>
                             </td>
                         </tr>
@@ -578,7 +578,7 @@
                     <center>
                         <table width="99%">
                             <tr>
-                                <td>
+                                <td style="text-align:center;">
                                     <h4>
                                         <span>
                                             Resultados...
@@ -587,9 +587,9 @@
                                     <asp:Panel ID="pnlBusquedaAuto" runat="server" Width="98%" Height="200px" ScrollBars="Auto" CssClass="form-control">
                                         <fieldset style="text-align:center">
                                             
-                                            <asp:GridView ID="gvAutos" runat="server" AutoGenerateColumns="false" Width="99%" Font-Size="10px" 
+                                            <asp:GridView ID="gvAutos" runat="server" AutoGenerateColumns="false" Width="100%" Font-Size="10px" 
                                                     OnRowEditing="gvAutos_RowEditing" PageSize="10" BorderStyle="None" BorderWidth="0px" 
-                                                    HeaderStyle-BackColor="#646464" HeaderStyle-ForeColor="white" AllowSorting="True">
+                                                    HeaderStyle-BackColor="#646464" HeaderStyle-ForeColor="white" AllowSorting="True" CssClass="table table-hover">
                                                 <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
                                                 <HeaderStyle BackColor="#01609F" CssClass="titleHeader" />
                                                 <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" CssClass="" />
@@ -644,8 +644,8 @@
     <cc1:ModalPopupExtender ID="mpeAgregarPago" runat="server" TargetControlID="hdTarget" 
         PopupControlID="Panel1" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
-    <asp:Panel ID="Panel1" runat="server" BorderColor="Black" BackColor="#efefef" Height="400px"
-        Width="820px" HorizontalAlign="Center" Style="display: none; border-radius:25px;">
+    <asp:Panel ID="Panel1" runat="server" BorderColor="Black" BackColor="#efefef" Height="450px"
+        Width="820px" HorizontalAlign="Center" Style="display: none; border-radius:25px; box-shadow:3px 3px 3px #00000030;">
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
                 <table width="100%">
@@ -674,7 +674,7 @@
                             </td>
                             <td style="text-align: left; width:55%">
                                 <asp:TextBox ID="txtFechaPago" runat="server" Width="75%" CssClass="form-control"></asp:TextBox>
-                                <asp:ImageButton ID="imbFechaPago" runat="server" ImageUrl="~/Images/Botones/Calendar.ico" Width="24px" Height="24px" />
+                                <asp:ImageButton ID="imbFechaPago" runat="server" ImageUrl="~/Images/Botones/Calendar.ico" Width="24px" Height="24px" style="margin-bottom:-15px;margin-left:5px;" />
                                 <cc1:CalendarExtender ID="calFechaPago" runat="server" Enabled="True" Format="dd/MM/yyyy"
                                         PopupButtonID="imbFechaPago" TargetControlID="txtFechaPago">
                                 </cc1:CalendarExtender>
@@ -695,7 +695,7 @@
                         </tr>
                         <tr>
                             <td style="text-align: right">
-                                <asp:Button ID="btnAgregarPagoModal" runat="server" Text=" AGREGAR " CssClass="btn btn-primary" OnClick="btnAgregarPagoModal_Click" />
+                                <asp:Button ID="btnAgregarPagoModal" runat="server" Text=" AGREGAR " CssClass="btn btn-success" OnClick="btnAgregarPagoModal_Click" />
                             </td>
                             <td style="text-align: left">
                                 <asp:Button ID="btnCancelarPagoModal" runat="server" Text=" CANCELAR " CssClass="btn btn-danger" OnClick="btnCancelarPagoModal_Click" />
@@ -713,8 +713,8 @@
     <cc1:ModalPopupExtender ID="mpeCambioTasa" runat="server" TargetControlID="hdTargetCambioTasa" 
         PopupControlID="pnlCambioTasa" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
-    <asp:Panel ID="pnlCambioTasa" runat="server" BorderColor="Black" BackColor="#e4e4e4" Height="400px"
-        Width="820px" HorizontalAlign="Center" Style="display: none; border-radius:25px;">
+    <asp:Panel ID="pnlCambioTasa" runat="server" BorderColor="Black" BackColor="#e4e4e4" Height="450px"
+        Width="820px" HorizontalAlign="Center" Style="display: none; border-radius:25px; box-shadow:3px 3px 3px #00000030;">
         <asp:UpdatePanel ID="upaCambioTasa" runat="server">
             <ContentTemplate>
                 <table width="100%">
@@ -745,7 +745,7 @@
                         </tr>
                         <tr>
                             <td colspan="2" style="text-align:center">
-                                <asp:Button ID="btnCambiarTasa" runat="server" Text=" CAMBIAR " CssClass="btn btn-primary" OnClick="btnCambiarTasa_Click" />                            
+                                <asp:Button ID="btnCambiarTasa" runat="server" Text=" CAMBIAR " CssClass="btn btn-success" OnClick="btnCambiarTasa_Click" />                            
                                 <asp:Button ID="btnCancelarCambioTasa" runat="server" Text=" CANCELAR " CssClass="btn btn-danger" OnClientClick="OcultarModal();" />
                             </td>
                         </tr>
@@ -761,7 +761,8 @@
     <cc1:ModalPopupExtender ID="mpeBusquedaCliente" runat="server" TargetControlID="hdTargetBusCliente" 
         PopupControlID="pnlBusquedaCliente" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
-    <asp:Panel ID="pnlBusquedaCliente" runat="server" BackColor="white"  HorizontalAlign="Center" Style="display: none" CssClass="modalrlr">
+    <asp:Panel ID="pnlBusquedaCliente" runat="server" BackColor="#e4e4e4" Height="420px"
+        Width="820px" HorizontalAlign="Center" Style="display: none; border-radius:25px; box-shadow:3px 3px 3px #00000030;" CssClass="">
         <asp:UpdatePanel ID="upaBusquedaCliente" runat="server">
             <ContentTemplate>
                 <table width="100%">
@@ -782,7 +783,7 @@
                                 <asp:TextBox ID="txtBusCliNombre" runat="server" Width="" CssClass="form-control" AutoPostBack="false"></asp:TextBox>
                             </td>
                             <td valign="middle">
-                                <asp:Button ID="btnBuscarBusCliente" runat="server" Text="BUSCAR" CssClass="btn" OnClick="btnBuscarBusCliente_Click" />
+                                <asp:Button ID="btnBuscarBusCliente" runat="server" Text="BUSCAR" CssClass="btn btn-success" OnClick="btnBuscarBusCliente_Click" />
                             </td>
                         </tr>
                         <tr>
@@ -823,7 +824,7 @@
                         <tr>
                             <td colspan="3">
                                 <br />
-                                <asp:Button ID="btnCancelarBusCliente" runat="server" Text=" CANCELAR " CssClass="btn btn-primary" OnClientClick="OcultaBusquedaCliente();" />
+                                <asp:Button ID="btnCancelarBusCliente" runat="server" Text=" CANCELAR " CssClass="btn btn-danger" OnClientClick="OcultaBusquedaCliente();" />
                             </td>
                         </tr>
                     </table>

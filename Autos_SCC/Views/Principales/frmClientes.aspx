@@ -27,7 +27,7 @@
                 <h3>Clientes</h3>
             </div>
         </div>
-    <div class="card">
+    <div class="card" style="min-height:70vh;">
     <asp:UpdatePanel ID="upaCotizacion" runat="server">
         <ContentTemplate>
             <asp:HiddenField ID="HidIdCliente" runat="server" Value="0" />
@@ -74,7 +74,8 @@
                             <td>
                             </td>
                         </tr>
-                    </table>
+                    </table><br />
+                <div style="width:100%; background-color:#d0e7ff; border-radius:5px; padding:5px;">
                     <table style="width:100%">
                         <tr>
                             <td style="width:40%">
@@ -91,6 +92,8 @@
                             </td>
                         </tr>
                     </table>
+                </div>
+                    
             </fieldset>
         </ContentTemplate>
         <Triggers>
@@ -203,7 +206,7 @@
                                                 <asp:TextBox ID="txtFechaNacimiento" runat="server" CssClass="form-control" Width="100%" ReadOnly="true"></asp:TextBox>
                                             </div>
                                             <div class="col-md-2" style="text-align:left;">
-                                                <asp:ImageButton ID="imbFechaNacimiento" runat="server" ImageUrl="~/Images/Botones/Calendar.ico" Width="24px" Height="24px" style="margin-bottom:-15px;margin-left:-15px;" />
+                                                <asp:ImageButton ID="imbFechaNacimiento" runat="server" ImageUrl="~/Images/Botones/Calendar.ico" Width="24px" Height="24px" style="margin-bottom:-15px;margin-left:5px;" />
                                                 <cc1:CalendarExtender ID="calFechaNacimiento" runat="server" Enabled="True" Format="dd/MM/yyyy"
                                                         PopupButtonID="imbFechaNacimiento" TargetControlID="txtFechaNacimiento">
                                                 </cc1:CalendarExtender>
@@ -507,7 +510,7 @@
                     <asp:Label ID="lblFormalizar" runat="server" Text="¿Enviar crédito a formalizar?" CssClass="inputLabel"></asp:Label>
                     <asp:Button ID="btnAceptarFormalizar" runat="server" Text="Aceptar" CssClass="btn btn-success" Enabled="false" OnClick="btnAceptarFormalizar_Click" />
                 </div>
-                
+                <br />
             </ContentTemplate>
             <Triggers>
                 <asp:AsyncPostBackTrigger ControlID="btnAceptarFormalizar" EventName="Click" />
@@ -521,8 +524,8 @@
     <cc1:ModalPopupExtender ID="mpeCapturaAval" runat="server" TargetControlID="hdCapturaAvalTarget" 
         PopupControlID="pnlCapturaAval" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
-    <asp:Panel ID="pnlCapturaAval" runat="server" BorderColor="Black" BackColor="#e4e4e4" Height="550px"
-        Width="880px" HorizontalAlign="Center" Style="display: none; border-radius:25px;">
+    <asp:Panel ID="pnlCapturaAval" runat="server" BorderColor="Black" BackColor="#e4e4e4" Height="570px"
+        Width="880px" HorizontalAlign="Center" Style="display: none; border-radius:25px; padding:5px; box-shadow:3px 3px 3px #00000030;">
         <asp:UpdatePanel ID="upaAvales" runat="server">
             <ContentTemplate>
                 <table width="100%">
@@ -531,7 +534,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <asp:Label ID="lblTituloModalAval" runat="server" Text="Captura de Aval" CssClass="labelTitle"></asp:Label>
+                            <h4><asp:Label ID="lblTituloModalAval" runat="server" Text="Captura de Aval" CssClass="labelTitle"></asp:Label></h4>
                         </td>
                     </tr>
                     <tr>
@@ -660,7 +663,7 @@
                                                 <asp:TextBox ID="txtFechaNacimientoAval" runat="server" CssClass="form-control" Width="100%" ReadOnly="true" TabIndex="16"></asp:TextBox>
                                             </div>
                                             <div class="col-md-2">
-                                                <asp:ImageButton ID="imbFechaNacimientoAval" runat="server" ImageUrl="~/Images/Botones/Calendar.ico" Width="24px" Height="24px" style="margin-bottom:-15px; margin-left:-15px;" />
+                                                <asp:ImageButton ID="imbFechaNacimientoAval" runat="server" ImageUrl="~/Images/Botones/Calendar.ico" Width="24px" Height="24px" style="margin-bottom:-15px;" />
                                                 <cc1:CalendarExtender ID="calFechaNacimientoAval" runat="server" Enabled="True" Format="dd/MM/yyyy"
                                                         PopupButtonID="imbFechaNacimientoAval" TargetControlID="txtFechaNacimientoAval">
                                                 </cc1:CalendarExtender>
@@ -760,7 +763,7 @@
                                     <td>
                                         <div class="row">
                                             <div class="col-md-10">
-                                                <asp:TextBox ID="txtApeMaternoAval" runat="server" MaxLength="100" CssClass="frm-control" TabIndex="4"></asp:TextBox>
+                                                <asp:TextBox ID="txtApeMaternoAval" runat="server" MaxLength="100" CssClass="form-control" TabIndex="4"></asp:TextBox>
                                             </div>
                                             <div class="col-md-2">
                                                 <asp:Label ID="lblReqApeMaternoAval" runat="server" Text="*" CssClass="inputReqLabel"></asp:Label>
@@ -792,12 +795,12 @@
                                         <div class="row">
                                             <div class="col-md-10">
                                                 <asp:TextBox ID="txtCPAval" runat="server" MaxLength="5" CssClass="form-control" TabIndex="8"></asp:TextBox>
-                                        <asp:Label ID="lblReqCPAval" runat="server" Text="*" CssClass="inputReqLabel"></asp:Label>
-                                        <cc1:FilteredTextBoxExtender ID="ftbCPAval" runat="server" FilterType="Numbers" TargetControlID="txtCPAval"
-                                            ValidChars="0123456789"></cc1:FilteredTextBoxExtender>
                                             </div>
                                             <div class="col-md-2">
-                                                
+                                                <asp:Label ID="lblReqCPAval" runat="server" Text="*" CssClass="inputReqLabel"></asp:Label>
+                                                <cc1:FilteredTextBoxExtender ID="ftbCPAval" runat="server" FilterType="Numbers" TargetControlID="txtCPAval"
+                                            ValidChars="0123456789"></cc1:FilteredTextBoxExtender>
+                                            </div>
                                             </div>
                                         </div>
                                         
@@ -810,13 +813,13 @@
                                     <td>
                                         <div class="row">
                                             <div class="col-md-4">
-                                                <asp:TextBox ID="txtNoExteriorAval" runat="server" MaxLength="20" CssClass="form-control" Width="23%" TabIndex="10"></asp:TextBox>
+                                                <asp:TextBox ID="txtNoExteriorAval" runat="server" MaxLength="20" CssClass="form-control" Width="100%" TabIndex="10"></asp:TextBox>
                                             </div>
                                             <div class="col-md-2">
                                                 <asp:Label ID="lblNoInteriorAval" runat="server" Text="No. Int : " CssClass="inputLabel"></asp:Label>
                                             </div>
                                             <div class="col-md-4">
-                                                <asp:TextBox ID="txtNoInteriorAval" runat="server" MaxLength="20" CssClass="form-control" Width="22%" TabIndex="11"></asp:TextBox>
+                                                <asp:TextBox ID="txtNoInteriorAval" runat="server" MaxLength="20" CssClass="form-control" Width="100%" TabIndex="11"></asp:TextBox>
                                             </div>
                                         </div> 
                                     </td>

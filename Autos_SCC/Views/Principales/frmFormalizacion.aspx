@@ -47,7 +47,7 @@
                     <h3><asp:Label ID="lblTituloPantalla" runat="server" Text="Formalización de Créditos" CssClass="labelTitle"></asp:Label></h3>
                 </div>
             </div>
-            <div class="card" style="height:70vh;">
+            <div class="card" style="min-height:70vh;">
             <fieldset style="text-align:left">
                 <div style="width:100%; text-align:center;">
                     <h4>
@@ -90,6 +90,7 @@
                         </tr>
                     </table>
                 <br />
+                <div style="width:100%; background-color:#d0e7ff; border-radius:5px; padding:5px;">
                     <table style="width:100%">
                         <tr>
                             <td style="width:40%">
@@ -106,6 +107,7 @@
                             </td>
                         </tr>
                     </table>
+                </div>
             </fieldset>
 
             <fieldset id="fsImprimir" runat="server" visible="false" style="text-align:left">
@@ -144,7 +146,7 @@
                                 <asp:Label ID="lblImprimirMens" runat="server" Text="Imprimir mensualidades:" CssClass="inputLabel"></asp:Label>
                             </td>
                             <td>
-                                <asp:Button ID="btnImprimirMes" runat="server" Text="Imprimir" CssClass="btn btn-inverse btn-sm waves-effect waves-light" OnClick="btnImprimirMes_Click" />
+                                <asp:Button ID="btnImprimirMes" runat="server" Text=" Imprimir  " CssClass="btn btn-secondary btn-sm waves-effect waves-light" OnClick="btnImprimirMes_Click" />
                             </td>
                             <td>
                             </td>
@@ -156,7 +158,7 @@
                                 <asp:Label ID="lblImprimirPagosInd" runat="server" Text="Imprimir pagos individuales:" CssClass="inputLabel"></asp:Label>
                             </td>
                             <td>
-                                <asp:Button ID="btnImprimirPagosInd" runat="server" Text="Imprimir" CssClass="btn btn-inverse btn-sm waves-effect waves-light" OnClick="btnImprimirPagosInd_Click" />
+                                <asp:Button ID="btnImprimirPagosInd" runat="server" Text=" Imprimir  " CssClass="btn btn-secondary btn-sm waves-effect waves-light" OnClick="btnImprimirPagosInd_Click" />
                             </td>
                             <td>
                             </td>
@@ -168,7 +170,7 @@
                                 <asp:Label ID="lblEntregarAuto" runat="server" Text="¿Desea entregar el automovil?" CssClass="inputLabel"></asp:Label>
                             </td>
                             <td>
-                                <asp:Button ID="btnEntregarAuto" runat="server" Text="Aceptar" CssClass="btn btn-success btn-sm waves-effect waves-light" OnClick="btnEntregarAuto_Click" />
+                                <asp:Button ID="btnEntregarAuto" runat="server" Text=" Aceptar  " CssClass="btn btn-success btn-sm waves-effect waves-light" OnClick="btnEntregarAuto_Click" />
                             </td>
                             <td>
                             </td>
@@ -176,7 +178,7 @@
                             </td>
                         </tr>
                     </table>
-                    
+                    <br />
             </fieldset>
             </div>
         </ContentTemplate>
@@ -193,8 +195,8 @@
     <cc1:ModalPopupExtender ID="mpePagosInd" runat="server" TargetControlID="hdPagosIndTarget" 
         PopupControlID="pnlPagosInd" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
-    <asp:Panel ID="pnlPagosInd" runat="server" BorderColor="Black" BackColor="#e4e4e4" Height="250px"
-        Width="820px" HorizontalAlign="Center" Style="display: none; border-radius:25px;">
+    <asp:Panel ID="pnlPagosInd" runat="server" BorderColor="Black" BackColor="#e4e4e4" Height="300px"
+        Width="820px" HorizontalAlign="Center" Style="display: none; border-radius:25px; box-shadow:3px 3px 3px #00000030;">
         <asp:UpdatePanel ID="UpaPagosInd" runat="server">
             <ContentTemplate>
                 <table width="100%">
@@ -242,8 +244,8 @@
     <cc1:ModalPopupExtender ID="mpeAcreedor" runat="server" TargetControlID="hdTargetAcreedor" 
         PopupControlID="pnlAcreedor" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
-    <asp:Panel ID="pnlAcreedor" runat="server" BorderColor="Black" BackColor="#e4e4e4" Height="280px"
-        Width="820px" HorizontalAlign="Center" Style="display: none; border-radius:25px;">
+    <asp:Panel ID="pnlAcreedor" runat="server" BorderColor="Black" BackColor="#e4e4e4" Height="300px"
+        Width="820px" HorizontalAlign="Center" Style="display: none; border-radius:25px;box-shadow:3px 3px 3px #00000030;">
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
                 <table width="100%">
@@ -262,7 +264,7 @@
                                     <div class="table">
                                     <asp:GridView ID="gvAcreedor" runat="server" AutoGenerateColumns="false" Width="100%" 
                                         Font-Size="10px" PageSize="10" BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464" 
-                                        HeaderStyle-ForeColor="white" AllowSorting="True" CssClass="table table-hover">
+                                        HeaderStyle-ForeColor="white" AllowSorting="True" CssClass="table table-hover" style="background-color:#ffffff;">
                                         <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
                                         <HeaderStyle BackColor="#01609F" CssClass="titleHeader" />
                                         <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" CssClass="" />
@@ -311,8 +313,8 @@
     <cc1:ModalPopupExtender ID="mpeSucursales" runat="server" TargetControlID="hdTargetSucursales" 
         PopupControlID="pnlSucursales" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
-    <asp:Panel ID="pnlSucursales" runat="server" BorderColor="Black" BackColor="#e4e4e4" Height="270px"
-        Width="820px" HorizontalAlign="Center" Style="display: none; border-radius:25px;">
+    <asp:Panel ID="pnlSucursales" runat="server" BorderColor="Black" BackColor="#e4e4e4" Height="300px"
+        Width="820px" HorizontalAlign="Center" Style="display: none; border-radius:25px; box-shadow:3px 3px 3px #00000030;">
         <asp:UpdatePanel ID="upaSucursales" runat="server">
             <ContentTemplate>
                 <table width="100%">
@@ -331,7 +333,7 @@
                                     <div class="table">
                                     <asp:GridView ID="gvDirecciones" runat="server" AutoGenerateColumns="false" Width="100%" 
                                         Font-Size="10px" PageSize="10" BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464" 
-                                        HeaderStyle-ForeColor="white" AllowSorting="True" CssClass="table table-hover">
+                                        HeaderStyle-ForeColor="white" AllowSorting="True" CssClass="table table-hover" style="background-color:#ffffff;">
                                         <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
                                         <HeaderStyle BackColor="#01609F" CssClass="titleHeader" />
                                         <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" CssClass="" />
