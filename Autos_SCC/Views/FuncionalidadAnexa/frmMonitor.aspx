@@ -8,20 +8,19 @@
             <asp:HiddenField ID="HidIdCliente" runat="server" Value="0" />
             <asp:HiddenField ID="HidIdCP" runat="server" Value="0" />
             <asp:HiddenField ID="HidIdCPAval" runat="server" Value="0" />
-            <br />
-            <table width="100%">
-                <tr>
-                    <td style="text-align:center; width:100%">
-                        <asp:Label ID="lblTituloPantalla" runat="server" Text="Monitor de Créditos" CssClass="labelTitle"></asp:Label>
-                    </td>
-                </tr>
-            </table>
+            <div class="card">
+                <div class="card-block" style="text-align:center;">
+                    <h3><asp:Label ID="lblTituloPantalla" runat="server" Text="Monitor de Créditos" CssClass="labelTitle"></asp:Label></h3>
+                </div>
+            </div>
+            <div class="card" style="height:70vh;">
             <fieldset style="text-align:left">
-                <legend>
-                    <span>
+                <div style="width:100%; text-align:center;">
+                    <h4>
                         Búsqueda cliente
-                    </span>
-                </legend>
+                    </h4>
+                </div>
+                <br />
                     <table style="width:100%">
                         <tr>
                             <td style="width:20%">
@@ -31,7 +30,7 @@
                                     CssClass="inputLabel"></asp:Label>
                             </td>
                             <td style="width:20%">
-                                <asp:DropDownList ID="ddlOpcion" runat="server" AutoPostBack="true" CssClass="listInput" OnSelectedIndexChanged="ddlOpcion_SelectedIndexChanged" Width="97%">
+                                <asp:DropDownList ID="ddlOpcion" runat="server" AutoPostBack="true" CssClass="form-control" OnSelectedIndexChanged="ddlOpcion_SelectedIndexChanged" Width="97%">
                                 <asp:ListItem Text="Seleccione" Value="0"></asp:ListItem>
                                 <asp:ListItem Text="No. Cotización" Value="1"></asp:ListItem>
                                 <asp:ListItem Text="Por Sucursal" Value="2"></asp:ListItem>
@@ -50,12 +49,12 @@
                                 <asp:Label ID="lblSucursal" runat="server" CssClass="inputLabel" Text="Sucursal:" Visible="false"></asp:Label>
                             </td>
                             <td style="width:20%">
-                                <asp:TextBox ID="txtNoCotizacion" runat="server" CssClass="inputCampo" AutoPostBack="true"
+                                <asp:TextBox ID="txtNoCotizacion" runat="server" CssClass="form-control" AutoPostBack="true"
                                     Visible="false" Width="75%"></asp:TextBox>
                                 <asp:ImageButton ID="imbBuscaCliente" runat="server" ImageUrl="~/Images/Botones/Find.ico" OnClick="imbBuscaCliente_Click"
                                     style="vertical-align:middle" ToolTip="Selecciona un auto existente" Visible="false"/>
                                 <asp:DropDownList ID="ddlSucursal" runat="server" AutoPostBack="true" 
-                                    CssClass="listInput" OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged" 
+                                    CssClass="form-control" OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged" 
                                     Width="97%" Visible="false">
                                 </asp:DropDownList>
                             </td>
@@ -71,7 +70,7 @@
                                 <asp:Label ID="lblCotizacion" runat="server" Text="Cotización:" CssClass="inputLabel" Visible="false"></asp:Label>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlCotizacion" runat="server" Width="97%" CssClass="listInput" Visible="false"
+                                <asp:DropDownList ID="ddlCotizacion" runat="server" Width="97%" CssClass="form-control" Visible="false"
                                      AutoPostBack="true" OnSelectedIndexChanged="ddlCotizacion_SelectedIndexChanged">
                                 </asp:DropDownList>
                             </td>
@@ -99,15 +98,16 @@
                     </table>
             </fieldset>
 
-            <fieldset style="text-align:left">
-                <legend>
-                    <span>
+            <fieldset style="text-align:left"> <br />
+                <div style="width:100%; text-align:center;">
+                    <h4>
                         Resultados...
-                    </span>
-                </legend>
+                    </h4>
+                </div>
                     <center>
-                        <asp:GridView ID="gvClientes" runat="server" AutoGenerateColumns="false" Width="80%" 
-                            Font-Size="10px" PageSize="10" BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464" HeaderStyle-ForeColor="white" AllowSorting="True">
+                        <div class="table">
+                        <asp:GridView ID="gvClientes" runat="server" AutoGenerateColumns="false" Width="100%" 
+                            Font-Size="10px" PageSize="10" BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464" HeaderStyle-ForeColor="white" AllowSorting="True" CssClass="table table-hover">
                             <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
                             <HeaderStyle BackColor="#01609F" CssClass="titleHeader" />
                             <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" CssClass="" />
@@ -124,9 +124,10 @@
                                 No se encontraron registros
                             </EmptyDataTemplate>
                         </asp:GridView>
+                        </div>
                     </center>
             </fieldset>
-
+            </div>
         </ContentTemplate>
         <Triggers>
             <asp:AsyncPostBackTrigger ControlID="ddlSucursal" EventName="SelectedIndexChanged" />

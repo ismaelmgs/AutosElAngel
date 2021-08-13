@@ -42,20 +42,19 @@
             <asp:HiddenField ID="HidIdCliente" runat="server" Value="0" />
             <asp:HiddenField ID="HidIdCP" runat="server" Value="0" />
             <asp:HiddenField ID="HidIdCPAval" runat="server" Value="0" />
-            <br />
-            <table width="100%">
-                <tr>
-                    <td style="text-align:center; width:100%">
-                        <asp:Label ID="lblTituloPantalla" runat="server" Text="Formalización de Créditos" CssClass="labelTitle"></asp:Label>
-                    </td>
-                </tr>
-            </table>
+            <div class="card">
+                <div class="card-block" style="text-align:center;">
+                    <h3><asp:Label ID="lblTituloPantalla" runat="server" Text="Formalización de Créditos" CssClass="labelTitle"></asp:Label></h3>
+                </div>
+            </div>
+            <div class="card" style="height:70vh;">
             <fieldset style="text-align:left">
-                <legend>
-                    <span>
+                <div style="width:100%; text-align:center;">
+                    <h4>
                         Búsqueda cliente
-                    </span>
-                </legend>
+                    </h4>
+                </div>
+                <br />
                     <table style="width:100%">
                         <tr>
                             <td style="width:20%">
@@ -64,7 +63,7 @@
                                 <asp:Label ID="lblSucursal" runat="server" Text="Sucursal:" CssClass="inputLabel"></asp:Label>
                             </td>
                             <td style="width:20%">
-                                <asp:DropDownList ID="ddlSucursal" runat="server" Width="97%" CssClass="listInput"
+                                <asp:DropDownList ID="ddlSucursal" runat="server" Width="97%" CssClass="form-control"
                                     AutoPostBack="true" OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged">
                                 </asp:DropDownList>
                             </td>
@@ -80,7 +79,7 @@
                                 <asp:Label ID="lblCotizacion" runat="server" Text="Cotización:" CssClass="inputLabel"></asp:Label>
                             </td>
                             <td>
-                                <asp:DropDownList ID="ddlCotizacion" runat="server" Width="97%" CssClass="listInput"
+                                <asp:DropDownList ID="ddlCotizacion" runat="server" Width="97%" CssClass="form-control"
                                      AutoPostBack="true" OnSelectedIndexChanged="ddlCotizacion_SelectedIndexChanged">
                                 </asp:DropDownList>
                             </td>
@@ -90,6 +89,7 @@
                             </td>
                         </tr>
                     </table>
+                <br />
                     <table style="width:100%">
                         <tr>
                             <td style="width:40%">
@@ -109,18 +109,19 @@
             </fieldset>
 
             <fieldset id="fsImprimir" runat="server" visible="false" style="text-align:left">
-                <legend>
-                    <span>
+                <br />
+                <div style="width:100%; text-align:center;">
+                    <h4>
                         Imprimir
-                    </span>
-                </legend>
+                    </h4>
+                </div>
                     <table>
                         <tr>
                             <td>
                                 <asp:Label ID="Label2" runat="server" Text="Seleccionar Acreedor:" CssClass="inputLabel"></asp:Label>
                             </td>
                             <td>
-                                <asp:Button ID="btnSelAcreedor" runat="server" Text="Acreedor" CssClass="button" OnClick="btnSelAcreedor_Click" />
+                                <asp:Button ID="btnSelAcreedor" runat="server" Text="Acreedor" CssClass="btn btn-warning btn-sm waves-effect waves-light" OnClick="btnSelAcreedor_Click" />
                             </td>
                             <td colspan="2">
                                 <asp:Label ID="lblRespAcreedor" runat="server" Text="[Sin definir]" CssClass="inputLabel"></asp:Label>
@@ -131,7 +132,7 @@
                                 <asp:Label ID="Label3" runat="server" Text="Seleccionar Sucursal:" CssClass="inputLabel"></asp:Label>
                             </td>
                             <td>
-                                <asp:Button ID="btnSelSucursal" runat="server" Text="Sucursal" CssClass="button" OnClick="btnSelSucursal_Click" />
+                                <asp:Button ID="btnSelSucursal" runat="server" Text="Sucursal" CssClass="btn btn-primary btn-sm waves-effect waves-light" OnClick="btnSelSucursal_Click" />
                             </td>
                             <td colspan="2">
                                 <asp:Label ID="lblRespSucursal" runat="server" Text="[Sin definir]" CssClass="inputLabel"></asp:Label>
@@ -143,7 +144,7 @@
                                 <asp:Label ID="lblImprimirMens" runat="server" Text="Imprimir mensualidades:" CssClass="inputLabel"></asp:Label>
                             </td>
                             <td>
-                                <asp:Button ID="btnImprimirMes" runat="server" Text="Imprimir" CssClass="button" OnClick="btnImprimirMes_Click" />
+                                <asp:Button ID="btnImprimirMes" runat="server" Text="Imprimir" CssClass="btn btn-inverse btn-sm waves-effect waves-light" OnClick="btnImprimirMes_Click" />
                             </td>
                             <td>
                             </td>
@@ -155,7 +156,7 @@
                                 <asp:Label ID="lblImprimirPagosInd" runat="server" Text="Imprimir pagos individuales:" CssClass="inputLabel"></asp:Label>
                             </td>
                             <td>
-                                <asp:Button ID="btnImprimirPagosInd" runat="server" Text="Imprimir" CssClass="button" OnClick="btnImprimirPagosInd_Click" />
+                                <asp:Button ID="btnImprimirPagosInd" runat="server" Text="Imprimir" CssClass="btn btn-inverse btn-sm waves-effect waves-light" OnClick="btnImprimirPagosInd_Click" />
                             </td>
                             <td>
                             </td>
@@ -167,7 +168,7 @@
                                 <asp:Label ID="lblEntregarAuto" runat="server" Text="¿Desea entregar el automovil?" CssClass="inputLabel"></asp:Label>
                             </td>
                             <td>
-                                <asp:Button ID="btnEntregarAuto" runat="server" Text="Aceptar" CssClass="button" OnClick="btnEntregarAuto_Click" />
+                                <asp:Button ID="btnEntregarAuto" runat="server" Text="Aceptar" CssClass="btn btn-success btn-sm waves-effect waves-light" OnClick="btnEntregarAuto_Click" />
                             </td>
                             <td>
                             </td>
@@ -177,6 +178,7 @@
                     </table>
                     
             </fieldset>
+            </div>
         </ContentTemplate>
         <Triggers>
             <asp:AsyncPostBackTrigger ControlID="ddlSucursal" EventName="SelectedIndexChanged" />
@@ -191,18 +193,19 @@
     <cc1:ModalPopupExtender ID="mpePagosInd" runat="server" TargetControlID="hdPagosIndTarget" 
         PopupControlID="pnlPagosInd" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
-    <asp:Panel ID="pnlPagosInd" runat="server" BorderColor="Black" BackColor="White" Height="250px"
-        Width="400px" HorizontalAlign="Center" Style="display: none">
+    <asp:Panel ID="pnlPagosInd" runat="server" BorderColor="Black" BackColor="#e4e4e4" Height="250px"
+        Width="820px" HorizontalAlign="Center" Style="display: none; border-radius:25px;">
         <asp:UpdatePanel ID="UpaPagosInd" runat="server">
             <ContentTemplate>
                 <table width="100%">
                     <tr>
-                        <td align="center">
-                            <asp:Label ID="lblTitPagosInd" runat="server" Text="Pagos individuales" CssClass="labelTitleModal"></asp:Label>
+                        <td align="center"><br />
+                            <h4><asp:Label ID="lblTitPagosInd" runat="server" Text="Pagos individuales" CssClass="labelTitleModal"></asp:Label></h4>
                         </td>
                     </tr>
                     <tr>
                         <td align="center">
+                            <br />
                             <asp:Label ID="Label1" runat="server" Text="" CssClass="labelTitleModal"></asp:Label>
                         </td>
                     </tr
@@ -212,7 +215,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td><br /><br />
                             <asp:RadioButtonList ID="rblPagosInd" runat="server" RepeatDirection="Vertical" Width="100%">
                                 <asp:ListItem Text="Meses con pagos dobles" Value="1" Selected="True"></asp:ListItem>
                                 <asp:ListItem Text="Separar pagos Ind. de mensualidades" Value="2"></asp:ListItem>
@@ -220,9 +223,9 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
-                            <asp:Button ID="btnAceptarPagosInd" runat="server" Text="Aceptar" OnClientClick="OcultarModal();" OnClick="btnAceptarPagosInd_Click" CssClass="button" />
-                            <asp:Button ID="btnCancelarModalPagInd" runat="server" Text="Cancelar" OnClientClick="OcultarModal();" CssClass="button" />
+                        <td><br />
+                            <asp:Button ID="btnAceptarPagosInd" runat="server" Text="Aceptar" OnClientClick="OcultarModal();" OnClick="btnAceptarPagosInd_Click" CssClass="btn btn-success" />
+                            <asp:Button ID="btnCancelarModalPagInd" runat="server" Text="Cancelar" OnClientClick="OcultarModal();" CssClass="btn btn-danger" />
                         </td>
                     </tr>
                 </table>
@@ -239,14 +242,14 @@
     <cc1:ModalPopupExtender ID="mpeAcreedor" runat="server" TargetControlID="hdTargetAcreedor" 
         PopupControlID="pnlAcreedor" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
-    <asp:Panel ID="pnlAcreedor" runat="server" BorderColor="Black" BackColor="White" Height="240px"
-        Width="370px" HorizontalAlign="Center" Style="display: none">
+    <asp:Panel ID="pnlAcreedor" runat="server" BorderColor="Black" BackColor="#e4e4e4" Height="280px"
+        Width="820px" HorizontalAlign="Center" Style="display: none; border-radius:25px;">
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
                 <table width="100%">
                     <tr>
-                        <td colspan="2" style="text-align:center">
-                            <asp:Label ID="lblCaption" runat="server" Text="Lista de Acreedores" CssClass="labelTitleModal"></asp:Label>
+                        <td colspan="2" style="text-align:center"><br />
+                            <h4><asp:Label ID="lblCaption" runat="server" Text="Lista de Acreedores" CssClass="labelTitleModal"></asp:Label></h4>
                         </td>
                     </tr>
                 </table>
@@ -255,10 +258,11 @@
                     <table width="90%">
                         <tr>
                             <td colspan="2">
-                                <asp:Panel ID="pnlGridAcreedor" runat="server" Width="350" Height="150" ScrollBars="Auto">
+                                <asp:Panel ID="pnlGridAcreedor" runat="server" Width="100%" Height="150" ScrollBars="Auto">
+                                    <div class="table">
                                     <asp:GridView ID="gvAcreedor" runat="server" AutoGenerateColumns="false" Width="100%" 
                                         Font-Size="10px" PageSize="10" BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464" 
-                                        HeaderStyle-ForeColor="white" AllowSorting="True">
+                                        HeaderStyle-ForeColor="white" AllowSorting="True" CssClass="table table-hover">
                                         <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
                                         <HeaderStyle BackColor="#01609F" CssClass="titleHeader" />
                                         <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" CssClass="" />
@@ -275,6 +279,7 @@
                                             No se encontraron registros
                                         </EmptyDataTemplate>
                                     </asp:GridView>
+                                    </div>
                                 </asp:Panel>
                             </td>                            
                         </tr>
@@ -286,12 +291,12 @@
                         <tr>
                             <td width="50%">
                                 <div style="text-align:right; float:right">
-                                    <asp:Button ID="btnAceptarAcreedor" runat="server" Text="Aceptar" OnClick="btnAceptarAcreedor_Click" CssClass="button"/>
+                                    <asp:Button ID="btnAceptarAcreedor" runat="server" Text="Aceptar" OnClick="btnAceptarAcreedor_Click" CssClass="btn btn-success"/>
                                 </div>
                              </td>
                              <td width="50%">
                                 <div style="text-align:left; float:left">
-                                    <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="button"/>
+                                    <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-danger"/>
                                 </div>
                              </td>
                         </tr>
@@ -306,14 +311,14 @@
     <cc1:ModalPopupExtender ID="mpeSucursales" runat="server" TargetControlID="hdTargetSucursales" 
         PopupControlID="pnlSucursales" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
-    <asp:Panel ID="pnlSucursales" runat="server" BorderColor="Black" BackColor="White" Height="240px"
-        Width="350px" HorizontalAlign="Center" Style="display: none">
+    <asp:Panel ID="pnlSucursales" runat="server" BorderColor="Black" BackColor="#e4e4e4" Height="270px"
+        Width="820px" HorizontalAlign="Center" Style="display: none; border-radius:25px;">
         <asp:UpdatePanel ID="upaSucursales" runat="server">
             <ContentTemplate>
                 <table width="100%">
                     <tr>
-                        <td colspan="2" style="text-align:center">
-                            <asp:Label ID="Label4" runat="server" Text="Lista de Direcciones" CssClass="labelTitleModal"></asp:Label>
+                        <td colspan="2" style="text-align:center"><br />
+                            <h4><asp:Label ID="Label4" runat="server" Text="Lista de Direcciones" CssClass="labelTitleModal"></asp:Label></h4>
                         </td>
                     </tr>
                 </table>
@@ -322,10 +327,11 @@
                     <table width="90%">
                         <tr>
                             <td colspan="2">
-                                <asp:Panel ID="pnlListaDirecciones" runat="server" Width="340" Height="150" ScrollBars="Auto">
-                                    <asp:GridView ID="gvDirecciones" runat="server" AutoGenerateColumns="false" Width="700" 
+                                <asp:Panel ID="pnlListaDirecciones" runat="server" Width="100%" Height="150" ScrollBars="Auto">
+                                    <div class="table">
+                                    <asp:GridView ID="gvDirecciones" runat="server" AutoGenerateColumns="false" Width="100%" 
                                         Font-Size="10px" PageSize="10" BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464" 
-                                        HeaderStyle-ForeColor="white" AllowSorting="True">
+                                        HeaderStyle-ForeColor="white" AllowSorting="True" CssClass="table table-hover">
                                         <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
                                         <HeaderStyle BackColor="#01609F" CssClass="titleHeader" />
                                         <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" CssClass="" />
@@ -343,6 +349,7 @@
                                             No se encontraron registros
                                         </EmptyDataTemplate>
                                     </asp:GridView>
+                                    </div>
                                 </asp:Panel>
                             </td>                            
                         </tr>
@@ -354,12 +361,12 @@
                         <tr>
                             <td width="50%">
                                 <div style="text-align:right; float:right">
-                                    <asp:Button ID="btnAceptarDir" runat="server" Text="Aceptar" OnClick="btnAceptarDir_Click" CssClass="button"/>
+                                    <asp:Button ID="btnAceptarDir" runat="server" Text="Aceptar" OnClick="btnAceptarDir_Click" CssClass="btn btn-success"/>
                                 </div>
                              </td>
                              <td width="50%">
                                 <div style="text-align:left; float:left">
-                                    <asp:Button ID="btnCancelarDir" runat="server" Text="Cancelar" CssClass="button"/>
+                                    <asp:Button ID="btnCancelarDir" runat="server" Text="Cancelar" CssClass="btn btn-danger"/>
                                 </div>
                              </td>
                         </tr>
