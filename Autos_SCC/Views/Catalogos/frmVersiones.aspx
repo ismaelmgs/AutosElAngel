@@ -4,23 +4,23 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <title></title>
-<link rel="stylesheet" href="../../jquery/jquery-ui-1.9.2.custom.min.css" type="text/css" />
+<%--<link rel="stylesheet" href="../../jquery/jquery-ui-1.9.2.custom.min.css" type="text/css" />
     <script type="text/javascript" src="../../jquery/jquery-1.8.3.js"></script>
-    <script type="text/javascript" src="../../jquery/jquery-ui-1.9.2.custom.min.js"></script>
+    <script type="text/javascript" src="../../jquery/jquery-ui-1.9.2.custom.min.js"></script>--%>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <script language="javascript" type="text/javascript">
-        function MostrarMensaje(mensaje, titulo)
-        {
-            var ventana = $('<div id="errortitulo" title="' + titulo + '"><span id="errormensaje">' + mensaje + '</span></div>');
+        //function MostrarMensaje(mensaje, titulo)
+        //{
+        //    var ventana = $('<div id="errortitulo" title="' + titulo + '"><span id="errormensaje">' + mensaje + '</span></div>');
 
-            ventana.dialog({
-                modal: true, 
-                buttons: { "Aceptar": function () { $(this).dialog("close"); } },
-                show: "fold",
-                hide: "scale",
-            });
-        }
+        //    ventana.dialog({
+        //        modal: true, 
+        //        buttons: { "Aceptar": function () { $(this).dialog("close"); } },
+        //        show: "fold",
+        //        hide: "scale",
+        //    });
+        //}
 
         function On(GridView) {
             if (GridView != null) {

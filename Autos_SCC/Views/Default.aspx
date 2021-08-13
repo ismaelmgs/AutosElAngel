@@ -12,7 +12,7 @@
             <h3>Bienvenido</h3>
         </div>
     </div>
-    <div class="card">
+    <div class="card" style="height:65vh;">
         <br />
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width:80%; margin: 0 auto; box-shadow:3px 3px 3px #0000001f; border-radius:20px;">
           <ol class="carousel-indicators">

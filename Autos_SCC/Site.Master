@@ -6,31 +6,21 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Gestor de Creditos - Autos el Ángel de Puebla</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <%--<link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />--%>
     <%--<script src="../Recursos/jquery-1.7.2.min.js" type="text/javascript"></script>--%>
     <%--<link rel="stylesheet" href="Styles/MenuE.css" type="text/css" />--%>
     <%--<link rel="stylesheet" href="Styles/Bootstrap/css/bootstrap.css" type="text/css" />--%>
     <%--<link rel="stylesheet" href="Styles/AUTOMaster.css" type="text/css" />--%>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet" />
-    <!-- waves.css -->
-    <link rel="stylesheet" href="~/assets/pages/waves/css/waves.min.css" type="text/css" media="all" />
-      <!-- Required Fremwork -->
-      <link rel="stylesheet" type="text/css" href="~/assets/css/bootstrap/css/bootstrap.min.css" />
-      <!-- themify icon -->
-      <link rel="stylesheet" type="text/css" href="~/assets/icon/themify-icons/themify-icons.css" />
-      <!-- Font Awesome -->
-      <link rel="stylesheet" type="text/css" href="~/assets/icon/font-awesome/css/font-awesome.min.css" />
-      <!-- scrollbar.css -->
-      <link rel="stylesheet" type="text/css" href="~/assets/css/jquery.mCustomScrollbar.css" />
-        <!-- am chart export.css -->
-        <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/Styles/Sit3.css" type="text/css" />
       <!-- Style.css -->
-      <link rel="stylesheet" href="~/assets/css/style.css" type="text/css" />
-      <link rel="stylesheet" href="~/Styles/overlay.css" type="text/css" />
+      <%-- <link rel="stylesheet" href="~/Styles/overlay.css" type="text/css" />
       <link rel="stylesheet" href="~/Styles/overlaty.css" type="text/css" />
       <link rel="stylesheet" href="~/Styles/overlayCT.css" type="text/css" />
-      <link rel="stylesheet" href="~/Styles/overlayPro.css" type="text/css" />
+      <link rel="stylesheet" href="~/Styles/overlayPro.css" type="text/css" />--%>
 
      <script type="text/javascript">
          function toggleOverlay() {
@@ -59,9 +49,7 @@
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
 <!-- RLR Logo -->
-                    <%--<a href="../Default.aspx">
-                        <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/Fondos/logo.png" />
-                    </a>--%>
+                    
 
 
                 
@@ -83,174 +71,83 @@
 
 
 <!-- Nuevo template inicio -->
-
-                <div id="pcoded" class="pcoded">
-      <div class="pcoded-overlay-box"></div>
-      <div class="pcoded-container navbar-wrapper">
-          <nav class="navbar header-navbar pcoded-header">
-              <div class="navbar-wrapper">
-                  <div class="navbar-logo" style="background-color:#ffffff;">
-                      <a class="mobile-menu waves-effect waves-light" id="mobile-collapse" href="#!">
-                          <i class="ti-menu"></i>
-                      </a>
-                      <div class="mobile-search waves-effect waves-light">
-                          <div class="header-search">
-                              <div class="main-search morphsearch-search">
-                                  <div class="input-group">
-                                      <span class="input-group-addon search-close"><i class="ti-close"></i></span>
-                                      <input type="text" class="form-control" placeholder="Enter Keyword">
-                                      <span class="input-group-addon search-btn"><i class="ti-search"></i></span>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <a href='<%=ResolveUrl("~/Views/Default.aspx")%>'>
-                          <asp:Image ID="Image3" runat="server" ImageUrl="~/Images/Fondos/logo.png" Width="150" />
-                      </a>
-                      <a class="mobile-options waves-effect waves-light">
-                          <i class="ti-more"></i>
-                      </a>
-                  </div>
                 
-                  <div class="navbar-container container-fluid">
-                      <ul class="nav-left">
-                          <li>
-                              <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="ti-menu"></i></a></div>
-                          </li>
-                          <li class="header-search">
-                              <div class="main-search morphsearch-search">
-                                  <div class="input-group">
-                                      <span class="input-group-addon search-close"><i class="ti-close"></i></span>
-                                      <input type="text" class="form-control">
-                                      <span class="input-group-addon search-btn"><i class="ti-search"></i></span>
-                                  </div>
+                <div class="row" style="border-style: solid; border-width: 0 1px 4px 1px; border-color: #137ea7; background-color:#158cba;/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+10,158cba+100 */ /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,007bff+100 */
+background: #ffffff; /* Old browsers */
+background: -moz-linear-gradient(top,  #ffffff 0%, #007bff 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #ffffff 0%,#007bff 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #ffffff 0%,#007bff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#007bff',GradientType=0 ); /* IE6-9 */
+ ">
+                    <div class="col-md-3" style="text-align:center;">
+                        <a href='<%=ResolveUrl("~/Views/Default.aspx")%>'>
+                            <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/Fondos/logo.png" Height="70" style="border-radius:20px; margin:5px;" />
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <nav class="navbar navbar-expand-lg navbar-light bg-primary" style="height: 70px;">
+                          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" style="margin: 0 auto;">
+                            <span class="navbar-toggler-icon"></span>
+                          </button>
+                          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                            <ul class="navbar-nav" style="margin:0 auto;">
+                              <li class="nav-item active">
+                                <a class="nav-link" href='<%=ResolveUrl("~/Views/Default.aspx")%>'>Inicio <span class="sr-only">(current)</span></a>
+                              </li>
+                              <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Documentos</a>
+                              <div class="dropdown-menu" aria-labelledby="dropdown01">
+                                <a class="dropdown-item" href='<%=ResolveUrl("~/Views/Principales/Cotizador.aspx")%>'">Cotizador</a>
+                                <a class="dropdown-item" href='<%=ResolveUrl("~/Views/Principales/frmClientes.aspx")%>'>Clientes</a>
+                                <a class="dropdown-item" href='<%=ResolveUrl("~/Views/Principales/frmFormalizacion.aspx")%>'>Formalización</a>
                               </div>
-                          </li>
-                          <li>
-                              <a href="#!" onclick="javascript:toggleFullScreen()" class="waves-effect waves-light">
-                                  <i class="ti-fullscreen"></i>
-                              </a>
-                          </li>
-                      </ul>
-                      <ul class="nav-right">
-                          <%--<li class="header-notification">
-                              <a href="#!" class="waves-effect waves-light">
-                                  <i class="ti-bell"></i>
-                                  <span class="badge bg-c-red"></span>
-                              </a>
-                              <ul class="show-notification">
-                                  <li>
-                                      <h6>Notifications</h6>
-                                      <label class="label label-danger">New</label>
-                                  </li>
-                                  <li class="waves-effect waves-light">
-                                      <div class="media">
-                                          <img class="d-flex align-self-center img-radius" src="../assets/images/avatar-2.jpg" alt="Generic placeholder image">
-                                          <div class="media-body">
-                                              <h5 class="notification-user">John Doe</h5>
-                                              <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                                              <span class="notification-time">30 minutes ago</span>
-                                          </div>
-                                      </div>
-                                  </li>
-                                  <li class="waves-effect waves-light">
-                                      <div class="media">
-                                          <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/avatar-4.jpg" CssClass="d-flex align-self-center img-radius" />
-                                          <div class="media-body">
-                                              <h5 class="notification-user">Joseph William</h5>
-                                              <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                                              <span class="notification-time">30 minutes ago</span>
-                                          </div>
-                                      </div>
-                                  </li>
-                                  <li class="waves-effect waves-light">
-                                      <div class="media">
-                                          <img class="d-flex align-self-center img-radius" src="../assets/images/avatar-3.jpg" alt="Generic placeholder image">
-                                          <div class="media-body">
-                                              <h5 class="notification-user">Sara Soudein</h5>
-                                              <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                                              <span class="notification-time">30 minutes ago</span>
-                                          </div>
-                                      </div>
-                                  </li>
-                              </ul>
-                          </li>--%>
-                          <li class="user-profile header-notification">
-                              <a href="#!" class="waves-effect waves-light">
-                                  <asp:Image ID="Image4" runat="server" ImageUrl="~/Images/avatar-4.jpg" CssClass="img-radius" />
-                                  <span>
-<!-- RLR Nombre Usuario -->
-                                    <asp:Label ID="lblUser2" runat="server"></asp:Label>
-
-                                  </span>
-                                  <i class="ti-angle-down"></i>
-                              </a>
-                              <ul class="show-notification profile-notification">
-<%--                                  <li class="waves-effect waves-light">
-                                      <a href="#!">
-                                          <i class="ti-settings"></i> Settings
-                                      </a>
-                                  </li>--%>
-                                  <li class="waves-effect waves-light">
-                                      <a href="user-profile.html">
-                                          <i class="ti-user"></i> Mi Cuenta
-                                      </a>
-                                  </li>
-<%--                                  <li class="waves-effect waves-light">
-                                      <a href="email-inbox.html">
-                                          <i class="ti-email"></i> My Messages
-                                      </a>
-                                  </li>
-                                  <li class="waves-effect waves-light">
-                                      <a href="auth-lock-screen.html">
-                                          <i class="ti-lock"></i> Lock Screen
-                                      </a>
-                                  </li>--%>
-                                  <li class="waves-effect waves-light">
-                                      <div class="row">
-                                          <div class="col-md-3">
-                                            <i class="ti-power-off"></i>
-                                          </div>
-                                          <div class="col-md-9">
-<!-- RLR Boton Salir -->
-                                            <asp:LinkButton runat="server" ID="lkSalir" Text="Salir" OnClick="lkSalir_Click" title="Cerrar Sesión"></asp:LinkButton>
-                                          </div>
-                                      </div>
-                                          
-
-                                  </li>
-                              </ul>
-                          </li>
-                      </ul>
-                  </div>
-              </div>
-          </nav>
-
-          <div class="pcoded-main-container">
-              <div class="pcoded-wrapper">
-                  <nav class="pcoded-navbar">
-                      <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
-                      <div class="pcoded-inner-navbar main-menu">
-                          <div class="">
-                              <div class="main-menu-header">
-                                  <asp:Image ID="Image5" runat="server" ImageUrl="~/Images/avatar-4.jpg" CssClass="img-80 img-radius" />
-                                  <div class="user-details">
-                                      <%--<span id="more-details">John Doe<i class="fa fa-caret-down"></i></span>--%>
-                                  </div>
+                              </li>
+                              <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" href="" id="dropdown02" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Control de cartera</a>
+                              <div class="dropdown-menu" aria-labelledby="dropdown01">
+                                <a class="dropdown-item" href='<%=ResolveUrl("~/Views/FuncionalidadAnexa/frmMonitor.aspx")%>'>Monitor</a>
+                                <a class="dropdown-item" href='<%=ResolveUrl("~/Views/Pays/frmAbonos.aspx")%>'>Abonos</a>
+                                <a class="dropdown-item" href='<%=ResolveUrl("~/Views/Cobranza/frmCobranza.aspx")%>'>Cobranza</a>
                               </div>
-        
-                              <%--<div class="main-menu-content">
-                                  <ul>
-                                      <li class="more-details">
-                                          <a href="user-profile.html"><i class="ti-user"></i>View Profile</a>
-                                          <a href="#!"><i class="ti-settings"></i>Settings</a>
-                                          <a href="auth-normal-sign-in.html"><i class="ti-layout-sidebar-left"></i>Logout</a>
-                                      </li>
-                                  </ul>
-                              </div>--%>
+                              </li>
+                              <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" href="" id="dropdown03" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reportes</a>
+                              <div class="dropdown-menu" aria-labelledby="dropdown01">
+                                <a class="dropdown-item" href='<%=ResolveUrl("~/Views/Report/frmAutosVen.aspx")%>'>Autos Vendidos</a>
+                                <a class="dropdown-item" href='<%=ResolveUrl("~/Views/Report/frmPaysPeriod.aspx")%>'>Pagos Recibidos</a>
+                              </div>
+                              </li>
+                              <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" href="" id="dropdown04" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Catálogos</a>
+                              <div class="dropdown-menu" aria-labelledby="dropdown01">
+                                <a class="dropdown-item" href='<%=ResolveUrl("~/Views/Catalogos/frmAutos.aspx")%>'>Autos</a>
+                                <a class="dropdown-item" href='<%=ResolveUrl("~/Views/Catalogos/frmMarcas.aspx")%>'>Marcas</a>
+                                <a class="dropdown-item" href='<%=ResolveUrl("~/Views/Catalogos/frmTipoAuto.aspx")%>'>Tipos de Autos</a>
+                                <a class="dropdown-item" href='<%=ResolveUrl("~/Views/Catalogos/frmVersiones.aspx")%>'>Versiones</a>
+                              </div>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href='<%=ResolveUrl("~/About.aspx")%>'>Acerca de</a>
+                              </li>
+                            </ul>
                           </div>
-                          <div class="pcoded-navigation-label" data-i18n="nav.category.navigation" style="text-align:center;">Menú Principal</div>
-                          <ul class="pcoded-item pcoded-left-item">
+                        </nav>
+                    </div>
+                    <div class="col-md-3" style="text-align:center; margin-top:1%;">
+                        <asp:Image ID="Image2" runat="server" ImageUrl="~/Images/avatar-4.jpg" Height="20" style="border-radius:50%;" />
+<!-- RLR Nombre Usuario -->     <asp:Label ID="lblUser2" runat="server"></asp:Label><br />
+<!-- RLR Boton Salir -->        <asp:LinkButton runat="server" ID="lkSalir" Text="Salir <span style='color:#ffffff;font-size:20px;'>&#x1f789;</span>" OnClick="lkSalir_Click" title="Cerrar Sesión" style="color:#ffffff;"></asp:LinkButton>
+                    </div>
+                </div>
+                
+                         
+
+
+                                  
+
+
+
+<!-- RLR menu -->       <%--<ul class="pcoded-item pcoded-left-item">
                               <li class="">
                                   <a href='<%=ResolveUrl("~/Views/Default.aspx")%>' class="waves-effect waves-dark">
                                       <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
@@ -382,48 +279,28 @@
                                   <a href='<%=ResolveUrl("~/About.aspx")%>' class="waves-effect waves-dark">
                                       <span class="pcoded-micon"><i class="ti-direction-alt"></i></span>
                                       <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">Acerca de</span>
-                                      <%--<span class="pcoded-mcaret"></span>--%>
+                                      <%--<span class="pcoded-mcaret"></span>
                                   </a>
                               </li>
-                          </ul>
+                          </ul>--%>
        
-                      </div>
-                  </nav>
-                  <div class="pcoded-content">
-                      <!-- RLR-header --><!-- Page-header start -->
-                      <div class="page-header">
-                          <div class="page-block">
-                              <div class="row align-items-center">
-                                  <div class="col-md-8">
-                                      <div class="page-header-title">
-                                          <h5 class="m-b-10">
-<!-- RLR Nombre Empresa -->    
-                                            <asp:Label ID="lblNomEmpresa" CssClass="empresa" runat="server" Text="Autos el Ángel de puebla"></asp:Label></h5>
-                                          <p class="m-b-0">Bienvenido</p>
-                                      </div>
-                                  </div>
-                                  <div class="col-md-4">
-                                      <ul class="breadcrumb-title">
-                                          <li class="breadcrumb-item">
-                                              <a href="../Default.aspx"> <i class="fa fa-home"></i> </a>
-                                          </li>
-                                          <li class="breadcrumb-item">
-                                              <a href="#!">Navegación</a>
-                                          </li>
-                                      </ul>
-                                  </div>
-                              </div>
+                          <div style="width:100%; height:40px; background-color:#007bff; text-align:center; padding:5px;box-shadow: 0px 3px 3px #00000050;background:
+linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+background-color: #131313;
+background-size: 20px 20px;">
+<!-- RLR Nombre Empresa -->    <h5><asp:Label ID="lblNomEmpresa" CssClass="empresa" runat="server" Text="Autos el Ángel de puebla" style="color:#ffffff;"></asp:Label></h5>
                           </div>
-                      </div>
-                      <!-- Page-header end -->
-                      <div class="pcoded-inner-content">
-                          <!-- Main-body start -->
-                          <div class="main-body">
-                              <div class="page-wrapper">
+
+
                                   <!-- Page-body start -->
                                   <div class="page-body">
  <!-- RLR Menú -->
-                    <%--<asp:Menu ID="MenuUsuarios" runat="server" Orientation="Horizontal" StaticEnableDefaultPopOutImage="false"
+                 <%--   <asp:Menu ID="MenuUsuarios" runat="server" Orientation="Horizontal" StaticEnableDefaultPopOutImage="false"
                         OnMenuItemClick="Menu_MenuItemClick" ForeColor="#cccccc" Font-Names="FuturaLight"
                         Font-Size="11pt" Font-Bold="false">
                         <StaticMenuItemStyle HorizontalPadding="10px" VerticalPadding="2px" ForeColor="White" />
@@ -436,10 +313,10 @@
                             <asp:MenuItemStyle ForeColor="White" CssClass="ItemsMenu" />
                         </LevelMenuItemStyles>
                         <LevelSubMenuStyles></LevelSubMenuStyles>
-                        <Items>--%>
-                            <%--<asp:MenuItem Text="Inicio" NavigateUrl="~/Default.aspx"/>--%>
+                        <Items>
+                            <asp:MenuItem Text="Inicio" NavigateUrl="~/Default.aspx"/>
 
-                            <%--<asp:MenuItem Text="Documentos">
+                            <asp:MenuItem Text="Documentos">
                                 <asp:MenuItem Text="Cotizador" NavigateUrl="~/Views/Principales/Cotizador.aspx"></asp:MenuItem>
                                 <asp:MenuItem Text="Clientes" NavigateUrl="~/Views/Principales/frmClientes.aspx"></asp:MenuItem>
                                 <asp:MenuItem Text="Formalización" NavigateUrl="~/Views/Principales/frmFormalizacion.aspx"></asp:MenuItem>
@@ -465,7 +342,7 @@
 
                             <asp:MenuItem NavigateUrl="~/About.aspx" Text="Acerca de"/>
                         </Items>
-                    </asp:Menu> --%>                                    
+                    </asp:Menu> --%>                                  
 
 <!-- RLR Contenido nuevo inicia -->
 
@@ -478,7 +355,7 @@
 <!-- RLR Contenido nuevo inicio-->
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                     </asp:ContentPlaceHolder>
-                    <div style="width:80%; position:fixed; bottom:0px;text-align:center; font-size:10px; border-radius:15px;background-color: #c1d8ff !important; height: 25px; padding-top: 5px;">
+                    <div style="width:90%; position:fixed; bottom:0px;text-align:center; font-size:10px; border-radius:15px;background-color: #7abaff  !important; height: 25px; padding-top: 5px;">
                         <script>
                             document.write(new Date().getFullYear())
                         </script>© Autos del Ángel Puebla | <a href='<%=ResolveUrl("~/Views/frmPolitica.aspx")%>' style="font-size:10px;">Política Autos el Ángel de Puebla</a>
@@ -550,36 +427,14 @@
                         <asp:Label ID="LblFooter" runat="server" Text="" CssClass="legendFooter"></asp:Label>
  
     </div>
-  
-    <!-- Required Jquery -->
-    <script type="text/javascript" src='<%=ResolveUrl("~/assets/js/jquery/jquery.min.js")%>'></script>
-    <script type="text/javascript" src='<%=ResolveUrl("~/assets/js/jquery-ui/jquery-ui.min.js")%>'></script>
-    <script type="text/javascript" src='<%=ResolveUrl("~/assets/js/popper.js/popper.min.js")%>'></script>
-    <script type="text/javascript" src='<%=ResolveUrl("~/assets/js/bootstrap/js/bootstrap.min.js")%>'></script>
-    <script type="text/javascript" src='<%=ResolveUrl("~/assets/pages/widget/excanvas.js")%>'></script>
-    <!-- waves js -->
-    <script type="text/javascript" src='<%=ResolveUrl("~/assets/pages/waves/js/waves.min.js")%>'></script>
-    <!-- jquery slimscroll js -->
-    <script type="text/javascript" src='<%=ResolveUrl("~/assets/js/jquery-slimscroll/jquery.slimscroll.js")%>'></script>
-    <!-- modernizr js -->
-    <script type="text/javascript" src='<%=ResolveUrl("~/assets/js/modernizr/modernizr.js")%>'></script>
-    <!-- slimscroll js -->
-    <script type="text/javascript" src='<%=ResolveUrl("~/assets/js/SmoothScroll.js")%>'></script>
-    <script type="text/javascript" src='<%=ResolveUrl("~/assets/js/jquery.mCustomScrollbar.concat.min.js")%>'></script>
-    <!-- Chart js -->
-    <script type="text/javascript" src='<%=ResolveUrl("~/assets/js/chart.js/Chart.js")%>'></script>
-    <!-- amchart js -->
-    <script type="text/javascript" src="https://www.amcharts.com/lib/3/amcharts.js"></script>
-    <script type="text/javascript" src'<%=ResolveUrl("~/assets/pages/widget/amchart/gauge.js")%>'></script>
-    <script type="text/javascript" src='<%=ResolveUrl("~/assets/pages/widget/amchart/serial.js")%>'></script>
-    <script type="text/javascript" src='<%=ResolveUrl("~/assets/pages/widget/amchart/light.js")%>'></script>
-    <script type="text/javascript" src='<%=ResolveUrl("~/assets/pages/widget/amchart/pie.min.js")%>'></script>
-    <script type="text/javascript" src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
-    <!-- menu js -->
-    <script type="text/javascript" src='<%=ResolveUrl("~/assets/js/pcoded.min.js")%>'></script>
-    <script type="text/javascript" src='<%=ResolveUrl("~/assets/js/vertical-layout.min.js")%>'></script>
-    <!-- custom js -->
-    <script type="text/javascript" src='<%=ResolveUrl("~/assets/pages/dashboard/custom-dashboard.js")%>'></script>
-    <script type="text/javascript" src='<%=ResolveUrl("~/assets/js/script.js")%>'></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src='<%=ResolveUrl("~/js/bootstrap/bootstrap-dropdown.js")%>'></script>
+    <script type="text/javascript">
+        $('#myDropdown').on('show.bs.dropdown', function () {
+            // do something...
+        })
+    </script>
 </body>
 </html>
