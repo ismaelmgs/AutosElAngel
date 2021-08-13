@@ -114,6 +114,7 @@
                 </div>
             </div>
             <div class="card" style="min-height:70vh;">
+                <div style="width:80%; margin:0 auto;">
                 <div class="row">
                     <div class="col-md-2">
                         <asp:Label ID="lblNombre" runat="server" Text="Nombre:" CssClass="inputLabel"></asp:Label>
@@ -283,6 +284,8 @@
                             ErrorMessage="El E-mail es requerido" ForeColor="Red" ValidationGroup="VCotizar"></asp:RequiredFieldValidator>
                     </div>
                 </div>
+                </div>
+                
                 <br />
                         <asp:updatepanel id="updCotizar" runat="server" updatemode="Conditional">
                             <ContentTemplate>
@@ -483,9 +486,9 @@
             </table>
             </div>
 <!-- RLR Modal inicia-->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+            <%--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
               Abrir Modal
-            </button>
+            </button>--%>
 
             <!-- Modal -->
             <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
