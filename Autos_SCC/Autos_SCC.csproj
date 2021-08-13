@@ -376,6 +376,7 @@
     <Content Include="Styles\overlay.css" />
     <Content Include="Styles\overlayCT.css" />
     <Content Include="Styles\overlayPro.css" />
+    <Content Include="Styles\Sit3.css" />
     <Content Include="Styles\Site.css" />
     <Content Include="Styles\styles_login.css" />
     <Content Include="Images\Banner_1.jpg" />
