@@ -11,6 +11,8 @@ using NucleoBase.Core;
 using System.Data;
 using Autos_SCC.DomainModel;
 using Autos_SCC.Clases;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
 
 namespace Autos_SCC.Views.Principales
 {
@@ -70,16 +72,24 @@ namespace Autos_SCC.Views.Principales
 
         protected void GridCotizar_RowDataBound(object sender, GridViewRowEventArgs e)
         {
+            DataTable dt;
             try
             {
+                string strPlazoddl = ddlPlazo.SelectedValue.ToString();
                 if (e.Row.RowType == DataControlRowType.DataRow)
                 {
                     GridView gv = (GridView)e.Row.FindControl("GrdCotizaDetalle");
+                    Label lblP = (Label)e.Row.FindControl("lblPlazoS");
 
                     int iPlazo = gvCotizar.DataKeys[e.Row.RowIndex].Value.S().I();
                     double dPagoInicial = e.Row.Cells[6].Text.Replace("$","").Replace(",","").S().Db();
 
-                    gv.DataSource = Utils.CalculaDetalleCotizacion(iPlazo,dPagoInicial);
+                    dt = Utils.CalculaDetalleCotizacion(iPlazo, dPagoInicial);
+                    if (lblP.Text == strPlazoddl)
+                    {
+                        dtCotizacion = dt;
+                    }
+                        gv.DataSource = dt;
                     gv.DataBind();
                 }
             }
@@ -91,20 +101,39 @@ namespace Autos_SCC.Views.Principales
 
         protected void GrdCotizaDetalle_RowDataBound(object sender, System.Web.UI.WebControls.GridViewRowEventArgs e)
         {
+            string strCantidad = string.Empty;
             try
             {
+                string strPlazo = string.Empty;
+                string strPlazoddl = ddlPlazo.SelectedValue.ToString();
                 if (e.Row.RowType == DataControlRowType.DataRow)
                 {
+                    strPlazo = DataBinder.Eval(e.Row.DataItem, "Plazo").ToString();
+
                     suma1 += Convert.ToDecimal(DataBinder.Eval(e.Row.DataItem, "PagoNormal"));
                     suma2 += Convert.ToDecimal(DataBinder.Eval(e.Row.DataItem, "PagoAdelantado"));
                     suma3 += Convert.ToDecimal(DataBinder.Eval(e.Row.DataItem, "PagoMora"));
 
-                    e.Row.Cells[1].Text = e.Row.Cells[1].Text.D().ToString("c");
+                    //e.Row.Cells[1].Text = e.Row.Cells[1].Text.D().ToString("c");
+                    //strCantidad = e.Row.Cells[1].Text;
+                    strCantidad = Convert.ToDecimal(DataBinder.Eval(e.Row.DataItem, "PagoNormal")).S();
+                    e.Row.Cells[1].Text = strCantidad.D().ToString("c");
                     e.Row.Cells[1].HorizontalAlign = HorizontalAlign.Right;
-                    e.Row.Cells[2].Text = e.Row.Cells[2].Text.D().ToString("c");
+
+                    strCantidad = Convert.ToDecimal(DataBinder.Eval(e.Row.DataItem, "PagoAdelantado")).S();
+                    e.Row.Cells[2].Text = strCantidad.D().ToString("c");
                     e.Row.Cells[2].HorizontalAlign = HorizontalAlign.Right;
-                    e.Row.Cells[3].Text = e.Row.Cells[3].Text.D().ToString("c");
+
+                    strCantidad = Convert.ToDecimal(DataBinder.Eval(e.Row.DataItem, "PagoMora")).S();
+                    e.Row.Cells[3].Text = strCantidad.D().ToString("c");
                     e.Row.Cells[3].HorizontalAlign = HorizontalAlign.Right;
+                }
+
+                if (strPlazo == strPlazoddl)
+                {
+                    sSuma1 = suma1.ToString("c"); ;
+                    sSuma2 = suma2.ToString("c"); ;
+                    sSuma3 = suma3.ToString("c"); ;
                 }
 
                 if (e.Row.RowType == DataControlRowType.Footer)
@@ -118,6 +147,8 @@ namespace Autos_SCC.Views.Principales
                     e.Row.Cells[3].Text = suma3.ToString("c");
                     e.Row.Cells[3].HorizontalAlign = HorizontalAlign.Right;
                     e.Row.Font.Bold = true;
+
+                   
 
                     suma1 = 0;
                     suma2 = 0;
@@ -211,11 +242,17 @@ namespace Autos_SCC.Views.Principales
             switch (ddlTipoBusqueda.SelectedValue)
             {
                 case "1":// PLACA
+                    lblTextoBusqueda.Text = "Placa";
+                    txtTextoBusqueda.Visible = true;
+                    break;
                 case "3":// MODELO
+                    lblTextoBusqueda.Text = "Modelo";
+                    txtTextoBusqueda.Visible = false;
+                    break;
                 case "4":// COLOR
                     ddlMarcas.Visible = false;
                     txtTextoBusqueda.Visible = true;
-                    txtTextoBusqueda.Text = string.Empty;
+                    lblTextoBusqueda.Text = "Color";
                     gvAutos.DataSource = null;
                     gvAutos.DataBind();
                     break;
@@ -223,6 +260,7 @@ namespace Autos_SCC.Views.Principales
                 case "2":// MARCA
                     ddlMarcas.Visible = true;
                     txtTextoBusqueda.Visible = false;
+                    lblTextoBusqueda.Text = "Marca";
 
                     if (eGetMarcas != null)
                         eGetMarcas(sender, e);
@@ -288,27 +326,106 @@ namespace Autos_SCC.Views.Principales
         {
             try
             {
-                foreach (GridViewRow row in gvCotizar.Rows)
+                DataTable dtCot = new DataTable();
+                DataTable dtExtras = new DataTable();
+                DataSet dsC = new DataSet();
+                DataColumn column;
+                DataRow rowT;
+
+                //foreach (GridViewRow row in gvCotizar.Rows)
+                //{
+                //    RadioButton rb = (RadioButton)row.FindControl("rbPlazo");
+                //    if (rb != null)
+                //    {
+                //        if (rb.Checked)
+                //        {
+                //            GridView gv = (GridView)row.FindControl("GrdCotizaDetalle");
+
+                            //Response.ClearContent();
+                            //Response.AddHeader("content-disposition", "attachment; filename=" + "Cotizacion.xls");
+                            //Response.ContentType = "application/excel";
+                            //System.IO.StringWriter sw = new System.IO.StringWriter();
+                            //HtmlTextWriter htw = new HtmlTextWriter(sw);
+                            //gv.RenderControl(htw);
+                            //Response.Write(sw.ToString());
+                            //Response.End();
+
+
+
+                            
+
+
+
+
+                //        }
+                //    }
+                //}
+
+                column = new DataColumn();
+                column.ColumnName = "Cliente";
+                dtExtras.Columns.Add(column);
+
+                column = new DataColumn();
+                column.ColumnName = "Vehiculo";
+                dtExtras.Columns.Add(column);
+
+                column = new DataColumn();
+                column.ColumnName = "Precio";
+                dtExtras.Columns.Add(column);
+
+                column = new DataColumn();
+                column.ColumnName = "Sucursal";
+                dtExtras.Columns.Add(column);
+
+                column = new DataColumn();
+                column.ColumnName = "Suma1";
+                dtExtras.Columns.Add(column);
+
+                column = new DataColumn();
+                column.ColumnName = "Suma2";
+                dtExtras.Columns.Add(column);
+
+                column = new DataColumn();
+                column.ColumnName = "Suma3";
+                dtExtras.Columns.Add(column);
+
+                
+
+
+
+                rowT = dtExtras.NewRow();
+                rowT["Cliente"] = txtNombre.Text.Trim() + " " + txtSegNombre.Text.Trim() + " " + txtApePaterno.Text.Trim() + " " + txtApeMaterno.Text.Trim();
+                rowT["Vehiculo"] = txtAuto.Text;
+                rowT["Precio"] = txtPrecio.Text;
+                rowT["Sucursal"] = ddlSucursal.SelectedItem.Text;
+                rowT["Suma1"] = sSuma1;
+                rowT["Suma2"] = sSuma2;
+                rowT["Suma3"] = sSuma3;
+                dtExtras.Rows.Add(rowT);
+
+                string strPath = string.Empty;
+                ReportDocument rd = new ReportDocument();
+                strPath = Server.MapPath("RPT\\rptCotizacion.rpt");
+                strPath = strPath.Replace("\\Views\\Principales", "");
+                rd.Load(strPath, OpenReportMethod.OpenReportByDefault);
+
+                dtCot = dtCotizacion;
+
+                foreach(DataRow drC in dtCot.Rows)
                 {
-                    RadioButton rb = (RadioButton)row.FindControl("rbPlazo");
-                    if (rb != null)
-                    {
-                        if (rb.Checked)
-                        {
-                            GridView gv = (GridView)row.FindControl("GrdCotizaDetalle");
-
-                            Response.ClearContent();
-                            Response.AddHeader("content-disposition", "attachment; filename=" + "Cotizacion.xls");
-                            Response.ContentType = "application/excel";
-                            System.IO.StringWriter sw = new System.IO.StringWriter();
-                            HtmlTextWriter htw = new HtmlTextWriter(sw);
-                            gv.RenderControl(htw);
-                            Response.Write(sw.ToString());
-                            Response.End();
-
-                        }
-                    }
+                    drC["PagoNormal"]  = drC["PagoNormal"].D().ToString("c");
+                    drC["PagoAdelantado"] = drC["PagoAdelantado"].D().ToString("c");
+                    drC["PagoMora"] = drC["PagoMora"].D().ToString("c");
                 }
+                dtCot.TableName = "Cot";
+                dtExtras.TableName = "Extras";
+
+                dsC.Tables.Add(dtCot);
+                dsC.Tables.Add(dtExtras);
+
+                rd.SetDataSource(dsC);
+
+                rd.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, true, "Cotizacion");
             }
             catch (Exception ex)
             {
@@ -543,6 +660,29 @@ namespace Autos_SCC.Views.Principales
                     iIdClienteAnt = HidClienteE.Value.S().I()
                 };
             }
+        }
+
+        public string sSuma1
+        {
+            get { return (string)ViewState["VESuma1"]; }
+            set { ViewState["VESuma1"] = value; }
+        }
+
+        public string sSuma2
+        {
+            get { return (string)ViewState["VESuma2"]; }
+            set { ViewState["VESuma2"] = value; }
+        }
+
+        public string sSuma3
+        {
+            get { return (string)ViewState["VESuma3"]; }
+            set { ViewState["VESuma3"] = value; }
+        }
+        public DataTable dtCotizacion
+        {
+            get { return (DataTable)ViewState["VECot"]; }
+            set { ViewState["VECot"] = value; }
         }
 
         public DataTable dtPagosIndividuales
