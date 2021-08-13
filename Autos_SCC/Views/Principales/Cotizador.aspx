@@ -122,17 +122,18 @@
                             <div class="row">
                             <div class="col-md-10" style="text-align:right; padding-left:2.5%;">
                                 <asp:TextBox ID="txtNombre" runat="server" Width="100%" CssClass="form-control"></asp:TextBox>
-                            </div>
-                            <div class="col-md-1" style="text-align:left;">
-                                <asp:ImageButton ID="imbBuscaCliente" runat="server" ImageUrl="~/Images/Botones/Find.ico" OnClick="imbBuscaCliente_Click"
-                            style="vertical-align:middle" ToolTip="Selecciona un auto existente"/>
-                            </div>
-                            <div class="col-md-1" style="text-align:left;">
-                            <asp:Label ID="lblReqNombre" runat="server" Text="*" ForeColor="Red"></asp:Label>
-                        &nbsp;&nbsp;<asp:RequiredFieldValidator ID="rfvNombre" runat="server" 
+                                <asp:RequiredFieldValidator ID="rfvNombre" runat="server" 
                             ControlToValidate="txtNombre" Display="Dynamic" 
                             ErrorMessage="El nombre es requerido" ForeColor="Red" 
                             ValidationGroup="VCotizar"></asp:RequiredFieldValidator>
+                            </div>
+                            <div class="col-md-1" style="text-align:left;">
+                                <asp:ImageButton ID="imbBuscaCliente" runat="server" ImageUrl="~/Images/Botones/Find.ico" OnClick="imbBuscaCliente_Click"
+                            style="vertical-align:middle" ToolTip="Selecciona un cliente existente"/>
+                            </div>
+                            <div class="col-md-1" style="text-align:left;">
+                            <asp:Label ID="lblReqNombre" runat="server" Text="*" ForeColor="Red"></asp:Label>
+                        
                             </div>
                         </div>
                     </div>
@@ -151,13 +152,14 @@
                         <div class="row">
                             <div class="col-md-11" style="text-align:right; padding-left:2.5%;">
                                 <asp:TextBox ID="txtApePaterno" runat="server" Width="" CssClass="form-control"></asp:TextBox>
-                            </div>
-                            <div class="col-md-1">
-                                <asp:Label ID="lblReqApePaterno" runat="server" Text="*" ForeColor="Red"></asp:Label>
-                            &nbsp;<asp:RequiredFieldValidator ID="rfvApePaterno" runat="server" 
+                                <asp:RequiredFieldValidator ID="rfvApePaterno" runat="server" 
                                 ControlToValidate="txtApePaterno" Display="Dynamic" 
                                 ErrorMessage="El apellido es requerido" ForeColor="Red" 
                                 ValidationGroup="VCotizar"></asp:RequiredFieldValidator>
+                            </div>
+                            <div class="col-md-1">
+                                <asp:Label ID="lblReqApePaterno" runat="server" Text="*" ForeColor="Red"></asp:Label>
+                            
                                 </div>
                         </div>
                     </div>
@@ -178,6 +180,9 @@
                         <div class="row">
                             <div class="col-md-10" style="text-align:right; padding-left:2.5%;">
                                 <asp:TextBox ID="txtAuto" runat="server" Width="" CssClass="form-control" Enabled="false"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="rfvAuto" runat="server" 
+                                ControlToValidate="txtAuto" Display="Dynamic" 
+                                ErrorMessage="El auto es requerido" ForeColor="Red" ValidationGroup="VCotizar"></asp:RequiredFieldValidator>
                             </div>
                             <div class="col-md-1" style="text-align:left;">
                                 <asp:ImageButton ID="imbBuscarAuto" runat="server" ImageUrl="~/Images/Botones/Find.ico" OnClick="imbBuscarAuto_Click"
@@ -185,9 +190,7 @@
                             </div>
                             <div class="col-md-1" style="text-align:left;">
                                 <asp:Label ID="lblReqAuto" runat="server" Text="*" ForeColor="Red"></asp:Label>
-                            &nbsp;&nbsp;<asp:RequiredFieldValidator ID="rfvAuto" runat="server" 
-                                ControlToValidate="txtAuto" Display="Dynamic" 
-                                ErrorMessage="El auto es requerido" ForeColor="Red" ValidationGroup="VCotizar"></asp:RequiredFieldValidator>
+                            
                             </div>
                         </div>
                     </div>
@@ -198,14 +201,15 @@
                         <div class="row">
                             <div class="col-md-11" style="text-align:right; padding-left:4%;">
                             <asp:DropDownList ID="ddlPlazo" runat="server" Width="100%" CssClass="form-control">
-                        </asp:DropDownList>    
-                            </div>
-                            <div class="col-md-1" style="text-align:left;">
-                             <asp:Label ID="lblReqPlazo" runat="server" Text="*" ForeColor="Red"></asp:Label>
-                        &nbsp;<asp:RequiredFieldValidator ID="rfvPlazo" runat="server" 
+                        </asp:DropDownList>   
+                                <asp:RequiredFieldValidator ID="rfvPlazo" runat="server" 
                             ControlToValidate="ddlPlazo" Display="Dynamic" 
                             ErrorMessage="El plazo es requerido" ForeColor="Red" InitialValue="0" 
                             ValidationGroup="VCotizar"></asp:RequiredFieldValidator>
+                            </div>
+                            <div class="col-md-1" style="text-align:left;">
+                             <asp:Label ID="lblReqPlazo" runat="server" Text="*" ForeColor="Red"></asp:Label>
+                        
                             </div>
                         </div>
                         
@@ -219,15 +223,13 @@
                         <div class="row">
                             <div class="col-md-11" style="text-align:right; padding-left:2.5%;">
                                 <asp:TextBox ID="txtPrecio" runat="server" Width="100%" CssClass="form-control" Enabled="false"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="rfvPrecio" runat="server" ControlToValidate="txtPrecio" Display="Dynamic" 
+                            ErrorMessage="El precio es requerido" ForeColor="Red" ValidationGroup="VCotizar"></asp:RequiredFieldValidator>
                         <cc1:FilteredTextBoxExtender ID="ftbPrecio" runat="server" FilterMode="ValidChars" FilterType="Numbers"
                             ValidChars="0123456789" TargetControlID="txtPrecio"></cc1:FilteredTextBoxExtender>
                             </div>
                             <div class="col-md-1" style="text-align:right;">
                             <asp:Label ID="lblReqPrecio" runat="server" Text="*" ForeColor="Red"></asp:Label>
-                        &nbsp;<asp:RequiredFieldValidator ID="rfvPrecio" runat="server" 
-                            ControlToValidate="txtPrecio" Display="Dynamic" 
-                            ErrorMessage="El precio es requerido" ForeColor="Red" 
-                            ValidationGroup="VCotizar"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                     </div>
@@ -238,15 +240,16 @@
                         <div class="row">
                             <div class="col-md-11" style="text-align:right; padding-left:4%;">
                             <asp:TextBox ID="txtEnganche" runat="server" Width="100%" CssClass="form-control"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="rfvEnganche" runat="server" 
+                            ControlToValidate="txtEnganche" Display="Dynamic" 
+                            ErrorMessage="El enganche es requerido" ForeColor="Red" 
+                            ValidationGroup="VCotizar"></asp:RequiredFieldValidator>
                         <cc1:FilteredTextBoxExtender ID="rfbEngancge" runat="server" FilterMode="ValidChars" FilterType="Numbers"
                             ValidChars="0123456789" TargetControlID="txtEnganche"></cc1:FilteredTextBoxExtender> 
                             </div>
                             <div class="col-md-1" style="text-align:right;">
                             <asp:Label ID="lblReqEnganche" runat="server" Text="*" ForeColor="Red"></asp:Label>
-                        &nbsp;<asp:RequiredFieldValidator ID="rfvEnganche" runat="server" 
-                            ControlToValidate="txtEnganche" Display="Dynamic" 
-                            ErrorMessage="El enganche es requerido" ForeColor="Red" 
-                            ValidationGroup="VCotizar"></asp:RequiredFieldValidator>
+                        
                             </div>
                         </div>
                     </div>
@@ -258,24 +261,26 @@
                     <div class="col-md-4">
                         <div class="row">
                             <div class="col-md-11" style="text-align:right; padding-left:2.5%;">
-                                <asp:DropDownList ID="ddlSucursal" runat="server" CssClass="form-control" 
-                            Width="100%"></asp:DropDownList>
-                            </div>
-                            <div class="col-md-1" style="text-align:right;">
-                                <asp:Label ID="lblReqSucursal" runat="server" Text="*" ForeColor="Red"></asp:Label>
-                            &nbsp;<asp:RequiredFieldValidator ID="rfvSucursal" runat="server" 
+                                <asp:DropDownList ID="ddlSucursal" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
+                                <asp:RequiredFieldValidator ID="rfvSucursal" runat="server" 
                                 ControlToValidate="ddlSucursal" Display="Dynamic" InitialValue="0"
                                 ErrorMessage="La sucursal es requerida" ForeColor="Red" 
                                 ValidationGroup="VCotizar"></asp:RequiredFieldValidator>
+                            </div>
+                            <div class="col-md-1" style="text-align:right;">
+                                <asp:Label ID="lblReqSucursal" runat="server" Text="*" ForeColor="Red"></asp:Label>
+                            
                             </div>
                         </div>
                     </div>
                     <div class="col-md-2">
                         <asp:Label ID="lblCorreoElectronico" runat="server" CssClass="inputLabel" 
-                              Text="Correo electronico:"></asp:Label>
+                              Text="E-mail:"></asp:Label>
                     </div>
                     <div class="col-md-4">
                         <asp:TextBox ID="txtCorreoElectronico" runat="server" CssClass="form-control" Width=""></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtCorreoElectronico" Display="Dynamic" 
+                            ErrorMessage="El E-mail es requerido" ForeColor="Red" ValidationGroup="VCotizar"></asp:RequiredFieldValidator>
                     </div>
                 </div>
                 <br />
@@ -331,16 +336,51 @@
                                                                 <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" CssClass="" />
                                                                 <AlternatingRowStyle BackColor="White" />
                                                                 <Columns>
-                                                                    <asp:BoundField DataField="NoPago" HeaderText="No. Pago"/>
-                                                                    <asp:BoundField DataField="PagoNormal" HeaderText="Pago normal"/>
+                                                                    <asp:TemplateField HeaderText="No. Pago" ItemStyle-HorizontalAlign="Center">
+                                                                        <ItemTemplate>
+                                                                            <asp:Label ID="lblNoPAgo" Text='<%# Bind("NoPago") %>' runat="server" Width="100px"></asp:Label>
+                                                                        </ItemTemplate>
+                                                                    </asp:TemplateField>
+
+                                                                    <asp:TemplateField HeaderText="Pago normal">
+                                                                        <ItemTemplate>
+                                                                            <asp:Label ID="lblPagoNormal" Text='<%# Bind("PagoNormal") %>' runat="server" Width="100px"></asp:Label>
+                                                                        </ItemTemplate>
+                                                                    </asp:TemplateField>
+
+                                                                    <asp:TemplateField HeaderText="Pago adelantado">
+                                                                        <ItemTemplate>
+                                                                            <asp:Label ID="lblPagoAdelantado" Text='<%# Bind("PagoAdelantado") %>' runat="server" Width="100px"></asp:Label>
+                                                                        </ItemTemplate>
+                                                                    </asp:TemplateField>
+
+                                                                    <asp:TemplateField HeaderText="Pago en Mora">
+                                                                        <ItemTemplate>
+                                                                            <asp:Label ID="lblPagoMora" Text='<%# Bind("PagoMora") %>' runat="server" Width="100px"></asp:Label>
+                                                                        </ItemTemplate>
+                                                                    </asp:TemplateField>
+
+                                                                    <%--<asp:TemplateField HeaderText="Plazo" Visible="true">
+                                                                        <ItemTemplate>
+                                                                            <asp:Label ID="lblPlazoDet" Text='<%# Bind("Plazo") %>' runat="server" Width="100px"></asp:Label>
+                                                                        </ItemTemplate>
+                                                                    </asp:TemplateField>--%>
+
+                                                                    <%--<asp:BoundField DataField="NoPago" HeaderText="No. Pago"/>--%>
+                                                                    <%--<asp:BoundField DataField="PagoNormal" HeaderText="Pago normal"/>
                                                                     <asp:BoundField DataField="PagoAdelantado" HeaderText="Pago adelantado"/>
-                                                                    <asp:BoundField DataField="PagoMora" HeaderText="Pago en Mora"/>
+                                                                    <asp:BoundField DataField="PagoMora" HeaderText="Pago en Mora"/>--%>
                                                                 </Columns>
                                                             </asp:GridView>
                                                         </div>
                                                     </td>
                                                 </tr>
                                             </itemtemplate>
+                                        </asp:TemplateField>
+                                        <asp:TemplateField HeaderText="PlazoS" ItemStyle-HorizontalAlign="Center" Visible="false">
+                                            <ItemTemplate>
+                                                <asp:Label ID="lblPlazoS" Text='<%# Bind("Plazo") %>' runat="server" Width="100px"></asp:Label>
+                                            </ItemTemplate>
                                         </asp:TemplateField>
                                     </Columns>
                                     <PagerSettings Mode="NumericFirstLast" />
@@ -351,7 +391,7 @@
                                 <asp:AsyncPostBackTrigger ControlID="btnGenerar" EventName="Click" />
                             </Triggers>
                         </asp:updatepanel>
-                        <div style="text-align:center; width:100%;">
+                        <div style="text-align:right; width:100%;">
                             <asp:Label ID="lblInformacion" runat="server" Text="(Los campos marcados con * son obligatorios)" ForeColor="Red" CssClass="EtiquetaInformativa"></asp:Label><br /><br />
                         </div>
             <table class="table" style="width:90%;margin:0 auto;">
@@ -497,7 +537,7 @@
                     <table width="99%">
                         <tr>
                             <td style="text-align:left; width:25%">
-                                <asp:Label ID="lblBusquedaPor" runat="server" Text="Busque por:" CssClass="inputLabel"></asp:Label>
+                                <asp:Label ID="lblBusquedaPor" runat="server" Text="Búsqueda por:" CssClass="inputLabel"></asp:Label>
                             </td>
                             <td style="text-align:left; width:45%">
                                 <asp:DropDownList ID="ddlTipoBusqueda" runat="server" Width="97%" AutoPostBack="true" CssClass="form-control" OnSelectedIndexChanged="ddlTipoBusqueda_SelectedIndexChanged">
@@ -509,20 +549,20 @@
                                 </asp:DropDownList>
                             </td>
                             <td width="20%" style="text-align:left">
-                                <asp:Button ID="btnBuscarAuto" runat="server" Text=" BUSCAR " CssClass="btn"
-                                    OnClick="btnBuscarAuto_Click"/>
+                                
                             </td>
                         </tr>
                         <tr>
                             <td style="text-align:left; width:25%">
-                                <asp:Label ID="lblTextoBusqueda" runat="server" Text="Texto a buscar:" CssClass="inputLabel"></asp:Label>
+                                <asp:Label ID="lblTextoBusqueda" runat="server" Text="" CssClass="inputLabel"></asp:Label>
                             </td>
                             <td style="text-align:left; width:45%">
                                 <asp:DropDownList ID="ddlMarcas" runat="server" AutoPostBack="false" Width="97%" CssClass="form-control" Visible="false"></asp:DropDownList>
-                                <asp:TextBox ID="txtTextoBusqueda" runat="server" Width="95%" CssClass="form-control" Visible="false"></asp:TextBox>
+                                <asp:TextBox ID="txtTextoBusqueda" runat="server" Width="97%" CssClass="form-control" Visible="false"></asp:TextBox>
                             </td>
                             <td width="20%">
-                                
+                                <asp:Button ID="btnBuscarAuto" runat="server" Text=" BUSCAR " CssClass="btn"
+                                    OnClick="btnBuscarAuto_Click"/>
                             </td>
                         </tr>
                         <tr>
@@ -721,8 +761,7 @@
     <cc1:ModalPopupExtender ID="mpeBusquedaCliente" runat="server" TargetControlID="hdTargetBusCliente" 
         PopupControlID="pnlBusquedaCliente" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
-    <asp:Panel ID="pnlBusquedaCliente" runat="server" BorderColor="Black" BackColor="#e4e4e4" Height="400px"
-        Width="820px" HorizontalAlign="Center" Style="display: none; border-radius:25px;">
+    <asp:Panel ID="pnlBusquedaCliente" runat="server" BackColor="white"  HorizontalAlign="Center" Style="display: none" CssClass="modalrlr">
         <asp:UpdatePanel ID="upaBusquedaCliente" runat="server">
             <ContentTemplate>
                 <table width="100%">

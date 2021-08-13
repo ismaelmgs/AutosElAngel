@@ -78,6 +78,15 @@ namespace Autos_SCC.Views.Principales
         protected global::System.Web.UI.WebControls.TextBox txtNombre;
 
         /// <summary>
+        /// Control rfvNombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNombre;
+
+        /// <summary>
         /// Control imbBuscaCliente.
         /// </summary>
         /// <remarks>
@@ -94,15 +103,6 @@ namespace Autos_SCC.Views.Principales
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblReqNombre;
-
-        /// <summary>
-        /// Control rfvNombre.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNombre;
 
         /// <summary>
         /// Control lblSegNombre.
@@ -141,15 +141,6 @@ namespace Autos_SCC.Views.Principales
         protected global::System.Web.UI.WebControls.TextBox txtApePaterno;
 
         /// <summary>
-        /// Control lblReqApePaterno.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblReqApePaterno;
-
-        /// <summary>
         /// Control rfvApePaterno.
         /// </summary>
         /// <remarks>
@@ -157,6 +148,15 @@ namespace Autos_SCC.Views.Principales
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvApePaterno;
+
+        /// <summary>
+        /// Control lblReqApePaterno.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblReqApePaterno;
 
         /// <summary>
         /// Control lblApeMaterno.
@@ -195,6 +195,15 @@ namespace Autos_SCC.Views.Principales
         protected global::System.Web.UI.WebControls.TextBox txtAuto;
 
         /// <summary>
+        /// Control rfvAuto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvAuto;
+
+        /// <summary>
         /// Control imbBuscarAuto.
         /// </summary>
         /// <remarks>
@@ -211,15 +220,6 @@ namespace Autos_SCC.Views.Principales
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblReqAuto;
-
-        /// <summary>
-        /// Control rfvAuto.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvAuto;
 
         /// <summary>
         /// Control lblPlazo.
@@ -240,15 +240,6 @@ namespace Autos_SCC.Views.Principales
         protected global::System.Web.UI.WebControls.DropDownList ddlPlazo;
 
         /// <summary>
-        /// Control lblReqPlazo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblReqPlazo;
-
-        /// <summary>
         /// Control rfvPlazo.
         /// </summary>
         /// <remarks>
@@ -256,6 +247,15 @@ namespace Autos_SCC.Views.Principales
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPlazo;
+
+        /// <summary>
+        /// Control lblReqPlazo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblReqPlazo;
 
         /// <summary>
         /// Control lblPecio.
@@ -276,6 +276,15 @@ namespace Autos_SCC.Views.Principales
         protected global::System.Web.UI.WebControls.TextBox txtPrecio;
 
         /// <summary>
+        /// Control rfvPrecio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPrecio;
+
+        /// <summary>
         /// Control ftbPrecio.
         /// </summary>
         /// <remarks>
@@ -292,15 +301,6 @@ namespace Autos_SCC.Views.Principales
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblReqPrecio;
-
-        /// <summary>
-        /// Control rfvPrecio.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPrecio;
 
         /// <summary>
         /// Control lblEnganche.
@@ -321,6 +321,15 @@ namespace Autos_SCC.Views.Principales
         protected global::System.Web.UI.WebControls.TextBox txtEnganche;
 
         /// <summary>
+        /// Control rfvEnganche.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEnganche;
+
+        /// <summary>
         /// Control rfbEngancge.
         /// </summary>
         /// <remarks>
@@ -337,15 +346,6 @@ namespace Autos_SCC.Views.Principales
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblReqEnganche;
-
-        /// <summary>
-        /// Control rfvEnganche.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEnganche;
 
         /// <summary>
         /// Control lblSucursal.
@@ -366,15 +366,6 @@ namespace Autos_SCC.Views.Principales
         protected global::System.Web.UI.WebControls.DropDownList ddlSucursal;
 
         /// <summary>
-        /// Control lblReqSucursal.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblReqSucursal;
-
-        /// <summary>
         /// Control rfvSucursal.
         /// </summary>
         /// <remarks>
@@ -382,6 +373,15 @@ namespace Autos_SCC.Views.Principales
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvSucursal;
+
+        /// <summary>
+        /// Control lblReqSucursal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblReqSucursal;
 
         /// <summary>
         /// Control lblCorreoElectronico.
@@ -400,6 +400,15 @@ namespace Autos_SCC.Views.Principales
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCorreoElectronico;
+
+        /// <summary>
+        /// Control RequiredFieldValidator1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
 
         /// <summary>
         /// Control updCotizar.
@@ -645,15 +654,6 @@ namespace Autos_SCC.Views.Principales
         protected global::System.Web.UI.WebControls.DropDownList ddlTipoBusqueda;
 
         /// <summary>
-        /// Control btnBuscarAuto.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBuscarAuto;
-
-        /// <summary>
         /// Control lblTextoBusqueda.
         /// </summary>
         /// <remarks>
@@ -679,6 +679,15 @@ namespace Autos_SCC.Views.Principales
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTextoBusqueda;
+
+        /// <summary>
+        /// Control btnBuscarAuto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnBuscarAuto;
 
         /// <summary>
         /// Control rfvTextoBusqueda.

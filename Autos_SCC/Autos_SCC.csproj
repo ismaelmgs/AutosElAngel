@@ -148,7 +148,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
-    <Content Include="accordion.html" />
     <Content Include="Account\ChangePassword.aspx" />
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
@@ -287,17 +286,8 @@
     <Content Include="assets\pages\widget\amchart\serial.js" />
     <Content Include="assets\pages\widget\amchart\serial.min.js" />
     <Content Include="assets\pages\widget\excanvas.js" />
-    <Content Include="auth-normal-sign-in.html" />
-    <Content Include="auth-sign-up.html" />
-    <Content Include="breadcrumb.html" />
-    <Content Include="bs-basic-table.html" />
-    <Content Include="button.html" />
-    <Content Include="chart.html" />
-    <Content Include="color.html" />
     <Content Include="fonts\FuturaLight.svg" />
-    <Content Include="form-elements-component.html" />
     <Content Include="frmLogin.aspx" />
-    <Content Include="icon-themify.html" />
     <Content Include="Images\Ajax\loading2.gif" />
     <Content Include="Images\avatar-4.jpg" />
     <Content Include="Images\bg_menu_gris.jpg" />
@@ -363,18 +353,10 @@
     <Content Include="Images\Ocultar.ico" />
     <Content Include="Images\top_sup.jpg" />
     <Content Include="Images\www.png" />
-    <Content Include="index.html" />
-    <Content Include="index2.html" />
     <Content Include="jquery\jquery-1.8.3.js" />
     <Content Include="jquery\jquery-ui-1.9.2.custom.min.css" />
     <Content Include="jquery\jquery-ui-1.9.2.custom.min.js" />
     <Content Include="Js\jsUpdateProgress.js" />
-    <Content Include="label-badge.html" />
-    <Content Include="map-google.html" />
-    <Content Include="notification.html" />
-    <Content Include="pagvacia.htm" />
-    <Content Include="progress-bar.html" />
-    <Content Include="sample-page.html" />
     <Content Include="Styles\AUTOMaster.css" />
     <Content Include="Styles\AutosFlotilla.css" />
     <Content Include="Styles\Bootstrap\css\bootstrap-responsive.css" />
@@ -396,9 +378,6 @@
     <Content Include="Styles\overlayPro.css" />
     <Content Include="Styles\Site.css" />
     <Content Include="Styles\styles_login.css" />
-    <Content Include="tabs.html" />
-    <Content Include="tooltip.html" />
-    <Content Include="typography.html" />
     <Content Include="Images\Banner_1.jpg" />
     <Content Include="Images\Banner_2.jpg" />
     <Content Include="Images\Banner_3.jpg" />
@@ -519,6 +498,17 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>InfPagares.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT\dsCotizacion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCotizacion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RPT\rptCotizacion.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCotizacion.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Views\Cobranza\frmCobranza.aspx.cs">
@@ -788,6 +778,17 @@
     <None Include="Reports\dtPagare.xss">
       <DependentUpon>dtPagare.xsd</DependentUpon>
     </None>
+    <Content Include="RPT\dsCotizacion.xsc">
+      <DependentUpon>dsCotizacion.xsd</DependentUpon>
+    </Content>
+    <None Include="RPT\dsCotizacion.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCotizacion.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="RPT\dsCotizacion.xss">
+      <DependentUpon>dsCotizacion.xsd</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
@@ -806,6 +807,10 @@
     <EmbeddedResource Include="Reports\InfPagares.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>InfPagares.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\rptCotizacion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCotizacion.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
