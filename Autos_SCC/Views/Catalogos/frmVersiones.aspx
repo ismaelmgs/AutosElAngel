@@ -151,19 +151,17 @@
                         &nbsp;<asp:Button ID="btnLimpiar" runat="server" Text="LIMPIAR" 
                             CssClass="btn btn-info" onclick="btnLimpiar_Click" ToolTip="Limpia los campos para un registro nuevo" />
                         &nbsp;<asp:Button ID="btnExportar" runat="server" Text="EXPORTAR" 
-                            CssClass="btn btn-inverse" onclick="btnExportar_Click" ToolTip="Exporta un grid a excel" />
+                            CssClass="btn btn-secondary" onclick="btnExportar_Click" ToolTip="Exporta un grid a excel" />
                     </div>
                 </div>
 
             <div class="card">
-                <table width="100%">                                                                                                                                                                                                                                                                  <tr>
-                    <td width="100%">
-                        <asp:Panel ID="pnlCatalogo" runat="server" ScrollBars="Auto" Width="100%" Height="500px">
-                            <div class="table">
+                        <asp:Panel ID="pnlCatalogo" runat="server" ScrollBars="Auto" Width="" Height="500px">
+                            <div class="table-responsive" style="overflow-x: scroll; width:100%;">
                                 <asp:GridView ID="gvCatalogo" runat="server" AutoGenerateColumns="false" RowStyle-VerticalAlign="Top"
                                     Width="100%" OnRowDataBound="gvCatalogo_RowDataBound" OnSelectedIndexChanged="gvCatalogo_SelectedIndexChanged" 
-                                    BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464"
-                                    HeaderStyle-ForeColor="white" AllowSorting="True" CssClass="table table-hover">
+                                    BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464" Font-Size="Small" 
+                                    HeaderStyle-ForeColor="white" AllowSorting="True" CssClass="table table-hover" style="background-color:#ffffff;">
                                     <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
                                     <HeaderStyle BackColor="#01609F" CssClass="titleHeader" />
                                     <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" CssClass="" />
@@ -181,11 +179,9 @@
                             </div>
                             
                         </asp:Panel>
-                    </td>
-                </tr>
-            </table>
                 <uc1:ucModalConfirm ID="omb" runat="server" />
             </div>
+            <br />  
         </ContentTemplate>
         <Triggers>
             <asp:PostBackTrigger ControlID="btnExportar" />

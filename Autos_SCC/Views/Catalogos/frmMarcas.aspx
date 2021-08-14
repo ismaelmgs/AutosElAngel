@@ -128,33 +128,27 @@
                         OnClick="btnExportar_Click" ToolTip="Exporta un grid a excel" />
                 </div>
                 <div class="card">
-                    <table>
-                        <tr>
-                            <td width="100%">
-                                <asp:Panel ID="pnlCatalogo" runat="server" ScrollBars="Auto" Width="100%" Height="500px">
-                                    <div class="table">
-                                        <asp:GridView ID="gvCatalogo" runat="server" AutoGenerateColumns="false" RowStyle-VerticalAlign="Middle"
-                                        Width="100%" OnRowDataBound="gvCatalogo_RowDataBound" OnSelectedIndexChanged="gvCatalogo_SelectedIndexChanged"
-                                        BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464"
-                                        HeaderStyle-ForeColor="white" AllowSorting="True">
-                                        <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
-                                        <HeaderStyle BackColor="#01609F" CssClass="titleHeader" />
-                                        <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" CssClass="" />
-                                        <AlternatingRowStyle BackColor="White" />
-                                        <Columns>
-                                            <asp:BoundField DataField="iId" HeaderText="Id" />
-                                            <asp:BoundField DataField="sDescripcion" HeaderText="Descripción" />
-                                            <asp:BoundField DataField="iActivo" HeaderText="¿Activo?" />
-                                            <asp:BoundField DataField="sUsuario" HeaderText="Usuario modifico" />
-                                            <asp:BoundField DataField="sFechaUltMov" HeaderText="Fecha Ult. Movimiento" />
-                                        </Columns>
-                                    </asp:GridView>
-                                    </div>
-                                </asp:Panel>
-                            </td> 
-                        </tr>
-                    </table>
-                </div>
+                    <asp:Panel ID="pnlCatalogo" runat="server" ScrollBars="Auto" Width="100%" Height="500px">
+                        <div class="table-responsive" style="overflow-x: scroll; width:100%;">
+                            <asp:GridView ID="gvCatalogo" runat="server" AutoGenerateColumns="false" RowStyle-VerticalAlign="Middle"
+                            Width="100%" OnRowDataBound="gvCatalogo_RowDataBound" OnSelectedIndexChanged="gvCatalogo_SelectedIndexChanged"
+                            BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464"
+                            HeaderStyle-ForeColor="white" AllowSorting="True" CssClass="table table-hover" style="background-color:#ffffff;">
+                            <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+                            <HeaderStyle BackColor="#01609F" CssClass="titleHeader" />
+                            <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" CssClass="" />
+                            <AlternatingRowStyle BackColor="White" />
+                            <Columns>
+                                <asp:BoundField DataField="iId" HeaderText="Id" />
+                                <asp:BoundField DataField="sDescripcion" HeaderText="Descripción" />
+                                <asp:BoundField DataField="iActivo" HeaderText="¿Activo?" />
+                                <asp:BoundField DataField="sUsuario" HeaderText="Usuario modifico" />
+                                <asp:BoundField DataField="sFechaUltMov" HeaderText="Fecha Ult. Movimiento" />
+                            </Columns>
+                        </asp:GridView>
+                        </div>
+                    </asp:Panel>
+                </div><br />
                 
                 <uc1:ucModalConfirm ID="omb" runat="server" />
             </center>

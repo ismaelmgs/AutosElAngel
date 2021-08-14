@@ -282,7 +282,8 @@
                                     <uc1:ucModalConfirm ID="omb" runat="server" />
                                 </div>
                 </div>
-            </center>
+                
+            </center><br />
         </ContentTemplate>
         <Triggers>
             <asp:PostBackTrigger ControlID="btnExportar" />
