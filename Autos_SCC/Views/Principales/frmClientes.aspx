@@ -108,7 +108,7 @@
         </div><br />
         <asp:UpdatePanel ID="upaDatos" runat="server">
             <ContentTemplate>
-                <table width="100%">
+                <table width="80%" style="margin:0 auto;">
                     <tr>
                         <td valign="top">
                             <table width="100%">
@@ -528,7 +528,7 @@
         Width="880px" HorizontalAlign="Center" Style="display: none; border-radius:25px; padding:5px; box-shadow:3px 3px 3px #00000030;">
         <asp:UpdatePanel ID="upaAvales" runat="server">
             <ContentTemplate>
-                <table width="100%">
+                <table width="80%" style="margin:0 auto;">
                     <tr>
                         <td colspan="2"></td>
                     </tr>

@@ -117,7 +117,7 @@
                         Imprimir
                     </h4>
                 </div>
-                    <table>
+                    <table class="table table-hover" style="margin:0 auto; width:40%;">
                         <tr>
                             <td>
                                 <asp:Label ID="Label2" runat="server" Text="Seleccionar Acreedor:" CssClass="inputLabel"></asp:Label>

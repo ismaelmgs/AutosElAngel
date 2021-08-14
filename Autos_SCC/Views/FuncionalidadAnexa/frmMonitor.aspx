@@ -49,10 +49,18 @@
                                 <asp:Label ID="lblSucursal" runat="server" CssClass="inputLabel" Text="Sucursal:" Visible="false"></asp:Label>
                             </td>
                             <td style="width:20%">
-                                <asp:TextBox ID="txtNoCotizacion" runat="server" CssClass="form-control" AutoPostBack="true"
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <asp:TextBox ID="txtNoCotizacion" runat="server" CssClass="form-control" AutoPostBack="true"
                                     Visible="false" Width="75%"></asp:TextBox>
-                                <asp:ImageButton ID="imbBuscaCliente" runat="server" ImageUrl="~/Images/Botones/Find.ico" OnClick="imbBuscaCliente_Click"
+                                        </td>
+                                        <td>
+                                            <asp:ImageButton ID="imbBuscaCliente" runat="server" ImageUrl="~/Images/Botones/Find.ico" OnClick="imbBuscaCliente_Click"
                                     style="vertical-align:middle" ToolTip="Selecciona un auto existente" Visible="false"/>
+                                        </td>
+                                    </tr>
+                                </table>
                                 <asp:DropDownList ID="ddlSucursal" runat="server" AutoPostBack="true" 
                                     CssClass="form-control" OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged" 
                                     Width="97%" Visible="false">

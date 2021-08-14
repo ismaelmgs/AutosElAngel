@@ -57,7 +57,7 @@
                     <h3><asp:Label ID="lblTituloPantalla" runat="server" Text="Módulo de Abonos" CssClass="labelTitle"></asp:Label></h3>
                 </div>
             </div>
-            <div class="card" style="height:70vh;">
+            <div class="card" style="min-height:70vh;">
             <fieldset style="text-align:left">
                 <div style="width:100%; text-align:center;">
                     <h4>
@@ -93,10 +93,18 @@
                                 <asp:Label ID="lblSucursal" runat="server" CssClass="inputLabel" Text="Sucursal:" Visible="false"></asp:Label>
                             </td>
                             <td style="width:20%">
-                                <asp:TextBox ID="txtNoCotizacion" runat="server" CssClass="form-control" AutoPostBack="true"
-                                    Visible="false" Width="75%"></asp:TextBox>
-                                <asp:ImageButton ID="imbBuscaCliente" runat="server" ImageUrl="~/Images/Botones/Find.ico" OnClick="imbBuscaCliente_Click"
-                                    style="vertical-align:middle" ToolTip="Selecciona un auto existente" Visible="false"/>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <asp:TextBox ID="txtNoCotizacion" runat="server" CssClass="form-control" AutoPostBack="true"
+                                            Visible="false" Width="75%"></asp:TextBox>
+                                        </td>
+                                        <td>
+                                            <asp:ImageButton ID="imbBuscaCliente" runat="server" ImageUrl="~/Images/Botones/Find.ico" OnClick="imbBuscaCliente_Click"
+                                            style="vertical-align:middle" ToolTip="Selecciona un auto existente" Visible="false"/>
+                                        </td>
+                                    </tr>
+                                </table>
                                 <asp:DropDownList ID="ddlSucursal" runat="server" AutoPostBack="true" 
                                     CssClass="form-control" OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged" 
                                     Width="97%" Visible="false">
@@ -219,7 +227,7 @@
                         <br />
                         <br />
                         <div style="text-align:center; width:100%;">
-                            <asp:Label ID="lblTituloPagosInd" runat="server" Text="Pagos Individuales" CssClass="labelSubTitle"></asp:Label>
+                            <h4><asp:Label ID="lblTituloPagosInd" runat="server" Text="Pagos Individuales" CssClass="labelSubTitle"></asp:Label></h4>
                         </div>
                         <div class="table">
                         <asp:GridView ID="gvPagosInd" runat="server" AutoGenerateColumns="false" Width="100%" 
