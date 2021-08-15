@@ -10,6 +10,10 @@ using Autos_SCC.Presenter;
 using Autos_SCC.DomainModel;
 using Autos_SCC.Interfaces;
 using Autos_SCC.Clases;
+using RestSharp;
+using RestSharp.Authenticators;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Autos_SCC.Views.Cobranza
 {
@@ -141,6 +145,40 @@ namespace Autos_SCC.Views.Cobranza
             }
         }
 
+        protected void imbMensaje_Click(object sender, ImageClickEventArgs e)
+        {
+            mpeMensaje.Show();
+        }
+
+        protected void btnEnviarMensaje_Click(object sender, EventArgs e)
+        {
+            List<recipient> olst = new List<recipient>();
+            recipient oRec1 = new recipient();
+            oRec1.msisdn = "525578583468";
+
+            recipient oRec2 = new recipient();
+            oRec2.msisdn = "525540532207";
+
+            olst.Add(oRec1);
+            olst.Add(oRec2);
+
+            Mensaje oMen = new Mensaje();
+            oMen.message = txtMensaje.Text;
+            oMen.tpoa = "Autos el Angel";
+            oMen.recipient = olst;
+
+            var client = new RestClient("https://api.labsmobile.com/json/send");
+            client.Authenticator = new HttpBasicAuthenticator("ismael.morato@morvelit.com", "ZXdCn3938H9w");
+            var request = new RestRequest(Method.POST);
+            request.AddHeader("Cache-Control", "no-cache");
+            request.AddHeader("Content-Type", "application/json");
+
+
+            string sJSON = JsonConvert.SerializeObject(oMen);
+            request.AddParameter("undefined", sJSON, ParameterType.RequestBody);
+            IRestResponse response = client.Execute(request);
+        }
+
         #region METODOS
 
         public void LoadSucursales(DataTable dtSuc)
@@ -201,6 +239,21 @@ namespace Autos_SCC.Views.Cobranza
             }
         }
 
+
         #endregion
+        
+    }
+
+    public class Mensaje
+    {
+        public string message { set; get; }
+        public string tpoa { set; get; }
+        public List<recipient> recipient { set; get; }
+
+    }
+
+    public class recipient
+    {
+        public string msisdn { set; get; }
     }
 }

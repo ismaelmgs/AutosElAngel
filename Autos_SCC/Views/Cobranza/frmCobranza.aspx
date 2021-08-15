@@ -2,6 +2,20 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <style type="text/css">
+        .overlayy
+        {
+            position: fixed;
+            z-index: 98;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+            filter: alpha(opacity=80);
+            opacity: 0.8;
+            background: rgba(0,0,0,0.8);
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <script type="text/javascript" language="javascript">
@@ -138,6 +152,12 @@
                                     <asp:BoundField DataField="FechaProxPago" HeaderText="Fecha prox. pago"/>
                                     <asp:BoundField DataField="MontoProxPago" HeaderText="Monto de pago" DataFormatString="{0:c}"/>
                                     <asp:TemplateField>
+                                        <ItemTemplate>
+                                            <asp:ImageButton ID="imbMensaje" runat="server" ImageUrl="~/Images/Iconos/message.png" Width="29px" Height="29px"
+                                                ToolTip="Clic aqui para enviar recordatorio de pago" OnClick="imbMensaje_Click"/>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField>
                                         <itemtemplate>
                                             <tr>
                                                 <td colspan="100%" align="left">
@@ -185,4 +205,53 @@
             <asp:AsyncPostBackTrigger ControlID="ddlSucursal" EventName="SelectedIndexChanged" />
         </Triggers>
     </asp:UpdatePanel>
+
+
+    <%--Modal de Cambio de tasa--%>
+    <asp:HiddenField ID="hdTargetMensaje" runat="server" />
+    <cc1:ModalPopupExtender ID="mpeMensaje" runat="server" TargetControlID="hdTargetMensaje" 
+        PopupControlID="pnlMensaje" BackgroundCssClass="overlayy">
+    </cc1:ModalPopupExtender>
+    <asp:Panel ID="pnlMensaje" runat="server" BorderColor="Black" BackColor="#e4e4e4" Height="250px"
+        Width="300px" HorizontalAlign="Center" Style="display: none; border-radius:25px; box-shadow:3px 3px 3px #00000030;">
+        <asp:UpdatePanel ID="upaMensaje" runat="server">
+            <ContentTemplate>
+                <table width="100%">
+                    <tr>
+                        <td colspan="2" style="text-align:center">
+                            <h3><asp:Label ID="lblTituloMensaje" runat="server" Text="Escribe el mensaje a enviar" CssClass="labelTitleModal"></asp:Label></h3>
+                        </td>
+                    </tr>
+                </table>
+                <center>
+                    <table width="100%">
+                        <tr>
+                            <td style="text-align:left;" colspan="2">
+                                <asp:Label ID="lblTasaInteres" runat="server" Text="Mensaje:" CssClass="inputLabel"></asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;" colspan="2">
+                                <asp:TextBox ID="txtMensaje" runat="server" CssClass="form-control" Width="95%" TextMode="MultiLine" Rows="3" MaxLength="159"></asp:TextBox>
+                                <cc1:FilteredTextBoxExtender ID="ftbTasaInteres" runat="server" FilterMode="ValidChars" TargetControlID="txtMensaje"
+                                    ValidChars="abcdefghijklmnñopqrstuvwxyz ABCDEFGHIJKLMNÑOPQRSTUVWXYZ 123456789.%"></cc1:FilteredTextBoxExtender>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="height:10px; text-align:right">
+                                <asp:RequiredFieldValidator ID="rfvTasaInteres" runat="server" ControlToValidate="txtMensaje"
+                                    Display="Dynamic" ErrorMessage="El campo es requerido" ForeColor="Red" ValidationGroup="VCambioTasa"></asp:RequiredFieldValidator>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="text-align:center">
+                                <asp:Button ID="btnEnviarMensaje" runat="server" Text=" Enviar " CssClass="btn btn-success" OnClick="btnEnviarMensaje_Click" />                            
+                                <asp:Button ID="btnCancelarMensaje" runat="server" Text=" Cancelar " CssClass="btn btn-danger" OnClientClick="OcultarModal();" />
+                            </td>
+                        </tr>
+                    </table>
+                </center>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+    </asp:Panel>
 </asp:Content>
