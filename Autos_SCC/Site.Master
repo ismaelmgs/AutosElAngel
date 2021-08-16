@@ -355,7 +355,7 @@ background-size: 20px 20px;">
 <!-- RLR Contenido nuevo inicio-->
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                     </asp:ContentPlaceHolder>
-                    <div style="width:90%; position:fixed; bottom:0px;text-align:center; font-size:10px; border-radius:15px;background-color: #7abaff  !important; height: 25px; padding-top: 5px;">
+                    <div style="width:100%; bottom:0px; text-align:center; font-size:10px; border-radius:8px;background-color: #7abaff  !important; padding-top: 5px;">
                         <script>
                             document.write(new Date().getFullYear())
                         </script>© Autos del Ángel Puebla | <a href='<%=ResolveUrl("~/Views/frmPolitica.aspx")%>' style="font-size:10px;">Política Autos el Ángel de Puebla</a>

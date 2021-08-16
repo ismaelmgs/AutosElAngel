@@ -28,7 +28,7 @@
                     <h3><asp:Label ID="lblTituloPantalla" runat="server" Text="Reporte de Pagos Recibidos" CssClass="labelTitle"></asp:Label></h3>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" style="min-height:60vh;">
             <fieldset style="text-align:left">
                 <div style="width:100%; text-align:center;">
                     <h4>
@@ -48,7 +48,7 @@
                                 <asp:TextBox ID="txtFechaInicial" runat="server" CssClass="form-control" Width="100%" ReadOnly="true"></asp:TextBox>
                             </div>
                             <div class="col-md-1">
-                                <asp:ImageButton ID="imbFechaInicial" runat="server" ImageUrl="~/Images/Botones/Calendar.ico" Width="24px" Height="24px" />
+                                <asp:ImageButton ID="imbFechaInicial" runat="server" ImageUrl="~/Images/Botones/Calendar.ico" Width="24px" Height="24px" style="margin-bottom:-14px" />
                                 <cc1:CalendarExtender ID="calFechaInicial" runat="server" Enabled="True" Format="dd/MM/yyyy"
                                         PopupButtonID="imbFechaInicial" TargetControlID="txtFechaInicial">
                                 </cc1:CalendarExtender>
@@ -70,7 +70,7 @@
                         <asp:TextBox ID="txtFechaFinal" runat="server" CssClass="form-control" Width="100%" ReadOnly="true"></asp:TextBox>
                             </div>
                             <div class="col-md-1">
-                                <asp:ImageButton ID="imbFechaFinal" runat="server" ImageUrl="~/Images/Botones/Calendar.ico" Width="24px" Height="24px" />
+                                <asp:ImageButton ID="imbFechaFinal" runat="server" ImageUrl="~/Images/Botones/Calendar.ico" Width="24px" Height="24px" style="margin-bottom:-14px" />
                                 <cc1:CalendarExtender ID="calFechaFinal" runat="server" Enabled="True" Format="dd/MM/yyyy"
                                         PopupButtonID="imbFechaFinal" TargetControlID="txtFechaFinal">
                                 </cc1:CalendarExtender>
@@ -108,7 +108,7 @@
                         </div>
                     </div>
                     <div class="col-md-2" style="text-align:center;">
-                        <asp:Button ID="btnBuscar" runat="server" Text="Buscar" CssClass="btn" OnClick="btnBuscar_Click" />
+                        <asp:Button ID="btnBuscar" runat="server" Text="Buscar" CssClass="btn btn-success" OnClick="btnBuscar_Click" />
                     </div>
                     <div class="col-md-1">
                         &nbsp;
@@ -127,7 +127,7 @@
                         <tr>
                             <td style="width:1%"></td>
                             <td style="width:98%; text-align:right">
-                            <asp:Button ID="btnExportar" runat="server" Text="Exportar a Excel" OnClick="btnExportar_Click" CssClass="btn btn-success"/>
+                            <asp:Button ID="btnExportar" runat="server" Text="Exportar a Excel" OnClick="btnExportar_Click" CssClass="btn btn-secondary"/>
                             </td>
                             <td style="width:1%"></td>
                         </tr>
@@ -179,24 +179,12 @@
                             <td>
                             </td>
                         </tr>
-                        <tr>
-                            <td colspan="3">
-                                <br />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td style="text-align:right">
-                            </td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>
-                            </td>
-                            <td>
+
+                    </table>
+                            <div class="table-responsive">
                                 <asp:GridView ID="gvReporte" runat="server" AutoGenerateColumns="false" DataKeyNames="fi_Id"
                                     Font-Size="Small" BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464" ShowFooter="true" 
-                                    Width="100%" HeaderStyle-ForeColor="white" AllowSorting="True" OnRowDataBound="gvReporte_RowDataBound">
+                                    Width="100%" HeaderStyle-ForeColor="white" AllowSorting="True" OnRowDataBound="gvReporte_RowDataBound" CssClass="table table-hover">
                                     <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
                                     <HeaderStyle BackColor="#01609F" CssClass="titleHeader" />
                                     <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" CssClass="" />
@@ -214,16 +202,14 @@
                                         <asp:BoundField DataField="fm_MontoPagado" HeaderText="Monto pagado" ItemStyle-HorizontalAlign="Right" DataFormatString="{0:c}"/>
                                     </Columns>
                                 </asp:GridView>
-                            </td>
-                            <td>
-                            </td>
-                        </tr>
-                    </table>
+                            </div>
+                            
+                            <br />
                         </ContentTemplate>
                     </asp:UpdatePanel>
             </fieldset>
             </asp:Panel>
-            </div>
+            </div><br />
             
         </ContentTemplate>
         <Triggers>

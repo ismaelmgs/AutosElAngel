@@ -57,7 +57,7 @@
                     <h3><asp:Label ID="lblTituloPantalla" runat="server" Text="Módulo de Abonos" CssClass="labelTitle"></asp:Label></h3>
                 </div>
             </div>
-            <div class="card" style="min-height:70vh;">
+            <div class="card" style="min-height:65vh;">
             <fieldset style="text-align:left">
                 <div style="width:100%; text-align:center;">
                     <h4>
@@ -65,73 +65,69 @@
                     </h4>
                 </div>
                     <br />
-                    <table style="width:100%">
-                        <tr>
-                            <td style="width:20%">
-                            </td>
-                            <td style="width:20%">
-                                <asp:Label ID="lblOpcion" runat="server" Text="Opción de Búsqueda:" 
+                <div class="row">
+                    <div class="col-md-3">
+                        &nbsp;
+                    </div>
+                    <div class="col-md-3">
+                        <asp:Label ID="lblOpcion" runat="server" Text="Opción de Búsqueda:" 
                                     CssClass="inputLabel"></asp:Label>
-                            </td>
-                            <td style="width:20%">
-                                <asp:DropDownList ID="ddlOpcion" runat="server" AutoPostBack="true" CssClass="form-control" OnSelectedIndexChanged="ddlOpcion_SelectedIndexChanged" Width="97%">
-                                <asp:ListItem Text="Seleccione" Value="0"></asp:ListItem>
-                                <asp:ListItem Text="No. Cotización" Value="1"></asp:ListItem>
-                                <asp:ListItem Text="Por Sucursal" Value="2"></asp:ListItem>
-                                </asp:DropDownList>
-                            </td>
-                            <td style="width:20%">
-                            </td>
-                            <td style="width:20%">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="width:20%">
-                            </td>
-                            <td style="width:20%">
-                                <asp:Label ID="lblNoCotizacion" runat="server" CssClass="inputLabel" Text="No. Cotización" Visible="false"></asp:Label>
-                                <asp:Label ID="lblSucursal" runat="server" CssClass="inputLabel" Text="Sucursal:" Visible="false"></asp:Label>
-                            </td>
-                            <td style="width:20%">
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <asp:TextBox ID="txtNoCotizacion" runat="server" CssClass="form-control" AutoPostBack="true"
-                                            Visible="false" Width="75%"></asp:TextBox>
-                                        </td>
-                                        <td>
-                                            <asp:ImageButton ID="imbBuscaCliente" runat="server" ImageUrl="~/Images/Botones/Find.ico" OnClick="imbBuscaCliente_Click"
+                    </div>
+                    <div class="col-md-3">
+                        <asp:DropDownList ID="ddlOpcion" runat="server" AutoPostBack="true" CssClass="form-control" OnSelectedIndexChanged="ddlOpcion_SelectedIndexChanged" Width="97%">
+                        <asp:ListItem Text="Seleccione" Value="0"></asp:ListItem>
+                        <asp:ListItem Text="No. Cotización" Value="1"></asp:ListItem>
+                        <asp:ListItem Text="Por Sucursal" Value="2"></asp:ListItem>
+                        </asp:DropDownList>
+                    </div>
+                    <div class="col-md-3">
+                        &nbsp;
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        &nbsp;
+                    </div>
+                    <div class="col-md-3">
+                        <asp:Label ID="lblNoCotizacion" runat="server" CssClass="inputLabel" Text="No. Cotización" Visible="false"></asp:Label>
+                        <asp:Label ID="lblSucursal" runat="server" CssClass="inputLabel" Text="Sucursal:" Visible="false"></asp:Label>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="row">
+                            <div class="col-md-10">
+                                <asp:TextBox ID="txtNoCotizacion" runat="server" CssClass="form-control" AutoPostBack="true"
+                                            Visible="false" Width="100%" style="margin-left:-1px;"></asp:TextBox>
+                            </div>
+                            <div class="col-md-2">
+                                <asp:ImageButton ID="imbBuscaCliente" runat="server" ImageUrl="~/Images/Botones/Find.ico" OnClick="imbBuscaCliente_Click"
                                             style="vertical-align:middle" ToolTip="Selecciona un auto existente" Visible="false"/>
-                                        </td>
-                                    </tr>
-                                </table>
-                                <asp:DropDownList ID="ddlSucursal" runat="server" AutoPostBack="true" 
+                            </div>
+                        </div>
+                            <asp:DropDownList ID="ddlSucursal" runat="server" AutoPostBack="true" 
                                     CssClass="form-control" OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged" 
                                     Width="97%" Visible="false">
                                 </asp:DropDownList>
-                            </td>
-                            <td style="width:20%">
-                            </td>
-                            <td style="width:20%">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                            </td>
-                            <td>
-                                <asp:Label ID="lblCotizacion" runat="server" Text="Cotización:" CssClass="inputLabel" Visible="false"></asp:Label>
-                            </td>
-                            <td>
-                                <asp:DropDownList ID="ddlCotizacion" runat="server" Width="97%" CssClass="form-control" Visible="false"
+                    </div>
+                    <div class="col-md-3">
+                        &nbsp;
+                    </div>
+                    </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        &nbsp;
+                    </div>
+                    <div class="col-md-3">
+                        <asp:Label ID="lblCotizacion" runat="server" Text="Cotización:" CssClass="inputLabel" Visible="false"></asp:Label>
+                    </div>
+                    <div class="col-md-3">
+                       <asp:DropDownList ID="ddlCotizacion" runat="server" Width="97%" CssClass="form-control" Visible="false"
                                      AutoPostBack="true" OnSelectedIndexChanged="ddlCotizacion_SelectedIndexChanged">
                                 </asp:DropDownList>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                        </tr>
-                    </table>
+                    </div>
+                    <div class="col-md-3">
+                        &nbsp;
+                    </div>
+                </div> 
                     <table style="width:100%">
                         <tr>
                             <td style="width:40%">
@@ -152,12 +148,12 @@
 
             <fieldset style="text-align:left"><br />
                 <div style="width:100%; text-align:center;">
-                    <h4>
+                    <h5>
                         Resultados...
-                    </h4>
+                    </h5>
                 </div><br />
                     <center>
-                        <div class="table">
+                        <div class="table-responsive">
                         <asp:GridView ID="gvClientes" runat="server" AutoGenerateColumns="false" Width="100%" 
                             Font-Size="10px" PageSize="10" BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464" 
                             HeaderStyle-ForeColor="white" AllowSorting="True" 
@@ -227,9 +223,9 @@
                         <br />
                         <br />
                         <div style="text-align:center; width:100%;">
-                            <h4><asp:Label ID="lblTituloPagosInd" runat="server" Text="Pagos Individuales" CssClass="labelSubTitle"></asp:Label></h4>
+                            <h5><asp:Label ID="lblTituloPagosInd" runat="server" Text="Pagos Individuales" CssClass="labelSubTitle"></asp:Label></h5>
                         </div>
-                        <div class="table">
+                        <div class="table-responsive">
                         <asp:GridView ID="gvPagosInd" runat="server" AutoGenerateColumns="false" Width="100%" 
                             Font-Size="10px" PageSize="10" BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464" OnRowDataBound="gvPagosInd_RowDataBound"
                             HeaderStyle-ForeColor="white" AllowSorting="True" DataKeyNames="fi_IdAMortizacion,fi_IdCotizacion" onrowcommand="gvPagosInd_RowCommand" CssClass="table table-hover">
