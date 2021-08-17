@@ -154,10 +154,10 @@ namespace Autos_SCC.Views.Cobranza
         {
             List<recipient> olst = new List<recipient>();
             recipient oRec1 = new recipient();
-            oRec1.msisdn = "525578583468";
+            oRec1.msisdn = "525540532207";
 
             recipient oRec2 = new recipient();
-            oRec2.msisdn = "525540532207";
+            oRec2.msisdn = "522221844016";
 
             olst.Add(oRec1);
             olst.Add(oRec2);
