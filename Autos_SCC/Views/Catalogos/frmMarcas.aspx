@@ -127,7 +127,7 @@
                     &nbsp;<asp:Button ID="btnExportar" runat="server" Text="EXPORTAR" CssClass="btn btn-inverse"
                         OnClick="btnExportar_Click" ToolTip="Exporta un grid a excel" />
                 </div>
-                <div class="card">
+                <div class="card" style="padding:20px;">
                     <asp:Panel ID="pnlCatalogo" runat="server" ScrollBars="Auto" Width="100%" Height="500px">
                         <div class="table-responsive" style="overflow-x: scroll; width:100%;">
                             <asp:GridView ID="gvCatalogo" runat="server" AutoGenerateColumns="false" RowStyle-VerticalAlign="Middle"

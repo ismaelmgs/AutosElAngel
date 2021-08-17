@@ -289,105 +289,108 @@
                 <br />
                         <asp:updatepanel id="updCotizar" runat="server" updatemode="Conditional">
                             <ContentTemplate>
-                                <asp:GridView ID="gvCotizar" runat="server" 
-                                    AllowPaging="false" AutoGenerateColumns="false"
-                                    OnRowDataBound="GridCotizar_RowDataBound"
-                                    PageSize="10" BorderStyle="None" 
-                                    BorderWidth="0px" HeaderStyle-BackColor="#646464"
-                                    HeaderStyle-ForeColor="white" AllowSorting="True"
-                                    Width="100%" DataKeyNames="Plazo">
-                                    <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
-                                    <HeaderStyle BackColor="#01609F" CssClass="titleHeader" />
-                                    <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" CssClass="" />
-                                    <AlternatingRowStyle BackColor="White" />
-                                    <Columns>
-                                        <asp:TemplateField>
-                                            <itemtemplate>
-                                                <a href="javascript:switchViews('div<%# Eval("Plazo") %>', 'one');">
-                                                    <img id="imgdiv<%# Eval("Plazo") %>" alt="Click para visualizar la tabla de amortización" border="0" src="../../Images/Botones/flecha_abre1.png" />
-                                                </a>
-                                            </itemtemplate>
-                                            <alternatingitemtemplate>
-                                                <a href="javascript:switchViews('div<%# Eval("Plazo") %>', 'alt');">
-                                                    <img id="imgdiv<%# Eval("Plazo") %>" alt="Click para visualizar la tabla de amortización" border="0" src="../../Images/Botones/flecha_abre1.png" />
-                                                </a>
-                                            </alternatingitemtemplate>
-                                        </asp:TemplateField>
-                                        <asp:TemplateField HeaderText="Seleccionar">
-                                            <ItemTemplate>
-                                                <asp:RadioButton ID="rbPlazo" runat="server" AutoPostBack="true" OnCheckedChanged="rbPlazo_CheckedChanged" />
-                                            </ItemTemplate>
-                                        </asp:TemplateField>
-                                        <asp:BoundField DataField="DescPlazo" HeaderText="Plazo"/>
-                                        <asp:BoundField DataField="Importe" HeaderText="Importe del Credito" DataFormatString="{0:c}"/>
-                                        <asp:BoundField DataField="Intereses" HeaderText="Interes del crédito con iva" DataFormatString="{0:c}"/>
-                                        <asp:BoundField DataField="TotalPagar" HeaderText="Total a pagar" DataFormatString="{0:c}"/>
-                                        <asp:BoundField DataField="PrimerPago" HeaderText="Pago cumplido" DataFormatString="{0:c}"/>
-                                        <asp:BoundField DataField="Ahorro" HeaderText="Importe a Ahorrar" DataFormatString="{0:c}"/>
-                                        <asp:TemplateField>
-                                            <itemtemplate>
-                                                <tr>
-                                                    <td colspan="100%" align="left">
-                                                        <div id="div<%# Eval("Plazo") %>" style="display:none;position:relative;left:100px;"  >
-                                                            <asp:GridView ID="GrdCotizaDetalle" runat="server" Width="80%"
-                                                                AutoGenerateColumns="false" DataKeyNames="Plazo"
-                                                                OnRowDataBound="GrdCotizaDetalle_RowDataBound" ShowFooter = "true" 
-                                                                EmptyDataText="No hay resultados para esta busqueda." PageSize="10" 
-                                                                BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464" HeaderStyle-ForeColor="white" AllowSorting="True">
-                                                                <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
-                                                                <HeaderStyle BackColor="#01609F" CssClass="titleHeader" />
-                                                                <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" CssClass="" />
-                                                                <AlternatingRowStyle BackColor="White" />
-                                                                <Columns>
-                                                                    <asp:TemplateField HeaderText="No. Pago" ItemStyle-HorizontalAlign="Center">
-                                                                        <ItemTemplate>
-                                                                            <asp:Label ID="lblNoPAgo" Text='<%# Bind("NoPago") %>' runat="server" Width="100px"></asp:Label>
-                                                                        </ItemTemplate>
-                                                                    </asp:TemplateField>
+                                <div class="table-responsive">
+                                    <asp:GridView ID="gvCotizar" runat="server" 
+                                        AllowPaging="false" AutoGenerateColumns="false"
+                                        OnRowDataBound="GridCotizar_RowDataBound"
+                                        PageSize="10" BorderStyle="None" 
+                                        BorderWidth="0px" HeaderStyle-BackColor="#646464"
+                                        HeaderStyle-ForeColor="white" AllowSorting="True"
+                                        Width="100%" DataKeyNames="Plazo" CssClass="table table-hover">
+                                        <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+                                        <HeaderStyle BackColor="#01609F" CssClass="titleHeader" />
+                                        <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" CssClass="" />
+                                        <AlternatingRowStyle BackColor="White" />
+                                        <Columns>
+                                            <asp:TemplateField>
+                                                <itemtemplate>
+                                                    <a href="javascript:switchViews('div<%# Eval("Plazo") %>', 'one');">
+                                                        <img id="imgdiv<%# Eval("Plazo") %>" alt="Click para visualizar la tabla de amortización" border="0" src="../../Images/Botones/flecha_abre1.png" />
+                                                    </a>
+                                                </itemtemplate>
+                                                <alternatingitemtemplate>
+                                                    <a href="javascript:switchViews('div<%# Eval("Plazo") %>', 'alt');">
+                                                        <img id="imgdiv<%# Eval("Plazo") %>" alt="Click para visualizar la tabla de amortización" border="0" src="../../Images/Botones/flecha_abre1.png" />
+                                                    </a>
+                                                </alternatingitemtemplate>
+                                            </asp:TemplateField>
+                                            <asp:TemplateField HeaderText="Seleccionar">
+                                                <ItemTemplate>
+                                                    <asp:RadioButton ID="rbPlazo" runat="server" AutoPostBack="true" OnCheckedChanged="rbPlazo_CheckedChanged" />
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                            <asp:BoundField DataField="DescPlazo" HeaderText="Plazo"/>
+                                            <asp:BoundField DataField="Importe" HeaderText="Importe del Credito" DataFormatString="{0:c}"/>
+                                            <asp:BoundField DataField="Intereses" HeaderText="Interes del crédito con iva" DataFormatString="{0:c}"/>
+                                            <asp:BoundField DataField="TotalPagar" HeaderText="Total a pagar" DataFormatString="{0:c}"/>
+                                            <asp:BoundField DataField="PrimerPago" HeaderText="Pago cumplido" DataFormatString="{0:c}"/>
+                                            <asp:BoundField DataField="Ahorro" HeaderText="Importe a Ahorrar" DataFormatString="{0:c}"/>
+                                            <asp:TemplateField>
+                                                <itemtemplate>
+                                                    <tr>
+                                                        <td colspan="100%" align="left">
+                                                            <div id="div<%# Eval("Plazo") %>" style="display:none;position:relative;"  >
+                                                                <asp:GridView ID="GrdCotizaDetalle" runat="server" Width="100%"
+                                                                    AutoGenerateColumns="false" DataKeyNames="Plazo"
+                                                                    OnRowDataBound="GrdCotizaDetalle_RowDataBound" ShowFooter = "true" 
+                                                                    EmptyDataText="No hay resultados para esta busqueda." PageSize="10" 
+                                                                    BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464" HeaderStyle-ForeColor="white" AllowSorting="True" CssClass="table table-bordered table-hover" HorizontalAlign="Center">
+                                                                    <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+                                                                    <HeaderStyle BackColor="#01609F" CssClass="titleHeader" HorizontalAlign="Center" />
+                                                                    <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="center" CssClass="" />
+                                                                    <AlternatingRowStyle BackColor="White" />
+                                                                    <Columns>
+                                                                        <asp:TemplateField HeaderText="No. Pago" ItemStyle-HorizontalAlign="Center">
+                                                                            <ItemTemplate>
+                                                                                <asp:Label ID="lblNoPAgo" Text='<%# Bind("NoPago") %>' runat="server" Width="100px"></asp:Label>
+                                                                            </ItemTemplate>
+                                                                        </asp:TemplateField>
 
-                                                                    <asp:TemplateField HeaderText="Pago normal">
-                                                                        <ItemTemplate>
-                                                                            <asp:Label ID="lblPagoNormal" Text='<%# Bind("PagoNormal") %>' runat="server" Width="100px"></asp:Label>
-                                                                        </ItemTemplate>
-                                                                    </asp:TemplateField>
+                                                                        <asp:TemplateField HeaderText="Pago normal" ItemStyle-HorizontalAlign="Center">
+                                                                            <ItemTemplate>
+                                                                                <asp:Label ID="lblPagoNormal" Text='<%# Bind("PagoNormal") %>' runat="server" Width="100px"></asp:Label>
+                                                                            </ItemTemplate>
+                                                                        </asp:TemplateField>
 
-                                                                    <asp:TemplateField HeaderText="Pago adelantado">
-                                                                        <ItemTemplate>
-                                                                            <asp:Label ID="lblPagoAdelantado" Text='<%# Bind("PagoAdelantado") %>' runat="server" Width="100px"></asp:Label>
-                                                                        </ItemTemplate>
-                                                                    </asp:TemplateField>
+                                                                        <asp:TemplateField HeaderText="Pago adelantado" ItemStyle-HorizontalAlign="Center">
+                                                                            <ItemTemplate>
+                                                                                <asp:Label ID="lblPagoAdelantado" Text='<%# Bind("PagoAdelantado") %>' runat="server" Width="100px"></asp:Label>
+                                                                            </ItemTemplate>
+                                                                        </asp:TemplateField>
 
-                                                                    <asp:TemplateField HeaderText="Pago en Mora">
-                                                                        <ItemTemplate>
-                                                                            <asp:Label ID="lblPagoMora" Text='<%# Bind("PagoMora") %>' runat="server" Width="100px"></asp:Label>
-                                                                        </ItemTemplate>
-                                                                    </asp:TemplateField>
+                                                                        <asp:TemplateField HeaderText="Pago en Mora" ItemStyle-HorizontalAlign="Center">
+                                                                            <ItemTemplate>
+                                                                                <asp:Label ID="lblPagoMora" Text='<%# Bind("PagoMora") %>' runat="server" Width="100px"></asp:Label>
+                                                                            </ItemTemplate>
+                                                                        </asp:TemplateField>
 
-                                                                    <%--<asp:TemplateField HeaderText="Plazo" Visible="true">
-                                                                        <ItemTemplate>
-                                                                            <asp:Label ID="lblPlazoDet" Text='<%# Bind("Plazo") %>' runat="server" Width="100px"></asp:Label>
-                                                                        </ItemTemplate>
-                                                                    </asp:TemplateField>--%>
+                                                                        <%--<asp:TemplateField HeaderText="Plazo" Visible="true">
+                                                                            <ItemTemplate>
+                                                                                <asp:Label ID="lblPlazoDet" Text='<%# Bind("Plazo") %>' runat="server" Width="100px"></asp:Label>
+                                                                            </ItemTemplate>
+                                                                        </asp:TemplateField>--%>
 
-                                                                    <%--<asp:BoundField DataField="NoPago" HeaderText="No. Pago"/>--%>
-                                                                    <%--<asp:BoundField DataField="PagoNormal" HeaderText="Pago normal"/>
-                                                                    <asp:BoundField DataField="PagoAdelantado" HeaderText="Pago adelantado"/>
-                                                                    <asp:BoundField DataField="PagoMora" HeaderText="Pago en Mora"/>--%>
-                                                                </Columns>
-                                                            </asp:GridView>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            </itemtemplate>
-                                        </asp:TemplateField>
-                                        <asp:TemplateField HeaderText="PlazoS" ItemStyle-HorizontalAlign="Center" Visible="false">
-                                            <ItemTemplate>
-                                                <asp:Label ID="lblPlazoS" Text='<%# Bind("Plazo") %>' runat="server" Width="100px"></asp:Label>
-                                            </ItemTemplate>
-                                        </asp:TemplateField>
-                                    </Columns>
-                                    <PagerSettings Mode="NumericFirstLast" />
-                                </asp:GridView>
+                                                                        <%--<asp:BoundField DataField="NoPago" HeaderText="No. Pago"/>--%>
+                                                                        <%--<asp:BoundField DataField="PagoNormal" HeaderText="Pago normal"/>
+                                                                        <asp:BoundField DataField="PagoAdelantado" HeaderText="Pago adelantado"/>
+                                                                        <asp:BoundField DataField="PagoMora" HeaderText="Pago en Mora"/>--%>
+                                                                    </Columns>
+                                                                </asp:GridView>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </itemtemplate>
+                                            </asp:TemplateField>
+                                            <asp:TemplateField HeaderText="PlazoS" ItemStyle-HorizontalAlign="Center" Visible="false">
+                                                <ItemTemplate>
+                                                    <asp:Label ID="lblPlazoS" Text='<%# Bind("Plazo") %>' runat="server" Width="100px"></asp:Label>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                        </Columns>
+                                        <PagerSettings Mode="NumericFirstLast" />
+                                    </asp:GridView>
+                                </div>
+                                
                                 <br />                        
                             </ContentTemplate>
                             <Triggers>
@@ -398,29 +401,20 @@
                             <asp:Label ID="lblInformacion" runat="server" Text="(Los campos marcados con * son obligatorios)" ForeColor="Red" CssClass="EtiquetaInformativa"></asp:Label><br /><br />
                         </div>
             <table class="table" style="width:90%;margin:0 auto;">
-                <tr>
-                    <td style="text-align:center">
-                        <asp:Button ID="btnGenerar" runat="server" Text=" GENERAR " OnClick="btnGenerar_Click"
-                            CssClass="btn btn-success" Font-Size="X-Small" />
-                        &nbsp;<asp:Button ID="btnImprimir" runat="server" Text=" IMPRIMIR " OnClick="btnImprimir_Click"
-                            CssClass="btn btn-secondary" Font-Size="X-Small" />
-                        &nbsp;<asp:Button ID="btnGuardar" runat="server" Text=" GUARDAR " 
-                            CssClass="btn btn-primary" Font-Size="X-Small" OnClick="btnGuardar_Click" />
-                    </td>
-                </tr>
+                
                 <tr>
                     <td style="text-align:left">
                         <asp:UpdatePanel ID="upaAgregarPagos" runat="server">
                             <ContentTemplate>
                                 <fieldset id="fPagos" runat="server" visible="false" style="text-align:left">
-                                    <legend>
-                                        <span>
+                                    <div style="text-align:center;">
+                                        <h4>
                                             Opciones de cotización
-                                        </span>
-                                    </legend>
+                                        </h4>
+                                    </div>
                             
                                     <asp:Panel ID="pnlAgregarPagos" runat="server"  Visible="false">
-                                        <div style="text-align:left">
+                                        <div style="text-align:center; width:100%;">
                                             
                                             <asp:Label ID="lblSinIntereses" runat="server" Text="Meses sin Intereses"></asp:Label>
                                             <asp:CheckBox ID="chkSinIntereses" runat="server" />
@@ -429,42 +423,42 @@
                                             <br />
 
                                             <asp:Label ID="lblAgregarPago" runat="server" Text="¿Deseas agregar pagos individuales?"></asp:Label>
-                                            <asp:Button ID="btnAgregarPago" runat="server" Text="  SI  " CssClass="button"
+                                            <asp:Button ID="btnAgregarPago" runat="server" Text="  SI  " CssClass="btn btn-success"
                                                 onclick="btnAgregarPago_Click" />
 
                                             <br />
-
-                                            <asp:GridView ID="gvPagosIndividuales" runat="server" AutoGenerateColumns="false" Width="30%" 
-                                                Font-Size="10px" OnRowDeleting="gvPagosIndividuales_RowDeleting"
-                                                PageSize="10" BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464" HeaderStyle-ForeColor="white" AllowSorting="True">
-                                                <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
-                                                <HeaderStyle BackColor="#01609F" CssClass="titleHeader" />
-                                                <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" CssClass="" />
-                                                <AlternatingRowStyle BackColor="White" />
-                                                <Columns>
-                                                    <asp:BoundField DataField="Importe" HeaderText="Importe" DataFormatString="{0:c}"/>
-                                                    <asp:BoundField DataField="Fecha" HeaderText="Fecha de pago"  />
-                                                    <asp:CommandField ButtonType="Image" ShowDeleteButton="true" DeleteImageUrl="~/Images/Iconos/Erase.ico" />
-                                                </Columns>
-                                                <EmptyDataTemplate>
-                                                    No se encontraron registros
-                                                </EmptyDataTemplate>
-                                            </asp:GridView>
-
+                                            <div style="text-align:center; width:100%; margin:0 auto;">
+                                                <asp:GridView ID="gvPagosIndividuales" runat="server" AutoGenerateColumns="false" Width="400px" 
+                                                    Font-Size="14px" OnRowDeleting="gvPagosIndividuales_RowDeleting"
+                                                    PageSize="10" BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464" HeaderStyle-ForeColor="white" AllowSorting="True" CssClass="table table table-hover" HorizontalAlign="Center">
+                                                    <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+                                                    <HeaderStyle BackColor="#01609F" CssClass="titleHeader" />
+                                                    <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="center" CssClass=""/>
+                                                    <AlternatingRowStyle BackColor="White" />
+                                                    <Columns>
+                                                        <asp:BoundField DataField="Importe" HeaderText="Importe" DataFormatString="{0:c}"/>
+                                                        <asp:BoundField DataField="Fecha" HeaderText="Fecha de pago"  />
+                                                        <asp:CommandField ButtonType="Image" ShowDeleteButton="true" DeleteImageUrl="~/Images/Iconos/Erase.ico" />
+                                                    </Columns>
+                                                    <EmptyDataTemplate>
+                                                        No se encontraron registros
+                                                    </EmptyDataTemplate>
+                                                </asp:GridView>
+                                            </div>
                                             <br />
 
                                             <asp:Label ID="lblCambioTasa" runat="server" Text="¿Cambiar la tasa de Interes a una preferencial?"></asp:Label>
-                                            <asp:Button ID="btnCambioTasa" runat="server" Text="  SI  " OnClick="btnCambioTasa_Click" CssClass="button" />
+                                            <asp:Button ID="btnCambioTasa" runat="server" Text="  SI  " OnClick="btnCambioTasa_Click" CssClass="btn btn-success" />
                                             <br />
                                             <asp:Panel ID="pnlTasaPreferencial" runat="server" Visible="false">
-                                                <table>
+                                                <table class="table table-hover" style="margin:0 auto; width:450px;">
                                                     <tr>
                                                         <td>
                                                             <asp:Label ID="lblTasaPreferencial" runat="server" Text="Nueva tasa de interes:"></asp:Label>
                                                         </td>
                                                         <td>
                                                             <asp:TextBox ID="txtTasaPreferencial" runat="server" Enabled="false"></asp:TextBox>
-                                                            <asp:ImageButton ID="imbTasaPreferencial" runat="server" ImageUrl="~/Images/Botones/revert.png" Width="16px" Height="16px" OnClick="imbTasaPreferencial_Click" />
+                                                            <asp:ImageButton ID="imbTasaPreferencial" runat="server" ImageUrl="~/Images/Iconos/Erase.ico" Width="16px" Height="16px" OnClick="imbTasaPreferencial_Click" />
                                                         </td>
                                                         <td>
                                                         </td>
@@ -482,6 +476,20 @@
                             </Triggers>
                         </asp:UpdatePanel>
                     </td>            
+                </tr>
+                <tr>
+                    <td style="text-align:center">
+                        <br />
+                        <div>
+                            <asp:Button ID="btnGenerar" runat="server" Text=" GENERAR " OnClick="btnGenerar_Click"
+                            CssClass="btn btn-success" Font-Size="" />
+                        &nbsp;<asp:Button ID="btnImprimir" runat="server" Text=" IMPRIMIR " OnClick="btnImprimir_Click"
+                            CssClass="btn btn-secondary" Font-Size="" />
+                        &nbsp;<asp:Button ID="btnGuardar" runat="server" Text=" GUARDAR " 
+                            CssClass="btn btn-primary" Font-Size="" OnClick="btnGuardar_Click" />
+                        </div>
+                        
+                    </td>
                 </tr>
             </table>
             </div>
@@ -647,20 +655,20 @@
     <cc1:ModalPopupExtender ID="mpeAgregarPago" runat="server" TargetControlID="hdTarget" 
         PopupControlID="Panel1" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
-    <asp:Panel ID="Panel1" runat="server" BorderColor="Black" BackColor="#efefef" Height="450px"
+    <asp:Panel ID="Panel1" runat="server" BorderColor="Black" BackColor="#efefef" Height="300px"
         Width="820px" HorizontalAlign="Center" Style="display: none; border-radius:25px; box-shadow:3px 3px 3px #00000030;">
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
                 <table width="100%">
                     <tr>
-                        <td colspan="2" style="text-align:center">
+                        <td colspan="2" style="text-align:center"><br />
                             <h3><asp:Label ID="lblCaption" runat="server" Text="Pagos Individuales" CssClass="labelTitleModal"></asp:Label></h3>
                         </td>
                     </tr>
                 </table>
                 <br />
                 <center>
-                    <table width="100%">
+                    <table width="80%" style="margin:0 auto;">
                         <tr>
                             <td style="text-align: left; width:35%">
                                 <asp:Label ID="lblImportePago" runat="server" Text="Importe:" CssClass="inputLabel"></asp:Label>
@@ -676,9 +684,10 @@
                                 <asp:Label ID="lblFechaPago" runat="server" Text="Fecha del pago:" CssClass="inputLabel"></asp:Label>                            
                             </td>
                             <td style="text-align: left; width:55%">
-                                <asp:TextBox ID="txtFechaPago" runat="server" Width="75%" CssClass="form-control"></asp:TextBox>
-                                <asp:ImageButton ID="imbFechaPago" runat="server" ImageUrl="~/Images/Botones/Calendar.ico" Width="24px" Height="24px" style="margin-bottom:-15px;margin-left:5px;" />
-                                <cc1:CalendarExtender ID="calFechaPago" runat="server" Enabled="True" Format="dd/MM/yyyy"
+                                <div class="form-row">
+                                    <div class="col-md-10">
+                                        <asp:TextBox ID="txtFechaPago" runat="server" Width="100%" CssClass="form-control"></asp:TextBox>
+                                        <cc1:CalendarExtender ID="calFechaPago" runat="server" Enabled="True" Format="dd/MM/yyyy"
                                         PopupButtonID="imbFechaPago" TargetControlID="txtFechaPago">
                                 </cc1:CalendarExtender>
                                 <asp:RequiredFieldValidator ID="rfvFechaPago" runat="server" ControlToValidate="txtFechaPago"
@@ -690,6 +699,14 @@
                                     CultureTimePlaceholder="" Enabled="True" Mask="99/99/9999" MaskType="Date" TargetControlID="txtFechaPago"
                                     UserDateFormat="DayMonthYear">
                                 </cc1:MaskedEditExtender>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <asp:ImageButton ID="imbFechaPago" runat="server" ImageUrl="~/Images/Botones/Calendar.ico" Width="24px" Height="24px" style="margin-bottom:-15px;margin-left:5px;" />
+                                    </div>
+                                </div>
+                                
+                                
+                                
                             </td>
                         </tr>
                         <tr>
@@ -697,10 +714,8 @@
                             </td>
                         </tr>
                         <tr>
-                            <td style="text-align: right">
+                            <td colspan="2" style="text-align:center"><br />
                                 <asp:Button ID="btnAgregarPagoModal" runat="server" Text=" AGREGAR " CssClass="btn btn-success" OnClick="btnAgregarPagoModal_Click" />
-                            </td>
-                            <td style="text-align: left">
                                 <asp:Button ID="btnCancelarPagoModal" runat="server" Text=" CANCELAR " CssClass="btn btn-danger" OnClick="btnCancelarPagoModal_Click" />
                             </td>
                         </tr>
@@ -716,26 +731,26 @@
     <cc1:ModalPopupExtender ID="mpeCambioTasa" runat="server" TargetControlID="hdTargetCambioTasa" 
         PopupControlID="pnlCambioTasa" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
-    <asp:Panel ID="pnlCambioTasa" runat="server" BorderColor="Black" BackColor="#e4e4e4" Height="450px"
+    <asp:Panel ID="pnlCambioTasa" runat="server" BorderColor="Black" BackColor="#e4e4e4" Height="250px"
         Width="820px" HorizontalAlign="Center" Style="display: none; border-radius:25px; box-shadow:3px 3px 3px #00000030;">
         <asp:UpdatePanel ID="upaCambioTasa" runat="server">
             <ContentTemplate>
                 <table width="100%">
                     <tr>
-                        <td colspan="2" style="text-align:center">
+                        <td colspan="2" style="text-align:center"><br />
                             <h3><asp:Label ID="lblTituloCambioTasa" runat="server" Text="Cambio de tasa de interes" CssClass="labelTitleModal"></asp:Label></h3>
                         </td>
                     </tr>
                 </table>
                 <br />
                 <center>
-                    <table width="100%">
+                    <table style="width:400px; margin:0 auto;">
                         <tr>
-                            <td style="text-align:left; width:60%">
-                                <asp:Label ID="lblTasaInteres" runat="server" Text="Interes Mensual (%):" CssClass="inputLabel"></asp:Label>
+                            <td style="text-align:center; width:40%">
+                                <asp:Label ID="lblTasaInteres" runat="server" Text="Interes Mensual (%):&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" CssClass="inputLabel"></asp:Label>
                             </td>
-                            <td style="text-align:left; width:40%">
-                                <asp:TextBox ID="txtTasaInteres" runat="server" CssClass="form-control" Width="80%"></asp:TextBox>
+                            <td style="text-align:left; width:60%">
+                                <asp:TextBox ID="txtTasaInteres" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
                                 <cc1:FilteredTextBoxExtender ID="ftbTasaInteres" runat="server" FilterMode="ValidChars" TargetControlID="txtTasaInteres"
                                     ValidChars="0123456789."></cc1:FilteredTextBoxExtender>
                             </td>
@@ -747,7 +762,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="2" style="text-align:center">
+                            <td colspan="2" style="text-align:center"><br />
                                 <asp:Button ID="btnCambiarTasa" runat="server" Text=" CAMBIAR " CssClass="btn btn-success" OnClick="btnCambiarTasa_Click" />                            
                                 <asp:Button ID="btnCancelarCambioTasa" runat="server" Text=" CANCELAR " CssClass="btn btn-danger" OnClientClick="OcultarModal();" />
                             </td>

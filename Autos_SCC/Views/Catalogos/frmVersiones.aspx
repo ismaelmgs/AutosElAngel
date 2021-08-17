@@ -155,7 +155,7 @@
                     </div>
                 </div>
 
-            <div class="card">
+            <div class="card" style="padding:20px;">
                         <asp:Panel ID="pnlCatalogo" runat="server" ScrollBars="Auto" Width="" Height="500px">
                             <div class="table-responsive" style="overflow-x: scroll; width:100%;">
                                 <asp:GridView ID="gvCatalogo" runat="server" AutoGenerateColumns="false" RowStyle-VerticalAlign="Top"

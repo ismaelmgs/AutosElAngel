@@ -155,7 +155,7 @@
                     <center>
                         <div class="table-responsive">
                         <asp:GridView ID="gvClientes" runat="server" AutoGenerateColumns="false" Width="100%" 
-                            Font-Size="10px" PageSize="10" BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464" 
+                            Font-Size="14px" PageSize="10" BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464" 
                             HeaderStyle-ForeColor="white" AllowSorting="True" 
                             DataKeyNames="fi_IdCotizacion" OnRowDataBound="gvClientes_RowDataBound" 
                             onrowcommand="gvClientes_RowCommand" CssClass="table table-hover">
@@ -227,7 +227,7 @@
                         </div>
                         <div class="table-responsive">
                         <asp:GridView ID="gvPagosInd" runat="server" AutoGenerateColumns="false" Width="100%" 
-                            Font-Size="10px" PageSize="10" BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464" OnRowDataBound="gvPagosInd_RowDataBound"
+                            Font-Size="14px" PageSize="10" BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464" OnRowDataBound="gvPagosInd_RowDataBound"
                             HeaderStyle-ForeColor="white" AllowSorting="True" DataKeyNames="fi_IdAMortizacion,fi_IdCotizacion" onrowcommand="gvPagosInd_RowCommand" CssClass="table table-hover">
                             <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
                             <HeaderStyle BackColor="#01609F" CssClass="titleHeader" />

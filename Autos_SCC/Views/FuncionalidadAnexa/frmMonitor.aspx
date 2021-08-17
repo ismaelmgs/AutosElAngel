@@ -111,7 +111,7 @@
                     <center>
                         <div class="table-responsive">
                         <asp:GridView ID="gvClientes" runat="server" AutoGenerateColumns="false" Width="100%" 
-                            Font-Size="10px" PageSize="10" BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464" HeaderStyle-ForeColor="white" AllowSorting="True" CssClass="table table-hover">
+                            Font-Size="14px" PageSize="10" BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464" HeaderStyle-ForeColor="white" AllowSorting="True" CssClass="table table-hover">
                             <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
                             <HeaderStyle BackColor="#01609F" CssClass="titleHeader" />
                             <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" CssClass="" />

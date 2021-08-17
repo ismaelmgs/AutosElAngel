@@ -438,33 +438,6 @@ namespace Autos_SCC.Views.Principales
         protected global::System.Web.UI.WebControls.Label lblInformacion;
 
         /// <summary>
-        /// Control btnGenerar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGenerar;
-
-        /// <summary>
-        /// Control btnImprimir.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnImprimir;
-
-        /// <summary>
-        /// Control btnGuardar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGuardar;
-
-        /// <summary>
         /// Control upaAgregarPagos.
         /// </summary>
         /// <remarks>
@@ -589,6 +562,33 @@ namespace Autos_SCC.Views.Principales
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton imbTasaPreferencial;
+
+        /// <summary>
+        /// Control btnGenerar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGenerar;
+
+        /// <summary>
+        /// Control btnImprimir.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnImprimir;
+
+        /// <summary>
+        /// Control btnGuardar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGuardar;
 
         /// <summary>
         /// Control hdTargetBAuto.
@@ -825,15 +825,6 @@ namespace Autos_SCC.Views.Principales
         protected global::System.Web.UI.WebControls.TextBox txtFechaPago;
 
         /// <summary>
-        /// Control imbFechaPago.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton imbFechaPago;
-
-        /// <summary>
         /// Control calFechaPago.
         /// </summary>
         /// <remarks>
@@ -859,6 +850,15 @@ namespace Autos_SCC.Views.Principales
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AjaxControlToolkit.MaskedEditExtender mskFechaPago;
+
+        /// <summary>
+        /// Control imbFechaPago.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton imbFechaPago;
 
         /// <summary>
         /// Control btnAgregarPagoModal.
