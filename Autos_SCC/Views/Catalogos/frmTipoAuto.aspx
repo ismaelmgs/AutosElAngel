@@ -146,7 +146,7 @@
                     OnClick="btnEliminar_Click" ToolTip="Elimina el registro seleccionado" />
                 &nbsp;<asp:Button ID="btnLimpiar" runat="server" Text="LIMPIAR" CssClass="btn btn-info"
                     OnClick="btnLimpiar_Click" ToolTip="Limpia los campos para un registro nuevo" />
-                &nbsp;<asp:Button ID="btnExportar" runat="server" Text="EXPORTAR" CssClass="btn btn-inverse"
+                &nbsp;<asp:Button ID="btnExportar" runat="server" Text="EXPORTAR" CssClass="btn btn-secondary"
                     OnClick="btnExportar_Click" ToolTip="Exporta un grid a excel" />
             </div>
             <div class="card" style="padding:20px;">

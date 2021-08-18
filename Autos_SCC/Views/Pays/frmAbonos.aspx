@@ -270,11 +270,11 @@
     <cc1:ModalPopupExtender ID="mpePagos" runat="server" TargetControlID="hdTargetPago" 
         PopupControlID="pnlPagos" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
-    <asp:Panel ID="pnlPagos" runat="server" BorderColor="Black" BackColor="#e4e4e4" Height="400px"
-        Width="820px" HorizontalAlign="Center" Style="display: none; border-radius:25px;">
+    <asp:Panel ID="pnlPagos" runat="server" BorderColor="Black" BackColor="#e4e4e4" Height="250px"
+        Width="820px" HorizontalAlign="Center" Style="display: none; border-radius:25px; box-shadow:3px 3px 3px #00000050;">
         <asp:UpdatePanel ID="upaPagos" runat="server">
             <ContentTemplate>
-                <table width="100%">
+                <table width="80%" style="margin:0 auto;">
                     <tr>
                         <td style="width:150">
                         </td>
@@ -283,7 +283,7 @@
                     </tr>
                     <tr>
                         <td colspan="2" style="text-align:center">
-                            <asp:Label ID="lblTituloBuscaAuto" runat="server" Text="Búsqueda de autos" CssClass="labelTitleModal"></asp:Label>
+                            <h4><asp:Label ID="lblTituloBuscaAuto" runat="server" Text="Búsqueda de autos" CssClass="labelTitleModal"></asp:Label></h4><br />
                         </td>
                     </tr>
                     <tr>
@@ -293,11 +293,11 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="text-align:left">
+                        <td style="text-align:left"><br />
                             <asp:Label ID="lblTipoMov" runat="server" Text="Tipo movimiento:" CssClass="inputLabel"></asp:Label>
                         </td>
                         <td style="text-align:left">
-                            <asp:DropDownList ID="ddlTipoMov" runat="server" CssClass="form-control" Width="173">
+                            <asp:DropDownList ID="ddlTipoMov" runat="server" CssClass="form-control" Width="100%">
                                 <asp:ListItem Text="PAGO" Value="PAY"></asp:ListItem>
                                 <asp:ListItem Text="REVERSO" Value="RPAY"></asp:ListItem>
                             </asp:DropDownList>
@@ -308,7 +308,7 @@
                             <asp:Label ID="lblImporte" runat="server" Text="Importe:" CssClass="inputLabel"></asp:Label>
                         </td>
                         <td style="text-align:left">
-                            <asp:TextBox ID="txtImporte" runat="server" CssClass="form-control" Width="160" MaxLength="15"></asp:TextBox>
+                            <asp:TextBox ID="txtImporte" runat="server" CssClass="form-control" Width="100%" MaxLength="15"></asp:TextBox>
                             <cc1:FilteredTextBoxExtender ID="ftbImporte" runat="server" ValidChars="-.0123456789"
                                 TargetControlID="txtImporte" FilterMode="ValidChars"></cc1:FilteredTextBoxExtender>
                         </td>
@@ -318,6 +318,7 @@
                         </td>
                     </tr>
                 </table>
+                <br />
                 <table width="100%">
                     <tr>
                         <td style="text-align:right; width:165">

@@ -213,7 +213,7 @@
                         OnClick="btnEliminar_Click" ToolTip="Elimina el registro seleccionado" />
                     &nbsp;<asp:Button ID="btnLimpiar" runat="server" Text="LIMPIAR" CssClass="btn btn-info"
                         OnClick="btnLimpiar_Click" ToolTip="Limpia los campos para un registro nuevo" />
-                    &nbsp;<asp:Button ID="btnExportar" runat="server" Text="EXPORTAR" CssClass="btn btn-inverse"
+                    &nbsp;<asp:Button ID="btnExportar" runat="server" Text="EXPORTAR" CssClass="btn btn-secondary"
                         OnClick="btnExportar_Click" ToolTip="Exporta un grid a excel" />
                 </div>
                 <div class="card" style="padding:20px;">
@@ -297,13 +297,13 @@
         CancelControlID="can">
     </cc1:ModalPopupExtender>
     <asp:Panel ID="Panel1" runat="server" BorderColor="Black" BackColor="#eeeeee" Height="400px"
-        Width="820px" HorizontalAlign="Center"  Style="display: none; border-radius:25px;">
+        Width="820px" HorizontalAlign="Center"  Style="display: none; border-radius:25px; box-shadow:3px 3px 3px #00000050;">
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
                 <div class="header">
                     <table width="100%">
                         <tr>
-                            <td colspan="2" style="text-align:center">
+                            <td colspan="2" style="text-align:center"><br />
                                 <h3><asp:Label ID="lblCaption" runat="server" Text="Gastos del vehiculo" CssClass="TituloEtiquetas"></asp:Label></h3>
                             </td>
                         </tr>

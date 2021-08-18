@@ -9,7 +9,7 @@
                     <h3>Acerca de</h3>
                 </div>
             </div>
-    <div class="card" style="min-height:50vh;">
+    <div class="card" style="min-height:65vh;">
         <p>
             Coloque contenido aquí.
         </p>
