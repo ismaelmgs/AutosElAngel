@@ -7,7 +7,7 @@
             <h3>Política Autos el Ángel de Puebla.</h3>
         </div>
     </div>
-    <div class="card" style="min-height:300px;">
+    <div class="card" style="min-height:65vh;">
         <br />
         <p>
             Nuestro personal está capacitado para atenderte con cualquier situación desde el personal de intendencia hasta los expertos estamos dispuestos a atenderte como te mereces.

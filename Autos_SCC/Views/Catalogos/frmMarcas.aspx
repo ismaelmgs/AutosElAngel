@@ -48,7 +48,7 @@
                         <h3 style="text-align:center;">Registro de Marcas</h3>
                             <ContentTemplate>
                                 <br />
-                                <table width="100%">
+                                <table width="80%" style="margin:0 auto;">
                                     <tr>
                                         <td style="text-align:left; width:35% ">
                                             <asp:Label ID="lblId" runat="server" Font-Bold="True" Text="Id:" CssClass="inputLabel" />&nbsp;
@@ -62,7 +62,7 @@
                                             <asp:Label ID="lblDescripcion" runat="server" Font-Bold="True" Text="Descripción:" CssClass="inputLabel" />&nbsp;
                                         </td>
                                         <td style="text-align:left; width:65% ">
-                                            <asp:TextBox ID="txtDescripcion" Width="100%" runat="server" Rows="4" 
+                                            <asp:TextBox ID="txtDescripcion" Width="100%" runat="server" Rows="1" 
                                                 TextMode="MultiLine" CssClass="form-control"></asp:TextBox>
                                         </td>
                                     </tr>
@@ -79,18 +79,18 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="card" style="min-height:210px;">
+                    <div class="card">
                         <h3 style="text-align:center;">Búqueda</h3>
                             <ContentTemplate>
                                 <br />
                                 <div class="row">
                                        <div class="col-md-6">
-                                            <table width="100%">
+                                            <table width="100%" style="margin:0 auto;">
                                                 <tr>
-                                                    <td style="height: 30px;" align="right" width="35%">
+                                                    <td style="height: 30px;" align="right" width="40%">
                                                         <asp:Label ID="lblBusqueda" runat="server" Font-Bold="True" Text="Palabra a buscar:" CssClass="inputLabel" />&nbsp;
                                                     </td>
-                                                    <td width="65%">
+                                                    <td width="60%">
                                                         <asp:TextBox ID="txtBuqueda" Width="100%" runat="server" CssClass="form-control"></asp:TextBox>
                                                     </td>
                                                 </tr>
@@ -106,10 +106,9 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12" style="text-align:center;">
-                                        <br /><br />
-                                        <asp:Button ID="btnBuscar" runat="server" Text="BUSCAR" CssClass="btn" OnClick="btnBuscar_Click" />
+                                        <asp:Button ID="btnBuscar" runat="server" Text="BUSCAR" CssClass="btn btn-success" OnClick="btnBuscar_Click" />
                                     </div>
-                                </div>
+                                </div><br />    
                             </ContentTemplate>
                     </div>
                 </div>

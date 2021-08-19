@@ -167,7 +167,7 @@
                         <h3 style="text-align:center;">Búqueda</h3>
                            <ContentTemplate>
                                 <br />
-                                <table width="99%">
+                                <table width="80%" style="margin:0 auto;">
                                     <tr>
                                         <td width="40%">
                                             <asp:Label ID="lblBusqueda" runat="server" Text="Palabra a buscar:" CssClass="inputLabel" />
@@ -195,7 +195,7 @@
                                     <tr>
                                         <td colspan="2" align="center">
                                             <br />
-                                            <asp:Button ID="btnBuscar" runat="server" Text="BUSCAR" CssClass="btn" OnClick="btnBuscar_Click" />
+                                            <asp:Button ID="btnBuscar" runat="server" Text="BUSCAR" CssClass="btn btn-success" OnClick="btnBuscar_Click" />
                                         </td>
                                     </tr>
                                 </table>

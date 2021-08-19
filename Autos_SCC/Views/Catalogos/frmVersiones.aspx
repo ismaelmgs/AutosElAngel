@@ -51,12 +51,14 @@
                             <ContentTemplate>
                                 <br />
                                 <table style="text-align:left; width:100%">
+                                    <tr>
+                                        <td>
                                     <div class="row">
-                                        <div class="col-md-2" style="text-align:left; width:35%">
+                                        <div class="col-md-2" style="text-align:left;">
                                             <asp:Label ID="lblId" runat="server" Font-Bold="True" Text="Id:" CssClass="inputLabel"/>&nbsp;
                                         </div>
                 
-                                        <div class="col-md-10" style="text-align:left; width:65%">
+                                        <div class="col-md-10" style="text-align:left;">
                                             <asp:TextBox ID="txtId" runat="server" Width="100%" Enabled="False" CssClass="form-control"></asp:TextBox>
                                         </div>
                                     </div>
@@ -88,18 +90,18 @@
                                         </div>
                 
                                         <div class="col-md-10" style="text-align:left">
-                                            <asp:TextBox ID="txtDescripcion" runat="server" Width="100%" Rows="2" TextMode="MultiLine" CssClass="form-control"></asp:TextBox>
+                                            <asp:TextBox ID="txtDescripcion" runat="server" Width="100%" Rows="1" TextMode="MultiLine" CssClass="form-control"></asp:TextBox>
                                         </div>
                                     </div>
-                
-                                    <tr>
-                                        <td>
+                                    <div class="row">
+                                        <div class="col-md-2" style="text-align:left">
                                             <asp:Label ID="Activo" runat="server" Font-Bold="True" Text="¿Activo?" CssClass="inputLabel"/>&nbsp;
-                                        </td>
-                
-                                        <td>
-                                            <asp:CheckBox ID="chkActivo" runat="server" />
-                                        </td>
+                                        </div>
+                                        <div class="col-md-10" style="text-align:left">
+                                            &nbsp;<asp:CheckBox ID="chkActivo" runat="server" />
+                                        </div>
+                                    </div>
+                                      </td>
                                     </tr>
                                 </table>
                             </ContentTemplate>
@@ -135,7 +137,7 @@
                                             <div class="row">
                                                 <div class="col-md-12" style="text-align:center;">
                                                     <br /><br />
-                                                    <asp:Button ID="btnBuscar" runat="server" Text="BUSCAR" CssClass="btn" OnClick="btnBuscar_Click" />
+                                                    <asp:Button ID="btnBuscar" runat="server" Text="BUSCAR" CssClass="btn btn-success" OnClick="btnBuscar_Click" />
                                                 </div>
                                             </div>         
                                         </ContentTemplate>

@@ -93,17 +93,17 @@
                 <div style="width:100%; background-color:#d0e7ff; border-radius:5px; padding:5px;">
                     <table style="width:100%">
                         <tr>
-                            <td style="width:40%">
-                                <asp:Label ID="lblCliente" runat="server" Text="" CssClass="inputLabel"></asp:Label>
+                            <td style="width:40%; text-align:center;">
+                                <asp:Label ID="lblCliente" runat="server" Text="" CssClass="inputLabel" style="font-weight:bold; font-size:16px;"></asp:Label>
                             </td>
-                            <td style="width:20%">
-                                <asp:Label ID="lblTipoAuto" runat="server" CssClass="inputLabel"></asp:Label>
+                            <td style="width:20%; text-align:center;"">
+                                <asp:Label ID="lblTipoAuto" runat="server" CssClass="inputLabel" style="font-weight:bold; font-size:16px;"></asp:Label>
                             </td>
-                            <td style="width:20%">
-                                <asp:Label ID="lblPrecio" runat="server" CssClass="inputLabel"></asp:Label>
+                            <td style="width:20%; text-align:center;"">
+                                <asp:Label ID="lblPrecio" runat="server" CssClass="inputLabel" style="font-weight:bold; font-size:16px;"></asp:Label>
                             </td>
-                            <td style="width:20%">
-                                <asp:Label ID="lblPlazo" runat="server" CssClass="inputLabel"></asp:Label>
+                            <td style="width:20%; text-align:center;"">
+                                <asp:Label ID="lblPlazo" runat="server" CssClass="inputLabel" style="font-weight:bold; font-size:16px;"></asp:Label>
                             </td>
                         </tr>
                     </table>

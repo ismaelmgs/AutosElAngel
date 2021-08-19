@@ -48,7 +48,7 @@
                             <h3 style="text-align:center;">Registro de Tipos</h3>
                             <ContentTemplate>
                                     <br />
-                                    <table width="100%">
+                                    <table width="80%" style="margin:0 auto;">
                                         <tr>
                                             <td style="height: 30px; text-align:left; width:35%">
                                                 <asp:Label ID="lblId" runat="server" Font-Bold="True" Text="Id:" CssClass="inputLabel"/>
@@ -71,7 +71,7 @@
                                                 <asp:Label ID="lblDescripcion" runat="server" Font-Bold="True" Text="Descripción:" CssClass="inputLabel" />
                                             </td>
                                             <td style="text-align:left">
-                                                <asp:TextBox ID="txtDescripcion" runat="server" Width="100%" Rows="4" TextMode="MultiLine" CssClass="form-control"></asp:TextBox>
+                                                <asp:TextBox ID="txtDescripcion" runat="server" Width="100%" Rows="1" TextMode="MultiLine" CssClass="form-control"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -79,7 +79,7 @@
                                                 <asp:Label ID="Activo" runat="server" Font-Bold="True" Text="¿Activo?" CssClass="inputLabel"/>
                                             </td>
                                             <td>
-                                                <asp:CheckBox ID="chkActivo" runat="server" />
+                                                &nbsp;<asp:CheckBox ID="chkActivo" runat="server" />
                                             </td>
                                         </tr>
                                     </table>
@@ -87,17 +87,17 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="card" style="min-height:260px;">
+                        <div class="card">
                             <h3 style="text-align:center;">Búsqueda</h3>
                            <ContentTemplate><br />
                                     <div class="row">
                                        <div class="col-md-12">
                                     <table width="100%">
                                         <tr>
-                                            <td width="40%">
+                                            <td width="18%">
                                                 <asp:Label ID="lblMarcaBusqueda" runat="server" Font-Bold="True" Text="Marca:" CssClass="inputLabel" />&nbsp;
                                             </td>
-                                            <td width="60%">
+                                            <td width="82%">
                                                 <asp:DropDownList ID="ddlMarcaBusqueda" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
                                             </td>
                                         </tr>
@@ -126,11 +126,11 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                                <div class="col-md-12" style="text-align:center;">
-                                                    <br /><br />
-                                                <asp:Button ID="btnBuscar" runat="server" Text="BUSCAR" CssClass="btn" OnClick="btnBuscar_Click" />
+                                            <div class="col-md-12" style="text-align:center;">
+                                                <asp:Button ID="btnBuscar" runat="server" Text="BUSCAR" CssClass="btn btn-success" OnClick="btnBuscar_Click" />
+                                                
                                             </div>
-                                        </div>
+                                        </div><br />
                                 </ContentTemplate>
                         </div>
                      </div>

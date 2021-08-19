@@ -532,13 +532,15 @@
     <cc1:ModalPopupExtender ID="mpeBuscarAuto" runat="server" TargetControlID="hdTargetBAuto" 
         PopupControlID="pnlBuscaAuto" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
-    <asp:Panel ID="pnlBuscaAuto" runat="server" BorderColor="Black" BackColor="#e4e4e4" Height="450px"
+
+<asp:Panel ID="pnlBuscaAuto" runat="server" BorderColor="Black" BackColor="#e4e4e4" Height="450px"
         Width="820px" HorizontalAlign="Center" Style="display: none; border-radius:25px; box-shadow:3px 3px 3px #00000030;">
         <asp:UpdatePanel ID="upaBuscaAuto" runat="server">
+
             <ContentTemplate>
                 <table width="100%">
                     <tr>
-                        <td colspan="2" style="text-align:center">
+                        <td colspan="2" style="text-align:center"><br />
                             <h3><asp:Label ID="lblTituloBuscaAuto" runat="server" Text="Búsqueda de autos" CssClass="labelTitleModal"></asp:Label></h3>
                         </td>
                     </tr>
@@ -560,11 +562,12 @@
                                 </asp:DropDownList>
                             </td>
                             <td width="20%" style="text-align:left">
-                                
+                                <asp:Button ID="btnBuscarAuto" runat="server" Text=" BUSCAR " CssClass="btn btn-success"
+                                    OnClick="btnBuscarAuto_Click"/>
                             </td>
                         </tr>
                         <tr>
-                            <td style="text-align:left; width:25%">
+                            <td style="text-align:center; width:25%">
                                 <asp:Label ID="lblTextoBusqueda" runat="server" Text="" CssClass="inputLabel"></asp:Label>
                             </td>
                             <td style="text-align:left; width:45%">
@@ -572,8 +575,7 @@
                                 <asp:TextBox ID="txtTextoBusqueda" runat="server" Width="97%" CssClass="form-control" Visible="false"></asp:TextBox>
                             </td>
                             <td width="20%">
-                                <asp:Button ID="btnBuscarAuto" runat="server" Text=" BUSCAR " CssClass="btn btn-success"
-                                    OnClick="btnBuscarAuto_Click"/>
+                                
                             </td>
                         </tr>
                         <tr>
@@ -633,9 +635,10 @@
                                 </td>
                             </tr>
                         </table>
-                    </center>
+                    </center><br />
                 </center>
             </ContentTemplate>
+
             <Triggers>
                 <asp:AsyncPostBackTrigger ControlID="btnBuscarAuto" EventName="Click" />
             </Triggers>
@@ -648,6 +651,8 @@
             </ProgressTemplate>
         </asp:UpdateProgress>
     </asp:Panel>
+    
+    
 
 
     <%--Modal de Pagos individuales--%>
@@ -813,10 +818,10 @@
                                         </span>
                                     </h4>
                                         <asp:Panel ID="pnlBusCliente" runat="server" ScrollBars="Auto" Height="150px" CssClass="form-control">
-                                        <asp:GridView ID="gvBusClientes" runat="server" AutoGenerateColumns="false" Width="99%" Font-Size="10px" 
+                                        <asp:GridView ID="gvBusClientes" runat="server" AutoGenerateColumns="false" Width="" Font-Size="10px" 
                                                     OnSelectedIndexChanged="gvBusClientes_SelectedIndexChanged"
                                                     PageSize="10" BorderStyle="None" BorderWidth="0px" 
-                                                    HeaderStyle-BackColor="#646464" HeaderStyle-ForeColor="white" AllowSorting="True" DataKeyNames="fi_Id" CssClass="table table-hover" style="border:1px solid #efefef;">
+                                                    HeaderStyle-BackColor="#646464" HeaderStyle-ForeColor="white" AllowSorting="True" DataKeyNames="fi_Id" CssClass="table table-hover table-responsive" style="border:1px solid #efefef;">
                                                 <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
                                                 <HeaderStyle BackColor="#448aff" CssClass="titleHeader" />
                                                 <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" CssClass="" />

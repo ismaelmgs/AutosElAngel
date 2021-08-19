@@ -654,6 +654,15 @@ namespace Autos_SCC.Views.Principales
         protected global::System.Web.UI.WebControls.DropDownList ddlTipoBusqueda;
 
         /// <summary>
+        /// Control btnBuscarAuto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnBuscarAuto;
+
+        /// <summary>
         /// Control lblTextoBusqueda.
         /// </summary>
         /// <remarks>
@@ -679,15 +688,6 @@ namespace Autos_SCC.Views.Principales
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTextoBusqueda;
-
-        /// <summary>
-        /// Control btnBuscarAuto.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBuscarAuto;
 
         /// <summary>
         /// Control rfvTextoBusqueda.
