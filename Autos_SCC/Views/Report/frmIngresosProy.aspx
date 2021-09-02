@@ -36,10 +36,10 @@
                         </div>
                     </legend>
                     <div class="row">
-                        <div class="col-md-1">
+                        <div class="col-md-4">
                             &nbsp;
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-md-4">
                             <div class="row">
                                 <div class="col-md-3">
                                     <asp:Label ID="lblFechaInicial" runat="server" Text="Fecha inicial:" CssClass="inputLabel"></asp:Label>
@@ -61,53 +61,49 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-5">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    
-                                </div>
-                                <div class="col-md-8">
-                                    
-                                </div>
-                                <div class="col-md-1">
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-1">
+                        <div class="col-md-4">
                             &nbsp;
                         </div>
                     </div>
-                    <br />
+
                     <div class="row">
-                        <div class="col-md-1">
+                        <div class="col-md-5">
                             &nbsp;
                         </div>
-                        <div class="col-md-3" style="text-align:center;">
+                        <div class="col-md-3">
                             <asp:Label ID="lblTodasFechasText" runat="server" Text ="" CssClass="inputLabel"></asp:Label>
-                            &nbsp;&nbsp;&nbsp;&nbsp;<asp:RadioButtonList id="rbReporte" runat="server">
-                                                        <asp:ListItem Text="Semanal" Value="2"></asp:ListItem>
-                                                        <asp:ListItem Text="Mensual" Value="1"></asp:ListItem>
-                                                    </asp:RadioButtonList>
+                                <asp:RadioButtonList id="rbReporte" runat="server">
+                                <asp:ListItem Text="&nbsp;Semanal" Value="2"></asp:ListItem><asp:ListItem Text="&nbsp;Mensual" Value="1"></asp:ListItem>
+                            </asp:RadioButtonList>                            
                         </div>
-                        <div class="col-md-5" style="text-align:center;">
+                        <div class="col-md-4">
+                            &nbsp;
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            &nbsp;
+                        </div>
+                        <div class="col-md-4" style="text-align:center;">
                             <div class="row">
-                                <div class="col-md-2">
+                                <div class="col-md-3">
                                     <asp:Label ID="lblSucursal" runat="server" Text="Sucursal:" CssClass="inputLabel"></asp:Label>
                                 </div>
-                                <div class="col-md-10">
+                                <div class="col-md-8">
                                     <asp:DropDownList ID="ddlSucursal" runat="server" CssClass="form-control" Width="100%">
                                 </asp:DropDownList>
                                 </div>
+                                <div class="col-md-1" style="text-align:center;">
+                                    <asp:Button ID="btnBuscar" runat="server" Text="Buscar" CssClass="btn btn-success" OnClick="btnBuscar_Click" />
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-2" style="text-align:center;">
-                            <asp:Button ID="btnBuscar" runat="server" Text="Buscar" CssClass="btn btn-success" OnClick="btnBuscar_Click" />
-                        </div>
-                        <div class="col-md-1">
+                        <div class="col-md-4">
                             &nbsp;
                         </div>
-                        </div>
+                   </div>
+
                 </fieldset>
 <asp:Panel ID="pnlReporte" runat="server" Visible="false">
                 <fieldset style="text-align:left" >
