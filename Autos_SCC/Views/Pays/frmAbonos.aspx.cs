@@ -189,6 +189,7 @@ namespace Autos_SCC.Views.Pays
                         eTipoPagos = eTipoPago.PagoIndividual;
                         ddlTipoMov.SelectedIndex = 0;
                         txtImporte.Text = string.Empty;
+                        lblDebe.Text = "3000";
                         mpePagos.Show();
                         break;
                 }

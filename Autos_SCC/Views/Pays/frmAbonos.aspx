@@ -283,13 +283,15 @@
                     </tr>
                     <tr>
                         <td colspan="2" style="text-align:center">
-                            <h4><asp:Label ID="lblTituloBuscaAuto" runat="server" Text="Búsqueda de autos" CssClass="labelTitleModal"></asp:Label></h4><br />
+                            <h4><asp:Label ID="lblTituloBuscaAuto" runat="server" Text="Cargar Abono" CssClass="labelTitleModal"></asp:Label></h4><br />
                         </td>
                     </tr>
                     <tr>
                         <td style="height:5px">
+                            <asp:Label ID="lblTextDebe" runat="server" Text="Debe:" CssClass="inputLabel"></asp:Label>
                         </td>
                         <td style="height:5px">
+                            <asp:Label ID="lblDebe" runat="server" Text="" CssClass="inputLabel"></asp:Label>
                         </td>
                     </tr>
                     <tr>

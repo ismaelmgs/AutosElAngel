@@ -417,6 +417,7 @@
     <Content Include="Views\Principales\frmFormalizacion.aspx" />
     <Content Include="Views\Principales\frmRegistroClientes.aspx" />
     <Content Include="Views\Report\frmAutosVen.aspx" />
+    <Content Include="Views\Report\frmIngresosProy.aspx" />
     <Content Include="Views\Report\frmPaysPeriod.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -483,6 +484,7 @@
     <Compile Include="Interfaces\IViewAutosVend.cs" />
     <Compile Include="Interfaces\IViewCobranza.cs" />
     <Compile Include="Interfaces\IViewFormalizar.cs" />
+    <Compile Include="Interfaces\IViewIngresosProy.cs" />
     <Compile Include="Interfaces\IViewMonitor.cs" />
     <Compile Include="Interfaces\IViewReporte.cs" />
     <Compile Include="Interfaces\IViewSeguridad.cs" />
@@ -492,6 +494,7 @@
     <Compile Include="Presenter\AutosVend_Presenter.cs" />
     <Compile Include="Presenter\Cobranza_Presenter.cs" />
     <Compile Include="Presenter\Formalizar_Presenter.cs" />
+    <Compile Include="Presenter\IngresosProy_Presenter.cs" />
     <Compile Include="Presenter\Monitor_Presenter.cs" />
     <Compile Include="Presenter\Reportes_Presenter.cs" />
     <Compile Include="Presenter\Seguridad_Presenter.cs" />
@@ -713,6 +716,13 @@
     </Compile>
     <Compile Include="Views\Report\frmAutosVen.aspx.designer.cs">
       <DependentUpon>frmAutosVen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Report\frmIngresosProy.aspx.cs">
+      <DependentUpon>frmIngresosProy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Report\frmIngresosProy.aspx.designer.cs">
+      <DependentUpon>frmIngresosProy.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Report\frmPaysPeriod.aspx.cs">
       <DependentUpon>frmPaysPeriod.aspx</DependentUpon>

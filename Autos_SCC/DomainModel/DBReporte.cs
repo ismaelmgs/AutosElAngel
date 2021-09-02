@@ -37,5 +37,18 @@ namespace Autos_SCC.DomainModel
                 return new DataTable();
             }
         }
+
+        public DataTable GetConsultaReporteIngresosProyectados(int iReporte, string sFecha)
+        {
+            try
+            {
+                return oDB_SP.EjecutarDT("[Autos].[spS_ConsultaRepProyecciones]", "@Reporte", iReporte,
+                                                                                "@Fecha", sFecha);
+            }
+            catch
+            {
+                return new DataTable();
+            }
+        }
     }
 }
