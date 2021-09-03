@@ -32,7 +32,7 @@
                 <fieldset style="text-align:left">
                     <legend>
                         <div style="width:100%; text-align:center;">
-                            <h4>Periodo de reporte</h4>
+                            <h4>Periodo</h4>
                         </div>
                     </legend>
                     <div class="row">
@@ -40,25 +40,23 @@
                             &nbsp;
                         </div>
                         <div class="col-md-4">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <asp:Label ID="lblFechaInicial" runat="server" Text="Fecha inicial:" CssClass="inputLabel"></asp:Label>
-                                </div>
-                                <div class="col-md-8">
-                                     <asp:TextBox ID="txtFechaInicial" runat="server" CssClass="form-control" Width="100%" ReadOnly="true"></asp:TextBox>
-                                </div>
-                                <div class="col-md-1">
-                                    <asp:ImageButton ID="imbFechaInicial" runat="server" ImageUrl="~/Images/Botones/Calendar.ico" Width="24px" Height="24px" style="margin-bottom: -15px;" />
-                                    <cc1:CalendarExtender ID="calFechaInicial" runat="server" Enabled="True" Format="dd/MM/yyyy"
-                                            PopupButtonID="imbFechaInicial" TargetControlID="txtFechaInicial">
-                                    </cc1:CalendarExtender>
-                                    <cc1:MaskedEditExtender ID="mskFechaInicial" runat="server" ClearTextOnInvalid="True"
-                                        CultureAMPMPlaceholder="" CultureCurrencySymbolPlaceholder="" CultureDateFormat=""
-                                        CultureDatePlaceholder="" CultureDecimalPlaceholder="" CultureThousandsPlaceholder=""
-                                        CultureTimePlaceholder="" Enabled="True" Mask="99/99/9999" MaskType="Date" TargetControlID="txtFechaInicial"
-                                        UserDateFormat="DayMonthYear">
-                                    </cc1:MaskedEditExtender>
-                                </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <asp:Label ID="lblFechaInicial" runat="server" Text="Fecha:" CssClass="inputLabel"></asp:Label>
+                            </div>
+                            <div class="col-md-8">
+                                 <asp:TextBox ID="txtFechaInicial" runat="server" CssClass="form-control" Width="100%" ReadOnly="true"></asp:TextBox>
+                            </div>
+                            <div class="col-md-1">
+                                <asp:ImageButton ID="imbFechaInicial" runat="server" ImageUrl="~/Images/Botones/Calendar.ico" Width="24px" Height="24px" style="margin-bottom: -15px;" />
+                                <cc1:CalendarExtender ID="calFechaInicial" runat="server" Enabled="True" Format="dd/MM/yyyy" PopupButtonID="imbFechaInicial" TargetControlID="txtFechaInicial"></cc1:CalendarExtender>
+                                <cc1:MaskedEditExtender ID="mskFechaInicial" runat="server" ClearTextOnInvalid="True"
+                                    CultureAMPMPlaceholder="" CultureCurrencySymbolPlaceholder="" CultureDateFormat=""
+                                    CultureDatePlaceholder="" CultureDecimalPlaceholder="" CultureThousandsPlaceholder=""
+                                    CultureTimePlaceholder="" Enabled="True" Mask="99/99/9999" MaskType="Date" TargetControlID="txtFechaInicial"
+                                    UserDateFormat="DayMonthYear">
+                                </cc1:MaskedEditExtender>
+                            </div>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -67,18 +65,23 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-5">
-                            &nbsp;
-                        </div>
-                        <div class="col-md-3">
-                            <asp:Label ID="lblTodasFechasText" runat="server" Text ="" CssClass="inputLabel"></asp:Label>
-                                <asp:RadioButtonList id="rbReporte" runat="server">
-                                <asp:ListItem Text="&nbsp;Semanal" Value="2"></asp:ListItem><asp:ListItem Text="&nbsp;Mensual" Value="1"></asp:ListItem>
-                            </asp:RadioButtonList>                            
-                        </div>
                         <div class="col-md-4">
                             &nbsp;
                         </div>
+                        
+                        <div class="col-md-3">
+                            <asp:Label ID="lblTipoRep" runat="server" Text="Tipo:" CssClass="inputLabel"></asp:Label>
+                        </div>
+                        <div class="col-md-3">
+                            
+                                <asp:RadioButtonList id="rbReporte" runat="server"  RepeatDirection="Horizontal">
+                                <asp:ListItem Text="&nbsp;Semanal" Value="2"></asp:ListItem>
+                                <asp:ListItem Text="&nbsp;Mensual" Value="1"></asp:ListItem>
+                                <asp:ListItem Text="&nbsp;Anual" Value="3"></asp:ListItem>
+                            </asp:RadioButtonList>                            
+                        </div>
+                        
+                        
                     </div>
 
                     <div class="row">
@@ -92,7 +95,7 @@
                                 </div>
                                 <div class="col-md-8">
                                     <asp:DropDownList ID="ddlSucursal" runat="server" CssClass="form-control" Width="100%">
-                                </asp:DropDownList>
+                                    </asp:DropDownList>
                                 </div>
                                 <div class="col-md-1" style="text-align:center;">
                                     <asp:Button ID="btnBuscar" runat="server" Text="Buscar" CssClass="btn btn-success" OnClick="btnBuscar_Click" />
@@ -105,19 +108,20 @@
                    </div>
 
                 </fieldset>
-<asp:Panel ID="pnlReporte" runat="server" Visible="false">
-                <fieldset style="text-align:left" >
+                <asp:Panel ID="pnlReporte" runat="server" Visible="false">
+                    <fieldset style="text-align:left" >
                     <br />
                     <div style="text-align:center;">
                         <h4>
-                            Reporte
+                            <asp:Label ID="lblRepText" runat="server" Text="Reporte"></asp:Label>
+                            
                         </h4>
                     </div>
                         <table style="width:100%">
                             <tr>
                                 <td style="width:1%"></td>
                                 <td style="width:98%; text-align:right">
-                                <asp:Button ID="btnExportar" runat="server" Text="Exportar a Excel" OnClick="btnExportar_Click" CssClass="btn btn-secondary"/>
+                                    <%--<asp:Button ID="btnExportar" runat="server" Text="Exportar a Excel" OnClick="btnExportar_Click" CssClass="btn btn-secondary"/>--%>
                                 </td>
                                 <td style="width:1%"></td>
                             </tr>
@@ -125,55 +129,56 @@
                         <asp:UpdatePanel ID="upaReporte" runat="server">
                             <ContentTemplate>
                                 <table style="width:100%">
-                            <tr>
-                                <td style="width:1%"></td>
-                                <td style="width:98%"></td>
-                                <td style="width:1%"></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                </td>
-                                <td>
-                                    <center>
-                                        <asp:Label ID="lblTitulo1" runat="server" Text="AUTOS EL ANGEL DE PUEBLA" CssClass="inputLabel"></asp:Label>
-                                    </center> 
-                                </td>
-                                <td>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                </td>
-                                <td>
-                                    <center>
-                                        <asp:Label ID="Label1" runat="server" Text="CONCENTRADO DE AUTOS VENDIDOS EN EL PERIODO COMPRENDIDO" CssClass="inputLabel"></asp:Label>
-                                    </center> 
-                                </td>
-                                <td>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                </td>
-                                <td>
-                                    <center>
-                                        <%--<asp:Label ID="lblDiaInicial" runat="server" Text="" CssClass="inputLabel"></asp:Label>
-                                        <asp:Label ID="lblMesInicial" runat="server" Text="" CssClass="inputLabel"></asp:Label>
-                                        <asp:Label ID="LblAnioInicial" runat="server" Text="" CssClass="inputLabel"></asp:Label>
-                                        <asp:Label ID="lblAl" runat="server" Text="" CssClass="inputLabel"></asp:Label>
-                                        <asp:Label ID="lblDiaFinal" runat="server" Text="" CssClass="inputLabel"></asp:Label>
-                                        <asp:Label ID="lblMesFinal" runat="server" Text="" CssClass="inputLabel"></asp:Label>
-                                        <asp:Label ID="lblAnioFinal" runat="server" Text="" CssClass="inputLabel"></asp:Label>--%>
-                                    </center> 
-                                </td>
-                                <td>
-                                </td>
-                            </tr>
-                        </table>
+                                    <tr>
+                                        <td style="width:1%"></td>
+                                        <td style="width:98%"></td>
+                                        <td style="width:1%"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        </td>
+                                        <td>
+                                            <center>
+                                               <%-- <asp:Label ID="lblTitulo1" runat="server" Text="AUTOS EL ANGEL DE PUEBLA" CssClass="inputLabel"></asp:Label>--%>
+                                            </center> 
+                                        </td>
+                                        <td>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        </td>
+                                        <td>
+                                            <center>
+                                                <%--<asp:Label ID="Label1" runat="server" Text="CONCENTRADO DE AUTOS VENDIDOS EN EL PERIODO COMPRENDIDO" CssClass="inputLabel"></asp:Label>--%>
+                                            </center> 
+                                        </td>
+                                        <td>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        </td>
+                                        <td>
+                                            <center>
+                                                <%--<asp:Label ID="lblDiaInicial" runat="server" Text="" CssClass="inputLabel"></asp:Label>
+                                                <asp:Label ID="lblMesInicial" runat="server" Text="" CssClass="inputLabel"></asp:Label>
+                                                <asp:Label ID="LblAnioInicial" runat="server" Text="" CssClass="inputLabel"></asp:Label>
+                                                <asp:Label ID="lblAl" runat="server" Text="" CssClass="inputLabel"></asp:Label>
+                                                <asp:Label ID="lblDiaFinal" runat="server" Text="" CssClass="inputLabel"></asp:Label>
+                                                <asp:Label ID="lblMesFinal" runat="server" Text="" CssClass="inputLabel"></asp:Label>
+                                                <asp:Label ID="lblAnioFinal" runat="server" Text="" CssClass="inputLabel"></asp:Label>--%>
+                                            </center> 
+                                        </td>
+                                        <td>
+                                        </td>
+                                    </tr>
+                                </table>
                                 <div class="table-responsive">
-                                    <asp:GridView ID="gvReporte" runat="server" AutoGenerateColumns="false" DataKeyNames="fi_IdAMortizacion"
+                                    <asp:GridView ID="gvReporte" runat="server" AutoGenerateColumns="false" DataKeyNames="fi_IdAMortizacion" ShowFooter="true"
                                         Font-Size="Small" BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464" 
-                                        Width="100%" HeaderStyle-ForeColor="white" AllowSorting="True" CssClass="table table-hover">
+                                        Width="100%" HeaderStyle-ForeColor="white" AllowSorting="True" CssClass="table table-hover"
+                                        OnPreRender="gvReporte_PreRender" EmptyDataText="No se encontraron registros para mostrar..." >
                                         <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
                                         <HeaderStyle BackColor="#01609F" CssClass="titleHeader" />
                                         <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" CssClass="" />
@@ -182,7 +187,7 @@
                                             <asp:BoundField DataField="Nombre" HeaderText="Nombre Cliente" />
                                             <asp:BoundField DataField="TipoPago" HeaderText="Tipo de PAgo" />
                                             <asp:BoundField DataField="FechaComp" HeaderText="Fecha Compromiso" />
-                                            <asp:BoundField DataField="MontoCompromiso" HeaderText="Monto Compromiso" />
+                                            <asp:BoundField DataField="MontoCompromiso" HeaderText="Monto Compromiso" DataFormatString="{0:C}" />
                                         </Columns>
                                     </asp:GridView>
                                 </div>
@@ -195,7 +200,7 @@
         </ContentTemplate>
         <Triggers>
             <asp:AsyncPostBackTrigger ControlID="btnBuscar" EventName="Click" />
-            <asp:PostBackTrigger ControlID="btnExportar" />
+            <%--<asp:PostBackTrigger ControlID="btnExportar" />--%>
         </Triggers>
     </asp:UpdatePanel>
 </asp:Content>

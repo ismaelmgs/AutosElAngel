@@ -11,7 +11,10 @@ namespace Autos_SCC.Interfaces
     {
         int iReporte { get; set; }
         string sFecha { get; set; }
-        void LoadGrid(DataTable dt);
+        string sSucursal { get; set; }
+        void LoadGrid(DataSet dt);
+
+        void LoadSucursales(DataTable dtSuc);
 
         event EventHandler eSearchReporte;
     }

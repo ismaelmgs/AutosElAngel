@@ -78,13 +78,13 @@ namespace Autos_SCC.Views.Report
         protected global::AjaxControlToolkit.MaskedEditExtender mskFechaInicial;
 
         /// <summary>
-        /// Control lblTodasFechasText.
+        /// Control lblTipoRep.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTodasFechasText;
+        protected global::System.Web.UI.WebControls.Label lblTipoRep;
 
         /// <summary>
         /// Control rbReporte.
@@ -132,13 +132,13 @@ namespace Autos_SCC.Views.Report
         protected global::System.Web.UI.WebControls.Panel pnlReporte;
 
         /// <summary>
-        /// Control btnExportar.
+        /// Control lblRepText.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnExportar;
+        protected global::System.Web.UI.WebControls.Label lblRepText;
 
         /// <summary>
         /// Control upaReporte.
@@ -148,24 +148,6 @@ namespace Autos_SCC.Views.Report
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel upaReporte;
-
-        /// <summary>
-        /// Control lblTitulo1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTitulo1;
-
-        /// <summary>
-        /// Control Label1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
         /// Control gvReporte.

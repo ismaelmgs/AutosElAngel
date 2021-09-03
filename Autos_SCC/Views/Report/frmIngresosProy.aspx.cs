@@ -29,7 +29,7 @@ namespace Autos_SCC.Views.Report
                     Response.Redirect("..//Default.aspx");
                 }
 
-                //oPresenter.LoadObjects_Presenter();
+                oPresenter.LoadObjects_Presenter();
             }
 
             if (Request[txtFechaInicial.UniqueID] != null)
@@ -59,10 +59,34 @@ namespace Autos_SCC.Views.Report
             }
         }
 
-        public void CargaDatos()
+        protected void gvReporte_PreRender(object sender, EventArgs e)
+        {
+            if (gvReporte.Rows.Count > 0)
+            {
+                lblRepText.Visible = true;
+                gvReporte.FooterRow.Cells[2].Text = "Total:";
+                gvReporte.FooterRow.Cells[2].Font.Bold = true;
+                gvReporte.FooterRow.Cells[2].Font.Size = 14;
+
+
+                gvReporte.FooterRow.Cells[3].Text = sTotalGrid.D().ToString("c");//dtTotalCon.Rows[0][row["ClaveContrato"].S()].S().D().ToString("c");
+                gvReporte.FooterRow.Cells[3].Font.Bold = true;
+                gvReporte.FooterRow.Cells[3].Font.Size = 14;
+            }
+            else
+                lblRepText.Visible = false;
+        }
+
+            public void CargaDatos()
         {
             iReporte = rbReporte.SelectedValue.S().I();
             sFecha = txtFechaInicial.Text;
+            if (ddlSucursal.SelectedValue == "0")
+            {
+                sSucursal = "0";
+            }
+            else
+                sSucursal = ddlSucursal.SelectedValue;
         }
 
         public void MostrarMensaje(string sMensaje, string sCaption)
@@ -71,14 +95,31 @@ namespace Autos_SCC.Views.Report
             ScriptManager.RegisterStartupScript(this, typeof(Page), "MostrarMensaje", script, true);
         }
 
-        public void LoadGrid(DataTable dt)
+        public void LoadGrid(DataSet ds)
         {
             try
             {
-                gvReporte.DataSource = dt;
+                gvReporte.DataSource = ds.Tables[0];
                 gvReporte.DataBind();
 
                 pnlReporte.Visible = true;
+
+                sTotalGrid = ds.Tables[1].Rows[0][0].S();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void LoadSucursales(DataTable dtSuc)
+        {
+            try
+            {
+                ddlSucursal.DataSource = dtSuc;
+                ddlSucursal.DataValueField = "fi_Id";
+                ddlSucursal.DataTextField = "fc_Descripcion";
+                ddlSucursal.DataBind();
             }
             catch (Exception ex)
             {
@@ -131,6 +172,18 @@ namespace Autos_SCC.Views.Report
         {
             get { return (string)ViewState["sFechaV"]; }
             set { ViewState["sFechaV"] = value; }
+        }
+
+        public string sSucursal
+        {
+            get { return (string)ViewState["sSucursalV"]; }
+            set { ViewState["sSucursalV"] = value; }
+        }
+
+        public string sTotalGrid
+        {
+            get { return (string)ViewState["sTotalGridV"]; }
+            set { ViewState["sTotalGridV"] = value; }
         }
         #endregion
     }

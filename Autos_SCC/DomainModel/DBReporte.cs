@@ -38,16 +38,17 @@ namespace Autos_SCC.DomainModel
             }
         }
 
-        public DataTable GetConsultaReporteIngresosProyectados(int iReporte, string sFecha)
+        public DataSet GetConsultaReporteIngresosProyectados(int iReporte, string sFecha, string sSucursal)
         {
             try
             {
-                return oDB_SP.EjecutarDT("[Autos].[spS_ConsultaRepProyecciones]", "@Reporte", iReporte,
-                                                                                "@Fecha", sFecha);
+                return oDB_SP.EjecutarDS("[Autos].[spS_ConsultaRepProyecciones]", "@Reporte", iReporte,
+                                                                                "@Fecha", sFecha,
+                                                                                "@Sucursal", sSucursal);
             }
             catch
             {
-                return new DataTable();
+                return new DataSet();
             }
         }
     }

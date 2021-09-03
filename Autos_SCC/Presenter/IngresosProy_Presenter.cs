@@ -20,8 +20,12 @@ namespace Autos_SCC.Presenter
 
         private void eSearchReporte_Presenter(object sender, EventArgs e)
         {
-            oIView.LoadGrid(oIGestCat.GetConsultaReporteIngresosProyectados(oIView.iReporte, oIView.sFecha));
+            oIView.LoadGrid(oIGestCat.GetConsultaReporteIngresosProyectados(oIView.iReporte, oIView.sFecha, oIView.sSucursal));
         }
 
+        public void LoadObjects_Presenter()
+        {
+            oIView.LoadSucursales(new DBSucursales().dtObj);
+        }
     }
 }

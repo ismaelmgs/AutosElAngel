@@ -348,7 +348,7 @@
                                             <div class="col-md-10">
                                                 <asp:DropDownList ID="ddlTipoIdentificacion" runat="server" AutoPostBack="true" CssClass="form-control"
                                                     OnSelectedIndexChanged="ddlTipoIdentificacion_SelectedIndexChanged">
-                                                    <asp:ListItem Text="IFE" Value = "0"></asp:ListItem>
+                                                    <asp:ListItem Text="INE" Value = "0"></asp:ListItem>
                                                     <asp:ListItem Text="Licencia" Value = "1"></asp:ListItem>
                                                 </asp:DropDownList>
                                             </div>
