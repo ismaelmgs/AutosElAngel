@@ -36,11 +36,11 @@
                         </div>
                     </legend>
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-2">
                             &nbsp;
                         </div>
                         <div class="col-md-4">
-                        <div class="row">
+                            <div class="row">
                             <div class="col-md-3">
                                 <asp:Label ID="lblFechaInicial" runat="server" Text="Fecha:" CssClass="inputLabel"></asp:Label>
                             </div>
@@ -60,35 +60,6 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            &nbsp;
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            &nbsp;
-                        </div>
-                        
-                        <div class="col-md-3">
-                            <asp:Label ID="lblTipoRep" runat="server" Text="Tipo:" CssClass="inputLabel"></asp:Label>
-                        </div>
-                        <div class="col-md-3">
-                            
-                                <asp:RadioButtonList id="rbReporte" runat="server"  RepeatDirection="Horizontal">
-                                <asp:ListItem Text="&nbsp;Semanal" Value="2"></asp:ListItem>
-                                <asp:ListItem Text="&nbsp;Mensual" Value="1"></asp:ListItem>
-                                <asp:ListItem Text="&nbsp;Anual" Value="3"></asp:ListItem>
-                            </asp:RadioButtonList>                            
-                        </div>
-                        
-                        
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            &nbsp;
-                        </div>
-                        <div class="col-md-4" style="text-align:center;">
                             <div class="row">
                                 <div class="col-md-3">
                                     <asp:Label ID="lblSucursal" runat="server" Text="Sucursal:" CssClass="inputLabel"></asp:Label>
@@ -102,10 +73,30 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-2">
                             &nbsp;
                         </div>
-                   </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-3">
+                            &nbsp;
+                        </div>
+                        <div class="col-md-3" style="text-align:center;">
+                            <asp:Label ID="lblTipoRep" runat="server" Text="Tipo:" CssClass="inputLabel"></asp:Label>
+                        </div>
+                        <div class="col-md-3" style="text-align:center;">
+                            
+                                <asp:RadioButtonList id="rbReporte" runat="server"  RepeatDirection="Horizontal">
+                                <asp:ListItem Text="&nbsp;Semanal" Value="2"></asp:ListItem>
+                                <asp:ListItem Text="&nbsp;Mensual" Value="1"></asp:ListItem>
+                                <asp:ListItem Text="&nbsp;Anual" Value="3"></asp:ListItem>
+                            </asp:RadioButtonList>                            
+                        </div>
+                        <div class="col-md-3">
+                            &nbsp;
+                        </div>
+                    </div>
 
                 </fieldset>
                 <asp:Panel ID="pnlReporte" runat="server" Visible="false">
