@@ -43,9 +43,9 @@
                 
                     <table style="width:100%">
                         <tr>
-                            <td style="width:20%">
+                            <td style="width:30%">
                             </td>
-                            <td style="width:20%">
+                            <td style="width:10%; text-align:center;">
                                 <asp:Label ID="lblSucursal" runat="server" Text="Sucursal:" CssClass="inputLabel"></asp:Label>
                             </td>
                             <td style="width:20%">
@@ -61,7 +61,7 @@
                         <tr>
                             <td>
                             </td>
-                            <td>
+                            <td style="text-align:center;">
                                 <asp:Label ID="lblCotizacion" runat="server" Text="Cotización:" CssClass="inputLabel"></asp:Label>
                             </td>
                             <td>
@@ -103,7 +103,7 @@
         </Triggers>
     </asp:UpdatePanel>
     <fieldset style="text-align:left"><br />
-        <div>
+        <div style="text-align:center">
             <h5>
                 <asp:Label runat="server" ID="lblMensajeResultados" Text="No se encontraron Clientes registrados en la sucursal..." Visible="false"></asp:Label>
             </h5>
