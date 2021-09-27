@@ -11,7 +11,7 @@ namespace Autos_SCC.Views.Report
 {
 
 
-    public partial class frmIngresosProy
+    public partial class frmTotalesCartera
     {
 
         /// <summary>
@@ -31,51 +31,6 @@ namespace Autos_SCC.Views.Report
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTituloPantalla;
-
-        /// <summary>
-        /// Control lblFechaInicial.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFechaInicial;
-
-        /// <summary>
-        /// Control txtFechaInicial.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFechaInicial;
-
-        /// <summary>
-        /// Control imbFechaInicial.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton imbFechaInicial;
-
-        /// <summary>
-        /// Control calFechaInicial.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::AjaxControlToolkit.CalendarExtender calFechaInicial;
-
-        /// <summary>
-        /// Control mskFechaInicial.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::AjaxControlToolkit.MaskedEditExtender mskFechaInicial;
 
         /// <summary>
         /// Control lblSucursal.
@@ -103,24 +58,6 @@ namespace Autos_SCC.Views.Report
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnBuscar;
-
-        /// <summary>
-        /// Control lblTipoRep.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTipoRep;
-
-        /// <summary>
-        /// Control rbReporte.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rbReporte;
 
         /// <summary>
         /// Control pnlReporte.
@@ -168,22 +105,22 @@ namespace Autos_SCC.Views.Report
         protected global::System.Web.UI.WebControls.Label lbltotalT;
 
         /// <summary>
-        /// Control lblTitulo1.
+        /// Control lblTextTotalVehi.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTitulo1;
+        protected global::System.Web.UI.WebControls.Label lblTextTotalVehi;
 
         /// <summary>
-        /// Control Label1.
+        /// Control lblTotalvehi.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label lblTotalvehi;
 
         /// <summary>
         /// Control gvReporte.

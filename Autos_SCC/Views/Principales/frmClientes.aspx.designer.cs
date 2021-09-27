@@ -87,6 +87,15 @@ namespace Autos_SCC.Views.Principales
         protected global::System.Web.UI.WebControls.DropDownList ddlCotizacion;
 
         /// <summary>
+        /// Control pnDatosClienteSleecionado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnDatosClienteSleecionado;
+
+        /// <summary>
         /// Control lblCliente.
         /// </summary>
         /// <remarks>
@@ -121,6 +130,24 @@ namespace Autos_SCC.Views.Principales
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPlazo;
+
+        /// <summary>
+        /// Control lblMensajeResultados.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMensajeResultados;
+
+        /// <summary>
+        /// Control pnDatosClientes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnDatosClientes;
 
         /// <summary>
         /// Control upaDatos.
@@ -625,6 +652,15 @@ namespace Autos_SCC.Views.Principales
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCancelar;
+
+        /// <summary>
+        /// Control pnDatosAval.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnDatosAval;
 
         /// <summary>
         /// Control upaCapturaAval.

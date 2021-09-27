@@ -60,6 +60,7 @@ namespace Autos_SCC.Views.Principales
                 lblPlazo.Text = "Plazo: " + dtCliente.Rows[0]["fc_Plazo"].S();
 
                 fsImprimir.Visible = true;
+                iIdClienteC = HidIdCliente.Value.S().I();
             }
             else
             {
@@ -400,6 +401,66 @@ namespace Autos_SCC.Views.Principales
             }
         }
 
+        protected void btnImprimirContratoCred_Click(object sender, EventArgs e)
+        {
+            DataSet ds = new DataSet();
+            DataTable dtExtras = new DataTable();
+            DataColumn column;
+            DataRow rowT;
+            #region  Table Extras
+            column = new DataColumn();
+            column.ColumnName = "Acreedor";
+            dtExtras.Columns.Add(column);
+
+            
+
+            #endregion
+            try
+            {
+                if (eGetDatosContrato != null)
+                    eGetDatosContrato(sender, e);
+
+                ReportDocument rd = new ReportDocument();
+                DataTable dtc = new DataTable();
+
+                string strPath = string.Empty;
+                strPath = Server.MapPath("Reports\\InfContrato.rpt");
+                strPath = strPath.Replace("\\Views\\Principales", "");
+                rd.Load(strPath, OpenReportMethod.OpenReportByDefault);
+
+                dtc = dtDatosC;
+                dtc.TableName = "dtCont";
+
+                #region ajuste de Valores DT Extras
+
+                column = new DataColumn();
+                column.ColumnName = "ImpLetra";
+                dtExtras.Columns.Add(column);
+
+                rowT = dtExtras.NewRow();
+                rowT["Acreedor"] = lblRespAcreedor.Text;
+                rowT["ImpLetra"] = "---";
+                dtExtras.Rows.Add(rowT);
+                dtExtras.TableName = "dtExtras";
+                #endregion
+
+                ds.Tables.Add(dtc);
+                ds.Tables.Add(dtExtras);
+
+                rd.SetDataSource(ds);
+
+                rd.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, true, "ContratoCredito");
+            }
+            catch (Exception ex)
+            {
+                MostrarMensaje("Ocurrio un error al exportar: " + ex.Message, "Error al exportar");
+            }
+        }
+            public void GeneraContratoCredito()
+        {
+            
+        }
+
         protected void btnEntregarAuto_Click(object sender, EventArgs e)
         {
             if (eSaveObj != null)
@@ -537,6 +598,13 @@ namespace Autos_SCC.Views.Principales
         public event EventHandler eSavePagosInd;
         public event EventHandler eGetAcreedores;
         public event EventHandler eGetDirecciones;
+        public event EventHandler eGetDatosContrato;
+
+        public int iIdClienteC
+        {
+            get { return (int)ViewState["ViIdClienteC"]; }
+            set { ViewState["ViIdClienteC"] = value; }
+        }
 
         public int iIdSucursal
         {
@@ -564,6 +632,12 @@ namespace Autos_SCC.Views.Principales
         {
             get { return (DataTable)ViewState["dtClienteV"]; }
             set { ViewState["dtClienteV"] = value; }
+        }
+
+        public DataTable dtDatosC
+        {
+            get { return (DataTable)ViewState["dtDatosCV"]; }
+            set { ViewState["dtDatosCV"] = value; }
         }
 
         public decimal iMontoCompromiso

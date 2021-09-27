@@ -167,6 +167,19 @@
                         </tr>
                         <tr>
                             <td>
+                                <asp:Label ID="Label5" runat="server" Text="Imprimir Contrato de Crédito:" CssClass="inputLabel"></asp:Label>
+                            </td>
+                            <td>
+                                <asp:Button ID="btnImprimirContratoCred" runat="server" Text=" Imprimir  "  OnClick="btnImprimirContratoCred_Click" />
+                                
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
                                 <asp:Label ID="lblEntregarAuto" runat="server" Text="¿Desea entregar el automovil?" CssClass="inputLabel"></asp:Label>
                             </td>
                             <td>
@@ -186,6 +199,7 @@
             <asp:AsyncPostBackTrigger ControlID="ddlSucursal" EventName="SelectedIndexChanged" />
             <asp:AsyncPostBackTrigger ControlID="btnEntregarAuto" EventName="Click" />
             <asp:PostBackTrigger ControlID="btnImprimirPagosInd" />
+            <asp:PostBackTrigger ControlID="btnImprimirContratoCred" />
         </Triggers>
     </asp:UpdatePanel>
 
@@ -202,7 +216,7 @@
                 <table width="100%">
                     <tr>
                         <td align="center"><br />
-                            <h4><asp:Label ID="lblTitPagosInd" runat="server" Text="Pagos individuales" CssClass="labelTitleModal"></asp:Label></h4>
+                            <h4><asp:Label ID="lblTitPagosInd" runat="server" Text="Mensualidades" CssClass="labelTitleModal"></asp:Label></h4>
                         </td>
                     </tr>
                     <tr>

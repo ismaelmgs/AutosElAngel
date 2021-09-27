@@ -99,6 +99,8 @@ namespace Autos_SCC.Views.Report
                 e.Row.Cells[8].HorizontalAlign = HorizontalAlign.Right;
                 e.Row.Cells[9].Text = suma1.ToString("c");
                 e.Row.Cells[9].HorizontalAlign = HorizontalAlign.Right;
+
+                e.Row.Font.Size = 14;
                 e.Row.Font.Bold = true;
 
                 suma1 = 0;

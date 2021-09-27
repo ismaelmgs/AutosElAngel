@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Autos_SCC.Views.Principales {
-    
-    
-    public partial class frmFormalizacion {
-        
+namespace Autos_SCC.Views.Principales
+{
+
+
+    public partial class frmFormalizacion
+    {
+
         /// <summary>
         /// Control upaCotizacion.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel upaCotizacion;
-        
+
         /// <summary>
         /// Control HidIdCliente.
         /// </summary>
@@ -29,7 +31,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField HidIdCliente;
-        
+
         /// <summary>
         /// Control HidIdCP.
         /// </summary>
@@ -38,7 +40,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField HidIdCP;
-        
+
         /// <summary>
         /// Control HidIdCPAval.
         /// </summary>
@@ -47,7 +49,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField HidIdCPAval;
-        
+
         /// <summary>
         /// Control lblTituloPantalla.
         /// </summary>
@@ -56,7 +58,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTituloPantalla;
-        
+
         /// <summary>
         /// Control lblSucursal.
         /// </summary>
@@ -65,7 +67,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSucursal;
-        
+
         /// <summary>
         /// Control ddlSucursal.
         /// </summary>
@@ -74,7 +76,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlSucursal;
-        
+
         /// <summary>
         /// Control lblCotizacion.
         /// </summary>
@@ -83,7 +85,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCotizacion;
-        
+
         /// <summary>
         /// Control ddlCotizacion.
         /// </summary>
@@ -92,7 +94,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlCotizacion;
-        
+
         /// <summary>
         /// Control lblCliente.
         /// </summary>
@@ -101,7 +103,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCliente;
-        
+
         /// <summary>
         /// Control lblTipoAuto.
         /// </summary>
@@ -110,7 +112,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTipoAuto;
-        
+
         /// <summary>
         /// Control lblPrecio.
         /// </summary>
@@ -119,7 +121,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPrecio;
-        
+
         /// <summary>
         /// Control lblPlazo.
         /// </summary>
@@ -128,7 +130,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPlazo;
-        
+
         /// <summary>
         /// Control fsImprimir.
         /// </summary>
@@ -137,7 +139,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl fsImprimir;
-        
+
         /// <summary>
         /// Control Label2.
         /// </summary>
@@ -146,7 +148,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label2;
-        
+
         /// <summary>
         /// Control btnSelAcreedor.
         /// </summary>
@@ -155,7 +157,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSelAcreedor;
-        
+
         /// <summary>
         /// Control lblRespAcreedor.
         /// </summary>
@@ -164,7 +166,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblRespAcreedor;
-        
+
         /// <summary>
         /// Control Label3.
         /// </summary>
@@ -173,7 +175,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label3;
-        
+
         /// <summary>
         /// Control btnSelSucursal.
         /// </summary>
@@ -182,7 +184,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSelSucursal;
-        
+
         /// <summary>
         /// Control lblRespSucursal.
         /// </summary>
@@ -191,7 +193,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblRespSucursal;
-        
+
         /// <summary>
         /// Control lblImprimirMens.
         /// </summary>
@@ -200,7 +202,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblImprimirMens;
-        
+
         /// <summary>
         /// Control btnImprimirMes.
         /// </summary>
@@ -209,7 +211,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnImprimirMes;
-        
+
         /// <summary>
         /// Control lblImprimirPagosInd.
         /// </summary>
@@ -218,7 +220,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblImprimirPagosInd;
-        
+
         /// <summary>
         /// Control btnImprimirPagosInd.
         /// </summary>
@@ -227,7 +229,25 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnImprimirPagosInd;
-        
+
+        /// <summary>
+        /// Control Label5.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label5;
+
+        /// <summary>
+        /// Control btnImprimirContratoCred.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnImprimirContratoCred;
+
         /// <summary>
         /// Control lblEntregarAuto.
         /// </summary>
@@ -236,7 +256,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblEntregarAuto;
-        
+
         /// <summary>
         /// Control btnEntregarAuto.
         /// </summary>
@@ -245,7 +265,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnEntregarAuto;
-        
+
         /// <summary>
         /// Control hdPagosIndTarget.
         /// </summary>
@@ -254,7 +274,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hdPagosIndTarget;
-        
+
         /// <summary>
         /// Control mpePagosInd.
         /// </summary>
@@ -263,7 +283,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AjaxControlToolkit.ModalPopupExtender mpePagosInd;
-        
+
         /// <summary>
         /// Control pnlPagosInd.
         /// </summary>
@@ -272,7 +292,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlPagosInd;
-        
+
         /// <summary>
         /// Control UpaPagosInd.
         /// </summary>
@@ -281,7 +301,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpaPagosInd;
-        
+
         /// <summary>
         /// Control lblTitPagosInd.
         /// </summary>
@@ -290,7 +310,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTitPagosInd;
-        
+
         /// <summary>
         /// Control Label1.
         /// </summary>
@@ -299,7 +319,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label1;
-        
+
         /// <summary>
         /// Control lblMensaje.
         /// </summary>
@@ -308,7 +328,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMensaje;
-        
+
         /// <summary>
         /// Control rblPagosInd.
         /// </summary>
@@ -317,7 +337,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList rblPagosInd;
-        
+
         /// <summary>
         /// Control btnAceptarPagosInd.
         /// </summary>
@@ -326,7 +346,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAceptarPagosInd;
-        
+
         /// <summary>
         /// Control btnCancelarModalPagInd.
         /// </summary>
@@ -335,7 +355,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCancelarModalPagInd;
-        
+
         /// <summary>
         /// Control hdTargetAcreedor.
         /// </summary>
@@ -344,7 +364,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hdTargetAcreedor;
-        
+
         /// <summary>
         /// Control mpeAcreedor.
         /// </summary>
@@ -353,7 +373,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AjaxControlToolkit.ModalPopupExtender mpeAcreedor;
-        
+
         /// <summary>
         /// Control pnlAcreedor.
         /// </summary>
@@ -362,7 +382,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlAcreedor;
-        
+
         /// <summary>
         /// Control UpdatePanel1.
         /// </summary>
@@ -371,7 +391,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
-        
+
         /// <summary>
         /// Control lblCaption.
         /// </summary>
@@ -380,7 +400,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCaption;
-        
+
         /// <summary>
         /// Control pnlGridAcreedor.
         /// </summary>
@@ -389,7 +409,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlGridAcreedor;
-        
+
         /// <summary>
         /// Control gvAcreedor.
         /// </summary>
@@ -398,7 +418,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvAcreedor;
-        
+
         /// <summary>
         /// Control lblErrorAcreedor.
         /// </summary>
@@ -407,7 +427,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblErrorAcreedor;
-        
+
         /// <summary>
         /// Control btnAceptarAcreedor.
         /// </summary>
@@ -416,7 +436,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAceptarAcreedor;
-        
+
         /// <summary>
         /// Control btnCancelar.
         /// </summary>
@@ -425,7 +445,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCancelar;
-        
+
         /// <summary>
         /// Control hdTargetSucursales.
         /// </summary>
@@ -434,7 +454,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hdTargetSucursales;
-        
+
         /// <summary>
         /// Control mpeSucursales.
         /// </summary>
@@ -443,7 +463,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AjaxControlToolkit.ModalPopupExtender mpeSucursales;
-        
+
         /// <summary>
         /// Control pnlSucursales.
         /// </summary>
@@ -452,7 +472,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlSucursales;
-        
+
         /// <summary>
         /// Control upaSucursales.
         /// </summary>
@@ -461,7 +481,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel upaSucursales;
-        
+
         /// <summary>
         /// Control Label4.
         /// </summary>
@@ -470,7 +490,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label4;
-        
+
         /// <summary>
         /// Control pnlListaDirecciones.
         /// </summary>
@@ -479,7 +499,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlListaDirecciones;
-        
+
         /// <summary>
         /// Control gvDirecciones.
         /// </summary>
@@ -488,7 +508,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvDirecciones;
-        
+
         /// <summary>
         /// Control lblErrorDir.
         /// </summary>
@@ -497,7 +517,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblErrorDir;
-        
+
         /// <summary>
         /// Control btnAceptarDir.
         /// </summary>
@@ -506,7 +526,7 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAceptarDir;
-        
+
         /// <summary>
         /// Control btnCancelarDir.
         /// </summary>

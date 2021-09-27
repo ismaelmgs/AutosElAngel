@@ -68,22 +68,34 @@ namespace Autos_SCC.Views.Principales
         protected void ddlCotizacion_SelectedIndexChanged(object sender, EventArgs e)
         {
             LimpiaCampos();
+            lblMensajeResultados.Visible = false;
 
             if (eGetCliente != null)
                 eGetCliente(sender, e);
-            
-            if(dtCliente.Rows.Count > 0)
+
+            if (dtCliente.Rows.Count > 0)
             {
                 HidIdCliente.Value = dtCliente.Rows[0]["fi_IdCliente"].S();
                 lblCliente.Text = "Cliente: " + dtCliente.Rows[0]["NombreCompleto"].S();
                 lblTipoAuto.Text = "Tipo auto: " + dtCliente.Rows[0]["fc_TipoAuto"].S();
-                lblPrecio.Text = "Precio: $ " + Math.Round(dtCliente.Rows[0]["fm_Precio"].S().D(),0).S();
+                lblPrecio.Text = "Precio: $ " + Math.Round(dtCliente.Rows[0]["fm_Precio"].S().D(), 0).S();
                 lblPlazo.Text = "Plazo: " + dtCliente.Rows[0]["fc_Plazo"].S();
-                
-                if(HidIdCliente.Value.S() == "0")
+
+                if (HidIdCliente.Value.S() == "0")
                     btnCapAval.Enabled = false;
                 else
                     btnCapAval.Enabled = true;
+
+                pnDatosClientes.Visible = true;
+                pnDatosAval.Visible = true;
+                pnDatosClienteSleecionado.Visible = true;
+            }
+            else
+            {
+                lblMensajeResultados.Visible = true;
+                pnDatosClientes.Visible = false;
+                pnDatosAval.Visible = false;
+                pnDatosClienteSleecionado.Visible = false;
             }
         }
 
