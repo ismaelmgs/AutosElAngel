@@ -16,9 +16,12 @@ namespace Autos_SCC.Interfaces
         string sUsuarioForm { get; }
         DataTable dtPagosTemp { get; set; }
         int iIdTipoPago { get; set; }
+        int iIdClienteC { get; set; }
 
         DataTable dtAcreedor { get; set; }
         DataTable dtDireccion { get; set; }
+
+        DataTable dtDatosC { get; set; }
 
 
         void MostrarMensaje(string sMensaje, string sCaption);
@@ -29,5 +32,6 @@ namespace Autos_SCC.Interfaces
         event EventHandler eSavePagos;
         event EventHandler eGetAcreedores;
         event EventHandler eGetDirecciones;
+        event EventHandler eGetDatosContrato;
     }
 }

@@ -181,11 +181,12 @@ namespace Autos_SCC.DomainModel
             }
         }
 
-        public void DBSaveObjAval(ref Cliente oEjecut)
+        public DataTable DBSaveObjAval(ref Cliente oEjecut)
         {
+            DataTable dt = new DataTable();
             try
             {
-                DataTable dt = new DataTable();
+                
 
                 oEjecut.oErr.bExisteError = false;
                 oEjecut.oErr.sMsjError = "Guardado exitoso";
@@ -234,6 +235,7 @@ namespace Autos_SCC.DomainModel
                         //    oEjecut.oErr.bExisteError = true;
                         //    oEjecut.oErr.sMsjError = "Ya existe otro Cliente con este nombre: " + oEjecut.sNombre + " " + oEjecut.sApePaterno + ", favor de verificar.";
                         //}
+                        //return dt;
                     }
                     else
                     {
@@ -269,16 +271,19 @@ namespace Autos_SCC.DomainModel
                                                                                 "@fi_TiempoVivirDom", oEjecut.iTiempoVivir,
                                                                                 "@fi_Activo", oEjecut.iActivo,
                                                                                 "@fc_Usuario", oEjecut.sUsuario);
+                        //return dt;
                     }
                     oEjecut.iId = dt != null && dt.Rows.Count > 0 ? dt.Rows[0][0].S().I() : -1;
+                    
                 }
-
+                
             }
             catch (Exception ex)
             {
                 oEjecut.oErr.bExisteError = true;
                 oEjecut.oErr.sMsjError = "ERROR al guardar (DBSaveObj) => " + ex.Message;
             }
+            return dt;
         }
 
         public Cliente DBGetObj(int iId)

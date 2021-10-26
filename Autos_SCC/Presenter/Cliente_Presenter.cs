@@ -120,14 +120,16 @@ namespace Autos_SCC.Presenter
         private void eSaveAval_Presenter(object sender, EventArgs e)
         {
             Cliente oTempCat = oIView.oAval;
-            
-            oIGestCat.DBSaveObjAval(ref oTempCat);
+            DataTable dt = new DataTable();
+
+            dt = oIGestCat.DBSaveObjAval(ref oTempCat);
             if (oTempCat.oErr.bExisteError)
                 oIView.MostrarMensaje(oTempCat.oErr.sMsjError, "GUARDAR");
             else
             {
                 oIView.bEsCorrectoAval = true;
                 oIView.MostrarMensaje("Guardado exitoso", "GUARDAR");
+                oIView.dtAvalSaved = dt;
             }
         }
 

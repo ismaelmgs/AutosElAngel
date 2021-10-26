@@ -419,6 +419,7 @@
     <Content Include="Views\Report\frmAutosVen.aspx" />
     <Content Include="Views\Report\frmIngresosProy.aspx" />
     <Content Include="Views\Report\frmPaysPeriod.aspx" />
+    <Content Include="Views\Report\frmTotalesCartera.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -488,6 +489,7 @@
     <Compile Include="Interfaces\IViewMonitor.cs" />
     <Compile Include="Interfaces\IViewReporte.cs" />
     <Compile Include="Interfaces\IViewSeguridad.cs" />
+    <Compile Include="Interfaces\IViewTotalesCartera.cs" />
     <Compile Include="Objetos\AutosVen.cs" />
     <Compile Include="Objetos\Transaccion.cs" />
     <Compile Include="Presenter\Abonos_Presenter.cs" />
@@ -498,6 +500,18 @@
     <Compile Include="Presenter\Monitor_Presenter.cs" />
     <Compile Include="Presenter\Reportes_Presenter.cs" />
     <Compile Include="Presenter\Seguridad_Presenter.cs" />
+    <Compile Include="Presenter\TotalesCartera_Presenter.cs" />
+    <Compile Include="Reports\dtContrato.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtContrato.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\InfContrato.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InfContrato.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\InfPagaresInd.cs">
       <DependentUpon>InfPagaresInd.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -731,6 +745,13 @@
     <Compile Include="Views\Report\frmPaysPeriod.aspx.designer.cs">
       <DependentUpon>frmPaysPeriod.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Report\frmTotalesCartera.aspx.cs">
+      <DependentUpon>frmTotalesCartera.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Report\frmTotalesCartera.aspx.designer.cs">
+      <DependentUpon>frmTotalesCartera.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -789,6 +810,17 @@
     <None Include="fonts\FuturaLight.ttf" />
     <None Include="fonts\FuturaLight.woff" />
     <None Include="packages.config" />
+    <Content Include="Reports\dtContrato.xsc">
+      <DependentUpon>dtContrato.xsd</DependentUpon>
+    </Content>
+    <None Include="Reports\dtContrato.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtContrato.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Reports\dtContrato.xss">
+      <DependentUpon>dtContrato.xsd</DependentUpon>
+    </Content>
     <None Include="Reports\dtPagare.xsc">
       <DependentUpon>dtPagare.xsd</DependentUpon>
     </None>
@@ -822,6 +854,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Reports\InfContrato.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InfContrato.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\InfPagaresInd.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>InfPagaresInd.cs</LastGenOutput>

@@ -127,5 +127,17 @@ namespace Autos_SCC.DomainModel
                 }
             }
         }
+
+        public DataTable oGetDatosContrato(int iIdCliente)
+        {
+            try
+            {
+                return oDB_SP.EjecutarDT("[Autos].[spS_ConsultaInfoContrato]", "@IdCliente", iIdCliente);
+            }
+            catch
+            {
+                return new DataTable();
+            }
+        }
     }
 }

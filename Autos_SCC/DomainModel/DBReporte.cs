@@ -51,5 +51,17 @@ namespace Autos_SCC.DomainModel
                 return new DataSet();
             }
         }
+
+        public DataSet GetConsultaReporteTotalesCartera(string sSucursal)
+        {
+            try
+            {
+                return oDB_SP.EjecutarDS("[Autos].[spS_ConsultaAdeudoTotalCartera]", "@Sucursal", sSucursal);
+            }
+            catch
+            {
+                return new DataSet();
+            }
+        }
     }
 }

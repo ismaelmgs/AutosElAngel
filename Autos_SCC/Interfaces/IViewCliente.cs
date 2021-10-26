@@ -23,6 +23,8 @@ namespace Autos_SCC.Interfaces
         bool bEsCorrectoAval { get; set; }
         bool bEsCorrectoCliente { get; set; }
 
+        DataTable dtAvalSaved { get; set; }
+
         void LoadSucursales(DataTable dtSuc);
         void LoadEstados(DataTable dtEst);
         void MostrarMensaje(string sMensaje, string sCaption);

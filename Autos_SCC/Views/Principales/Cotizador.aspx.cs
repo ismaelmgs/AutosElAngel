@@ -294,11 +294,13 @@ namespace Autos_SCC.Views.Principales
         {
             string sPlaca = gvAutos.Rows[e.NewEditIndex].Cells[4].Text.S();
             string sAuto = gvAutos.Rows[e.NewEditIndex].Cells[0].Text.S();
+            string sModelo = gvAutos.Rows[e.NewEditIndex].Cells[1].Text.S();
+            string sVer = gvAutos.Rows[e.NewEditIndex].Cells[2].Text.S();
             Auto oAuto = new DBAuto().DBExistsAuto(sPlaca);
 
             HidAuto.Value = oAuto.iId.S();
             txtPrecio.Text = Convert.ToInt32(oAuto.dPrecio).S();
-            txtAuto.Text = sAuto;
+            txtAuto.Text = sAuto + " " + sModelo + " " + sVer;
             mpeBuscarAuto.Hide();
         }
 

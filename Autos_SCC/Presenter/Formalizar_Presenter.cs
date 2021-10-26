@@ -10,7 +10,7 @@ using NucleoBase.Core;
 
 namespace Autos_SCC.Presenter
 {
-    public class Formalizar_Presenter: BasePresenter<IViewFormalizar>
+    public class Formalizar_Presenter : BasePresenter<IViewFormalizar>
     {
         private readonly DBFormalizar oIGestCat;
 
@@ -24,6 +24,7 @@ namespace Autos_SCC.Presenter
             oIView.eSavePagos += eSavePagos_Presenter;
             oIView.eGetAcreedores += eGetAcreedores_Presenter;
             oIView.eGetDirecciones += eGetDirecciones_Presenter;
+            oIView.eGetDatosContrato += eGetDatosContrato_Presenter;
         }
 
         public void LoadObjects_Presenter()
@@ -49,22 +50,22 @@ namespace Autos_SCC.Presenter
                 {
                     case 0:
                         oIView.MostrarMensaje("Debe imprimir los pagares mensuales y pagos individuales antes de entregar la unidad, favor de verificar.", "Entrega de auto");
-                    break;
+                        break;
 
-                    case 1 :
+                    case 1:
                         oIView.MostrarMensaje("Debe imprimir los pagares individuales, favor de verificar.", "Entrega de auto");
-                    break;
+                        break;
 
                     case 2:
                         oIGestCat.DBSaveObj(oIView.iIdCotizacion, oIView.sUsuarioForm);
                         LoadObjects_Presenter();
                         new DBUtils().DBCambiaEstatusAuto(oIView.iIdCotizacion, 2);
-                        new DBUtils().DBUpdateEstatus(oIView.iIdCotizacion,Enumeraciones.eEstatus.Cobranza);                      
+                        new DBUtils().DBUpdateEstatus(oIView.iIdCotizacion, Enumeraciones.eEstatus.Cobranza);
                         oIView.MostrarMensaje("El auto se entregó de forma correcta, ahora se encuentra en cobranza.", "Entrega de auto");
-                    break;
+                        break;
                 }
-                
-                    
+
+
             }
             catch (Exception ex)
             {
@@ -98,5 +99,9 @@ namespace Autos_SCC.Presenter
             oIView.dtDireccion = oIGestCat.dtGetDirecciones;
         }
 
+        protected void eGetDatosContrato_Presenter(object sender, EventArgs e)
+        {
+            oIView.dtDatosC = oIGestCat.oGetDatosContrato(oIView.iIdClienteC);
+        }
     }
 }
