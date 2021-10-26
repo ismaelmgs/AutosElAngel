@@ -542,7 +542,7 @@
     <cc1:ModalPopupExtender ID="mpeCapturaAval" runat="server" TargetControlID="hdCapturaAvalTarget" 
         PopupControlID="pnlCapturaAval" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
-    <asp:Panel ID="pnlCapturaAval" runat="server" BorderColor="Black" BackColor="#e4e4e4" Height="570px"
+    <asp:Panel ID="pnlCapturaAval" runat="server" BorderColor="Black" BackColor="#e4e4e4"
         Width="880px" HorizontalAlign="Center" Style="display: none; border-radius:25px; padding:5px; box-shadow:3px 3px 3px #00000030;">
         <asp:UpdatePanel ID="upaAvales" runat="server">
             <ContentTemplate>
