@@ -309,6 +309,10 @@ namespace Autos_SCC.Reports {
             
             private global::System.Data.DataColumn columnNoIdentificacionAva;
             
+            private global::System.Data.DataColumn columnNoTelefonoCli;
+            
+            private global::System.Data.DataColumn columnNoTelefonoAval;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public PagareDataTable() {
@@ -464,6 +468,22 @@ namespace Autos_SCC.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NoTelefonoCliColumn {
+                get {
+                    return this.columnNoTelefonoCli;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NoTelefonoAvalColumn {
+                get {
+                    return this.columnNoTelefonoAval;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -499,7 +519,24 @@ namespace Autos_SCC.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PagareRow AddPagareRow(string iCotizacion, string iNoPago, string dMonto, string dtFecha, string sAcreedor, string sDireccion, string sTelefono, string fc_NombreCliente, string fc_NombreAval, string fc_DirCliente, string fc_DirAval, string fc_IdentificacionCli, string fc_IdentificacionAva, string NoIdentificacionCli, string NoIdentificacionAva) {
+            public PagareRow AddPagareRow(
+                        string iCotizacion, 
+                        string iNoPago, 
+                        double dMonto, 
+                        string dtFecha, 
+                        string sAcreedor, 
+                        string sDireccion, 
+                        string sTelefono, 
+                        string fc_NombreCliente, 
+                        string fc_NombreAval, 
+                        string fc_DirCliente, 
+                        string fc_DirAval, 
+                        string fc_IdentificacionCli, 
+                        string fc_IdentificacionAva, 
+                        string NoIdentificacionCli, 
+                        string NoIdentificacionAva, 
+                        string NoTelefonoCli, 
+                        string NoTelefonoAval) {
                 PagareRow rowPagareRow = ((PagareRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         iCotizacion,
@@ -516,7 +553,9 @@ namespace Autos_SCC.Reports {
                         fc_IdentificacionCli,
                         fc_IdentificacionAva,
                         NoIdentificacionCli,
-                        NoIdentificacionAva};
+                        NoIdentificacionAva,
+                        NoTelefonoCli,
+                        NoTelefonoAval};
                 rowPagareRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPagareRow);
                 return rowPagareRow;
@@ -554,6 +593,8 @@ namespace Autos_SCC.Reports {
                 this.columnfc_IdentificacionAva = base.Columns["fc_IdentificacionAva"];
                 this.columnNoIdentificacionCli = base.Columns["NoIdentificacionCli"];
                 this.columnNoIdentificacionAva = base.Columns["NoIdentificacionAva"];
+                this.columnNoTelefonoCli = base.Columns["NoTelefonoCli"];
+                this.columnNoTelefonoAval = base.Columns["NoTelefonoAval"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -563,7 +604,7 @@ namespace Autos_SCC.Reports {
                 base.Columns.Add(this.columniCotizacion);
                 this.columniNoPago = new global::System.Data.DataColumn("iNoPago", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columniNoPago);
-                this.columndMonto = new global::System.Data.DataColumn("dMonto", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columndMonto = new global::System.Data.DataColumn("dMonto", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndMonto);
                 this.columndtFecha = new global::System.Data.DataColumn("dtFecha", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndtFecha);
@@ -589,6 +630,10 @@ namespace Autos_SCC.Reports {
                 base.Columns.Add(this.columnNoIdentificacionCli);
                 this.columnNoIdentificacionAva = new global::System.Data.DataColumn("NoIdentificacionAva", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNoIdentificacionAva);
+                this.columnNoTelefonoCli = new global::System.Data.DataColumn("NoTelefonoCli", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNoTelefonoCli);
+                this.columnNoTelefonoAval = new global::System.Data.DataColumn("NoTelefonoAval", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNoTelefonoAval);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -763,10 +808,10 @@ namespace Autos_SCC.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string dMonto {
+            public double dMonto {
                 get {
                     try {
-                        return ((string)(this[this.tablePagare.dMontoColumn]));
+                        return ((double)(this[this.tablePagare.dMontoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'dMonto\' de la tabla \'Pagare\' es DBNull.", e);
@@ -971,6 +1016,38 @@ namespace Autos_SCC.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string NoTelefonoCli {
+                get {
+                    try {
+                        return ((string)(this[this.tablePagare.NoTelefonoCliColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'NoTelefonoCli\' de la tabla \'Pagare\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePagare.NoTelefonoCliColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string NoTelefonoAval {
+                get {
+                    try {
+                        return ((string)(this[this.tablePagare.NoTelefonoAvalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'NoTelefonoAval\' de la tabla \'Pagare\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePagare.NoTelefonoAvalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsiCotizacionNull() {
                 return this.IsNull(this.tablePagare.iCotizacionColumn);
             }
@@ -1147,6 +1224,30 @@ namespace Autos_SCC.Reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetNoIdentificacionAvaNull() {
                 this[this.tablePagare.NoIdentificacionAvaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNoTelefonoCliNull() {
+                return this.IsNull(this.tablePagare.NoTelefonoCliColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNoTelefonoCliNull() {
+                this[this.tablePagare.NoTelefonoCliColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNoTelefonoAvalNull() {
+                return this.IsNull(this.tablePagare.NoTelefonoAvalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNoTelefonoAvalNull() {
+                this[this.tablePagare.NoTelefonoAvalColumn] = global::System.Convert.DBNull;
             }
         }
         

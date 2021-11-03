@@ -251,6 +251,12 @@ namespace Autos_SCC.Views.Principales
                 if (eSaveAval != null)
                     eSaveAval(sender, e);
 
+                if (dtAvalSaved != null)
+                {
+                    gvAval.DataSource = dtAvalSaved;
+                    gvAval.DataBind();
+                }
+
                 if (bEsCorrectoAval)
                     btnAceptarFormalizar.Enabled = true;
             }
@@ -260,8 +266,11 @@ namespace Autos_SCC.Views.Principales
 
         protected void btnAceptarFormalizar_Click(object sender, EventArgs e)
         {
-            Utils.CambiaEstatus(ddlCotizacion.SelectedValue.S().I(), Autos_SCC.Clases.Enumeraciones.eEstatus.Formalizar);
-            Response.Redirect("frmFormalizacion.aspx");
+            if (dtAvalSaved != null)
+            {
+                Utils.CambiaEstatus(ddlCotizacion.SelectedValue.S().I(), Autos_SCC.Clases.Enumeraciones.eEstatus.Formalizar);
+                Response.Redirect("frmFormalizacion.aspx");
+            }
         }
 
         #endregion
@@ -405,6 +414,12 @@ namespace Autos_SCC.Views.Principales
         {
             set;
             get;
+        }
+
+        public DataTable dtAvalSaved
+        {
+            get { return (DataTable)ViewState["VdtAvalSaved"]; }
+            set { ViewState["VdtAvalSaved"] = value; }
         }
 
         public DataTable dtCliente

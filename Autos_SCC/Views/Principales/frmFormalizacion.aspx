@@ -232,7 +232,7 @@
                     </tr>
                     <tr>
                         <td><br /><br />
-                            <asp:RadioButtonList ID="rblPagosInd" runat="server" RepeatDirection="Vertical" Width="100%">
+                            <asp:RadioButtonList ID="rblPagosInd" runat="server" RepeatDirection="Vertical" Width="100%" Enabled="false">
                                 <asp:ListItem Text="Meses con pagos dobles" Value="1" Selected="True"></asp:ListItem>
                                 <asp:ListItem Text="Separar pagos Ind. de mensualidades" Value="2"></asp:ListItem>
                             </asp:RadioButtonList>

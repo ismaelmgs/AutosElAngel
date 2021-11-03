@@ -507,7 +507,8 @@
                     </div>
                     <br />
                     <br />
-                    <asp:GridView ID="gvAval" runat="server" AutoGenerateColumns="false" DataKeyNames="fi_Id" Width="80%"
+                    <center>
+                    <asp:GridView ID="gvAval" runat="server" AutoGenerateColumns="false" DataKeyNames="fi_Id" Width="40%"
                         PageSize="10" Font-Size="Small" BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464"
                         HeaderStyle-ForeColor="white" AllowSorting="True">
                         <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
@@ -517,9 +518,10 @@
                         <Columns>
                             <asp:BoundField DataField="fc_NombreCompleto" HeaderText="Nombre del Aval" />
                             <asp:BoundField DataField="fc_TipoIdentificacion" HeaderText="Tipo identificación" />
-                            <asp:BoundField DataField="fc_NoIFE" HeaderText="No. Identificacion" />
+                            <asp:BoundField DataField="fc_NoIFE" HeaderText="No. Identificación" />
                         </Columns>
                     </asp:GridView>
+                        </center>
                     <br />
                     <div style="width:100%; text-align:center;">
                         <asp:Label ID="lblFormalizar" runat="server" Text="¿Enviar crédito a formalizar?" CssClass="inputLabel"></asp:Label>

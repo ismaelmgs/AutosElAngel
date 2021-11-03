@@ -83,6 +83,8 @@ namespace Autos_SCC.Views.Principales
         protected void btnImprimirPagosInd_Click(object sender, EventArgs e)
         {
             int iIdCotizacion = ddlCotizacion.SelectedValue.S().I();
+            string strMonto = string.Empty;
+            double dbMonto = 0;
             DataTable dtPagosInd = new DBCotizador().DBGetPagosIndividuales(iIdCotizacion);
 
             if (dtPagosInd.Rows.Count > 0)
@@ -104,6 +106,8 @@ namespace Autos_SCC.Views.Principales
                     string sNombreAval = dtCot.Rows[0]["fc_NombreAval"].S();
                     string sDirCliente = dtCot.Rows[0]["fc_DirCliente"].S();
                     string sDirAval = dtCot.Rows[0]["fc_DirAval"].S();
+                    string sTelCliente = dtCot.Rows[0]["NoTelefonoCli"].S();
+                    string sTelAval = dtCot.Rows[0]["NoTelefonoAval"].S();
 
                     DataTable dtHeader = Utils.CalculaCotizacion(dTasa, dPrecio, dEnganche, dPagosIndividuales, iPlazo);
 
@@ -133,13 +137,20 @@ namespace Autos_SCC.Views.Principales
                         dtPagos.Columns.Add("fc_NombreAval");
                         dtPagos.Columns.Add("fc_DirCliente");
                         dtPagos.Columns.Add("fc_DirAval");
+                        dtPagos.Columns.Add("NoTelefonoCli");
+                        dtPagos.Columns.Add("NoTelefonoAval");
 
                         foreach (DataRow row in dtPagosInd.Rows)
                         {
                             DataRow dr = dtPagos.NewRow();
                             dr["iCotizacion"] = iIdCotizacion.S();
                             dr["iNoPago"] = (1).S();
-                            dr["dMonto"] = row["fc_Monto"].S();
+
+                            strMonto = row["fc_Monto"].ToString();
+                            dbMonto = double.Parse(strMonto);
+                            strMonto = dbMonto.ToString("c", System.Globalization.CultureInfo.CreateSpecificCulture("es-MX"));
+
+                            dr["dMonto"] = strMonto;
                             dr["dtFecha"] = Convert.ToDateTime(row["fd_FechaPago"]).ToLongDateString();
                             dr["sAcreedor"] = lblRespAcreedor.Text.S();
                             dr["sDireccion"] = lblRespSucursal.Text.S();
@@ -152,6 +163,8 @@ namespace Autos_SCC.Views.Principales
                             dr["fc_NombreAval"] = sNombreAval;
                             dr["fc_DirCliente"] = sDirCliente;
                             dr["fc_DirAval"] = sDirAval;
+                            dr["NoTelefonoCli"] = sTelCliente;
+                            dr["NoTelefonoAval"] = sTelAval;
 
                             dtPagos.Rows.Add(dr);
 
@@ -197,7 +210,8 @@ namespace Autos_SCC.Views.Principales
         protected void btnAceptarPagosInd_Click(object sender, EventArgs e)
         {
             int iIdCotizacion = ddlCotizacion.SelectedValue.S().I();
-
+            string strMonto = string.Empty;
+            double dbMonto = 0;
             DataTable dtCot = new DBCotizador().DBGetObj(iIdCotizacion);
 
             if (dtCot.Rows.Count > 0)
@@ -215,6 +229,8 @@ namespace Autos_SCC.Views.Principales
                 string sNombreAval = dtCot.Rows[0]["fc_NombreAval"].S();
                 string sDirCliente = dtCot.Rows[0]["fc_DirCliente"].S();
                 string sDirAval = dtCot.Rows[0]["fc_DirAval"].S();
+                string sTelCliente = dtCot.Rows[0]["NoTelefonoCli"].S();
+                string sTelAval = dtCot.Rows[0]["NoTelefonoAval"].S();
 
 
                 DataTable dtHeader = Utils.CalculaCotizacion(dTasa, dPrecio, dEnganche, dPagosIndividuales, iPlazo);
@@ -271,6 +287,8 @@ namespace Autos_SCC.Views.Principales
                     dtPagos.Columns.Add("fc_NombreAval");
                     dtPagos.Columns.Add("fc_DirCliente");
                     dtPagos.Columns.Add("fc_DirAval");
+                    dtPagos.Columns.Add("NoTelefonoCli");
+                    dtPagos.Columns.Add("NoTelefonoAval");
 
                     int iSumaMes = 1;
                     for (int i = 0; i < iPlazo; i++)
@@ -281,13 +299,18 @@ namespace Autos_SCC.Views.Principales
                         {
                             DataRow dr = dtPagos.NewRow();
                             DataRow drA = dtAmort.NewRow();
-                            
+
                             switch (iOpc)
                             {
                                 case 1: //MESES CON PAGOS DOBLES
                                     dr["iCotizacion"] = iIdCotizacion.S();
                                     dr["iNoPago"] = (i + 1).S() + " / " + iPlazo.S();
-                                    dr["dMonto"] = "$" + dtHeader.Rows[0]["PrimerPago"].S();
+
+                                    strMonto = dtHeader.Rows[0]["PrimerPago"].ToString();
+                                    dbMonto = double.Parse(strMonto);
+                                    strMonto = dbMonto.ToString("c", System.Globalization.CultureInfo.CreateSpecificCulture("es-MX"));
+
+                                    dr["dMonto"] = strMonto;
                                     dr["dtFecha"] = dtFechaPagare.ToLongDateString();
                                     dr["sAcreedor"] = sAcreedor;
                                     dr["sDireccion"] = sDireccion;
@@ -300,6 +323,9 @@ namespace Autos_SCC.Views.Principales
                                     dr["fc_NombreAval"] = sNombreAval;
                                     dr["fc_DirCliente"] = sDirCliente;
                                     dr["fc_DirAval"] = sDirAval;
+
+                                    dr["NoTelefonoCli"] = sTelCliente;
+                                    dr["NoTelefonoAval"] = sTelAval;
 
                                     dtPagos.Rows.Add(dr);
 
@@ -349,7 +375,13 @@ namespace Autos_SCC.Views.Principales
                             DataRow dr = dtPagos.NewRow();
                             dr["iCotizacion"] = iIdCotizacion.S();
                             dr["iNoPago"] = (i + 1).S() + " / " + iPlazo.S();
-                            dr["dMonto"] = "$" + dtHeader.Rows[0]["PrimerPago"].S();
+
+                            strMonto = dtHeader.Rows[0]["PrimerPago"].ToString();
+                            dbMonto = double.Parse(strMonto);
+                            strMonto = dbMonto.ToString("c", System.Globalization.CultureInfo.CreateSpecificCulture("es-MX"));
+
+
+                            dr["dMonto"] = strMonto;
                             dr["dtFecha"] = dtFechaPagare.ToLongDateString();
                             dr["sAcreedor"] = sAcreedor;
                             dr["sDireccion"] = sDireccion;
@@ -362,6 +394,9 @@ namespace Autos_SCC.Views.Principales
                             dr["fc_NombreAval"] = sNombreAval;
                             dr["fc_DirCliente"] = sDirCliente;
                             dr["fc_DirAval"] = sDirAval;
+
+                            dr["NoTelefonoCli"] = sTelCliente;
+                            dr["NoTelefonoAval"] = sTelAval;
 
                             dtPagos.Rows.Add(dr);
 
