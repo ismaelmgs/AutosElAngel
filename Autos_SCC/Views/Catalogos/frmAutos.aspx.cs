@@ -93,8 +93,11 @@ namespace Autos_SCC.Views.Catalogos
 
         protected void btnNuevo_Click(object sender, EventArgs e)
         {
+
             if (eNewObj != null)
                 eNewObj(sender, e);
+            //mpprueba.Show();
+            mpeAgregarVehiculo.Show();
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
@@ -177,7 +180,12 @@ namespace Autos_SCC.Views.Catalogos
         {
             mpeAgregarGasto.Hide();
         }
-        
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            mpeAgregarVehiculo.Hide();
+        }
+
         void omb_CancelButtonPressed(object sender, EventArgs args)
         {
             omb.Hide();
@@ -448,6 +456,8 @@ namespace Autos_SCC.Views.Catalogos
                     ddlSucursal.SelectedValue = oCat.iIdSucursal.S();
                     txtPrecio.Text = oCat.dPrecio.S();
                     ddlEstatus.SelectedValue = oCat.iStatus.S();
+                    UpaAgregarVehiculo.Update();
+                    mpeAgregarVehiculo.Show();
                 }
             }
         }

@@ -35,7 +35,8 @@
         }
 
     </script>
-    <asp:UpdatePanel ID="upaTab" runat="server">
+
+    <asp:UpdatePanel ID="upaTab" runat="server" UpdateMode="Conditional">
         <ContentTemplate>
             <div class="card">
                 <div class="card-block" style="text-align:center;">
@@ -43,12 +44,234 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="card">
-                        <h3 style="text-align:center;">Registro de Autos</h3>
-                        <ContentTemplate>
-                            <br />
+                        <h3 style="text-align:center;">Búqueda</h3>
+                           <ContentTemplate>
+                                <br />
+                                <table width="80%" style="margin:0 auto;">
+                                    <tr>
+                                        <td width="40%">
+                                            <asp:Label ID="lblBusqueda" runat="server" Text="Palabra a buscar:" CssClass="inputLabel" />
+                                        </td>
+                                        <td width="60%">
+                                            <asp:TextBox ID="txtBuqueda" runat="server" Width="100%" CssClass="form-control"></asp:TextBox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <asp:Label ID="lblSucursalBus" runat="server" Text="Sucursal:" CssClass="inputLabel"></asp:Label>
+                                        </td>
+                                        <td>
+                                            <asp:DropDownList ID="ddlSucursalBus" runat="server" Width="100%" CssClass="form-control"></asp:DropDownList>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <asp:Label ID="lblStatusBus" runat="server" Text="Estatus:" CssClass="inputLabel"></asp:Label>
+                                        </td>
+                                        <td>
+                                            <asp:DropDownList ID="ddlEstatusBus" runat="server" Width="100%" CssClass="form-control"></asp:DropDownList>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" align="center">
+                                            <br />
+                                            <asp:Button ID="btnBuscar" runat="server" Text="BUSCAR" CssClass="btn btn-success" OnClick="btnBuscar_Click" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </ContentTemplate> <br /><br />
+                    </div>
+                </div>
+            </div>
+            <center>
+                <div class="card" style="padding:20px;">
+                   <div class="table-responsive" style="width:100%;">
+                        <asp:Panel ID="pnlCatalogo" runat="server" ScrollBars="Horizontal" Height="515px"
+                            Width="100%">
+                             <div class="DivBotones">
+                                <asp:Button ID="btnNuevo" runat="server" Text="NUEVO" CssClass="btn btn-success" OnClick="btnNuevo_Click"
+                                    ToolTip="Prepara los campos para un registro nuevo" />
+                                &nbsp;<asp:Button ID="btnEliminar" runat="server" Text="ELIMINAR" CssClass="btn btn-danger"
+                                    OnClick="btnEliminar_Click" ToolTip="Elimina el registro seleccionado" />
+                                &nbsp;<asp:Button ID="btnExportar" runat="server" Text="EXPORTAR" CssClass="btn btn-secondary"
+                                    OnClick="btnExportar_Click" ToolTip="Exporta un grid a excel" />
+                            </div>
+                            <asp:GridView ID="gvCatalogo" runat="server" AutoGenerateColumns="false" DataKeyNames="fi_Id"
+                                OnRowCommand="gvCatalogo_RowCommand" Width="100%" OnRowDataBound="gvCatalogo_RowDataBound" 
+                                OnSelectedIndexChanged="gvCatalogo_SelectedIndexChanged" PageSize="10" Font-Size="Small"
+                                BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464"
+                                HeaderStyle-ForeColor="white" AllowSorting="True" CssClass="table table-hover">
+                                <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+                                <HeaderStyle BackColor="#01609F" CssClass="titleHeader" />
+                                <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" CssClass="" />
+                                <AlternatingRowStyle BackColor="White" />
+                                <Columns>
+                                    <asp:TemplateField>
+                                        <ItemTemplate>
+                                            <div id="divPrueba" runat="server">
+                                            <asp:ImageButton ID="imbAgregarGasto" runat="server" ImageUrl="~/Images/Botones/icon_agregar.ico"
+                                                CommandName="AgregarGasto" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" ToolTip="Agregar gastos al automovil" />
+                                            </div>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:BoundField DataField="fi_Id" HeaderText="Id" />
+                                    <asp:BoundField DataField="fc_Marca" HeaderText="Marca" />
+                                    <asp:BoundField DataField="fc_Version" HeaderText="Versión" />
+                                    <asp:BoundField DataField="fc_TipoAuto" HeaderText="Tipo" />
+                                    <asp:BoundField DataField="fm_Precio" HeaderText="Precio" DataFormatString="{0:c}" />
+                                    <asp:BoundField DataField="fc_Placa" HeaderText="Placa" />
+                                    <asp:BoundField DataField="fi_Modelo" HeaderText="Modelo" ItemStyle-HorizontalAlign="Center" />
+                                    <asp:BoundField DataField="fc_NoSerie" HeaderText="No. Serie" />
+                                    <asp:BoundField DataField="fc_Sucursal" HeaderText="Sucursal" />
+                                    <asp:BoundField DataField="fc_Color" HeaderText="Color" />
+                                    <asp:BoundField DataField="fc_Status" HeaderText="Estatus" />
+                                    <asp:BoundField DataField="fc_Usuario" HeaderText="Usuario modifico" ItemStyle-HorizontalAlign="Center" />
+                                    <asp:BoundField DataField="fd_FechaUltMovimiento" HeaderText="Fecha Ult. Movimiento" ItemStyle-HorizontalAlign="Center" />
+                                </Columns>
+                            </asp:GridView>
+                            </asp:Panel>
+                            <div style="display:none">
+                                <asp:GridView ID="gvCopia" runat="server" AutoGenerateColumns="false"
+                                    Width="100%" PageSize="10" Font-Size="Small"
+                                    BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464"
+                                    HeaderStyle-ForeColor="white" AllowSorting="True" CssClass="table table-responsive">
+                                    <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+                                    <HeaderStyle BackColor="#01609F" CssClass="titleHeader" />
+                                    <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" CssClass="" />
+                                    <AlternatingRowStyle BackColor="White" />
+                                    <Columns>
+                                        <asp:BoundField DataField="fi_Id" HeaderText="Id" />
+                                        <asp:BoundField DataField="fc_Marca" HeaderText="Marca" />
+                                        <asp:BoundField DataField="fc_Version" HeaderText="Versión" />
+                                        <asp:BoundField DataField="fc_TipoAuto" HeaderText="Tipo" />
+                                        <asp:BoundField DataField="fm_Precio" HeaderText="Precio"/>
+                                        <asp:BoundField DataField="fc_Placa" HeaderText="Placa" />
+                                        <asp:BoundField DataField="fi_Modelo" HeaderText="Modelo" />
+                                        <asp:BoundField DataField="fc_NoSerie" HeaderText="No. Serie" />
+                                        <asp:BoundField DataField="fc_Sucursal" HeaderText="Sucursal" />
+                                        <asp:BoundField DataField="fc_Color" HeaderText="Color" />
+                                        <asp:BoundField DataField="fc_Usuario" HeaderText="Usuario modifico" />
+                                        <asp:BoundField DataField="fd_FechaUltMovimiento" HeaderText="Fecha Ult. Movimiento" />
+                                    </Columns>
+                                </asp:GridView>
+                            </div>
+                            <uc1:ucModalConfirm ID="omb" runat="server" />
+                    </div>
+                </div>
+            </center><br />
+        </ContentTemplate>
+        <Triggers>
+            <asp:PostBackTrigger ControlID="btnExportar" />
+        </Triggers>
+    </asp:UpdatePanel>
 
+    <%--Modal de Gastos--%>
+    <asp:HiddenField ID="hdTarget" runat="server" />
+    <cc1:ModalPopupExtender ID="mpeAgregarGasto" runat="server" EnableViewState="true"
+        TargetControlID="hdTarget" PopupControlID="Panel1" BackgroundCssClass="overlayy"
+        CancelControlID="can">
+    </cc1:ModalPopupExtender>
+    <asp:Panel ID="Panel1" runat="server" BorderColor="Black" BackColor="#eeeeee" Height="400px"
+        Width="820px" HorizontalAlign="Center"  Style="display: none; border-radius:25px; box-shadow:3px 3px 3px #00000050;">
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
+                <div class="header">
+                    <table width="100%">
+                        <tr>
+                            <td colspan="2" style="text-align:center"><br />
+                                <h3><asp:Label ID="lblCaption" runat="server" Text="Gastos del vehiculo" CssClass="TituloEtiquetas"></asp:Label></h3>
+                            </td>
+                        </tr>
+                    </table>
+                    <br />
+                </div>
+                <br />
+                <center>
+                    <table width="80%" style="margin:0 auto;">
+                        <tr>
+                            <td style="text-align:left; width:35%">
+                                <asp:Label ID="lblDescripcionGasto" runat="server" Text="Descripción:"   CssClass="inputLabel"></asp:Label>
+                            </td>
+                            <td style="text-align:left; width:55%">
+                                <asp:TextBox ID="txtDescripcionGasto" runat="server" Width="95%" CssClass="form-control"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:left">
+                                <asp:Label ID="lblMonto" runat="server" Text="Monto:"  ></asp:Label>
+                            </td>
+
+                            <td style="text-align:left">
+                                <asp:TextBox ID="txtMonto" runat="server" Width="50%" CssClass="form-control"></asp:TextBox>
+                                
+                            </td>
+  
+                            <td align="center">
+                                    <asp:Button ID="btnGuardarGasto" runat="server" Text=" GUARDAR " OnClick="btnGuardarGasto_Click"
+                                    CssClass="btn btn-success" />
+                            </td>
+                        </tr>
+                    </table>
+                    <br />
+                    <table width="80%" style="margin:0 auto;">
+                        <tr>
+                            <td colspan="2" style="text-align:center">
+                                <asp:Panel ID="pnlGastos" runat="server" Width="100%" Height="120px" ScrollBars="Vertical" CssClass="form-control">
+                                    <asp:GridView ID="gvGastos" runat="server" AutoGenerateColumns="false" 
+                                        Width="100%" OnRowDataBound="gvGastos_RowDataBound" ShowFooter="true"
+                                        OnRowDeleting="gvGastos_RowDeleting" PageSize="10" BorderStyle="None" 
+                                        BorderWidth="0px" HeaderStyle-BackColor="#646464"
+                                        HeaderStyle-ForeColor="white" AllowSorting="True" CssClass="table table-hover" style="border:1px solid #efefef;">
+                                        <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+                                        <HeaderStyle BackColor="#01609F" CssClass="titleHeader" />
+                                        <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" CssClass="" />
+                                        <AlternatingRowStyle BackColor="White" />
+                                        <Columns>
+                                            <asp:BoundField DataField="sDescripcion" HeaderText="Descripción" />
+                                            <asp:BoundField DataField="iMonto" HeaderText="Monto" DataFormatString="{0:c}" />
+                                            <asp:CommandField ButtonType="Image" ShowDeleteButton="true" DeleteImageUrl="~/Images/Iconos/Erase.ico" />
+                                        </Columns>
+                                        <EmptyDataTemplate>
+                                            No se encontraron registros
+                                        </EmptyDataTemplate>
+                                    </asp:GridView>
+                                </asp:Panel>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="height: 15px">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="text-align:center">
+                                <asp:Button ID="can" runat="server" Text=" CERRAR " CssClass="btn btn-danger" OnClick="can_Click" />
+                            </td>
+                        </tr>
+                    </table>
+                </center>
+            </ContentTemplate>
+            <Triggers>
+                <asp:AsyncPostBackTrigger ControlID="btnGuardarGasto" EventName="Click" />
+            </Triggers>
+        </asp:UpdatePanel>
+    </asp:Panel>
+
+    <%--Modal de Agregar Vehiculo--%>
+    <asp:HiddenField ID="hdAgregarVehiculo" runat="server" />
+    <cc1:ModalPopupExtender ID="mpeAgregarVehiculo" runat="server"
+        TargetControlID="hdAgregarVehiculo" PopupControlID="pnlAgregarVehiculo" BackgroundCssClass="overlayy">
+    </cc1:ModalPopupExtender>
+    <asp:Panel ID="pnlAgregarVehiculo" runat="server" BorderColor="Black" BackColor="#eeeeee" Height="400px"
+        Width="820px" HorizontalAlign="Center"  Style="display: none; border-radius:25px; box-shadow:3px 3px 3px #00000050;">
+        <asp:UpdatePanel ID="UpaAgregarVehiculo" runat="server" UpdateMode="Conditional">
+            <ContentTemplate>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                        <h3 style="text-align:center;">Registro de Autos</h3>
+                            <br />
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="row">
@@ -159,224 +382,54 @@
                                     </div>
                                 </div>
                             </div>
-                        </ContentTemplate>    
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card">
-                        <h3 style="text-align:center;">Búqueda</h3>
-                           <ContentTemplate>
-                                <br />
-                                <table width="80%" style="margin:0 auto;">
-                                    <tr>
-                                        <td width="40%">
-                                            <asp:Label ID="lblBusqueda" runat="server" Text="Palabra a buscar:" CssClass="inputLabel" />
-                                        </td>
-                                        <td width="60%">
-                                            <asp:TextBox ID="txtBuqueda" runat="server" Width="100%" CssClass="form-control"></asp:TextBox>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <asp:Label ID="lblSucursalBus" runat="server" Text="Sucursal:" CssClass="inputLabel"></asp:Label>
-                                        </td>
-                                        <td>
-                                            <asp:DropDownList ID="ddlSucursalBus" runat="server" Width="100%" CssClass="form-control"></asp:DropDownList>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <asp:Label ID="lblStatusBus" runat="server" Text="Estatus:" CssClass="inputLabel"></asp:Label>
-                                        </td>
-                                        <td>
-                                            <asp:DropDownList ID="ddlEstatusBus" runat="server" Width="100%" CssClass="form-control"></asp:DropDownList>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" align="center">
-                                            <br />
-                                            <asp:Button ID="btnBuscar" runat="server" Text="BUSCAR" CssClass="btn btn-success" OnClick="btnBuscar_Click" />
-                                        </td>
-                                    </tr>
-                                </table>
-                            </ContentTemplate> <br /><br />
-                    </div>
-                </div>
-            </div>
-            <center>
-                <div class="DivBotones">
-                    <asp:Button ID="btnNuevo" runat="server" Text="NUEVO" CssClass="btn btn-success" OnClick="btnNuevo_Click"
-                        ToolTip="Prepara los campos para un registro nuevo" />
-                    &nbsp;<asp:Button ID="btnGuardar" runat="server" Text="GUARDAR" CssClass="btn btn-primary"
+                            <div class="row">
+                                <div class="col-md-12">
+                                    &nbsp;<asp:Button ID="btnGuardar" runat="server" Text="GUARDAR" CssClass="btn btn-primary"
                         OnClick="btnGuardar_Click" ToolTip="Guarda los cambios realizados sobre el registro" />
-                    &nbsp;<asp:Button ID="btnEliminar" runat="server" Text="ELIMINAR" CssClass="btn btn-danger"
-                        OnClick="btnEliminar_Click" ToolTip="Elimina el registro seleccionado" />
-                    &nbsp;<asp:Button ID="btnLimpiar" runat="server" Text="LIMPIAR" CssClass="btn btn-info"
+                                    &nbsp;<asp:Button ID="btnLimpiar" runat="server" Text="LIMPIAR" CssClass="btn btn-info"
                         OnClick="btnLimpiar_Click" ToolTip="Limpia los campos para un registro nuevo" />
-                    &nbsp;<asp:Button ID="btnExportar" runat="server" Text="EXPORTAR" CssClass="btn btn-secondary"
-                        OnClick="btnExportar_Click" ToolTip="Exporta un grid a excel" />
-                </div>
-                <div class="card" style="padding:20px;">
-                   <div class="table-responsive" style="width:100%;">
-                                <asp:Panel ID="pnlCatalogo" runat="server" ScrollBars="Horizontal" Height="515px"
-                                    Width="100%">
-                                    <asp:GridView ID="gvCatalogo" runat="server" AutoGenerateColumns="false" DataKeyNames="fi_Id"
-                                        OnRowCommand="gvCatalogo_RowCommand" Width="100%" OnRowDataBound="gvCatalogo_RowDataBound" 
-                                        OnSelectedIndexChanged="gvCatalogo_SelectedIndexChanged" PageSize="10" Font-Size="Small"
-                                        BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464"
-                                        HeaderStyle-ForeColor="white" AllowSorting="True" CssClass="table table-hover">
-                                        <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
-                                        <HeaderStyle BackColor="#01609F" CssClass="titleHeader" />
-                                        <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" CssClass="" />
-                                        <AlternatingRowStyle BackColor="White" />
-                                        <Columns>
-                                            <asp:TemplateField>
-                                                <ItemTemplate>
-                                                    <div id="divPrueba" runat="server">
-                                                    <asp:ImageButton ID="imbAgregarGasto" runat="server" ImageUrl="~/Images/Botones/icon_agregar.ico"
-                                                        CommandName="AgregarGasto" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" ToolTip="Agregar gastos al automovil" />
-                                                    </div>
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
-                                            <asp:BoundField DataField="fi_Id" HeaderText="Id" />
-                                            <asp:BoundField DataField="fc_Marca" HeaderText="Marca" />
-                                            <asp:BoundField DataField="fc_Version" HeaderText="Versión" />
-                                            <asp:BoundField DataField="fc_TipoAuto" HeaderText="Tipo" />
-                                            <asp:BoundField DataField="fm_Precio" HeaderText="Precio" DataFormatString="{0:c}" />
-                                            <asp:BoundField DataField="fc_Placa" HeaderText="Placa" />
-                                            <asp:BoundField DataField="fi_Modelo" HeaderText="Modelo" ItemStyle-HorizontalAlign="Center" />
-                                            <asp:BoundField DataField="fc_NoSerie" HeaderText="No. Serie" />
-                                            <asp:BoundField DataField="fc_Sucursal" HeaderText="Sucursal" />
-                                            <asp:BoundField DataField="fc_Color" HeaderText="Color" />
-                                            <asp:BoundField DataField="fc_Status" HeaderText="Estatus" />
-                                            <asp:BoundField DataField="fc_Usuario" HeaderText="Usuario modifico" ItemStyle-HorizontalAlign="Center" />
-                                            <asp:BoundField DataField="fd_FechaUltMovimiento" HeaderText="Fecha Ult. Movimiento" ItemStyle-HorizontalAlign="Center" />
-                                        </Columns>
-                                    </asp:GridView>
-                                    </asp:Panel>
-                                    <div style="display:none">
-                                        <asp:GridView ID="gvCopia" runat="server" AutoGenerateColumns="false"
-                                            Width="100%" PageSize="10" Font-Size="Small"
-                                            BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464"
-                                            HeaderStyle-ForeColor="white" AllowSorting="True" CssClass="table table-responsive">
-                                            <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
-                                            <HeaderStyle BackColor="#01609F" CssClass="titleHeader" />
-                                            <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" CssClass="" />
-                                            <AlternatingRowStyle BackColor="White" />
-                                            <Columns>
-                                                <asp:BoundField DataField="fi_Id" HeaderText="Id" />
-                                                <asp:BoundField DataField="fc_Marca" HeaderText="Marca" />
-                                                <asp:BoundField DataField="fc_Version" HeaderText="Versión" />
-                                                <asp:BoundField DataField="fc_TipoAuto" HeaderText="Tipo" />
-                                                <asp:BoundField DataField="fm_Precio" HeaderText="Precio"/>
-                                                <asp:BoundField DataField="fc_Placa" HeaderText="Placa" />
-                                                <asp:BoundField DataField="fi_Modelo" HeaderText="Modelo" />
-                                                <asp:BoundField DataField="fc_NoSerie" HeaderText="No. Serie" />
-                                                <asp:BoundField DataField="fc_Sucursal" HeaderText="Sucursal" />
-                                                <asp:BoundField DataField="fc_Color" HeaderText="Color" />
-                                                <asp:BoundField DataField="fc_Usuario" HeaderText="Usuario modifico" />
-                                                <asp:BoundField DataField="fd_FechaUltMovimiento" HeaderText="Fecha Ult. Movimiento" />
-                                            </Columns>
-                                        </asp:GridView>
-                                    </div>
-                                    <uc1:ucModalConfirm ID="omb" runat="server" />
+                                    &nbsp;<asp:Button ID="btnCancelar" runat="server" Text="CERRAR" CssClass="btn btn-danger"
+                        OnClick="btnCancelar_Click" ToolTip="Limpia los campos para un registro nuevo" />
                                 </div>
+                            </div>
+                    </div>
+                    </div>
                 </div>
-                
-            </center><br />
-        </ContentTemplate>
-        <Triggers>
-            <asp:PostBackTrigger ControlID="btnExportar" />
-        </Triggers>
-    </asp:UpdatePanel>
+            </ContentTemplate>
+            <Triggers>
+                <asp:AsyncPostBackTrigger ControlID="ddlMarca" EventName="SelectedIndexChanged" />
+                <asp:AsyncPostBackTrigger ControlID="ddlTipoAuto" EventName="SelectedIndexChanged" />
+                <asp:AsyncPostBackTrigger ControlID="ddlVersion" EventName="SelectedIndexChanged" />
+                <asp:AsyncPostBackTrigger ControlID="ddlSucursal" EventName="SelectedIndexChanged" />
+                <asp:AsyncPostBackTrigger ControlID="ddlEstatus" EventName="SelectedIndexChanged" />
+                <asp:AsyncPostBackTrigger ControlID="btnLimpiar" EventName="Click" />
+                <asp:AsyncPostBackTrigger ControlID="btnCancelar" EventName="Click" />
+            </Triggers>
+        </asp:UpdatePanel>
+    </asp:Panel>
 
-    <%--Modal de Gastos--%>
-    <asp:HiddenField ID="hdTarget" runat="server" />
-    <cc1:ModalPopupExtender ID="mpeAgregarGasto" runat="server" EnableViewState="true"
-        TargetControlID="hdTarget" PopupControlID="Panel1" BackgroundCssClass="overlayy"
-        CancelControlID="can">
+
+    <asp:HiddenField ID="hd1" runat="server" />
+    <cc1:ModalPopupExtender ID="mpprueba" runat="server"
+        TargetControlID="hd1" PopupControlID="pnlprueba" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
-    <asp:Panel ID="Panel1" runat="server" BorderColor="Black" BackColor="#eeeeee" Height="400px"
-        Width="820px" HorizontalAlign="Center"  Style="display: none; border-radius:25px; box-shadow:3px 3px 3px #00000050;">
-        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+    <asp:Panel ID="pnlprueba" runat="server" BorderColor="Black" BackColor="#eeeeee" Height="400px"
+        Width="820px" HorizontalAlign="Center"  Style="display: none; border-radius:25px; box-shadow:3px 3px 3px #00000050;" Visible="true">
+        <asp:UpdatePanel ID="Upaprueba" runat="server">
             <ContentTemplate>
                 <div class="header">
                     <table width="100%">
                         <tr>
                             <td colspan="2" style="text-align:center"><br />
-                                <h3><asp:Label ID="lblCaption" runat="server" Text="Gastos del vehiculo" CssClass="TituloEtiquetas"></asp:Label></h3>
+                                <h3><asp:Label ID="Label1" runat="server" Text="Esto es una prueba" CssClass="TituloEtiquetas"></asp:Label></h3>
                             </td>
                         </tr>
                     </table>
                     <br />
                 </div>
-                <br />
-                <center>
-                    <table width="80%" style="margin:0 auto;">
-                        <tr>
-                            <td style="text-align:left; width:35%">
-                                <asp:Label ID="lblDescripcionGasto" runat="server" Text="Descripción:"   CssClass="inputLabel"></asp:Label>
-                            </td>
-                            <td style="text-align:left; width:55%">
-                                <asp:TextBox ID="txtDescripcionGasto" runat="server" Width="95%" CssClass="form-control"></asp:TextBox>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="text-align:left">
-                                <asp:Label ID="lblMonto" runat="server" Text="Monto:"  ></asp:Label>
-                            </td>
-
-                            <td style="text-align:left">
-                                <asp:TextBox ID="txtMonto" runat="server" Width="50%" CssClass="form-control"></asp:TextBox>
-                                
-                            </td>
-  
-                            <td align="center">
-                                    <asp:Button ID="btnGuardarGasto" runat="server" Text=" GUARDAR " OnClick="btnGuardarGasto_Click"
-                                    CssClass="btn btn-success" />
-                            </td>
-                        </tr>
-                    </table>
-                    <br />
-                    <table width="80%" style="margin:0 auto;">
-                        <tr>
-                            <td colspan="2" style="text-align:center">
-                                <asp:Panel ID="pnlGastos" runat="server" Width="100%" Height="120px" ScrollBars="Vertical" CssClass="form-control">
-                                    <asp:GridView ID="gvGastos" runat="server" AutoGenerateColumns="false" 
-                                        Width="100%" OnRowDataBound="gvGastos_RowDataBound" ShowFooter="true"
-                                        OnRowDeleting="gvGastos_RowDeleting" PageSize="10" BorderStyle="None" 
-                                        BorderWidth="0px" HeaderStyle-BackColor="#646464"
-                                        HeaderStyle-ForeColor="white" AllowSorting="True" CssClass="table table-hover" style="border:1px solid #efefef;">
-                                        <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
-                                        <HeaderStyle BackColor="#01609F" CssClass="titleHeader" />
-                                        <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" CssClass="" />
-                                        <AlternatingRowStyle BackColor="White" />
-                                        <Columns>
-                                            <asp:BoundField DataField="sDescripcion" HeaderText="Descripción" />
-                                            <asp:BoundField DataField="iMonto" HeaderText="Monto" DataFormatString="{0:c}" />
-                                            <asp:CommandField ButtonType="Image" ShowDeleteButton="true" DeleteImageUrl="~/Images/Iconos/Erase.ico" />
-                                        </Columns>
-                                        <EmptyDataTemplate>
-                                            No se encontraron registros
-                                        </EmptyDataTemplate>
-                                    </asp:GridView>
-                                </asp:Panel>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2" style="height: 15px">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2" style="text-align:center">
-                                <asp:Button ID="can" runat="server" Text=" CERRAR " CssClass="btn btn-danger" OnClick="can_Click" />
-                            </td>
-                        </tr>
-                    </table>
-                </center>
             </ContentTemplate>
             <Triggers>
-                <asp:AsyncPostBackTrigger ControlID="btnGuardarGasto" EventName="Click" />
+                <%--<asp:AsyncPostBackTrigger ControlID="btnGuardarGasto" EventName="Click" />--%>
             </Triggers>
         </asp:UpdatePanel>
     </asp:Panel>
