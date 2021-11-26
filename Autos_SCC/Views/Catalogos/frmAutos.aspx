@@ -88,16 +88,14 @@
             <center>
                 <div class="card" style="padding:20px;">
                    <div class="table-responsive" style="width:100%;">
-                        <asp:Panel ID="pnlCatalogo" runat="server" ScrollBars="Horizontal" Height="515px"
-                            Width="100%">
-                             <div class="DivBotones">
+                       <div class="DivBotones" style="padding-bottom:15px; text-align:right">
                                 <asp:Button ID="btnNuevo" runat="server" Text="NUEVO" CssClass="btn btn-success" OnClick="btnNuevo_Click"
                                     ToolTip="Prepara los campos para un registro nuevo" />
-                                &nbsp;<asp:Button ID="btnEliminar" runat="server" Text="ELIMINAR" CssClass="btn btn-danger"
-                                    OnClick="btnEliminar_Click" ToolTip="Elimina el registro seleccionado" />
                                 &nbsp;<asp:Button ID="btnExportar" runat="server" Text="EXPORTAR" CssClass="btn btn-secondary"
                                     OnClick="btnExportar_Click" ToolTip="Exporta un grid a excel" />
-                            </div>
+                        </div>
+                        <asp:Panel ID="pnlCatalogo" runat="server" ScrollBars="Horizontal" Height="515px"
+                            Width="100%">
                             <asp:GridView ID="gvCatalogo" runat="server" AutoGenerateColumns="false" DataKeyNames="fi_Id"
                                 OnRowCommand="gvCatalogo_RowCommand" Width="100%" OnRowDataBound="gvCatalogo_RowDataBound" 
                                 OnSelectedIndexChanged="gvCatalogo_SelectedIndexChanged" PageSize="10" Font-Size="Small"
@@ -126,9 +124,15 @@
                                     <asp:BoundField DataField="fc_NoSerie" HeaderText="No. Serie" />
                                     <asp:BoundField DataField="fc_Sucursal" HeaderText="Sucursal" />
                                     <asp:BoundField DataField="fc_Color" HeaderText="Color" />
+                                    <asp:BoundField DataField="fi_Kilometraje" HeaderText="Kilometraje" />
                                     <asp:BoundField DataField="fc_Status" HeaderText="Estatus" />
                                     <asp:BoundField DataField="fc_Usuario" HeaderText="Usuario modifico" ItemStyle-HorizontalAlign="Center" />
                                     <asp:BoundField DataField="fd_FechaUltMovimiento" HeaderText="Fecha Ult. Movimiento" ItemStyle-HorizontalAlign="Center" />
+                                    <asp:TemplateField>
+                                        <ItemTemplate>
+                                            <asp:Button ID="btnEliminar" runat="server" Text="ELIMINAR" CssClass="btn btn-danger" ToolTip="Elimina el registro seleccionado" CommandName="EliminarAuto" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"/>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
                                 </Columns>
                             </asp:GridView>
                             </asp:Panel>
@@ -152,6 +156,7 @@
                                         <asp:BoundField DataField="fc_NoSerie" HeaderText="No. Serie" />
                                         <asp:BoundField DataField="fc_Sucursal" HeaderText="Sucursal" />
                                         <asp:BoundField DataField="fc_Color" HeaderText="Color" />
+                                        <asp:BoundField DataField="fi_Kilometraje" HeaderText="Kilometraje" />
                                         <asp:BoundField DataField="fc_Usuario" HeaderText="Usuario modifico" />
                                         <asp:BoundField DataField="fd_FechaUltMovimiento" HeaderText="Fecha Ult. Movimiento" />
                                     </Columns>
@@ -376,8 +381,11 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-12">
-
+                                        <div class="col-md-4">
+                                            <asp:Label ID="lblKilometraje" runat="server" Text="Kilometraje:" CssClass="inputLabel"></asp:Label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <asp:TextBox ID="txtKilometraje" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
                                         </div>
                                     </div>
                                 </div>

@@ -72,6 +72,7 @@ namespace Autos_SCC.DomainModel
                     sColor = r["fc_Color"].S(),
                     iIdSucursal = r["fi_Sucursal"].S().I(),
                     dPrecio = r["fm_Precio"].S().D(),
+                    iKilometraje = r["fi_Kilometraje"].S().I(),
                     iStatus = r["fi_Status"].S().I(),
                     sUsuario = r["fc_Usuario"].S(),
                     dtFechaUltMov = r["fd_FechaUltMovimiento"].Dt()
@@ -96,6 +97,7 @@ namespace Autos_SCC.DomainModel
                     sColor = r["fc_Color"].S(),
                     iIdSucursal = r["fi_Sucursal"].S().I(),
                     dPrecio = r["fm_Precio"].S().D(),
+                    iKilometraje = r["fi_Kilometraje"].S().I(),
                     iModelo = r["fi_Modelo"].S().I(),
                     iStatus = r["fi_Status"].S().I(),
                     sUsuario = r["fc_Usuario"].S(),
@@ -135,7 +137,8 @@ namespace Autos_SCC.DomainModel
                                                                                             "@fi_Sucursal", oEjecut.iIdSucursal,
                                                                                             "@fm_Precio", oEjecut.dPrecio,
                                                                                             "@fi_Status", oEjecut.iStatus,
-                                                                                            "@fc_Usuario", oEjecut.sUsuario);
+                                                                                            "@fc_Usuario", oEjecut.sUsuario,
+                                                                                            "@fi_Kilometraje", oEjecut.iKilometraje);
                         }
                         else
                         {
@@ -168,7 +171,8 @@ namespace Autos_SCC.DomainModel
                                                                             "@fi_Sucursal", oEjecut.iIdSucursal,
                                                                             "@fm_Precio", oEjecut.dPrecio,
                                                                             "@fi_Status", oEjecut.iStatus,
-                                                                            "@fc_Usuario", oEjecut.sUsuario);
+                                                                            "@fc_Usuario", oEjecut.sUsuario,
+                                                                            "@fi_Kilometraje", oEjecut.iKilometraje);
 
                         //}
                         //else
@@ -222,6 +226,7 @@ namespace Autos_SCC.DomainModel
                         sColor = r["fc_Color"].S(),
                         iIdSucursal = r["fi_Sucursal"].S().I(),
                         dPrecio = r["fm_Precio"].S().D(),
+                        iKilometraje = r["fi_Kilometraje"].S().I(),
                         iStatus = r["fi_Status"].S().I(),
                         sUsuario = r["fc_Usuario"].S(),
                         dtFechaUltMov = r["fd_FechaUltMovimiento"].Dt(),

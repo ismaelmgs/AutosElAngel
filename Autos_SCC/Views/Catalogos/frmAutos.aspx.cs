@@ -106,10 +106,10 @@ namespace Autos_SCC.Views.Catalogos
                 eSaveObj(sender, e);
         }
 
-        protected void btnEliminar_Click(object sender, EventArgs e)
-        {
-            omb.ShowMessage("¿Realmente esta seguro de eliminar el registro?", "Elimina");
-        }
+        //protected void btnEliminar_Click(object sender, EventArgs e)
+        //{
+        //    omb.ShowMessage("¿Realmente esta seguro de eliminar el registro?", "Elimina");
+        //}
 
         protected void btnLimpiar_Click(object sender, EventArgs e)
         {
@@ -218,6 +218,12 @@ namespace Autos_SCC.Views.Catalogos
                     gvGastos.DataBind();
 
                     mpeAgregarGasto.Show();
+                }
+                if(e.CommandName == "EliminarAuto")
+                {
+
+                    iAuto = gvCatalogo.DataKeys[e.CommandArgument.I()].Value.S().I();
+                    omb.ShowMessage("¿Realmente esta seguro de eliminar el registro?", "Elimina");
                 }
             }
             catch (Exception ex)
@@ -384,6 +390,7 @@ namespace Autos_SCC.Views.Catalogos
             ddlTipoAuto.Items.Clear();
 
             txtPrecio.Text = string.Empty;
+            txtKilometraje.Text = string.Empty;
             txtPlaca.Text = string.Empty;
             txtModelo.Text = string.Empty;
             txtNoSerie.Text = string.Empty;
@@ -430,6 +437,7 @@ namespace Autos_SCC.Views.Catalogos
                     sColor = txtColor.Text.S(),
                     iIdSucursal = ddlSucursal.SelectedValue.S().I(),
                     dPrecio = txtPrecio.Text.S().D(),
+                    iKilometraje = txtKilometraje.Text.S().I(),
                     iStatus = ddlEstatus.SelectedValue.S().I(),
                     sUsuario = Session["usuario"].S()
                 };
@@ -455,6 +463,7 @@ namespace Autos_SCC.Views.Catalogos
                     txtColor.Text = oCat.sColor;
                     ddlSucursal.SelectedValue = oCat.iIdSucursal.S();
                     txtPrecio.Text = oCat.dPrecio.S();
+                    txtKilometraje.Text = oCat.iKilometraje.S();
                     ddlEstatus.SelectedValue = oCat.iStatus.S();
                     UpaAgregarVehiculo.Update();
                     mpeAgregarVehiculo.Show();
