@@ -20,6 +20,7 @@ namespace Autos_SCC.Objetos
         private int _iModelo = 0;
         private int _iIdSucursal = 0;
         private decimal _dPrecio = 0;
+        private int _iKilometraje = 0;
         private int _iStatus = 0;
         private string _sUsuario = string.Empty;
         private DateTime _dtFechaUltMov = new DateTime();
@@ -51,6 +52,9 @@ namespace Autos_SCC.Objetos
         public int iIdSucursal { get { return _iIdSucursal; } set { _iIdSucursal = value; } }
 
         public decimal dPrecio { get { return _dPrecio; } set { _dPrecio = value; } }
+
+        [Range(1, Int32.MaxValue, ErrorMessage = "El kilometraje es obligatorio")]
+        public int iKilometraje { get { return _iKilometraje; } set { _iKilometraje = value; } }
 
         [Display(Name = "Estatus"), Required]
         public int iStatus { get { return _iStatus; } set { _iStatus = value; } }
