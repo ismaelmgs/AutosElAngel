@@ -82,6 +82,8 @@ namespace Autos_SCC.Views.Catalogos
             {
                 if (eObjSelected != null)
                     eObjSelected(sender, e);
+                UpaAgregarVehiculo.Update();
+                mpeAgregarVehiculo.Show();
             }
         }
 
@@ -104,6 +106,10 @@ namespace Autos_SCC.Views.Catalogos
         {
             if (eSaveObj != null)
                 eSaveObj(sender, e);
+            mpeAgregarVehiculo.Hide();
+            upaTab.Update();
+            
+
         }
 
         //protected void btnEliminar_Click(object sender, EventArgs e)
@@ -223,6 +229,9 @@ namespace Autos_SCC.Views.Catalogos
                 {
 
                     iAuto = gvCatalogo.DataKeys[e.CommandArgument.I()].Value.S().I();
+                    gvCatalogo.SelectedIndex = e.CommandArgument.I();
+                    if (eObjSelected != null)
+                        eObjSelected(sender, e);
                     omb.ShowMessage("¿Realmente esta seguro de eliminar el registro?", "Elimina");
                 }
             }
@@ -465,8 +474,6 @@ namespace Autos_SCC.Views.Catalogos
                     txtPrecio.Text = oCat.dPrecio.S();
                     txtKilometraje.Text = oCat.iKilometraje.S();
                     ddlEstatus.SelectedValue = oCat.iStatus.S();
-                    UpaAgregarVehiculo.Update();
-                    mpeAgregarVehiculo.Show();
                 }
             }
         }

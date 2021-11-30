@@ -531,8 +531,7 @@
     <cc1:ModalPopupExtender ID="mpeBuscarAuto" runat="server" TargetControlID="hdTargetBAuto" 
         PopupControlID="pnlBuscaAuto" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
-
-<asp:Panel ID="pnlBuscaAuto" runat="server" BorderColor="Black" BackColor="#e4e4e4" Height="450px"
+    <asp:Panel ID="pnlBuscaAuto" runat="server" BorderColor="Black" BackColor="#e4e4e4" Height="450px"
         Width="820px" HorizontalAlign="Center" Style="display: none; border-radius:25px; box-shadow:3px 3px 3px #00000030;">
         <asp:UpdatePanel ID="upaBuscaAuto" runat="server">
 

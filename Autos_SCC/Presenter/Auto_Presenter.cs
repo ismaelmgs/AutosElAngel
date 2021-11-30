@@ -85,6 +85,7 @@ namespace Autos_SCC.Presenter
 
                 NewObj_Presenter(sender, e);
                 oIView.oGetSetObjSelection = oTempCat;
+                //oIView.LoadObjects(oIGestCat.dtObjCat);
             }
             else
             {
