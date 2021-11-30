@@ -394,6 +394,7 @@
     <Content Include="Images\Banner_2.jpg" />
     <Content Include="Images\Banner_3.jpg" />
     <Content Include="Views\Cobranza\frmCobranza.aspx" />
+    <Content Include="Views\ControlesUsuario\ucModalAlert.ascx" />
     <Content Include="Views\Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
@@ -546,6 +547,13 @@
     </Compile>
     <Compile Include="Views\Cobranza\frmCobranza.aspx.designer.cs">
       <DependentUpon>frmCobranza.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ControlesUsuario\ucModalAlert.ascx.cs">
+      <DependentUpon>ucModalAlert.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ControlesUsuario\ucModalAlert.ascx.designer.cs">
+      <DependentUpon>ucModalAlert.ascx</DependentUpon>
     </Compile>
     <Compile Include="Views\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

@@ -29,6 +29,7 @@ namespace Autos_SCC.Views.Catalogos
 
             omb.OkButtonPressed += new ucModalConfirm.OkButtonPressedHandler(omb_OkButtonPressed);
             omb.CancelButtonPressed += new ucModalConfirm.CancelButtonPressedHandler(omb_CancelButtonPressed);
+            omb2.OkButtonPressed += new ucModalAlert.OkButtonPressedHandler(omb_Ok2ButtonPressed);
 
             if (!IsPostBack)
             {
@@ -173,7 +174,8 @@ namespace Autos_SCC.Views.Catalogos
             }
             catch (Exception ex)
             {
-                MostrarMensaje("Ocurrio el siguiente error: " + ex.Message,"Error al exportar");
+                omb2.ShowMessage("Ocurrio el siguiente error: " + ex.Message, "Error al exportar");
+                //MostrarMensaje("Ocurrio el siguiente error: " + ex.Message,"Error al exportar");
             }
         }
 
@@ -201,6 +203,10 @@ namespace Autos_SCC.Views.Catalogos
         {
             if (eDeleteObj != null)
                 eDeleteObj(sender, e);
+        }
+        void omb_Ok2ButtonPressed(object sender, EventArgs e)
+        {
+            omb2.Hide();
         }
 
         protected void ddlTipoAuto_SelectedIndexChanged(object sender, EventArgs e)
@@ -237,7 +243,8 @@ namespace Autos_SCC.Views.Catalogos
             }
             catch (Exception ex)
             {
-                MostrarMensaje(ex.Message, "Problemas en el sistema");
+                omb2.ShowMessage(ex.Message, "Problemas en el sistema");
+                //MostrarMensaje(ex.Message, "Problemas en el sistema");
             }
         }
 
@@ -410,8 +417,9 @@ namespace Autos_SCC.Views.Catalogos
 
         public void MostrarMensaje(string sMensaje, string sCaption)
         {
-            string script = string.Format("MostrarMensaje('{0}', '{1}')", sMensaje, sCaption);
-            ScriptManager.RegisterStartupScript(this, typeof(Page), "MostrarMensaje", script, true);
+            omb2.ShowMessage(sMensaje, sCaption);
+            //string script = string.Format("MostrarMensaje('{0}', '{1}')", sMensaje, sCaption);
+            //ScriptManager.RegisterStartupScript(this, typeof(Page), "MostrarMensaje", script, true);
         }
 
         #endregion
