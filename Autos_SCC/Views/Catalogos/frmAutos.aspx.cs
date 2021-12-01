@@ -83,6 +83,8 @@ namespace Autos_SCC.Views.Catalogos
             {
                 if (eObjSelected != null)
                     eObjSelected(sender, e);
+                ttlAuto.InnerText = "Edición de Autos";
+                btnGuardar.Text = "EDITAR";
                 UpaAgregarVehiculo.Update();
                 mpeAgregarVehiculo.Show();
             }
@@ -96,7 +98,9 @@ namespace Autos_SCC.Views.Catalogos
 
         protected void btnNuevo_Click(object sender, EventArgs e)
         {
-
+            ttlAuto.InnerText = "Registro de Autos";
+            btnGuardar.Text = "GUARDAR";
+            UpaAgregarVehiculo.Update();
             if (eNewObj != null)
                 eNewObj(sender, e);
             //mpprueba.Show();

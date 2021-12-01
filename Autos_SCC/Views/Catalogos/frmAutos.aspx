@@ -278,7 +278,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
-                        <h3 style="text-align:center;">Registro de Autos</h3>
+                        <h3 style="text-align:center;" id="ttlAuto" runat="server">Registro de Autos</h3>
                             <br />
                             <div class="row">
                                 <div class="col-md-6">
