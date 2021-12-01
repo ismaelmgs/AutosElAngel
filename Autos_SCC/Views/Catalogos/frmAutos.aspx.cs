@@ -138,6 +138,7 @@ namespace Autos_SCC.Views.Catalogos
                 dt.Columns.Add("fc_NoSerie");
                 dt.Columns.Add("fc_Sucursal");
                 dt.Columns.Add("fc_Color");
+                dt.Columns.Add("fi_Kilometraje");
                 dt.Columns.Add("fc_Usuario");
                 dt.Columns.Add("fd_FechaUltMovimiento");
 
@@ -154,8 +155,9 @@ namespace Autos_SCC.Views.Catalogos
                     dr["fc_NoSerie"] = row.Cells[8].Text.S();
                     dr["fc_Sucursal"] = row.Cells[9].Text.S();
                     dr["fc_Color"] = row.Cells[10].Text.S();
-                    dr["fc_Usuario"] = row.Cells[11].Text.S();
-                    dr["fd_FechaUltMovimiento"] = row.Cells[12].Text.S();
+                    dr["fi_Kilometraje"] = row.Cells[11].Text.S();
+                    dr["fc_Usuario"] = row.Cells[13].Text.S();
+                    dr["fd_FechaUltMovimiento"] = row.Cells[14].Text.S();
 
                     dt.Rows.Add(dr);
                 }
