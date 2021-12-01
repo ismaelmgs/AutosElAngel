@@ -271,8 +271,8 @@
     <cc1:ModalPopupExtender ID="mpeAgregarVehiculo" runat="server"
         TargetControlID="hdAgregarVehiculo" PopupControlID="pnlAgregarVehiculo" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
-    <asp:Panel ID="pnlAgregarVehiculo" runat="server" BorderColor="Black" BackColor="#eeeeee" Height="400px"
-        Width="820px" HorizontalAlign="Center"  Style="display: none; border-radius:25px; box-shadow:3px 3px 3px #00000050;">
+    <asp:Panel ID="pnlAgregarVehiculo" runat="server" BorderColor="Black" BackColor="#eeeeee" Height="400px" 
+        Width="820px" HorizontalAlign="Center"  Style="display: none; background-color:#00000073;">
         <asp:UpdatePanel ID="UpaAgregarVehiculo" runat="server" UpdateMode="Conditional">
             <ContentTemplate>
                 <div class="row">
