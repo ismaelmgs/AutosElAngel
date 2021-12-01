@@ -85,6 +85,7 @@ namespace Autos_SCC.Views.Catalogos
                     eObjSelected(sender, e);
                 ttlAuto.InnerText = "Edición de Autos";
                 btnGuardar.Text = "EDITAR";
+                btnLimpiar.Visible = false;
                 UpaAgregarVehiculo.Update();
                 mpeAgregarVehiculo.Show();
             }
@@ -100,6 +101,7 @@ namespace Autos_SCC.Views.Catalogos
         {
             ttlAuto.InnerText = "Registro de Autos";
             btnGuardar.Text = "GUARDAR";
+            btnLimpiar.Visible = true;
             UpaAgregarVehiculo.Update();
             if (eNewObj != null)
                 eNewObj(sender, e);
@@ -317,6 +319,11 @@ namespace Autos_SCC.Views.Catalogos
             {
                 gvCatalogo.DataSource = dtObject;
                 gvCatalogo.DataBind();
+                btnExportar.Visible = true;
+            }
+            else
+            {
+                btnExportar.Visible = false;
             }
         }
 
