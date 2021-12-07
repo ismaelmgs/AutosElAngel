@@ -145,7 +145,7 @@ namespace Autos_SCC.Views.Catalogos
         {
             try
             {
-                if (e.CommandName == "EliminarAuto")
+                if (e.CommandName == "EliminarMarca")
                 {
 
                     gvCatalogo.SelectedIndex = e.CommandArgument.I();
@@ -168,6 +168,8 @@ namespace Autos_SCC.Views.Catalogos
 
         void omb_OkButtonPressed(object sender, EventArgs e)
         {
+            if (eObjSelected != null)
+                eObjSelected(sender, e);
             if (eDeleteObj != null)
                 eDeleteObj(sender, e);
         }
