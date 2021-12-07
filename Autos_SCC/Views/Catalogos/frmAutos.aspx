@@ -406,7 +406,7 @@
                         OnClick="btnCancelar_Click" ToolTip="Limpia los campos para un registro nuevo" />
                                 </div>
                             </div>
-                    </div>
+                        </div>
                     </div>
                 </div>
             </ContentTemplate>
@@ -418,32 +418,6 @@
                 <asp:AsyncPostBackTrigger ControlID="ddlEstatus" EventName="SelectedIndexChanged" />
                 <asp:AsyncPostBackTrigger ControlID="btnLimpiar" EventName="Click" />
                 <asp:AsyncPostBackTrigger ControlID="btnCancelar" EventName="Click" />
-            </Triggers>
-        </asp:UpdatePanel>
-    </asp:Panel>
-
-
-    <asp:HiddenField ID="hd1" runat="server" />
-    <cc1:ModalPopupExtender ID="mpprueba" runat="server"
-        TargetControlID="hd1" PopupControlID="pnlprueba" BackgroundCssClass="overlayy">
-    </cc1:ModalPopupExtender>
-    <asp:Panel ID="pnlprueba" runat="server" BorderColor="Black" BackColor="#eeeeee" Height="400px"
-        Width="820px" HorizontalAlign="Center"  Style="display: none; border-radius:25px; box-shadow:3px 3px 3px #00000050;" Visible="true">
-        <asp:UpdatePanel ID="Upaprueba" runat="server">
-            <ContentTemplate>
-                <div class="header">
-                    <table width="100%">
-                        <tr>
-                            <td colspan="2" style="text-align:center"><br />
-                                <h3><asp:Label ID="Label1" runat="server" Text="Esto es una prueba" CssClass="TituloEtiquetas"></asp:Label></h3>
-                            </td>
-                        </tr>
-                    </table>
-                    <br />
-                </div>
-            </ContentTemplate>
-            <Triggers>
-                <%--<asp:AsyncPostBackTrigger ControlID="btnGuardarGasto" EventName="Click" />--%>
             </Triggers>
         </asp:UpdatePanel>
     </asp:Panel>

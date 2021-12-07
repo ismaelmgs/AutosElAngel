@@ -29,6 +29,7 @@ namespace Autos_SCC.Views.Catalogos
 
             omb.OkButtonPressed += new ucModalConfirm.OkButtonPressedHandler(omb_OkButtonPressed);
             omb.CancelButtonPressed += new ucModalConfirm.CancelButtonPressedHandler(omb_CancelButtonPressed);
+            omb2.OkButtonPressed += new ucModalAlert.OkButtonPressedHandler(omb_Ok2ButtonPressed);
 
             if (!IsPostBack)
             {
@@ -43,14 +44,21 @@ namespace Autos_SCC.Views.Catalogos
 
         protected void btnNuevo_Click(object sender, EventArgs e)
         {
+            ttlMarca.InnerText = "Registro de Marcas";
+            btnGuardar.Text = "GUARDAR";
+            btnLimpiar.Visible = true;
+            UpaAgregarMarca.Update();
             if (eNewObj != null)
                 eNewObj(sender, e);
+            mpeAgregarMarca.Show();
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
             if (eSaveObj != null)
                 eSaveObj(sender, e);
+            mpeAgregarMarca.Hide();
+            upaTab.Update();
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)
@@ -74,7 +82,11 @@ namespace Autos_SCC.Views.Catalogos
             Response.Write(sw.ToString());
             Response.End();
         }
-        
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            mpeAgregarMarca.Hide();
+        }
+
         public override void VerifyRenderingInServerForm(Control control)
         {
             //
@@ -121,6 +133,31 @@ namespace Autos_SCC.Views.Catalogos
             {
                 if (eObjSelected != null)
                     eObjSelected(sender, e);
+                ttlMarca.InnerText = "Edición de Marcas";
+                btnGuardar.Text = "EDITAR";
+                btnLimpiar.Visible = false;
+                UpaAgregarMarca.Update();
+                mpeAgregarMarca.Show();
+            }
+        }
+
+        protected void gvCatalogo_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            try
+            {
+                if (e.CommandName == "EliminarAuto")
+                {
+
+                    gvCatalogo.SelectedIndex = e.CommandArgument.I();
+                    if (eObjSelected != null)
+                        eObjSelected(sender, e);
+                    omb.ShowMessage("¿Realmente esta seguro de eliminar el registro?", "Elimina");
+                }
+            }
+            catch (Exception ex)
+            {
+                omb2.ShowMessage(ex.Message, "Problemas en el sistema");
+                //MostrarMensaje(ex.Message, "Problemas en el sistema");
             }
         }
 
@@ -133,6 +170,11 @@ namespace Autos_SCC.Views.Catalogos
         {
             if (eDeleteObj != null)
                 eDeleteObj(sender, e);
+        }
+
+        void omb_Ok2ButtonPressed(object sender, EventArgs e)
+        {
+            omb2.Hide();
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
