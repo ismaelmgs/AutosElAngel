@@ -197,7 +197,13 @@ namespace Autos_SCC.Views.Catalogos
             {
                 gvCatalogo.DataSource = dtObject;
                 gvCatalogo.DataBind();
+                
             }
+            else
+            {
+                gvCatalogo.DataBind();
+            }
+            upaTab.Update();
         }
 
         private void LimpiaControles()
