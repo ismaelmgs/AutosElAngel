@@ -100,7 +100,12 @@
                             <Columns>
                                 <asp:BoundField DataField="iId" HeaderText="Id" />
                                 <asp:BoundField DataField="sDescripcion" HeaderText="Descripción" />
-                                <asp:BoundField DataField="iActivo" HeaderText="¿Activo?" />
+                                <asp:TemplateField HeaderText="Status">
+                                    <ItemTemplate>
+                                        <asp:Label Text='<%# Eval("iActivo").ToString() == "1" ? "Activo" : "Inactivo" %>'
+                                            runat="server" />
+                                    </ItemTemplate>
+                                </asp:TemplateField>
                                 <asp:BoundField DataField="sUsuario" HeaderText="Usuario modifico" />
                                 <asp:BoundField DataField="sFechaUltMov" HeaderText="Fecha Ult. Movimiento" />
                                 <asp:TemplateField>
