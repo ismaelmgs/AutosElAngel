@@ -215,8 +215,9 @@ namespace Autos_SCC.Views.Catalogos
 
         public void MostrarMensaje(string sMensaje, string sCaption)
         {
-            string script = string.Format("MostrarMensaje('{0}', '{1}')", sMensaje, sCaption);
-            ScriptManager.RegisterStartupScript(this, typeof(Page), "MostrarMensaje", script, true);
+            omb2.ShowMessage(sMensaje, sCaption);
+            //string script = string.Format("MostrarMensaje('{0}', '{1}')", sMensaje, sCaption);
+            //ScriptManager.RegisterStartupScript(this, typeof(Page), "MostrarMensaje", script, true);
         }
 
         #endregion
