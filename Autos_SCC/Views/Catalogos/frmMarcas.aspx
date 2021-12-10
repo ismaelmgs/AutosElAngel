@@ -50,25 +50,40 @@
                             <ContentTemplate>
                                 <br />
                                 <div class="row">
-                                    <div class="col-md-12">
-                                        <table width="80%" style="margin:0 auto;">
+                                    <div class="col-md-3">&nbsp;</div>
+                                    <div class="col-md-6">
+                                        <table width="100%" style="margin:0 auto;">
                                             <tr>
-                                                <td style="height: 30px;" width="40%">
+                                                <td>&nbsp;</td>
+                                                <td style="height: 30px;" align="center">
                                                     <asp:Label ID="lblBusqueda" runat="server" Font-Bold="True" Text="Palabra a buscar:" CssClass="inputLabel" />&nbsp;
                                                 </td>
-                                                <td width="100%" width="60%">
-                                                    <asp:TextBox ID="txtBuqueda" Width="100%" runat="server" CssClass="form-control"></asp:TextBox>
+                                                <td>
+                                                    <asp:TextBox ID="txtBuqueda" Width="85%" runat="server" CssClass="form-control"></asp:TextBox>
+                                                </td>
+                                                <td>&nbsp;</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="col-md-3">&nbsp;</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">&nbsp;</div>
+                                    <div class="col-md-4" style="text-align:center;">
+                                        <table width="100%">
+                                            <tr>
+                                                <td align="center">
+                                                    <asp:RadioButtonList ID="rblActivo" runat="server" RepeatDirection="Horizontal" CssClass="">
+                                                        <asp:ListItem Text="&nbsp;&nbsp;TODOS&nbsp;&nbsp;" Value="2" Selected="True"></asp:ListItem>
+                                                        <asp:ListItem Text="&nbsp;&nbsp;ACTIVOS&nbsp;&nbsp;" Value="1"></asp:ListItem>
+                                                        <asp:ListItem Text="&nbsp;&nbsp;INACTIVOS&nbsp;&nbsp;" Value="0"></asp:ListItem>
+                                                    </asp:RadioButtonList>
                                                 </td>
                                             </tr>
-                                            </table>
+                                        </table>
+                                        
                                     </div>
-                                    <div class="col-md-12">
-                                        <asp:RadioButtonList ID="rblActivo" runat="server" Width="80%" RepeatDirection="Horizontal" CssClass="form-control">
-                                            <asp:ListItem Text="TODOS&nbsp;&nbsp;" Value="2" Selected="True"></asp:ListItem>
-                                            <asp:ListItem Text="ACTIVOS&nbsp;&nbsp;" Value="1"></asp:ListItem>
-                                            <asp:ListItem Text="INACTIVOS&nbsp;&nbsp;" Value="0"></asp:ListItem>
-                                        </asp:RadioButtonList>
-                                    </div>
+                                    <div class="col-md-4">&nbsp;</div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12" style="text-align:center;">
@@ -135,13 +150,13 @@
     <cc1:ModalPopupExtender ID="mpeAgregarMarca" runat="server"
         TargetControlID="hdAgregarMarca" PopupControlID="pnlAgregarMarca" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
-    <asp:Panel ID="pnlAgregarMarca" runat="server" BorderColor="Black" BackColor="#eeeeee" Height="400px" 
-        Width="820px" HorizontalAlign="Center"  Style="display: none; background-color:#00000073;">
+    <asp:Panel ID="pnlAgregarMarca" runat="server" BorderColor="Black" BackColor="#eeeeee" Height="100%" 
+        Width="100%" HorizontalAlign="Center"  Style="display: none; background-color:#00000073; margin-left:-6px;">
         <asp:UpdatePanel ID="UpaAgregarMarca" runat="server" UpdateMode="Conditional">
             <ContentTemplate>
                 <div class="row">
-                    <div class="col-md-12">
-                        <div class="card">
+                    <div class="col-md-12" style="padding-top:10%;">
+                        <div class="card" style="width:50%; margin:0 auto;">
                             <h3 style="text-align:center;" id="ttlMarca" runat="server">Registro de Marcas</h3>
                             <br />
                                 <div class="row">
@@ -185,6 +200,7 @@
                                         OnClick="btnCancelar_Click" ToolTip="Limpia los campos para un registro nuevo" />
                                     </div>
                                 </div>
+                            <br /><br />
                          </div>
                     </div>
                 </div>

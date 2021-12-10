@@ -51,12 +51,12 @@
                         <h3 style="text-align:center;">Búqueda</h3>
                            <ContentTemplate>
                                 <br />
-                                <table width="80%" style="margin:0 auto;">
+                                <table width="50%" style="margin:0 auto;">
                                     <tr>
-                                        <td width="40%">
+                                        <td width="30%">
                                             <asp:Label ID="lblBusqueda" runat="server" Text="Palabra a buscar:" CssClass="inputLabel" />
                                         </td>
-                                        <td width="60%">
+                                        <td width="70%">
                                             <asp:TextBox ID="txtBuqueda" runat="server" Width="100%" CssClass="form-control"></asp:TextBox>
                                         </td>
                                     </tr>
@@ -184,9 +184,10 @@
         TargetControlID="hdTarget" PopupControlID="Panel1" BackgroundCssClass="overlayy"
         CancelControlID="can">
     </cc1:ModalPopupExtender>
-    <asp:Panel ID="Panel1" runat="server" BorderColor="Black" BackColor="#eeeeee" Height="400px"
-        Width="820px" HorizontalAlign="Center"  Style="display: none; border-radius:25px; box-shadow:3px 3px 3px #00000050;">
-        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+    
+        <asp:Panel ID="Panel1" runat="server" Width="100%" Height="100%" Style="background-color:#00000070; display: none; margin-left:-6px; padding-top:10%;">
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server" BorderColor="Black" BackColor=""
+        HorizontalAlign="Center"  Style="border-radius:25px; box-shadow:3px 3px 3px #00000050; background-color:#eeeeee; width:50%;margin:0 auto;">
             <ContentTemplate>
                 <div class="header">
                     <table width="100%">
@@ -261,6 +262,7 @@
                             </td>
                         </tr>
                     </table>
+                    <br />
                 </center>
             </ContentTemplate>
             <Triggers>
@@ -268,19 +270,19 @@
             </Triggers>
         </asp:UpdatePanel>
     </asp:Panel>
-
-    <%--Modal de Agregar Vehiculo--%>
+    
+   <%--Modal de Agregar Vehiculo--%>
     <asp:HiddenField ID="hdAgregarVehiculo" runat="server" />
     <cc1:ModalPopupExtender ID="mpeAgregarVehiculo" runat="server"
         TargetControlID="hdAgregarVehiculo" PopupControlID="pnlAgregarVehiculo" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
-    <asp:Panel ID="pnlAgregarVehiculo" runat="server" BorderColor="Black" BackColor="#eeeeee" Height="400px" 
-        Width="820px" HorizontalAlign="Center"  Style="display: none; background-color:#00000073;">
+    <asp:Panel ID="pnlAgregarVehiculo" runat="server" BorderColor="Black" BackColor="#eeeeee" Height="100%" 
+        Width="100%" HorizontalAlign="Center"  Style="display: none; background-color:#00000073; margin-left:-6px;">
         <asp:UpdatePanel ID="UpaAgregarVehiculo" runat="server" UpdateMode="Conditional">
             <ContentTemplate>
                 <div class="row">
-                    <div class="col-md-12">
-                        <div class="card">
+                    <div class="col-md-12" style="padding-top:10%;">
+                        <div class="card" style="width:70%; margin:0 auto;">
                         <h3 style="text-align:center;" id="ttlAuto" runat="server">Registro de Autos</h3>
                             <br />
                             <div class="row">
@@ -396,6 +398,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <br />
                             <div class="row">
                                 <div class="col-md-12">
                                     &nbsp;<asp:Button ID="btnGuardar" runat="server" Text="GUARDAR" CssClass="btn btn-primary"
@@ -406,6 +409,7 @@
                         OnClick="btnCancelar_Click" ToolTip="Limpia los campos para un registro nuevo" />
                                 </div>
                             </div>
+                            <br />
                         </div>
                     </div>
                 </div>
