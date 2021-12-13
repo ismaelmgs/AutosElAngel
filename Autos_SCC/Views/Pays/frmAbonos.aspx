@@ -270,9 +270,9 @@
     <cc1:ModalPopupExtender ID="mpePagos" runat="server" TargetControlID="hdTargetPago" 
         PopupControlID="pnlPagos" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
-    <asp:Panel ID="pnlPagos" runat="server" BorderColor="Black" BackColor="#e4e4e4" Height="250px"
-        Width="820px" HorizontalAlign="Center" Style="display: none; border-radius:25px; box-shadow:3px 3px 3px #00000050;">
-        <asp:UpdatePanel ID="upaPagos" runat="server">
+    <asp:Panel ID="pnlPagos" runat="server" Width="100%" Height="100%" Style="background-color:#00000070; display: none; margin-left:-6px; padding-top:10%;">
+        <asp:UpdatePanel ID="upaPagos" runat="server" BorderColor="Black" BackColor=""
+        HorizontalAlign="Center" Style="border-radius:25px; box-shadow:3px 3px 3px #00000050; background-color:#eeeeee; width:50%;margin:0 auto;">
             <ContentTemplate>
                 <table width="80%" style="margin:0 auto;">
                     <tr>

@@ -144,9 +144,9 @@
     <cc1:ModalPopupExtender ID="mpeAgregarTipoAuto" runat="server"
         TargetControlID="hdAgregarTipoAuto" PopupControlID="pnlAgregarTipoAuto" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
-    <asp:Panel ID="pnlAgregarTipoAuto" runat="server" BorderColor="Black" BackColor="#eeeeee" Height="400px" 
-        Width="820px" HorizontalAlign="Center"  Style="display: none; background-color:#00000073;">
-        <asp:UpdatePanel ID="UpaAgregarTipoAuto" runat="server" UpdateMode="Conditional">
+    <asp:Panel ID="pnlAgregarTipoAuto" runat="server" Width="100%" Height="100%" Style="background-color:#00000070; display: none; margin-left:-6px; padding-top:10%;">
+        <asp:UpdatePanel ID="UpaAgregarTipoAuto" runat="server" UpdateMode="Conditional" BorderColor="Black" BackColor=""
+        HorizontalAlign="Center" Style="border-radius:25px; box-shadow:3px 3px 3px #00000050; background-color:#eeeeee; width:50%;margin:0 auto;">
             <ContentTemplate>
                 <div class="row">
                     <div class="col-md-12">
