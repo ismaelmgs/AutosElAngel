@@ -122,7 +122,7 @@
                             <asp:BoundField DataField="fd_FechaUltMovimiento" HeaderText="Fecha Ult. Movimiento" />
                             <asp:TemplateField>
                                 <ItemTemplate>
-                                    <asp:Button ID="btnEliminar" runat="server" Text="ELIMINAR" CssClass="btn btn-danger" ToolTip="Elimina el registro seleccionado" CommandName="EliminarAuto" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"/>
+                                    <asp:Button ID="btnEliminar" runat="server" Text="ELIMINAR" CssClass="btn btn-danger" ToolTip="Elimina el registro seleccionado" CommandName="EliminarTipoAuto" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"/>
                                 </ItemTemplate>
                             </asp:TemplateField>
                         </Columns>

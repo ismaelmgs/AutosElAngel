@@ -136,7 +136,7 @@ namespace Autos_SCC.Views.Catalogos
         {
             try
             {
-                if (e.CommandName == "EliminarMarca")
+                if (e.CommandName == "EliminarTipoAuto")
                 {
 
                     gvCatalogo.SelectedIndex = e.CommandArgument.I();
