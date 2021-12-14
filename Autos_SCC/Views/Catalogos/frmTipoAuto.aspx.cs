@@ -179,6 +179,7 @@ namespace Autos_SCC.Views.Catalogos
         {
             if (eSearchObj != null)
                 eSearchObj(sender, e);
+            upaTab.Update();
         }
 
         #endregion
@@ -197,6 +198,7 @@ namespace Autos_SCC.Views.Catalogos
             }
             else
             {
+                gvCatalogo.DataBind();
                 btnExportar.Visible = false;
             }
         }

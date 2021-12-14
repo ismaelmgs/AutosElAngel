@@ -323,6 +323,7 @@ namespace Autos_SCC.Views.Catalogos
             }
             else
             {
+                gvCatalogo.DataBind();
                 btnExportar.Visible = false;
             }
         }
