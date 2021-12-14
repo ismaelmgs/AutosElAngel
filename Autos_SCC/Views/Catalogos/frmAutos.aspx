@@ -48,7 +48,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
-                        <h3 style="text-align:center;">Búqueda</h3>
+                        <h3 style="text-align:center;">Búsqueda</h3>
                            <ContentTemplate>
                                 <br />
                                 <table width="50%" style="margin:0 auto;">
