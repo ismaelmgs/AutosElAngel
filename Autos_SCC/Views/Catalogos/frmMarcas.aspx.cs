@@ -197,11 +197,13 @@ namespace Autos_SCC.Views.Catalogos
             {
                 gvCatalogo.DataSource = dtObject;
                 gvCatalogo.DataBind();
-                
+                btnExportar.Visible = true;
+
             }
             else
             {
                 gvCatalogo.DataBind();
+                btnExportar.Visible = false;
             }
             upaTab.Update();
         }

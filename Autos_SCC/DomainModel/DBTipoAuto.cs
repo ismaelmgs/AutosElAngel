@@ -91,16 +91,16 @@ namespace Autos_SCC.DomainModel
                     else
                     {
                         //Actualiza
-                        TipoAuto oUs = DBExistsUsuario(oEjecut.sDescripcion);
-                        if (oUs == null)
-                        {
-                            oEjecut.oErr.bExisteError = true;
-                            oEjecut.oErr.sMsjError = "El tipo de auto: '" + oEjecut.sDescripcion + "' no existe, favor de verificar.";
+                        //TipoAuto oUs = DBExistsUsuario(oEjecut.sDescripcion);
+                        //if (oUs == null)
+                        //{
+                        //    oEjecut.oErr.bExisteError = true;
+                        //    oEjecut.oErr.sMsjError = "El tipo de auto: '" + oEjecut.sDescripcion + "' no existe, favor de verificar.";
 
-                            return;
-                        }
+                        //    return;
+                        //}
 
-                        if (oUs.iId == oEjecut.iId)
+                        if (oEjecut.iId != null)
                         {
                             vNew = oDB_SP.EjecutarValor("[Catalogos].[spU_ActualizaTipoAuto]", "@fi_Id", oEjecut.iId,
                                                                                 "@fi_IdMarca", oEjecut.iMarca,

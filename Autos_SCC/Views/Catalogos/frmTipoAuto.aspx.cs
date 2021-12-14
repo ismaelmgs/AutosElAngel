@@ -193,6 +193,11 @@ namespace Autos_SCC.Views.Catalogos
             {
                 gvCatalogo.DataSource = dtObject;
                 gvCatalogo.DataBind();
+                btnExportar.Visible = true;
+            }
+            else
+            {
+                btnExportar.Visible = false;
             }
         }
 

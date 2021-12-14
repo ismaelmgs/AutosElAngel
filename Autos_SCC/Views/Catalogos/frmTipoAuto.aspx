@@ -126,6 +126,9 @@
                                 </ItemTemplate>
                             </asp:TemplateField>
                         </Columns>
+                        <EmptyDataTemplate>
+                                    No se encontraron registros para mostrar...
+                        </EmptyDataTemplate>
                     </asp:GridView>
                         </div>
                 </asp:Panel>
