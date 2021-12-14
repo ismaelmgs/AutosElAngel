@@ -170,7 +170,7 @@
                                 <asp:Label ID="Label5" runat="server" Text="Imprimir Contrato de Crédito:" CssClass="inputLabel"></asp:Label>
                             </td>
                             <td>
-                                <asp:Button ID="btnImprimirContratoCred" runat="server" Text=" Imprimir  "  OnClick="btnImprimirContratoCred_Click" />
+                                <asp:Button ID="btnImprimirContratoCred" runat="server" Text=" Imprimir  "  CssClass="btn btn-secondary btn-sm waves-effect waves-light" OnClick="btnImprimirContratoCred_Click" />
                                 
                             </td>
                             <td>
@@ -209,9 +209,9 @@
     <cc1:ModalPopupExtender ID="mpePagosInd" runat="server" TargetControlID="hdPagosIndTarget" 
         PopupControlID="pnlPagosInd" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
-    <asp:Panel ID="pnlPagosInd" runat="server" BorderColor="Black" BackColor="#e4e4e4" Height="300px"
-        Width="820px" HorizontalAlign="Center" Style="display: none; border-radius:25px; box-shadow:3px 3px 3px #00000030;">
-        <asp:UpdatePanel ID="UpaPagosInd" runat="server">
+    <asp:Panel ID="pnlPagosInd" runat="server" Width="100%" Height="100%" Style="background-color:#00000070; display: none; margin-left:-6px; padding-top:10%;">
+        <asp:UpdatePanel ID="UpaPagosInd" runat="server" BorderColor="Black" BackColor=""
+        HorizontalAlign="Center"  Style="border-radius:25px; box-shadow:3px 3px 3px #00000050; background-color:#eeeeee; width:50%;margin:0 auto;">
             <ContentTemplate>
                 <table width="100%">
                     <tr>
@@ -244,7 +244,7 @@
                             <asp:Button ID="btnCancelarModalPagInd" runat="server" Text="Cancelar" OnClientClick="OcultarModal();" CssClass="btn btn-danger" />
                         </td>
                     </tr>
-                </table>
+                </table><br />
             </ContentTemplate>
             <Triggers>
                 <asp:PostBackTrigger ControlID="btnAceptarPagosInd" />
@@ -258,9 +258,9 @@
     <cc1:ModalPopupExtender ID="mpeAcreedor" runat="server" TargetControlID="hdTargetAcreedor" 
         PopupControlID="pnlAcreedor" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
-    <asp:Panel ID="pnlAcreedor" runat="server" BorderColor="Black" BackColor="#e4e4e4" Height="300px"
-        Width="820px" HorizontalAlign="Center" Style="display: none; border-radius:25px;box-shadow:3px 3px 3px #00000030;">
-        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+    <asp:Panel ID="pnlAcreedor" runat="server" Width="100%" Height="100%" Style="background-color:#00000070; display: none; margin-left:-6px; padding-top:10%;">
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server" BorderColor="Black" BackColor=""
+        HorizontalAlign="Center" Style="border-radius:25px; box-shadow:3px 3px 3px #00000050; background-color:#eeeeee; width:50%;margin:0 auto;">
             <ContentTemplate>
                 <table width="100%">
                     <tr>
@@ -316,7 +316,7 @@
                                 </div>
                              </td>
                         </tr>
-                    </table>
+                    </table><br />
                 </center>
             </ContentTemplate>
         </asp:UpdatePanel>
@@ -327,9 +327,9 @@
     <cc1:ModalPopupExtender ID="mpeSucursales" runat="server" TargetControlID="hdTargetSucursales" 
         PopupControlID="pnlSucursales" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
-    <asp:Panel ID="pnlSucursales" runat="server" BorderColor="Black" BackColor="#e4e4e4" Height="300px"
-        Width="820px" HorizontalAlign="Center" Style="display: none; border-radius:25px; box-shadow:3px 3px 3px #00000030;">
-        <asp:UpdatePanel ID="upaSucursales" runat="server">
+    <asp:Panel ID="pnlSucursales" runat="server" Width="100%" Height="100%" Style="background-color:#00000070; display: none; margin-left:-6px; padding-top:10%;">
+        <asp:UpdatePanel ID="upaSucursales" runat="server" BorderColor="Black" BackColor=""
+        HorizontalAlign="Center"  Style="border-radius:25px; box-shadow:3px 3px 3px #00000050; background-color:#eeeeee; width:50%;margin:0 auto;">
             <ContentTemplate>
                 <table width="100%">
                     <tr>
@@ -386,7 +386,7 @@
                                 </div>
                              </td>
                         </tr>
-                    </table>
+                    </table><br />
                 </center>
             </ContentTemplate>
         </asp:UpdatePanel>

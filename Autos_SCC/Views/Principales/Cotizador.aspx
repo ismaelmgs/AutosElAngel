@@ -531,9 +531,9 @@
     <cc1:ModalPopupExtender ID="mpeBuscarAuto" runat="server" TargetControlID="hdTargetBAuto" 
         PopupControlID="pnlBuscaAuto" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
-    <asp:Panel ID="pnlBuscaAuto" runat="server" BorderColor="Black" BackColor="#e4e4e4" Height="450px"
-        Width="820px" HorizontalAlign="Center" Style="display: none; border-radius:25px; box-shadow:3px 3px 3px #00000030;">
-        <asp:UpdatePanel ID="upaBuscaAuto" runat="server">
+    <asp:Panel ID="pnlBuscaAuto" runat="server" Width="100%" Height="100%" Style="background-color:#00000070; display: none; margin-left:-6px; padding-top:10%;">
+        <asp:UpdatePanel ID="upaBuscaAuto" runat="server" BorderColor="Black" BackColor=""
+        HorizontalAlign="Center"  Style="border-radius:25px; box-shadow:3px 3px 3px #00000050; background-color:#eeeeee; width:50%;margin:0 auto;">
 
             <ContentTemplate>
                 <table width="100%">
@@ -658,9 +658,9 @@
     <cc1:ModalPopupExtender ID="mpeAgregarPago" runat="server" TargetControlID="hdTarget" 
         PopupControlID="Panel1" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
-    <asp:Panel ID="Panel1" runat="server" BorderColor="Black" BackColor="#efefef" Height="300px"
-        Width="820px" HorizontalAlign="Center" Style="display: none; border-radius:25px; box-shadow:3px 3px 3px #00000030;">
-        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+    <asp:Panel ID="Panel1" runat="server" Width="100%" Height="100%" Style="background-color:#00000070; display: none; margin-left:-6px; padding-top:10%;">
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server" BorderColor="Black" BackColor=""
+        HorizontalAlign="Center"  Style="border-radius:25px; box-shadow:3px 3px 3px #00000050; background-color:#eeeeee; width:50%;margin:0 auto;">
             <ContentTemplate>
                 <table width="100%">
                     <tr>
@@ -722,7 +722,7 @@
                                 <asp:Button ID="btnCancelarPagoModal" runat="server" Text=" CANCELAR " CssClass="btn btn-danger" OnClick="btnCancelarPagoModal_Click" />
                             </td>
                         </tr>
-                    </table>
+                    </table><br />
                 </center>
             </ContentTemplate>
         </asp:UpdatePanel>
@@ -734,9 +734,9 @@
     <cc1:ModalPopupExtender ID="mpeCambioTasa" runat="server" TargetControlID="hdTargetCambioTasa" 
         PopupControlID="pnlCambioTasa" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
-    <asp:Panel ID="pnlCambioTasa" runat="server" BorderColor="Black" BackColor="#e4e4e4" Height="250px"
-        Width="820px" HorizontalAlign="Center" Style="display: none; border-radius:25px; box-shadow:3px 3px 3px #00000030;">
-        <asp:UpdatePanel ID="upaCambioTasa" runat="server">
+    <asp:Panel ID="pnlCambioTasa" runat="server" Width="100%" Height="100%" Style="background-color:#00000070; display: none; margin-left:-6px; padding-top:10%;">
+        <asp:UpdatePanel ID="upaCambioTasa" runat="server" BorderColor="Black" BackColor=""
+        HorizontalAlign="Center"  Style="border-radius:25px; box-shadow:3px 3px 3px #00000050; background-color:#eeeeee; width:50%;margin:0 auto;">
             <ContentTemplate>
                 <table width="100%">
                     <tr>
@@ -770,7 +770,7 @@
                                 <asp:Button ID="btnCancelarCambioTasa" runat="server" Text=" CANCELAR " CssClass="btn btn-danger" OnClientClick="OcultarModal();" />
                             </td>
                         </tr>
-                    </table>
+                    </table><br />
                 </center>
             </ContentTemplate>
         </asp:UpdatePanel>
@@ -782,9 +782,9 @@
     <cc1:ModalPopupExtender ID="mpeBusquedaCliente" runat="server" TargetControlID="hdTargetBusCliente" 
         PopupControlID="pnlBusquedaCliente" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
-    <asp:Panel ID="pnlBusquedaCliente" runat="server" BackColor="#e4e4e4" Height="420px"
-        Width="820px" HorizontalAlign="Center" Style="display: none; border-radius:25px; box-shadow:3px 3px 3px #00000030;" CssClass="">
-        <asp:UpdatePanel ID="upaBusquedaCliente" runat="server">
+    <asp:Panel ID="pnlBusquedaCliente" runat="server" Width="100%" Height="100%" Style="background-color:#00000070; display: none; margin-left:-6px; padding-top:10%;">
+        <asp:UpdatePanel ID="upaBusquedaCliente" runat="server" BorderColor="Black" BackColor=""
+        HorizontalAlign="Center"  Style="border-radius:25px; box-shadow:3px 3px 3px #00000050; background-color:#eeeeee; width:50%;margin:0 auto;">
             <ContentTemplate>
                 <table width="100%">
                     <tr>
@@ -846,9 +846,10 @@
                             <td colspan="3">
                                 <br />
                                 <asp:Button ID="btnCancelarBusCliente" runat="server" Text=" CANCELAR " CssClass="btn btn-danger" OnClientClick="OcultaBusquedaCliente();" />
+                               
                             </td>
                         </tr>
-                    </table>
+                    </table> <br />
                 </center>
             </ContentTemplate>
         </asp:UpdatePanel>

@@ -212,9 +212,9 @@
     <cc1:ModalPopupExtender ID="mpeMensaje" runat="server" TargetControlID="hdTargetMensaje" 
         PopupControlID="pnlMensaje" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
-    <asp:Panel ID="pnlMensaje" runat="server" BorderColor="Black" BackColor="#e4e4e4" Height="250px"
-        Width="300px" HorizontalAlign="Center" Style="display: none; border-radius:25px; box-shadow:3px 3px 3px #00000030;">
-        <asp:UpdatePanel ID="upaMensaje" runat="server">
+    <asp:Panel ID="pnlMensaje" runat="server" Width="100%" Height="100%" Style="background-color:#00000070; display: none; margin-left:-6px; padding-top:10%;">
+        <asp:UpdatePanel ID="upaMensaje" runat="server" BorderColor="Black" BackColor=""
+        HorizontalAlign="Center" Style="border-radius:25px; box-shadow:3px 3px 3px #00000050; background-color:#eeeeee; width:50%;margin:0 auto;">
             <ContentTemplate>
                 <table width="100%">
                     <tr>
