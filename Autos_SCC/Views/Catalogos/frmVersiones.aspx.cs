@@ -43,20 +43,27 @@ namespace Autos_SCC.Views.Catalogos
 
         protected void btnNuevo_Click(object sender, EventArgs e)
         {
+            ttlRegVersion.InnerText = "Registro de modelo";
+            btnGuardar.Text = "GUARDAR";
+            btnLimpiar.Visible = true;
+            UpaAgregarVersion.Update();
             if (eNewObj != null)
                 eNewObj(sender, e);
+            mpeAgregarVersion.Show();
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
             if (eSaveObj != null)
                 eSaveObj(sender, e);
+            mpeAgregarVersion.Hide();
+            upaTab.Update();
         }
 
-        protected void btnEliminar_Click(object sender, EventArgs e)
-        {
-            omb.ShowMessage("¿Realmente esta seguro de eliminar el registro?", "Elimina");
-        }
+        //protected void btnEliminar_Click(object sender, EventArgs e)
+        //{
+        //    omb.ShowMessage("¿Realmente esta seguro de eliminar el registro?", "Elimina");
+        //}
 
         protected void btnLimpiar_Click(object sender, EventArgs e)
         {
@@ -121,7 +128,36 @@ namespace Autos_SCC.Views.Catalogos
             {
                 if (eObjSelected != null)
                     eObjSelected(sender, e);
+                ttlRegVersion.InnerText = "Edición de modelo";
+                btnGuardar.Text = "EDITAR";
+                btnLimpiar.Visible = false;
+                UpaAgregarVersion.Update();
+                mpeAgregarVersion.Show();
             }
+        }
+        protected void gvCatalogo_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            try
+            {
+                if (e.CommandName == "EliminarVersion")
+                {
+
+                    gvCatalogo.SelectedIndex = e.CommandArgument.I();
+                    if (eObjSelected != null)
+                        eObjSelected(sender, e);
+                    omb.ShowMessage("¿Realmente esta seguro de eliminar el registro?", "Elimina");
+                }
+            }
+            catch (Exception ex)
+            {
+                omb2.ShowMessage(ex.Message, "Problemas en el sistema");
+                //MostrarMensaje(ex.Message, "Problemas en el sistema");
+            }
+        }
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            mpeAgregarVersion.Hide();
         }
 
         void omb_CancelButtonPressed(object sender, EventArgs args)
@@ -131,8 +167,15 @@ namespace Autos_SCC.Views.Catalogos
 
         void omb_OkButtonPressed(object sender, EventArgs e)
         {
+            if (eObjSelected != null)
+                eObjSelected(sender, e);
             if (eDeleteObj != null)
                 eDeleteObj(sender, e);
+        }
+
+        void omb_Ok2ButtonPressed(object sender, EventArgs e)
+        {
+            omb2.Hide();
         }
 
         protected void ddlMarca_SelectedIndexChanged(object sender, EventArgs e)
@@ -159,6 +202,12 @@ namespace Autos_SCC.Views.Catalogos
             {
                 gvCatalogo.DataSource = dtObject;
                 gvCatalogo.DataBind();
+                btnExportar.Visible = true;
+            }
+            else
+            {
+                gvCatalogo.DataBind();
+                btnExportar.Visible = false;
             }
         }
 
@@ -167,6 +216,7 @@ namespace Autos_SCC.Views.Catalogos
             txtId.Text = string.Empty;
             txtDescripcion.Text = string.Empty;
             txtBuqueda.Text = string.Empty;
+            UpaAgregarVersion.Update();
         }
 
         public void LoadMarcas(DataTable dtObjet)
@@ -198,8 +248,9 @@ namespace Autos_SCC.Views.Catalogos
 
         public void MostrarMensaje(string sMensaje, string sCaption)
         {
-            string script = string.Format("MostrarMensaje('{0}', '{1}')", sMensaje, sCaption);
-            ScriptManager.RegisterStartupScript(this, typeof(Page), "MostrarMensaje", script, true);
+            omb2.ShowMessage(sMensaje, sCaption);
+            //string script = string.Format("MostrarMensaje('{0}', '{1}')", sMensaje, sCaption);
+            //ScriptManager.RegisterStartupScript(this, typeof(Page), "MostrarMensaje", script, true);
         }
 
         #endregion

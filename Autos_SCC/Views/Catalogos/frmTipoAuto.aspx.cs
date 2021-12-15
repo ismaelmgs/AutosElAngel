@@ -222,6 +222,7 @@ namespace Autos_SCC.Views.Catalogos
             ddlMarca.SelectedValue = "0";
             txtDescripcion.Text = string.Empty;
             txtBuqueda.Text = string.Empty;
+            UpaAgregarTipoAuto.Update();
         }
 
         public void MostrarMensaje(string sMensaje, string sCaption)
