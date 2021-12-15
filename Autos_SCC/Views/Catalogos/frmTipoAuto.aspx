@@ -153,9 +153,9 @@
             <ContentTemplate>
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="card">
+
                             <h3 style="text-align:center;" id="ttlRegTipo" runat="server">Registro de Tipos</h3>
-                                <div class="row">
+                                <div class="row" style="padding:10px;">
                                     <br />
                                     <table width="80%" style="margin:0 auto;">
                                         <tr>
@@ -195,7 +195,7 @@
                                 </div>
                                 <br />
                                 <div class="row">
-                                    <div class="col-md-12">
+                                    <div class="col-md-12" style="text-align:center;">
                                        &nbsp;<asp:Button ID="btnGuardar" runat="server" Text="GUARDAR" CssClass="btn btn-primary"
                                 OnClick="btnGuardar_Click" ToolTip="Guarda los cambios realizados sobre el registro" />
                                         &nbsp;<asp:Button ID="btnLimpiar" runat="server" Text="LIMPIAR" CssClass="btn btn-info"
@@ -205,7 +205,7 @@
                                     </div>
                                 </div>
                             <br />
-                        </div>
+
 		            </div>
                 </div>
             </ContentTemplate>

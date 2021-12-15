@@ -136,16 +136,16 @@
     <cc1:ModalPopupExtender ID="mpeAgregarVersion" runat="server"
         TargetControlID="hdAgregarVersion" PopupControlID="pnlAgregarVersion" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
-    <asp:Panel ID="pnlAgregarVersion" runat="server" BorderColor="Black" BackColor="#eeeeee" Height="400px" 
-        Width="820px" HorizontalAlign="Center"  Style="display: none; background-color:#00000073;">
-        <asp:UpdatePanel ID="UpaAgregarVersion" runat="server" UpdateMode="Conditional">
+    <asp:Panel ID="pnlAgregarVersion" runat="server" Width="100%" Height="100%" Style="background-color:#00000070; display: none; margin-left:-6px; padding-top:10%;">
+        <asp:UpdatePanel ID="UpaAgregarVersion" runat="server" UpdateMode="Conditional" BorderColor="Black" BackColor=""
+        HorizontalAlign="Center"  Style="border-radius:25px; box-shadow:3px 3px 3px #00000050; background-color:#eeeeee; width:50%;margin:0 auto;">
             <ContentTemplate>
                 <div class="row">
-                    <div class="col-md-12" style="padding-top:10%;">
-                        <div class="card" style="width:70%; margin:0 auto;">
+                    <div class="col-md-12">
+                        
                             <h3 style="text-align:center;" id="ttlRegVersion" runat="server">Registro de modelos</h3>
                             <br />
-                            <div class="row">
+                            <div class="row" style="padding:10px;">
                                 <table style="text-align:left; width:100%">
                                     <tr>
                                         <td>
@@ -203,7 +203,7 @@
                             </div>
                             <br />
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-12" style="text-align:center;">
                                     &nbsp;<asp:Button ID="btnGuardar" runat="server" Text="GUARDAR" 
                                     CssClass="btn btn-primary" onclick="btnGuardar_Click" ToolTip="Guarda los cambios realizados sobre el registro" />
                                      &nbsp;<asp:Button ID="btnLimpiar" runat="server" Text="LIMPIAR" 
@@ -212,7 +212,7 @@
                                     OnClick="btnCancelar_Click" ToolTip="Limpia los campos para un registro nuevo" />
                                 </div>
 		                    </div>
-                        </div>
+                        <br />
 		            </div>
                 </div>
             </ContentTemplate>
