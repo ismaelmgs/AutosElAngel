@@ -24,6 +24,20 @@
             modal.hide();
         }
 
+        function OcultarModal2()
+        {
+            var modalId = '<%=mpeAcreedor.ClientID%>';
+            var modal = $find(modalId);
+            modal.hide();
+        }
+
+        function OcultarModal3()
+        {
+            var modalId = '<%=mpeSucursales.ClientID%>';
+            var modal = $find(modalId);
+            modal.hide();
+        }
+
         function Selrdbtn(id)
         {
             var rdBtn = document.getElementById(id);
@@ -312,7 +326,7 @@
                              </td>
                              <td width="50%">
                                 <div style="text-align:left; float:left">
-                                    <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-danger"/>
+                                    <asp:Button ID="btnCancelar" runat="server" Text="Cancelar"  OnClientClick="OcultarModal2();" CssClass="btn btn-danger"/>
                                 </div>
                              </td>
                         </tr>
@@ -382,7 +396,7 @@
                              </td>
                              <td width="50%">
                                 <div style="text-align:left; float:left">
-                                    <asp:Button ID="btnCancelarDir" runat="server" Text="Cancelar" CssClass="btn btn-danger"/>
+                                    <asp:Button ID="btnCancelarDir" runat="server" Text="Cancelar" CssClass="btn btn-danger" OnClientClick="OcultarModal3();"/>
                                 </div>
                              </td>
                         </tr>
