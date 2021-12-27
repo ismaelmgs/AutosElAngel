@@ -102,11 +102,16 @@
                                     <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" CssClass="" />
                                     <AlternatingRowStyle BackColor="White" />
                                     <Columns>
-                                        <asp:BoundField DataField="fi_Id" HeaderText="Id" />
+                                        <asp:BoundField DataField="fi_Id" HeaderText="Id" Visible="false" />
                                         <asp:BoundField DataField="fc_Marca" HeaderText="Marca" />
                                         <asp:BoundField DataField="fc_TipoAuto" HeaderText="Tipo de auto" />
                                         <asp:BoundField DataField="fc_Descripcion" HeaderText="Versión" />
-                                        <asp:BoundField DataField="fi_Activo" HeaderText="¿Activo?" />
+                                        <asp:TemplateField HeaderText="Status">
+                                            <ItemTemplate>
+                                                <asp:Label Text='<%# Eval("fi_Activo").ToString() == "1" ? "Activo" : "Inactivo" %>'
+                                                    runat="server" />
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
                                         <asp:BoundField DataField="fc_Usuario" HeaderText="Usuario modifico" />
                                         <asp:BoundField DataField="fd_FechaUltMovimiento" HeaderText="Fecha Ult. Movimiento" />
                                         <asp:TemplateField>

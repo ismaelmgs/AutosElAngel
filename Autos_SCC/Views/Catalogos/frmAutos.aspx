@@ -116,7 +116,7 @@
                                             </div>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:BoundField DataField="fi_Id" HeaderText="Id" />
+                                    <asp:BoundField DataField="fi_Id" HeaderText="Id" Visible="false" />
                                     <asp:BoundField DataField="fc_Marca" HeaderText="Marca" />
                                     <asp:BoundField DataField="fc_Version" HeaderText="Versión" />
                                     <asp:BoundField DataField="fc_TipoAuto" HeaderText="Tipo" />
@@ -128,7 +128,7 @@
                                     <asp:BoundField DataField="fc_Color" HeaderText="Color" />
                                     <asp:BoundField DataField="fi_Kilometraje" HeaderText="Kilometraje" />
                                     <asp:BoundField DataField="fc_Status" HeaderText="Estatus" />
-                                    <asp:BoundField DataField="fc_Usuario" HeaderText="Usuario modifico" ItemStyle-HorizontalAlign="Center" />
+                                    <asp:BoundField DataField="fc_Usuario" HeaderText="Usuario modifico" ItemStyle-HorizontalAlign="Center" Visible="false"/>
                                     <asp:BoundField DataField="fd_FechaUltMovimiento" HeaderText="Fecha Ult. Movimiento" ItemStyle-HorizontalAlign="Center" />
                                     <asp:TemplateField>
                                         <ItemTemplate>
