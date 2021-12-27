@@ -53,32 +53,36 @@
                                 <br />
                                 <div class="row">
                                     <div class="col-md-12">
-                                    <table width="80%" style="margin:0 auto;">
+                                    <table width="60%" style="margin:0 auto;">
                                         <tr>
-                                            <td width="40%">
+                                            <td width="30%">
                                                 <asp:Label ID="lblBusqueda" runat="server" Font-Bold="True" Text="Palabra a buscar:" CssClass="inputLabel"/>
                                             </td>
                 
-                                            <td width="60%">
+                                            <td width="70%">
                                                 <asp:TextBox ID="txtBuqueda" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
                                             </td>
                                         </tr>
                                     </table>
                                     </div>
-                                    <div class="col-md-12">
-                                        <asp:RadioButtonList ID="rblActivo" runat="server" Width="100%" RepeatDirection="Horizontal" CssClass="form-control">
-                                            <asp:ListItem Text="TODOS&nbsp;&nbsp;" Value="2" Selected="True"></asp:ListItem>
-                                            <asp:ListItem Text="ACTIVOS&nbsp;&nbsp;" Value="1"></asp:ListItem>
-                                            <asp:ListItem Text="INACTIVOS&nbsp;&nbsp;" Value="0"></asp:ListItem>
-                                        </asp:RadioButtonList>
                                     </div>
-                                </div>
+                                    <div class="row">
+                                        <div class="col-md-4">&nbsp;</div>
+                                        <div class="col-md-4" style="margin:0 auto;text-align:center;"><br />
+                                            <asp:RadioButtonList ID="rblActivo" runat="server" Width="100%" RepeatDirection="Horizontal" CssClass="">
+                                                <asp:ListItem Text="TODOS&nbsp;&nbsp;" Value="2" Selected="True"></asp:ListItem>
+                                                <asp:ListItem Text="ACTIVOS&nbsp;&nbsp;" Value="1"></asp:ListItem>
+                                                <asp:ListItem Text="INACTIVOS&nbsp;&nbsp;" Value="0"></asp:ListItem>
+                                            </asp:RadioButtonList>
+                                        </div>
+                                        <div class="col-md-4">&nbsp;</div>
+                                    </div>
                                 <div class="row">
                                     <div class="col-md-12" style="text-align:center;">
                                         <br /><br />
                                         <asp:Button ID="btnBuscar" runat="server" Text="BUSCAR" CssClass="btn btn-success" OnClick="btnBuscar_Click" />
                                     </div>
-                                </div>         
+                                </div><br />        
                             </ContentTemplate>
                         </div>
                      </div>
