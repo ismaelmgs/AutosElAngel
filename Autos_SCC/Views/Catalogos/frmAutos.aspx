@@ -118,8 +118,8 @@
                                     </asp:TemplateField>
                                     <asp:BoundField DataField="fi_Id" HeaderText="Id" Visible="false" />
                                     <asp:BoundField DataField="fc_Marca" HeaderText="Marca" />
-                                    <asp:BoundField DataField="fc_Version" HeaderText="Versión" />
                                     <asp:BoundField DataField="fc_TipoAuto" HeaderText="Tipo" />
+                                    <asp:BoundField DataField="fc_Version" HeaderText="Versión" />
                                     <asp:BoundField DataField="fm_Precio" HeaderText="Precio" DataFormatString="{0:c}" />
                                     <asp:BoundField DataField="fc_Placa" HeaderText="Placa" />
                                     <asp:BoundField DataField="fi_Modelo" HeaderText="Modelo" ItemStyle-HorizontalAlign="Center" />
