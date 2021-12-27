@@ -116,7 +116,7 @@
                         <Columns>
                             <asp:BoundField DataField="fi_Id" HeaderText="Id" />
                             <asp:BoundField DataField="fc_Marca" HeaderText="Marca" />
-                            <asp:BoundField DataField="fc_Descripcion" HeaderText="Descripción" />
+                            <asp:BoundField DataField="fc_Descripcion" HeaderText="Tipo Auto" />
                             <asp:BoundField DataField="fi_Activo" HeaderText="¿Activo?" />
                             <asp:BoundField DataField="fc_Usuario" HeaderText="Usuario modifico" />
                             <asp:BoundField DataField="fd_FechaUltMovimiento" HeaderText="Fecha Ult. Movimiento" />
