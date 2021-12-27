@@ -102,7 +102,7 @@
                                     <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" CssClass="" />
                                     <AlternatingRowStyle BackColor="White" />
                                     <Columns>
-                                        <asp:BoundField DataField="fi_Id" HeaderText="Id" Visible="false" />
+                                        <asp:BoundField DataField="fi_Id" HeaderText="Id" />
                                         <asp:BoundField DataField="fc_Marca" HeaderText="Marca" />
                                         <asp:BoundField DataField="fc_TipoAuto" HeaderText="Tipo de auto" />
                                         <asp:BoundField DataField="fc_Descripcion" HeaderText="Versión" />
