@@ -116,7 +116,7 @@
                                             </div>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:BoundField DataField="fi_Id" HeaderText="Id" />
+                                    <asp:BoundField DataField="fi_Id" HeaderText="Id" Visible="false"/>
                                     <asp:BoundField DataField="fc_Marca" HeaderText="Marca" />
                                     <asp:BoundField DataField="fc_TipoAuto" HeaderText="Tipo" />
                                     <asp:BoundField DataField="fc_Version" HeaderText="Versión" />
