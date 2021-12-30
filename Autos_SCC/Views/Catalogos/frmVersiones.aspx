@@ -97,7 +97,7 @@
                                     &nbsp;<asp:Button ID="btnExportar" runat="server" Text="EXPORTAR" 
                                         CssClass="btn btn-secondary" onclick="btnExportar_Click" ToolTip="Exporta un grid a excel" />
                                 </div>
-                                <asp:GridView ID="gvCatalogo" runat="server" AutoGenerateColumns="false" RowStyle-VerticalAlign="Top"
+                                <asp:GridView ID="gvCatalogo" runat="server" AutoGenerateColumns="false" RowStyle-VerticalAlign="Top" DataKeyNames="fi_Id"
                                     Width="100%" OnRowDataBound="gvCatalogo_RowDataBound" OnSelectedIndexChanged="gvCatalogo_SelectedIndexChanged" 
                                     BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464" Font-Size="Small" OnRowCommand="gvCatalogo_RowCommand"
                                     HeaderStyle-ForeColor="white" AllowSorting="True" CssClass="table table-hover" style="background-color:#ffffff;">
@@ -106,7 +106,7 @@
                                     <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" CssClass="" />
                                     <AlternatingRowStyle BackColor="White" />
                                     <Columns>
-                                        <asp:BoundField DataField="fi_Id" HeaderText="Id" />
+                                        <asp:BoundField DataField="fi_Id" HeaderText="Id" Visible="false"/>
                                         <asp:BoundField DataField="fc_Marca" HeaderText="Marca" />
                                         <asp:BoundField DataField="fc_TipoAuto" HeaderText="Tipo de auto" />
                                         <asp:BoundField DataField="fc_Descripcion" HeaderText="Versión" />
