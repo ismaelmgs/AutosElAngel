@@ -104,7 +104,7 @@
                     </div>
                     <asp:Panel ID="pnlCatalogo" runat="server" ScrollBars="Auto" Width="100%" Height="500px">
                         <div class="table-responsive" style="overflow-x: scroll; width:100%;">
-                            <asp:GridView ID="gvCatalogo" runat="server" AutoGenerateColumns="false" RowStyle-VerticalAlign="Middle"
+                            <asp:GridView ID="gvCatalogo" runat="server" AutoGenerateColumns="false" RowStyle-VerticalAlign="Middle" DataKeyNames="iId"
                             Width="100%" OnRowDataBound="gvCatalogo_RowDataBound" OnSelectedIndexChanged="gvCatalogo_SelectedIndexChanged"
                             BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464" OnRowCommand="gvCatalogo_RowCommand"
                             HeaderStyle-ForeColor="white" AllowSorting="True" CssClass="table table-hover" style="background-color:#ffffff;">
@@ -113,7 +113,7 @@
                             <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" CssClass="" />
                             <AlternatingRowStyle BackColor="White" />
                             <Columns>
-                                <asp:BoundField DataField="iId" HeaderText="Id" />
+                                <asp:BoundField DataField="iId" HeaderText="Id" Visible="false"/>
                                 <asp:BoundField DataField="sDescripcion" HeaderText="Descripción" />
                                 <asp:TemplateField HeaderText="Status">
                                     <ItemTemplate>
