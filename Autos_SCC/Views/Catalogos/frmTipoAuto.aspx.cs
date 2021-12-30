@@ -111,7 +111,8 @@ namespace Autos_SCC.Views.Catalogos
                 {
                     row.BackColor = ColorTranslator.FromHtml("#A1DCF2");
                     row.ToolTip = string.Empty;
-                    i = Convert.ToInt32(gvCatalogo.Rows[row.RowIndex].Cells[0].Text);
+                    //i = Convert.ToInt32(gvCatalogo.Rows[row.RowIndex].Cells[0].Text);
+                    i = Convert.ToInt32(gvCatalogo.DataKeys[row.RowIndex]["fi_Id"].ToString());
                     ban = true;
                 }
                 else
@@ -278,10 +279,11 @@ namespace Autos_SCC.Views.Catalogos
                 if (iFila >= 0)
                 {
                     oCat = new TipoAuto();
-                    oCat.iId = gvCatalogo.Rows[iFila].Cells[0].Text.S().I();
-                    oCat.sDescripcion = gvCatalogo.Rows[iFila].Cells[1].Text.S();
-                    oCat.iActivo = gvCatalogo.Rows[iFila].Cells[2].Text.S().I();
-                    oCat.sUsuario = gvCatalogo.Rows[iFila].Cells[3].Text.S();
+                    //oCat.iId = gvCatalogo.Rows[iFila].Cells[0].Text.S().I();
+                    oCat.iId = gvCatalogo.DataKeys[iFila]["fi_Id"].S().I();
+                    oCat.sDescripcion = gvCatalogo.Rows[iFila].Cells[2].Text.S();
+                    oCat.iActivo = gvCatalogo.Rows[iFila].Cells[3].Text.S().I();
+                    oCat.sUsuario = gvCatalogo.Rows[iFila].Cells[4].Text.S();
                 }
 
                 return oCat;
