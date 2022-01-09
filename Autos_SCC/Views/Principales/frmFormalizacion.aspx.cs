@@ -547,6 +547,7 @@ namespace Autos_SCC.Views.Principales
             if (ban)
             {
                 lblRespAcreedor.Text = sAcreedor;
+                mpeAcreedor.Hide();
             }
             else
                 lblErrorAcreedor.Text = "Debe seleccionar al menos un acreedor, favor de verificar";
@@ -574,6 +575,7 @@ namespace Autos_SCC.Views.Principales
             if (ban)
             {
                 lblRespSucursal.Text = sDireccion;
+                mpeSucursales.Hide();
             }
             else
                 lblErrorDir.Text = "Debe seleccionar al menos una dirección, favor de verificar";
