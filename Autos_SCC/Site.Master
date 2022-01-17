@@ -63,12 +63,6 @@
                     </a>--%>
 
 
-
-
-
-
-
-
 <!-- Nuevo template inicio -->
                 
                 <div class="row" style="border-style: solid; border-width: 0 1px 4px 1px; border-color: #137ea7; background-color:#158cba;/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+10,158cba+100 */ /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,007bff+100 */
@@ -89,7 +83,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
                             <span class="navbar-toggler-icon"></span>
                           </button>
                           <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                            <ul class="navbar-nav" style="margin:0 auto;">
+                              <asp:Literal id="LtrMenu" runat=server />
+                            <%--<ul class="navbar-nav" style="margin:0 auto;">
                               <li class="nav-item active">
                                 <a class="nav-link" href='<%=ResolveUrl("~/Views/Default.aspx")%>'>Inicio <span class="sr-only">(current)</span></a>
                               </li>
@@ -130,7 +125,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
                               <li class="nav-item">
                                 <a class="nav-link" href='<%=ResolveUrl("~/About.aspx")%>'>Acerca de</a>
                               </li>
-                            </ul>
+                            </ul>--%>
                           </div>
                         </nav>
                     </div>

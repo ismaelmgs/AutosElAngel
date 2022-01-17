@@ -39,6 +39,9 @@ namespace Autos_SCC
             {
                 if (eGetUsuario !=  null)
                     eGetUsuario(sender, e);
+                IdPerfil = oUser.iPerfil;
+                if (eGetUsuarioMenu != null)
+                    eGetUsuarioMenu(sender, e);
 
                 if (!oUser.bEncontrado)
                 {
@@ -84,11 +87,17 @@ namespace Autos_SCC
         public event EventHandler eDeleteObj;
         public event EventHandler eSearchObj;
         public event EventHandler eGetUsuario;
+        public event EventHandler eGetUsuarioMenu;
 
         public DataUserIndetity oUser
         {
             get { return (DataUserIndetity)Session["SUser"]; }
             set { Session["SUser"] = value; }
+        }
+        public List<DataUserMenu> oUserMenu
+        {
+            get { return (List<DataUserMenu>)Session["MenuUser"]; }
+            set { Session["MenuUser"] = value; }
         }
 
         public object[] oArrFiltros
@@ -100,6 +109,11 @@ namespace Autos_SCC
                     "@fc_Password", txtPassword.Text.S()
                 };
             }
+        }
+        public int IdPerfil
+        {
+            get { return (int)ViewState["IdPerfil"]; }
+            set { ViewState["IdPerfil"] = value; }
         }
 
         #endregion

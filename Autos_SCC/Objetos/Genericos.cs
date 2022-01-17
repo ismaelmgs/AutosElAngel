@@ -61,6 +61,7 @@ namespace Autos_SCC.Objetos
         private string _sApellidos = string.Empty;
         private string _sDominio = string.Empty;
         private string _sPerfil = string.Empty;
+        private int _iPerfil = 0;
         private bool _bEncontrado = false;
 
         public string sUser
@@ -91,7 +92,12 @@ namespace Autos_SCC.Objetos
         {
             get { return _sPerfil; }
             set { _sPerfil = value; }
-            }
+        }
+        public int iPerfil
+        {
+            get { return _iPerfil; }
+            set { _iPerfil = value; }
+        }
 
         public bool bEncontrado
         {
@@ -99,4 +105,47 @@ namespace Autos_SCC.Objetos
             set { _bEncontrado = value; }
         }
     }
+
+    [Serializable]
+    public class DataUserMenu : BaseObjeto
+    {
+        private int _iIdPerfil = 0;
+        private int _iIdModulo = 0;
+        private string _sDescripcion = string.Empty;
+        private string _sUrl = string.Empty;
+        private string _sUrlIco = string.Empty;
+        private int? _iIdPadre = null;
+
+        public int iIdPerfil
+        {
+            get { return _iIdPerfil; }
+            set { _iIdPerfil = value; }
+        }
+        public int iIdModulo
+        {
+            get { return _iIdModulo; }
+            set { _iIdModulo = value; }
+        }
+        public string sDescripcion
+        {
+            get { return _sDescripcion; }
+            set { _sDescripcion = value; }
+        }
+        public string sUrl
+        {
+            get { return _sUrl; }
+            set { _sUrl = value; }
+        }
+        public string sUrlIco
+        {
+            get { return _sUrlIco; }
+            set { _sUrlIco = value; }
+        }
+        public int? iIdPadre
+        {
+            get { return _iIdPadre; }
+            set { _iIdPadre = value; }
+        }
+    }
+
 }

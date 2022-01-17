@@ -14,8 +14,20 @@ namespace Autos_SCC.DomainModel
             {
                 return oDB_SP.EjecutarDT("[Autos].[spS_ConsultaUsuarioAcceso]", oArr);
             }
-            catch
+            catch (Exception ex)
             {
+                return new DataTable();
+            }
+        }
+        public DataTable DBGetObtieneMenuUsuario(int idPerfil)
+        {
+            try
+            {
+                return oDB_SP.EjecutarDT("[Autos].[spS_ConsultaMenuAcceso]", "@id_perfil", idPerfil);
+            }
+            catch (Exception ex)
+            {
+
                 return new DataTable();
             }
         }
