@@ -39,7 +39,7 @@ namespace Autos_SCC
         {
             Session["SUser"] = null;
             Session["usuario"] = null;
-            Response.Redirect("..//Default.aspx");
+            Response.Redirect("~/Views/Default.aspx");
         }
 
         
