@@ -57,12 +57,19 @@ namespace Autos_SCC.Views.Principales
             if (eGetCotizaciones != null)
                 eGetCotizaciones(sender, e);
 
+            
             ddlCotizacion.DataSource = dtCotizacion;
             ddlCotizacion.DataTextField = "NombreCompleto";
             ddlCotizacion.DataValueField = "fi_Id";
             ddlCotizacion.DataBind();
 
-            ddlCotizacion_SelectedIndexChanged(null, EventArgs.Empty);
+            if(dtCotizacion.Rows.Count > 0)
+            {
+                ddlCotizacion.Items.Insert(dtCotizacion.Rows.Count, new ListItem("Selecciona", "0"));
+                ddlCotizacion.SelectedIndex = dtCotizacion.Rows.Count;
+            }
+           
+            //ddlCotizacion_SelectedIndexChanged(null, EventArgs.Empty);
         }
 
         protected void ddlCotizacion_SelectedIndexChanged(object sender, EventArgs e)

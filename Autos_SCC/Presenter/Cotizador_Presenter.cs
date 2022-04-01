@@ -162,7 +162,7 @@ namespace Autos_SCC.Presenter
                 else
                     oIView.MostrarMensaje("La Cotización con número: "+ oTempCat.iId.S() +" se guardo correctamente", "GUARDAR");
 
-                NewObj_Presenter(sender, e);
+                //NewObj_Presenter(sender, e);
             }
             else
             {

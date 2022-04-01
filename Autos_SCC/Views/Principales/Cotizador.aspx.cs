@@ -30,8 +30,12 @@ namespace Autos_SCC.Views.Principales
                     Response.Redirect("..//Default.aspx");
                 }
 
+                sUser = Session["usuario"].S();
+
                 if (eLoadObjects != null)
                     eLoadObjects(sender, e);
+
+                btnGuardar.Visible = false;
             }
         }
 
@@ -67,6 +71,8 @@ namespace Autos_SCC.Views.Principales
                     HidTasa.Value = oParametro.sValor.S();
 
                 HidGenerar.Value = "1";
+
+                btnGuardar.Visible = true;
             }
         }
 
@@ -239,6 +245,17 @@ namespace Autos_SCC.Views.Principales
 
         protected void ddlTipoBusqueda_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+            ddlMarcas.Visible = false;
+            txtTextoBusqueda.Visible = false;
+            txtTextoBusqueda.Text = string.Empty;
+
+            ddlMarcas.DataSource = null;
+            ddlMarcas.DataBind();
+
+            gvAutos.DataSource = null;
+            gvAutos.DataBind();
+
             switch (ddlTipoBusqueda.SelectedValue)
             {
                 case "1":// PLACA
@@ -247,10 +264,9 @@ namespace Autos_SCC.Views.Principales
                     break;
                 case "3":// MODELO
                     lblTextoBusqueda.Text = "Modelo";
-                    txtTextoBusqueda.Visible = false;
+                    txtTextoBusqueda.Visible = true;
                     break;
                 case "4":// COLOR
-                    ddlMarcas.Visible = false;
                     txtTextoBusqueda.Visible = true;
                     lblTextoBusqueda.Text = "Color";
                     gvAutos.DataSource = null;
@@ -259,7 +275,6 @@ namespace Autos_SCC.Views.Principales
 
                 case "2":// MARCA
                     ddlMarcas.Visible = true;
-                    txtTextoBusqueda.Visible = false;
                     lblTextoBusqueda.Text = "Marca";
 
                     if (eGetMarcas != null)
@@ -313,6 +328,8 @@ namespace Autos_SCC.Views.Principales
                 {
                     if (eSaveObj != null)
                         eSaveObj(sender, e);
+
+                    LimpiaDatos();
                 }
                 else
                     MostrarMensaje("Debe generar la cotización antes de guardar, favor de verificar", "Generar Cotización");
@@ -657,7 +674,7 @@ namespace Autos_SCC.Views.Principales
                     dTasa = HidTasa.Value.S().D(),
                     iIdSucursal = ddlSucursal.SelectedValue.I(),
                     sCorreo = txtCorreoElectronico.Text.S(),
-                    sUsuario = Session["usuario"].S(),
+                    sUsuario = sUser.S(),
                     oLsPagoIndividual = ObtienePagosI(),
                     iIdClienteAnt = HidClienteE.Value.S().I()
                 };
@@ -681,6 +698,13 @@ namespace Autos_SCC.Views.Principales
             get { return (string)ViewState["VESuma3"]; }
             set { ViewState["VESuma3"] = value; }
         }
+
+        public string sUser
+        {
+            get { return (string)ViewState["VEsUser"]; }
+            set { ViewState["VEsUser"] = value; }
+        }
+
         public DataTable dtCotizacion
         {
             get { return (DataTable)ViewState["VECot"]; }
