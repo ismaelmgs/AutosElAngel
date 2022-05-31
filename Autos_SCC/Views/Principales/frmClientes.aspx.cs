@@ -96,6 +96,7 @@ namespace Autos_SCC.Views.Principales
                 pnDatosClientes.Visible = true;
                 pnDatosAval.Visible = true;
                 pnDatosClienteSleecionado.Visible = true;
+                upaDatos.Update();
             }
             else
             {
@@ -103,6 +104,7 @@ namespace Autos_SCC.Views.Principales
                 pnDatosClientes.Visible = false;
                 pnDatosAval.Visible = false;
                 pnDatosClienteSleecionado.Visible = false;
+                upaDatos.Update();
             }
         }
 

@@ -75,9 +75,7 @@
                             </td>
                         </tr>
                     </table><br />
-                <div style="width:100%; background-color:#d0e7ff; border-radius:5px; padding:5px;">
-                    <asp:Panel runat="server" ID="pnDatosClienteSleecionado" Visible="false">
-                        <table style="width:100%">
+                <table style="width:100%">
                             <tr>
                                 <td style="width:40%; text-align:center">
                                     <asp:Label ID="lblCliente" runat="server" Text="" CssClass="inputLabel" style="font-weight:bold; font-size:16px;"></asp:Label>
@@ -93,6 +91,9 @@
                                 </td>
                             </tr>
                         </table>
+                <div style="width:100%; background-color:#d0e7ff; border-radius:5px; padding:5px;">
+                    <asp:Panel runat="server" ID="pnDatosClienteSleecionado">
+                        
                     </asp:Panel>
                 </div>
                     
@@ -109,14 +110,14 @@
             </h5>
         </div>
         <div>
-            <asp:Panel runat="server" ID="pnDatosClientes" Visible="false">
-                <div style="width:100%; text-align:center;">
-                    <h4>
-                        Datos generales...
-                    </h4>
-                </div><br />
-                <asp:UpdatePanel ID="upaDatos" runat="server">
-                    <ContentTemplate>
+            <asp:UpdatePanel ID="upaDatos" runat="server" UpdateMode="Conditional">
+                <ContentTemplate>         
+                    <asp:Panel runat="server" ID="pnDatosClientes" Visible="false">
+                        <div style="width:100%; text-align:center;">
+                            <h4>
+                                Datos generales...
+                            </h4>
+                        </div><br />  
                         <table width="80%" style="margin:0 auto;">
                             <tr>
                                 <td valign="top">
@@ -478,67 +479,66 @@
                                 </td>
                             </tr>
                         </table>
+                    </asp:Panel>
                     </ContentTemplate>
                     <Triggers>
                         <asp:AsyncPostBackTrigger ControlID="ddlEstado" EventName="SelectedIndexChanged" />
                         <asp:AsyncPostBackTrigger ControlID="ddlMunicipio" EventName="SelectedIndexChanged" />
                         <asp:AsyncPostBackTrigger ControlID="ddlColonia" EventName="SelectedIndexChanged" />
                     </Triggers>
-                </asp:UpdatePanel>
-            </asp:Panel>
+                </asp:UpdatePanel>     
         </div>
     </fieldset>
     
-    <fieldset style="text-align:left"><br />
+    <fieldset style="text-align:left">
         <div>
-            <asp:Panel runat="server" ID="pnDatosAval" Visible="false">
-            <div style="width:100%; text-align:center;">
-        <h4>
-            Captura de aval...
-        </h4>
-    </div>
-            <div>
-            
+            <br />
             <asp:UpdatePanel ID="upaCapturaAval" runat="server">
-                <ContentTemplate><br />
-                    <div style="width:100%; text-align:center;">
-                        <asp:Label ID="lblDeseaCapAval" runat="server" Text="¿Desea captura el aval del crédito?" CssClass="inputLabel"></asp:Label>
-                        <asp:Button ID="btnCapAval" runat="server" Text="Capturar" CssClass="btn btn-success" Enabled="false" OnClick="btnCapAval_Click" />
-                    </div>
-                    <br />
-                    <br />
-                    <center>
-                    <asp:GridView ID="gvAval" runat="server" AutoGenerateColumns="false" DataKeyNames="fi_Id" Width="40%"
-                        PageSize="10" Font-Size="Small" BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464"
-                        HeaderStyle-ForeColor="white" AllowSorting="True">
-                        <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
-                        <HeaderStyle BackColor="#01609F" CssClass="titleHeader" />
-                        <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" CssClass="" />
-                        <AlternatingRowStyle BackColor="White" />
-                        <Columns>
-                            <asp:BoundField DataField="fc_NombreCompleto" HeaderText="Nombre del Aval" />
-                            <asp:BoundField DataField="fc_TipoIdentificacion" HeaderText="Tipo identificación" />
-                            <asp:BoundField DataField="fc_NoIFE" HeaderText="No. Identificación" />
-                        </Columns>
-                    </asp:GridView>
-                        </center>
-                    <br />
-                    <div style="width:100%; text-align:center;">
-                        <asp:Label ID="lblFormalizar" runat="server" Text="¿Enviar crédito a formalizar?" CssClass="inputLabel"></asp:Label>
-                        <asp:Button ID="btnAceptarFormalizar" runat="server" Text="Aceptar" CssClass="btn btn-success" Enabled="false" OnClick="btnAceptarFormalizar_Click" />
-                    </div>
-                    <br />
+                <ContentTemplate>
+                   <asp:Panel runat="server" ID="pnDatosAval" Visible="false">
+                        <div style="width:100%; text-align:center;">
+                            <h4>
+                                Captura de aval...
+                            </h4>
+                        </div>
+                        <br />
+                        <div style="width:100%; text-align:center;">
+                            <asp:Label ID="lblDeseaCapAval" runat="server" Text="¿Desea captura el aval del crédito?" CssClass="inputLabel"></asp:Label>
+                            <asp:Button ID="btnCapAval" runat="server" Text="Capturar" CssClass="btn btn-success" Enabled="false" OnClick="btnCapAval_Click" />
+                        </div>
+                        <br />
+                        <br />
+                        <div style="width:100%; text-align:center;">
+                            <asp:GridView ID="gvAval" runat="server" AutoGenerateColumns="false" DataKeyNames="fi_Id" Width="40%"
+                                PageSize="10" Font-Size="Small" BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464"
+                                HeaderStyle-ForeColor="white" AllowSorting="True">
+                                <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+                                <HeaderStyle BackColor="#01609F" CssClass="titleHeader" />
+                                <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" CssClass="" />
+                                <AlternatingRowStyle BackColor="White" />
+                                <Columns>
+                                    <asp:BoundField DataField="fc_NombreCompleto" HeaderText="Nombre del Aval" />
+                                    <asp:BoundField DataField="fc_TipoIdentificacion" HeaderText="Tipo identificación" />
+                                    <asp:BoundField DataField="fc_NoIFE" HeaderText="No. Identificación" />
+                                </Columns>
+                            </asp:GridView>
+                        </div>
+                        <br />
+                        <div style="width:100%; text-align:center;">
+                            <asp:Label ID="lblFormalizar" runat="server" Text="¿Enviar crédito a formalizar?" CssClass="inputLabel"></asp:Label>
+                            <asp:Button ID="btnAceptarFormalizar" runat="server" Text="Aceptar" CssClass="btn btn-success" Enabled="false" OnClick="btnAceptarFormalizar_Click" />
+                        </div>
+                        <br />
+                    </asp:Panel>
                 </ContentTemplate>
                 <Triggers>
                     <asp:AsyncPostBackTrigger ControlID="btnAceptarFormalizar" EventName="Click" />
                 </Triggers>
-            </asp:UpdatePanel>
-        </div>
-            </asp:Panel>
+            </asp:UpdatePanel> 
         </div>
     </fieldset>
-
     </div>
+
     <%--Modal del Avales--%>
     <asp:HiddenField ID="hdCapturaAvalTarget" runat="server" />
     <cc1:ModalPopupExtender ID="mpeCapturaAval" runat="server" TargetControlID="hdCapturaAvalTarget" 
