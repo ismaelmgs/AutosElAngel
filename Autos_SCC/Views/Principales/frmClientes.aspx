@@ -191,7 +191,7 @@
                                         <tr>
                                             <td>
                                                 <asp:Label ID="lblNumeroIfe" runat="server" CssClass="inputLabel" 
-                                                    Text="Numero IFE:"></asp:Label>
+                                                    Text="Número INE:"></asp:Label>
                                             </td>
                                             <td>
                                                 <div class="row">
