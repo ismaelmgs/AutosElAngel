@@ -658,7 +658,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <asp:Label ID="lblNoIfeAval" runat="server" Text="Numero INE:" CssClass="inputLabel"></asp:Label>
+                                        <asp:Label ID="lblNoIfeAval" runat="server" Text="Número INE:" CssClass="inputLabel"></asp:Label>
                                     </td>
                                     <td>
                                         <div class="row">
@@ -853,7 +853,7 @@
                                             <div class="col-md-10">
                                               <asp:DropDownList ID="ddlTipoIdentificacionAval" runat="server" AutoPostBack="true" CssClass="form-control"
                                                     OnSelectedIndexChanged="ddlTipoIdentificacionAval_SelectedIndexChanged" TabIndex="13">
-                                                    <asp:ListItem Text="IFE" Value = "0"></asp:ListItem>
+                                                    <asp:ListItem Text="INE" Value = "0"></asp:ListItem>
                                                     <asp:ListItem Text="Licencia" Value = "1"></asp:ListItem>
                                               </asp:DropDownList>  
                                             </div>
