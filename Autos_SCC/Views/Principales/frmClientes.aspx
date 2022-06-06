@@ -493,6 +493,7 @@
     <fieldset style="text-align:left">
         <div>
             <br />
+            <hr style="border: 3px solid #4ca3fd;color: #4ca3fd;height: 4px;border-radius: 4px;"/>
             <asp:UpdatePanel ID="upaCapturaAval" runat="server">
                 <ContentTemplate>
                    <asp:Panel runat="server" ID="pnDatosAval" Visible="false">
@@ -511,7 +512,7 @@
                         <div style="width:100%; text-align:center;">
                             <asp:GridView ID="gvAval" runat="server" AutoGenerateColumns="false" DataKeyNames="fi_Id" Width="40%"
                                 PageSize="10" Font-Size="Small" BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464"
-                                HeaderStyle-ForeColor="white" AllowSorting="True">
+                                HeaderStyle-ForeColor="white" AllowSorting="True" style="margin: 0 auto;">
                                 <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
                                 <HeaderStyle BackColor="#01609F" CssClass="titleHeader" />
                                 <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" CssClass="" />
