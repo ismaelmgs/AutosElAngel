@@ -310,6 +310,15 @@ namespace Autos_SCC.Views.Principales {
         protected global::System.Web.UI.WebControls.TextBox txtFechaNacimiento;
         
         /// <summary>
+        /// Control lblreqFechaNacimiento.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblreqFechaNacimiento;
+        
+        /// <summary>
         /// Control imbFechaNacimiento.
         /// </summary>
         /// <remarks>
@@ -614,6 +623,15 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AjaxControlToolkit.FilteredTextBoxExtender ftbTelefono;
+        
+        /// <summary>
+        /// Control lblreqTelefono.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblreqTelefono;
         
         /// <summary>
         /// Control lblTiempoVivirDom.
@@ -967,6 +985,15 @@ namespace Autos_SCC.Views.Principales {
         protected global::System.Web.UI.WebControls.TextBox txtFechaNacimientoAval;
         
         /// <summary>
+        /// Control lblreqFechaNacimientoAval.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblreqFechaNacimientoAval;
+        
+        /// <summary>
         /// Control imbFechaNacimientoAval.
         /// </summary>
         /// <remarks>
@@ -1316,6 +1343,15 @@ namespace Autos_SCC.Views.Principales {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AjaxControlToolkit.FilteredTextBoxExtender ftbTelefonoAval;
+        
+        /// <summary>
+        /// Control lblreqTelefonoAval.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblreqTelefonoAval;
         
         /// <summary>
         /// Control lblTiempoVivirDomAval.

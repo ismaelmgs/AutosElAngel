@@ -216,6 +216,7 @@
                                                         <asp:TextBox ID="txtFechaNacimiento" runat="server" CssClass="form-control" Width="100%" ReadOnly="true"></asp:TextBox>
                                                     </div>
                                                     <div class="col-md-2" style="text-align:left;">
+                                                        <asp:Label ID="lblreqFechaNacimiento" runat="server" Text="*" CssClass="inputReqLabel"></asp:Label>
                                                         <asp:ImageButton ID="imbFechaNacimiento" runat="server" ImageUrl="~/Images/Botones/Calendar.ico" Width="24px" Height="24px" style="margin-bottom:-15px;margin-left:5px;" />
                                                         <cc1:CalendarExtender ID="calFechaNacimiento" runat="server" Enabled="True" Format="dd/MM/yyyy"
                                                                 PopupButtonID="imbFechaNacimiento" TargetControlID="txtFechaNacimiento">
@@ -276,7 +277,7 @@
                                             <td>
                                                 <div class="row">
                                                     <div class="col-md-10">
-                                                        <asp:TextBox ID="txtTelefonoCel" runat="server" MaxLength="20" CssClass="form-control"></asp:TextBox>
+                                                        <asp:TextBox ID="txtTelefonoCel" runat="server" MaxLength="12" CssClass="form-control"></asp:TextBox>
                                                         <cc1:FilteredTextBoxExtender ID="ftbTelefonoCel" runat="server" TargetControlID="txtTelefonoCel"
                                                             FilterMode="ValidChars" ValidChars="0123456789()-"></cc1:FilteredTextBoxExtender>
                                                     </div>
@@ -376,7 +377,7 @@
                                             <td>
                                                 <div class="row">
                                                     <div class="col-md-10">
-                                                        <asp:TextBox ID="txtCURP" runat="server" CssClass="form-control"></asp:TextBox>
+                                                        <asp:TextBox ID="txtCURP" runat="server" CssClass="form-control" MaxLength="20"></asp:TextBox>
                                                     </div>
                                                     <div class="col-md-2">
                                                         <asp:Label ID="lblReqCURP" runat="server" Text="*" CssClass="inputReqLabel"></asp:Label>
@@ -391,7 +392,7 @@
                                             <td>
                                                 <div class="row">
                                                     <div class="col-md-10">
-                                                        <asp:TextBox ID="txtRFC" runat="server" MaxLength="10" CssClass="form-control"></asp:TextBox>
+                                                        <asp:TextBox ID="txtRFC" runat="server" MaxLength="13" CssClass="form-control"></asp:TextBox>
                                                     </div>
                                                     <div class="col-md-2">
 
@@ -410,6 +411,7 @@
                                                         <asp:DropDownList ID="ddlEstadoCivil" runat="server" CssClass="form-control">
                                                             <asp:ListItem Text ="Soltero" Value="1"></asp:ListItem> 
                                                             <asp:ListItem Text="Casado" Value="2"></asp:ListItem>
+                                                            <asp:ListItem Text="Otro" Value="3"></asp:ListItem>
                                                         </asp:DropDownList>
                                                     </div>
                                                     <div class="col-md-2">
@@ -431,7 +433,7 @@
                                                             FilterMode="ValidChars" ValidChars="0123456789()-"></cc1:FilteredTextBoxExtender>
                                                     </div>
                                                     <div class="col-md-2">
-
+                                                        <asp:Label ID="lblreqTelefono" runat="server" Text="*" CssClass="inputReqLabel"></asp:Label>
                                                     </div>
                                                 </div>
                                         
@@ -664,10 +666,10 @@
                                     <td>
                                         <div class="row">
                                             <div class="col-md-10">
-                                                <asp:TextBox ID="txtNoIfeAval" runat="server" CssClass="form-control" TabIndex="14"></asp:TextBox>
+                                                <asp:TextBox ID="txtNoIfeAval" runat="server" CssClass="form-control" TabIndex="14" MaxLength="25"></asp:TextBox>
                                             </div>
                                             <div class="col-md-2">
-                                                <asp:Label ID="lblReNoIfeAval" runat="server" Text="*" CssClass="inputReqLabel"></asp:Label>
+                                                <asp:Label ID="lblReNoIfeAval" runat="server" Text="*" CssClass="inputReqLabel" MaxLength="25"></asp:Label>
                                                 <cc1:FilteredTextBoxExtender ID="ftbNoIfeAval" runat="server" TargetControlID="txtNoIfeAval"
                                                     FilterMode="ValidChars" FilterType="Numbers" ValidChars="0123456789"></cc1:FilteredTextBoxExtender>
                                             </div>
@@ -684,6 +686,7 @@
                                                 <asp:TextBox ID="txtFechaNacimientoAval" runat="server" CssClass="form-control" Width="100%" ReadOnly="true" TabIndex="16"></asp:TextBox>
                                             </div>
                                             <div class="col-md-2">
+                                                <asp:Label ID="lblreqFechaNacimientoAval" runat="server" Text="*" CssClass="inputReqLabel"></asp:Label>
                                                 <asp:ImageButton ID="imbFechaNacimientoAval" runat="server" ImageUrl="~/Images/Botones/Calendar.ico" Width="24px" Height="24px" style="margin-bottom:-15px;" />
                                                 <cc1:CalendarExtender ID="calFechaNacimientoAval" runat="server" Enabled="True" Format="dd/MM/yyyy"
                                                         PopupButtonID="imbFechaNacimientoAval" TargetControlID="txtFechaNacimientoAval">
@@ -741,7 +744,7 @@
                                     <td>
                                         <div class="row">
                                             <div class="col-md-10">
-                                                <asp:TextBox ID="txtTelefonoCelAval" runat="server" MaxLength="10" CssClass="form-control" TabIndex="22"></asp:TextBox>
+                                                <asp:TextBox ID="txtTelefonoCelAval" runat="server" MaxLength="12" CssClass="form-control" TabIndex="22"></asp:TextBox>
                                                 <cc1:FilteredTextBoxExtender ID="ftbTelefonoCelAval" runat="server" TargetControlID="txtTelefonoCelAval"
                                                 FilterMode="ValidChars" ValidChars="0123456789"></cc1:FilteredTextBoxExtender>
                                             </div>
@@ -872,7 +875,7 @@
                                     <td>
                                         <div class="row">
                                             <div class="col-md-10">
-                                                <asp:TextBox ID="txtCURPAval" runat="server" CssClass="form-control" TabIndex="15"></asp:TextBox>
+                                                <asp:TextBox ID="txtCURPAval" runat="server" CssClass="form-control" TabIndex="15" MaxLength="20"></asp:TextBox>
                                             </div>
                                             <div class="col-md-2">
                                                 <asp:Label ID="lblReqCURPAval" runat="server" Text="*" CssClass="inputReqLabel"></asp:Label>
@@ -887,7 +890,7 @@
                                     <td>
                                         <div class="row">
                                             <div class="col-md-10">
-                                                <asp:TextBox ID="txtRFCAval" runat="server" MaxLength="10" CssClass="form-control" TabIndex="17"></asp:TextBox>
+                                                <asp:TextBox ID="txtRFCAval" runat="server" MaxLength="13" CssClass="form-control" TabIndex="17"></asp:TextBox>
                                             </div>
                                             <div class="col-md-2">
                                                 
@@ -906,6 +909,7 @@
                                                 <asp:DropDownList ID="ddlEstadoCivilAval" runat="server" CssClass="form-control" TabIndex="19">
                                                     <asp:ListItem Text ="Soltero" Value="1"></asp:ListItem> 
                                                     <asp:ListItem Text="Casado" Value="2"></asp:ListItem>
+                                                    <asp:ListItem Text="Otro" Value="3"></asp:ListItem>
                                                 </asp:DropDownList>
                                             </div>
                                             <div class="col-md-2">
@@ -922,12 +926,12 @@
                                     <td>
                                         <div class="row">
                                             <div class="col-md-10">
-                                                <asp:TextBox ID="txtTelefonoAval" runat="server" MaxLength="8" CssClass="form-control" TabIndex="21"></asp:TextBox>
+                                                <asp:TextBox ID="txtTelefonoAval" runat="server" MaxLength="15" CssClass="form-control" TabIndex="21"></asp:TextBox>
                                                 <cc1:FilteredTextBoxExtender ID="ftbTelefonoAval" runat="server" TargetControlID="txtTelefonoAval" ValidChars="0123456789"
                                                     FilterMode="ValidChars" FilterType="Numbers"></cc1:FilteredTextBoxExtender>
                                             </div>
                                             <div class="col-md-2">
-                                                
+                                                <asp:Label ID="lblreqTelefonoAval" runat="server" Text="*" CssClass="inputReqLabel"></asp:Label>
                                             </div>
                                         </div>
                                         
