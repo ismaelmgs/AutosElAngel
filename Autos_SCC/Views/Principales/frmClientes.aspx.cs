@@ -314,8 +314,9 @@ namespace Autos_SCC.Views.Principales
 
         public void MostrarMensaje(string sMensaje, string sCaption)
         {
-            string script = string.Format("MostrarMensaje('{0}', '{1}')", sMensaje, sCaption);
-            ScriptManager.RegisterStartupScript(this, typeof(Page), "MostrarMensaje", script, true);
+            omb2.ShowMessage(sMensaje, sCaption);
+            //string script = string.Format("MostrarMensaje('{0}', '{1}')", sMensaje, sCaption);
+            //ScriptManager.RegisterStartupScript(this, typeof(Page), "MostrarMensaje", script, true);
         }
 
         public void LimpiaCampos()
@@ -492,6 +493,7 @@ namespace Autos_SCC.Views.Principales
                     sCalle = txtCalle.Text.S(),
                     iNoExt = txtNumExt.Text.S().I(),
                     iNoInt = txtNumInt.Text.S().I(),
+                    sCP = txtCP.Text,
                     iNacionalidad = ddlNacionalidad.SelectedValue.S().I(),
                     iTipoIdentificacion = ddlTipoIdentificacion.SelectedValue.S().I(),
                     sNumeroIFE = txtNumeroIfe.Text.S(),

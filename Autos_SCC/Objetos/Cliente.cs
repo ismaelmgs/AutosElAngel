@@ -48,9 +48,10 @@ namespace Autos_SCC.Objetos
             set { _sFechaNac = value; }
         }
 
-
+        [Display(AutoGenerateField = false), ScaffoldColumn(false)]
         public int iId { get { return _iId; } set { _iId = value; } }
 
+        [Range(1, Int32.MaxValue, ErrorMessage = "Se requiere una cotización")]
         public int iIdCotizacion { get { return _iIdCotizacion; } set { _iIdCotizacion = value; } }
 
         public string sNombre { get { return _sNombre; } set { _sNombre = value; } }
@@ -63,14 +64,19 @@ namespace Autos_SCC.Objetos
 
         public int iIdCP { get { return _iIdCP; } set { _iIdCP = value; } }
 
+        [Range(1, Int32.MaxValue, ErrorMessage = "El Estado es obligatorio")]
         public int iEstado { get { return _iEstado; } set { _iEstado = value; } }
 
+        [Required(ErrorMessage = "El Municipio ó Delegación es obligatorio.")]
         public string sMunicipio { get { return _sMunicipio; } set { _sMunicipio = value; } }
 
+        [Required(ErrorMessage = "La Colonia es obligatoria")]
         public string sColonia { get { return _sColonia; } set { _sColonia = value; } }
 
+        [Required(AllowEmptyStrings = false, ErrorMessage = "El Código postal es obligatorio.")]
         public string sCP { get { return _sCP; } set { _sCP = value; } }
 
+        [Required(AllowEmptyStrings = false, ErrorMessage = "La calle es obligatoria.")]
         public string sCalle { get { return _sCalle; } set { _sCalle = value; } }
         
         public int iNoExt { get { return _iNoExt; } set { _iNoExt = value; } }
@@ -79,14 +85,17 @@ namespace Autos_SCC.Objetos
         
         public int iNacionalidad { get { return _iNacionalidad; } set { _iNacionalidad = value; } }
 
+        [Required(AllowEmptyStrings = false, ErrorMessage = "El número de INE es obligatorio.")]
         public int iTipoIdentificacion { get { return _iTipoIdentificacion; } set { _iTipoIdentificacion = value; } }
 
         public string sNumeroIFE { get { return _sNumeroIFE; } set { _sNumeroIFE = value; } }
 
+        [Required(AllowEmptyStrings = false, ErrorMessage = "El CURP es obligatorio.")]
         public string sCURP { get { return _sCURP; } set { _sCURP = value; } }
 
         public string sRFC { get { return _sRFC; } set { _sRFC = value; } }
-        
+
+        [Required]
         public DateTime dtFechaNacimiento { get { return _dtFechaNacimiento; } set { _dtFechaNacimiento = value; } }
         
         public int iSexo { get { return _iSexo; } set { _iSexo = value; } }
@@ -94,7 +103,8 @@ namespace Autos_SCC.Objetos
         public int iEdoCivil { get { return _iEdoCivil; } set { _iEdoCivil = value; } }
         
         public string sLada { get { return _sLada; } set { _sLada = value; } }
-        
+
+        [Required(AllowEmptyStrings = false, ErrorMessage = "El Telefono fijo, es obligatorio.")]
         public string sTelefono { get { return _sTelefono; } set { _sTelefono = value; } }
         
         public string sTelCel { get { return _sTelCel; } set { _sTelCel = value; } }

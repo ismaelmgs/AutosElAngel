@@ -670,6 +670,24 @@ namespace Autos_SCC.Views.Principales {
         protected global::System.Web.UI.WebControls.Button btnCancelar;
         
         /// <summary>
+        /// Control omb.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::Autos_SCC.Views.ControlesUsuario.ucModalConfirm omb;
+        
+        /// <summary>
+        /// Control omb2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::Autos_SCC.Views.ControlesUsuario.ucModalAlert omb2;
+        
+        /// <summary>
         /// Control upaCapturaAval.
         /// </summary>
         /// <remarks>

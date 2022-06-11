@@ -47,7 +47,6 @@
                 <div class="col-md-12">
                     <div class="card">
                         <h3 style="text-align:center;">Búsqueda</h3>
-                            <ContentTemplate>
                                 <br />
                                 <div class="row">
                                     <div class="col-md-3">&nbsp;</div>
@@ -90,7 +89,7 @@
                                         <asp:Button ID="btnBuscar" runat="server" Text="BUSCAR" CssClass="btn btn-success" OnClick="btnBuscar_Click" />
                                     </div>
                                 </div><br />    
-                            </ContentTemplate>
+                            </con>
                     </div>
                 </div>
             </div>
