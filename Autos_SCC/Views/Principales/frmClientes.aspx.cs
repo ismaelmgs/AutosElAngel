@@ -489,6 +489,9 @@ namespace Autos_SCC.Views.Principales
                 return new Cliente
                 {
                     iIdCotizacion = ddlCotizacion.SelectedValue.S().I(),
+                    iEstado = ddlEstado.SelectedValue.S().I(),
+                    sMunicipio = ddlMunicipio.SelectedValue.S(),
+                    sColonia = ddlColonia.SelectedValue.S(),
                     iIdCP = HidIdCP.Value.S().I(),
                     sCalle = txtCalle.Text.S(),
                     iNoExt = txtNumExt.Text.S().I(),
