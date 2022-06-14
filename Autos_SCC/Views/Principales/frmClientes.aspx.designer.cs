@@ -9,7 +9,7 @@
 
 namespace Autos_SCC.Views.Principales {
     
-    
+    //
     public partial class frmClientes {
         
         /// <summary>

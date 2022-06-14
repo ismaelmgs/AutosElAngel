@@ -629,7 +629,7 @@ namespace Autos_SCC.Views.Principales
         }
 
         private int _iOpcPagosInd = 0;
-
+        //
         #endregion
     }
 }
