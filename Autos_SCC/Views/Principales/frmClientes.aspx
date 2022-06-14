@@ -198,7 +198,7 @@
                                             <td>
                                                 <div class="row">
                                                     <div class="col-md-10">
-                                                        <asp:TextBox ID="txtNumeroIfe" runat="server" CssClass="form-control" MaxLength="50"></asp:TextBox>
+                                                        <asp:TextBox ID="txtNumeroIfe" runat="server" CssClass="form-control" MaxLength="25"></asp:TextBox>
                                                         <cc1:FilteredTextBoxExtender ID="ftbNumeroIfe" runat="server" TargetControlID="txtNumeroIfe"
                                                      FilterMode="ValidChars" ValidChars="abcdefghijklmnñopqrstuvwxyz ABCDEFGHIJKLMNÑOPQRSTUVWXYZ0123456789"></cc1:FilteredTextBoxExtender></div>
                                                     <div class="col-md-2">
