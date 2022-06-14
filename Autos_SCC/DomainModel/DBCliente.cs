@@ -181,7 +181,7 @@ namespace Autos_SCC.DomainModel
             }
         }
 
-        public DataTable DBSaveObjAval(ref Cliente oEjecut)
+        public DataTable DBSaveObjAval(ref Aval oEjecut)
         {
             DataTable dt = new DataTable();
             try
@@ -378,11 +378,11 @@ namespace Autos_SCC.DomainModel
             }
         }
 
-        public Cliente DBGetObjAvalPorCotizacion(int iIdCotizacion)
+        public Aval DBGetObjAvalPorCotizacion(int iIdCotizacion)
         {
             try
             {
-                return oDB_SP.EjecutarDT("[Autos].[spS_ConsultaAvalCotizacion]", "@fi_IdCotizacion", iIdCotizacion).AsEnumerable().Select(r => new Cliente()
+                return oDB_SP.EjecutarDT("[Autos].[spS_ConsultaAvalCotizacion]", "@fi_IdCotizacion", iIdCotizacion).AsEnumerable().Select(r => new Aval()
                 {
                     iId = r["fi_Id"].S().I(),
                     iIdCotizacion = r["fi_IdCotizacion"].S().I(),
