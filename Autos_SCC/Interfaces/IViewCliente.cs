@@ -19,7 +19,7 @@ namespace Autos_SCC.Interfaces
         DataTable dtCP { get; set; }
         int iIdSucursal { get; }
         int iIdCotizacion { get; }
-        Cliente oAval { get; set; }
+        Aval oAval { get; set; }
         bool bEsCorrectoAval { get; set; }
         bool bEsCorrectoCliente { get; set; }
 
