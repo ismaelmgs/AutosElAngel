@@ -106,9 +106,6 @@ namespace Autos_SCC.Presenter
                     oIView.bEsCorrectoCliente = true;
                     oIView.MostrarMensaje("Guardado exitoso", "GUARDAR");
                 }
-
-                //NewObj_Presenter(sender, e);
-                //oIView.oGetSetObjSelection = oTempCat;
             }
             else
             {
@@ -119,17 +116,28 @@ namespace Autos_SCC.Presenter
 
         private void eSaveAval_Presenter(object sender, EventArgs e)
         {
-            Cliente oTempCat = oIView.oAval;
+            Aval oTempCat = oIView.oAval;
+            var oVldResults = new List<ValidationResult>();
+            var oVldContext = new ValidationContext(oTempCat, null, null);
             DataTable dt = new DataTable();
 
-            dt = oIGestCat.DBSaveObjAval(ref oTempCat);
-            if (oTempCat.oErr.bExisteError)
-                oIView.MostrarMensaje(oTempCat.oErr.sMsjError, "GUARDAR");
+            if (Validator.TryValidateObject(oTempCat, oVldContext, oVldResults, true))
+            {
+
+                dt = oIGestCat.DBSaveObjAval(ref oTempCat);
+                if (oTempCat.oErr.bExisteError)
+                    oIView.MostrarMensaje(oTempCat.oErr.sMsjError, "GUARDAR");
+                else
+                {
+                    oIView.bEsCorrectoAval = true;
+                    oIView.MostrarMensaje("Guardado exitoso", "GUARDAR");
+                    oIView.dtAvalSaved = dt;
+                }
+            }
             else
             {
-                oIView.bEsCorrectoAval = true;
-                oIView.MostrarMensaje("Guardado exitoso", "GUARDAR");
-                oIView.dtAvalSaved = dt;
+                var sVldErrors = String.Join("\n", oVldResults.Select(t => String.Format("- {0}", t.ErrorMessage)));
+                oIView.MostrarMensaje(sVldErrors, "ERRORES EN VALIDACIONES ");
             }
         }
 

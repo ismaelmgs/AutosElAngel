@@ -544,18 +544,22 @@ namespace Autos_SCC.Views.Principales
             }
         }
 
-        public Cliente oAval
+        public Aval oAval
         {
             get
             {
-                return new Cliente
+                return new Aval
                 {
                     iIdCotizacion = ddlCotizacion.SelectedValue.S().I(),
+                    iEstado = ddlEstadoAval.SelectedValue.S().I(),
+                    sMunicipio = ddlMunicipioAval.SelectedValue.S(),
+                    sColonia = ddlColoniaAval.SelectedValue.S(),
                     sNombre = txtNombreAval.Text.S(),
                     sNombre2 = txtSegNombreAval.Text.S(),
                     sApePaterno = txtApePaternoAval.Text.S(),
                     sApeMaterno = txtApeMaternoAval.Text.S(),
                     iIdCP = HidIdCPAval.Value.S().I(),
+                    sCP = txtCPAval.Text,
                     sCalle = txtCalleAval.Text.S(),
                     iNoExt = txtNoExteriorAval.Text.S().I(),
                     iNoInt = txtNoInteriorAval.Text.S().I(),
@@ -577,7 +581,7 @@ namespace Autos_SCC.Views.Principales
             }
             set
             {
-                Cliente oCat = value as Cliente;
+                Aval oCat = value as Aval;
                 if (oCat != null)
                 {
                     txtNombreAval.Text = oCat.sNombre;
