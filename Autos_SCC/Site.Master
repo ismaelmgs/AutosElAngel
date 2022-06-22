@@ -21,7 +21,11 @@
       <link rel="stylesheet" href="~/Styles/overlaty.css" type="text/css" />
       <link rel="stylesheet" href="~/Styles/overlayCT.css" type="text/css" />
       <link rel="stylesheet" href="~/Styles/overlayPro.css" type="text/css" />--%>
-
+    <style type="text/css">
+        .RLRmodaltres {
+          z-index:100002 !important;
+        }
+    </style>
      <script type="text/javascript">
          function toggleOverlay() {
              document.body.className = document.body.className.indexOf('overlaid') != -1 ? '' : 'overlaid';

@@ -6,7 +6,7 @@
     TargetControlID="pnlPopupAlert" PopupControlID="pnlPopupAlert" OkControlID="btnOk2" CancelControlID="btnOk2">
 </ajax:ModalPopupExtender>
 
-<asp:Panel ID="pnlPopupAlert" runat="server" BackColor="" Style="display: none; background-color:#00000073; width:100%; height:100%;" DefaultButton="btnOk2">
+<asp:Panel ID="pnlPopupAlert" runat="server" BackColor="" Style="display: none; background-color:#00000073; width:100%; height:100%;" DefaultButton="btnOk2"  CssClass="RLRmodaltres">
     <div class="card" style=" background-color:#e4e4e4; border-radius:20px; padding:10px; width:40%; margin:0 auto; margin-top:10%;">
         <table width="100%">
             <tr class="topHandle">
