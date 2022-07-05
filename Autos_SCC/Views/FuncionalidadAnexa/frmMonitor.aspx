@@ -25,7 +25,7 @@
                     <div class="col-md-3">
                         &nbsp;
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-2" style="text-align:right;padding-top:12px;">
                         <asp:Label ID="lblOpcion" runat="server" Text="Opción de Búsqueda:" 
                                     CssClass="inputLabel"></asp:Label>
                     </div>
@@ -36,7 +36,7 @@
                         <asp:ListItem Text="Por Sucursal" Value="2"></asp:ListItem>
                         </asp:DropDownList>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         &nbsp;
                     </div>
                 </div>
@@ -44,7 +44,7 @@
                     <div class="col-md-3">
                         &nbsp;
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-2" style="text-align:right;padding-top:12px;">
                         <asp:Label ID="lblNoCotizacion" runat="server" CssClass="inputLabel" Text="No. Cotización" Visible="false"></asp:Label>
                         <asp:Label ID="lblSucursal" runat="server" CssClass="inputLabel" Text="Sucursal:" Visible="false"></asp:Label>
                     </div>
@@ -52,11 +52,11 @@
                         <div class="row">
                             <div class="col-md-10">
                                 <asp:TextBox ID="txtNoCotizacion" runat="server" CssClass="form-control" AutoPostBack="true"
-                                    Visible="false" Width="75%"></asp:TextBox>
+                                    Visible="false" Width="100%"></asp:TextBox>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-2" style="text-align:center;">
                                 <asp:ImageButton ID="imbBuscaCliente" runat="server" ImageUrl="~/Images/Botones/Find.ico" OnClick="imbBuscaCliente_Click"
-                                    style="vertical-align:middle" ToolTip="Selecciona un auto existente" Visible="false"/>
+                                    style="vertical-align:middle; margin-top:12px;" ToolTip="Selecciona un auto existente" Visible="false"/>
                             </div>
                         </div>
                             <asp:DropDownList ID="ddlSucursal" runat="server" AutoPostBack="true" 
@@ -72,7 +72,7 @@
                     <div class="col-md-3">
                         &nbsp;
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-2" style="text-align:right;padding-top:12px;">
                         <asp:Label ID="lblCotizacion" runat="server" Text="Cotización:" CssClass="inputLabel" Visible="false"></asp:Label>
                     </div>
                     <div class="col-md-3">
@@ -80,7 +80,7 @@
                                 AutoPostBack="true" OnSelectedIndexChanged="ddlCotizacion_SelectedIndexChanged">
                         </asp:DropDownList>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         &nbsp;
                     </div>
                 </div>

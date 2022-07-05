@@ -974,7 +974,7 @@
                     <tr>
                         <td colspan="2" align="center">
                             <asp:Button ID="btnGuardarAval" runat="server" Text="Guardar" CssClass="btn btn-success" OnClick="btnGuardarAval_Click" />
-                            <asp:Button ID="btnCancelarCapturaAval" runat="server" Text="Cancelar" OnClick="btnCancelarCapturaAval_Click" CssClass="btn btn-danger" />
+                            <asp:Button ID="btnCancelarCapturaAval" runat="server" Text="Cerrar" OnClick="btnCancelarCapturaAval_Click" CssClass="btn btn-danger" />
                         </td>
                     </tr>
                     <tr>

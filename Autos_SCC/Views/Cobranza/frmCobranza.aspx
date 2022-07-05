@@ -80,7 +80,7 @@
                     <div class="col-md-4">
                         &nbsp;
                     </div>
-                    <div class="col-md-1">
+                    <div class="col-md-1" style="text-align:right;padding-top:12px;">
                         <asp:Label ID="lblSucursal" runat="server" Text="Sucursal:" CssClass="inputLabel"></asp:Label>
                     </div>
                     <div class="col-md-3">
