@@ -175,6 +175,15 @@ namespace Autos_SCC.Views.FuncionalidadAnexa {
         protected global::System.Web.UI.WebControls.Label lblPlazo;
         
         /// <summary>
+        /// Control divResultado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divResultado;
+        
+        /// <summary>
         /// Control gvClientes.
         /// </summary>
         /// <remarks>

@@ -40,6 +40,8 @@ namespace Autos_SCC.Views.FuncionalidadAnexa
             ddlSucursal.Visible = false;
             lblCotizacion.Visible = false;
             ddlCotizacion.Visible = false;
+            divResultado.Visible = false;
+            gvClientes.Visible = false;
 
             switch (ddlOpcion.SelectedValue)
             {
@@ -75,9 +77,16 @@ namespace Autos_SCC.Views.FuncionalidadAnexa
             if (eGetCliente != null)
                 eGetCliente(sender, e);
 
+            divResultado.Visible = true;
+            gvClientes.Visible = true;
             if (dtCliente.Rows.Count > 0)
             {
                 gvClientes.DataSource = dtCliente;
+                gvClientes.DataBind();
+            }
+            else
+            {
+                gvClientes.DataSource = null;
                 gvClientes.DataBind();
             }
         }
