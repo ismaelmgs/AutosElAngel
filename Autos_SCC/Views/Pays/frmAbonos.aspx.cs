@@ -41,6 +41,10 @@ namespace Autos_SCC.Views.Pays
             ddlSucursal.Visible = false;
             lblCotizacion.Visible = false;
             ddlCotizacion.Visible = false;
+            divResultado.Visible = false;
+            divPagosI.Visible = false;
+            gvClientes.Visible = false;
+            gvPagosInd.Visible = false;
 
             switch (ddlOpcion.SelectedValue)
             {
@@ -75,7 +79,10 @@ namespace Autos_SCC.Views.Pays
         {
             if (eGetCliente != null)
                 eGetCliente(sender, e);
-
+            divResultado.Visible = true;
+            divPagosI.Visible = true;
+            gvClientes.Visible = true;
+            gvPagosInd.Visible = true;
             ConsultaPagos();
         }
 
@@ -258,10 +265,20 @@ namespace Autos_SCC.Views.Pays
                     gvClientes.DataSource = dtCliente;
                     gvClientes.DataBind();
                 }
+                else
+                {
+                    gvClientes.DataSource = null;
+                    gvClientes.DataBind();
+                }
 
                 if (dtPagosInd.Rows.Count > 0)
                 {
                     gvPagosInd.DataSource = dtPagosInd;
+                    gvPagosInd.DataBind();
+                }
+                else
+                {
+                    gvPagosInd.DataSource = null;
                     gvPagosInd.DataBind();
                 }
             }

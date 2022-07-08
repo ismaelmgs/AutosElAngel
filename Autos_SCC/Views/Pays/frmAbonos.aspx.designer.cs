@@ -7,13 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Autos_SCC.Views.Pays
-{
-
-
-    public partial class frmAbonos
-    {
-
+namespace Autos_SCC.Views.Pays {
+    
+    
+    public partial class frmAbonos {
+        
         /// <summary>
         /// Control upaCotizacion.
         /// </summary>
@@ -22,7 +20,7 @@ namespace Autos_SCC.Views.Pays
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel upaCotizacion;
-
+        
         /// <summary>
         /// Control HidIdCliente.
         /// </summary>
@@ -31,7 +29,7 @@ namespace Autos_SCC.Views.Pays
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField HidIdCliente;
-
+        
         /// <summary>
         /// Control HidIdCP.
         /// </summary>
@@ -40,7 +38,7 @@ namespace Autos_SCC.Views.Pays
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField HidIdCP;
-
+        
         /// <summary>
         /// Control HidIdCPAval.
         /// </summary>
@@ -49,7 +47,7 @@ namespace Autos_SCC.Views.Pays
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField HidIdCPAval;
-
+        
         /// <summary>
         /// Control lblTituloPantalla.
         /// </summary>
@@ -58,7 +56,7 @@ namespace Autos_SCC.Views.Pays
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTituloPantalla;
-
+        
         /// <summary>
         /// Control lblOpcion.
         /// </summary>
@@ -67,7 +65,7 @@ namespace Autos_SCC.Views.Pays
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblOpcion;
-
+        
         /// <summary>
         /// Control ddlOpcion.
         /// </summary>
@@ -76,7 +74,7 @@ namespace Autos_SCC.Views.Pays
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlOpcion;
-
+        
         /// <summary>
         /// Control lblNoCotizacion.
         /// </summary>
@@ -85,7 +83,7 @@ namespace Autos_SCC.Views.Pays
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblNoCotizacion;
-
+        
         /// <summary>
         /// Control lblSucursal.
         /// </summary>
@@ -94,7 +92,7 @@ namespace Autos_SCC.Views.Pays
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSucursal;
-
+        
         /// <summary>
         /// Control txtNoCotizacion.
         /// </summary>
@@ -103,7 +101,7 @@ namespace Autos_SCC.Views.Pays
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNoCotizacion;
-
+        
         /// <summary>
         /// Control imbBuscaCliente.
         /// </summary>
@@ -112,7 +110,7 @@ namespace Autos_SCC.Views.Pays
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton imbBuscaCliente;
-
+        
         /// <summary>
         /// Control ddlSucursal.
         /// </summary>
@@ -121,7 +119,7 @@ namespace Autos_SCC.Views.Pays
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlSucursal;
-
+        
         /// <summary>
         /// Control lblCotizacion.
         /// </summary>
@@ -130,7 +128,7 @@ namespace Autos_SCC.Views.Pays
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCotizacion;
-
+        
         /// <summary>
         /// Control ddlCotizacion.
         /// </summary>
@@ -139,7 +137,7 @@ namespace Autos_SCC.Views.Pays
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlCotizacion;
-
+        
         /// <summary>
         /// Control lblCliente.
         /// </summary>
@@ -148,7 +146,7 @@ namespace Autos_SCC.Views.Pays
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCliente;
-
+        
         /// <summary>
         /// Control lblTipoAuto.
         /// </summary>
@@ -157,7 +155,7 @@ namespace Autos_SCC.Views.Pays
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTipoAuto;
-
+        
         /// <summary>
         /// Control lblPrecio.
         /// </summary>
@@ -166,7 +164,7 @@ namespace Autos_SCC.Views.Pays
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPrecio;
-
+        
         /// <summary>
         /// Control lblPlazo.
         /// </summary>
@@ -175,7 +173,16 @@ namespace Autos_SCC.Views.Pays
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPlazo;
-
+        
+        /// <summary>
+        /// Control divResultado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divResultado;
+        
         /// <summary>
         /// Control gvClientes.
         /// </summary>
@@ -184,7 +191,16 @@ namespace Autos_SCC.Views.Pays
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvClientes;
-
+        
+        /// <summary>
+        /// Control divPagosI.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divPagosI;
+        
         /// <summary>
         /// Control lblTituloPagosInd.
         /// </summary>
@@ -193,7 +209,7 @@ namespace Autos_SCC.Views.Pays
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTituloPagosInd;
-
+        
         /// <summary>
         /// Control gvPagosInd.
         /// </summary>
@@ -202,7 +218,7 @@ namespace Autos_SCC.Views.Pays
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvPagosInd;
-
+        
         /// <summary>
         /// Control hdTargetPago.
         /// </summary>
@@ -211,7 +227,7 @@ namespace Autos_SCC.Views.Pays
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hdTargetPago;
-
+        
         /// <summary>
         /// Control mpePagos.
         /// </summary>
@@ -220,7 +236,7 @@ namespace Autos_SCC.Views.Pays
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AjaxControlToolkit.ModalPopupExtender mpePagos;
-
+        
         /// <summary>
         /// Control pnlPagos.
         /// </summary>
@@ -229,7 +245,7 @@ namespace Autos_SCC.Views.Pays
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlPagos;
-
+        
         /// <summary>
         /// Control upaPagos.
         /// </summary>
@@ -238,7 +254,7 @@ namespace Autos_SCC.Views.Pays
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel upaPagos;
-
+        
         /// <summary>
         /// Control lblTituloBuscaAuto.
         /// </summary>
@@ -247,7 +263,7 @@ namespace Autos_SCC.Views.Pays
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTituloBuscaAuto;
-
+        
         /// <summary>
         /// Control lblTextDebe.
         /// </summary>
@@ -256,7 +272,7 @@ namespace Autos_SCC.Views.Pays
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTextDebe;
-
+        
         /// <summary>
         /// Control lblDebe.
         /// </summary>
@@ -265,7 +281,7 @@ namespace Autos_SCC.Views.Pays
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDebe;
-
+        
         /// <summary>
         /// Control lblTipoMov.
         /// </summary>
@@ -274,7 +290,7 @@ namespace Autos_SCC.Views.Pays
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTipoMov;
-
+        
         /// <summary>
         /// Control ddlTipoMov.
         /// </summary>
@@ -283,7 +299,7 @@ namespace Autos_SCC.Views.Pays
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlTipoMov;
-
+        
         /// <summary>
         /// Control lblImporte.
         /// </summary>
@@ -292,7 +308,7 @@ namespace Autos_SCC.Views.Pays
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblImporte;
-
+        
         /// <summary>
         /// Control txtImporte.
         /// </summary>
@@ -301,7 +317,7 @@ namespace Autos_SCC.Views.Pays
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtImporte;
-
+        
         /// <summary>
         /// Control ftbImporte.
         /// </summary>
@@ -310,7 +326,7 @@ namespace Autos_SCC.Views.Pays
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AjaxControlToolkit.FilteredTextBoxExtender ftbImporte;
-
+        
         /// <summary>
         /// Control btnAceptarPago.
         /// </summary>
@@ -319,7 +335,7 @@ namespace Autos_SCC.Views.Pays
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAceptarPago;
-
+        
         /// <summary>
         /// Control btnCancelarPago.
         /// </summary>
@@ -328,7 +344,7 @@ namespace Autos_SCC.Views.Pays
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCancelarPago;
-
+        
         /// <summary>
         /// Control upgPagos.
         /// </summary>

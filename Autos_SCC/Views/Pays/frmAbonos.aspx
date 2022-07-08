@@ -117,7 +117,7 @@
                         &nbsp;
                     </div>
                     <div class="col-md-2" style="text-align:right;padding-top:12px;">
-                        <asp:Label ID="lblCotizacion" runat="server" Text="Cotización:" CssClass="inputLabel" Visible="false"></asp:Label>
+                        <asp:Label ID="lblCotizacion" runat="server" Text="Nombre Cliente:" CssClass="inputLabel" Visible="false"></asp:Label>
                     </div>
                     <div class="col-md-3">
                        <asp:DropDownList ID="ddlCotizacion" runat="server" Width="97%" CssClass="form-control" Visible="false"
@@ -147,7 +147,7 @@
             </fieldset>
 
             <fieldset style="text-align:left"><br />
-                <div style="width:100%; text-align:center;">
+                <div style="width:100%; text-align:center;" runat="server" visible="false" id="divResultado">
                     <h5>
                         Resultados...
                     </h5>
@@ -222,7 +222,7 @@
                         </div>
                         <br />
                         <br />
-                        <div style="text-align:center; width:100%;">
+                        <div style="text-align:center; width:100%;" runat="server" id="divPagosI" visible="false">
                             <h5><asp:Label ID="lblTituloPagosInd" runat="server" Text="Pagos Individuales" CssClass="labelSubTitle"></asp:Label></h5>
                         </div>
                         <div class="table-responsive">
