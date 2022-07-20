@@ -73,6 +73,7 @@ namespace Autos_SCC.Views.Principales
                 HidGenerar.Value = "1";
 
                 btnGuardar.Visible = true;
+                btnImprimir.Visible = true;
             }
         }
 
