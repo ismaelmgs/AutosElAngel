@@ -75,6 +75,14 @@ namespace Autos_SCC.Views.Principales
 
                 fsImprimir.Visible = false;
             }
+
+            dtPagosIndividuales = null;
+            dtPagosIndividuales = new DBCotizador().DBGetPagosIndividuales(iIdCotizacion);
+
+            if (dtPagosIndividuales != null && dtPagosIndividuales.Rows.Count > 0)
+                btnImprimirPagosInd.Enabled = true;
+            else
+                btnImprimirPagosInd.Enabled = false;
         }
 
         protected void btnImprimirMes_Click(object sender, EventArgs e)
@@ -91,7 +99,7 @@ namespace Autos_SCC.Views.Principales
             int iIdCotizacion = ddlCotizacion.SelectedValue.S().I();
             string strMonto = string.Empty;
             double dbMonto = 0;
-            DataTable dtPagosInd = new DBCotizador().DBGetPagosIndividuales(iIdCotizacion);
+            DataTable dtPagosInd = dtPagosIndividuales;
 
             if (dtPagosInd.Rows.Count > 0)
             {
@@ -790,6 +798,13 @@ namespace Autos_SCC.Views.Principales
             get { return (string)ViewState["VsTelefonoSucursal"]; }
             set { ViewState["VsTelefonoSucursal"] = value; }
         }
+
+        public DataTable dtPagosIndividuales
+        {
+            get { return (DataTable)ViewState["VSPagosIndividuales"]; }
+            set { ViewState["VSPagosIndividuales"] = value; }
+        }
+
 
         #endregion
     }
