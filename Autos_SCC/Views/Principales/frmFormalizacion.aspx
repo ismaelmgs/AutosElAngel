@@ -454,12 +454,12 @@
                         </td>
                     </tr
                     <tr>
-                        <td>
+                        <td align="center">
                             <asp:Label ID="Label8" runat="server" Text="¿Desea imprimir contrato?" CssClass="inputLabel"></asp:Label>
                         </td>
                     </tr>
                     <tr>
-                        <td><br />
+                        <td align="center"><br />
                             <asp:Button ID="btnAceptarImpresion" runat="server" Text="Aceptar" OnClientClick="OcultarModal4();" OnClick="btnAceptarImpresion_Click" CssClass="btn btn-success" />
                             <asp:Button ID="btnCancelarImpresion" runat="server" Text="Cancelar" OnClientClick="OcultarModal4();" CssClass="btn btn-danger" OnClick="btnCancelarImpresion_Click" />
                         </td>
