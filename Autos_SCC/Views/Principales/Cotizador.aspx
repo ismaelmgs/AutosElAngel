@@ -483,7 +483,7 @@
                         <div>
                             <asp:Button ID="btnGenerar" runat="server" Text=" GENERAR " OnClick="btnGenerar_Click"
                             CssClass="btn btn-success" Font-Size="" />
-                        &nbsp;<asp:Button ID="btnImprimir" runat="server" Text=" IMPRIMIR " OnClick="btnImprimir_Click" CssClass="btn btn-secondary" Font-Size="" />
+                        &nbsp;<asp:Button ID="btnImprimir" runat="server" Text=" IMPRIMIR " OnClick="btnImprimir_Click" CssClass="btn btn-secondary" Font-Size="" Visible="false" />
                         &nbsp;<asp:Button ID="btnGuardar" runat="server" Text=" GUARDAR " 
                             CssClass="btn btn-primary" Font-Size="" OnClick="btnGuardar_Click" />
                         </div>
