@@ -12,6 +12,7 @@ using NucleoBase.Core;
 using Autos_SCC.DomainModel;
 using Autos_SCC.Clases;
 using Autos_SCC.Presenter;
+using System.Threading;
 
 namespace Autos_SCC.Views.Principales
 {
@@ -24,6 +25,8 @@ namespace Autos_SCC.Views.Principales
 
             if (!IsPostBack)
             {
+                ComprobarLista();
+
                 if (Session["usuario"] == null)
                 {
                     Response.Redirect("..//Default.aspx");
@@ -76,8 +79,11 @@ namespace Autos_SCC.Views.Principales
 
         protected void btnImprimirMes_Click(object sender, EventArgs e)
         {
-            if(iIdCotizacion != 0)
+            if (iIdCotizacion != 0)
+            {
+                imgImprimirMes.Visible = true;
                 mpePagosInd.Show();
+            }
         }
 
         protected void btnImprimirPagosInd_Click(object sender, EventArgs e)
@@ -438,60 +444,14 @@ namespace Autos_SCC.Views.Principales
 
         protected void btnImprimirContratoCred_Click(object sender, EventArgs e)
         {
-            DataSet ds = new DataSet();
-            DataTable dtExtras = new DataTable();
-            DataColumn column;
-            DataRow rowT;
-            #region  Table Extras
-            column = new DataColumn();
-            column.ColumnName = "Acreedor";
-            dtExtras.Columns.Add(column);
-
-            
-
-            #endregion
-            try
+            if (iIdCotizacion != 0)
             {
-                if (eGetDatosContrato != null)
-                    eGetDatosContrato(sender, e);
-
-                ReportDocument rd = new ReportDocument();
-                DataTable dtc = new DataTable();
-
-                string strPath = string.Empty;
-                strPath = Server.MapPath("Reports\\InfContrato.rpt");
-                strPath = strPath.Replace("\\Views\\Principales", "");
-                rd.Load(strPath, OpenReportMethod.OpenReportByDefault);
-
-                dtc = dtDatosC;
-                dtc.TableName = "dtCont";
-
-                #region ajuste de Valores DT Extras
-
-                column = new DataColumn();
-                column.ColumnName = "ImpLetra";
-                dtExtras.Columns.Add(column);
-
-                rowT = dtExtras.NewRow();
-                rowT["Acreedor"] = lblRespAcreedor.Text;
-                rowT["ImpLetra"] = "---";
-                dtExtras.Rows.Add(rowT);
-                dtExtras.TableName = "dtExtras";
-                #endregion
-
-                ds.Tables.Add(dtc);
-                ds.Tables.Add(dtExtras);
-
-                rd.SetDataSource(ds);
-
-                rd.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, true, "ContratoCredito");
-            }
-            catch (Exception ex)
-            {
-                MostrarMensaje("Ocurrio un error al exportar: " + ex.Message, "Error al exportar");
+                imgImprimirContrato.Visible = true;
+                ComprobarLista();
+                mpeContratosCreditos.Show();
             }
         }
-            public void GeneraContratoCredito()
+        public void GeneraContratoCredito()
         {
             
         }
@@ -547,6 +507,13 @@ namespace Autos_SCC.Views.Principales
             if (ban)
             {
                 lblRespAcreedor.Text = sAcreedor;
+                
+                if (!string.IsNullOrEmpty(sAcreedor))
+                    imgAcredor.Visible = true;
+                else
+                    imgAcredor.Visible = false;
+
+                ComprobarLista();
                 mpeAcreedor.Hide();
             }
             else
@@ -575,15 +542,105 @@ namespace Autos_SCC.Views.Principales
             if (ban)
             {
                 lblRespSucursal.Text = sDireccion;
+
+                if (!string.IsNullOrEmpty(sDireccion))
+                    imgSucursal.Visible = true;
+                else
+                    imgSucursal.Visible = false;
+
+                ComprobarLista();
                 mpeSucursales.Hide();
             }
             else
                 lblErrorDir.Text = "Debe seleccionar al menos una dirección, favor de verificar";
         }
 
+        protected void btnCancelarModalPagInd_Click(object sender, EventArgs e)
+        {
+            imgImprimirMes.Visible = false;
+            ComprobarLista();
+            mpePagosInd.Hide();
+        }
+
+        protected void btnAceptarImpresion_Click(object sender, EventArgs e)
+        {
+            ComprobarLista();
+            mpeContratosCreditos.Hide();
+            ImprimirContrato(); 
+        }
+
+        protected void btnCancelarImpresion_Click(object sender, EventArgs e)
+        {
+            imgImprimirContrato.Visible = false;
+            ComprobarLista();
+            mpeContratosCreditos.Hide();
+        }
+
         #endregion
-        
+
         #region METODOS
+        public void ImprimirContrato()
+        {
+            DataSet ds = new DataSet();
+            DataTable dtExtras = new DataTable();
+            DataColumn column;
+            DataRow rowT;
+            #region  Table Extras
+            column = new DataColumn();
+            column.ColumnName = "Acreedor";
+            dtExtras.Columns.Add(column);
+
+            ReportDocument rd = new ReportDocument();
+
+            #endregion
+
+            if (eGetDatosContrato != null)
+                eGetDatosContrato(null, null);
+
+            DataTable dtc = new DataTable();
+
+            string strPath = string.Empty;
+            strPath = Server.MapPath("Reports\\InfContrato.rpt");
+            strPath = strPath.Replace("\\Views\\Principales", "");
+            rd.Load(strPath, OpenReportMethod.OpenReportByDefault);
+
+            dtc = dtDatosC;
+            dtc.TableName = "dtCont";
+
+            #region ajuste de Valores DT Extras
+
+            column = new DataColumn();
+            column.ColumnName = "ImpLetra";
+            dtExtras.Columns.Add(column);
+
+            rowT = dtExtras.NewRow();
+            rowT["Acreedor"] = lblRespAcreedor.Text;
+            rowT["ImpLetra"] = "---";
+            dtExtras.Rows.Add(rowT);
+            dtExtras.TableName = "dtExtras";
+            #endregion
+
+            ds.Tables.Add(dtc);
+            ds.Tables.Add(dtExtras);
+            rd.SetDataSource(ds);
+            rd.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, true, "ContratoCredito");
+            rd.Dispose();
+        }
+
+        public void ComprobarLista()
+        {
+            try
+            {
+                if (imgAcredor.Visible == true && imgSucursal.Visible == true && imgImprimirContrato.Visible == true && imgImprimirMes.Visible == true)
+                    btnEntregarAuto.Enabled = true;
+                else
+                    btnEntregarAuto.Enabled = false;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
 
         public void LoadSucursales(DataTable dtSuc)
         {

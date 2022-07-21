@@ -38,6 +38,12 @@
             modal.hide();
         }
 
+        function OcultarModal4() {
+            var modalId = '<%=mpeContratosCreditos.ClientID%>';
+            var modal = $find(modalId);
+            modal.hide();
+        }
+
         function Selrdbtn(id)
         {
             var rdBtn = document.getElementById(id);
@@ -142,6 +148,9 @@
                             <td colspan="2">
                                 <asp:Label ID="lblRespAcreedor" runat="server" Text="[Sin definir]" CssClass="inputLabel"></asp:Label>
                             </td>
+                            <td>
+                                <asp:Image ID="imgAcredor" runat="server" Visible="false" Width="30px" Height="30px" ImageUrl="../../Images/Iconos/checkmark.png" />
+                            </td>
                         </tr>
                         <tr>
                             <td>
@@ -152,6 +161,9 @@
                             </td>
                             <td colspan="2">
                                 <asp:Label ID="lblRespSucursal" runat="server" Text="[Sin definir]" CssClass="inputLabel"></asp:Label>
+                            </td>
+                            <td>
+                                <asp:Image ID="imgSucursal" runat="server" Visible="false" Width="30px" Height="30px" ImageUrl="../../Images/Iconos/checkmark.png" />
                             </td>
                         </tr>
 
@@ -166,6 +178,9 @@
                             </td>
                             <td>
                             </td>
+                            <td>
+                                <asp:Image ID="imgImprimirMes" runat="server" Visible="false" Width="30px" Height="30px" ImageUrl="../../Images/Iconos/checkmark.png" />
+                            </td>
                         </tr>
                         <tr>
                             <td>
@@ -179,25 +194,36 @@
                             <td>
                             </td>
                         </tr>
-                        <tr>
-                            <td>
-                                <asp:Label ID="Label5" runat="server" Text="Imprimir Contrato de Crédito:" CssClass="inputLabel"></asp:Label>
-                            </td>
-                            <td>
-                                <asp:Button ID="btnImprimirContratoCred" runat="server" Text=" Imprimir  "  CssClass="btn btn-secondary btn-sm waves-effect waves-light" OnClick="btnImprimirContratoCred_Click" />
+                        <asp:UpdatePanel ID="upaImprimirContrato" runat="server" ChildrenAsTriggers="true">
+                            <ContentTemplate>
+                                <tr>
+                                    <td>
+                                        <asp:Label ID="Label5" runat="server" Text="Imprimir Contrato de Crédito:" CssClass="inputLabel"></asp:Label>
+                                    </td>
+                                    <td>
+                                        <asp:Button ID="btnImprimirContratoCred" runat="server" Text=" Imprimir  "  CssClass="btn btn-secondary btn-sm waves-effect waves-light" OnClick="btnImprimirContratoCred_Click" />
                                 
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                        </tr>
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                        <asp:Image ID="imgImprimirContrato" runat="server" Visible="false" Width="30px" Height="30px" ImageUrl="../../Images/Iconos/checkmark.png" />
+                                    </td>
+                                </tr>
+                            </ContentTemplate>
+                            <Triggers>
+                                <asp:AsyncPostBackTrigger ControlID="btnImprimirContratoCred" EventName="Click" />
+                            </Triggers>
+                        </asp:UpdatePanel>
+                        
                         <tr>
                             <td>
                                 <asp:Label ID="lblEntregarAuto" runat="server" Text="¿Desea entregar el automovil?" CssClass="inputLabel"></asp:Label>
                             </td>
                             <td>
-                                <asp:Button ID="btnEntregarAuto" runat="server" Text=" Aceptar  " CssClass="btn btn-success btn-sm waves-effect waves-light" OnClick="btnEntregarAuto_Click" />
+                                <asp:Button ID="btnEntregarAuto" runat="server" Text=" Aceptar  " CssClass="btn btn-success btn-sm waves-effect waves-light" OnClick="btnEntregarAuto_Click" Enabled="false" />
                             </td>
                             <td>
                             </td>
@@ -213,7 +239,7 @@
             <asp:AsyncPostBackTrigger ControlID="ddlSucursal" EventName="SelectedIndexChanged" />
             <asp:AsyncPostBackTrigger ControlID="btnEntregarAuto" EventName="Click" />
             <asp:PostBackTrigger ControlID="btnImprimirPagosInd" />
-            <asp:PostBackTrigger ControlID="btnImprimirContratoCred" />
+            <%--<asp:PostBackTrigger ControlID="btnImprimirContratoCred" />--%>
         </Triggers>
     </asp:UpdatePanel>
 
@@ -255,7 +281,7 @@
                     <tr>
                         <td><br />
                             <asp:Button ID="btnAceptarPagosInd" runat="server" Text="Aceptar" OnClientClick="OcultarModal();" OnClick="btnAceptarPagosInd_Click" CssClass="btn btn-success" />
-                            <asp:Button ID="btnCancelarModalPagInd" runat="server" Text="Cancelar" OnClientClick="OcultarModal();" CssClass="btn btn-danger" />
+                            <asp:Button ID="btnCancelarModalPagInd" runat="server" Text="Cancelar" OnClientClick="OcultarModal();" CssClass="btn btn-danger" OnClick="btnCancelarModalPagInd_Click" />
                         </td>
                     </tr>
                 </table><br />
@@ -403,6 +429,46 @@
                     </table><br />
                 </center>
             </ContentTemplate>
+        </asp:UpdatePanel>
+    </asp:Panel>
+
+    <%--Modal de Imprimir Contratos de crédito--%>
+    <asp:HiddenField ID="hdTargetContratosCredito" runat="server" />
+    <cc1:ModalPopupExtender ID="mpeContratosCreditos" runat="server" TargetControlID="hdTargetContratosCredito" 
+        PopupControlID="pnlContratosCreditos" BackgroundCssClass="overlayy">
+    </cc1:ModalPopupExtender>
+    <asp:Panel ID="pnlContratosCreditos" runat="server" Width="100%" Height="100%" Style="background-color:#00000070; display: none; margin-left:-6px; padding-top:10%;">
+        <asp:UpdatePanel ID="upaContratosCred" runat="server" BorderColor="Black" BackColor=""
+        HorizontalAlign="Center"  Style="border-radius:25px; box-shadow:3px 3px 3px #00000050; background-color:#eeeeee; width:50%;margin:0 auto;">
+            <ContentTemplate>
+                <table width="100%">
+                    <tr>
+                        <td align="center"><br />
+                            <h4><asp:Label ID="Label6" runat="server" Text="Contratos de Crédito" CssClass="labelTitleModal"></asp:Label></h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <br />
+                            <asp:Label ID="Label7" runat="server" Text="" CssClass="labelTitleModal"></asp:Label>
+                        </td>
+                    </tr
+                    <tr>
+                        <td>
+                            <asp:Label ID="Label8" runat="server" Text="¿Desea imprimir contrato?" CssClass="inputLabel"></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><br />
+                            <asp:Button ID="btnAceptarImpresion" runat="server" Text="Aceptar" OnClientClick="OcultarModal4();" OnClick="btnAceptarImpresion_Click" CssClass="btn btn-success" />
+                            <asp:Button ID="btnCancelarImpresion" runat="server" Text="Cancelar" OnClientClick="OcultarModal4();" CssClass="btn btn-danger" OnClick="btnCancelarImpresion_Click" />
+                        </td>
+                    </tr>
+                </table><br />
+            </ContentTemplate>
+            <Triggers>
+                <asp:PostBackTrigger ControlID="btnAceptarImpresion" />
+            </Triggers>
         </asp:UpdatePanel>
     </asp:Panel>
 

@@ -343,6 +343,7 @@
     <Content Include="Images\Iconos\Amarillo.png" />
     <Content Include="Images\Iconos\Azul.png" />
     <Content Include="Images\Iconos\Catalogos.ico" />
+    <Content Include="Images\Iconos\checkmark.png" />
     <Content Include="Images\Iconos\Clientes.ico" />
     <Content Include="Images\Iconos\Cobranza.ico" />
     <Content Include="Images\Iconos\CobranzaAln.ico" />
@@ -368,6 +369,12 @@
     <Content Include="jquery\jquery-ui-1.9.2.custom.min.css" />
     <Content Include="jquery\jquery-ui-1.9.2.custom.min.js" />
     <Content Include="Js\jsUpdateProgress.js" />
+    <Content Include="Scripts\Select2\select2-bootstrap.css" />
+    <Content Include="Scripts\Select2\select2-spinner.gif" />
+    <Content Include="Scripts\Select2\select2.css" />
+    <Content Include="Scripts\Select2\select2.js" />
+    <Content Include="Scripts\Select2\select2.png" />
+    <Content Include="Scripts\Select2\select2x2.png" />
     <Content Include="Styles\AUTOMaster.css" />
     <Content Include="Styles\AutosFlotilla.css" />
     <Content Include="Styles\Bootstrap\css\bootstrap-responsive.css" />
@@ -492,6 +499,7 @@
     <Compile Include="Interfaces\IViewSeguridad.cs" />
     <Compile Include="Interfaces\IViewTotalesCartera.cs" />
     <Compile Include="Objetos\AutosVen.cs" />
+    <Compile Include="Objetos\Aval.cs" />
     <Compile Include="Objetos\Transaccion.cs" />
     <Compile Include="Presenter\Abonos_Presenter.cs" />
     <Compile Include="Presenter\AutosVend_Presenter.cs" />
@@ -851,6 +859,7 @@
     <Content Include="RPT\dsCotizacion.xss">
       <DependentUpon>dsCotizacion.xsd</DependentUpon>
     </Content>
+    <Content Include="Scripts\Select2\select2_locale_en.js.template" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
