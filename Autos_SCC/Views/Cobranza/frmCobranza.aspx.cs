@@ -154,10 +154,10 @@ namespace Autos_SCC.Views.Cobranza
         {
             List<recipient> olst = new List<recipient>();
             recipient oRec1 = new recipient();
-            oRec1.msisdn = "525540532207";
+            oRec1.msisdn = "5540532207";
 
             recipient oRec2 = new recipient();
-            oRec2.msisdn = "522221844016";
+            oRec2.msisdn = "2221844016";
 
             olst.Add(oRec1);
             olst.Add(oRec2);
@@ -168,15 +168,16 @@ namespace Autos_SCC.Views.Cobranza
             oMen.recipient = olst;
 
             var client = new RestClient("https://api.labsmobile.com/json/send");
-            client.Authenticator = new HttpBasicAuthenticator("ismael.morato@morvelit.com", "ZXdCn3938H9w");
+            //client.Authenticator = new HttpBasicAuthenticator("ismael.morato@morvelit.com", "ZXdCn3938H9w");
+            client.Authenticator = new HttpBasicAuthenticator("ivan.morato@morvelit.com", "KkmKX7sS9w2c");
             var request = new RestRequest(Method.POST);
             request.AddHeader("Cache-Control", "no-cache");
             request.AddHeader("Content-Type", "application/json");
 
-
             string sJSON = JsonConvert.SerializeObject(oMen);
             request.AddParameter("undefined", sJSON, ParameterType.RequestBody);
             IRestResponse response = client.Execute(request);
+            mpeMensaje.Hide();
         }
 
         #region METODOS
