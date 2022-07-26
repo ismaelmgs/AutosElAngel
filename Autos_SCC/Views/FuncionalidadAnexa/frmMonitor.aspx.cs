@@ -9,6 +9,7 @@ using Autos_SCC.Interfaces;
 using NucleoBase.Core;
 using Autos_SCC.Presenter;
 using Autos_SCC.DomainModel;
+using Autos_SCC.Objetos;
 
 namespace Autos_SCC.Views.FuncionalidadAnexa
 {
@@ -139,6 +140,19 @@ namespace Autos_SCC.Views.FuncionalidadAnexa
                     return txtNoCotizacion.Text.S().I();
                 else
                     return 0;
+            }
+        }
+        public int iIdUsuario
+        {
+            get
+            {
+                int iIdUsu = 0;
+                if (Session["oUserData"] != null)
+                {
+                    DataUserIndetity oUser = (DataUserIndetity)Session["oUserData"];
+                    iIdUsu = oUser.IIdUsuario;
+                }
+                return iIdUsu;
             }
         }
 

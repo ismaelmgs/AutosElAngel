@@ -52,8 +52,8 @@ namespace Autos_SCC.Presenter
                 oUs.sNombre = (dt.Rows[0]["fc_PrimNombre"].S() + " "+ dt.Rows[0]["fc_SegNombre"].S()).Replace("  ", " ");
                 oUs.sApellidos = (dt.Rows[0]["fc_PrimApellido"].S() + " " + dt.Rows[0]["fc_SegApellido"].S()).Replace("  ", " ");
                 oUs.sUser = oIView.oArrFiltros[1].S();
+                oUs.IIdUsuario = dt.Rows[0]["fi_Id"].S().I();
             }
-
             oIView.oUser = oUs;
         }
         private void eGetMenu_Presenter(object sender, EventArgs e)

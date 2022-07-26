@@ -63,6 +63,7 @@ namespace Autos_SCC.Objetos
         private string _sPerfil = string.Empty;
         private int _iPerfil = 0;
         private bool _bEncontrado = false;
+        private int _iIdUsuario = 0;
 
         public string sUser
         {
@@ -104,6 +105,8 @@ namespace Autos_SCC.Objetos
             get { return _bEncontrado; }
             set { _bEncontrado = value; }
         }
+
+        public int IIdUsuario { get => _iIdUsuario; set => _iIdUsuario = value; }
     }
 
     [Serializable]

@@ -52,6 +52,7 @@ namespace Autos_SCC
                 else
                 {
                     Session["usuario"] = oUser.sUser;
+                    Session["oUserData"] = oUser;
                     ScriptManager.RegisterClientScriptBlock(this, typeof(Page), "redirecciona", "window.location.href = '../Views/Default.aspx'", true);
                 }
             }
