@@ -77,9 +77,9 @@
                 <br />
                     <table style="width:100%">
                         <tr>
-                            <td style="width:20%">
+                            <td style="width:30%">
                             </td>
-                            <td style="width:20%">
+                            <td style="width:10%; text-align:center;">
                                 <asp:Label ID="lblSucursal" runat="server" Text="Sucursal:" CssClass="inputLabel"></asp:Label>
                             </td>
                             <td style="width:20%">
@@ -95,7 +95,7 @@
                         <tr>
                             <td>
                             </td>
-                            <td>
+                            <td style="text-align:center;   ">
                                 <asp:Label ID="lblCotizacion" runat="server" Text="Cotización:" CssClass="inputLabel"></asp:Label>
                             </td>
                             <td>
@@ -253,7 +253,7 @@
         <asp:UpdatePanel ID="UpaPagosInd" runat="server" BorderColor="Black" BackColor=""
         HorizontalAlign="Center"  Style="border-radius:25px; box-shadow:3px 3px 3px #00000050; background-color:#eeeeee; width:50%;margin:0 auto;">
             <ContentTemplate>
-                <table width="100%">
+                <table width="80%" style="margin: 0 auto;">
                     <tr>
                         <td align="center"><br />
                             <h4><asp:Label ID="lblTitPagosInd" runat="server" Text="Mensualidades" CssClass="labelTitleModal"></asp:Label></h4>
@@ -271,7 +271,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><br /><br />
+                        <td align="center"><br /><br />
                             <asp:RadioButtonList ID="rblPagosInd" runat="server" RepeatDirection="Vertical" Width="100%" Enabled="false">
                                 <asp:ListItem Text="Meses con pagos dobles" Value="1" Selected="True"></asp:ListItem>
                                 <asp:ListItem Text="Separar pagos Ind. de mensualidades" Value="2"></asp:ListItem>
@@ -279,7 +279,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><br />
+                        <td align="center"><br />
                             <asp:Button ID="btnAceptarPagosInd" runat="server" Text="Aceptar" OnClientClick="OcultarModal();" OnClick="btnAceptarPagosInd_Click" CssClass="btn btn-success" />
                             <asp:Button ID="btnCancelarModalPagInd" runat="server" Text="Cancelar" OnClientClick="OcultarModal();" CssClass="btn btn-danger" OnClick="btnCancelarModalPagInd_Click" />
                         </td>
