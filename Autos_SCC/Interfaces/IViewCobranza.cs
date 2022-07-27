@@ -10,6 +10,7 @@ namespace Autos_SCC.Interfaces
     {
         DataTable dtCreditos { get; set; }
         int iIdSucursal { get; }
+        int iIdUsuario { get; }
 
         void LoadSucursales(DataTable dtSuc);
 

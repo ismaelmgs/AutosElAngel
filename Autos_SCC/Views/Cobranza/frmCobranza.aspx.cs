@@ -14,6 +14,7 @@ using RestSharp;
 using RestSharp.Authenticators;
 using System.Text;
 using Newtonsoft.Json;
+using Autos_SCC.Objetos;
 
 namespace Autos_SCC.Views.Cobranza
 {
@@ -239,10 +240,23 @@ namespace Autos_SCC.Views.Cobranza
                 return Session["usuario"].S();
             }
         }
+        public int iIdUsuario
+        {
+            get
+            {
+                int iIdUsu = 0;
+                if (Session["oUserData"] != null)
+                {
+                    DataUserIndetity oUser = (DataUserIndetity)Session["oUserData"];
+                    iIdUsu = oUser.IIdUsuario;
+                }
+                return iIdUsu;
+            }
+        }
 
 
         #endregion
-        
+
     }
 
     public class Mensaje

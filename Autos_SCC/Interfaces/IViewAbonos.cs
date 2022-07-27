@@ -12,7 +12,7 @@ namespace Autos_SCC.Interfaces
         DataTable dtCotizacion { get; set; }
         DataTable dtCliente { get; set; }
         DataTable dtPagosInd { get; set; }
-        
+        int iIdUsuario { get; }
         int iIdSucursal { get; }
         int iIdCotizacion { get; }
         Transaccion oTran { get; }
