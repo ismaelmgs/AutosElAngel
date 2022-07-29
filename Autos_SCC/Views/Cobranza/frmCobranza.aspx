@@ -216,18 +216,18 @@
         <asp:UpdatePanel ID="upaMensaje" runat="server" BorderColor="Black" BackColor=""
         HorizontalAlign="Center" Style="border-radius:25px; box-shadow:3px 3px 3px #00000050; background-color:#eeeeee; width:50%;margin:0 auto;">
             <ContentTemplate>
-                <table width="100%">
+                <table width="90%">
                     <tr>
-                        <td colspan="2" style="text-align:center">
+                        <td colspan="2" style="text-align:center"><br />
                             <h3><asp:Label ID="lblTituloMensaje" runat="server" Text="Escribe el mensaje a enviar" CssClass="labelTitleModal"></asp:Label></h3>
                         </td>
                     </tr>
                 </table>
                 <center>
-                    <table width="100%">
+                    <table style="width:80%; margin:0 auto;">
                         <tr>
                             <td style="text-align:left;" colspan="2">
-                                <asp:Label ID="lblTasaInteres" runat="server" Text="Mensaje:" CssClass="inputLabel"></asp:Label>
+                                <asp:Label ID="lblTasaInteres" runat="server" Text="&nbsp;&nbsp;Mensaje:" CssClass="inputLabel"></asp:Label>
                             </td>
                         </tr>
                         <tr>
@@ -249,7 +249,7 @@
                                 <asp:Button ID="btnCancelarMensaje" runat="server" Text=" Cancelar " CssClass="btn btn-danger" OnClientClick="OcultarModal();" />
                             </td>
                         </tr>
-                    </table>
+                    </table><br />
                 </center>
             </ContentTemplate>
         </asp:UpdatePanel>
