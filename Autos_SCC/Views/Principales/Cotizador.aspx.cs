@@ -414,7 +414,7 @@ namespace Autos_SCC.Views.Principales
 
 
                 rowT = dtExtras.NewRow();
-                rowT["Cliente"] = txtNombre.Text.Trim() + " " + txtSegNombre.Text.Trim() + " " + txtApePaterno.Text.Trim() + " " + txtApeMaterno.Text.Trim();
+                rowT["Cliente"] = HttpUtility.HtmlDecode(txtNombre.Text.Trim()) + " " + HttpUtility.HtmlDecode(txtSegNombre.Text.Trim()) + " " + HttpUtility.HtmlDecode(txtApePaterno.Text.Trim()) + " " + HttpUtility.HtmlDecode(txtApeMaterno.Text.Trim());
                 rowT["Vehiculo"] = txtAuto.Text;
                 rowT["Precio"] = txtPrecio.Text;
                 rowT["Sucursal"] = ddlSucursal.SelectedItem.Text;
@@ -491,10 +491,10 @@ namespace Autos_SCC.Views.Principales
             GridViewRow row = gvBusClientes.SelectedRow;
             HidClienteE.Value = gvBusClientes.DataKeys[row.RowIndex].Value.S();
 
-            txtNombre.Text = row.Cells[0].Text.S();
-            txtSegNombre.Text = row.Cells[1].Text.S().Replace("&nbsp;", "");
-            txtApePaterno.Text = row.Cells[2].Text.S();
-            txtApeMaterno.Text = row.Cells[3].Text.S();
+            txtNombre.Text = HttpUtility.HtmlDecode(row.Cells[0].Text.S());
+            txtSegNombre.Text = HttpUtility.HtmlDecode(row.Cells[1].Text.S().Replace("&nbsp;", ""));
+            txtApePaterno.Text = HttpUtility.HtmlDecode(row.Cells[2].Text.S());
+            txtApeMaterno.Text = HttpUtility.HtmlDecode(row.Cells[3].Text.S());
 
             mpeBusquedaCliente.Hide();
         }
@@ -664,10 +664,10 @@ namespace Autos_SCC.Views.Principales
             {
                 return new Cotizacion
                 {
-                    sNombre = txtNombre.Text.S(),
-                    sSegNombre = txtSegNombre.Text.S(),
-                    sApePaterno = txtApePaterno.Text.S(),
-                    sApeMaterno = txtApeMaterno.Text.S(),
+                    sNombre = HttpUtility.HtmlDecode(txtNombre.Text.S()),
+                    sSegNombre = HttpUtility.HtmlDecode(txtSegNombre.Text.S()),
+                    sApePaterno = HttpUtility.HtmlDecode(txtApePaterno.Text.S()),
+                    sApeMaterno = HttpUtility.HtmlDecode(txtApeMaterno.Text.S()),
                     iPlazo = iGetPlazo,
                     iIdAuto = HidAuto.Value.S().I(),
                     dPrecio = txtPrecio.Text.S().D(),
