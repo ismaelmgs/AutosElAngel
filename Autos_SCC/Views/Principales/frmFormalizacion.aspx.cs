@@ -593,14 +593,28 @@ namespace Autos_SCC.Views.Principales
             DataTable dtExtras = new DataTable();
             DataColumn column;
             DataRow rowT;
+
             #region  Table Extras
             column = new DataColumn();
             column.ColumnName = "Acreedor";
             dtExtras.Columns.Add(column);
 
+            column = new DataColumn();
+            column.ColumnName = "ImpLetra";
+            dtExtras.Columns.Add(column);
+
+            column = new DataColumn();
+            column.ColumnName = "FechaContrato";
+            dtExtras.Columns.Add(column);
+
+            column = new DataColumn();
+            column.ColumnName = "DirSucursal";
+            dtExtras.Columns.Add(column);
+            #endregion
+
             ReportDocument rd = new ReportDocument();
 
-            #endregion
+            
 
             if (eGetDatosContrato != null)
                 eGetDatosContrato(null, null);
@@ -617,13 +631,15 @@ namespace Autos_SCC.Views.Principales
 
             #region ajuste de Valores DT Extras
 
-            column = new DataColumn();
-            column.ColumnName = "ImpLetra";
-            dtExtras.Columns.Add(column);
 
+            //decimal dImporte = 200000.00m;
+            decimal dImporte = dtDatosC.Rows[0]["Enganche"].S().D();
             rowT = dtExtras.NewRow();
             rowT["Acreedor"] = lblRespAcreedor.Text;
-            rowT["ImpLetra"] = "---";
+            string strNumeroLetra = dImporte.NumeroALetras();
+            rowT["ImpLetra"] = strNumeroLetra;
+            rowT["FechaContrato"] = DateTime.Now.Day + " de " + mesLetra(DateTime.Now.Month) + " de " + DateTime.Now.Year;
+            rowT["DirSucursal"] = lblRespSucursal.Text;
             dtExtras.Rows.Add(rowT);
             dtExtras.TableName = "dtExtras";
             #endregion
@@ -633,6 +649,53 @@ namespace Autos_SCC.Views.Principales
             rd.SetDataSource(ds);
             rd.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, true, "ContratoCredito");
             rd.Dispose();
+        }
+
+        private static string mesLetra(int mes)
+        {
+            var m = "";
+
+            switch (mes)
+            {
+                case 1:
+                    m = "ENERO";
+                    break;
+                case 2:
+                    m = "FEBRERO";
+                    break;
+                case 3:
+                    m = "MARZO";
+                    break;
+                case 4:
+                    m = "ABRIL";
+                    break;
+                case 5:
+                    m = "MAYO";
+                    break;
+                case 6:
+                    m = "JUNIO";
+                    break;
+                case 7:
+                    m = "JULIO";
+                    break;
+                case 8:
+                    m = "AGOSTO";
+                    break;
+                case 9:
+                    m = "SEPTIEMBRE";
+                    break;
+                case 10:
+                    m = "OCTUBRE";
+                    break;
+                case 11:
+                    m = "NOVIEMBRE";
+                    break;
+                case 12:
+                    m = "DICIEMBRE";
+                    break;
+            }
+
+            return m;
         }
 
         public void ComprobarLista()
