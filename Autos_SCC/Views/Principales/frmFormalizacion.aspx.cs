@@ -610,6 +610,14 @@ namespace Autos_SCC.Views.Principales
             column = new DataColumn();
             column.ColumnName = "DirSucursal";
             dtExtras.Columns.Add(column);
+
+            column = new DataColumn();
+            column.ColumnName = "Plazo";
+            dtExtras.Columns.Add(column);
+
+            column = new DataColumn();
+            column.ColumnName = "ImpLetraUnidad";
+            dtExtras.Columns.Add(column);
             #endregion
 
             ReportDocument rd = new ReportDocument();
@@ -634,12 +642,16 @@ namespace Autos_SCC.Views.Principales
 
             //decimal dImporte = 200000.00m;
             decimal dImporte = dtDatosC.Rows[0]["Enganche"].S().D();
+            string strPrecioUnidad = lblPrecio.Text.Replace("Precio: $ ","");
+            decimal dImporteUnidad = strPrecioUnidad.D();
             rowT = dtExtras.NewRow();
             rowT["Acreedor"] = lblRespAcreedor.Text;
             string strNumeroLetra = dImporte.NumeroALetras();
             rowT["ImpLetra"] = strNumeroLetra;
             rowT["FechaContrato"] = DateTime.Now.Day + " de " + mesLetra(DateTime.Now.Month) + " de " + DateTime.Now.Year;
             rowT["DirSucursal"] = lblRespSucursal.Text;
+            rowT["Plazo"] = lblPlazo.Text.Replace("Plazo: ","").Replace("Meses","");
+            rowT["ImpLetraUnidad"] = dImporteUnidad.NumeroALetras();
             dtExtras.Rows.Add(rowT);
             dtExtras.TableName = "dtExtras";
             #endregion

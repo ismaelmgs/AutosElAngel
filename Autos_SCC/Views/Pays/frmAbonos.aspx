@@ -182,6 +182,7 @@
                                 <asp:BoundField DataField="TotalCredito" HeaderText="Total del crédito" DataFormatString="{0:c}" />
                                 <asp:BoundField DataField="TotalPagado" HeaderText="Total pagado" DataFormatString="{0:c}" />
                                 <asp:BoundField DataField="DeudaAlDia" HeaderText="Deuda al día" DataFormatString="{0:c}" />
+                                <asp:BoundField DataField="MontoCompromiso" HeaderText="Monto Compromiso" DataFormatString="{0:c}" />
                                 <asp:TemplateField HeaderText="Acciones" ItemStyle-HorizontalAlign="Center">
                                     <ItemTemplate>
                                         <asp:Button ID="btnAbonar" runat="server" CommandName="Abonar" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" Text="Abonar" CssClass="btn btn-success btn-mini waves-effect waves-light" />

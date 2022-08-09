@@ -1065,6 +1065,10 @@ namespace Autos_SCC.Reports {
             
             private global::System.Data.DataColumn columnDirSucursal;
             
+            private global::System.Data.DataColumn columnPlazo;
+            
+            private global::System.Data.DataColumn columnImpLetraUnidad;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public dtExtrasDataTable() {
@@ -1132,6 +1136,22 @@ namespace Autos_SCC.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PlazoColumn {
+                get {
+                    return this.columnPlazo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ImpLetraUnidadColumn {
+                get {
+                    return this.columnImpLetraUnidad;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1167,13 +1187,15 @@ namespace Autos_SCC.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public dtExtrasRow AdddtExtrasRow(string Acreedor, string ImpLetra, string FechaContrato, string DirSucursal) {
+            public dtExtrasRow AdddtExtrasRow(string Acreedor, string ImpLetra, string FechaContrato, string DirSucursal, string Plazo, string ImpLetraUnidad) {
                 dtExtrasRow rowdtExtrasRow = ((dtExtrasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Acreedor,
                         ImpLetra,
                         FechaContrato,
-                        DirSucursal};
+                        DirSucursal,
+                        Plazo,
+                        ImpLetraUnidad};
                 rowdtExtrasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtExtrasRow);
                 return rowdtExtrasRow;
@@ -1200,6 +1222,8 @@ namespace Autos_SCC.Reports {
                 this.columnImpLetra = base.Columns["ImpLetra"];
                 this.columnFechaContrato = base.Columns["FechaContrato"];
                 this.columnDirSucursal = base.Columns["DirSucursal"];
+                this.columnPlazo = base.Columns["Plazo"];
+                this.columnImpLetraUnidad = base.Columns["ImpLetraUnidad"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1213,6 +1237,10 @@ namespace Autos_SCC.Reports {
                 base.Columns.Add(this.columnFechaContrato);
                 this.columnDirSucursal = new global::System.Data.DataColumn("DirSucursal", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDirSucursal);
+                this.columnPlazo = new global::System.Data.DataColumn("Plazo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPlazo);
+                this.columnImpLetraUnidad = new global::System.Data.DataColumn("ImpLetraUnidad", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnImpLetraUnidad);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2386,6 +2414,38 @@ namespace Autos_SCC.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Plazo {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtExtras.PlazoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Plazo\' de la tabla \'dtExtras\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtExtras.PlazoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string ImpLetraUnidad {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtExtras.ImpLetraUnidadColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ImpLetraUnidad\' de la tabla \'dtExtras\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtExtras.ImpLetraUnidadColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsAcreedorNull() {
                 return this.IsNull(this.tabledtExtras.AcreedorColumn);
             }
@@ -2430,6 +2490,30 @@ namespace Autos_SCC.Reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetDirSucursalNull() {
                 this[this.tabledtExtras.DirSucursalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPlazoNull() {
+                return this.IsNull(this.tabledtExtras.PlazoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetPlazoNull() {
+                this[this.tabledtExtras.PlazoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsImpLetraUnidadNull() {
+                return this.IsNull(this.tabledtExtras.ImpLetraUnidadColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetImpLetraUnidadNull() {
+                this[this.tabledtExtras.ImpLetraUnidadColumn] = global::System.Convert.DBNull;
             }
         }
         
