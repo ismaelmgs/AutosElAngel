@@ -75,7 +75,12 @@ namespace Autos_SCC.DomainModel
                     iKilometraje = r["fi_Kilometraje"].S().I(),
                     iStatus = r["fi_Status"].S().I(),
                     sUsuario = r["fc_Usuario"].S(),
-                    dtFechaUltMov = r["fd_FechaUltMovimiento"].Dt()
+                    dtFechaUltMov = r["fd_FechaUltMovimiento"].Dt(),
+                    IEstado = r["IdEstado"].S().I(),
+                    SNumMotor = r["NumMotor"].S(),
+                    STenencia = r["TenenciaHasta"].S(),
+                    SFactura = r["Factura"].S(),
+                    SNumero = r["Numero"].S()
                 }).First();
             }
 
@@ -102,7 +107,12 @@ namespace Autos_SCC.DomainModel
                     iStatus = r["fi_Status"].S().I(),
                     sUsuario = r["fc_Usuario"].S(),
                     dtFechaUltMov = r["fd_FechaUltMovimiento"].Dt(),
-                    sFechaUltMov = r["fd_FechaUltMovimiento"].Dt().Day + "/" + r["fd_FechaUltMovimiento"].Dt().Month + "/" + r["fd_FechaUltMovimiento"].Dt().Year
+                    sFechaUltMov = r["fd_FechaUltMovimiento"].Dt().Day + "/" + r["fd_FechaUltMovimiento"].Dt().Month + "/" + r["fd_FechaUltMovimiento"].Dt().Year,
+                    IEstado = r["IdEstado"].S().I(),
+                    SNumMotor = r["NumMotor"].S(),
+                    STenencia = r["TenenciaHasta"].S(),
+                    SFactura = r["Factura"].S(),
+                    SNumero = r["Numero"].S()
                 }).First();
             }
             catch
@@ -138,7 +148,12 @@ namespace Autos_SCC.DomainModel
                                                                                             "@fm_Precio", oEjecut.dPrecio,
                                                                                             "@fi_Status", oEjecut.iStatus,
                                                                                             "@fc_Usuario", oEjecut.sUsuario,
-                                                                                            "@fi_Kilometraje", oEjecut.iKilometraje);
+                                                                                            "@fi_Kilometraje", oEjecut.iKilometraje,
+                                                                                            "@IdEstado", oEjecut.IEstado,
+                                                                                            "@NumMotor", oEjecut.SNumMotor,
+                                                                                            "@Tenencia", oEjecut.STenencia,
+                                                                                            "@Factura", oEjecut.SFactura,
+                                                                                            "@Numero", oEjecut.SNumero);
                         }
                         else
                         {
@@ -172,7 +187,12 @@ namespace Autos_SCC.DomainModel
                                                                             "@fm_Precio", oEjecut.dPrecio,
                                                                             "@fi_Status", oEjecut.iStatus,
                                                                             "@fc_Usuario", oEjecut.sUsuario,
-                                                                            "@fi_Kilometraje", oEjecut.iKilometraje);
+                                                                            "@fi_Kilometraje", oEjecut.iKilometraje,
+                                                                            "@IdEstado", oEjecut.IEstado,
+                                                                            "@NumMotor", oEjecut.SNumMotor,
+                                                                            "@Tenencia", oEjecut.STenencia,
+                                                                            "@Factura", oEjecut.SFactura,
+                                                                            "@Numero", oEjecut.SNumero);
 
                         //}
                         //else

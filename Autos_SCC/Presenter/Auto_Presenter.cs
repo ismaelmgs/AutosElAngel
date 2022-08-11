@@ -33,6 +33,7 @@ namespace Autos_SCC.Presenter
             oIView.LoadSucursales(new DBSucursales().dtObj);
             oIView.LoadEstatusAuto(new DBAuto().dtObjCatStatus.Select("iActivo = 1").CopyToDataTable());
             oIView.LoadObjects(oIGestCat.dtObjCat);
+            oIView.LoadEstados(new DBCliente().dtGetEstados);
         }
                 
         private void eGetTiposAuto_Presenter(object sender, EventArgs e)

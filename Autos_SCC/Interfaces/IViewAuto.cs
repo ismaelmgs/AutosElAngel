@@ -24,6 +24,7 @@ namespace Autos_SCC.Interfaces
         void LoadTiposAuto(DataTable dtTiposAuto);
         void LoadSucursales(DataTable dtSuc);
         void LoadEstatusAuto(DataTable dtEst);
+        void LoadEstados(DataTable dtEstados);
         void MostrarMensaje(string sMensaje, string sCaption);
         
         event EventHandler eGetTiposAuto;

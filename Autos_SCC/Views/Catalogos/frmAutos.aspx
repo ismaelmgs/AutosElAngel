@@ -8,6 +8,18 @@
     <link rel="stylesheet" href="../../jquery/jquery-ui-1.9.2.custom.min.css" type="text/css" />
     <script type="text/javascript" src="../../jquery/jquery-1.8.3.js"></script>
     <script type="text/javascript" src="../../jquery/jquery-ui-1.9.2.custom.min.js"></script>
+    <style>
+        .dataCell {
+            font-size:9pt !important;
+        }
+        th {
+            font-size:9pt !important;
+        }
+        .hiddenRow {
+            /*visibility:hidden !important;*/
+            display:none !important;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">    
     <script type="text/javascript" language="javascript">
@@ -104,7 +116,7 @@
                                 BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464"
                                 HeaderStyle-ForeColor="white" AllowSorting="True" CssClass="table table-hover">
                                 <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
-                                <HeaderStyle BackColor="#01609F" CssClass="titleHeader" />
+                                <HeaderStyle BackColor="#01609F" CssClass="titleHeader dataCell" />
                                 <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" CssClass="" />
                                 <AlternatingRowStyle BackColor="White" />
                                 <Columns>
@@ -117,24 +129,32 @@
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                     <asp:BoundField DataField="fi_Id" HeaderText="Id" Visible="false"/>
-                                    <asp:BoundField DataField="fc_Marca" HeaderText="Marca" />
-                                    <asp:BoundField DataField="fc_TipoAuto" HeaderText="Tipo" />
-                                    <asp:BoundField DataField="fc_Version" HeaderText="Versión" />
-                                    <asp:BoundField DataField="fm_Precio" HeaderText="Precio" DataFormatString="{0:c}" />
-                                    <asp:BoundField DataField="fc_Placa" HeaderText="Placa" />
-                                    <asp:BoundField DataField="fi_Modelo" HeaderText="Modelo" ItemStyle-HorizontalAlign="Center" />
-                                    <asp:BoundField DataField="fc_NoSerie" HeaderText="No. Serie" />
-                                    <asp:BoundField DataField="fc_Sucursal" HeaderText="Sucursal" />
-                                    <asp:BoundField DataField="fc_Color" HeaderText="Color" />
-                                    <asp:BoundField DataField="fi_Kilometraje" HeaderText="Kilometraje" />
-                                    <asp:BoundField DataField="fc_Status" HeaderText="Estatus" />
+                                    <asp:BoundField DataField="fc_Marca" HeaderText="Marca" ControlStyle-CssClass="dataCell" />
+                                    <asp:BoundField DataField="fc_TipoAuto" HeaderText="Tipo" ControlStyle-CssClass="dataCell" />
+                                    <asp:BoundField DataField="fc_Version" HeaderText="Versión" ControlStyle-CssClass="dataCell" />
+                                    <asp:BoundField DataField="fm_Precio" HeaderText="Precio" DataFormatString="{0:c}" ControlStyle-CssClass="dataCell" />
+                                    <asp:BoundField DataField="fc_Placa" HeaderText="Placa" ControlStyle-CssClass="dataCell" />
+                                    <asp:BoundField DataField="fi_Modelo" HeaderText="Modelo" ItemStyle-HorizontalAlign="Center" ControlStyle-CssClass="dataCell" />
+                                    <asp:BoundField DataField="fc_NoSerie" HeaderText="No. Serie" ControlStyle-CssClass="dataCell" />
+                                    <asp:BoundField DataField="fc_Sucursal" HeaderText="Sucursal" ControlStyle-CssClass="dataCell" />
+                                    <asp:BoundField DataField="fc_Color" HeaderText="Color" ControlStyle-CssClass="dataCell" />
+                                    <asp:BoundField DataField="fi_Kilometraje" HeaderText="Kilometraje" ControlStyle-CssClass="dataCell" />
+                                    <asp:BoundField DataField="fc_Status" HeaderText="Estatus" ControlStyle-CssClass="dataCell" />
                                     <asp:BoundField DataField="fc_Usuario" HeaderText="Usuario modifico" ItemStyle-HorizontalAlign="Center" Visible="false"/>
                                     <asp:BoundField DataField="fd_FechaUltMovimiento" HeaderText="Fecha Ult. Movimiento" ItemStyle-HorizontalAlign="Center" />
+                                    
                                     <asp:TemplateField>
                                         <ItemTemplate>
                                             <asp:Button ID="btnEliminar" runat="server" Text="ELIMINAR" CssClass="btn btn-danger" ToolTip="Elimina el registro seleccionado" CommandName="EliminarAuto" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"/>
                                         </ItemTemplate>
                                     </asp:TemplateField>
+
+                                    <asp:BoundField DataField="Des_Estado" ControlStyle-CssClass="hiddenRow" HeaderStyle-CssClass="hiddenRow" ItemStyle-CssClass="hiddenRow" />
+                                    <asp:BoundField DataField="NumMotor" ControlStyle-CssClass="hiddenRow" HeaderStyle-CssClass="hiddenRow" ItemStyle-CssClass="hiddenRow" />
+                                    <asp:BoundField DataField="TenenciaHasta" ControlStyle-CssClass="hiddenRow" HeaderStyle-CssClass="hiddenRow" ItemStyle-CssClass="hiddenRow" />
+                                    <asp:BoundField DataField="Factura" ControlStyle-CssClass="hiddenRow" HeaderStyle-CssClass="hiddenRow" ItemStyle-CssClass="hiddenRow" />
+                                    <asp:BoundField DataField="Numero" ControlStyle-CssClass="hiddenRow" HeaderStyle-CssClass="hiddenRow" ItemStyle-CssClass="hiddenRow" />
+
                                 </Columns>
                                 <EmptyDataTemplate>
                                             No se encontraron registros para mostrar...
@@ -147,21 +167,28 @@
                                     BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464"
                                     HeaderStyle-ForeColor="white" AllowSorting="True" CssClass="table table-responsive">
                                     <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
-                                    <HeaderStyle BackColor="#01609F" CssClass="titleHeader" />
+                                    <HeaderStyle BackColor="#01609F" CssClass="titleHeader dataCell" />
                                     <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" CssClass="" />
                                     <AlternatingRowStyle BackColor="White" />
                                     <Columns>
-                                        <asp:BoundField DataField="fi_Id" HeaderText="Id" />
-                                        <asp:BoundField DataField="fc_Marca" HeaderText="Marca" />
-                                        <asp:BoundField DataField="fc_Version" HeaderText="Versión" />
-                                        <asp:BoundField DataField="fc_TipoAuto" HeaderText="Tipo" />
-                                        <asp:BoundField DataField="fm_Precio" HeaderText="Precio"/>
-                                        <asp:BoundField DataField="fc_Placa" HeaderText="Placa" />
-                                        <asp:BoundField DataField="fi_Modelo" HeaderText="Modelo" />
-                                        <asp:BoundField DataField="fc_NoSerie" HeaderText="No. Serie" />
-                                        <asp:BoundField DataField="fc_Sucursal" HeaderText="Sucursal" />
-                                        <asp:BoundField DataField="fc_Color" HeaderText="Color" />
-                                        <asp:BoundField DataField="fi_Kilometraje" HeaderText="Kilometraje" />
+                                        <asp:BoundField DataField="fi_Id" HeaderText="Id" ControlStyle-CssClass="dataCell" />
+                                        <asp:BoundField DataField="fc_Marca" HeaderText="Marca" ControlStyle-CssClass="dataCell" />
+                                        <asp:BoundField DataField="fc_Version" HeaderText="Versión" ControlStyle-CssClass="dataCell" />
+                                        <asp:BoundField DataField="fc_TipoAuto" HeaderText="Tipo" ControlStyle-CssClass="dataCell" />
+                                        <asp:BoundField DataField="fm_Precio" HeaderText="Precio" ControlStyle-CssClass="dataCell" />
+                                        <asp:BoundField DataField="fc_Placa" HeaderText="Placa" ControlStyle-CssClass="dataCell" />
+                                        <asp:BoundField DataField="fc_Estado" HeaderText="Estado" ControlStyle-CssClass="dataCell" />
+                                        <asp:BoundField DataField="fi_Modelo" HeaderText="Modelo" ControlStyle-CssClass="dataCell" />
+                                        <asp:BoundField DataField="fc_NoSerie" HeaderText="No. Serie" ControlStyle-CssClass="dataCell" />
+                                        <asp:BoundField DataField="fc_Sucursal" HeaderText="Sucursal" ControlStyle-CssClass="dataCell" />
+                                        <asp:BoundField DataField="fc_Color" HeaderText="Color" ControlStyle-CssClass="dataCell" />
+                                        <asp:BoundField DataField="fi_Kilometraje" HeaderText="Kilometraje" ControlStyle-CssClass="dataCell" />
+
+                                        <asp:BoundField DataField="fc_NumMotor" HeaderText="No. Motor" ControlStyle-CssClass="dataCell" />
+                                        <asp:BoundField DataField="fc_TenenciaHasta" HeaderText="Tenencia Hasta" ControlStyle-CssClass="dataCell" />
+                                        <asp:BoundField DataField="fc_Factura" HeaderText="Factura de" ControlStyle-CssClass="dataCell" />
+                                        <asp:BoundField DataField="fc_Numero" HeaderText="Con Número" ControlStyle-CssClass="dataCell" />
+
                                         <asp:BoundField DataField="fc_Usuario" HeaderText="Usuario modifico" />
                                         <asp:BoundField DataField="fd_FechaUltMovimiento" HeaderText="Fecha Ult. Movimiento" />
                                     </Columns>
@@ -334,6 +361,17 @@
                                             <asp:TextBox ID="txtPlaca" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
                                         </div>
                                     </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <asp:Label ID="lblEstado" runat="server" Text="Del Estado de:" CssClass="inputLabel"></asp:Label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <asp:DropDownList ID="ddlEstado" runat="server" CssClass="form-control" Width="100%">
+                                            </asp:DropDownList>
+                                        </div>
+                                    </div>
+
                                     <div class="row">
                                         <div class="col-md-4">
                                             <asp:Label ID="lblNoSerie" runat="server" Text="No. Serie:" CssClass="inputLabel"></asp:Label>
@@ -342,11 +380,29 @@
                                             <asp:TextBox ID="txtNoSerie" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
                                         </div>
                                     </div>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <asp:Label ID="lblTenencia" runat="server" Text="Tenencia Hasta:" CssClass="inputLabel"></asp:Label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <asp:TextBox ID="txtTenencia" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <asp:Label ID="lblNumero" runat="server" Text="Con número:" CssClass="inputLabel"></asp:Label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <asp:TextBox ID="txtNumero" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                                        </div>
+                                    </div>
+
                                 </div>
                                 <div class="col-md-6">
                                     <div class="row">
                                         <div class="col-md-4">
-                                            <asp:Label ID="lblModelo" runat="server" Text="Modelo:" CssClass="inputLabel"></asp:Label>
+                                            <asp:Label ID="lblModelo" runat="server" Text="Modelo (año):" CssClass="inputLabel"></asp:Label>
                                         </div>
                                         <div class="col-md-8">
                                             <asp:TextBox ID="txtModelo" runat="server" MaxLength="4" CssClass="form-control" Width="100%"></asp:TextBox>
@@ -396,6 +452,26 @@
                                             <asp:TextBox ID="txtKilometraje" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
                                         </div>
                                     </div>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <asp:Label ID="lblNoMotor" runat="server" Text="No. de Motor:" CssClass="inputLabel"></asp:Label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <asp:TextBox ID="txtNumMotor" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <asp:Label ID="lblFactura" runat="server" Text="Factura de:" CssClass="inputLabel"></asp:Label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <asp:TextBox ID="txtFactura" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    
+
                                 </div>
                             </div>
                             <br />

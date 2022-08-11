@@ -141,11 +141,18 @@ namespace Autos_SCC.Views.Catalogos
                 dt.Columns.Add("fc_TipoAuto");
                 dt.Columns.Add("fm_Precio");
                 dt.Columns.Add("fc_Placa");
+                dt.Columns.Add("fc_Estado");
                 dt.Columns.Add("fi_Modelo");
                 dt.Columns.Add("fc_NoSerie");
                 dt.Columns.Add("fc_Sucursal");
                 dt.Columns.Add("fc_Color");
                 dt.Columns.Add("fi_Kilometraje");
+
+                dt.Columns.Add("fc_NumMotor");
+                dt.Columns.Add("fc_TenenciaHasta");
+                dt.Columns.Add("fc_Factura");
+                dt.Columns.Add("fc_Numero");
+
                 dt.Columns.Add("fc_Usuario");
                 dt.Columns.Add("fd_FechaUltMovimiento");
 
@@ -158,11 +165,18 @@ namespace Autos_SCC.Views.Catalogos
                     dr["fc_TipoAuto"] = row.Cells[4].Text.S();
                     dr["fm_Precio"] = row.Cells[5].Text.S();
                     dr["fc_Placa"] = row.Cells[6].Text.S();
+                    dr["fc_Estado"] = row.Cells[16].Text.S();
                     dr["fi_Modelo"] = row.Cells[7].Text.S();
                     dr["fc_NoSerie"] = row.Cells[8].Text.S();
                     dr["fc_Sucursal"] = row.Cells[9].Text.S();
                     dr["fc_Color"] = row.Cells[10].Text.S();
                     dr["fi_Kilometraje"] = row.Cells[11].Text.S();
+
+                    dr["fc_NumMotor"] = row.Cells[17].Text.S();
+                    dr["fc_TenenciaHasta"] = row.Cells[18].Text.S();
+                    dr["fc_Factura"] = row.Cells[19].Text.S();
+                    dr["fc_Numero"] = row.Cells[20].Text.S();
+
                     dr["fc_Usuario"] = row.Cells[13].Text.S();
                     dr["fd_FechaUltMovimiento"] = row.Cells[14].Text.S();
 
@@ -411,6 +425,17 @@ namespace Autos_SCC.Views.Catalogos
             ddlEstatusBus.DataBind();
         }
 
+        public void LoadEstados(DataTable dtEstados)
+        {
+            if (dtEstados.Rows.Count > 0)
+            {
+                ddlEstado.DataSource = dtEstados;
+                ddlEstado.DataValueField = "fi_Id";
+                ddlEstado.DataTextField = "fc_Descripcion";
+                ddlEstado.DataBind();
+            }
+        }
+
         private void LimpiaControles()
         {
             txtId.Text = string.Empty;
@@ -428,6 +453,12 @@ namespace Autos_SCC.Views.Catalogos
             txtColor.Text = string.Empty;
             txtBuqueda.Text = string.Empty;
             ddlEstatus.SelectedValue = "0";
+
+            ddlEstado.SelectedValue = "0";
+            txtNumMotor.Text = string.Empty;
+            txtTenencia.Text = string.Empty;
+            txtFactura.Text = string.Empty;
+            txtNumero.Text = string.Empty;
         }
 
         public void MostrarMensaje(string sMensaje, string sCaption)
@@ -464,12 +495,17 @@ namespace Autos_SCC.Views.Catalogos
                     iIdVersion = ddlVersion.SelectedValue == null ? 0 : ddlVersion.SelectedValue.S().I(),
                     iIdTipoAuto = ddlTipoAuto.SelectedValue.S().I(),
                     sPlaca = txtPlaca.Text.S(),
+                    IEstado = ddlEstado.SelectedItem.Value.I(),
                     sNoSerie = txtNoSerie.Text.S(),
                     iModelo = txtModelo.Text.S().I(),
                     sColor = txtColor.Text.S(),
                     iIdSucursal = ddlSucursal.SelectedValue.S().I(),
                     dPrecio = txtPrecio.Text.S().D(),
                     iKilometraje = txtKilometraje.Text.S().I(),
+                    SNumMotor = txtNumMotor.Text.S(),
+                    STenencia = txtTenencia.Text.S(),
+                    SFactura = txtFactura.Text.S(),
+                    SNumero = txtNumero.Text.S(),
                     iStatus = ddlEstatus.SelectedValue.S().I(),
                     sUsuario = Session["usuario"].S()
                 };
@@ -490,12 +526,21 @@ namespace Autos_SCC.Views.Catalogos
                     ddlVersion.SelectedValue = oCat.iIdVersion.S();
                                         
                     txtPlaca.Text = oCat.sPlaca;
+
+                    ddlEstado.SelectedValue = oCat.IEstado.S();
+
                     txtNoSerie.Text = oCat.sNoSerie;
                     txtModelo.Text = oCat.iModelo.S();
                     txtColor.Text = oCat.sColor;
                     ddlSucursal.SelectedValue = oCat.iIdSucursal.S();
                     txtPrecio.Text = oCat.dPrecio.S();
                     txtKilometraje.Text = oCat.iKilometraje.S();
+
+                    txtNumMotor.Text = oCat.SNumMotor.S();
+                    txtTenencia.Text = oCat.STenencia.S();
+                    txtFactura.Text = oCat.SFactura.S();
+                    txtNumero.Text = oCat.SNumero.S();
+
                     ddlEstatus.SelectedValue = oCat.iStatus.S();
                 }
             }

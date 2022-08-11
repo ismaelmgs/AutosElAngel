@@ -25,6 +25,13 @@ namespace Autos_SCC.Objetos
         private string _sUsuario = string.Empty;
         private DateTime _dtFechaUltMov = new DateTime();
         private string _sFechaUltMov = string.Empty;
+
+        private int _iEstado = 0;
+        private string _sNumMotor = string.Empty;
+        private string _sTenencia = string.Empty;
+        private string _sFactura = string.Empty;
+        private string _sNumero = string.Empty;
+
         
         [Display(AutoGenerateField = false), ScaffoldColumn(false)]
         public int iId { get { return _iId; } set { _iId = value; } }
@@ -67,5 +74,10 @@ namespace Autos_SCC.Objetos
 
         public string sFechaUltMov { get { return _sFechaUltMov; } set { _sFechaUltMov = value; } }
 
+        public int IEstado { get => _iEstado; set => _iEstado = value; }
+        public string SNumMotor { get => _sNumMotor; set => _sNumMotor = value; }
+        public string STenencia { get => _sTenencia; set => _sTenencia = value; }
+        public string SFactura { get => _sFactura; set => _sFactura = value; }
+        public string SNumero { get => _sNumero; set => _sNumero = value; }
     }
 }
