@@ -309,7 +309,7 @@
             <ContentTemplate>
                 <div class="row">
                     <div class="col-md-12" style="padding-top:10%;">
-                        <div class="card" style="width:70%; margin:0 auto;">
+                        <div class="card" style="width:70%; margin:0 auto; background-color:#eeeeee;">
                         <h3 style="text-align:center;" id="ttlAuto" runat="server">Registro de Autos</h3>
                             <br />
                             <div class="row">

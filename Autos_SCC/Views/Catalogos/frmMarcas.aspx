@@ -155,7 +155,7 @@
             <ContentTemplate>
                 <div class="row">
                     <div class="col-md-12" style="padding-top:10%;">
-                        <div class="card" style="width:50%; margin:0 auto;">
+                        <div class="card" style="width:50%; margin:0 auto; background-color:#eeeeee;">
                             <h3 style="text-align:center;" id="ttlMarca" runat="server">Registro de Marcas</h3>
                             <br />
                                 <div class="row">
