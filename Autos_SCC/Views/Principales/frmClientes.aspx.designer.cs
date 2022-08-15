@@ -186,6 +186,33 @@ namespace Autos_SCC.Views.Principales
         protected global::System.Web.UI.WebControls.Label lblReqEstado;
 
         /// <summary>
+        /// Control lblDelegacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDelegacion;
+
+        /// <summary>
+        /// Control ddlMunicipio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlMunicipio;
+
+        /// <summary>
+        /// Control lblReqMunicipio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblReqMunicipio;
+
+        /// <summary>
         /// Control lblColonia.
         /// </summary>
         /// <remarks>
@@ -366,33 +393,6 @@ namespace Autos_SCC.Views.Principales
         protected global::System.Web.UI.WebControls.DropDownList ddlSexo;
 
         /// <summary>
-        /// Control lblLada.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLada;
-
-        /// <summary>
-        /// Control txtLada.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLada;
-
-        /// <summary>
-        /// Control ftbLada.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::AjaxControlToolkit.FilteredTextBoxExtender ftbLada;
-
-        /// <summary>
         /// Control lblTelefonoCel.
         /// </summary>
         /// <remarks>
@@ -418,33 +418,6 @@ namespace Autos_SCC.Views.Principales
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AjaxControlToolkit.FilteredTextBoxExtender ftbTelefonoCel;
-
-        /// <summary>
-        /// Control lblDelegacion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDelegacion;
-
-        /// <summary>
-        /// Control ddlMunicipio.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlMunicipio;
-
-        /// <summary>
-        /// Control lblReqMunicipio.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblReqMunicipio;
 
         /// <summary>
         /// Control lblCP.
@@ -598,6 +571,33 @@ namespace Autos_SCC.Views.Principales
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlEstadoCivil;
+
+        /// <summary>
+        /// Control lblLada.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblLada;
+
+        /// <summary>
+        /// Control txtLada.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtLada;
+
+        /// <summary>
+        /// Control ftbLada.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::AjaxControlToolkit.FilteredTextBoxExtender ftbLada;
 
         /// <summary>
         /// Control lblTelefono.
@@ -879,6 +879,33 @@ namespace Autos_SCC.Views.Principales
         protected global::System.Web.UI.WebControls.Label lblReqEstadoAval;
 
         /// <summary>
+        /// Control lblMunicipioAval.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMunicipioAval;
+
+        /// <summary>
+        /// Control ddlMunicipioAval.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlMunicipioAval;
+
+        /// <summary>
+        /// Control lblReqMunicipioAval.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblReqMunicipioAval;
+
+        /// <summary>
         /// Control lblColoniaAval.
         /// </summary>
         /// <remarks>
@@ -1059,33 +1086,6 @@ namespace Autos_SCC.Views.Principales
         protected global::System.Web.UI.WebControls.DropDownList ddlSexoAval;
 
         /// <summary>
-        /// Control lblLadaAval.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLadaAval;
-
-        /// <summary>
-        /// Control txtLadaAval.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLadaAval;
-
-        /// <summary>
-        /// Control ftbLadaAval.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::AjaxControlToolkit.FilteredTextBoxExtender ftbLadaAval;
-
-        /// <summary>
         /// Control lblTelefonoCelAval.
         /// </summary>
         /// <remarks>
@@ -1156,33 +1156,6 @@ namespace Autos_SCC.Views.Principales
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblReqApeMaternoAval;
-
-        /// <summary>
-        /// Control lblMunicipioAval.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMunicipioAval;
-
-        /// <summary>
-        /// Control ddlMunicipioAval.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlMunicipioAval;
-
-        /// <summary>
-        /// Control lblReqMunicipioAval.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblReqMunicipioAval;
 
         /// <summary>
         /// Control lblCPAval.
@@ -1336,6 +1309,33 @@ namespace Autos_SCC.Views.Principales
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlEstadoCivilAval;
+
+        /// <summary>
+        /// Control lblLadaAval.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblLadaAval;
+
+        /// <summary>
+        /// Control txtLadaAval.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtLadaAval;
+
+        /// <summary>
+        /// Control ftbLadaAval.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::AjaxControlToolkit.FilteredTextBoxExtender ftbLadaAval;
 
         /// <summary>
         /// Control lblTelefonoAval.

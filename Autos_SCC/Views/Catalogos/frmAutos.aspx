@@ -212,7 +212,7 @@
         CancelControlID="can">
     </cc1:ModalPopupExtender>
     
-        <asp:Panel ID="Panel1" runat="server" Width="100%" Height="100%" Style="background-color:#00000070; display: none; margin-left:-6px; padding-top:10%;">
+        <asp:Panel ID="Panel1" runat="server" Width="100%" Height="100%" Style="background-color:#00000070; display: none; margin-left:-6px; padding-top:3%;">
         <asp:UpdatePanel ID="UpdatePanel1" runat="server" BorderColor="Black" BackColor=""
         HorizontalAlign="Center" Style="border-radius:25px; box-shadow:3px 3px 3px #00000050; background-color:#eeeeee; width:50%;margin:0 auto;">
             <ContentTemplate>
@@ -308,7 +308,7 @@
         <asp:UpdatePanel ID="UpaAgregarVehiculo" runat="server" UpdateMode="Conditional">
             <ContentTemplate>
                 <div class="row">
-                    <div class="col-md-12" style="padding-top:10%;">
+                    <div class="col-md-12" style="padding-top:3%;">
                         <div class="card" style="width:70%; margin:0 auto; background-color:#eeeeee;">
                         <h3 style="text-align:center;" id="ttlAuto" runat="server">Registro de Autos</h3>
                             <br />
@@ -389,14 +389,7 @@
                                             <asp:TextBox ID="txtTenencia" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <asp:Label ID="lblNumero" runat="server" Text="Con número:" CssClass="inputLabel"></asp:Label>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <asp:TextBox ID="txtNumero" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
-                                        </div>
-                                    </div>
+                                    
 
                                 </div>
                                 <div class="col-md-6">
@@ -468,6 +461,14 @@
                                         </div>
                                         <div class="col-md-8">
                                             <asp:TextBox ID="txtFactura" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <asp:Label ID="lblNumero" runat="server" Text="Con número:" CssClass="inputLabel"></asp:Label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <asp:TextBox ID="txtNumero" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
                                         </div>
                                     </div>
                                     

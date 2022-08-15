@@ -465,24 +465,6 @@ namespace Autos_SCC.Views.Catalogos
         protected global::System.Web.UI.WebControls.TextBox txtTenencia;
 
         /// <summary>
-        /// Control lblNumero.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNumero;
-
-        /// <summary>
-        /// Control txtNumero.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNumero;
-
-        /// <summary>
         /// Control lblModelo.
         /// </summary>
         /// <remarks>
@@ -634,6 +616,24 @@ namespace Autos_SCC.Views.Catalogos
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFactura;
+
+        /// <summary>
+        /// Control lblNumero.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNumero;
+
+        /// <summary>
+        /// Control txtNumero.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNumero;
 
         /// <summary>
         /// Control btnGuardar.

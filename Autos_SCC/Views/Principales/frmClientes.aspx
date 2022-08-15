@@ -141,6 +141,22 @@
                                             </td>
                                         </tr>
                                         <tr>
+                                            <td width="40%">
+                                                <asp:Label ID="lblDelegacion" runat="server" Text="Delegación/Municipio:" CssClass="inputLabel"></asp:Label>
+                                            </td>
+                                            <td width="60%">
+                                                <div class="row">
+                                                    <div class="col-md-10">
+                                                        <asp:DropDownList ID="ddlMunicipio" runat="server" AutoPostBack="true" CssClass="form-control"
+                                                    OnSelectedIndexChanged="ddlMunicipio_SelectedIndexChanged"></asp:DropDownList>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <asp:Label ID="lblReqMunicipio" runat="server" Text="*" CssClass="inputReqLabel"></asp:Label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
                                             <td>
                                                 <asp:Label ID="lblColonia" runat="server" Text="Colonia/Poblaci&oacute;n:" CssClass="inputLabel"></asp:Label>
                                             </td>
@@ -219,7 +235,7 @@
                                                     </div>
                                                     <div class="col-md-2" style="text-align:left;">
                                                         <asp:Label ID="lblreqFechaNacimiento" runat="server" Text="*" CssClass="inputReqLabel"></asp:Label>
-                                                        <asp:ImageButton ID="imbFechaNacimiento" runat="server" ImageUrl="~/Images/Botones/Calendar.ico" Width="24px" Height="24px" style="margin-bottom:-15px;margin-left:5px;" />
+                                                        <asp:ImageButton ID="imbFechaNacimiento" runat="server" ImageUrl="~/Images/Botones/Calendar.ico" Width="24px" Height="24px" style="margin-top:-15px;margin-left:5px;" />
                                                         <cc1:CalendarExtender ID="calFechaNacimiento" runat="server" Enabled="True" Format="dd/MM/yyyy"
                                                                 PopupButtonID="imbFechaNacimiento" TargetControlID="txtFechaNacimiento">
                                                         </cc1:CalendarExtender>
@@ -254,24 +270,7 @@
                                         
 			                                </td>
                                         </tr>
-                                        <tr>
-                                            <td>
-                                                <asp:Label ID="lblLada" runat="server" Text="Lada:" CssClass="inputLabel"></asp:Label>
-                                            </td>
-                                            <td>
-                                                <div class="row">
-                                                    <div class="col-md-10">
-                                                        <asp:TextBox ID="txtLada" runat="server" MaxLength="3" CssClass="form-control"></asp:TextBox>
-                                                        <cc1:FilteredTextBoxExtender ID="ftbLada" runat="server" FilterType="Numbers" FilterMode="ValidChars"
-                                                            ValidChars="0123456789" TargetControlID="txtLada"></cc1:FilteredTextBoxExtender>
-                                                    </div>
-                                                    <div class="col-md-2">
-
-                                                    </div>
-                                                </div>
                                         
-                                            </td>
-                                        </tr>
                                         <tr>
                                             <td>                        
                                                 <asp:Label ID="lblTelefonoCel" runat="server" Text="Tel&eacute;fono Celular:" CssClass="inputLabel"></asp:Label>
@@ -301,22 +300,7 @@
                                 </td>
                                 <td style="width: 51%; vertical-align:top">
                                     <table style="text-align:left" width="100%">
-                                        <tr>
-                                            <td width="40%">
-                                                <asp:Label ID="lblDelegacion" runat="server" Text="Delegación/Municipio:" CssClass="inputLabel"></asp:Label>
-                                            </td>
-                                            <td width="60%">
-                                                <div class="row">
-                                                    <div class="col-md-10">
-                                                        <asp:DropDownList ID="ddlMunicipio" runat="server" AutoPostBack="true" CssClass="form-control"
-                                                    OnSelectedIndexChanged="ddlMunicipio_SelectedIndexChanged"></asp:DropDownList>
-                                                    </div>
-                                                    <div class="col-md-2">
-                                                        <asp:Label ID="lblReqMunicipio" runat="server" Text="*" CssClass="inputReqLabel"></asp:Label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                        
                                         <tr>
                                             <td>
                                                 <asp:Label ID="lblCP" runat="server" Text="C.P.:" CssClass="inputLabel"></asp:Label>
@@ -425,6 +409,24 @@
                                         </tr>
                                         <tr>
                                             <td>
+                                                <asp:Label ID="lblLada" runat="server" Text="Lada:" CssClass="inputLabel"></asp:Label>
+                                            </td>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="col-md-10">
+                                                        <asp:TextBox ID="txtLada" runat="server" MaxLength="3" CssClass="form-control"></asp:TextBox>
+                                                        <cc1:FilteredTextBoxExtender ID="ftbLada" runat="server" FilterType="Numbers" FilterMode="ValidChars"
+                                                            ValidChars="0123456789" TargetControlID="txtLada"></cc1:FilteredTextBoxExtender>
+                                                    </div>
+                                                    <div class="col-md-2">
+
+                                                    </div>
+                                                </div>
+                                        
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
                                                 <asp:Label ID="lblTelefono" runat="server" Text="Tel&eacute;fono:" CssClass="inputLabel"></asp:Label>
                                             </td>
                                             <td>
@@ -441,6 +443,7 @@
                                         
                                             </td>
                                         </tr>
+                                        
                                         <tr>
                                             <td>
                                                 <asp:Label ID="lblTiempoVivirDom" runat="server" Text="Tiempo de vivir Dom." CssClass="inputLabel"></asp:Label>
@@ -551,9 +554,9 @@
     <cc1:ModalPopupExtender ID="mpeCapturaAval" runat="server" TargetControlID="hdCapturaAvalTarget" 
         PopupControlID="pnlCapturaAval" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
-    <asp:Panel ID="pnlCapturaAval" runat="server" Width="100%" Height="100%" Style="background-color:#00000070; display: none; margin-left:-6px; padding-top:6%;">
+    <asp:Panel ID="pnlCapturaAval" runat="server" Width="100%" Height="100%" Style="background-color:#00000070; display: none; margin-left:-6px; padding-top:%;">
         <asp:UpdatePanel ID="upaAvales" runat="server" BorderColor="Black" BackColor=""
-        HorizontalAlign="Center"  Style="border-radius:25px; box-shadow:3px 3px 3px #00000050; background-color:#eeeeee; width:50%;margin:0 auto; padding:10px;">
+        HorizontalAlign="Center"  Style="border-radius:25px; box-shadow:3px 3px 3px #00000050; background-color:#eeeeee; width:70%;margin:0 auto; padding:10px;">
             <ContentTemplate>
                 <table width="80%" style="margin:0 auto;">
                     <tr>
@@ -609,6 +612,22 @@
                                             </div>
                                             <div class="col-md-2">
                                                 <asp:Label ID="lblReqEstadoAval" runat="server" Text="*" CssClass="inputReqLabel"></asp:Label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <asp:Label ID="lblMunicipioAval" runat="server" Text="Delegación/Municipio:" CssClass="inputLabel"></asp:Label>
+                                    </td>
+                                    <td>
+                                        <div class="row">
+                                            <div class="col-md-10">
+                                                <asp:DropDownList ID="ddlMunicipioAval" runat="server" AutoPostBack="true" CssClass="form-control"
+                                            OnSelectedIndexChanged="ddlMunicipioAval_SelectedIndexChanged" TabIndex="6"></asp:DropDownList>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <asp:Label ID="lblReqMunicipioAval" runat="server" Text="*" CssClass="inputReqLabel"></asp:Label>
                                             </div>
                                         </div>
                                     </td>
@@ -691,7 +710,7 @@
                                             </div>
                                             <div class="col-md-2">
                                                 <asp:Label ID="lblreqFechaNacimientoAval" runat="server" Text="*" CssClass="inputReqLabel"></asp:Label>
-                                                <asp:ImageButton ID="imbFechaNacimientoAval" runat="server" ImageUrl="~/Images/Botones/Calendar.ico" Width="24px" Height="24px" style="margin-bottom:-15px;" />
+                                                <asp:ImageButton ID="imbFechaNacimientoAval" runat="server" ImageUrl="~/Images/Botones/Calendar.ico" Width="24px" Height="24px" style="margin-top:-15px;" />
                                                 <cc1:CalendarExtender ID="calFechaNacimientoAval" runat="server" Enabled="True" Format="dd/MM/yyyy"
                                                         PopupButtonID="imbFechaNacimientoAval" TargetControlID="txtFechaNacimientoAval">
                                                 </cc1:CalendarExtender>
@@ -724,23 +743,7 @@
                                         
 			                        </td>
                                 </tr>
-                                <tr>
-                                    <td>
-                                        <asp:Label ID="lblLadaAval" runat="server" Text="Lada:" CssClass="inputLabel"></asp:Label>
-                                    </td>
-                                    <td>
-                                        <div class="row">
-                                            <div class="col-md-10">
-                                                <asp:TextBox ID="txtLadaAval" runat="server" MaxLength="3" CssClass="form-control" TabIndex="20"></asp:TextBox>
-                                                <cc1:FilteredTextBoxExtender ID="ftbLadaAval" runat="server" FilterType="Numbers" FilterMode="ValidChars"
-                                                ValidChars="0123456789" TargetControlID="txtLadaAval"></cc1:FilteredTextBoxExtender>
-                                            </div>
-                                            <div class="col-md-2">
-                                                
-                                            </div>
-                                        </div> 
-                                    </td>
-                                </tr>
+                                
                                 <tr>
                                     <td>                        
                                         <asp:Label ID="lblTelefonoCelAval" runat="server" Text="Tel&eacute;fono Celular:" CssClass="inputLabel"></asp:Label>
@@ -799,22 +802,7 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>
-                                        <asp:Label ID="lblMunicipioAval" runat="server" Text="Delegación/Municipio:" CssClass="inputLabel"></asp:Label>
-                                    </td>
-                                    <td>
-                                        <div class="row">
-                                            <div class="col-md-10">
-                                                <asp:DropDownList ID="ddlMunicipioAval" runat="server" AutoPostBack="true" CssClass="form-control"
-                                            OnSelectedIndexChanged="ddlMunicipioAval_SelectedIndexChanged" TabIndex="6"></asp:DropDownList>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <asp:Label ID="lblReqMunicipioAval" runat="server" Text="*" CssClass="inputReqLabel"></asp:Label>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
+                                
                                 <tr>
                                     <td>
                                         <asp:Label ID="lblCPAval" runat="server" Text="C.P.:" CssClass="inputLabel"></asp:Label>
@@ -921,6 +909,23 @@
                                             </div>
                                         </div>
                                         
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <asp:Label ID="lblLadaAval" runat="server" Text="Lada:" CssClass="inputLabel"></asp:Label>
+                                    </td>
+                                    <td>
+                                        <div class="row">
+                                            <div class="col-md-10">
+                                                <asp:TextBox ID="txtLadaAval" runat="server" MaxLength="3" CssClass="form-control" TabIndex="20"></asp:TextBox>
+                                                <cc1:FilteredTextBoxExtender ID="ftbLadaAval" runat="server" FilterType="Numbers" FilterMode="ValidChars"
+                                                ValidChars="0123456789" TargetControlID="txtLadaAval"></cc1:FilteredTextBoxExtender>
+                                            </div>
+                                            <div class="col-md-2">
+                                                
+                                            </div>
+                                        </div> 
                                     </td>
                                 </tr>
                                 <tr>

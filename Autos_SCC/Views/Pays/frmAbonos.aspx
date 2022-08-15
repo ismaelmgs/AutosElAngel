@@ -328,7 +328,7 @@
                             <asp:Button ID="btnAceptarPago" runat="server" Text="Aceptar" OnClick="btnAceptarPago_Click" CssClass="btn btn-success" />
                         </td>
                         <td style="text-align:left; width:165">
-                            <asp:Button ID="btnCancelarPago" runat="server" Text="Cancelar" OnClick="btnCancelarPago_Click" CssClass="btn btn-danger" />
+                            <asp:Button ID="btnCancelarPago" runat="server" Text="Cerrar" OnClick="btnCancelarPago_Click" CssClass="btn btn-danger" />
                         </td>
                     </tr>
                 </table>
