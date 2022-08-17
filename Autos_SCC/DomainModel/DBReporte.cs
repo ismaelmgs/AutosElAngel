@@ -18,8 +18,9 @@ namespace Autos_SCC.DomainModel
                                                                                 "@FECHA_FIN", oRep.dtFechaFin,
                                                                                 "@FI_SUCURSAL", oRep.iIdSucursal);
             }
-            catch
+            catch (Exception EX)
             {
+                string strError = EX.ToString();
                 return new DataTable();
             }
         }

@@ -13,6 +13,7 @@ using Autos_SCC.DomainModel;
 using Autos_SCC.Clases;
 using Autos_SCC.Presenter;
 using System.Threading;
+using Autos_SCC.Objetos;
 
 namespace Autos_SCC.Views.Principales
 {
@@ -878,6 +879,20 @@ namespace Autos_SCC.Views.Principales
         {
             get { return (DataTable)ViewState["VSPagosIndividuales"]; }
             set { ViewState["VSPagosIndividuales"] = value; }
+        }
+
+        public int iIdUsuario
+        {
+            get
+            {
+                int iIdUsu = 0;
+                if (Session["oUserData"] != null)
+                {
+                    DataUserIndetity oUser = (DataUserIndetity)Session["oUserData"];
+                    iIdUsu = oUser.IIdUsuario;
+                }
+                return iIdUsu;
+            }
         }
 
 

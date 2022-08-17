@@ -12,6 +12,7 @@ namespace Autos_SCC.Interfaces
         DataTable dtCliente { get; set; }
         int iIdCotizacion { get; }
         int iIdSucursal { get; }
+        int iIdUsuario { get; }
         object[] oArrFormalizacion { get; }
         string sUsuarioForm { get; }
         DataTable dtPagosTemp { get; set; }

@@ -35,7 +35,7 @@ namespace Autos_SCC.Presenter
 
         public void LoadObjects_Presenter()
         {
-            oIView.LoadSucursales(new DBSucursales().dtObj);
+            oIView.LoadSucursales(new DBSucursales().dtSucursalesPorUsuario(oIView.iIdUsuario));
             oIView.LoadEstados(new DBCliente().dtGetEstados);
         }
 
