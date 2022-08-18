@@ -484,7 +484,7 @@
                             <tr>
                                 <td colspan="2" align="center"><br />
                                     <asp:Button ID="btnGuardar" runat="server" Text="Guardar" CssClass="btn btn-success" OnClick="btnGuardar_Click" />
-                                    <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-danger" />
+                                    <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-danger" Style="display:none;" />
                                 </td>
                             </tr>
                             <tr>
