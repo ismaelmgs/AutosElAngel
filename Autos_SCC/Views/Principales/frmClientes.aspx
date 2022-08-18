@@ -301,23 +301,7 @@
                                 <td style="width: 51%; vertical-align:top">
                                     <table style="text-align:left" width="100%">
                                         
-                                        <tr>
-                                            <td>
-                                                <asp:Label ID="lblCP" runat="server" Text="C.P.:" CssClass="inputLabel"></asp:Label>
-                                            </td>
-                                            <td>
-                                                <div class="row">
-                                                    <div class="col-md-10">
-                                                        <asp:TextBox ID="txtCP" runat="server" MaxLength="5" CssClass="form-control"></asp:TextBox>
-                                                    </div>
-                                                    <div class="col-md-2">
-                                                        <asp:Label ID="lblReqCP" runat="server" Text="*" CssClass="inputReqLabel"></asp:Label>
-                                                        <cc1:FilteredTextBoxExtender ID="ftbCP" runat="server" FilterType="Numbers" TargetControlID="txtCP"
-                                                            ValidChars="0123456789"></cc1:FilteredTextBoxExtender>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                        
                                         <tr>
                                             <td>
                                                 <asp:Label ID="lblNoExt" runat="server" Text="No. Ext:" CssClass="inputLabel"></asp:Label> 
@@ -332,6 +316,29 @@
                                                     </div>
                                                     <div class="col-md-4">
                                                         <asp:TextBox ID="txtNumInt" runat="server" MaxLength="20" CssClass="form-control" Width="100%"></asp:TextBox>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <asp:Label ID="lblCP" runat="server" Text="C.P.:" CssClass="inputLabel"></asp:Label>
+                                            </td>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="col-md-5">
+                                                        <div class="row">
+                                                            <div class="col-md-11" style="text-align:left;">
+                                                                <asp:TextBox ID="txtCP" runat="server" MaxLength="5" CssClass="form-control" Style="width:115px;margin-left:-3px;"></asp:TextBox>
+                                                            </div>
+                                                            <div class="col-md-1" style="text-align:left;">
+                                                                <asp:Label ID="lblReqCP" runat="server" Text="*" CssClass="inputReqLabel"></asp:Label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <cc1:FilteredTextBoxExtender ID="ftbCP" runat="server" FilterType="Numbers" TargetControlID="txtCP"
+                                                            ValidChars="0123456789"></cc1:FilteredTextBoxExtender>
                                                     </div>
                                                 </div>
                                             </td>
@@ -407,7 +414,7 @@
                                         
                                             </td>
                                         </tr>
-                                        <tr>
+                                        <tr style="display:none;">
                                             <td>
                                                 <asp:Label ID="lblLada" runat="server" Text="Lada:" CssClass="inputLabel"></asp:Label>
                                             </td>
@@ -911,7 +918,7 @@
                                         
                                     </td>
                                 </tr>
-                                <tr>
+                                <tr style="display:none;">
                                     <td>
                                         <asp:Label ID="lblLadaAval" runat="server" Text="Lada:" CssClass="inputLabel"></asp:Label>
                                     </td>
