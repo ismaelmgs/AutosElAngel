@@ -16,6 +16,7 @@ namespace Autos_SCC.Interfaces
         object[] oArrFiltros { get; }
         DataTable dtGastosAuto { get; set; }
         int iAuto { get; set; }
+        
         DataTable dtDataSource { get; set; }
 
         void LoadObjects(DataTable dtObjCat);
