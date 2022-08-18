@@ -261,6 +261,7 @@
                                                     <asp:DropDownList ID="ddlSexo" runat="server" CssClass="form-control">
                                                         <asp:ListItem Text="Hombre" Value="1"></asp:ListItem>
                                                         <asp:ListItem Text="Mujer" Value="2"></asp:ListItem>
+                                                        <asp:ListItem Text="Otro" Value="3"></asp:ListItem>
                                                     </asp:DropDownList>
                                                     </div>
                                                     <div class="col-md-2">
@@ -741,6 +742,7 @@
                                                 <asp:DropDownList ID="ddlSexoAval" runat="server" CssClass="form-control" TabIndex="18">
                                                     <asp:ListItem Text="Hombre" Value="1"></asp:ListItem>
                                                     <asp:ListItem Text="Mujer" Value="2"></asp:ListItem>
+                                                    <asp:ListItem Text="Otro" Value="3"></asp:ListItem>
                                                 </asp:DropDownList>
                                             </div>
                                             <div class="col-md-2">
