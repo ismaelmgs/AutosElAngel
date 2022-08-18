@@ -11,6 +11,8 @@ namespace Autos_SCC.Interfaces
     {
         AutosVen oRep { get; }
 
+        int iIdUsuario { get; }
+
         void LoadSucursales(DataTable dtSuc);
         void LoadGrid(DataTable dt);
 

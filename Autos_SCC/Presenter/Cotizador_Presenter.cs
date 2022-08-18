@@ -130,7 +130,7 @@ namespace Autos_SCC.Presenter
         public void LoadObjects()
         {
             oIView.LoadObjects(new DBPlazo().dtObjsCat);
-            oIView.LoadSucursales(new DBSucursales().dtObj);
+            oIView.LoadSucursales(new DBSucursales().dtSucursalesPorUsuario(oIView.iIdUsuario));
         }
 
         private void eGetMarcas_Presenter(object sender, EventArgs e)
