@@ -10,6 +10,7 @@ namespace Autos_SCC.Interfaces
     public interface IViewReporte : IBaseView
     {
         AutosVen oRep { get; }
+        int iIdUsuario { get; }
 
         void LoadSucursales(DataTable dtSuc);
         void LoadGrid(DataTable dt);

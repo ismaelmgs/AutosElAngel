@@ -143,6 +143,20 @@ namespace Autos_SCC.Views.Report
             get { return (string)ViewState["sTotalGridV"]; }
             set { ViewState["sTotalGridV"] = value; }
         }
+
+        public int iIdUsuario
+        {
+            get
+            {
+                int iIdUsu = 0;
+                if (Session["oUserData"] != null)
+                {
+                    DataUserIndetity oUser = (DataUserIndetity)Session["oUserData"];
+                    iIdUsu = oUser.IIdUsuario;
+                }
+                return iIdUsu;
+            }
+        }
         #endregion
     }
 }

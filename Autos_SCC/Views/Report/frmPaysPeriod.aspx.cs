@@ -300,6 +300,20 @@ namespace Autos_SCC.Views.Report
             }
         }
 
+        public int iIdUsuario
+        {
+            get
+            {
+                int iIdUsu = 0;
+                if (Session["oUserData"] != null)
+                {
+                    DataUserIndetity oUser = (DataUserIndetity)Session["oUserData"];
+                    iIdUsu = oUser.IIdUsuario;
+                }
+                return iIdUsu;
+            }
+        }
+
         #endregion
     }
 }

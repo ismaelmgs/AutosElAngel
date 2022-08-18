@@ -10,6 +10,7 @@ namespace Autos_SCC.Interfaces
     public interface IViewTotalesCartera : IBaseView
     {
         string sSucursal { get; set; }
+        int iIdUsuario { get; }
         void LoadGrid(DataSet dt);
         void LoadSucursales(DataTable dtSuc);
 

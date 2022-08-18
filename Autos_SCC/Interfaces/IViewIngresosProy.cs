@@ -12,6 +12,7 @@ namespace Autos_SCC.Interfaces
         int iReporte { get; set; }
         string sFecha { get; set; }
         string sSucursal { get; set; }
+        int iIdUsuario { get; }
         void LoadGrid(DataSet dt);
 
         void LoadSucursales(DataTable dtSuc);
