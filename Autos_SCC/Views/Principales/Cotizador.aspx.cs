@@ -65,15 +65,21 @@ namespace Autos_SCC.Views.Principales
                 ColocaPlazo();
                 updCotizar.Update();
 
-                if (dTasaPreferencial != 0)
-                    HidTasa.Value = dTasaPreferencial.S();
+               //  MOGI 21/08/2022     AJUSTE PARA QUE PRIMERO TOME EN CUENTA LOS MESES SIN INTERESES Y DESPUES LA TASA PREFERENCIAL O VALOR POR DEFAULT
+                if (bSinIntereses)
+                    HidTasa.Value = "0";
                 else
-                    HidTasa.Value = oParametro.sValor.S();
+                    if (dTasaPreferencial != 0)
+                        HidTasa.Value = dTasaPreferencial.S();
+                    else
+                        HidTasa.Value = oParametro.sValor.S();
+
 
                 HidGenerar.Value = "1";
 
                 btnGuardar.Visible = true;
                 btnImprimir.Visible = true;
+                
             }
         }
 
@@ -443,6 +449,7 @@ namespace Autos_SCC.Views.Principales
                 dsC.Tables.Add(dtCot);
                 dsC.Tables.Add(dtExtras);
 
+
                 rd.SetDataSource(dsC);
 
                 rd.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, true, "Cotizacion");
@@ -613,6 +620,11 @@ namespace Autos_SCC.Views.Principales
             {
                 return new List<PagoIndividual>();
             }
+        }
+
+        protected void chkSinIntereses_CheckedChanged(object sender, EventArgs e)
+        {
+            btnGenerar_Click(sender, e);
         }
         #endregion
 
@@ -834,6 +846,7 @@ namespace Autos_SCC.Views.Principales
             get { return chkSinIntereses.Checked; }
         }
         #endregion
-                
+
+        
     }
 }

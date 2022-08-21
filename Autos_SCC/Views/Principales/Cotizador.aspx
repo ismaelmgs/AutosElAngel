@@ -417,7 +417,7 @@
                                         <div style="text-align:center; width:100%;">
                                             
                                             <asp:Label ID="lblSinIntereses" runat="server" Text="Meses sin Intereses"></asp:Label>
-                                            <asp:CheckBox ID="chkSinIntereses" runat="server" />
+                                            <asp:CheckBox ID="chkSinIntereses" runat="server" AutoPostBack="true" OnCheckedChanged="chkSinIntereses_CheckedChanged" />
                                             
                                             <br />
                                             <br />

@@ -80,14 +80,15 @@ namespace Autos_SCC.Presenter
                 Cotizacion oCot = oIView.oCotizacion;
                 double dTasa = 0;
 
-                if(oIView.dTasaPreferencial != 0)
-                    dTasa = oIView.dTasaPreferencial;
-                else
-                    dTasa = oIView.oParametro.sValor.I().Db();
-
-
+                //  MOGI 21/08/2022     AJUSTE PARA QUE PRIMERO TOME EN CUENTA LOS MESES SIN INTERESES Y DESPUES LA TASA PREFERENCIAL O VALOR POR DEFAULT
                 if (oIView.bSinIntereses)
                     dTasa = 0;
+                else
+                    if (oIView.dTasaPreferencial != 0)
+                        dTasa = oIView.dTasaPreferencial;
+                    else
+                        dTasa = oIView.oParametro.sValor.I().Db();
+
 
                 double dImporte = (oCot.dPrecio - oCot.dEnganche).Db();
                 double dPorcentajeI = dTasa / 100;
