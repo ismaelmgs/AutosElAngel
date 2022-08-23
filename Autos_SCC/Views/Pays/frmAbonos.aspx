@@ -332,6 +332,7 @@
                         </td>
                     </tr>
                 </table>
+                <br /><br />
             </ContentTemplate>
         </asp:UpdatePanel>
         <asp:UpdateProgress ID="upgPagos" runat="server" DynamicLayout="true" AssociatedUpdatePanelID="upaPagos">
