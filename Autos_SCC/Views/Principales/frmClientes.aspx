@@ -216,7 +216,7 @@
                                                     <div class="col-md-10">
                                                         <asp:TextBox ID="txtNumeroIfe" runat="server" CssClass="form-control" MaxLength="25"></asp:TextBox>
                                                         <cc1:FilteredTextBoxExtender ID="ftbNumeroIfe" runat="server" TargetControlID="txtNumeroIfe"
-                                                     FilterMode="ValidChars" ValidChars="abcdefghijklmnñopqrstuvwxyz ABCDEFGHIJKLMNÑOPQRSTUVWXYZ0123456789"></cc1:FilteredTextBoxExtender></div>
+                                                     FilterMode="ValidChars" FilterType="Numbers" ValidChars="0123456789"></cc1:FilteredTextBoxExtender></div>
                                                     <div class="col-md-2">
                                                           <!-- Button trigger modal INE-->
                                                         &nbsp;<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal5" style="width:26px; margin-top:5px;">
