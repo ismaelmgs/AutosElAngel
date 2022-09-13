@@ -339,15 +339,6 @@ namespace Autos_SCC.Views.Principales
         protected global::System.Web.UI.WebControls.TextBox txtFechaNacimiento;
 
         /// <summary>
-        /// Control lblreqFechaNacimiento.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblreqFechaNacimiento;
-
-        /// <summary>
         /// Control imbFechaNacimiento.
         /// </summary>
         /// <remarks>
@@ -373,6 +364,15 @@ namespace Autos_SCC.Views.Principales
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AjaxControlToolkit.MaskedEditExtender mskFechaNacimiento;
+
+        /// <summary>
+        /// Control lblreqFechaNacimiento.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblreqFechaNacimiento;
 
         /// <summary>
         /// Control lblSexo.
@@ -996,15 +996,6 @@ namespace Autos_SCC.Views.Principales
         protected global::System.Web.UI.WebControls.TextBox txtNoIfeAval;
 
         /// <summary>
-        /// Control lblReNoIfeAval.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblReNoIfeAval;
-
-        /// <summary>
         /// Control ftbNoIfeAval.
         /// </summary>
         /// <remarks>
@@ -1012,6 +1003,15 @@ namespace Autos_SCC.Views.Principales
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AjaxControlToolkit.FilteredTextBoxExtender ftbNoIfeAval;
+
+        /// <summary>
+        /// Control lblReNoIfeAval.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblReNoIfeAval;
 
         /// <summary>
         /// Control lblFechaNacimientoAval.
@@ -1030,15 +1030,6 @@ namespace Autos_SCC.Views.Principales
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFechaNacimientoAval;
-
-        /// <summary>
-        /// Control lblreqFechaNacimientoAval.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblreqFechaNacimientoAval;
 
         /// <summary>
         /// Control imbFechaNacimientoAval.
@@ -1066,6 +1057,15 @@ namespace Autos_SCC.Views.Principales
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AjaxControlToolkit.MaskedEditExtender mskFechaNacimientoAval;
+
+        /// <summary>
+        /// Control lblreqFechaNacimientoAval.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblreqFechaNacimientoAval;
 
         /// <summary>
         /// Control lblSexoAval.

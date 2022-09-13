@@ -152,7 +152,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         
-                            <h3 style="text-align:center;" id="ttlRegVersion" runat="server">Registro de modelos</h3>
+                            <h3 style="text-align:center;" id="ttlRegVersion" runat="server">Registro de Versiones</h3>
                             <br />
                             <div class="row" style="padding:10px;">
                                 <table style="text-align:left; width:100%">
@@ -191,7 +191,7 @@
                 
                                     <div class="row">
                                         <div class="col-md-2" style="text-align:left">
-                                            <asp:Label ID="lblNombre" runat="server" Font-Bold="True" Text="Descripción:" CssClass="inputLabel"/>&nbsp;
+                                            <asp:Label ID="lblNombre" runat="server" Font-Bold="True" Text="Versión:" CssClass="inputLabel"/>&nbsp;
                                         </div>
                 
                                         <div class="col-md-10" style="text-align:left">

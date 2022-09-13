@@ -218,6 +218,10 @@
                                                         <cc1:FilteredTextBoxExtender ID="ftbNumeroIfe" runat="server" TargetControlID="txtNumeroIfe"
                                                      FilterMode="ValidChars" ValidChars="abcdefghijklmnñopqrstuvwxyz ABCDEFGHIJKLMNÑOPQRSTUVWXYZ0123456789"></cc1:FilteredTextBoxExtender></div>
                                                     <div class="col-md-2">
+                                                          <!-- Button trigger modal INE-->
+                                                        &nbsp;<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal5" style="width:26px; margin-top:5px;">
+                                                            &#x2370;
+                                                        </button>
                                                         <asp:Label ID="lblReqNumeroIfe" runat="server" CssClass="inputReqLabel" 
                                                     Text="*"></asp:Label>
                                                     </div>
@@ -234,8 +238,8 @@
                                                         <asp:TextBox ID="txtFechaNacimiento" runat="server" CssClass="form-control" Width="100%" ReadOnly="true"></asp:TextBox>
                                                     </div>
                                                     <div class="col-md-2" style="text-align:left;">
-                                                        <asp:Label ID="lblreqFechaNacimiento" runat="server" Text="*" CssClass="inputReqLabel"></asp:Label>
-                                                        <asp:ImageButton ID="imbFechaNacimiento" runat="server" ImageUrl="~/Images/Botones/Calendar.ico" Width="24px" Height="24px" style="margin-top:-15px;margin-left:5px;" />
+                                                        
+                                                        <asp:ImageButton ID="imbFechaNacimiento" runat="server" ImageUrl="~/Images/Botones/Calendar.ico" Width="24px" Height="24px" style="margin-top:5px;margin-left:5px;" />
                                                         <cc1:CalendarExtender ID="calFechaNacimiento" runat="server" Enabled="True" Format="dd/MM/yyyy"
                                                                 PopupButtonID="imbFechaNacimiento" TargetControlID="txtFechaNacimiento">
                                                         </cc1:CalendarExtender>
@@ -245,6 +249,7 @@
                                                             CultureTimePlaceholder="" Enabled="True" Mask="99/99/9999" MaskType="Date" TargetControlID="txtFechaNacimiento"
                                                             UserDateFormat="DayMonthYear">
                                                         </cc1:MaskedEditExtender>
+                                                        <asp:Label ID="lblreqFechaNacimiento" runat="server" Text="*" CssClass="inputReqLabel"></asp:Label>
                                                     </div>
                                                 </div>
                                         
@@ -557,6 +562,27 @@
     </fieldset>
     </div>
 
+    <!-- Modal INE -->
+    <div class="modal fade" id="exampleModal5" tabindex="-1" role="dialog" aria-labelledby="exampleModal5Label" aria-hidden="true" style="z-index:100002; background-color: #00000090;">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Número de INE</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body" style="text-align:center;">
+                El número es el que se tiene que capturar se encuentra entre<br /> <b>"IDMEX"</b> y <b>"<<"</b>.
+            <img src="../../images/INE.jpg" alt="Número de credencial INE" />
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
     <%--Modal del Avales--%>
     <asp:HiddenField ID="hdCapturaAvalTarget" runat="server" />
     <cc1:ModalPopupExtender ID="mpeCapturaAval" runat="server" TargetControlID="hdCapturaAvalTarget" 
@@ -700,9 +726,12 @@
                                                 <asp:TextBox ID="txtNoIfeAval" runat="server" CssClass="form-control" TabIndex="14" MaxLength="25"></asp:TextBox>
                                             </div>
                                             <div class="col-md-2">
-                                                <asp:Label ID="lblReNoIfeAval" runat="server" Text="*" CssClass="inputReqLabel" MaxLength="25"></asp:Label>
                                                 <cc1:FilteredTextBoxExtender ID="ftbNoIfeAval" runat="server" TargetControlID="txtNoIfeAval"
-                                                    FilterMode="ValidChars" FilterType="Numbers" ValidChars="0123456789"></cc1:FilteredTextBoxExtender>
+                                                    FilterMode="ValidChars" FilterType="Numbers" ValidChars="0123456789"></cc1:FilteredTextBoxExtender> 
+                                                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal5" style="width: 20px;padding-top: 4px;padding-bottom: 2px;margin-top: 5px;">
+                                                    &#x2370;
+                                                </button>
+                                                <asp:Label ID="lblReNoIfeAval" runat="server" Text="*" CssClass="inputReqLabel" MaxLength="25"></asp:Label>
                                             </div>
                                         </div>
                                     </td>
@@ -717,8 +746,7 @@
                                                 <asp:TextBox ID="txtFechaNacimientoAval" runat="server" CssClass="form-control" Width="100%" ReadOnly="true" TabIndex="16"></asp:TextBox>
                                             </div>
                                             <div class="col-md-2">
-                                                <asp:Label ID="lblreqFechaNacimientoAval" runat="server" Text="*" CssClass="inputReqLabel"></asp:Label>
-                                                <asp:ImageButton ID="imbFechaNacimientoAval" runat="server" ImageUrl="~/Images/Botones/Calendar.ico" Width="24px" Height="24px" style="margin-top:-15px;" />
+                                                <asp:ImageButton ID="imbFechaNacimientoAval" runat="server" ImageUrl="~/Images/Botones/Calendar.ico" Width="20px" Height="20px" style="margin-top:9px;" />
                                                 <cc1:CalendarExtender ID="calFechaNacimientoAval" runat="server" Enabled="True" Format="dd/MM/yyyy"
                                                         PopupButtonID="imbFechaNacimientoAval" TargetControlID="txtFechaNacimientoAval">
                                                 </cc1:CalendarExtender>
@@ -728,6 +756,7 @@
                                                     CultureTimePlaceholder="" Enabled="True" Mask="99/99/9999" MaskType="Date" TargetControlID="txtFechaNacimientoAval"
                                                     UserDateFormat="DayMonthYear">
                                                 </cc1:MaskedEditExtender>
+                                                <asp:Label ID="lblreqFechaNacimientoAval" runat="server" Text="*" CssClass="inputReqLabel"></asp:Label>
                                             </div>
                                         </div>
                                     </td>

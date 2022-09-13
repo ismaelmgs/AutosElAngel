@@ -360,6 +360,7 @@
     <Content Include="Images\Iconos\Rojo.png" />
     <Content Include="Images\Iconos\Verde.png" />
     <Content Include="Images\Iconos\Warning.ico" />
+    <Content Include="Images\INE.jpg" />
     <Content Include="Images\log_top_micronegocio.jpg" />
     <Content Include="Images\Mostrar.ico" />
     <Content Include="Images\Ocultar.ico" />
