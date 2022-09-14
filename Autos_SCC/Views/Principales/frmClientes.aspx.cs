@@ -241,14 +241,22 @@ namespace Autos_SCC.Views.Principales
                 lblNumeroIfe.Text = "Numero de IFE:";
             if (ddlTipoIdentificacion.SelectedValue.S() == "1")
                 lblNumeroIfe.Text = "Numero de Licencia:";
+            if (ddlTipoIdentificacion.SelectedValue.S() == "2")
+                lblNumeroIfe.Text = "Numero de Pasaporte:";
+            if (ddlTipoIdentificacion.SelectedValue.S() == "3")
+                lblNumeroIfe.Text = "Numero de Otro:";
         }
 
         protected void ddlTipoIdentificacionAval_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ddlTipoIdentificacionAval.SelectedValue.S() == "0")
-                lblNoIfeAval.Text = "Numero de IFE:";
+                lblNoIfeAval.Text = "Número de IFE:";
             if (ddlTipoIdentificacionAval.SelectedValue.S() == "1")
-                lblNoIfeAval.Text = "Numero de Licencia:";
+                lblNoIfeAval.Text = "Número de Licencia:";
+            if (ddlTipoIdentificacionAval.SelectedValue.S() == "2")
+                lblNoIfeAval.Text = "Número de Pasaporte:";
+            if (ddlTipoIdentificacionAval.SelectedValue.S() == "3")
+                lblNoIfeAval.Text = "Número de Otro:";
 
             mpeCapturaAval.Show();
         }

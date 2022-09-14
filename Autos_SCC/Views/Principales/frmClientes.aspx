@@ -360,6 +360,8 @@
                                                             OnSelectedIndexChanged="ddlTipoIdentificacion_SelectedIndexChanged">
                                                             <asp:ListItem Text="INE" Value = "0"></asp:ListItem>
                                                             <asp:ListItem Text="Licencia" Value = "1"></asp:ListItem>
+                                                            <asp:ListItem Text="Pasaporte" Value = "2"></asp:ListItem>
+                                                            <asp:ListItem Text="Otro" Value = "3"></asp:ListItem>
                                                         </asp:DropDownList>
                                                     </div>
                                                     <div class="col-md-2">
@@ -889,6 +891,8 @@
                                                     OnSelectedIndexChanged="ddlTipoIdentificacionAval_SelectedIndexChanged" TabIndex="13">
                                                     <asp:ListItem Text="INE" Value = "0"></asp:ListItem>
                                                     <asp:ListItem Text="Licencia" Value = "1"></asp:ListItem>
+                                                  <asp:ListItem Text="Pasaporte" Value = "2"></asp:ListItem>
+                                                  <asp:ListItem Text="Otro" Value = "3"></asp:ListItem>
                                               </asp:DropDownList>  
                                             </div>
                                             <div class="col-md-2">
