@@ -43,7 +43,7 @@ namespace Autos_SCC.Views.Catalogos
 
         protected void btnNuevo_Click(object sender, EventArgs e)
         {
-            ttlRegVersion.InnerText = "Registro de modelo";
+            ttlRegVersion.InnerText = "Registro de Versión";
             btnGuardar.Text = "GUARDAR";
             btnLimpiar.Visible = true;
             UpaAgregarVersion.Update();
@@ -129,7 +129,7 @@ namespace Autos_SCC.Views.Catalogos
             {
                 if (eObjSelected != null)
                     eObjSelected(sender, e);
-                ttlRegVersion.InnerText = "Edición de modelo";
+                ttlRegVersion.InnerText = "Edición de Versión";
                 btnGuardar.Text = "EDITAR";
                 btnLimpiar.Visible = false;
                 UpaAgregarVersion.Update();

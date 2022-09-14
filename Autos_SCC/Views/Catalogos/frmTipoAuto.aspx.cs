@@ -40,7 +40,7 @@ namespace Autos_SCC.Views.Catalogos
 
         protected void btnNuevo_Click(object sender, EventArgs e)
         {
-            ttlRegTipo.InnerText = "Registro de Tipos";
+            ttlRegTipo.InnerText = "Registro de Tipo de Auto";
             btnGuardar.Text = "GUARDAR";
             btnLimpiar.Visible = true;
             UpaAgregarTipoAuto.Update();
@@ -126,7 +126,7 @@ namespace Autos_SCC.Views.Catalogos
             {
                 if (eObjSelected != null)
                     eObjSelected(sender, e);
-                ttlRegTipo.InnerText = "Edición de Tipos";
+                ttlRegTipo.InnerText = "Edición de Tipo de Auto";
                 btnGuardar.Text = "EDITAR";
                 btnLimpiar.Visible = false;
                 UpaAgregarTipoAuto.Update();
