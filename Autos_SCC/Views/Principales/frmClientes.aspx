@@ -535,9 +535,9 @@
                      <asp:UpdateProgress ID="UpdateProgress1" runat="server" DisplayAfter="0" AssociatedUpdatePanelID="upaDatos">
                         <ProgressTemplate>
                             <div class="overlayy" />
-                            <div class="overlayyContent" style="width:80px; height:80px">
+                            <div class="overlayyContent" style="width:120px; height:120px">
                                 <center>
-                                    <img id="imgLoading1" runat="server" src="~/Images/Header/ajax_loader.gif" style="width:80px; height:80px;" />
+                                    <img id="imgLoading1" runat="server" src="~/Images/Header/loading_001.gif" style="width:80px; height:80px;" />
                                 </center>
                             </div>
                         </ProgressTemplate>
@@ -1080,9 +1080,9 @@
                 <asp:UpdateProgress ID="UpdateProgress2" runat="server" DisplayAfter="0" AssociatedUpdatePanelID="upaAvales">
                     <ProgressTemplate>
                         <div class="overlayy" />
-                        <div class="overlayyContent" style="width:80px; height:80px">
+                        <div class="overlayyContent" style="width:120px; height:120px">
                             <center>
-                                <img id="imgLoading2" runat="server" src="~/Images/Header/ajax_loader.gif" style="width:80px; height:80px;" />
+                                <img id="imgLoading2" runat="server" src="~/Images/Header/loading_001.gif" style="width:80px; height:80px;" />
                             </center>
                         </div>
                     </ProgressTemplate>

@@ -14,7 +14,7 @@
     <RootNamespace>Autos_SCC</RootNamespace>
     <AssemblyName>Autos_SCC</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -334,6 +334,8 @@
     <Content Include="Images\Fondos\titlebar_bg.png" />
     <Content Include="Images\Header\ajax_loader.gif" />
     <Content Include="Images\Header\homeICON.png" />
+    <Content Include="Images\Header\loading_001.gif" />
+    <Content Include="Images\Header\loading_002.gif" />
     <Content Include="Images\Header\logo-cfe.png" />
     <Content Include="Images\Header\pleca-azul-menu.png" />
     <Content Include="Images\Header\pleca-gris-superior.png" />
