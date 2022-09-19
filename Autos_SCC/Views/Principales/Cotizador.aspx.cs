@@ -485,6 +485,7 @@ namespace Autos_SCC.Views.Principales
                     }
                 }
             }
+            btnGenerar_Click(sender, e);
         }
 
         protected void imbBuscaCliente_Click(object sender, EventArgs e)
