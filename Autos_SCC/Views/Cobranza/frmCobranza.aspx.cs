@@ -151,14 +151,19 @@ namespace Autos_SCC.Views.Cobranza
             mpeMensaje.Show();
         }
 
-        protected void btnEnviarMensaje_Click(object sender, EventArgs e)
+        protected void btnCerrarMensaje_Click(object sender, EventArgs e)
+        {
+            mpeMensaje.Hide();
+        }
+
+            protected void btnEnviarMensaje_Click(object sender, EventArgs e)
         {
             List<recipient> olst = new List<recipient>();
             recipient oRec1 = new recipient();
             oRec1.msisdn = "5540532207";
 
             recipient oRec2 = new recipient();
-            oRec2.msisdn = "2221844016";
+            oRec2.msisdn = "2461763089";
 
             olst.Add(oRec1);
             olst.Add(oRec2);

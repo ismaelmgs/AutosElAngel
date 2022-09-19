@@ -49,8 +49,9 @@ namespace Autos_SCC.Presenter
 
             if (!oT.oErr.bExisteError)
             {
-                oIGestCat.SetActualizaTransacciones(oIView.iIdCotizacion, oT.sUsuario);
                 oIView.MostrarMensaje("La transacción se guardo de manera correcta.", "Movimientos");
+                oIGestCat.SetActualizaTransacciones(oIView.iIdCotizacion, oT.sUsuario);
+                
                 oIView.dtCliente = oIGestCat.dtGetCliente(oIView.iIdCotizacion).Tables[0];
                 oIView.ConsultaPagos();
             }

@@ -246,7 +246,7 @@
                         <tr>
                             <td colspan="2" style="text-align:center">
                                 <asp:Button ID="btnEnviarMensaje" runat="server" Text=" Enviar " CssClass="btn btn-success" OnClick="btnEnviarMensaje_Click" />                            
-                                <asp:Button ID="btnCancelarMensaje" runat="server" Text=" Cancelar " CssClass="btn btn-danger" OnClientClick="OcultarModal();" />
+                                <asp:Button ID="btnCancelarMensaje" runat="server" Text=" Cancelar " CssClass="btn btn-danger" OnClick="btnCerrarMensaje_Click" />
                             </td>
                         </tr>
                     </table><br />

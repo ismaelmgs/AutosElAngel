@@ -165,11 +165,17 @@ namespace Autos_SCC.Views.Pays
                 {
                     case eTipoPago.PagoMensual:
                         if (eSetInsertaTran != null)
+                        {
                             eSetInsertaTran(sender, e);
+                            mpePagos.Hide();
+                        }
                         break;
                     case eTipoPago.PagoIndividual:
                         if (eSetInsertaPayInd != null)
+                        {
                             eSetInsertaPayInd(sender, e);
+                            mpePagos.Hide();
+                        }
                         break;
                 }
             }
