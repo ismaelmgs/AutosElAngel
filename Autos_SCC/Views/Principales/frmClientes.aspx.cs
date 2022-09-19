@@ -225,11 +225,11 @@ namespace Autos_SCC.Views.Principales
         {
             if (ddlCotizacion.SelectedValue.S().I() > 0)
             {
-                if (eSaveObj != null)
-                    eSaveObj(sender, e);
+                //if (eSaveObj != null)
+                //    eSaveObj(sender, e);
 
-                if (bEsCorrectoCliente)
-                    btnCapAval.Enabled = true;
+                //if (bEsCorrectoCliente)
+                //    btnCapAval.Enabled = true;
             }
             else
                 MostrarMensaje("Es necesario escoger un cliente para capturar sus datos", "Captura de campos");
@@ -265,17 +265,17 @@ namespace Autos_SCC.Views.Principales
         {
             if (ddlCotizacion.SelectedValue.S().I() > 0)
             {
-                if (eSaveAval != null)
-                    eSaveAval(sender, e);
+                //if (eSaveAval != null)
+                //    eSaveAval(sender, e);
 
-                if (dtAvalSaved != null)
-                {
-                    gvAval.DataSource = dtAvalSaved;
-                    gvAval.DataBind();
-                }
+                //if (dtAvalSaved != null)
+                //{
+                //    gvAval.DataSource = dtAvalSaved;
+                //    gvAval.DataBind();
+                //}
 
-                if (bEsCorrectoAval)
-                    btnAceptarFormalizar.Enabled = true;
+                //if (bEsCorrectoAval)
+                //    btnAceptarFormalizar.Enabled = true;
             }
             else
                 MostrarMensaje("Es necesario escoger un cliente para capturar su aval", "Captura de campos");

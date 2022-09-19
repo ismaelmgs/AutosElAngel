@@ -24,6 +24,33 @@
         }
 
     </script>
+    <style type="text/css" media="screen">
+        .overlayy
+        {
+            position: fixed;
+            z-index: 98;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+            filter: alpha(opacity=80);
+            opacity: 0.8;
+            background: rgba(0,0,0,0.8);
+        }
+        .overlayyContent
+        {
+            z-index: 99;
+            margin: 250px auto;
+            width: 80px;
+            height: 80px;
+        }
+        .level1 .static:hover {
+            background-color:#788891 !important;
+        }
+        .level1 .static {
+            border-radius:5px 5px 0px 0px !important;
+        }
+    </style>
         <div class="card">
             <div class="card-block" style="text-align:center;">
                 <h3>Clientes</h3>
@@ -113,7 +140,7 @@
         </div>
         <div>
             <asp:UpdatePanel ID="upaDatos" runat="server" UpdateMode="Conditional">
-                <ContentTemplate>         
+                <ContentTemplate> 
                     <asp:Panel runat="server" ID="pnDatosClientes" Visible="false">
                         <div style="width:100%; text-align:center;">
                             <h4>
@@ -504,13 +531,30 @@
                     </asp:Panel>
                     <uc1:ucModalConfirm ID="omb" runat="server" />
                     <uc1:ucModalAlert runat="server" ID="omb2" />
+
+                     <asp:UpdateProgress ID="UpdateProgress1" runat="server" DisplayAfter="0" AssociatedUpdatePanelID="upaDatos">
+                        <ProgressTemplate>
+                            <div class="overlayy" />
+                            <div class="overlayyContent" style="width:80px; height:80px">
+                                <center>
+                                    <img id="imgLoading1" runat="server" src="~/Images/Header/ajax_loader.gif" style="width:80px; height:80px;" />
+                                </center>
+                            </div>
+                        </ProgressTemplate>
+                    </asp:UpdateProgress>
+
+
                     </ContentTemplate>
                     <Triggers>
                         <asp:AsyncPostBackTrigger ControlID="ddlEstado" EventName="SelectedIndexChanged" />
                         <asp:AsyncPostBackTrigger ControlID="ddlMunicipio" EventName="SelectedIndexChanged" />
                         <asp:AsyncPostBackTrigger ControlID="ddlColonia" EventName="SelectedIndexChanged" />
                     </Triggers>
-                </asp:UpdatePanel>     
+                </asp:UpdatePanel> 
+            
+
+
+
         </div>
     </fieldset>
     
@@ -1031,6 +1075,19 @@
                         </td>
                     </tr>
                 </table>
+
+
+                <asp:UpdateProgress ID="UpdateProgress2" runat="server" DisplayAfter="0" AssociatedUpdatePanelID="upaAvales">
+                    <ProgressTemplate>
+                        <div class="overlayy" />
+                        <div class="overlayyContent" style="width:80px; height:80px">
+                            <center>
+                                <img id="imgLoading2" runat="server" src="~/Images/Header/ajax_loader.gif" style="width:80px; height:80px;" />
+                            </center>
+                        </div>
+                    </ProgressTemplate>
+                </asp:UpdateProgress>
+
             </ContentTemplate>
             <Triggers>
                 <asp:AsyncPostBackTrigger ControlID="ddlEstadoAval" EventName="SelectedIndexChanged" />
@@ -1039,6 +1096,10 @@
             </Triggers>
         </asp:UpdatePanel>
     </asp:Panel>
+
+
+    
+
     
     
 </asp:Content>
