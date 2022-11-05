@@ -1,0 +1,100 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Data;
+using System.Web.UI.WebControls;
+using NucleoBase.Core;
+using Autos_SCC.Objetos;
+using Autos_SCC.Clases;
+using Autos_SCC.Presenter;
+using Autos_SCC.DomainModel;
+using Autos_SCC.Interfaces;
+using Autos_SCC.Views.ControlesUsuario;
+
+namespace Autos_SCC.Views.Catalogos
+{
+    public partial class frmAutorizadores : System.Web.UI.Page, IViewAutorizador
+    {
+        #region EVENTOS
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            oPresenter = new Autorizador_Presenter(this, new DBAutorizador());
+
+            omb2.OkButtonPressed += new ucModalAlert.OkButtonPressedHandler(omb_Ok2ButtonPressed);
+
+            if (!IsPostBack)
+            {
+                if (Session["usuario"] == null)
+                {
+                    Response.Redirect("..//Default.aspx");
+                }
+
+                if (eGetUsuarios != null)
+                    eGetUsuarios(sender, e);
+                if (eGetSucursales != null)
+                    eGetSucursales(sender, e);
+            }
+        }
+        void omb_Ok2ButtonPressed(object sender, EventArgs e)
+        {
+            omb2.Hide();
+        }
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (eSearchAdministradores != null)
+                eSearchAdministradores(sender, e);
+        }
+        #endregion
+        #region METODOS
+        public void LoadUsuarios(DataTable dtUsuarios)
+        {
+            gvCatalogo.DataSource = null;
+
+            if (dtUsuarios.Rows.Count > 0)
+            {
+                gvCatalogo.DataSource = dtUsuarios;
+                gvCatalogo.DataBind();
+            }
+            else
+            {
+                gvCatalogo.DataBind();
+            }
+        }
+        public void LoadSucursales(DataTable dtSucursal)
+        {
+            ddlSucursal.DataSource = dtSucursal;
+            ddlSucursal.DataValueField = "fi_Id";
+            ddlSucursal.DataTextField = "fc_Descripcion";
+            ddlSucursal.DataBind();
+        }
+        public object[] oArrFiltros
+        {
+            get
+            {
+                return new object[]{
+                    "@fc_Desc", "%" + txtBusqueda.Text.S() + "%",
+                    "@fi_Sucursal", ddlSucursal.SelectedValue.S(),
+                };
+            }
+        }
+        public void MostrarMensaje(string sMensaje, string sCaption)
+        {
+            omb2.ShowMessage(sMensaje, sCaption);
+        }
+        #endregion
+
+        #region "Vars y Propiedades"
+        Autorizador_Presenter oPresenter;
+        public event EventHandler eNewObj;
+        public event EventHandler eObjSelected;
+        public event EventHandler eSaveObj;
+        public event EventHandler eDeleteObj;
+        public event EventHandler eSearchObj;
+        public event EventHandler eGetUsuarios;
+        public event EventHandler eGetSucursales;
+        public event EventHandler eSearchAdministradores;
+        #endregion
+    }
+}

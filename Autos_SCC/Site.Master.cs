@@ -62,7 +62,7 @@ namespace Autos_SCC
                     LtrMenu.Text += "       <a class=\"nav-link\" href='"+ ResolveUrl(opMenu.sUrl) + "'> " + opMenu.sDescripcion + " <span class=\"sr-only\">(current)</span></a>";
                     LtrMenu.Text += "   </li>";
                 }
-                else if(opMenu.iIdModulo == 19)
+                else if(opMenu.iIdModulo == 20)
                 {
                     LtrMenu.Text += "   <li class=\"nav-item\">";
                     LtrMenu.Text += "       <a class=\"nav-link\" href='" + ResolveUrl(opMenu.sUrl) + "'>" + opMenu.sDescripcion + "</a>";
