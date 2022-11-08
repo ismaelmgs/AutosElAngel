@@ -66,6 +66,17 @@ namespace Autos_SCC.Views.Catalogos
                     row.BackColor = ColorTranslator.FromHtml("#FFFFFF");
                     row.ToolTip = "Clic para seleccionar esta fila.";
                 }
+
+                if (ban)
+                {
+                    if (eObjSelected != null)
+                        eObjSelected(sender, e);
+                    if (eGetPerfiles != null)
+                        eGetPerfiles(sender, e);
+                    btnGuardar.Text = "EDITAR";
+                    UpaEdicionPerfil.Update();
+                    mpeEdicionPerfil.Show();
+                }
             }
         }
         protected void gvCatalogo_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -83,6 +94,22 @@ namespace Autos_SCC.Views.Catalogos
                     e.Row.Attributes["OnClick"] = Page.ClientScript.GetPostBackClientHyperlink(this.gvCatalogo, "Select$" + e.Row.RowIndex.ToString());
                 }
             }
+        }
+        protected void gvCatalogo_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+
+        }
+        protected void ddlPerfil_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        protected void btnGuardar_Click(object sender, EventArgs e)
+        {
+
+        }
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            mpeEdicionPerfil.Hide();
         }
         #endregion
         #region METODOS
@@ -107,6 +134,41 @@ namespace Autos_SCC.Views.Catalogos
             ddlSucursal.DataTextField = "fc_Descripcion";
             ddlSucursal.DataBind();
         }
+        public void LoadPerfiles(DataTable dtPerfiles)
+        {
+            ddlPerfil.DataSource = dtPerfiles;
+            ddlPerfil.DataValueField = "fi_id";
+            ddlPerfil.DataTextField = "fc_Descripcion";
+            ddlPerfil.DataBind();
+        }
+       
+        public void MostrarMensaje(string sMensaje, string sCaption)
+        {
+            omb2.ShowMessage(sMensaje, sCaption);
+        }
+        #endregion
+
+        #region "Vars y Propiedades"
+        public Autorizador oGetSetObjSelection
+        {
+            get
+            {
+                Autorizador oCat = null;
+
+                int iFila = gvCatalogo.SelectedIndex;
+                if (iFila >= 0)
+                {
+                    oCat = new Autorizador();
+                    oCat.fi_id = gvCatalogo.DataKeys[iFila]["fi_Id"].S().I();
+                }
+                return oCat;
+            }
+            set
+            {
+                Autorizador oCat = value;
+                //gvCatalogo.FocusedRowHandle = gvCatalogo.LocateByValue("iId", oCat.iId, null);
+            }
+        }
         public object[] oArrFiltros
         {
             get
@@ -117,13 +179,6 @@ namespace Autos_SCC.Views.Catalogos
                 };
             }
         }
-        public void MostrarMensaje(string sMensaje, string sCaption)
-        {
-            omb2.ShowMessage(sMensaje, sCaption);
-        }
-        #endregion
-
-        #region "Vars y Propiedades"
         Autorizador_Presenter oPresenter;
         public event EventHandler eNewObj;
         public event EventHandler eObjSelected;
@@ -133,7 +188,26 @@ namespace Autos_SCC.Views.Catalogos
         public event EventHandler eGetUsuarios;
         public event EventHandler eGetSucursales;
         public event EventHandler eSearchAdministradores;
+        public event EventHandler eGetPerfiles;
 
+        public Autorizador oAutorizador
+        {
+            get
+            {
+                return new Autorizador
+                {
+                    fi_id = ddlPerfil.SelectedValue == null ? 0 : ddlPerfil.SelectedValue.S().I(),
+                };
+            }
+            set
+            {
+                Autorizador oCat = value as Autorizador;
+                if (oCat != null)
+                {
+                    ddlPerfil.SelectedValue = oCat.fi_id.S() != "0" ? oCat.fi_id.S() : ddlPerfil.SelectedValue;
+                }
+            }
+        }
         #endregion
     }
 }

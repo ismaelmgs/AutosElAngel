@@ -17,6 +17,7 @@ namespace Autos_SCC.Presenter
             oIView.eGetUsuarios += eGetUsuarios_Presenter;
             oIView.eGetSucursales += eGetSucursales_Presenter;
             oIView.eSearchAdministradores += eSearchAdministradores_Presenter;
+            oIView.eGetPerfiles += eGetPerfiles_Presenter;
         }
         public void eGetUsuarios_Presenter(object sender, EventArgs e)
         {
@@ -26,9 +27,24 @@ namespace Autos_SCC.Presenter
         {
             oIView.LoadSucursales(new DBAutorizador().dtObjSuc);
         }
+        public void eGetPerfiles_Presenter(object sender, EventArgs e)
+        {
+            oIView.LoadPerfiles(new DBAutorizador().dtObjPer);
+        }
         public void eSearchAdministradores_Presenter(object sender, EventArgs e)
         {
             oIView.LoadUsuarios(new DBAutorizador().DBSearchAdministradores(oIView.oArrFiltros));
+        }
+        protected override void ObjSelected_Presenter(object sender, EventArgs e)
+        {
+            if (oIView.oGetSetObjSelection != null)
+            {
+                if (!oIGestCat.DBObjExists(oIView.oGetSetObjSelection.fi_id))
+                    return;
+
+                Autorizador oTempCat = oIGestCat.DBGetObj(oIView.oGetSetObjSelection.fi_id);
+                oIView.oAutorizador = oTempCat;
+            }
         }
     }
 }
