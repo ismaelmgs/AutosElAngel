@@ -12,6 +12,7 @@ using Autos_SCC.Presenter;
 using Autos_SCC.DomainModel;
 using Autos_SCC.Interfaces;
 using Autos_SCC.Views.ControlesUsuario;
+using System.Drawing;
 
 namespace Autos_SCC.Views.Catalogos
 {
@@ -45,6 +46,43 @@ namespace Autos_SCC.Views.Catalogos
         {
             if (eSearchAdministradores != null)
                 eSearchAdministradores(sender, e);
+        }
+        protected void gvCatalogo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int i = 0;
+            bool ban = false;
+            foreach (GridViewRow row in gvCatalogo.Rows)
+            {
+                if (row.RowIndex == gvCatalogo.SelectedIndex)
+                {
+                    row.BackColor = ColorTranslator.FromHtml("#A1DCF2");
+                    row.ToolTip = string.Empty;
+                    //i = Convert.ToInt32(gvCatalogo.Rows[row.RowIndex].Cells[1].Text);
+                    i = Convert.ToInt32(gvCatalogo.DataKeys[row.RowIndex]["fi_Id"].ToString());
+                    ban = true;
+                }
+                else
+                {
+                    row.BackColor = ColorTranslator.FromHtml("#FFFFFF");
+                    row.ToolTip = "Clic para seleccionar esta fila.";
+                }
+            }
+        }
+        protected void gvCatalogo_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Pager)
+            {
+
+            }
+            else if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                if (e.Row.RowType == DataControlRowType.DataRow)
+                {
+                    e.Row.Attributes.Add("OnMouseOver", "On(this);");
+                    e.Row.Attributes.Add("OnMouseOut", "Off(this);");
+                    e.Row.Attributes["OnClick"] = Page.ClientScript.GetPostBackClientHyperlink(this.gvCatalogo, "Select$" + e.Row.RowIndex.ToString());
+                }
+            }
         }
         #endregion
         #region METODOS
@@ -95,6 +133,7 @@ namespace Autos_SCC.Views.Catalogos
         public event EventHandler eGetUsuarios;
         public event EventHandler eGetSucursales;
         public event EventHandler eSearchAdministradores;
+
         #endregion
     }
 }

@@ -64,16 +64,17 @@
                 <asp:Panel ID="pnlCatalogo" runat="server" ScrollBars="Auto" Width="" Height="500px">
                     <div class="table-responsive" style="overflow-x: scroll; width:100%;">
                     <asp:GridView ID="gvCatalogo" runat="server" AutoGenerateColumns="false" RowStyle-VerticalAlign="Middle" DataKeyNames="fi_Id"
-                        Width="100%" BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464" 
+                        Width="100%" BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464" OnSelectedIndexChanged="gvCatalogo_SelectedIndexChanged"
+                        OnRowDataBound="gvCatalogo_RowDataBound"
                         HeaderStyle-ForeColor="white" AllowSorting="True" CssClass="table table-hover" style="background-color:#ffffff;">
                         <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
                         <HeaderStyle BackColor="#01609F" CssClass="titleHeader" />
                         <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" CssClass="" />
                         <AlternatingRowStyle BackColor="White" />
                         <Columns>
-                            <asp:BoundField DataField="fc_PrimNombre" HeaderText="Nombre"/>
+                            <asp:BoundField DataField="fc_PrimNombre" HeaderText="Nombre(s)"/>
                             <asp:BoundField DataField="fc_SegNombre" HeaderText="" />
-                            <asp:BoundField DataField="fc_PrimApellido" HeaderText="Apellido Paterno" />
+                            <asp:BoundField DataField="fc_PrimApellido" HeaderText="Apellido Paterno" /> 
                             <asp:BoundField DataField="fc_SegApellido" HeaderText="Apellido Materno" />
                             <asp:BoundField DataField="fc_Descripcion" HeaderText="Perfil" />
                             <asp:BoundField DataField="fc_Descripcion_Sucursal" HeaderText="Sucursal" />
