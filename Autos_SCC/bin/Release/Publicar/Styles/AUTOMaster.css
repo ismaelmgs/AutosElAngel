@@ -1,0 +1,779 @@
+﻿/*body
+{
+	background-color:#e8e8e8;
+}*/
+/*Definicion de estructura del html*/
+html, body 
+{
+    background-color:#e8e8e8;
+    margin:0;
+    padding:0;
+    height:100%;
+}
+
+#divWrapper {
+    min-height:100%;
+    position:relative;
+}
+
+#divEncabezado
+{
+	position:relative;
+	margin:0 auto 0 auto;
+	width:918px;
+	height:auto;
+	/*background-color:#E51837;*/
+}
+
+#divContenido
+{
+	position:relative;
+	margin:0 auto 0 auto;
+	width:918px;
+	height:auto;
+	padding-bottom:50px; /* Altura del footer */
+}
+
+#divfooter 
+{
+    margin:0 auto 0 auto;
+    width:100%;
+    height:auto;
+    position:absolute;
+    bottom:0;
+    /*left:0;*/
+}
+
+/*Fin de la estructura*/
+
+#tblEncabezado
+{
+	width:918px;
+	height:70px;
+	z-index:60;
+}
+
+.tablaHeaderMaster
+{
+	background-image:url('../Images/Header/pleca-gris-superior.png');	
+	width:100%;
+	background-repeat:repeat-x;
+	max-height:150px;	
+	
+}
+
+.tablaMenuMaster
+{
+	text-align:left;
+	background-image:url('../Images/Header/pleca-azul-menu.png');
+	height:39px;
+}
+
+.tdImagenMaster
+{
+	/*background-image:url('../Recursos/logo-autos-flotilla.png');*/
+	background-repeat:no-repeat;
+	height:50px;
+}
+
+.footer
+{
+ position: relative;
+ bottom: 0;
+ width: 918px;
+ height: 15px;
+ color: White; 
+ padding-top: 13px;
+ font-size: 83%;
+ background-repeat:repeat-x;
+ background-image:url('../Images/Header/pleca-inferior-verde.png');
+ z-index: 1;
+}
+
+.tblFooter
+{
+    margin:0 auto 0 auto;
+}
+/************************* Home ***************************/
+#divBienvenida {
+	position: absolute;
+	margin: 20px 0 0 50px;
+	padding:30px 0 20px 0;
+	width: 500px;
+	height: auto;
+	background-color: #000000;
+	opacity: 0.5;
+    -moz-opacity: 0.5;
+    filter: alpha(opacity=50);
+    -webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.bienvenida {
+	font-family: 'FuturaLight';
+	font-size: 12pt;
+	font-weight: normal;
+	color: #FFFFFF;
+	text-align: justify;
+	z-index: 5;
+	padding:20px 0 10px 0;
+}
+
+.tblViews
+{
+	margin: 0 auto 0 auto;
+}
+/*********************** etiquetas ************************/
+.user
+{
+    font-family:'FuturaLight';
+    font-size:11pt;
+    font-weight:bold;
+    font-style:normal;
+}
+
+.empresa
+{
+    font-family:'FuturaLight';
+    font-size:12pt;
+    font-weight:bold;
+}
+
+.labelTitle
+{
+    font-family:'FuturaLight';
+    font-size:20pt;
+    font-style:normal;
+    font-weight:600;
+    color:#003366;
+}
+
+.labelSubTitle {
+    font-family: 'FuturaLight';
+    font-size: 12pt;
+    font-style: normal;
+    font-weight: 600;
+    color: #003366;
+}
+
+.labelTitleModal {
+    font-family:'FuturaLight';
+    font-size:15pt;
+    font-weight:500;
+    font-style:normal;
+    color:#003366;
+}
+
+.labelSubTitleNormal {
+    font-family: 'FuturaLight';
+    font-size: 14pt;
+    font-style: normal;
+    font-weight: 300;
+    color: #003366;
+}
+
+.inputLabel
+{
+    font-family:'FuturaLight';
+    font-size:13pt;
+    font-weight:500;
+    font-style:normal;
+    color:#003366;
+}
+
+.errorLabel
+{
+    font-family:'FuturaLight';
+    font-size:13pt;
+    font-weight:500;
+    font-style:normal;
+    color:Red;
+}
+
+.inputReqLabel
+{
+    font-family:'FuturaLight';
+    font-size:13pt;
+    font-weight:500;
+    font-style:normal;
+    color:Red;
+}
+
+.inputCampo
+{
+    font-family:'FuturaLight';
+    font-size:12pt;
+    font-style:normal;
+    font-weight:300;
+}
+
+.listInput
+{
+    font-family:'FuturaLight';
+    font-size:12pt;
+    font-style:normal;
+    font-weight:300;
+}
+/*********************** VALIDATOR Y MENSAJE DE ERROR ************************/
+.requireValid
+{
+    font-family:'FuturaLight';
+    font-size:10pt;
+    font-weight:400;
+    font-style:italic;
+    color:Red;
+}
+
+.lblError
+{
+    font-family:'FuturaLight';
+    font-size:11pt;
+    font-weight:400;
+    font-style:italic;
+    color:Red;
+}
+
+/************************ Links **************************/
+.lnkBoton
+{
+	font-family:'FuturaLight';
+	font-style:normal;
+	font-size:12pt;
+	font-weight:600;
+	color:#006699;
+	cursor:pointer;
+	text-decoration:none;
+}
+.lnkBoton:hover
+{
+	font-family:'FuturaLight';
+	font-style:italic;
+	font-size:12pt;
+	font-weight:600;
+	color:#0099CC;
+	cursor:pointer;
+	text-decoration:none;
+}
+
+.lnkButton:link
+{
+ font-family:'FuturaLight';
+ font-style:normal;
+ font-size:12pt;
+ font-weight:600;
+ color:#006699;
+ cursor:pointer;
+ text-decoration:underline;
+}
+.lnkButton:hover
+{
+ font-family:'FuturaLight';
+ font-style:normal;
+ font-size:12pt;
+ font-weight:600;
+ color:#0099CC;
+ cursor:pointer;
+ text-decoration:underline;
+}
+
+.lnkGrid:link
+{
+ font-family:'FuturaLight';
+ font-style:normal;
+ font-size:11pt;
+ font-weight:400;
+ color:#006699;
+ cursor:pointer;
+ text-decoration:underline;
+}
+.lnkGrid:hover
+{
+ font-family:'FuturaLight';
+ font-style:normal;
+ font-size:11pt;
+ font-weight:400;
+ color:#0099CC;
+ cursor:pointer;
+ text-decoration:underline;
+}
+
+.lnkRegresar:link
+{
+ font-family:'FuturaLight';
+ font-style:normal;
+ font-size:14pt;
+ font-weight:600;
+ color:#006699;
+ cursor:pointer;
+ text-decoration:underline;
+}
+.lnkRegresar:hover
+{
+ font-family:'FuturaLight';
+ font-style:normal;
+ font-size:14pt;
+ font-weight:600;
+ color:#0099CC;
+ cursor:pointer;
+ text-decoration:underline;
+}
+/*******************/
+
+a:link {
+	color:#4b4c4d; 
+	font-family:'FuturaLight'; 
+	font-size:xx-small;
+	font-weight:bold;
+}
+a:visited {
+	color:#4b4c4d; 
+	font-family:'FuturaLight'; 
+	font-size:xx-small;
+	font-weight:bold;
+	text-decoration: underline;
+}
+a:hover 
+{
+	color:#4b4c4d; 
+	font-family:'FuturaLight'; 
+	font-size:xx-small;
+	font-weight:bold;
+	text-decoration: underline;
+}
+a:active {
+	font-family: 'FuturaLight';
+	font-size: xx-small;
+	font-style: normal;
+	color: #666666;
+	text-decoration: underline;
+}
+/**************************** Botones ********************************/
+.button
+{
+	border: 1px solid #0099CC;
+	font-family:'FuturaLight';
+	font-size:12pt;
+	font-weight:300;
+	vertical-align:middle;
+	color:#FFFFFF;
+	background-color:#01609F;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	border-radius:4px;
+	height:26px;
+	cursor:pointer;
+}
+
+.button:hover 
+{
+	box-shadow: 0px 0px 0px rgba(0,0,0,.8);
+	-webkit-box-shadow: 0px 0px 0px rgba(0,0,0,.8);
+	-moz-box-shadow: 0px 0px 0px rgba(0,0,0,.8);
+	background-color:#0099FF;
+}
+
+.button:disabled
+{
+	cursor:default;
+	box-shadow: 0px 0px 0px rgba(0,0,0,0);
+	-webkit-box-shadow: 0px 0px 0px rgba(0,0,0,0);
+	-moz-box-shadow: 0px 0px 0px rgba(0,0,0,0);
+	background-color:Gray;
+	border-color:Gray;
+}
+/************************ Modal ****************************/
+.my-dialog {
+	width: 536px;
+	background: #fff;
+	resize: none;
+	overflow: auto;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	padding: 8px;
+	padding-bottom:5px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-box-shadow: 0 3px 6px rgba(0,0,0,1);
+	-moz-box-shadow: 0 3px 6px rgba(0,0,0,1);
+	box-shadow: 0 3px 6px rgba(0,0,0,1);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#e6e6e6));
+	font: 13px "Helvetica";
+	border: 3px #01609F solid;
+	z-index: 5;
+}
+
+.my-dialog input {
+	resize: none;
+}
+      
+.my-dialog h1 {
+	margin: 0 0 15px;
+	font: bold 24px Helvetica;
+}
+
+#close { display: none; }
+
+.closebutton {
+	border-color: #FFFFFF;
+	background: #000000;
+	color: rgb(255, 2, 2);
+	cursor: pointer;
+	height: 24px;
+	line-height: 24px;
+	overflow: hidden;
+	position: absolute;
+	margin: -30px auto 0 500px;
+	text-align: center;
+	width: 24px;
+	resize: none;
+	border: 3px #FFFFFF solid;
+	font-weight: bold;
+	-webkit-border-radius: 14px;
+	-moz-border-radius: 14px;
+	border-radius: 14px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+}
+
+.closebutton:hover
+{
+	background: rgb(255, 2, 2);
+	text-shadow: 1px 1px 1px #ccc;
+	color: #FFFFFF;
+	border: 3px #FFFFFF solid;
+	font-weight: bold;
+}
+
+/********************* Gridview *************************/
+.gridClass
+{
+    background-color:#FFFFFF;
+    border-color:#DEDFDE;
+    border-style:none;
+    border-width:1px;
+    color:#000000;
+}
+
+.titleHeader
+{
+    font-family:'FuturaLight';
+    font-size:10pt;
+    font-weight:200;
+    font-style:normal;
+    color:#FFFFFF;
+    background-color:#01609F;
+}
+
+.itemsData
+{
+    font-family:'FuturaLight';
+    font-size:10pt;
+    font-weight:400;
+    font-style:normal;
+    color:#003366;
+    background-color:#F7F7DE;
+}
+
+.headerModal
+{
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    background: #4b6c9e;
+    color:Black;
+    width: 100%;
+}
+
+.header h1
+{
+    font-weight: 700;
+    margin: 0px;
+    padding: 0px 0px 0px 20px;
+    color: #f9f9f9;
+    border: none;
+    line-height: 2em;
+    font-size: 2em;
+}
+
+/********************* barras de titulos *************************/
+
+.texto_encabezados {
+	font-family: 'FuturaLight';
+	font-size: 18px;
+	color: #01609F;
+	font-weight: bold;
+	line-height: 140%;
+	
+}
+
+a.ruta3:link {
+	font-family: 'FuturaLight';
+	font-size: 12px;
+	font-style: normal;
+	color: #01609F;
+	font-weight: bold;
+	text-decoration: underline;
+	line-height: 140%;
+}
+a.ruta3:visited {
+	font-family: 'FuturaLight';
+	font-size: 12px;
+	font-style: normal;
+	color: #01609F;
+	font-weight: bold;
+	text-decoration: underline;
+	line-height: 140%;
+}
+a.ruta3:hover {
+	font-family: 'FuturaLight';
+	font-size: 12px;
+	font-style: normal;
+	color: #01609F;
+	font-weight: bold;
+	text-decoration: underline;
+	line-height: 140%;
+}
+a.ruta3:active {
+	font-family: 'FuturaLight';
+	font-size: 12px;
+	font-style: normal;
+	color: #01609F;
+	font-weight: bold;
+	text-decoration: underline;
+	line-height: 140%;
+}
+
+/***************** Menu *********************/
+#MenuUsuarios
+{
+    margin-left: 10px;
+}
+
+#MenuUsuarios a:link
+{
+    color: #FFFFFF;
+    /*background-color:#0099CC;*/
+    font-style:normal;
+    background-image:url('../Images/Header/pleca-azul-menu.png');
+}
+
+#MenuUsuarios a:hover
+{
+    color: #FFFFFF;
+    background-color:#CCCCCC;
+    background-image:url('');
+    font-style:normal;
+    background-image:url('../Images/Header/pleca-azul-menu.png');
+}
+
+/****************** Fuentes *********************/
+@font-face {
+    font-family: 'FuturaLight';
+    src: url('../fonts/FuturaLight.eot');
+    src: url('../fonts/FuturaLight.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/FuturaLight.woff') format('woff'),
+         url('../fonts/FuturaLight.ttf') format('truetype'),
+         url('../fonts/FuturaLight.svg#FuturaLight') format('svg');
+    
+    font-weight: normal;
+    font-style: normal;
+}
+/****************** Otros *************************/
+.contentAccordion
+{
+    padding:4px;
+    background-color:Olive;
+}
+    
+.headerAccordion
+{
+    color:white;
+    background-color:Navy;
+    padding:4px;
+    border:solid 1px black;
+}
+.tblUserLogin
+{
+    height:50px;
+    width:400px;
+}
+/******************** Eyiquetas ***********************/
+table
+{
+    font-family:'FuturaLight';
+}
+/*
+table th
+{
+    text-align:center;
+    font-size:11pt;
+    font-weight:400;
+}*/
+
+*/
+
+select
+{
+    font-family:'FuturaLight';
+}
+
+/********************* Fieldset ***********************/
+fieldset
+{
+    border: 3px solid #01609F;
+    background-color: inherit;
+    padding-left:40px;
+    padding-top:30px;
+    padding-bottom:25px;
+    
+    -webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+}
+
+.backField
+{
+    background-color:#FFFFFF;
+}
+
+legend
+{
+    width:auto;
+    padding-left:0px;
+    padding-right:0px;
+    font-family:'FuturaLight';
+}
+
+.titleLegend
+{
+    margin-left:-25px;
+    color:#FFFFFF;
+    font-family:'FuturaLight';
+}
+
+#divTab
+{
+    margin-top: -1px;
+    margin-left: -18px;
+    position: absolute;
+    padding-left:25px;
+    padding-right:25px;
+    width:auto; 
+    height:40px;
+    -webkit-border-top-left-radius: 0px;
+	-webkit-border-bottom-left-radius: 0px;
+	-webkit-border-bottom-right-radius: 7px;
+	-webkit-border-top-right-radius: 0px;
+	
+	-moz-border-radius-topleft: 0px;
+	-moz-border-radius-bottomleft: 0px;
+	-moz-border-radius-bottomright: 7px;
+	-moz-border-radius-topright: 0px;
+	
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 7px;
+	border-top-right-radius: 0px;
+	
+}
+
+.dataTab
+{
+   background-image:url('../Recursos/Img/back-menu.png'); 
+   text-align:center;
+}
+
+/************************ Menu Peque *************************/
+#divMenuPeq
+{
+    width:auto;
+    height:auto;
+}
+
+.titleDownMenu
+{
+    margin-left:-10px;
+    font-family:'FuturaLight'; 
+    font-size:11pt; 
+    font-weight:300; 
+    color:#0099CC;
+    cursor:default;
+}
+/************************* Linea separatoria ****************************/
+#divLine
+{
+    background-image:url('../Recursos/linea_horizontal_down.png');
+    width:950px;
+    height:auto;
+}
+/**********************************************************************/
+.labelPasos
+{
+    font-family:'FuturaLight';
+    font-size:15pt;
+    font-style:normal;
+    font-weight:600;
+    color:#003366;
+}
+
+.box {
+	background-color: #f1f1f1;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+	border: 1px solid #ccc;
+	padding: 0;
+	-moz-box-shadow: 0 0 4px #ddd;
+	-webkit-box-shadow: 0 0 4px #ddd;
+	box-shadow: 0 0 4px #ddd;
+	display: block; 
+	height:auto; 
+	margin-top:10px; 
+	padding-bottom:30px; 
+	padding-left:5px; 
+	padding-right:5px;
+}
+
+.shadow {
+	margin-top: 0px;
+	background-image: url('../images/box-shadow.png');
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	height: 23px;
+}
+/************************ Load screen *****************************/
+.overlayy
+{
+    position: fixed;
+    z-index: 98;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    filter: alpha(opacity=80);
+    opacity: 0.8;
+    background: rgba(0,0,0,0.8);
+}
+.overlayyContent
+{
+    z-index: 99;
+    margin: 250px auto;
+    width: 80px;
+    height: 80px;
+}
+.overlayyContent h2
+{
+    font-size: 18px;
+    font-weight:400;
+    color: #FFF;
+}
+.overlayyContent img
+{
+    width: 50px;
+    height: 50px;
+}
+

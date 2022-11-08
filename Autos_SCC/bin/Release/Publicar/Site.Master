@@ -1,0 +1,441 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Autos_SCC.SiteMaster" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Gestor de Creditos - Autos el Ángel de Puebla</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <%--<link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />--%>
+    <%--<script src="../Recursos/jquery-1.7.2.min.js" type="text/javascript"></script>--%>
+    <%--<link rel="stylesheet" href="Styles/MenuE.css" type="text/css" />--%>
+    <%--<link rel="stylesheet" href="Styles/Bootstrap/css/bootstrap.css" type="text/css" />--%>
+    <%--<link rel="stylesheet" href="Styles/AUTOMaster.css" type="text/css" />--%>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/Styles/Sit3.css" type="text/css" />
+      <!-- Style.css -->
+      <%-- <link rel="stylesheet" href="~/Styles/overlay.css" type="text/css" />
+      <link rel="stylesheet" href="~/Styles/overlaty.css" type="text/css" />
+      <link rel="stylesheet" href="~/Styles/overlayCT.css" type="text/css" />
+      <link rel="stylesheet" href="~/Styles/overlayPro.css" type="text/css" />--%>
+
+     <script type="text/javascript">
+         function toggleOverlay() {
+             document.body.className = document.body.className.indexOf('overlaid') != -1 ? '' : 'overlaid';
+         }
+         var launch = false;
+         function launchModal() {
+             launch = true;
+         }
+
+         function pageLoad() {
+             if (launch) {
+                 $find("mpe").show();
+             }
+         }
+     </script>
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div id="topRLR"></div>
+    <div id="divWrapper">
+        <form id="form1" runat="server">
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+            <ContentTemplate>
+<!-- RLR Logo -->
+                    
+
+
+                
+
+                
+
+                
+<!-- RLR Icono Home -->
+                    <%--<a href="../Default.aspx">
+                        <asp:Image ID="Image2" runat="server" ImageUrl="~/Images/Header/homeICON.png" Height="20px"
+                            Width="20px" ToolTip="Inicio" />
+                    </a>--%>
+
+
+
+
+
+
+
+
+<!-- Nuevo template inicio -->
+                
+                <div class="row" style="border-style: solid; border-width: 0 1px 4px 1px; border-color: #137ea7; background-color:#158cba;/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+10,158cba+100 */ /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,007bff+100 */
+background: #ffffff; /* Old browsers */
+background: -moz-linear-gradient(top,  #ffffff 0%, #007bff 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #ffffff 0%,#007bff 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #ffffff 0%,#007bff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#007bff',GradientType=0 ); /* IE6-9 */
+ ">
+                    <div class="col-md-3" style="text-align:center;">
+                        <a href='<%=ResolveUrl("~/Views/Default.aspx")%>'>
+                            <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/Fondos/logo.png" Height="70" style="border-radius:20px; margin:5px; box-shadow: 2px 6px 5px #00000050;" />
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <nav class="navbar navbar-expand-lg navbar-light bg-primary" style="height: 70px;">
+                          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" style="margin: 0 auto;">
+                            <span class="navbar-toggler-icon"></span>
+                          </button>
+                          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                            <ul class="navbar-nav" style="margin:0 auto;">
+                              <li class="nav-item active">
+                                <a class="nav-link" href='<%=ResolveUrl("~/Views/Default.aspx")%>'>Inicio <span class="sr-only">(current)</span></a>
+                              </li>
+                              <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Documentos</a>
+                              <div class="dropdown-menu" aria-labelledby="dropdown01">
+                                <a class="dropdown-item" href='<%=ResolveUrl("~/Views/Principales/Cotizador.aspx")%>'">Cotizador</a>
+                                <a class="dropdown-item" href='<%=ResolveUrl("~/Views/Principales/frmClientes.aspx")%>'>Clientes</a>
+                                <a class="dropdown-item" href='<%=ResolveUrl("~/Views/Principales/frmFormalizacion.aspx")%>'>Formalización</a>
+                              </div>
+                              </li>
+                              <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" href="" id="dropdown02" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Control de cartera</a>
+                              <div class="dropdown-menu" aria-labelledby="dropdown01">
+                                <a class="dropdown-item" href='<%=ResolveUrl("~/Views/FuncionalidadAnexa/frmMonitor.aspx")%>'>Monitor</a>
+                                <a class="dropdown-item" href='<%=ResolveUrl("~/Views/Pays/frmAbonos.aspx")%>'>Abonos</a>
+                                <a class="dropdown-item" href='<%=ResolveUrl("~/Views/Cobranza/frmCobranza.aspx")%>'>Cobranza</a>
+                              </div>
+                              </li>
+                              <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" href="" id="dropdown03" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reportes</a>
+                              <div class="dropdown-menu" aria-labelledby="dropdown01">
+                                <a class="dropdown-item" href='<%=ResolveUrl("~/Views/Report/frmAutosVen.aspx")%>'>Autos Vendidos</a>
+                                <a class="dropdown-item" href='<%=ResolveUrl("~/Views/Report/frmPaysPeriod.aspx")%>'>Pagos Recibidos</a>
+                                <a class="dropdown-item" href='<%=ResolveUrl("~/Views/Report/frmIngresosProy.aspx")%>'>Reporte de Proyecciones</a>
+                                  <a class="dropdown-item" href='<%=ResolveUrl("~/Views/Report/frmTotalesCartera.aspx")%>'>Reporte de Totales</a>
+                              </div>
+                              </li>
+                              <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" href="" id="dropdown04" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Catálogos</a>
+                              <div class="dropdown-menu" aria-labelledby="dropdown01">
+                                <a class="dropdown-item" href='<%=ResolveUrl("~/Views/Catalogos/frmAutos.aspx")%>'>Autos</a>
+                                <a class="dropdown-item" href='<%=ResolveUrl("~/Views/Catalogos/frmMarcas.aspx")%>'>Marcas</a>
+                                <a class="dropdown-item" href='<%=ResolveUrl("~/Views/Catalogos/frmTipoAuto.aspx")%>'>Tipos de Autos</a>
+                                <a class="dropdown-item" href='<%=ResolveUrl("~/Views/Catalogos/frmVersiones.aspx")%>'>Versiones</a>
+                              </div>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href='<%=ResolveUrl("~/About.aspx")%>'>Acerca de</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </nav>
+                    </div>
+                    <div class="col-md-3" style="text-align:center; margin-top:1%;">
+                        <asp:Image ID="Image2" runat="server" ImageUrl="~/Images/avatar-4.jpg" Height="20" style="border-radius:50%;" />
+<!-- RLR Nombre Usuario -->     <asp:Label ID="lblUser2" runat="server"></asp:Label><br />
+<!-- RLR Boton Salir -->        <asp:LinkButton runat="server" ID="lkSalir" Text="Salir <span style='color:#ffffff;font-size:20px;'>&#x1f789;</span>" OnClick="lkSalir_Click" title="Cerrar Sesión" style="color:#ffffff;"></asp:LinkButton>
+                    </div>
+                </div>
+                
+                         
+
+
+                                  
+
+
+
+<!-- RLR menu -->       <%--<ul class="pcoded-item pcoded-left-item">
+                              <li class="">
+                                  <a href='<%=ResolveUrl("~/Views/Default.aspx")%>' class="waves-effect waves-dark">
+                                      <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
+                                      <span class="pcoded-mtext" data-i18n="nav.dash.main">Inicio</span>
+                                      <span class="pcoded-mcaret"></span>
+                                  </a>
+                              </li>
+                              <li class="pcoded-hasmenu">
+                                  <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                      <span class="pcoded-micon"><i class="ti-folder"></i></span>
+                                      <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">Documentos</span>
+                                      <span class="pcoded-mcaret"></span>
+                                  </a>
+                                  <ul class="pcoded-submenu">
+                                      <li class=" ">
+                                          <a href='<%=ResolveUrl("~/Views/Principales/Cotizador.aspx")%>' class="waves-effect waves-dark">
+                                              <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                              <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Cotizador</span>
+                                              <span class="pcoded-mcaret"></span>
+                                          </a>
+                                      </li>
+                                      <li class=" ">
+                                          <a href='<%=ResolveUrl("~/Views/Principales/frmClientes.aspx")%>' class="waves-effect waves-dark">
+                                              <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                              <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Clientes</span>
+                                              <span class="pcoded-mcaret"></span>
+                                          </a>
+                                      </li>
+                                      <li class=" ">
+                                          <a href='<%=ResolveUrl("~/Views/Principales/frmFormalizacion.aspx")%>' class="waves-effect waves-dark">
+                                              <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                              <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Formalización</span>
+                                              <span class="pcoded-mcaret"></span>
+                                          </a>
+                                      </li>
+                                  </ul>
+                              </li>
+                              <li class="pcoded-hasmenu">
+                                  <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                      <span class="pcoded-micon"><i class="ti-wallet"></i></span>
+                                      <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">Control de Cartera</span>
+                                      <span class="pcoded-mcaret"></span>
+                                  </a>
+                                  <ul class="pcoded-submenu">
+                                      <li class=" ">
+                                          <a href='<%=ResolveUrl("~/Views/FuncionalidadAnexa/frmMonitor.aspx")%>' class="waves-effect waves-dark">
+                                              <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                              <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Monitor</span>
+                                              <span class="pcoded-mcaret"></span>
+                                          </a>
+                                      </li>
+                                      <li class=" ">
+                                          <a href='<%=ResolveUrl("~/Views/Pays/frmAbonos.aspx")%>' class="waves-effect waves-dark">
+                                              <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                              <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Abonos</span>
+                                              <span class="pcoded-mcaret"></span>
+                                          </a>
+                                      </li>
+                                      <li class=" ">
+                                          <a href='<%=ResolveUrl("~/Views/Cobranza/frmCobranza.aspx")%>' class="waves-effect waves-dark">
+                                              <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                              <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Cobranza</span>
+                                              <span class="pcoded-mcaret"></span>
+                                          </a>
+                                      </li>
+                                  </ul>
+                              </li>
+                               <li class="pcoded-hasmenu">
+                                  <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                      <span class="pcoded-micon"><i class="ti-files"></i></span>
+                                      <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">Reportes</span>
+                                      <span class="pcoded-mcaret"></span>
+                                  </a>
+                              <ul class="pcoded-submenu">
+                                      <li class=" ">
+                                          <a href='<%=ResolveUrl("~/Views/Report/frmAutosVen.aspx")%>' class="waves-effect waves-dark">
+                                              <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                              <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Autos Vendidos</span>
+                                              <span class="pcoded-mcaret"></span>
+                                          </a>
+                                      </li>
+                                      <li class=" ">
+                                          <a href='<%=ResolveUrl("~/Views/Report/frmPaysPeriod.aspx")%>' class="waves-effect waves-dark">
+                                              <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                              <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Pagos Recibidos</span>
+                                              <span class="pcoded-mcaret"></span>
+                                          </a>
+                                      </li>
+                                  </ul>
+                              </li>
+                              <li class="pcoded-hasmenu">
+                                  <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                      <span class="pcoded-micon"><i class="ti-book"></i></span>
+                                      <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">Catálogos</span>
+                                      <span class="pcoded-mcaret"></span>
+                                  </a>
+                              <ul class="pcoded-submenu">
+                                      <li class=" ">
+                                          <a href='<%=ResolveUrl("~/Views/Catalogos/frmAutos.aspx")%>' class="waves-effect waves-dark">
+                                              <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                              <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Autos</span>
+                                              <span class="pcoded-mcaret"></span>
+                                          </a>
+                                      </li>
+                                      <li class=" ">
+                                          <a href='<%=ResolveUrl("~/Views/Catalogos/frmMarcas.aspx")%>' class="waves-effect waves-dark">
+                                              <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                              <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Marcas</span>
+                                              <span class="pcoded-mcaret"></span>
+                                          </a>
+                                      </li>
+                                      <li class=" ">
+                                          <a href='<%=ResolveUrl("~/Views/Catalogos/frmTipoAuto.aspx")%>' class="waves-effect waves-dark">
+                                              <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                              <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Tipos de Auto</span>
+                                              <span class="pcoded-mcaret"></span>
+                                          </a>
+                                      </li>
+                                      <li class=" ">
+                                          <a href='<%=ResolveUrl("~/Views/Catalogos/frmVersiones.aspx")%>' class="waves-effect waves-dark">
+                                              <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                              <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Versiones</span>
+                                              <span class="pcoded-mcaret"></span>
+                                          </a>
+                                      </li>
+                                  </ul>
+                              </li>
+                              <li class="">
+                                  <a href='<%=ResolveUrl("~/About.aspx")%>' class="waves-effect waves-dark">
+                                      <span class="pcoded-micon"><i class="ti-direction-alt"></i></span>
+                                      <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">Acerca de</span>
+                                      <%--<span class="pcoded-mcaret"></span>
+                                  </a>
+                              </li>
+                          </ul>--%>
+       
+                          <div style="width:100%; height:40px; background-color:#007bff; text-align:center; padding:5px;box-shadow: 0px 3px 3px #00000050;background:
+linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+background-color: #131313;
+background-size: 20px 20px;">
+<!-- RLR Nombre Empresa -->    <h5><asp:Label ID="lblNomEmpresa" CssClass="empresa" runat="server" Text="Autos el Ángel de puebla" style="color:#ffffff;"></asp:Label></h5>
+                          </div>
+
+
+                                  <!-- Page-body start -->
+                                  <div class="page-body">
+ <!-- RLR Menú -->
+                 <%--   <asp:Menu ID="MenuUsuarios" runat="server" Orientation="Horizontal" StaticEnableDefaultPopOutImage="false"
+                        OnMenuItemClick="Menu_MenuItemClick" ForeColor="#cccccc" Font-Names="FuturaLight"
+                        Font-Size="11pt" Font-Bold="false">
+                        <StaticMenuItemStyle HorizontalPadding="10px" VerticalPadding="2px" ForeColor="White" />
+                        <DynamicHoverStyle BackColor="#808080" ForeColor="White" />
+                        <DynamicMenuStyle BackColor="#919695" />
+                        <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" ForeColor="White" />
+                        <StaticHoverStyle BackColor="#808080" ForeColor="White" />
+                        <LevelMenuItemStyles>
+                            <asp:MenuItemStyle ForeColor="White" Font-Underline="false" />
+                            <asp:MenuItemStyle ForeColor="White" CssClass="ItemsMenu" />
+                        </LevelMenuItemStyles>
+                        <LevelSubMenuStyles></LevelSubMenuStyles>
+                        <Items>
+                            <asp:MenuItem Text="Inicio" NavigateUrl="~/Default.aspx"/>
+
+                            <asp:MenuItem Text="Documentos">
+                                <asp:MenuItem Text="Cotizador" NavigateUrl="~/Views/Principales/Cotizador.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Clientes" NavigateUrl="~/Views/Principales/frmClientes.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Formalización" NavigateUrl="~/Views/Principales/frmFormalizacion.aspx"></asp:MenuItem>
+                            </asp:MenuItem>
+                        
+                            <asp:MenuItem Text="Control de cartera">
+                                <asp:MenuItem Text="Monitor" NavigateUrl="~/Views/FuncionalidadAnexa/frmMonitor.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Abonos" NavigateUrl="~/Views/Pays/frmAbonos.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Cobranza" NavigateUrl="~/Views/Cobranza/frmCobranza.aspx"></asp:MenuItem>
+                            </asp:MenuItem>
+
+                            <asp:MenuItem Text="Reportes">
+                                <asp:MenuItem Text="Autos vendidos" NavigateUrl="~/Views/Report/frmAutosVen.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Pagos recibidos" NavigateUrl="~/Views/Report/frmPaysPeriod.aspx"></asp:MenuItem>
+                            </asp:MenuItem>
+
+                            <asp:MenuItem Text="Catálogos">
+                                <asp:MenuItem Text="Autos" NavigateUrl="~/Views/Catalogos/frmAutos.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Marcas" NavigateUrl="~/Views/Catalogos/frmMarcas.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Tipos de Auto" NavigateUrl="~/Views/Catalogos/frmTipoAuto.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Versiones" NavigateUrl="~/Views/Catalogos/frmVersiones.aspx"></asp:MenuItem>
+                            </asp:MenuItem>
+
+                            <asp:MenuItem NavigateUrl="~/About.aspx" Text="Acerca de"/>
+                        </Items>
+                    </asp:Menu> --%>                                  
+
+<!-- RLR Contenido nuevo inicia -->
+
+<!-- RLR No sé -->                
+                    <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" EnableScriptGlobalization="True">
+                    </asp:ToolkitScriptManager>
+
+
+                    <asp:Label ID="lblActual" runat="server" Text="Label" Visible="false"></asp:Label>
+<!-- RLR Contenido nuevo inicio-->
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                    <div style="width:100%; bottom:0px; text-align:center; font-size:10px; border-radius:8px;background-color: #7abaff  !important; padding-top: 5px;">
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script>© Autos del Ángel Puebla | <a href='<%=ResolveUrl("~/Views/frmPolitica.aspx")%>' style="font-size:10px;">Política Autos el Ángel de Puebla</a>
+                    </div>
+<!-- RLR Contenido nuevo fin -->
+                                  </div>
+                                  <!-- Page-body end -->
+                              </div>
+                              <div id="styleSelector"> </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Nuevo Templete fin -->
+                
+<!-- RLR loading -->                
+                <%--<asp:UpdateProgress ID="UpdateProgress1" runat="server" DisplayAfter="0" AssociatedUpdatePanelID="UpdatePanel1">
+                        <ProgressTemplate>
+                            <div class="overlayy" />
+                            <div class="overlayyContent">
+                                <center>
+                                    <asp:Image ID="imLoading" runat="server" ImageUrl="Images/Header/ajax_loader.gif" ToolTip="Loading" />
+                                    <h2>
+                                        Procesando...</h2>
+                                </center>
+                            </div>
+                        </ProgressTemplate>
+                    </asp:UpdateProgress>--%>
+
+                <!-- Fin de #divContenido -->
+                <%-- Modal--%>
+                <%--<div class="overlay">
+                    <div class="wrap-outer">
+                        <div class="wrap">
+                            <div class="my-dialog">
+                                <strong class="closebutton" title="Cerrar" onclick=''>X</strong>
+                                <asp:Panel ID="Panel1" runat="server">
+                                    <div id="divLogin">
+                                        <center>
+                                            <table class="tblGridViews" width="350" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td align="center">
+                                                        <asp:Label ID="lblMsgExpire" runat="server" Text="Lo sentimos, su sesión ha caducado."
+                                                            Style="font-family: 'FuturaLight'; font-size: 14pt;"></asp:Label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="center" style="height: 50px;">
+                                                        <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" CssClass="button" OnClick="btnAceptar_Click" />
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </center>
+                                    </div>
+                                </asp:Panel>
+                            </div>
+                        </div>
+                    </div>
+                </div>--%>
+                <%--Fin de modal--%>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+        </form>
+        
+                        <asp:Label ID="LblFooter" runat="server" Text="" CssClass="legendFooter"></asp:Label>
+ 
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src='<%=ResolveUrl("~/js/bootstrap/bootstrap-dropdown.js")%>'></script>
+    <script type="text/javascript">
+        $('#myDropdown').on('show.bs.dropdown', function () {
+            // do something...
+        })
+    </script>
+</body>
+</html>
