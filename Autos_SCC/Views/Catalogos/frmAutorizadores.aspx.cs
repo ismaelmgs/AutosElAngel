@@ -23,6 +23,8 @@ namespace Autos_SCC.Views.Catalogos
         {
             oPresenter = new Autorizador_Presenter(this, new DBAutorizador());
 
+            omb.OkButtonPressed += new ucModalConfirm.OkButtonPressedHandler(omb_OkButtonPressed);
+            omb.CancelButtonPressed += new ucModalConfirm.CancelButtonPressedHandler(omb_CancelButtonPressed);
             omb2.OkButtonPressed += new ucModalAlert.OkButtonPressedHandler(omb_Ok2ButtonPressed);
 
             if (!IsPostBack)
@@ -37,6 +39,16 @@ namespace Autos_SCC.Views.Catalogos
                 if (eGetSucursales != null)
                     eGetSucursales(sender, e);
             }
+        }
+        void omb_CancelButtonPressed(object sender, EventArgs args)
+        {
+            omb.Hide();
+        }
+
+        void omb_OkButtonPressed(object sender, EventArgs e)
+        {
+            if (eDeleteObj != null)
+                eDeleteObj(sender, e);
         }
         void omb_Ok2ButtonPressed(object sender, EventArgs e)
         {
@@ -95,17 +107,18 @@ namespace Autos_SCC.Views.Catalogos
                 }
             }
         }
-        protected void gvCatalogo_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
-
-        }
         protected void ddlPerfil_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-
+            if (eSaveObj != null)
+                eSaveObj(sender, e);
+            mpeEdicionPerfil.Hide();
+            if (eGetUsuarios != null)
+                eGetUsuarios(sender, e);
+            upaTab.Update();
         }
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -196,7 +209,9 @@ namespace Autos_SCC.Views.Catalogos
             {
                 return new Autorizador
                 {
+                    fi_id = int.Parse(lblSucursalMod.Text),
                     fi_IdPerfil = ddlPerfil.SelectedValue == null ? 0 : ddlPerfil.SelectedValue.S().I(),
+                    fi_IdSucursal = int.Parse(lblIdSucursal.Text)
                 };
             }
             set
@@ -207,6 +222,8 @@ namespace Autos_SCC.Views.Catalogos
                     ddlPerfil.SelectedValue = oCat.fi_IdPerfil.S() != "0" ? oCat.fi_IdPerfil.S() : ddlPerfil.SelectedValue;
                     txtSucursal.Text = oCat.NomSucurlal.S();
                     txtUser.Text = oCat.PriNombre + " " + oCat.SegNombre + " " + oCat.PatApellido + " " + oCat.MatApellido;
+                    lblIdSucursal.Text = oCat.fi_IdSucursal.ToString();
+                    lblSucursalMod.Text = oCat.fi_id.S();
                 }
             }
         }

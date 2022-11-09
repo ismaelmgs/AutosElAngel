@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Autos_SCC.Objetos
 {
-    public class Autorizador
+    public class Autorizador : BaseObjeto
     {
         private int _fi_id = -1;
         private string _PriNombre = string.Empty;

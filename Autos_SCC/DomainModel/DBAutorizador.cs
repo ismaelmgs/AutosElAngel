@@ -110,5 +110,33 @@ namespace Autos_SCC.DomainModel
                 return null;
             }
         }
+        public void DBSaveObj(ref Autorizador oEjecut)
+        {
+            try
+            {
+                object vNew = null;
+
+                oEjecut.oErr.bExisteError = false;
+                oEjecut.oErr.sMsjError = "Guardado exitoso";
+
+                if (oEjecut != null)
+                {
+                    if (DBGetObj(oEjecut.fi_id,oEjecut.fi_IdSucursal) != null)
+                    { 
+                        ////Actualiza
+                        vNew = oDB_SP.EjecutarValor("[Catalogos].[spU_ActualizaPerfilUsuario]", "@fi_Id", oEjecut.fi_id,
+                                                                                                "@fi_IdSucursal", oEjecut.fi_IdSucursal,
+                                                                                                "@fi_IdPerfil", oEjecut.fi_IdPerfil);
+
+                    }
+                    oEjecut.fi_id = vNew != null ? vNew.S().I() : -1;
+                }
+            }
+            catch (Exception ex)
+            {
+                oEjecut.oErr.bExisteError = true;
+                oEjecut.oErr.sMsjError = "ERROR al guardar (DBSaveObj) => " + ex.Message;
+            }
+        }
     }
 }

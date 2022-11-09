@@ -46,5 +46,19 @@ namespace Autos_SCC.Presenter
                 oIView.oAutorizador = oTempCat;
             }
         }
+        protected override void SaveObj_Presenter(object sender, EventArgs e)
+        {
+            Autorizador oTempCat = oIView.oAutorizador;
+
+
+            oIGestCat.DBSaveObj(ref oTempCat);
+            if (oTempCat.oErr.bExisteError)
+                oIView.MostrarMensaje(oTempCat.oErr.sMsjError, "GUARDAR");
+            else
+                oIView.MostrarMensaje("Guardado exitoso", "GUARDAR");
+
+            NewObj_Presenter(sender, e);
+            oIView.oGetSetObjSelection = oTempCat;
+        }
     }
 }

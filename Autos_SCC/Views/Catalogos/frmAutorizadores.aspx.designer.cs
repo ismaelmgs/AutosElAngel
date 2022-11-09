@@ -175,6 +175,15 @@ namespace Autos_SCC.Views.Catalogos {
         protected global::System.Web.UI.WebControls.TextBox txtUser;
         
         /// <summary>
+        /// Control lblIdSucursal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblIdSucursal;
+        
+        /// <summary>
         /// Control lblSucursalMod.
         /// </summary>
         /// <remarks>

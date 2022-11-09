@@ -102,7 +102,7 @@
                     <div class="table-responsive" style="overflow-x: scroll; width:100%;">
                     <asp:GridView ID="gvCatalogo" runat="server" AutoGenerateColumns="false" RowStyle-VerticalAlign="Middle" DataKeyNames="fi_Id,fi_IdSucursal"
                         Width="100%" BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464" OnSelectedIndexChanged="gvCatalogo_SelectedIndexChanged"
-                        OnRowDataBound="gvCatalogo_RowDataBound" OnRowCommand="gvCatalogo_RowCommand"
+                        OnRowDataBound="gvCatalogo_RowDataBound"
                         HeaderStyle-ForeColor="white" AllowSorting="True" CssClass="table table-hover" style="background-color:#ffffff;">
                         <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
                         <HeaderStyle BackColor="#01609F" CssClass="titleHeader" />
@@ -153,8 +153,11 @@
                                         </div>
                                     </div>
                                     <div class="row">
+                                        <div>
+                                            <asp:Label ID="lblIdSucursal" runat="server" Text="" CssClass="inputLabel" Visible="false"/>
+                                        </div>
                                         <div class="col-md-4">
-                                            <asp:Label ID="lblSucursalMod" runat="server" Text="Sucursal:" CssClass="inputLabel" />
+                                            <asp:Label ID="lblSucursalMod" runat="server" Text="" CssClass="inputLabel" />
                                         </div>
                                         <div class="col-md-8">
                                             <asp:TextBox ID="txtSucursal" runat="server" Width="100%" class="inputCampo" 
