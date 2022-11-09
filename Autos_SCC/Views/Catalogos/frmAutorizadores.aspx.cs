@@ -160,13 +160,13 @@ namespace Autos_SCC.Views.Catalogos
                 {
                     oCat = new Autorizador();
                     oCat.fi_id = gvCatalogo.DataKeys[iFila]["fi_Id"].S().I();
+                    oCat.fi_IdSucursal = gvCatalogo.DataKeys[iFila]["fi_IdSucursal"].S().I();
                 }
                 return oCat;
             }
             set
             {
                 Autorizador oCat = value;
-                //gvCatalogo.FocusedRowHandle = gvCatalogo.LocateByValue("iId", oCat.iId, null);
             }
         }
         public object[] oArrFiltros
@@ -196,7 +196,7 @@ namespace Autos_SCC.Views.Catalogos
             {
                 return new Autorizador
                 {
-                    fi_id = ddlPerfil.SelectedValue == null ? 0 : ddlPerfil.SelectedValue.S().I(),
+                    fi_IdPerfil = ddlPerfil.SelectedValue == null ? 0 : ddlPerfil.SelectedValue.S().I(),
                 };
             }
             set
@@ -204,7 +204,9 @@ namespace Autos_SCC.Views.Catalogos
                 Autorizador oCat = value as Autorizador;
                 if (oCat != null)
                 {
-                    ddlPerfil.SelectedValue = oCat.fi_id.S() != "0" ? oCat.fi_id.S() : ddlPerfil.SelectedValue;
+                    ddlPerfil.SelectedValue = oCat.fi_IdPerfil.S() != "0" ? oCat.fi_IdPerfil.S() : ddlPerfil.SelectedValue;
+                    txtSucursal.Text = oCat.NomSucurlal.S();
+                    txtUser.Text = oCat.PriNombre + " " + oCat.SegNombre + " " + oCat.PatApellido + " " + oCat.MatApellido;
                 }
             }
         }

@@ -65,9 +65,9 @@ namespace Autos_SCC.DomainModel
                 return new DataTable();
             }
         }
-        public bool DBObjExists(int iId)
+        public bool DBObjExists(int iId, int iIdSuc)
         {
-            DataTable dtTemp = oDB_SP.EjecutarDT("[Catalogos].[spS_ConsultaAdministradorId]", "@fi_Id", iId);
+            DataTable dtTemp = oDB_SP.EjecutarDT("[Catalogos].[spS_ConsultaAdministradorId]", "@fi_Id", iId, "@fi_IdSucursal", iIdSuc);
             Autorizador oTempEjecut = null;
 
             if (dtTemp.Rows.Count > 0)
@@ -88,11 +88,11 @@ namespace Autos_SCC.DomainModel
 
             return oTempEjecut.fi_id > 0 ? true : false;
         }
-        public Autorizador DBGetObj(int iId)
+        public Autorizador DBGetObj(int iId, int iIdSuc)
         {
             try
             {
-                return oDB_SP.EjecutarDT("[Catalogos].[spS_ConsultaAdministradorId]", "@fi_Id", iId).AsEnumerable().Select(r => new Autorizador()
+                return oDB_SP.EjecutarDT("[Catalogos].[spS_ConsultaAdministradorId]", "@fi_Id", iId, "@fi_IdSucursal", iIdSuc).AsEnumerable().Select(r => new Autorizador()
                 {
                     fi_id = r["fi_Id"].S().I(),
                     PriNombre = r["fc_PrimNombre"].S(),

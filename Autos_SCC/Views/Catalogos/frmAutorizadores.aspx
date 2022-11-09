@@ -100,7 +100,7 @@
                 <div class="card" style="padding:20px;">
                 <asp:Panel ID="pnlCatalogo" runat="server" ScrollBars="Auto" Width="" Height="500px">
                     <div class="table-responsive" style="overflow-x: scroll; width:100%;">
-                    <asp:GridView ID="gvCatalogo" runat="server" AutoGenerateColumns="false" RowStyle-VerticalAlign="Middle" DataKeyNames="fi_Id"
+                    <asp:GridView ID="gvCatalogo" runat="server" AutoGenerateColumns="false" RowStyle-VerticalAlign="Middle" DataKeyNames="fi_Id,fi_IdSucursal"
                         Width="100%" BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464" OnSelectedIndexChanged="gvCatalogo_SelectedIndexChanged"
                         OnRowDataBound="gvCatalogo_RowDataBound" OnRowCommand="gvCatalogo_RowCommand"
                         HeaderStyle-ForeColor="white" AllowSorting="True" CssClass="table table-hover" style="background-color:#ffffff;">
@@ -142,13 +142,22 @@
                         <h3 style="text-align:center;" id="ttlPerfil" runat="server">Edición de Perfil</h3>
                             <br />
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-10">
                                     <div class="row">
                                         <div class="col-md-4">
-                                            <asp:Label ID="lblId" runat="server" Text="Id:" CssClass="inputLabel" />
+                                            <asp:Label ID="lbluser" runat="server" Text="Nombre Usuario:" CssClass="inputLabel" />
                                         </div>
                                         <div class="col-md-8">
-                                            <asp:TextBox ID="txtId" runat="server" Width="100%" class="inputCampo" 
+                                            <asp:TextBox ID="txtUser" runat="server" Width="100%" class="inputCampo" 
+                                            Enabled="False" CssClass="form-control"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <asp:Label ID="lblSucursalMod" runat="server" Text="Sucursal:" CssClass="inputLabel" />
+                                        </div>
+                                        <div class="col-md-8">
+                                            <asp:TextBox ID="txtSucursal" runat="server" Width="100%" class="inputCampo" 
                                             Enabled="False" CssClass="form-control"></asp:TextBox>
                                         </div>
                                     </div>

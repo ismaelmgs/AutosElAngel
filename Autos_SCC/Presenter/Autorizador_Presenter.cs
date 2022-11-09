@@ -39,10 +39,10 @@ namespace Autos_SCC.Presenter
         {
             if (oIView.oGetSetObjSelection != null)
             {
-                if (!oIGestCat.DBObjExists(oIView.oGetSetObjSelection.fi_id))
+                if (!oIGestCat.DBObjExists(oIView.oGetSetObjSelection.fi_id, oIView.oGetSetObjSelection.fi_IdSucursal))
                     return;
 
-                Autorizador oTempCat = oIGestCat.DBGetObj(oIView.oGetSetObjSelection.fi_id);
+                Autorizador oTempCat = oIGestCat.DBGetObj(oIView.oGetSetObjSelection.fi_id, oIView.oGetSetObjSelection.fi_IdSucursal);
                 oIView.oAutorizador = oTempCat;
             }
         }
