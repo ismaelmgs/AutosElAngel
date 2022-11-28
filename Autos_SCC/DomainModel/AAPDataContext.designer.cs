@@ -20,9 +20,10 @@ namespace Autos_SCC.DomainModel
 	using System.Linq.Expressions;
 	using System.ComponentModel;
 	using System;
-	
-	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="AAP_Autos")]
+    using System.Data.Entity;
+
+
+    [global::System.Data.Linq.Mapping.DatabaseAttribute(Name="AAP_Autos")]
 	public partial class AAPDataContextDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -64,8 +65,7 @@ namespace Autos_SCC.DomainModel
 		{
 			OnCreated();
 		}
-		
-		public AAPDataContextDataContext(System.Data.IDbConnection connection) : 
+        public AAPDataContextDataContext(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
@@ -82,8 +82,8 @@ namespace Autos_SCC.DomainModel
 		{
 			OnCreated();
 		}
-		
-		public System.Data.Linq.Table<tbc_MarcaAuto> tbc_MarcaAuto
+
+        public System.Data.Linq.Table<tbc_MarcaAuto> tbc_MarcaAuto
 		{
 			get
 			{

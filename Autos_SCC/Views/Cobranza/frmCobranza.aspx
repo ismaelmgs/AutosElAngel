@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="frmCobranza.aspx.cs"  UICulture="es" Culture="es-MX" Inherits="Autos_SCC.Views.Cobranza.frmCobranza" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="frmCobranza.aspx.cs"  UICulture="es" Culture="es-MX" Inherits="Autos_SCC.Views.Cobranza.frmCobranza" contentType="text/html; charset=UTF-8"%>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
@@ -113,6 +113,16 @@
             <br />
             <asp:Panel ID="pnlCreditos" runat="server" Width="100%" Height="500" ScrollBars="Auto">
                 <table style="width:100%">
+                        <tr>
+                            <td style="width:1%"></td>
+                            <td style="width:98%; text-align:right">
+                            <asp:Button ID="btnExportar" runat="server" Text="Exportar a Excel" OnClick="btnExportar_Click" CssClass="btn btn-secondary" Visible="false"/>
+                            </td>
+                            <td style="width:1%"></td>
+                        </tr>
+                    </table>
+                    <br />
+                <table style="width:100%">
                     <tr>
                         <td>
                             <div class="table">
@@ -203,6 +213,7 @@
         </ContentTemplate>
         <Triggers>
             <asp:AsyncPostBackTrigger ControlID="ddlSucursal" EventName="SelectedIndexChanged" />
+            <asp:PostBackTrigger ControlID="btnExportar" />
         </Triggers>
     </asp:UpdatePanel>
 

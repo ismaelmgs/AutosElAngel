@@ -127,6 +127,7 @@ namespace Autos_SCC.Views.Report
                 StringWriter stringWrite = new StringWriter();
                 HtmlTextWriter htmlWrite = new HtmlTextWriter(stringWrite);
                 upaReporte.RenderControl(htmlWrite);
+                string sr = stringWrite.ToString();
                 Response.Write(stringWrite.ToString());
                 Response.End();
             }

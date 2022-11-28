@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data;
+using Autos_SCC.ViewModels;
+using System.Data.Entity;
 
 namespace Autos_SCC.DomainModel
 {
@@ -30,7 +32,6 @@ namespace Autos_SCC.DomainModel
             {
                 return new DataTable();
             }
-        }
-        
+        }      
     }
 }
