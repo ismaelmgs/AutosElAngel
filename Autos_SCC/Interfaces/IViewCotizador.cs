@@ -23,6 +23,7 @@ namespace Autos_SCC.Interfaces
         object[] oArrFiltros { get; }
         string sNombreCli { get; }
         bool bSinIntereses { get; }
+        bool bTrajeMedida { get; }
         int iIdUsuario { get; }
 
         void LoadObjects(DataTable dtObj);

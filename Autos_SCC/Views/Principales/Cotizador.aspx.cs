@@ -513,6 +513,14 @@ namespace Autos_SCC.Views.Principales
                 eSearchCliente(sender, e);
             mpeBusquedaCliente.Show();
         }
+        protected void chkTrajeMedida_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+        protected void chkSinIntereses_CheckedChanged(object sender, EventArgs e)
+        {
+            btnGenerar_Click(sender, e);
+        }
 
         #endregion
 
@@ -622,11 +630,6 @@ namespace Autos_SCC.Views.Principales
                 return new List<PagoIndividual>();
             }
         }
-
-        protected void chkSinIntereses_CheckedChanged(object sender, EventArgs e)
-        {
-            btnGenerar_Click(sender, e);
-        }
         #endregion
 
         #region "Vars y Propiedades"
@@ -690,7 +693,8 @@ namespace Autos_SCC.Views.Principales
                     sCorreo = txtCorreoElectronico.Text.S(),
                     sUsuario = sUser.S(),
                     oLsPagoIndividual = ObtienePagosI(),
-                    iIdClienteAnt = HidClienteE.Value.S().I()
+                    iIdClienteAnt = HidClienteE.Value.S().I(),
+                    bTrajeMedida = chkTrajeMedida.Checked
                 };
             }
         }
@@ -846,8 +850,13 @@ namespace Autos_SCC.Views.Principales
         {
             get { return chkSinIntereses.Checked; }
         }
+        public bool bTrajeMedida
+        {
+            get { return chkTrajeMedida.Checked; }
+        }
+
         #endregion
 
-        
+
     }
 }

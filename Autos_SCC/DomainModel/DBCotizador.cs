@@ -42,7 +42,8 @@ namespace Autos_SCC.DomainModel
                                                                                         "@fd_Tasa", oCat.dTasa,
                                                                                         "@fi_Sucursal", oCat.iIdSucursal,
                                                                                         "@fc_Correo", oCat.sCorreo,
-                                                                                        "@fc_Usuario", oCat.sUsuario);
+                                                                                        "@fc_Usuario", oCat.sUsuario,
+                                                                                        "@fb_Traje", oCat.bTrajeMedida);
                     }
                     else
                     {
@@ -57,7 +58,8 @@ namespace Autos_SCC.DomainModel
                                                                                         "@fi_Sucursal", oCat.iIdSucursal,
                                                                                         "@fc_Correo", oCat.sCorreo,
                                                                                         "@fc_Usuario", oCat.sUsuario,
-                                                                                        "@fi_IdClienteAnt",oCat.iIdClienteAnt);
+                                                                                        "@fi_IdClienteAnt",oCat.iIdClienteAnt,
+                                                                                        "@fb_Traje", oCat.bTrajeMedida);
                     }
 
                     oCat.iId = vNew != null ? vNew.S().I() : -1;

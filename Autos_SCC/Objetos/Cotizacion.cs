@@ -28,6 +28,7 @@ namespace Autos_SCC.Objetos
         private string _sFechaUltMov = string.Empty;
         private List<PagoIndividual> _oLsPagoIndividual = new List<PagoIndividual>();
         private int _iIdClienteAnt = 0;
+        private bool _bTrajeMedida = false;
 
         public int iId { get { return _iId; } set { _iId = value; } }
 
@@ -68,6 +69,8 @@ namespace Autos_SCC.Objetos
         public List<PagoIndividual> oLsPagoIndividual { get { return _oLsPagoIndividual; } set { _oLsPagoIndividual = value; } }
 
         public int iIdClienteAnt { get { return _iIdClienteAnt; } set { _iIdClienteAnt = value; } }
+
+        public bool bTrajeMedida { get { return _bTrajeMedida; } set { _bTrajeMedida = value; } }
     }
 
 }

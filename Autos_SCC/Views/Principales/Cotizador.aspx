@@ -422,6 +422,12 @@
                                             <br />
                                             <br />
 
+                                            <asp:Label ID="lblTrajeMedida" runat="server" Text="Traje a la medida"></asp:Label>
+                                            <asp:CheckBox ID="chkTrajeMedida" runat="server" AutoPostBack="true" OnCheckedChanged="chkTrajeMedida_CheckedChanged" />
+                                            
+                                            <br />
+                                            <br />
+
                                             <asp:Label ID="lblAgregarPago" runat="server" Text="¿Deseas agregar pagos individuales?"></asp:Label>
                                             <asp:Button ID="btnAgregarPago" runat="server" Text="  SI  " CssClass="btn btn-success"
                                                 onclick="btnAgregarPago_Click" />
