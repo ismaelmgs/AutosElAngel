@@ -18,6 +18,7 @@ namespace Autos_SCC.Interfaces
         DataTable dtPagosTemp { get; set; }
         int iIdTipoPago { get; set; }
         int iIdClienteC { get; set; }
+        string sReferenciaBancaria { get; }
 
         DataTable dtAcreedor { get; set; }
         DataTable dtDireccion { get; set; }

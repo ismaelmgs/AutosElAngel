@@ -113,7 +113,7 @@
                 <div style="width:100%; background-color:#d0e7ff; border-radius:5px; padding:5px;">
                     <table style="width:100%">
                         <tr>
-                            <td style="width:40%; text-align:center;">
+                            <td style="width:30%; text-align:center;">
                                 <asp:Label ID="lblCliente" runat="server" Text="" CssClass="inputLabel" style="font-weight:bold; font-size:16px;"></asp:Label>
                             </td>
                             <td style="width:20%; text-align:center;"">
@@ -122,13 +122,34 @@
                             <td style="width:20%; text-align:center;"">
                                 <asp:Label ID="lblPrecio" runat="server" CssClass="inputLabel" style="font-weight:bold; font-size:16px;"></asp:Label>
                             </td>
-                            <td style="width:20%; text-align:center;"">
+                            <td style="width:15%; text-align:center;"">
                                 <asp:Label ID="lblPlazo" runat="server" CssClass="inputLabel" style="font-weight:bold; font-size:16px;"></asp:Label>
+                            </td>
+                            <td style="width:15%; text-align:center;"">
+                                <asp:Label ID="lblIdCotizacion" runat="server" CssClass="inputLabel" style="font-weight:bold; font-size:16px;"></asp:Label>
                             </td>
                         </tr>
                     </table>
                 </div>
             </fieldset>
+
+            <asp:Panel ID="pnlReferencia" runat="server" visible="false">
+                <fieldset id="fsReferencia" runat="server" style="text-align:left">
+                    <div style="margin: 0 auto 0 auto; width:50%; padding-top:30px; padding-bottom:30px; height:50px;">
+                        <table width="70%">
+                            <tr>
+                                <td width="50%" style="padding-top:15px; text-align:right">
+                                    <asp:CheckBox ID="chkReferencia" runat="server" Text="Agregar referencia bancaria" AutoPostBack="true" OnCheckedChanged="chkReferencia_CheckedChanged" />
+                                </td>
+                                <td width="50%">
+                                    <asp:TextBox ID="txtReferencia" runat="server" Visible="false" CssClass="form-control"></asp:TextBox>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </fieldset>
+            </asp:Panel>
+
 
             <fieldset id="fsImprimir" runat="server" visible="false" style="text-align:left">
                 <br />

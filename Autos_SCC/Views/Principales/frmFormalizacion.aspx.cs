@@ -62,9 +62,24 @@ namespace Autos_SCC.Views.Principales
                 lblTipoAuto.Text = "Tipo auto: " + dtCliente.Rows[0]["fc_TipoAuto"].S();
                 lblPrecio.Text = "Precio: $ " + Math.Round(dtCliente.Rows[0]["fm_Precio"].S().D(), 0).S();
                 lblPlazo.Text = "Plazo: " + dtCliente.Rows[0]["fc_Plazo"].S();
+                lblIdCotizacion.Text = "Cotización: " + dtCliente.Rows[0]["fi_Id"].S();
+
+                if (!string.IsNullOrEmpty(dtCliente.Rows[0]["Referencia"].S()))
+                {
+                    pnlReferencia.Visible = true;
+                    txtReferencia.Text = dtCliente.Rows[0]["Referencia"].S();
+                    chkReferencia.Checked = true;
+                }
+                else
+                {
+                    pnlReferencia.Visible = true;
+                    txtReferencia.Text = string.Empty;
+                    chkReferencia.Checked = false;
+                }
 
                 fsImprimir.Visible = true;
                 iIdClienteC = HidIdCliente.Value.S().I();
+                
             }
             else
             {
@@ -73,8 +88,10 @@ namespace Autos_SCC.Views.Principales
                 lblTipoAuto.Text = string.Empty;
                 lblPrecio.Text = string.Empty;
                 lblPlazo.Text = string.Empty;
+                lblIdCotizacion.Text = string.Empty;
 
                 fsImprimir.Visible = false;
+                pnlReferencia.Visible = false;
             }
 
             dtPagosIndividuales = null;
@@ -799,6 +816,13 @@ namespace Autos_SCC.Views.Principales
                 return ddlCotizacion.SelectedValue.S().I();
             }
         }
+        public string sReferenciaBancaria
+        {
+            get
+            {
+                return txtReferencia.Text.S();
+            }
+        }
 
         public DataTable dtCotizacion
         {
@@ -897,5 +921,24 @@ namespace Autos_SCC.Views.Principales
 
 
         #endregion
+
+        protected void chkReferencia_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (chkReferencia.Checked)
+                {
+                    txtReferencia.Visible = true;
+                }
+                else
+                {
+                    txtReferencia.Visible = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

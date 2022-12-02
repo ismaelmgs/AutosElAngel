@@ -45,5 +45,17 @@ namespace Autos_SCC.DomainModel
                 throw ex;
             }
         }
+        public void DBInsertaReferenciaBancaria(int iIdCotizacion, string sReferencia)
+        {
+            try
+            {
+                oDB_SP.EjecutarSP("[Autos].[spI_InsertaReferenciaBancaria]", "@IdCotizacion", iIdCotizacion,
+                                                                             "@Referencia", sReferencia);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

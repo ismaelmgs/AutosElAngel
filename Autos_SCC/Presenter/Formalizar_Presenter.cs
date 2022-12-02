@@ -61,6 +61,9 @@ namespace Autos_SCC.Presenter
                         LoadObjects_Presenter();
                         new DBUtils().DBCambiaEstatusAuto(oIView.iIdCotizacion, 2);
                         new DBUtils().DBUpdateEstatus(oIView.iIdCotizacion, Enumeraciones.eEstatus.Cobranza);
+                        new DBUtils().DBInsertaReferenciaBancaria(oIView.iIdCotizacion, oIView.sReferenciaBancaria);
+
+
                         oIView.MostrarMensaje("El auto se entregó de forma correcta, ahora se encuentra en cobranza.", "Entrega de auto");
                         break;
                 }
