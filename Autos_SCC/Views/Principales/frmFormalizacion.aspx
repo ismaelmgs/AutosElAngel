@@ -135,18 +135,22 @@
 
             <asp:Panel ID="pnlReferencia" runat="server" visible="false">
                 <fieldset id="fsReferencia" runat="server" style="text-align:left">
-                    <div style="margin: 0 auto 0 auto; width:50%; padding-top:30px; padding-bottom:30px; height:50px;">
-                        <table width="70%">
-                            <tr>
-                                <td width="50%" style="padding-top:15px; text-align:right">
-                                    <asp:CheckBox ID="chkReferencia" runat="server" Text="Agregar referencia bancaria" AutoPostBack="true" OnCheckedChanged="chkReferencia_CheckedChanged" />
-                                </td>
-                                <td width="50%">
-                                    <asp:TextBox ID="txtReferencia" runat="server" Visible="false" CssClass="form-control"></asp:TextBox>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
+                    <div style="margin: 0 auto; width:100%; padding-top:10px; padding-bottom:10px; height:50px;">
+                        <div class="row">
+                            <div class="col-md-4">&nbsp;</div>
+                            <div class="col-md-4" style="text-align:center;font-size:15px;">
+                                <asp:CheckBox ID="chkReferencia" runat="server" Text="Agregar referencia bancaria" AutoPostBack="true" OnCheckedChanged="chkReferencia_CheckedChanged"/>
+                            </div>
+                            <div class="col-md-4">&nbsp;</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">&nbsp;</div>
+                            <div class="col-md-4" style="text-align:center;">
+                                <asp:TextBox ID="txtReferencia" runat="server" Visible="false" CssClass="form-control" Style="width:60%;margin:0 auto;"></asp:TextBox>
+                            </div>
+                            <div class="col-md-4">&nbsp;</div>
+                         </div>
+                    </div><br />
                 </fieldset>
             </asp:Panel>
 

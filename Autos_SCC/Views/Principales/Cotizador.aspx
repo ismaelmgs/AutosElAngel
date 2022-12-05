@@ -414,7 +414,7 @@
                                     </div>
                             
                                     <asp:Panel ID="pnlAgregarPagos" runat="server"  Visible="false">
-                                        <div style="text-align:center; width:100%;">
+                                        <div style="text-align:center; width:100%; font-size:15px;">
                                             
                                             <asp:Label ID="lblSinIntereses" runat="server" Text="Meses sin Intereses"></asp:Label>
                                             <asp:CheckBox ID="chkSinIntereses" runat="server" AutoPostBack="true" OnCheckedChanged="chkSinIntereses_CheckedChanged" />
