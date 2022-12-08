@@ -52,6 +52,7 @@ namespace Autos_SCC.Presenter
                 oIView.MostrarMensaje("La transacción se guardo de manera correcta.", "Movimientos");
                 oIGestCat.SetActualizaTransacciones(oIView.iIdCotizacion, oT.sUsuario);
                 
+                // Flujo de mensaje de fin de contrato
                 oIView.dtCliente = oIGestCat.dtGetCliente(oIView.iIdCotizacion).Tables[0];
                 oIView.ConsultaPagos();
             }
