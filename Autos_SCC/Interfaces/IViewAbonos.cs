@@ -15,6 +15,7 @@ namespace Autos_SCC.Interfaces
         int iIdUsuario { get; }
         int iIdSucursal { get; }
         int iIdCotizacion { get; }
+        string strBandera { get; set; }
         Transaccion oTran { get; }
 
         void LoadSucursales(DataTable dtSuc);

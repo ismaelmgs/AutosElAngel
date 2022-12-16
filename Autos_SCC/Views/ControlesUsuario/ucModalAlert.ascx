@@ -3,7 +3,7 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
 
 <ajax:ModalPopupExtender ID="mpext2" runat="server" BackgroundCssClass="overlayy"
-    TargetControlID="pnlPopupAlert" PopupControlID="pnlPopupAlert" OkControlID="btnOk2" CancelControlID="btnOk2">
+    TargetControlID="pnlPopupAlert" PopupControlID="pnlPopupAlert" OkControlID="btnOk2">
 </ajax:ModalPopupExtender>
 
 <asp:Panel ID="pnlPopupAlert" runat="server" BackColor="" Style="display: none; background-color:#00000073; width:100%; height:100%;" DefaultButton="btnOk2"  CssClass="RLRmodaltres">

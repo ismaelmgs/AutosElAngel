@@ -61,12 +61,18 @@ namespace Autos_SCC.DomainModel
             }
         }
 
-        public void SetActualizaTransacciones(int iIdCotizacion, string sUsuario)
+        public string SetActualizaTransacciones(int iIdCotizacion, string sUsuario)
         {
             try
             {
-                oDB_SP.EjecutarSP("[Autos].[spU_ActualizaAmortizacionesPagos]", "@fi_IdCotizacion", iIdCotizacion,
+                string sBandera = "";
+                DataTable dt = oDB_SP.EjecutarDT("[Autos].[spU_ActualizaAmortizacionesPagos]", "@fi_IdCotizacion", iIdCotizacion,
                                                                                 "@fc_Usuario", sUsuario);
+                if(dt != null && dt.Rows.Count > 0)
+                {
+                    sBandera = dt.Rows[0].ItemArray[0].ToString();
+                }
+                return sBandera;
             }
             catch (Exception ex)
             {

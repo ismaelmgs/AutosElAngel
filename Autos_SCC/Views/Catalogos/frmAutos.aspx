@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" UICulture="es" Culture="es-MX" CodeBehind="frmAutos.aspx.cs" EnableEventValidation="false" Inherits="Autos_SCC.Views.Catalogos.frmAutos" %>
+
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <%@ Register Src="../ControlesUsuario/ucModalConfirm.ascx" TagName="ucModalConfirm" TagPrefix="uc1" %>
-<%@ Register Src="../ControlesUsuario/ucModalAlert.ascx"  TagName="ucModalAlert" TagPrefix="uc1"%>
+<%@ Register Src="../ControlesUsuario/ucModalAlert.ascx" TagName="ucModalAlert" TagPrefix="uc1" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
@@ -10,31 +11,32 @@
     <script type="text/javascript" src="../../jquery/jquery-ui-1.9.2.custom.min.js"></script>
     <style>
         .dataCell {
-            font-size:9pt !important;
+            font-size: 9pt !important;
         }
+
         th {
-            font-size:9pt !important;
+            font-size: 9pt !important;
         }
+
         .hiddenRow {
             /*visibility:hidden !important;*/
-            display:none !important;
+            display: none !important;
         }
     </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">    
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <script type="text/javascript" language="javascript">
-        function MostrarMensaje(mensaje, titulo)
-        {
+        function MostrarMensaje(mensaje, titulo) {
             var ventana = $('<div id="errortitulo" title="' + titulo + '"><span id="errormensaje">' + mensaje + '</span></div>');
 
             ventana.dialog({
-                modal: true, 
+                modal: true,
                 buttons: { "Aceptar": function () { $(this).dialog("close"); } },
                 show: "fold",
                 hide: "scale",
             });
         }
-        
+
         function On(GridView) {
             if (GridView != null) {
                 GridView.originalBgColor = GridView.style.backgroundColor;
@@ -53,15 +55,16 @@
     <asp:UpdatePanel ID="upaTab" runat="server" UpdateMode="Conditional">
         <ContentTemplate>
             <div class="card">
-                <div class="card-block" style="text-align:center;">
-                    <h3><asp:Label ID="lblTitulo" runat="server" CssClass="labelTitle" Text="Catálogo de Autos"></asp:Label></h3>
+                <div class="card-block" style="text-align: center;">
+                    <h3>
+                        <asp:Label ID="lblTitulo" runat="server" CssClass="labelTitle" Text="Catálogo de Autos"></asp:Label></h3>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
-                        <h3 style="text-align:center;">Búsqueda</h3>
-                           <ContentTemplate>
+                        <h3 style="text-align: center;">Búsqueda</h3>
+                        <contenttemplate>
                                 <br />
                                 <table width="50%" style="margin:0 auto;">
                                     <tr>
@@ -95,7 +98,9 @@
                                         </td>
                                     </tr>
                                 </table>
-                            </ContentTemplate> <br /><br />
+                            </contenttemplate>
+                        <br />
+                        <br />
                     </div>
                 </div>
             </div>
@@ -142,19 +147,16 @@
                                     <asp:BoundField DataField="fc_Status" HeaderText="Estatus" ControlStyle-CssClass="dataCell" />
                                     <asp:BoundField DataField="fc_Usuario" HeaderText="Usuario modifico" ItemStyle-HorizontalAlign="Center" Visible="false"/>
                                     <asp:BoundField DataField="fd_FechaUltMovimiento" HeaderText="Fecha Ult. Movimiento" ItemStyle-HorizontalAlign="Center" />
-                                    
                                     <asp:TemplateField>
                                         <ItemTemplate>
                                             <asp:Button ID="btnEliminar" runat="server" Text="ELIMINAR" CssClass="btn btn-danger" ToolTip="Elimina el registro seleccionado" CommandName="EliminarAuto" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"/>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-
                                     <asp:BoundField DataField="Des_Estado" ControlStyle-CssClass="hiddenRow" HeaderStyle-CssClass="hiddenRow" ItemStyle-CssClass="hiddenRow" />
                                     <asp:BoundField DataField="NumMotor" ControlStyle-CssClass="hiddenRow" HeaderStyle-CssClass="hiddenRow" ItemStyle-CssClass="hiddenRow" />
                                     <asp:BoundField DataField="TenenciaHasta" ControlStyle-CssClass="hiddenRow" HeaderStyle-CssClass="hiddenRow" ItemStyle-CssClass="hiddenRow" />
                                     <asp:BoundField DataField="Factura" ControlStyle-CssClass="hiddenRow" HeaderStyle-CssClass="hiddenRow" ItemStyle-CssClass="hiddenRow" />
                                     <asp:BoundField DataField="Numero" ControlStyle-CssClass="hiddenRow" HeaderStyle-CssClass="hiddenRow" ItemStyle-CssClass="hiddenRow" />
-
                                 </Columns>
                                 <EmptyDataTemplate>
                                             No se encontraron registros para mostrar...
@@ -183,12 +185,10 @@
                                         <asp:BoundField DataField="fc_Sucursal" HeaderText="Sucursal" ControlStyle-CssClass="dataCell" />
                                         <asp:BoundField DataField="fc_Color" HeaderText="Color" ControlStyle-CssClass="dataCell" />
                                         <asp:BoundField DataField="fi_Kilometraje" HeaderText="Kilometraje" ControlStyle-CssClass="dataCell" />
-
                                         <asp:BoundField DataField="fc_NumMotor" HeaderText="No. Motor" ControlStyle-CssClass="dataCell" />
                                         <asp:BoundField DataField="fc_TenenciaHasta" HeaderText="Tenencia Hasta" ControlStyle-CssClass="dataCell" />
                                         <asp:BoundField DataField="fc_Factura" HeaderText="Factura de" ControlStyle-CssClass="dataCell" />
                                         <asp:BoundField DataField="fc_Numero" HeaderText="Con Número" ControlStyle-CssClass="dataCell" />
-
                                         <asp:BoundField DataField="fc_Usuario" HeaderText="Usuario modifico" />
                                         <asp:BoundField DataField="fd_FechaUltMovimiento" HeaderText="Fecha Ult. Movimiento" />
                                     </Columns>
@@ -198,7 +198,8 @@
                             <uc1:ucModalAlert runat="server" ID="omb2" />
                     </div>
                 </div>
-            </center><br />
+            </center>
+            <br />
         </ContentTemplate>
         <Triggers>
             <asp:PostBackTrigger ControlID="btnExportar" />
@@ -211,16 +212,18 @@
         TargetControlID="hdTarget" PopupControlID="Panel1" BackgroundCssClass="overlayy"
         CancelControlID="can">
     </cc1:ModalPopupExtender>
-    
-        <asp:Panel ID="Panel1" runat="server" Width="100%" Height="100%" Style="background-color:#00000070; display: none; margin-left:-6px; padding-top:3%;">
+
+    <asp:Panel ID="Panel1" runat="server" Width="100%" Height="100%" Style="background-color: #00000070; display: none; margin-left: -6px; padding-top: 3%;">
         <asp:UpdatePanel ID="UpdatePanel1" runat="server" BorderColor="Black" BackColor=""
-        HorizontalAlign="Center" Style="border-radius:25px; box-shadow:3px 3px 3px #00000050; background-color:#eeeeee; width:50%;margin:0 auto;">
+            HorizontalAlign="Center" Style="border-radius: 25px; box-shadow: 3px 3px 3px #00000050; background-color: #eeeeee; width: 50%; margin: 0 auto;">
             <ContentTemplate>
                 <div class="header">
                     <table width="100%">
                         <tr>
-                            <td colspan="2" style="text-align:center"><br />
-                                <h3><asp:Label ID="lblCaption" runat="server" Text="Gastos del vehiculo" CssClass="TituloEtiquetas"></asp:Label></h3>
+                            <td colspan="2" style="text-align: center">
+                                <br />
+                                <h3>
+                                    <asp:Label ID="lblCaption" runat="server" Text="Gastos del vehiculo" CssClass="TituloEtiquetas"></asp:Label></h3>
                             </td>
                         </tr>
                     </table>
@@ -297,20 +300,20 @@
             </Triggers>
         </asp:UpdatePanel>
     </asp:Panel>
-    
-   <%--Modal de Agregar Vehiculo--%>
+
+    <%--Modal de Agregar Vehiculo--%>
     <asp:HiddenField ID="hdAgregarVehiculo" runat="server" />
     <cc1:ModalPopupExtender ID="mpeAgregarVehiculo" runat="server"
         TargetControlID="hdAgregarVehiculo" PopupControlID="pnlAgregarVehiculo" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
-    <asp:Panel ID="pnlAgregarVehiculo" runat="server" BorderColor="Black" BackColor="#eeeeee" Height="100%" 
-        Width="100%" HorizontalAlign="Center"  Style="display: none; background-color:#00000073; margin-left:-6px;">
+    <asp:Panel ID="pnlAgregarVehiculo" runat="server" BorderColor="Black" BackColor="#eeeeee" Height="100%"
+        Width="100%" HorizontalAlign="Center" Style="display: none; background-color: #00000073; margin-left: -6px;">
         <asp:UpdatePanel ID="UpaAgregarVehiculo" runat="server" UpdateMode="Conditional">
             <ContentTemplate>
                 <div class="row">
-                    <div class="col-md-12" style="padding-top:3%;">
-                        <div class="card" style="width:70%; margin:0 auto; background-color:#eeeeee;">
-                        <h3 style="text-align:center;" id="ttlAuto" runat="server">Registro de Autos</h3>
+                    <div class="col-md-12" style="padding-top: 3%;">
+                        <div class="card" style="width: 70%; margin: 0 auto; background-color: #eeeeee;">
+                            <h3 style="text-align: center;" id="ttlAuto" runat="server">Registro de Autos</h3>
                             <br />
                             <div class="row">
                                 <div class="col-md-6">
@@ -319,8 +322,8 @@
                                             <asp:Label ID="lblId" runat="server" Text="Id:" CssClass="inputLabel" />
                                         </div>
                                         <div class="col-md-8">
-                                            <asp:TextBox ID="txtId" runat="server" Width="100%" class="inputCampo" 
-                                            Enabled="False" CssClass="form-control"></asp:TextBox>
+                                            <asp:TextBox ID="txtId" runat="server" Width="100%" class="inputCampo"
+                                                Enabled="False" CssClass="form-control"></asp:TextBox>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -329,8 +332,8 @@
                                         </div>
                                         <div class="col-md-8">
                                             <asp:DropDownList ID="ddlMarca" runat="server" OnSelectedIndexChanged="ddlMarca_SelectedIndexChanged"
-                                            AutoPostBack="True" CssClass="form-control" Width="100%">
-                                        </asp:DropDownList>
+                                                AutoPostBack="True" CssClass="form-control" Width="100%">
+                                            </asp:DropDownList>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -339,9 +342,9 @@
                                         </div>
                                         <div class="col-md-8">
                                             <asp:DropDownList ID="ddlTipoAuto" runat="server" CssClass="form-control" Width="100%"
-                                            AutoPostBack="True" 
-                                            OnSelectedIndexChanged="ddlTipoAuto_SelectedIndexChanged">
-                                        </asp:DropDownList>
+                                                AutoPostBack="True"
+                                                OnSelectedIndexChanged="ddlTipoAuto_SelectedIndexChanged">
+                                            </asp:DropDownList>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -361,7 +364,7 @@
                                             <asp:TextBox ID="txtPlaca" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="row">
                                         <div class="col-md-4">
                                             <asp:Label ID="lblEstado" runat="server" Text="Del Estado de:" CssClass="inputLabel"></asp:Label>
@@ -389,7 +392,7 @@
                                             <asp:TextBox ID="txtTenencia" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
                                         </div>
                                     </div>
-                                    
+
 
                                 </div>
                                 <div class="col-md-6">
@@ -399,8 +402,9 @@
                                         </div>
                                         <div class="col-md-8">
                                             <asp:TextBox ID="txtModelo" runat="server" MaxLength="4" CssClass="form-control" Width="100%"></asp:TextBox>
-                                        <cc1:FilteredTextBoxExtender ID="ftbModelo" runat="server" ValidChars="0123456789" FilterType="Numbers"
-                                            FilterMode="ValidChars" TargetControlID="txtModelo"></cc1:FilteredTextBoxExtender>
+                                            <cc1:FilteredTextBoxExtender ID="ftbModelo" runat="server" ValidChars="0123456789" FilterType="Numbers"
+                                                FilterMode="ValidChars" TargetControlID="txtModelo">
+                                            </cc1:FilteredTextBoxExtender>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -454,7 +458,7 @@
                                             <asp:TextBox ID="txtNumMotor" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="row">
                                         <div class="col-md-4">
                                             <asp:Label ID="lblFactura" runat="server" Text="Factura de:" CssClass="inputLabel"></asp:Label>
@@ -471,7 +475,7 @@
                                             <asp:TextBox ID="txtNumero" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
                                         </div>
                                     </div>
-                                    
+
 
                                 </div>
                             </div>
@@ -479,11 +483,11 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     &nbsp;<asp:Button ID="btnGuardar" runat="server" Text="GUARDAR" CssClass="btn btn-primary"
-                        OnClick="btnGuardar_Click" ToolTip="Guarda los cambios realizados sobre el registro" />
+                                        OnClick="btnGuardar_Click" ToolTip="Guarda los cambios realizados sobre el registro" />
                                     &nbsp;<asp:Button ID="btnLimpiar" runat="server" Text="LIMPIAR" CssClass="btn btn-info"
-                        OnClick="btnLimpiar_Click" ToolTip="Limpia los campos para un registro nuevo" />
+                                        OnClick="btnLimpiar_Click" ToolTip="Limpia los campos para un registro nuevo" />
                                     &nbsp;<asp:Button ID="btnCancelar" runat="server" Text="CERRAR" CssClass="btn btn-danger"
-                        OnClick="btnCancelar_Click" ToolTip="Limpia los campos para un registro nuevo" />
+                                        OnClick="btnCancelar_Click" ToolTip="Limpia los campos para un registro nuevo" />
                                 </div>
                             </div>
                             <br />

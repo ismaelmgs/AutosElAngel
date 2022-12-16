@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using Autos_SCC.Interfaces;
 using Autos_SCC.Presenter;
 using Autos_SCC.DomainModel;
+using Autos_SCC.Views.ControlesUsuario;
 using System.Data;
 using NucleoBase.Core;
 using Autos_SCC.Objetos;
@@ -20,6 +21,9 @@ namespace Autos_SCC.Views.Pays
         {
             oPresenter = new Abonos_Presenter(this, new DBAbonos());
 
+            omb.OkButtonPressed += new ucModalConfirm.OkButtonPressedHandler(omb_OkButtonPressed);
+            omb.CancelButtonPressed += new ucModalConfirm.CancelButtonPressedHandler(omb_CancelButtonPressed);
+            omb2.OkButtonPressed += new ucModalAlert.OkButtonPressedHandler(omb_Ok2ButtonPressed);
             if (!IsPostBack)
             {
                 if (Session["usuario"] == null)
@@ -168,6 +172,10 @@ namespace Autos_SCC.Views.Pays
                         {
                             eSetInsertaTran(sender, e);
                             mpePagos.Hide();
+                            if (strBandera == "T")
+                            {
+                                MostrarMensaje("Este fue el ultimo pago por procesar de esta cotización.", "Movimientos");
+                            }
                         }
                         break;
                     case eTipoPago.PagoIndividual:
@@ -242,7 +250,19 @@ namespace Autos_SCC.Views.Pays
                 MostrarMensaje("Error al abonar en el pago Individual --> Error: " + ex.Message, "Abonos");
             }
         }
+        void omb_CancelButtonPressed(object sender, EventArgs args)
+        {
+            omb.Hide();
+        }
 
+        void omb_OkButtonPressed(object sender, EventArgs e)
+        {
+            Response.Redirect("frmAbonos.aspx");
+        }
+        void omb_Ok2ButtonPressed(object sender, EventArgs e)
+        {
+            Response.Redirect("frmAbonos.aspx");
+        }
 
         #endregion
 
@@ -258,8 +278,9 @@ namespace Autos_SCC.Views.Pays
 
         public void MostrarMensaje(string sMensaje, string sCaption)
         {
-            string script = string.Format("MostrarMensaje('{0}', '{1}')", sMensaje, sCaption);
-            ScriptManager.RegisterStartupScript(this, typeof(Page), "MostrarMensaje", script, true);
+            //string script = string.Format("MostrarMensaje('{0}', '{1}')", sMensaje, sCaption);
+            //ScriptManager.RegisterStartupScript(this, typeof(Page), "MostrarMensaje", script, true);
+            omb2.ShowMessage(sMensaje, sCaption);
         }
 
         public void ConsultaPagos()
@@ -321,6 +342,11 @@ namespace Autos_SCC.Views.Pays
             {
                 return ddlSucursal.SelectedValue.S().I();
             }
+        }
+        public string strBandera
+        {
+            set;
+            get;
         }
 
         public int iIdCotizacion
