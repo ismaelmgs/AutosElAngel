@@ -114,7 +114,7 @@ namespace Autos_SCC.Views.Catalogos
         {
             if (eSaveObj != null)
                 eSaveObj(sender, e);
-            mpeAgregarVehiculo.Hide();
+            //mpeAgregarVehiculo.Hide();
             upaTab.Update();
             
 
@@ -127,6 +127,7 @@ namespace Autos_SCC.Views.Catalogos
 
         protected void btnLimpiar_Click(object sender, EventArgs e)
         {
+            oPresenter.LoadObjects_Presenter();
             LimpiaControles();
         }
 
