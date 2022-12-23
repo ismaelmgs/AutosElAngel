@@ -67,14 +67,7 @@
                         <contenttemplate>
                                 <br />
                                 <table width="50%" style="margin:0 auto;">
-                                    <tr>
-                                        <td width="30%">
-                                            <asp:Label ID="lblBusqueda" runat="server" Text="Palabra a buscar:" CssClass="inputLabel" />
-                                        </td>
-                                        <td width="70%">
-                                            <asp:TextBox ID="txtBuqueda" runat="server" Width="100%" CssClass="form-control"></asp:TextBox>
-                                        </td>
-                                    </tr>
+                                    
                                     <tr>
                                         <td>
                                             <asp:Label ID="lblSucursalBus" runat="server" Text="Sucursal:" CssClass="inputLabel"></asp:Label>
@@ -89,6 +82,14 @@
                                         </td>
                                         <td>
                                             <asp:DropDownList ID="ddlEstatusBus" runat="server" Width="100%" CssClass="form-control"></asp:DropDownList>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="30%">
+                                            <asp:Label ID="lblBusqueda" runat="server" Text="Palabra a buscar:" CssClass="inputLabel" />
+                                        </td>
+                                        <td width="70%">
+                                            <asp:TextBox ID="txtBuqueda" runat="server" Width="100%" CssClass="form-control"></asp:TextBox>
                                         </td>
                                     </tr>
                                     <tr>
