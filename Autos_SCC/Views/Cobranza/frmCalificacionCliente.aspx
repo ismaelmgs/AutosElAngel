@@ -63,7 +63,7 @@
                     <div class="table-responsive">
                         <asp:GridView ID="gvClientesCal" runat="server" AutoGenerateColumns="false" DataKeyNames="fi_Id"
                             Width="100%" ShowFooter="true" PageSize="10" BorderStyle="None"
-                            BorderWidth="0px" HeaderStyle-BackColor="#646464"
+                            BorderWidth="0px" HeaderStyle-BackColor="#646464" OnRowCommand="gvClientesCal_RowCommand"
                             HeaderStyle-ForeColor="white" AllowSorting="True" CssClass="table table-hover" Style="border: 1px solid #efefef;">
                             <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
                             <HeaderStyle BackColor="#01609F" CssClass="titleHeader" />
@@ -90,5 +90,62 @@
                 <br />
             </ContentTemplate>
         </asp:UpdatePanel>
+        <%--Modal para hacer pagos--%>
+        <asp:HiddenField ID="hdTargetCalificacion" runat="server" />
+        <cc1:ModalPopupExtender ID="mpeCalificacion" runat="server" TargetControlID="hdTargetCalificacion"
+            PopupControlID="pnlCalificacion" BackgroundCssClass="overlayy">
+        </cc1:ModalPopupExtender>
+        <asp:Panel ID="pnlCalificacion" runat="server" Width="100%" Height="100%" Style="background-color: #00000070; display: none; margin-left: -6px; padding-top: 10%;">
+            <asp:UpdatePanel ID="upaPopCalificacion" runat="server" BorderColor="Black" BackColor=""
+                HorizontalAlign="Center" Style="border-radius: 25px; box-shadow: 3px 3px 3px #00000050; background-color: #eeeeee; width: 50%; margin: 0 auto;">
+                <ContentTemplate>
+                    <table width="80%" style="margin: 0 auto;">
+                        <tr>
+                            <td style="width: 150"></td>
+                            <td style="width: 180"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="text-align: center">
+                                <h4>
+                                    <asp:Label ID="lblTituloCalifica" runat="server" Text="Calificar Credito del Cliente" CssClass="labelTitleModal"></asp:Label></h4>
+                                <br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="text-align: center">
+                                <h4>
+                                    <asp:Label ID="lblMensajeCalificar" runat="server" Text="¿ Cual fue el comportamiento del cliente durante su credito ?" CssClass="labelTitleModal"></asp:Label></h4>
+                                <br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="text-align: center">
+                                <h4>
+                                    <asp:Label ID="lblClienteCalifica" runat="server"  CssClass="labelTitleModal"></asp:Label></h4>
+                                <br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:ImageButton runat="server" ID="ibtnBueno" />
+                            </td>
+                            <td>
+                                <asp:ImageButton runat="server" ID="ibtnRegular" />
+                            </td>
+                            <td>
+                                <asp:ImageButton runat="server" ID="ibtnMalo" />
+                            </td>
+                        </tr>
+                    </table>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+            <asp:UpdateProgress ID="upgCalificacion" runat="server" DynamicLayout="true" AssociatedUpdatePanelID="upaCalificacion">
+                <ProgressTemplate>
+                    <div style="text-align: left">
+                        <asp:Label ID="lblProgresBusquedaCalificacion" runat="server" Text="Por favor espere..."></asp:Label>
+                    </div>
+                </ProgressTemplate>
+            </asp:UpdateProgress>
+        </asp:Panel>
     </div>
 </asp:Content>

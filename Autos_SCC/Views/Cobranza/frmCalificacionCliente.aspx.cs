@@ -15,6 +15,7 @@ namespace Autos_SCC.Views.Cobranza
 {
     public partial class frmCalificacionCliente : System.Web.UI.Page, IViewCalificacion
     {
+        #region EVENTOS
         protected void Page_Load(object sender, EventArgs e)
         {
             oPresenter = new Calificacion_Presenter(this, new DBCalificacion());
@@ -47,7 +48,24 @@ namespace Autos_SCC.Views.Cobranza
             }
             oPresenter.LoadObjects_PresenterFilter();
         }
-
+        protected void gvClientesCal_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            try
+            {
+                switch (e.CommandName.S())
+                {
+                    case "Calificar":
+                        mpeCalificacion.Show();
+                        break;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        #endregion
+        #region METODOS
         public void LoadSucursales(DataTable dtSuc)
         {
             ddlSucursal.DataSource = dtSuc;
@@ -71,7 +89,7 @@ namespace Autos_SCC.Views.Cobranza
                 return false;
             }
         }
-
+        #endregion
         #region VARIABLES Y PROPIEDADES
 
         Calificacion_Presenter oPresenter;
