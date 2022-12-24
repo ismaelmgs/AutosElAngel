@@ -431,6 +431,7 @@
     <Content Include="Images\Banner_2.jpg" />
     <Content Include="Images\Banner_3.jpg" />
     <Content Include="Views\Catalogos\frmAutorizadores.aspx" />
+    <Content Include="Views\Cobranza\frmCalificacionCliente.aspx" />
     <Content Include="Views\Cobranza\frmCobranza.aspx" />
     <Content Include="Views\ControlesUsuario\ucModalAlert.ascx" />
     <Content Include="Views\Default.aspx" />
@@ -510,6 +511,7 @@
     <Compile Include="Clases\Utils.cs" />
     <Compile Include="DomainModel\DBAbonos.cs" />
     <Compile Include="DomainModel\DBAutorizador.cs" />
+    <Compile Include="DomainModel\DBCalificacion.cs" />
     <Compile Include="DomainModel\DBCobranza.cs" />
     <Compile Include="DomainModel\DBFormalizar.cs" />
     <Compile Include="DomainModel\DBMonitor.cs" />
@@ -525,6 +527,7 @@
     <Compile Include="Interfaces\IViewAbonos.cs" />
     <Compile Include="Interfaces\IViewAutorizador.cs" />
     <Compile Include="Interfaces\IViewAutosVend.cs" />
+    <Compile Include="Interfaces\IViewCalificacion.cs" />
     <Compile Include="Interfaces\IViewCobranza.cs" />
     <Compile Include="Interfaces\IViewFormalizar.cs" />
     <Compile Include="Interfaces\IViewIngresosProy.cs" />
@@ -539,6 +542,7 @@
     <Compile Include="Presenter\Abonos_Presenter.cs" />
     <Compile Include="Presenter\Autorizador_Presenter.cs" />
     <Compile Include="Presenter\AutosVend_Presenter.cs" />
+    <Compile Include="Presenter\Calificacion_Presenter.cs" />
     <Compile Include="Presenter\Cobranza_Presenter.cs" />
     <Compile Include="Presenter\Formalizar_Presenter.cs" />
     <Compile Include="Presenter\IngresosProy_Presenter.cs" />
@@ -593,6 +597,13 @@
     </Compile>
     <Compile Include="Views\Catalogos\frmAutorizadores.aspx.designer.cs">
       <DependentUpon>frmAutorizadores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Cobranza\frmCalificacionCliente.aspx.cs">
+      <DependentUpon>frmCalificacionCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Cobranza\frmCalificacionCliente.aspx.designer.cs">
+      <DependentUpon>frmCalificacionCliente.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Cobranza\frmCobranza.aspx.cs">
       <DependentUpon>frmCobranza.aspx</DependentUpon>

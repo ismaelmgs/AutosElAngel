@@ -119,5 +119,28 @@ namespace Autos_SCC.DomainModel
                 return new DataTable();
             }
         }
+        public DataTable DBGetCotizacionesTerminadas()
+        {
+            try
+            {
+                return oDB_SP.EjecutarDT("[Autos].[spS_ConsultaCotizacionCalificacion]");
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+            }
+        }
+        public DataTable DBGetCotizacionesTerminadasFiltro(int iIdSucursal, string sIdsCalificacion)
+        {
+            try
+            {
+                return oDB_SP.EjecutarDT("[Autos].[spS_ConsultaCotizacionCalificacionFiltro]", "@fi_Sucursal", iIdSucursal
+                                                                                             , "@fi_Calificado", sIdsCalificacion);
+            }
+            catch (Exception)
+            {
+                return new DataTable();
+            }
+        }
     }
 }
