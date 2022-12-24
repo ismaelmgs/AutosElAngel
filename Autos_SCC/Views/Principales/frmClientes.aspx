@@ -152,33 +152,33 @@
                                 <td valign="top">
                                     <table width="100%">
                                         <tr>
-                                            <td width="40%">
+                                            <td width="30%">
                                                 <asp:Label ID="lblEstado" runat="server" Text="Estado: " CssClass="inputLabel" ></asp:Label>
                                             </td>
-                                            <td width="60%">
+                                            <td width="70%">
                                                 <div class="row">
                                                     <div class="col-md-10">
                                                         <asp:DropDownList ID="ddlEstado" runat="server" CssClass="form-control" AutoPostBack="true"
                                                     OnSelectedIndexChanged="ddlEstado_SelectedIndexChanged"></asp:DropDownList>
                                                     </div>
                                                     <div class="col-md-2">
-                                                        <asp:Label ID="lblReqEstado" runat="server" Text="*" CssClass="inputReqLabel"></asp:Label>
+                                                        <asp:Label ID="lblReqEstado" runat="server" Text="*" CssClass="inputReqLabel" style="color:#ff0000;font-size:19px;"></asp:Label>
                                                     </div>
                                                 </div>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td width="40%">
+                                            <td width="30%">
                                                 <asp:Label ID="lblDelegacion" runat="server" Text="Delegación/Municipio:" CssClass="inputLabel"></asp:Label>
                                             </td>
-                                            <td width="60%">
+                                            <td width="70%">
                                                 <div class="row">
                                                     <div class="col-md-10">
                                                         <asp:DropDownList ID="ddlMunicipio" runat="server" AutoPostBack="true" CssClass="form-control"
                                                     OnSelectedIndexChanged="ddlMunicipio_SelectedIndexChanged"></asp:DropDownList>
                                                     </div>
                                                     <div class="col-md-2">
-                                                        <asp:Label ID="lblReqMunicipio" runat="server" Text="*" CssClass="inputReqLabel"></asp:Label>
+                                                        <asp:Label ID="lblReqMunicipio" runat="server" Text="*" CssClass="inputReqLabel" style="color:#ff0000;font-size:19px;"></asp:Label>
                                                     </div>
                                                 </div>
                                             </td>
@@ -194,26 +194,14 @@
                                                     OnSelectedIndexChanged="ddlColonia_SelectedIndexChanged"></asp:DropDownList>
                                                     </div>
                                                     <div class="col-md-2">
-                                                        <asp:Label ID="lblReqColonia" runat="server" Text="*" CssClass="inputReqLabel"></asp:Label>
+                                                        <asp:Label ID="lblReqColonia" runat="server" Text="*" CssClass="inputReqLabel" style="color:#ff0000;font-size:19px;"></asp:Label>
                                                     </div>
                                                 </div>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>
-                                                <asp:Label ID="lblCalle" runat="server" Text="Calle:" CssClass="inputLabel"></asp:Label>
-                                            </td>
-                                            <td>
-                                                <div class="row">
-                                                    <div class="col-md-10">
-                                                        <asp:TextBox ID="txtCalle" runat="server" MaxLength="100" CssClass="form-control"></asp:TextBox>
-                                                    </div>
-                                                    <div class="col-md-2" style="text-align:left;">
-                                                        <asp:Label ID="lblReqCalle" runat="server" Text="*" CssClass="inputReqLabel"></asp:Label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                        </table>
+                                    <br /><hr /><br />
+                                        <table width="100%">
                                         <tr>
                                             <td>
                                                 <asp:Label ID="lblNacionalidad" runat="server" Text="Nacionalidad:" CssClass="inputLabel"></asp:Label>
@@ -235,6 +223,29 @@
                                         </tr>
                                         <tr>
                                             <td>
+                                                <asp:Label ID="lblTipoIdentificacion" runat="server" Text="Tipo identificación:" CssClass="inputLabel"></asp:Label>
+                                            </td>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="col-md-10">
+                                                        <asp:DropDownList ID="ddlTipoIdentificacion" runat="server" AutoPostBack="true" CssClass="form-control"
+                                                            OnSelectedIndexChanged="ddlTipoIdentificacion_SelectedIndexChanged">
+                                                            <asp:ListItem Text="INE" Value = "0"></asp:ListItem>
+                                                            <asp:ListItem Text="Licencia" Value = "1"></asp:ListItem>
+                                                            <asp:ListItem Text="Pasaporte" Value = "2"></asp:ListItem>
+                                                            <asp:ListItem Text="Otro" Value = "3"></asp:ListItem>
+                                                        </asp:DropDownList>
+                                                    </div>
+                                                    <div class="col-md-2">
+
+                                                    </div>
+                                                </div>
+                                       
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>
                                                 <asp:Label ID="lblNumeroIfe" runat="server" CssClass="inputLabel" 
                                                     Text="Número INE:"></asp:Label>
                                             </td>
@@ -249,8 +260,7 @@
                                                         &nbsp;<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal5" style="width:26px; margin-top:5px;">
                                                             &#x2370;
                                                         </button>
-                                                        <asp:Label ID="lblReqNumeroIfe" runat="server" CssClass="inputReqLabel" 
-                                                    Text="*"></asp:Label>
+                                                        <asp:Label ID="lblReqNumeroIfe" runat="server" CssClass="inputReqLabel" Text="*" style="color:#ff0000;font-size:19px;"></asp:Label>
                                                     </div>
                                                 </div>
                                             </td>
@@ -276,7 +286,7 @@
                                                             CultureTimePlaceholder="" Enabled="True" Mask="99/99/9999" MaskType="Date" TargetControlID="txtFechaNacimiento"
                                                             UserDateFormat="DayMonthYear">
                                                         </cc1:MaskedEditExtender>
-                                                        <asp:Label ID="lblreqFechaNacimiento" runat="server" Text="*" CssClass="inputReqLabel"></asp:Label>
+                                                        <asp:Label ID="lblreqFechaNacimiento" runat="server" Text="*" CssClass="inputReqLabel" style="color:#ff0000;font-size:19px;"></asp:Label>
                                                     </div>
                                                 </div>
                                         
@@ -333,8 +343,21 @@
                                 </td>
                                 <td style="width: 51%; vertical-align:top">
                                     <table style="text-align:left" width="100%">
-                                        
-                                        
+                                        <tr>
+                                            <td style="width:20%">
+                                                <asp:Label ID="lblCalle" runat="server" Text="Calle:" CssClass="inputLabel"></asp:Label>
+                                            </td>
+                                            <td style="width:80%">
+                                                <div class="row">
+                                                    <div class="col-md-10">
+                                                        <asp:TextBox ID="txtCalle" runat="server" MaxLength="100" CssClass="form-control"></asp:TextBox>
+                                                    </div>
+                                                    <div class="col-md-2" style="text-align:left;">
+                                                        <asp:Label ID="lblReqCalle" runat="server" Text="*" CssClass="inputReqLabel" style="color:#ff0000;font-size:19px;"></asp:Label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
                                         <tr>
                                             <td>
                                                 <asp:Label ID="lblNoExt" runat="server" Text="No. Ext:" CssClass="inputLabel"></asp:Label> 
@@ -362,10 +385,10 @@
                                                     <div class="col-md-5">
                                                         <div class="row">
                                                             <div class="col-md-11" style="text-align:left;">
-                                                                <asp:TextBox ID="txtCP" runat="server" MaxLength="5" CssClass="form-control" Style="width:115px;margin-left:-3px;"></asp:TextBox>
+                                                                <asp:TextBox ID="txtCP" runat="server" MaxLength="5" CssClass="form-control" Style="width:133px;margin-left:-3px;"></asp:TextBox>
                                                             </div>
                                                             <div class="col-md-1" style="text-align:left;">
-                                                                <asp:Label ID="lblReqCP" runat="server" Text="*" CssClass="inputReqLabel"></asp:Label>
+                                                                <asp:Label ID="lblReqCP" runat="server" Text="*" CssClass="inputReqLabel" style="color:#ff0000;font-size:19px;"></asp:Label>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -376,39 +399,21 @@
                                                 </div>
                                             </td>
                                         </tr>
+                                        
+                                        </table>
+                                    <br /><hr style="margin-top:11px;" /><br />
+                                        <table width="100%">
                                         <tr>
-                                            <td>
-                                                <asp:Label ID="lblTipoIdentificacion" runat="server" Text="Tipo identificación:" CssClass="inputLabel"></asp:Label>
-                                            </td>
-                                            <td>
-                                                <div class="row">
-                                                    <div class="col-md-10">
-                                                        <asp:DropDownList ID="ddlTipoIdentificacion" runat="server" AutoPostBack="true" CssClass="form-control"
-                                                            OnSelectedIndexChanged="ddlTipoIdentificacion_SelectedIndexChanged">
-                                                            <asp:ListItem Text="INE" Value = "0"></asp:ListItem>
-                                                            <asp:ListItem Text="Licencia" Value = "1"></asp:ListItem>
-                                                            <asp:ListItem Text="Pasaporte" Value = "2"></asp:ListItem>
-                                                            <asp:ListItem Text="Otro" Value = "3"></asp:ListItem>
-                                                        </asp:DropDownList>
-                                                    </div>
-                                                    <div class="col-md-2">
-
-                                                    </div>
-                                                </div>
-                                       
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
+                                            <td style="width:20%">
                                                 <asp:Label ID="lblCURP" runat="server" Text="CURP:" CssClass="inputLabel"></asp:Label>
                                             </td>
-                                            <td>
+                                            <td style="width:80%">
                                                 <div class="row">
                                                     <div class="col-md-10">
                                                         <asp:TextBox ID="txtCURP" runat="server" CssClass="form-control" MaxLength="20"></asp:TextBox>
                                                     </div>
                                                     <div class="col-md-2">
-                                                        <asp:Label ID="lblReqCURP" runat="server" Text="*" CssClass="inputReqLabel"></asp:Label>
+                                                        <asp:Label ID="lblReqCURP" runat="server" Text="*" CssClass="inputReqLabel" style="color:#ff0000;font-size:19px;"></asp:Label>
                                                     </div>
                                                 </div>
                                             </td>
@@ -479,7 +484,7 @@
                                                             FilterMode="ValidChars" ValidChars="0123456789()-"></cc1:FilteredTextBoxExtender>
                                                     </div>
                                                     <div class="col-md-2">
-                                                        <asp:Label ID="lblreqTelefono" runat="server" Text="*" CssClass="inputReqLabel"></asp:Label>
+                                                        <asp:Label ID="lblreqTelefono" runat="server" Text="*" CssClass="inputReqLabel" style="color:#ff0000;font-size:19px;"></asp:Label>
                                                     </div>
                                                 </div>
                                         
@@ -638,7 +643,7 @@
         <asp:UpdatePanel ID="upaAvales" runat="server" BorderColor="Black" BackColor=""
         HorizontalAlign="Center"  Style="border-radius:25px; box-shadow:3px 3px 3px #00000050; background-color:#eeeeee; width:70%;margin:0 auto; padding:10px;">
             <ContentTemplate>
-                <table width="80%" style="margin:0 auto;">
+                <table width="85%" style="margin:0 auto;">
                     <tr>
                         <td colspan="2"></td>
                     </tr>
@@ -660,7 +665,7 @@
                                                 <asp:TextBox ID="txtNombreAval" runat="server" MaxLength="100" CssClass="form-control" TabIndex="1"></asp:TextBox>
                                             </div>
                                             <div class="col-md-2">
-                                                <asp:Label ID="lblReqNombreAval" runat="server" Text="*" CssClass="inputReqLabel"></asp:Label>
+                                                <asp:Label ID="lblReqNombreAval" runat="server" Text="*" CssClass="inputReqLabel" style="color:#ff0000;font-size:19px;"></asp:Label>
                                             </div>
                                         </div>  
                                     </td>
@@ -675,12 +680,12 @@
                                                 <asp:TextBox ID="txtApePaternoAval" runat="server" MaxLength="100" CssClass="form-control" TabIndex="3"></asp:TextBox>
                                             </div>
                                             <div class="col-md-2">
-                                                <asp:Label ID="lblReqPaternoAval" runat="server" Text="*" CssClass="inputReqLabel"></asp:Label>
+                                                <asp:Label ID="lblReqPaternoAval" runat="server" Text="*" CssClass="inputReqLabel" style="color:#ff0000;font-size:19px;"></asp:Label>
                                             </div>
                                         </div>
                                     </td>
                                 </tr>
-                                <tr>
+                                <tr style="background-color:#e4e4e4;">
                                     <td>
                                         <asp:Label ID="lblEstadoAval" runat="server" Text="Estado: " CssClass="inputLabel" ></asp:Label>
                                     </td>
@@ -691,12 +696,12 @@
                                                 OnSelectedIndexChanged="ddlEstadoAval_SelectedIndexChanged" TabIndex="5"></asp:DropDownList>
                                             </div>
                                             <div class="col-md-2">
-                                                <asp:Label ID="lblReqEstadoAval" runat="server" Text="*" CssClass="inputReqLabel"></asp:Label>
+                                                <asp:Label ID="lblReqEstadoAval" runat="server" Text="*" CssClass="inputReqLabel" style="color:#ff0000;font-size:19px;"></asp:Label>
                                             </div>
                                         </div>
                                     </td>
                                 </tr>
-                                <tr>
+                                <tr style="background-color:#e4e4e4;">
                                     <td>
                                         <asp:Label ID="lblMunicipioAval" runat="server" Text="Delegación/Municipio:" CssClass="inputLabel"></asp:Label>
                                     </td>
@@ -707,12 +712,12 @@
                                             OnSelectedIndexChanged="ddlMunicipioAval_SelectedIndexChanged" TabIndex="6"></asp:DropDownList>
                                             </div>
                                             <div class="col-md-2">
-                                                <asp:Label ID="lblReqMunicipioAval" runat="server" Text="*" CssClass="inputReqLabel"></asp:Label>
+                                                <asp:Label ID="lblReqMunicipioAval" runat="server" Text="*" CssClass="inputReqLabel" style="color:#ff0000;font-size:19px;"></asp:Label>
                                             </div>
                                         </div>
                                     </td>
                                 </tr>
-                                <tr>
+                                <tr style="background-color:#e4e4e4;height: 49px;">
                                     <td>
                                         <asp:Label ID="lblColoniaAval" runat="server" Text="Colonia/Poblaci&oacute;n:" CssClass="inputLabel"></asp:Label>
                                     </td>
@@ -723,22 +728,7 @@
                                                 OnSelectedIndexChanged="ddlColoniaAval_SelectedIndexChanged" TabIndex="7"></asp:DropDownList>
                                             </div>
                                             <div class="col-md-2">
-                                                <asp:Label ID="lblReqColoniaAval" runat="server" Text="*" CssClass="inputReqLabel"></asp:Label>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <asp:Label ID="lblCalleAval" runat="server" Text="Calle:" CssClass="inputLabel"></asp:Label>
-                                    </td>
-                                    <td>
-                                        <div class="row">
-                                            <div class="col-md-10">
-                                                <asp:TextBox ID="txtCalleAval" runat="server" MaxLength="100" CssClass="form-control" TabIndex="9"></asp:TextBox>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <asp:Label ID="lblReqCalleAval" runat="server" Text="*" CssClass="inputReqLabel"></asp:Label>
+                                                <asp:Label ID="lblReqColoniaAval" runat="server" Text="*" CssClass="inputReqLabel" style="color:#ff0000;font-size:19px;"></asp:Label>
                                             </div>
                                         </div>
                                     </td>
@@ -764,6 +754,29 @@
                                 </tr>
                                 <tr>
                                     <td>
+                                        <asp:Label ID="lblTipoIdentificacionAval" runat="server" Text="Tipo identificación:" CssClass="inputLabel"></asp:Label>
+                                    </td>
+                                    <td>
+                                        <div class="row">
+                                            <div class="col-md-10">
+                                              <asp:DropDownList ID="ddlTipoIdentificacionAval" runat="server" AutoPostBack="true" CssClass="form-control"
+                                                    OnSelectedIndexChanged="ddlTipoIdentificacionAval_SelectedIndexChanged" TabIndex="13">
+                                                    <asp:ListItem Text="INE" Value = "0"></asp:ListItem>
+                                                    <asp:ListItem Text="Licencia" Value = "1"></asp:ListItem>
+                                                  <asp:ListItem Text="Pasaporte" Value = "2"></asp:ListItem>
+                                                  <asp:ListItem Text="Otro" Value = "3"></asp:ListItem>
+                                              </asp:DropDownList>  
+                                            </div>
+                                            <div class="col-md-2">
+                                                
+                                            </div>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+                               
+                                <tr>
+                                    <td>
                                         <asp:Label ID="lblNoIfeAval" runat="server" Text="Número INE:" CssClass="inputLabel"></asp:Label>
                                     </td>
                                     <td>
@@ -777,7 +790,7 @@
                                                 <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal5" style="width: 20px;padding-top: 4px;padding-bottom: 2px;margin-top: 5px;">
                                                     &#x2370;
                                                 </button>
-                                                <asp:Label ID="lblReNoIfeAval" runat="server" Text="*" CssClass="inputReqLabel" MaxLength="25"></asp:Label>
+                                                <asp:Label ID="lblReNoIfeAval" runat="server" Text="*" CssClass="inputReqLabel" MaxLength="25" style="color:#ff0000;font-size:19px;"></asp:Label>
                                             </div>
                                         </div>
                                     </td>
@@ -802,7 +815,7 @@
                                                     CultureTimePlaceholder="" Enabled="True" Mask="99/99/9999" MaskType="Date" TargetControlID="txtFechaNacimientoAval"
                                                     UserDateFormat="DayMonthYear">
                                                 </cc1:MaskedEditExtender>
-                                                <asp:Label ID="lblreqFechaNacimientoAval" runat="server" Text="*" CssClass="inputReqLabel"></asp:Label>
+                                                <asp:Label ID="lblreqFechaNacimientoAval" runat="server" Text="*" CssClass="inputReqLabel" style="color:#ff0000;font-size:19px;"></asp:Label>
                                             </div>
                                         </div>
                                     </td>
@@ -827,7 +840,6 @@
                                         
 			                        </td>
                                 </tr>
-                                
                                 <tr>
                                     <td>                        
                                         <asp:Label ID="lblTelefonoCelAval" runat="server" Text="Tel&eacute;fono Celular:" CssClass="inputLabel"></asp:Label>
@@ -843,13 +855,6 @@
 
                                             </div>
                                         </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        
-                                    </td>
-                                    <td>
                                     </td>
                                 </tr>
                             </table>
@@ -881,13 +886,13 @@
                                                 <asp:TextBox ID="txtApeMaternoAval" runat="server" MaxLength="100" CssClass="form-control" TabIndex="4"></asp:TextBox>
                                             </div>
                                             <div class="col-md-2">
-                                                <asp:Label ID="lblReqApeMaternoAval" runat="server" Text="*" CssClass="inputReqLabel"></asp:Label>
+                                                <asp:Label ID="lblReqApeMaternoAval" runat="server" Text="*" CssClass="inputReqLabel" style="color:#ff0000;font-size:19px;"></asp:Label>
                                             </div>
                                         </div>
                                     </td>
                                 </tr>
                                 
-                                <tr>
+                                <tr style="background-color:#e4e4e4;">
                                     <td>
                                         <asp:Label ID="lblCPAval" runat="server" Text="C.P.:" CssClass="inputLabel"></asp:Label>
                                     </td>
@@ -897,7 +902,7 @@
                                                 <asp:TextBox ID="txtCPAval" runat="server" MaxLength="5" CssClass="form-control" TabIndex="8"></asp:TextBox>
                                             </div>
                                             <div class="col-md-2">
-                                                <asp:Label ID="lblReqCPAval" runat="server" Text="*" CssClass="inputReqLabel"></asp:Label>
+                                                <asp:Label ID="lblReqCPAval" runat="server" Text="*" CssClass="inputReqLabel" style="color:#ff0000;font-size:19px;"></asp:Label>
                                                 <cc1:FilteredTextBoxExtender ID="ftbCPAval" runat="server" FilterType="Numbers" TargetControlID="txtCPAval"
                                             ValidChars="0123456789"></cc1:FilteredTextBoxExtender>
                                             </div>
@@ -906,7 +911,7 @@
                                         
                                     </td>
                                 </tr>
-                                <tr>
+                                <tr style="background-color:#e4e4e4;">
                                     <td>
                                         <asp:Label ID="lblNoExteriorAval" runat="server" Text="No. Ext:" CssClass="inputLabel"></asp:Label>
                                     </td>
@@ -924,26 +929,19 @@
                                         </div> 
                                     </td>
                                 </tr>
-                                <tr>
+                                <tr style="background-color:#e4e4e4;">
                                     <td>
-                                        <asp:Label ID="lblTipoIdentificacionAval" runat="server" Text="Tipo identificación:" CssClass="inputLabel"></asp:Label>
+                                        <asp:Label ID="lblCalleAval" runat="server" Text="Calle:" CssClass="inputLabel"></asp:Label>
                                     </td>
                                     <td>
                                         <div class="row">
                                             <div class="col-md-10">
-                                              <asp:DropDownList ID="ddlTipoIdentificacionAval" runat="server" AutoPostBack="true" CssClass="form-control"
-                                                    OnSelectedIndexChanged="ddlTipoIdentificacionAval_SelectedIndexChanged" TabIndex="13">
-                                                    <asp:ListItem Text="INE" Value = "0"></asp:ListItem>
-                                                    <asp:ListItem Text="Licencia" Value = "1"></asp:ListItem>
-                                                  <asp:ListItem Text="Pasaporte" Value = "2"></asp:ListItem>
-                                                  <asp:ListItem Text="Otro" Value = "3"></asp:ListItem>
-                                              </asp:DropDownList>  
+                                                <asp:TextBox ID="txtCalleAval" runat="server" MaxLength="100" CssClass="form-control" TabIndex="9"></asp:TextBox>
                                             </div>
                                             <div class="col-md-2">
-                                                
+                                                <asp:Label ID="lblReqCalleAval" runat="server" Text="*" CssClass="inputReqLabel" style="color:#ff0000;font-size:19px;"></asp:Label>
                                             </div>
                                         </div>
-                                        
                                     </td>
                                 </tr>
                                 <tr>
@@ -956,7 +954,7 @@
                                                 <asp:TextBox ID="txtCURPAval" runat="server" CssClass="form-control" TabIndex="15" MaxLength="20"></asp:TextBox>
                                             </div>
                                             <div class="col-md-2">
-                                                <asp:Label ID="lblReqCURPAval" runat="server" Text="*" CssClass="inputReqLabel"></asp:Label>
+                                                <asp:Label ID="lblReqCURPAval" runat="server" Text="*" CssClass="inputReqLabel" style="color:#ff0000;font-size:19px;"></asp:Label>
                                             </div>
                                         </div>
                                     </td>
@@ -1026,7 +1024,7 @@
                                                     FilterMode="ValidChars" FilterType="Numbers"></cc1:FilteredTextBoxExtender>
                                             </div>
                                             <div class="col-md-2">
-                                                <asp:Label ID="lblreqTelefonoAval" runat="server" Text="*" CssClass="inputReqLabel"></asp:Label>
+                                                <asp:Label ID="lblreqTelefonoAval" runat="server" Text="*" CssClass="inputReqLabel" style="color:#ff0000;font-size:19px;"></asp:Label>
                                             </div>
                                         </div>
                                         
@@ -1053,6 +1051,7 @@
                                         
                                     </td>
                                 </tr>
+                                
                                 <tr>
                                     <td>
                                     </td>
@@ -1095,7 +1094,7 @@
                 <asp:AsyncPostBackTrigger ControlID="ddlColoniaAval" EventName="SelectedIndexChanged" />
             </Triggers>
         </asp:UpdatePanel>
-    </asp:Panel>
+    </asp:Panel><br /><br />
 
 
     

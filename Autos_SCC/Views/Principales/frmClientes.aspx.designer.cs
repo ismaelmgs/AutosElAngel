@@ -240,33 +240,6 @@ namespace Autos_SCC.Views.Principales
         protected global::System.Web.UI.WebControls.Label lblReqColonia;
 
         /// <summary>
-        /// Control lblCalle.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCalle;
-
-        /// <summary>
-        /// Control txtCalle.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCalle;
-
-        /// <summary>
-        /// Control lblReqCalle.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblReqCalle;
-
-        /// <summary>
         /// Control lblNacionalidad.
         /// </summary>
         /// <remarks>
@@ -283,6 +256,24 @@ namespace Autos_SCC.Views.Principales
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlNacionalidad;
+
+        /// <summary>
+        /// Control lblTipoIdentificacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTipoIdentificacion;
+
+        /// <summary>
+        /// Control ddlTipoIdentificacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlTipoIdentificacion;
 
         /// <summary>
         /// Control lblNumeroIfe.
@@ -420,6 +411,33 @@ namespace Autos_SCC.Views.Principales
         protected global::AjaxControlToolkit.FilteredTextBoxExtender ftbTelefonoCel;
 
         /// <summary>
+        /// Control lblCalle.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCalle;
+
+        /// <summary>
+        /// Control txtCalle.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCalle;
+
+        /// <summary>
+        /// Control lblReqCalle.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblReqCalle;
+
+        /// <summary>
         /// Control lblNoExt.
         /// </summary>
         /// <remarks>
@@ -490,24 +508,6 @@ namespace Autos_SCC.Views.Principales
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AjaxControlToolkit.FilteredTextBoxExtender ftbCP;
-
-        /// <summary>
-        /// Control lblTipoIdentificacion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTipoIdentificacion;
-
-        /// <summary>
-        /// Control ddlTipoIdentificacion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTipoIdentificacion;
 
         /// <summary>
         /// Control lblCURP.
@@ -942,33 +942,6 @@ namespace Autos_SCC.Views.Principales
         protected global::System.Web.UI.WebControls.Label lblReqColoniaAval;
 
         /// <summary>
-        /// Control lblCalleAval.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCalleAval;
-
-        /// <summary>
-        /// Control txtCalleAval.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCalleAval;
-
-        /// <summary>
-        /// Control lblReqCalleAval.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblReqCalleAval;
-
-        /// <summary>
         /// Control lblNacionalidadAval.
         /// </summary>
         /// <remarks>
@@ -985,6 +958,24 @@ namespace Autos_SCC.Views.Principales
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlNacionalidadAval;
+
+        /// <summary>
+        /// Control lblTipoIdentificacionAval.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTipoIdentificacionAval;
+
+        /// <summary>
+        /// Control ddlTipoIdentificacionAval.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlTipoIdentificacionAval;
 
         /// <summary>
         /// Control lblNoIfeAval.
@@ -1239,22 +1230,31 @@ namespace Autos_SCC.Views.Principales
         protected global::System.Web.UI.WebControls.TextBox txtNoInteriorAval;
 
         /// <summary>
-        /// Control lblTipoIdentificacionAval.
+        /// Control lblCalleAval.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTipoIdentificacionAval;
+        protected global::System.Web.UI.WebControls.Label lblCalleAval;
 
         /// <summary>
-        /// Control ddlTipoIdentificacionAval.
+        /// Control txtCalleAval.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTipoIdentificacionAval;
+        protected global::System.Web.UI.WebControls.TextBox txtCalleAval;
+
+        /// <summary>
+        /// Control lblReqCalleAval.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblReqCalleAval;
 
         /// <summary>
         /// Control lblCURPAval.
