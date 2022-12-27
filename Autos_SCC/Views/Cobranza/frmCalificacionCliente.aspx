@@ -112,14 +112,14 @@
                         <tr>
                             <td colspan="3" style="text-align: center">
                                 <h4>
-                                    <asp:Label ID="lblTituloCalifica" runat="server" Text="Calificar Credito del Cliente" CssClass="labelTitleModal"></asp:Label></h4>
+                                    <asp:Label ID="lblTituloCalifica" runat="server" Text="Califica el Cliente" CssClass="labelTitleModal"></asp:Label></h4>
                                 <br />
                             </td>
                         </tr>
                         <tr>
                             <td colspan="3" style="text-align: center">
                                 <h5>
-                                    <asp:Label ID="lblMensajeCalificar" runat="server" Text="¿ Cual fue el comportamiento del cliente durante su credito ?" CssClass="labelTitleModal"></asp:Label></h5>
+                                    <asp:Label ID="lblMensajeCalificar" runat="server" Text="¿ Cual fue el comportamiento del cliente durante su crédito ?" CssClass="labelTitleModal"></asp:Label></h5>
                                 <br />
                             </td>
                         </tr>
