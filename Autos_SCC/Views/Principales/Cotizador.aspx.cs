@@ -79,6 +79,7 @@ namespace Autos_SCC.Views.Principales
 
                 btnGuardar.Visible = true;
                 btnImprimir.Visible = true;
+                btnGenerar.Enabled = false;
                 
             }
         }
@@ -337,6 +338,7 @@ namespace Autos_SCC.Views.Principales
                         eSaveObj(sender, e);
 
                     LimpiaDatos();
+                    Response.Redirect("Cotizador.aspx");
                 }
                 else
                     MostrarMensaje("Debe generar la cotización antes de guardar, favor de verificar", "Generar Cotización");
