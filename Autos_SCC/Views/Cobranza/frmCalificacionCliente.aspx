@@ -112,14 +112,14 @@
                         <tr>
                             <td colspan="3" style="text-align: center">
                                 <h4>
-                                    <asp:Label ID="lblTituloCalifica" runat="server" Text="Calificar Credito del Cliente" CssClass="labelTitleModal"></asp:Label></h4>
+                                    <asp:Label ID="lblTituloCalifica" runat="server" Text="Califica al Cliente" CssClass="labelTitleModal"></asp:Label></h4>
                                 <br />
                             </td>
                         </tr>
                         <tr>
                             <td colspan="3" style="text-align: center">
                                 <h4>
-                                    <asp:Label ID="lblMensajeCalificar" runat="server" Text="¿ Cual fue el comportamiento del cliente durante su credito ?" CssClass="labelTitleModal"></asp:Label></h4>
+                                    <asp:Label ID="lblMensajeCalificar" runat="server" Text="¿ Cual fue el comportamiento del cliente durante su crédito ?" CssClass="labelTitleModal"></asp:Label></h4>
                                 <br />
                             </td>
                         </tr>
@@ -138,7 +138,7 @@
                                 <img src="../../images/regular.jpg" alt="Bien" width="80px" style="border-radius:50%;" /><br /><asp:ImageButton runat="server" ID="ibtnRegular" OnClick="ibtnRegular_Click" />
                             </td>
                             <td style="text-align:center;">
-                                <img src="../../images/mal.jpg" alt="Bien" width="80px" style="border-radius:50%;" /><br /><asp:ImageButton runat="server" ID="ibtnMalo" OnClick="ibtnMalo_Click"/>
+                                <img src="../../images/mal.jpg" alt="Bien" width="80px" style="border-radius:50%;" /><br /><asp:ImageButton runat="server" ID="ibtnMalo" ImageUrl="../../images/mal.jpg" OnClick="ibtnMalo_Click"/>
                             </td>
                         </tr>
                     </table>
