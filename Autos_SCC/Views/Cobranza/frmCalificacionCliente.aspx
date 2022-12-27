@@ -118,8 +118,8 @@
                         </tr>
                         <tr>
                             <td colspan="3" style="text-align: center">
-                                <h4>
-                                    <asp:Label ID="lblMensajeCalificar" runat="server" Text="¿ Cual fue el comportamiento del cliente durante su credito ?" CssClass="labelTitleModal"></asp:Label></h4>
+                                <h5>
+                                    <asp:Label ID="lblMensajeCalificar" runat="server" Text="¿ Cual fue el comportamiento del cliente durante su credito ?" CssClass="labelTitleModal"></asp:Label></h5>
                                 <br />
                             </td>
                         </tr>
@@ -132,16 +132,23 @@
                         </tr>
                         <tr>
                             <td style="text-align:center;">
-                                <img src="../../images/bien.jpg" alt="Bien" width="80px" style="border-radius:50%;" /><br /><asp:ImageButton runat="server" ID="ibtnBueno" OnClick="ibtnBueno_Click" />
+                                <asp:ImageButton runat="server" ID="ibtnBueno" OnClick="ibtnBueno_Click" ImageUrl="../../images/bien.jpg" style="border-radius:50%; width:80px;" />
                             </td>
                             <td style="text-align:center;">
-                                <img src="../../images/regular.jpg" alt="Bien" width="80px" style="border-radius:50%;" /><br /><asp:ImageButton runat="server" ID="ibtnRegular" OnClick="ibtnRegular_Click" />
+                                <asp:ImageButton runat="server" ID="ibtnRegular" OnClick="ibtnRegular_Click" ImageUrl="../../images/regular.jpg" style="border-radius:50%; width:80px;"/>
                             </td>
                             <td style="text-align:center;">
-                                <img src="../../images/mal.jpg" alt="Bien" width="80px" style="border-radius:50%;" /><br /><asp:ImageButton runat="server" ID="ibtnMalo" OnClick="ibtnMalo_Click"/>
+                                <asp:ImageButton runat="server" ID="ibtnMalo" OnClick="ibtnMalo_Click" ImageUrl="../../images/mal.jpg" style="border-radius:50%; width:80px;"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="text-align:center;">
+                                <br />
+                                    <asp:Button ID="btnCancelarCalifica" runat="server" Text="Cerrar" CssClass="btn btn-danger" />
                             </td>
                         </tr>
                     </table>
+                    <br />
                 </ContentTemplate>
             </asp:UpdatePanel>
             <asp:UpdateProgress ID="upgCalificacion" runat="server" DynamicLayout="true" AssociatedUpdatePanelID="upaCalificacion">
