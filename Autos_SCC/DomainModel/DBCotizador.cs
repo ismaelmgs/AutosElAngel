@@ -119,11 +119,11 @@ namespace Autos_SCC.DomainModel
                 return new DataTable();
             }
         }
-        public DataTable DBGetCotizacionesTerminadas()
+        public DataTable DBGetCotizacionesTerminadas(int iIdSucursal)
         {
             try
             {
-                return oDB_SP.EjecutarDT("[Autos].[spS_ConsultaCotizacionCalificacion]");
+                return oDB_SP.EjecutarDT("[Autos].[spS_ConsultaCotizacionCalificacion]", "@fi_Sucursal", iIdSucursal);
             }
             catch (Exception)
             {

@@ -1,6 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="frmCalificacionCliente.aspx.cs" Inherits="Autos_SCC.Views.Cobranza.frmCalificacionCliente" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="frmCalificacionCliente.aspx.cs" EnableEventValidation="false" UICulture="es" Culture="es-MX" Inherits="Autos_SCC.Views.Cobranza.frmCalificacionCliente" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<%@ Register Src="../ControlesUsuario/ucModalAlert.ascx" TagName="ucModalAlert" TagPrefix="uc1" %>
+<%@ Register Src="../ControlesUsuario/ucModalConfirm.ascx" TagName="ucModalConfirm" TagPrefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <script type="text/javascript" src="../../jquery/jquery-1.8.3.js"></script>
     <script type="text/javascript" src="../../jquery/jquery-ui-1.9.2.custom.min.js"></script>
@@ -87,6 +89,8 @@
                         </asp:GridView>
                     </div>
                 </center>
+                <uc1:ucModalConfirm ID="omb" runat="server" />
+                <uc1:ucModalAlert runat="server" ID="omb2" />
                 <br />
             </ContentTemplate>
         </asp:UpdatePanel>
@@ -127,13 +131,13 @@
                         </tr>
                         <tr>
                             <td>
-                                <asp:ImageButton runat="server" ID="ibtnBueno" />
+                                <asp:ImageButton runat="server" ID="ibtnBueno" OnClick="ibtnBueno_Click" />
                             </td>
                             <td>
-                                <asp:ImageButton runat="server" ID="ibtnRegular" />
+                                <asp:ImageButton runat="server" ID="ibtnRegular" OnClick="ibtnRegular_Click" />
                             </td>
                             <td>
-                                <asp:ImageButton runat="server" ID="ibtnMalo" />
+                                <asp:ImageButton runat="server" ID="ibtnMalo" OnClick="ibtnMalo_Click"/>
                             </td>
                         </tr>
                     </table>

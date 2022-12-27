@@ -11,9 +11,15 @@ namespace Autos_SCC.Interfaces
     {
         int iIdUsuario { get; }
         int iIdSucursal { get; }
+        int iIdCotizacion { get; set; }
+        int iIdCalificacion { get; set; }
         string sIdsCalificacion { get; set; }
+        string sUsuario { get; }
 
         void LoadCotizaciones(DataTable dtCotizaciones);
         void LoadSucursales(DataTable dtSuc);
+        void MostrarMensaje(string sMessage, string sCaption);
+
+        event EventHandler eSetInsertaCalificacion;
     }
 }

@@ -76,6 +76,24 @@ namespace Autos_SCC.Views.Cobranza {
         protected global::System.Web.UI.WebControls.GridView gvClientesCal;
         
         /// <summary>
+        /// Control omb.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::Autos_SCC.Views.ControlesUsuario.ucModalConfirm omb;
+        
+        /// <summary>
+        /// Control omb2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::Autos_SCC.Views.ControlesUsuario.ucModalAlert omb2;
+        
+        /// <summary>
         /// Control hdTargetCalificacion.
         /// </summary>
         /// <remarks>

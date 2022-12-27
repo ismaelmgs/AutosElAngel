@@ -15,16 +15,31 @@ namespace Autos_SCC.Presenter
             : base(oView)
         {
             oIGestCat = oGC;
+            oIView.eSetInsertaCalificacion += eSetInsertaCalificacion_Presenter;
 
         }
-        public void LoadObjects_Presenter()
+        public void LoadObjectsddl_Presenter()
         {
-            oIView.LoadCotizaciones(new DBCotizador().DBGetCotizacionesTerminadas());
             oIView.LoadSucursales(new DBSucursales().dtSucursalesPorUsuario(oIView.iIdUsuario));
+        }
+        public void LoadObjectsCredit_Presenter()
+        {
+            oIView.LoadCotizaciones(new DBCotizador().DBGetCotizacionesTerminadas(oIView.iIdSucursal));
         }
         public void LoadObjects_PresenterFilter()
         {
             oIView.LoadCotizaciones(new DBCotizador().DBGetCotizacionesTerminadasFiltro(oIView.iIdSucursal, oIView.sIdsCalificacion));
+        }
+        private void eSetInsertaCalificacion_Presenter(object sender, EventArgs e)
+        {
+            int iResult = oIGestCat.SetActualizaCalificacion(oIView.iIdCotizacion,oIView.iIdCalificacion, oIView.sUsuario);
+
+            if (iResult > -1)
+            {
+                oIView.MostrarMensaje("La calificación se guardo correctamente.", "Calificación");
+            }
+            else
+                oIView.MostrarMensaje("Ocurrio un error al aplicar la calificación.", "Calificación");
         }
     }
 }
