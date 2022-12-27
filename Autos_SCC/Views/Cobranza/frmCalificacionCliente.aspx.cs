@@ -128,6 +128,12 @@ namespace Autos_SCC.Views.Cobranza
                 return true;
             }
         }
+
+        protected void btnCancelarCalificacion_Click(object sender, EventArgs e)
+        {
+            mpeCalificacion.Hide();
+        }
+
         public void MostrarMensaje(string sMensaje, string sCaption)
         {
             omb2.ShowMessage(sMensaje, sCaption);

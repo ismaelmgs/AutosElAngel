@@ -144,7 +144,7 @@
                         <tr>
                             <td colspan="3" style="text-align:center;">
                                 <br />
-                                    <asp:Button ID="btnCancelarCalifica" runat="server" Text="Cerrar" CssClass="btn btn-danger" />
+                                    <asp:Button ID="btnCancelarCalifica" runat="server" Text="Cerrar" OnClick="btnCancelarCalificacion_Click" CssClass="btn btn-danger" />
                             </td>
                         </tr>
                     </table>
