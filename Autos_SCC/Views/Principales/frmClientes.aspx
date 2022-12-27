@@ -891,26 +891,22 @@
                                         </div>
                                     </td>
                                 </tr>
-                                
                                 <tr style="background-color:#e4e4e4;">
                                     <td>
-                                        <asp:Label ID="lblCPAval" runat="server" Text="C.P.:" CssClass="inputLabel"></asp:Label>
+                                        <asp:Label ID="lblCalleAval" runat="server" Text="Calle:" CssClass="inputLabel"></asp:Label>
                                     </td>
                                     <td>
                                         <div class="row">
                                             <div class="col-md-10">
-                                                <asp:TextBox ID="txtCPAval" runat="server" MaxLength="5" CssClass="form-control" TabIndex="8"></asp:TextBox>
+                                                <asp:TextBox ID="txtCalleAval" runat="server" MaxLength="100" CssClass="form-control" TabIndex="9"></asp:TextBox>
                                             </div>
                                             <div class="col-md-2">
-                                                <asp:Label ID="lblReqCPAval" runat="server" Text="*" CssClass="inputReqLabel" style="color:#ff0000;font-size:19px;"></asp:Label>
-                                                <cc1:FilteredTextBoxExtender ID="ftbCPAval" runat="server" FilterType="Numbers" TargetControlID="txtCPAval"
-                                            ValidChars="0123456789"></cc1:FilteredTextBoxExtender>
-                                            </div>
+                                                <asp:Label ID="lblReqCalleAval" runat="server" Text="*" CssClass="inputReqLabel" style="color:#ff0000;font-size:19px;"></asp:Label>
                                             </div>
                                         </div>
-                                        
                                     </td>
                                 </tr>
+                                
                                 <tr style="background-color:#e4e4e4;">
                                     <td>
                                         <asp:Label ID="lblNoExteriorAval" runat="server" Text="No. Ext:" CssClass="inputLabel"></asp:Label>
@@ -931,17 +927,21 @@
                                 </tr>
                                 <tr style="background-color:#e4e4e4;">
                                     <td>
-                                        <asp:Label ID="lblCalleAval" runat="server" Text="Calle:" CssClass="inputLabel"></asp:Label>
+                                      <asp:Label ID="lblCPAval" runat="server" Text="C.P.:" CssClass="inputLabel"></asp:Label>
                                     </td>
                                     <td>
                                         <div class="row">
                                             <div class="col-md-10">
-                                                <asp:TextBox ID="txtCalleAval" runat="server" MaxLength="100" CssClass="form-control" TabIndex="9"></asp:TextBox>
+                                                <asp:TextBox ID="txtCPAval" runat="server" MaxLength="5" CssClass="form-control" TabIndex="8"></asp:TextBox>
                                             </div>
                                             <div class="col-md-2">
-                                                <asp:Label ID="lblReqCalleAval" runat="server" Text="*" CssClass="inputReqLabel" style="color:#ff0000;font-size:19px;"></asp:Label>
+                                                <asp:Label ID="lblReqCPAval" runat="server" Text="*" CssClass="inputReqLabel" style="color:#ff0000;font-size:19px;"></asp:Label>
+                                                <cc1:FilteredTextBoxExtender ID="ftbCPAval" runat="server" FilterType="Numbers" TargetControlID="txtCPAval"
+                                            ValidChars="0123456789"></cc1:FilteredTextBoxExtender>
+                                            </div>
                                             </div>
                                         </div>
+                                        
                                     </td>
                                 </tr>
                                 <tr>

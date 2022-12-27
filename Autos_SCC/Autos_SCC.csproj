@@ -332,6 +332,7 @@
     <Content Include="Images\bg_prinder.jpg" />
     <Content Include="Images\bg_prinizq.jpg" />
     <Content Include="Images\bg_top2.jpg" />
+    <Content Include="Images\bien.jpg" />
     <Content Include="Images\bkg_login.jpg" />
     <Content Include="Images\Botones\botn_editar.GIF" />
     <Content Include="Images\Botones\botn_elim.gif" />
@@ -391,8 +392,10 @@
     <Content Include="Images\Iconos\Warning.ico" />
     <Content Include="Images\INE.jpg" />
     <Content Include="Images\log_top_micronegocio.jpg" />
+    <Content Include="Images\mal.jpg" />
     <Content Include="Images\Mostrar.ico" />
     <Content Include="Images\Ocultar.ico" />
+    <Content Include="Images\regular.jpg" />
     <Content Include="Images\top_sup.jpg" />
     <Content Include="Images\www.png" />
     <Content Include="jquery\jquery-1.8.3.js" />

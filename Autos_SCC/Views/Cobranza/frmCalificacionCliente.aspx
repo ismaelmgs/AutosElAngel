@@ -131,14 +131,14 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>
-                                <asp:ImageButton runat="server" ID="ibtnBueno" OnClick="ibtnBueno_Click" />
+                            <td style="text-align:center;">
+                                <img src="../../images/bien.jpg" alt="Bien" width="80px" style="border-radius:50%;" /><br /><asp:ImageButton runat="server" ID="ibtnBueno" OnClick="ibtnBueno_Click" />
                             </td>
-                            <td>
-                                <asp:ImageButton runat="server" ID="ibtnRegular" OnClick="ibtnRegular_Click" />
+                            <td style="text-align:center;">
+                                <img src="../../images/regular.jpg" alt="Bien" width="80px" style="border-radius:50%;" /><br /><asp:ImageButton runat="server" ID="ibtnRegular" OnClick="ibtnRegular_Click" />
                             </td>
-                            <td>
-                                <asp:ImageButton runat="server" ID="ibtnMalo" OnClick="ibtnMalo_Click"/>
+                            <td style="text-align:center;">
+                                <img src="../../images/mal.jpg" alt="Bien" width="80px" style="border-radius:50%;" /><br /><asp:ImageButton runat="server" ID="ibtnMalo" OnClick="ibtnMalo_Click"/>
                             </td>
                         </tr>
                     </table>
