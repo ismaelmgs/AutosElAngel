@@ -119,13 +119,13 @@ namespace Autos_SCC.Views.Cobranza
         }
         protected bool IsEditEnabled(string statusValue)
         {
-            if(statusValue != null)
+            if(statusValue != "")
             {
-                return true;
+                return false;
             }
             else
             {
-                return false;
+                return true;
             }
         }
         public void MostrarMensaje(string sMensaje, string sCaption)

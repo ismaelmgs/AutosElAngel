@@ -77,6 +77,7 @@
                                 <asp:BoundField DataField="fc_TipoAuto" HeaderText="Vehículo" />
                                 <asp:BoundField DataField="fm_Precio" HeaderText="Precio" DataFormatString="{0:c}" />
                                 <asp:BoundField DataField="fc_Descripcion" HeaderText="Sucursal" />
+                                <asp:BoundField DataField="Des_Calificacion" HeaderText="Calificación" />
                                 <asp:TemplateField HeaderText="Acciones" HeaderStyle-HorizontalAlign="Center">
                                     <ItemTemplate>
                                         <asp:Button ID="btnCalificar" runat="server" CommandName="Calificar" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" Text="Calificar" CssClass="btn btn-success btn-mini waves-effect waves-light" Enabled='<%# IsEditEnabled(Eval("fi_idCalificacion").ToString()) %>' />
