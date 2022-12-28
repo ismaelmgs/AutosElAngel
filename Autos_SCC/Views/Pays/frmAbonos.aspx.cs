@@ -89,6 +89,25 @@ namespace Autos_SCC.Views.Pays
             gvPagosInd.Visible = true;
             ConsultaPagos();
         }
+        protected void ddlTipoMov_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (sTipoAbono)
+            {
+                case "PAY":
+                    lblTituloBuscaAuto.Text = "Cargar Abono Normal";
+                    lblTextDebe.Text = "Monto Compromiso:";
+                    lblDebe.Text = string.Format("{0:C2}",dMontoCompromiso); break;
+                case "RPAY":
+                    lblTituloBuscaAuto.Text = "Cargar Abono Normal";
+                    lblTextDebe.Text = "Monto Compromiso:";
+                    lblDebe.Text = string.Format("{0:C2}", dMontoCompromiso); break;
+                case "APAY":
+                    lblTituloBuscaAuto.Text = "Cargar Abono Anticipado";
+                    lblTextDebe.Text = "Monto con descuento:";
+                    decimal dDescuento = dMontoCompromiso * .10m;
+                    lblDebe.Text = string.Format("{0:C2}", dMontoCompromiso - dDescuento); break;
+            }
+        }
 
         protected void imbBuscaCliente_Click(object sender, EventArgs e)
         {
@@ -118,14 +137,30 @@ namespace Autos_SCC.Views.Pays
         {
             try
             {
+                int index = Convert.ToInt32(e.CommandArgument);
+                GridViewRow row = gvClientes.Rows[index];
                 switch (e.CommandName.S())
                 {
                     case "Abonar":
                         eTipoPagos = eTipoPago.PagoMensual;
                         ddlTipoMov.SelectedIndex = 0;
+                        lblTituloBuscaAuto.Text = "Cargar Abono Normal";
+                        lblTextDebe.Text = "Monto Compromiso:";
+                        lblDebe.Text = row.Cells[7].Text;
+                        MontoDecimal(row.Cells[7].Text);
+                        bTrajeMedida = row.Cells[8].Text.S().B();
                         txtImporte.Text = string.Empty;
                         mpePagos.Show();
                         break;
+                        //case "AbonoA":
+                        //    eTipoPagos = eTipoPago.PagoMensual;
+                        //    ddlTipoMov.SelectedIndex = 2;
+                        //    lblTituloBuscaAuto.Text = "Cargar Abono Anticipado";
+                        //    lblTextDebe.Text = "Monto con descuento:";
+                        //    lblDebe.Text = row.Cells[7].Text;
+                        //    txtImporte.Text = string.Empty;
+                        //    mpePagos.Show();
+                        //    break;
                 }
             }
             catch (Exception ex)
@@ -206,7 +241,7 @@ namespace Autos_SCC.Views.Pays
 
                 switch (e.CommandName.S())
                 {
-                    case "Abonar":
+                    case "AbonoN":
                         eTipoPagos = eTipoPago.PagoIndividual;
                         ddlTipoMov.SelectedIndex = 0;
                         txtImporte.Text = string.Empty;
@@ -245,7 +280,7 @@ namespace Autos_SCC.Views.Pays
                 }
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MostrarMensaje("Error al abonar en el pago Individual --> Error: " + ex.Message, "Abonos");
             }
@@ -267,7 +302,11 @@ namespace Autos_SCC.Views.Pays
         #endregion
 
         #region METODOS
-
+        public void MontoDecimal(string strCadenaFormato)
+        {
+            string strCadenaSinFormato = strCadenaFormato.Replace("$", "");
+            dMontoCompromiso = decimal.Parse(strCadenaSinFormato);
+        }
         public void LoadSucursales(DataTable dtSuc)
         {
             ddlSucursal.DataSource = dtSuc;
@@ -314,6 +353,17 @@ namespace Autos_SCC.Views.Pays
                 throw ex;
             }
         }
+        protected bool IsEnabled(string statusValue)
+        {
+            if (statusValue == "" || statusValue == "False")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         #endregion
 
@@ -342,6 +392,23 @@ namespace Autos_SCC.Views.Pays
             {
                 return ddlSucursal.SelectedValue.S().I();
             }
+        }
+        public string sTipoAbono
+        {
+            get
+            {
+                return ddlTipoMov.SelectedValue.S();
+            }
+        }
+        public bool bTrajeMedida
+        {
+            get { return (bool)ViewState["VSbTrajeMedida"]; }
+            set { ViewState["VSbTrajeMedida"] = value; }
+        }
+        public decimal dMontoCompromiso
+        {
+            get { return (decimal)ViewState["VSdMontoCompromiso"]; }
+            set { ViewState["VSdMontoCompromiso"] = value; }
         }
         public string strBandera
         {
@@ -422,6 +489,5 @@ namespace Autos_SCC.Views.Pays
         }
 
         #endregion
-
     }
 }

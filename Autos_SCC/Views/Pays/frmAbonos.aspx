@@ -156,7 +156,7 @@
                         <div class="table-responsive">
                         <asp:GridView ID="gvClientes" runat="server" AutoGenerateColumns="false" Width="100%" 
                             Font-Size="14px" PageSize="10" BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464" 
-                            HeaderStyle-ForeColor="white" AllowSorting="True" 
+                            HeaderStyle-ForeColor="white" AllowSorting="True"
                             DataKeyNames="fi_IdCotizacion" OnRowDataBound="gvClientes_RowDataBound" 
                             onrowcommand="gvClientes_RowCommand" CssClass="table table-hover">
                             <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
@@ -183,7 +183,8 @@
                                 <asp:BoundField DataField="TotalPagado" HeaderText="Total pagado" DataFormatString="{0:c}" />
                                 <asp:BoundField DataField="DeudaAlDia" HeaderText="Deuda al día" DataFormatString="{0:c}" />
                                 <asp:BoundField DataField="MontoCompromiso" HeaderText="Monto Compromiso" DataFormatString="{0:c}" />
-                                <asp:TemplateField HeaderText="Acciones" ItemStyle-HorizontalAlign="Center">
+                                <asp:BoundField DataField="fb_TrajeMedida" HeaderText="Traje Medida" Visible="false" />
+                                <asp:TemplateField HeaderText="Acciones" HeaderStyle-HorizontalAlign="Center">
                                     <ItemTemplate>
                                         <asp:Button ID="btnAbonar" runat="server" CommandName="Abonar" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" Text="Abonar" CssClass="btn btn-success btn-mini waves-effect waves-light" />
                                     </ItemTemplate>
@@ -257,8 +258,8 @@
                         </asp:GridView>
                         </div>
                     </center>
-                    <uc1:ucModalConfirm ID="omb" runat="server" />
-                    <uc1:ucModalAlert runat="server" ID="omb2" />
+                <uc1:ucModalConfirm ID="omb" runat="server" />
+                <uc1:ucModalAlert runat="server" ID="omb2" />
             </div>
         </ContentTemplate>
         <Triggers>
@@ -302,9 +303,10 @@
                             <asp:Label ID="lblTipoMov" runat="server" Text="Tipo movimiento:" CssClass="inputLabel"></asp:Label>
                         </td>
                         <td style="text-align: left">
-                            <asp:DropDownList ID="ddlTipoMov" runat="server" CssClass="form-control" Width="100%">
+                            <asp:DropDownList ID="ddlTipoMov" runat="server" CssClass="form-control" Width="100%" AutoPostBack="true" OnSelectedIndexChanged="ddlTipoMov_SelectedIndexChanged">
                                 <asp:ListItem Text="PAGO" Value="PAY"></asp:ListItem>
                                 <asp:ListItem Text="REVERSO" Value="RPAY"></asp:ListItem>
+                                <asp:ListItem Text="PAGO ANTICIPADO" Value="APAY"></asp:ListItem>
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -337,6 +339,9 @@
                 <br />
                 <br />
             </ContentTemplate>
+            <Triggers>
+                <asp:AsyncPostBackTrigger ControlID="ddlTipoMov" EventName="SelectedIndexChanged" />
+            </Triggers>
         </asp:UpdatePanel>
         <asp:UpdateProgress ID="upgPagos" runat="server" DynamicLayout="true" AssociatedUpdatePanelID="upaPagos">
             <ProgressTemplate>
