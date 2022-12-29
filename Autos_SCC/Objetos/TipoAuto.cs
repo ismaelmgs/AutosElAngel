@@ -24,7 +24,7 @@ namespace Autos_SCC.Objetos
         [Range(1, Int32.MaxValue, ErrorMessage = "La Marca es obligatoria")]
         public int iMarca { get { return _iMarca; } set { _iMarca = value; } }
 
-        [Required(AllowEmptyStrings = false, ErrorMessage = "El Descripción es obligatorio")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "El Tipo de Auto es obligatorio")]
         [Display(Name = "Tipo de Auto", AutoGenerateField = true)]
         public virtual string sDescripcion { get { return _sDescripcion; } set { _sDescripcion = value; } }
 

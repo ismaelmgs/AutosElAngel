@@ -171,7 +171,7 @@
                                             </tr>
                                             <tr>
                                                 <td style="text-align:left; width:35% ">
-                                                    <asp:Label ID="lblDescripcion" runat="server" Font-Bold="True" Text="Descripción:" CssClass="inputLabel" />&nbsp;
+                                                    <asp:Label ID="lblDescripcion" runat="server" Font-Bold="True" Text="Marca:" CssClass="inputLabel" />&nbsp;
                                                 </td>
                                                 <td style="text-align:left; width:65% ">
                                                     <asp:TextBox ID="txtDescripcion" Width="100%" runat="server" Rows="1" 

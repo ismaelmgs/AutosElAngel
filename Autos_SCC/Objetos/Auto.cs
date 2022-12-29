@@ -39,7 +39,7 @@ namespace Autos_SCC.Objetos
         [Range(1, Int32.MaxValue, ErrorMessage = "La Marca es obligatoria")]
         public int iIdMarca { get { return _iIdMarca; } set { _iIdMarca = value; } }
 
-        //[Range(1, Int32.MaxValue, ErrorMessage = "La versión es obligatoria")]
+        [Range(1, Int32.MaxValue, ErrorMessage = "La Versión es obligatoria")]
         public int iIdVersion { get { return _iIdVersion; } set { _iIdVersion = value; } }
 
         [Range(1, Int32.MaxValue, ErrorMessage = "El Tipo de Auto es obligatorio")]

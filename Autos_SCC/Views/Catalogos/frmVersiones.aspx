@@ -181,7 +181,7 @@
 
                                         <div class="col-md-2" style="text-align:left">
                                             <asp:Label ID="lblTipoAuto" runat="server" Font-Bold="True" 
-                                                Text="Tipo:" CssClass="inputLabel"/>&nbsp;
+                                                Text="Tipo Auto:" CssClass="inputLabel"/>&nbsp;
                                         </div>
                 
                                         <div class="col-md-4" style="text-align:left">

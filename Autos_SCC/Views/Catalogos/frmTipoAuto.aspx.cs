@@ -53,7 +53,7 @@ namespace Autos_SCC.Views.Catalogos
         {
             if (eSaveObj != null)
                 eSaveObj(sender, e);
-            mpeAgregarTipoAuto.Hide();
+            //mpeAgregarTipoAuto.Hide();
             upaTab.Update();
         }
 

@@ -377,7 +377,7 @@ namespace Autos_SCC.Views.Catalogos
             else
             {
                 ddlTipoAuto.Items.Clear();
-                ddlTipoAuto.Items.Add(new ListItem("SIN TIPO", "0"));
+                ddlTipoAuto.Items.Add(new ListItem("Seleccione", "0"));
             }
 
         }
@@ -396,7 +396,7 @@ namespace Autos_SCC.Views.Catalogos
             else
             {
                 ddlVersion.Items.Clear();
-                ddlVersion.Items.Add(new ListItem("SIN VERSION", "0"));
+                ddlVersion.Items.Add(new ListItem("Seleccione", "0"));
             }
         }
 

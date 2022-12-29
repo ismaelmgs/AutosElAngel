@@ -185,7 +185,7 @@
                                         </tr>
                                         <tr>
                                             <td style="height: 30px; text-align:left">
-                                                <asp:Label ID="lblDescripcion" runat="server" Font-Bold="True" Text="Tipo:" CssClass="inputLabel" />
+                                                <asp:Label ID="lblDescripcion" runat="server" Font-Bold="True" Text="Tipo Auto:" CssClass="inputLabel" />
                                             </td>
                                             <td style="text-align:left">
                                                 <asp:TextBox ID="txtDescripcion" runat="server" Width="100%" Rows="1" TextMode="MultiLine" CssClass="form-control"></asp:TextBox>

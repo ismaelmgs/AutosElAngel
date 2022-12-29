@@ -25,10 +25,10 @@ namespace Autos_SCC.Objetos
         [Range(1, Int32.MaxValue, ErrorMessage = "La Marca es obligatoria")]
         public int iIdMarca { get { return _iIdMarca; } set { _iIdMarca = value; } }
 
-        [Range(1, Int32.MaxValue, ErrorMessage = "El tipo de auto es obligatorio")]
+        [Range(1, Int32.MaxValue, ErrorMessage = "El Tipo de Auto es obligatorio")]
         public int iIdTipoAuto { get { return _iTipoAuto; } set { _iTipoAuto = value; } }
 
-        [Required(AllowEmptyStrings = false, ErrorMessage = "El campo Descripción es obligatorio")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "El campo Versión es obligatorio")]
         [Display(Name = "Version", AutoGenerateField = true)]
         public virtual string sDescripcion { get { return _sDescripcion; } set { _sDescripcion = value; } }
 
