@@ -96,16 +96,18 @@ namespace Autos_SCC.Views.Pays
                 case "PAY":
                     lblTituloBuscaAuto.Text = "Cargar Abono Normal";
                     lblTextDebe.Text = "Monto Compromiso:";
+                    dMontoDescuento = 0.0m;
                     lblDebe.Text = string.Format("{0:C2}",dMontoCompromiso); break;
                 case "RPAY":
                     lblTituloBuscaAuto.Text = "Cargar Abono Normal";
                     lblTextDebe.Text = "Monto Compromiso:";
-                    lblDebe.Text = string.Format("{0:C2}", dMontoCompromiso); break;
+                    dMontoDescuento = 0.0m;
+                    lblDebe.Text = "-" + string.Format("{0:C2}", dMontoCompromiso); break;
                 case "APAY":
                     lblTituloBuscaAuto.Text = "Cargar Abono Anticipado";
                     lblTextDebe.Text = "Monto con descuento:";
-                    decimal dDescuento = dMontoCompromiso * .10m;
-                    lblDebe.Text = string.Format("{0:C2}", dMontoCompromiso - dDescuento); break;
+                    dMontoDescuento = decimal.Round(dMontoCompromiso * .10m, 2, MidpointRounding.AwayFromZero);
+                    lblDebe.Text = string.Format("{0:C2}", dMontoCompromiso - dMontoDescuento); break;
             }
         }
 
@@ -139,6 +141,7 @@ namespace Autos_SCC.Views.Pays
             {
                 int index = Convert.ToInt32(e.CommandArgument);
                 GridViewRow row = gvClientes.Rows[index];
+                string sTraje = gvClientes.DataKeys[index].Values["fb_TrajeMedida"].S() == "" ? "False" : gvClientes.DataKeys[index].Values["fb_TrajeMedida"].S();
                 switch (e.CommandName.S())
                 {
                     case "Abonar":
@@ -148,7 +151,7 @@ namespace Autos_SCC.Views.Pays
                         lblTextDebe.Text = "Monto Compromiso:";
                         lblDebe.Text = row.Cells[7].Text;
                         MontoDecimal(row.Cells[7].Text);
-                        bTrajeMedida = row.Cells[8].Text.S().B();
+                        bTrajeMedida = Convert.ToBoolean(sTraje);
                         txtImporte.Text = string.Empty;
                         mpePagos.Show();
                         break;
@@ -205,11 +208,18 @@ namespace Autos_SCC.Views.Pays
                     case eTipoPago.PagoMensual:
                         if (eSetInsertaTran != null)
                         {
-                            eSetInsertaTran(sender, e);
-                            mpePagos.Hide();
-                            if (strBandera == "T")
+                            if (ddlTipoMov.SelectedValue.S() == "APAY" && bTrajeMedida)
                             {
-                                MostrarMensaje("Este fue el ultimo pago por procesar de esta cotización.", "Movimientos");
+                                MostrarMensaje("Este cliente no puede abonar un pago anticipado.", "Pago Anticipado");
+                            }
+                            else
+                            {
+                                eSetInsertaTran(sender, e);
+                                mpePagos.Hide();
+                                if (strBandera == "T")
+                                {
+                                    MostrarMensaje("Este fue el ultimo pago por procesar de esta cotización.", "Movimientos");
+                                }
                             }
                         }
                         break;
@@ -241,7 +251,7 @@ namespace Autos_SCC.Views.Pays
 
                 switch (e.CommandName.S())
                 {
-                    case "AbonoN":
+                    case "Abonar":
                         eTipoPagos = eTipoPago.PagoIndividual;
                         ddlTipoMov.SelectedIndex = 0;
                         txtImporte.Text = string.Empty;
@@ -296,7 +306,14 @@ namespace Autos_SCC.Views.Pays
         }
         void omb_Ok2ButtonPressed(object sender, EventArgs e)
         {
-            Response.Redirect("frmAbonos.aspx");
+            if (bTrajeMedida)
+            {
+                omb2.Hide();
+            }
+            else
+            {
+                Response.Redirect("frmAbonos.aspx");
+            }
         }
 
         #endregion
@@ -410,6 +427,11 @@ namespace Autos_SCC.Views.Pays
             get { return (decimal)ViewState["VSdMontoCompromiso"]; }
             set { ViewState["VSdMontoCompromiso"] = value; }
         }
+        public decimal dMontoDescuento
+        {
+            get { return (decimal)ViewState["VSdMontoDescuento"]; }
+            set { ViewState["VSdMontoDescuento"] = value; }
+        }
         public string strBandera
         {
             set;
@@ -455,7 +477,8 @@ namespace Autos_SCC.Views.Pays
                 {
                     iIdCotizacion = iIdCotizacion,
                     iIdAmortizacion = iIdAmortizacion,
-                    dMonto = ddlTipoMov.SelectedValue.S() == "PAY" ? txtImporte.Text.S().D() : txtImporte.Text.S().D() * -1,
+                    dMonto = ddlTipoMov.SelectedValue.S() == "PAY" || ddlTipoMov.SelectedValue.S() == "APAY" ? txtImporte.Text.S().D() : txtImporte.Text.S().D() * -1,
+                    dMontoDescuento = dMontoDescuento,
                     sCodigo = ddlTipoMov.SelectedValue.S(),
                     sUsuario = Session["usuario"].S()
                 };

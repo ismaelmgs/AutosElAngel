@@ -52,6 +52,7 @@ namespace Autos_SCC.DomainModel
                 oDB_SP.EjecutarSP("[Autos].[spI_InsertaTransaccion]", "@fi_IdCotizacion", oTran.iIdCotizacion,
                                                                         "@fc_Codigo", oTran.sCodigo,
                                                                         "@fc_Monto", oTran.dMonto,
+                                                                        "@fc_Descuento", oTran.dMontoDescuento,
                                                                         "@fc_UsuarioCreacion", oTran.sUsuario);
             }
             catch(Exception ex)

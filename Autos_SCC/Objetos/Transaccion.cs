@@ -13,6 +13,7 @@ namespace Autos_SCC.Objetos
         private Int64 _iIdAmortizacion = 0;
         private string _sCodigo = string.Empty;
         private decimal _dMonto = 0;
+        private decimal _dMontoDescuento = 0;
         private string _sUsuario = string.Empty;
 
         public int iIdCotizacion
@@ -37,6 +38,12 @@ namespace Autos_SCC.Objetos
         {
             get { return _dMonto; }
             set { _dMonto = value; }
+        }
+
+        public decimal dMontoDescuento
+        {
+            get { return _dMontoDescuento; }
+            set { _dMontoDescuento = value; }
         }
 
         public string sUsuario

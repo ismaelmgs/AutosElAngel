@@ -157,7 +157,7 @@
                         <asp:GridView ID="gvClientes" runat="server" AutoGenerateColumns="false" Width="100%" 
                             Font-Size="14px" PageSize="10" BorderStyle="None" BorderWidth="0px" HeaderStyle-BackColor="#646464" 
                             HeaderStyle-ForeColor="white" AllowSorting="True"
-                            DataKeyNames="fi_IdCotizacion" OnRowDataBound="gvClientes_RowDataBound" 
+                            DataKeyNames="fi_IdCotizacion, fb_TrajeMedida" OnRowDataBound="gvClientes_RowDataBound" 
                             onrowcommand="gvClientes_RowCommand" CssClass="table table-hover">
                             <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
                             <HeaderStyle BackColor="#01609F" CssClass="titleHeader" />
@@ -183,7 +183,7 @@
                                 <asp:BoundField DataField="TotalPagado" HeaderText="Total pagado" DataFormatString="{0:c}" />
                                 <asp:BoundField DataField="DeudaAlDia" HeaderText="Deuda al día" DataFormatString="{0:c}" />
                                 <asp:BoundField DataField="MontoCompromiso" HeaderText="Monto Compromiso" DataFormatString="{0:c}" />
-                                <asp:BoundField DataField="fb_TrajeMedida" HeaderText="Traje Medida" Visible="false" />
+                                <%--<asp:BoundField DataField="fb_TrajeMedida" HeaderText="Traje Medida" />--%>
                                 <asp:TemplateField HeaderText="Acciones" HeaderStyle-HorizontalAlign="Center">
                                     <ItemTemplate>
                                         <asp:Button ID="btnAbonar" runat="server" CommandName="Abonar" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" Text="Abonar" CssClass="btn btn-success btn-mini waves-effect waves-light" />
