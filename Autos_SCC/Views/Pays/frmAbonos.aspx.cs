@@ -153,6 +153,7 @@ namespace Autos_SCC.Views.Pays
                         MontoDecimal(row.Cells[7].Text);
                         bTrajeMedida = Convert.ToBoolean(sTraje);
                         txtImporte.Text = string.Empty;
+                        dMontoDescuento = 0.0m;
                         mpePagos.Show();
                         break;
                         //case "AbonoA":
