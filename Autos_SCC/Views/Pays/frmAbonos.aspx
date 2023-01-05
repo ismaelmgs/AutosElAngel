@@ -206,7 +206,8 @@
                                                         <Columns>
                                                             <asp:BoundField DataField="Codigo" HeaderText="Operación"/>
                                                             <asp:BoundField DataField="fc_Monto" HeaderText="Importe" DataFormatString="{0:c}"/>
-                                                            <asp:BoundField DataField="fc_UsuarioCreacion" HeaderText="Usuario registró" ItemStyle-HorizontalAlign="Center"/>
+                                                            <asp:BoundField DataField="fc_Descuento" HeaderText="Descuento" DataFormatString="{0:c}"/>
+                                                            <asp:BoundField DataField="fc_UsuarioCreacion" HeaderText="Usuario registró"/>
                                                             <asp:BoundField DataField="fd_FechaCreacion" HeaderText="Fecha de registro"/>
                                                         </Columns>
                                                     </asp:GridView>

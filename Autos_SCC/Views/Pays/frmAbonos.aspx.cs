@@ -213,8 +213,13 @@ namespace Autos_SCC.Views.Pays
                             {
                                 MostrarMensaje("Este cliente no puede abonar un pago anticipado.", "Pago Anticipado");
                             }
+                            else if(ddlTipoMov.SelectedValue.S() == "APAY" && ((dMontoCompromiso - dMontoDescuento) > txtImporte.Text.S().D()))
+                            {
+                                MostrarMensaje("El pago anticipado no puede ser menor a :" + string.Format("{0:C2}", dMontoCompromiso - dMontoDescuento), "Pago Anticipado");
+                            }
                             else
                             {
+
                                 eSetInsertaTran(sender, e);
                                 mpePagos.Hide();
                                 if (strBandera == "T")
@@ -308,6 +313,10 @@ namespace Autos_SCC.Views.Pays
         void omb_Ok2ButtonPressed(object sender, EventArgs e)
         {
             if (bTrajeMedida)
+            {
+                omb2.Hide();
+            }
+            else if (ddlTipoMov.SelectedValue.S() == "APAY" && ((dMontoCompromiso - dMontoDescuento) > txtImporte.Text.S().D()))
             {
                 omb2.Hide();
             }
