@@ -173,7 +173,7 @@ namespace Autos_SCC.Views.Cobranza
             oRec1.msisdn = "5540532207";
 
             recipient oRec2 = new recipient();
-            oRec2.msisdn = "2461763089";
+            oRec2.msisdn = "5512972852";
 
             olst.Add(oRec1);
             olst.Add(oRec2);

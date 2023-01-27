@@ -517,7 +517,7 @@ namespace Autos_SCC.Views.Principales
         }
         protected void chkTrajeMedida_CheckedChanged(object sender, EventArgs e)
         {
-
+            btnGenerar_Click(sender, e);
         }
         protected void chkSinIntereses_CheckedChanged(object sender, EventArgs e)
         {
