@@ -126,7 +126,7 @@ box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.21); height:100vh; border-radius:20px;"
                     <div class="col-md-12" style="text-align:center;position:absolute; left:0px; right:0px; bottom:0px; font-size:10px;">
                             <script>
                                 document.write(new Date().getFullYear())
-                            </script>© Autos del Ángel Puebla
+                            </script>© Autos el Ángel Puebla
                         <hr />
                     </div>
                 </div>

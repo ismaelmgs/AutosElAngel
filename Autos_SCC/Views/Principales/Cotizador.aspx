@@ -416,17 +416,7 @@
                                     <asp:Panel ID="pnlAgregarPagos" runat="server"  Visible="false">
                                         <div style="text-align:center; width:100%; font-size:15px;">
                                             
-                                            <asp:Label ID="lblSinIntereses" runat="server" Text="Meses sin Intereses"></asp:Label>
-                                            <asp:CheckBox ID="chkSinIntereses" runat="server" AutoPostBack="true" OnCheckedChanged="chkSinIntereses_CheckedChanged" />
                                             
-                                            <br />
-                                            <br />
-
-                                            <asp:Label ID="lblTrajeMedida" runat="server" Text="Traje a la medida"></asp:Label>
-                                            <asp:CheckBox ID="chkTrajeMedida" runat="server" AutoPostBack="true" OnCheckedChanged="chkTrajeMedida_CheckedChanged" />
-                                            
-                                            <br />
-                                            <br />
 
                                             <asp:Label ID="lblAgregarPago" runat="server" Text="¿Deseas agregar pagos individuales?"></asp:Label>
                                             <asp:Button ID="btnAgregarPago" runat="server" Text="  SI  " CssClass="btn btn-success"
@@ -452,9 +442,21 @@
                                                 </asp:GridView>
                                             </div>
                                             <br />
+                                            
+                                            <asp:Label ID="lblSinIntereses" runat="server" Text="Meses sin Intereses"></asp:Label>
+                                            <asp:CheckBox ID="chkSinIntereses" runat="server" AutoPostBack="true" OnCheckedChanged="chkSinIntereses_CheckedChanged" />
+                                            
+                                            <br />
+                                            <br />
 
                                             <asp:Label ID="lblCambioTasa" runat="server" Text="¿Cambiar la tasa de Interes a una preferencial?"></asp:Label>
                                             <asp:Button ID="btnCambioTasa" runat="server" Text="  SI  " OnClick="btnCambioTasa_Click" CssClass="btn btn-success" />
+                                            <br />
+                                            <br />
+                                            <asp:Label ID="lblTrajeMedida" runat="server" Text="Traje a la medida"></asp:Label>
+                                            <asp:CheckBox ID="chkTrajeMedida" runat="server" AutoPostBack="true" OnCheckedChanged="chkTrajeMedida_CheckedChanged" />
+                                            
+                                            <br />
                                             <br />
                                             <asp:Panel ID="pnlTasaPreferencial" runat="server" Visible="false">
                                                 <table class="table table-hover" style="margin:0 auto; width:450px;">
