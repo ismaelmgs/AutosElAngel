@@ -40,6 +40,11 @@ namespace Autos_SCC.Views.Catalogos
 
                 oPresenter.LoadObjects_Presenter();
             }
+            else
+            {
+                if (Session["usuario"] == null)
+                    Response.Redirect("..\\..\\frmLogin.aspx");
+            }
         }
 
         protected void gvCatalogo_RowDataBound(object sender, GridViewRowEventArgs e)
