@@ -32,7 +32,25 @@ namespace Autos_SCC.Objetos
         private string _sFactura = string.Empty;
         private string _sNumero = string.Empty;
 
-        
+        private string _sCveConsecutivo = string.Empty;
+        private int _iConsecutivo = 0;
+        private DateTime _dtFechaIngreso = new DateTime();
+        private int _iIdSucursalIngreso = 0;
+        private int _iIdSucursalExpediente = 0;
+        private int _iCls = 0;
+        private int _iIdTransmision = 0;
+        private string _sProveedor = string.Empty;
+        private decimal _dPrecioToma = 0;
+        private int _iIdTipoFactura = 0;
+        private int _iIdEstadoPlaca = 0;
+        private string _sDuplicado = string.Empty;
+        private string _sTarjeta = string.Empty;
+        private int _iNoDuenios = 0;
+        private string _sINE = string.Empty;
+        private string _sContratoCV = string.Empty;
+
+
+
         [Display(AutoGenerateField = false), ScaffoldColumn(false)]
         public int iId { get { return _iId; } set { _iId = value; } }
 
@@ -75,9 +93,46 @@ namespace Autos_SCC.Objetos
         public string sFechaUltMov { get { return _sFechaUltMov; } set { _sFechaUltMov = value; } }
 
         public int IEstado { get => _iEstado; set => _iEstado = value; }
+
         public string SNumMotor { get => _sNumMotor; set => _sNumMotor = value; }
+
         public string STenencia { get => _sTenencia; set => _sTenencia = value; }
+
         public string SFactura { get => _sFactura; set => _sFactura = value; }
+
         public string SNumero { get => _sNumero; set => _sNumero = value; }
+
+        private string sCveConsecutivo { get => _sCveConsecutivo; set => _sCveConsecutivo = value; }
+
+        private int iConsecutivo { get => _iConsecutivo; set => _iConsecutivo = value; }
+
+        private DateTime dtFechaIngreso { get => _dtFechaIngreso; set => _dtFechaIngreso = value; }
+
+        private int iIdSucursalIngreso { get => _iIdSucursalIngreso; set => _iIdSucursalIngreso = value; }
+
+        private int iIdSucursalExpediente { get => _iIdSucursalExpediente; set => _iIdSucursalExpediente = value; }
+
+        private int iCls { get => _iCls; set => _iCls = value; }
+
+        private int iIdTransmision { get => _iIdTransmision; set => _iIdTransmision = value; }
+
+        private string sProveedor { get => _sProveedor; set => _sProveedor = value; }
+
+        private decimal dPrecioToma { get => _dPrecioToma; set => _dPrecioToma = value; }
+
+        private int iIdTipoFactura { get => _iIdTipoFactura; set => _iIdTipoFactura = value; }
+
+        private int iIdEstadoPlaca { get => _iIdEstadoPlaca; set => _iIdEstadoPlaca = value; }
+
+        private string sDuplicado { get => _sDuplicado; set => _sDuplicado = value; }
+
+        private string sTarjeta { get => _sTarjeta; set => _sTarjeta = value; }
+
+        private int iNoDuenios { get => _iNoDuenios; set => _iNoDuenios = value; }
+
+        private string sINE { get => _sINE; set => _sINE = value; }
+
+        private string sContratoCV { get => _sContratoCV; set => _sContratoCV = value; }
+
     }
 }

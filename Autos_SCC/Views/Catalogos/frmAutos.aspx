@@ -158,6 +158,23 @@
                                     <asp:BoundField DataField="TenenciaHasta" ControlStyle-CssClass="hiddenRow" HeaderStyle-CssClass="hiddenRow" ItemStyle-CssClass="hiddenRow" />
                                     <asp:BoundField DataField="Factura" ControlStyle-CssClass="hiddenRow" HeaderStyle-CssClass="hiddenRow" ItemStyle-CssClass="hiddenRow" />
                                     <asp:BoundField DataField="Numero" ControlStyle-CssClass="hiddenRow" HeaderStyle-CssClass="hiddenRow" ItemStyle-CssClass="hiddenRow" />
+                                    <asp:BoundField DataField="fc_CveConsecutivo" ControlStyle-CssClass="hiddenRow" HeaderStyle-CssClass="hiddenRow" ItemStyle-CssClass="hiddenRow" />
+                                    <asp:BoundField DataField="fi_Consecutivo" ControlStyle-CssClass="hiddenRow" HeaderStyle-CssClass="hiddenRow" ItemStyle-CssClass="hiddenRow" />
+                                    <asp:BoundField DataField="fd_FechaIngreso" ControlStyle-CssClass="hiddenRow" HeaderStyle-CssClass="hiddenRow" ItemStyle-CssClass="hiddenRow" />
+                                    <asp:BoundField DataField="fi_SucursalIngreso" ControlStyle-CssClass="hiddenRow" HeaderStyle-CssClass="hiddenRow" ItemStyle-CssClass="hiddenRow" />
+                                    <asp:BoundField DataField="fi_SucursalExpediente" ControlStyle-CssClass="hiddenRow" HeaderStyle-CssClass="hiddenRow" ItemStyle-CssClass="hiddenRow" />
+                                    <asp:BoundField DataField="fi_Cls" ControlStyle-CssClass="hiddenRow" HeaderStyle-CssClass="hiddenRow" ItemStyle-CssClass="hiddenRow" />
+                                    <asp:BoundField DataField="fi_Transmision" ControlStyle-CssClass="hiddenRow" HeaderStyle-CssClass="hiddenRow" ItemStyle-CssClass="hiddenRow" />
+                                    <asp:BoundField DataField="fc_Proveedor" ControlStyle-CssClass="hiddenRow" HeaderStyle-CssClass="hiddenRow" ItemStyle-CssClass="hiddenRow" />
+                                    <asp:BoundField DataField="fm_PrecioToma" ControlStyle-CssClass="hiddenRow" HeaderStyle-CssClass="hiddenRow" ItemStyle-CssClass="hiddenRow" />
+                                    <asp:BoundField DataField="fi_TipoFactura" ControlStyle-CssClass="hiddenRow" HeaderStyle-CssClass="hiddenRow" ItemStyle-CssClass="hiddenRow" />
+                                    <asp:BoundField DataField="fi_EdoPlaca" ControlStyle-CssClass="hiddenRow" HeaderStyle-CssClass="hiddenRow" ItemStyle-CssClass="hiddenRow" />
+                                    <asp:BoundField DataField="DesEdoPlaca" ControlStyle-CssClass="hiddenRow" HeaderStyle-CssClass="hiddenRow" ItemStyle-CssClass="hiddenRow" />
+                                    <asp:BoundField DataField="fc_Duplicado" ControlStyle-CssClass="hiddenRow" HeaderStyle-CssClass="hiddenRow" ItemStyle-CssClass="hiddenRow" />
+                                    <asp:BoundField DataField="fc_Tarjeta" ControlStyle-CssClass="hiddenRow" HeaderStyle-CssClass="hiddenRow" ItemStyle-CssClass="hiddenRow" />
+                                    <asp:BoundField DataField="fi_NoDuenios" ControlStyle-CssClass="hiddenRow" HeaderStyle-CssClass="hiddenRow" ItemStyle-CssClass="hiddenRow" />
+                                    <asp:BoundField DataField="fc_Ine" ControlStyle-CssClass="hiddenRow" HeaderStyle-CssClass="hiddenRow" ItemStyle-CssClass="hiddenRow" />
+                                    <asp:BoundField DataField="fc_ContratoCV" ControlStyle-CssClass="hiddenRow" HeaderStyle-CssClass="hiddenRow" ItemStyle-CssClass="hiddenRow" />
                                 </Columns>
                                 <EmptyDataTemplate>
                                             No se encontraron registros para mostrar...
@@ -394,8 +411,76 @@
                                         </div>
                                     </div>
 
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <asp:Label ID="lblNumero" runat="server" Text="Con número:" CssClass="inputLabel"></asp:Label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <asp:TextBox ID="txtNumero" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                                        </div>
+                                    </div>
 
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <asp:Label ID="lblFechaIngreso" runat="server" Text="Fecha de Ingreso:" CssClass="inputLabel"></asp:Label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <asp:TextBox ID="txtFechaIngreso" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <asp:Label ID="lblUbiExpediente" runat="server" Text="Ubicación de Expediente:" CssClass="inputLabel"></asp:Label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <asp:TextBox ID="txtUbiExpediente" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <asp:Label ID="lblProveedor" runat="server" Text="Proveedor:" CssClass="inputLabel"></asp:Label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <asp:TextBox ID="txtProveedor" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <asp:Label ID="lblTipoFactura" runat="server" Text="Tipo Factura:" CssClass="inputLabel"></asp:Label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <asp:TextBox ID="txtTipoFactura" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <asp:Label ID="lblDuplicado" runat="server" Text="Duplicado:" CssClass="inputLabel"></asp:Label>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <asp:TextBox ID="txtDuplicado" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <asp:Label ID="lblTarjeta" runat="server" Text="Tarjeta de Circulación:" CssClass="inputLabel"></asp:Label>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <asp:TextBox ID="txtTarjeta" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <asp:Label ID="lblContrato" runat="server" Text="Contrato Compra/Venta:" CssClass="inputLabel"></asp:Label>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <asp:TextBox ID="txtContrato" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                                        </div>
+                                    </div>
                                 </div>
+
+
+
+
                                 <div class="col-md-6">
                                     <div class="row">
                                         <div class="col-md-4">
@@ -470,13 +555,65 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-md-4">
-                                            <asp:Label ID="lblNumero" runat="server" Text="Con número:" CssClass="inputLabel"></asp:Label>
+                                            <asp:Label ID="lblConsecutivo" runat="server" Text="Consecutivo:" CssClass="inputLabel"></asp:Label>
                                         </div>
-                                        <div class="col-md-8">
-                                            <asp:TextBox ID="txtNumero" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                                        <div class="col-md-4">
+                                            <asp:TextBox ID="txtConsecutivo" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <asp:Label ID="lblCls" runat="server" Text="Cls:" CssClass="inputLabel"></asp:Label>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <asp:TextBox ID="txtCls" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
                                         </div>
                                     </div>
-
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <asp:Label ID="lblSucursalIngreso" runat="server" Text="Sucursal de Ingreso:" CssClass="inputLabel"></asp:Label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <asp:TextBox ID="txtSucursalIngreso" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <asp:Label ID="lblTransmision" runat="server" Text="Transmisión:" CssClass="inputLabel"></asp:Label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <asp:TextBox ID="txtTransmision" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <asp:Label ID="lblPrecioToma" runat="server" Text="Precio toma:" CssClass="inputLabel"></asp:Label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <asp:TextBox ID="txtPrecioToma" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <asp:Label ID="lblEdoPlaca" runat="server" Text="Placa (Estado):" CssClass="inputLabel"></asp:Label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <asp:TextBox ID="txtEdoPlaca" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <asp:Label ID="lblDuenios" runat="server" Text="Dueños:" CssClass="inputLabel"></asp:Label>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <asp:TextBox ID="txtDuenios" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <asp:Label ID="lblIne" runat="server" Text="INE:" CssClass="inputLabel"></asp:Label>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <asp:TextBox ID="txtIne" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                   
 
                                 </div>
                             </div>
