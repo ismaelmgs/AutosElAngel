@@ -513,6 +513,20 @@ namespace Autos_SCC.Views.Catalogos
                     SFactura = txtFactura.Text.S(),
                     SNumero = txtNumero.Text.S(),
                     iStatus = ddlEstatus.SelectedValue.S().I(),
+                    dtFechaIngreso = txtFechaIngreso.Text.S().Dt(),
+                    //iIdSucursalIngreso = 
+                    //iIdSucursalExpediente =
+                    iCls = txtCls.Text.S().I(),
+                    //iIdTransmision =
+                    sProveedor = txtProveedor.Text.S(),
+                    dPrecioToma = txtPrecioToma.Text.S().D(),
+                    //iIdTipoFactura =
+                    //iIdEstadoPlaca  =
+                    sDuplicado = txtDuplicado.Text.S(),
+                    sTarjeta = txtTarjeta.Text.S(),
+                    iNoDuenios = txtDuenios.Text.S().I(),
+                    sINE = txtIne.Text.S(),
+                    sContratoCV = txtContrato.Text.S(),
                     sUsuario = Session["usuario"].S()
                 };
             }
@@ -547,6 +561,19 @@ namespace Autos_SCC.Views.Catalogos
                     txtFactura.Text = oCat.SFactura.S();
                     txtNumero.Text = oCat.SNumero.S();
 
+                    txtFechaIngreso.Text = oCat.dtFechaIngreso.S();
+                    //iIdSucursalIngreso
+                    //iIdSucursalExpediente
+                    txtCls.Text = oCat.iCls.S();
+                    txtProveedor.Text = oCat.sProveedor;
+                    txtPrecioToma.Text = oCat.dPrecioToma.S();
+                    //iIdTipoFactura
+                    //iIdEstadoPlaca
+                    txtDuplicado.Text = oCat.sDuplicado;
+                    txtTarjeta.Text = oCat.sTarjeta;
+                    txtDuenios.Text = oCat.iNoDuenios.S();
+                    txtIne.Text = oCat.sINE;
+                    txtContrato.Text = oCat.sContratoCV;
                     ddlEstatus.SelectedValue = oCat.iStatus.S();
                 }
             }
