@@ -329,10 +329,9 @@
         <asp:UpdatePanel ID="UpaAgregarVehiculo" runat="server" UpdateMode="Conditional">
             <ContentTemplate>
                 <div class="row">
-                    <div class="col-md-12" style="padding-top: 3%;">
-                        <div class="card" style="width: 70%; margin: 0 auto; background-color: #eeeeee;">
+                    <div class="col-md-12" style="padding-top: 1%;">
+                        <div class="card" style="width: 80%; margin: 0 auto; background-color: #eeeeee;">
                             <h3 style="text-align: center;" id="ttlAuto" runat="server">Registro de Autos</h3>
-                            <br />
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="row">
@@ -358,18 +357,16 @@
                                         <div class="col-md-4">
                                             <asp:Label ID="lblTipoAuto" runat="server" Text="Tipo:" CssClass="inputLabel"></asp:Label>
                                         </div>
-                                        <div class="col-md-8">
+                                        <div class="col-md-3">
                                             <asp:DropDownList ID="ddlTipoAuto" runat="server" CssClass="form-control" Width="100%"
                                                 AutoPostBack="True"
                                                 OnSelectedIndexChanged="ddlTipoAuto_SelectedIndexChanged">
                                             </asp:DropDownList>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-2">
                                             <asp:Label ID="lblVersion" runat="server" Text="Version:" CssClass="inputLabel"></asp:Label>
                                         </div>
-                                        <div class="col-md-8">
+                                        <div class="col-md-3">
                                             <asp:DropDownList ID="ddlVersion" runat="server" CssClass="form-control" Width="100%">
                                             </asp:DropDownList>
                                         </div>
@@ -397,16 +394,14 @@
                                         <div class="col-md-4">
                                             <asp:Label ID="lblNoSerie" runat="server" Text="No. Serie:" CssClass="inputLabel"></asp:Label>
                                         </div>
-                                        <div class="col-md-8">
+                                        <div class="col-md-3">
                                             <asp:TextBox ID="txtNoSerie" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
                                         </div>
-                                    </div>
 
-                                    <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-2">
                                             <asp:Label ID="lblTenencia" runat="server" Text="Tenencia Hasta:" CssClass="inputLabel"></asp:Label>
                                         </div>
-                                        <div class="col-md-8">
+                                        <div class="col-md-3">
                                             <asp:TextBox ID="txtTenencia" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
                                         </div>
                                     </div>
@@ -458,13 +453,13 @@
                                         <div class="col-md-4">
                                             <asp:Label ID="lblDuplicado" runat="server" Text="Duplicado:" CssClass="inputLabel"></asp:Label>
                                         </div>
-                                        <div class="col-md-2">
+                                        <div class="col-md-3">
                                             <asp:TextBox ID="txtDuplicado" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-2">
                                             <asp:Label ID="lblTarjeta" runat="server" Text="Tarjeta de Circulación:" CssClass="inputLabel"></asp:Label>
                                         </div>
-                                        <div class="col-md-2">
+                                        <div class="col-md-3">
                                             <asp:TextBox ID="txtTarjeta" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
                                         </div>
                                     </div>
@@ -472,32 +467,27 @@
                                         <div class="col-md-4">
                                             <asp:Label ID="lblContrato" runat="server" Text="Contrato Compra/Venta:" CssClass="inputLabel"></asp:Label>
                                         </div>
-                                        <div class="col-md-2">
+                                        <div class="col-md-3">
                                             <asp:TextBox ID="txtContrato" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
                                         </div>
                                     </div>
                                 </div>
-
-
-
-
                                 <div class="col-md-6">
                                     <div class="row">
                                         <div class="col-md-4">
                                             <asp:Label ID="lblModelo" runat="server" Text="Modelo (año):" CssClass="inputLabel"></asp:Label>
                                         </div>
-                                        <div class="col-md-8">
+                                        <div class="col-md-3">
                                             <asp:TextBox ID="txtModelo" runat="server" MaxLength="4" CssClass="form-control" Width="100%"></asp:TextBox>
                                             <cc1:FilteredTextBoxExtender ID="ftbModelo" runat="server" ValidChars="0123456789" FilterType="Numbers"
                                                 FilterMode="ValidChars" TargetControlID="txtModelo">
                                             </cc1:FilteredTextBoxExtender>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-4">
+
+                                        <div class="col-md-2">
                                             <asp:Label ID="lblColor" runat="server" Text="Color:" CssClass="inputLabel"></asp:Label>
                                         </div>
-                                        <div class="col-md-8">
+                                        <div class="col-md-3">
                                             <asp:TextBox ID="txtColor" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
                                         </div>
                                     </div>
@@ -603,21 +593,18 @@
                                         <div class="col-md-4">
                                             <asp:Label ID="lblDuenios" runat="server" Text="Dueños:" CssClass="inputLabel"></asp:Label>
                                         </div>
-                                        <div class="col-md-2">
+                                        <div class="col-md-3">
                                             <asp:TextBox ID="txtDuenios" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-2">
                                             <asp:Label ID="lblIne" runat="server" Text="INE:" CssClass="inputLabel"></asp:Label>
                                         </div>
-                                        <div class="col-md-2">
+                                        <div class="col-md-3">
                                             <asp:TextBox ID="txtIne" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
                                         </div>
                                     </div>
-                                   
-
                                 </div>
                             </div>
-                            <br />
                             <div class="row">
                                 <div class="col-md-12">
                                     &nbsp;<asp:Button ID="btnGuardar" runat="server" Text="GUARDAR" CssClass="btn btn-primary"
