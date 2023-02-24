@@ -508,13 +508,13 @@ namespace Autos_SCC.Views.Catalogos {
         protected global::System.Web.UI.WebControls.Label lblUbiExpediente;
         
         /// <summary>
-        /// Control txtUbiExpediente.
+        /// Control ddlSucursalExpediente.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUbiExpediente;
+        protected global::System.Web.UI.WebControls.DropDownList ddlSucursalExpediente;
         
         /// <summary>
         /// Control lblProveedor.
@@ -805,13 +805,13 @@ namespace Autos_SCC.Views.Catalogos {
         protected global::System.Web.UI.WebControls.Label lblSucursalIngreso;
         
         /// <summary>
-        /// Control txtSucursalIngreso.
+        /// Control ddlSucursalIngreso.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSucursalIngreso;
+        protected global::System.Web.UI.WebControls.DropDownList ddlSucursalIngreso;
         
         /// <summary>
         /// Control lblTransmision.
@@ -823,13 +823,13 @@ namespace Autos_SCC.Views.Catalogos {
         protected global::System.Web.UI.WebControls.Label lblTransmision;
         
         /// <summary>
-        /// Control txtTransmision.
+        /// Control ddlTransmision.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTransmision;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTransmision;
         
         /// <summary>
         /// Control lblPrecioToma.
@@ -859,13 +859,13 @@ namespace Autos_SCC.Views.Catalogos {
         protected global::System.Web.UI.WebControls.Label lblEdoPlaca;
         
         /// <summary>
-        /// Control txtEdoPlaca.
+        /// Control ddlEdoPlaca.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEdoPlaca;
+        protected global::System.Web.UI.WebControls.DropDownList ddlEdoPlaca;
         
         /// <summary>
         /// Control lblDuenios.

@@ -416,6 +416,16 @@ namespace Autos_SCC.Views.Catalogos
             ddlSucursalBus.DataValueField = "fi_Id";
             ddlSucursalBus.DataTextField = "fc_Descripcion";
             ddlSucursalBus.DataBind();
+
+            ddlSucursalIngreso.DataSource = dtObj;
+            ddlSucursalIngreso.DataValueField = "fi_Id";
+            ddlSucursalIngreso.DataTextField = "fc_Descripcion";
+            ddlSucursalIngreso.DataBind();
+
+            ddlSucursalExpediente.DataSource = dtObj;
+            ddlSucursalExpediente.DataValueField = "fi_Id";
+            ddlSucursalExpediente.DataTextField = "fc_Descripcion";
+            ddlSucursalExpediente.DataBind();
         }
 
         public void LoadEstatusAuto(DataTable dtObj)
@@ -439,6 +449,11 @@ namespace Autos_SCC.Views.Catalogos
                 ddlEstado.DataValueField = "fi_Id";
                 ddlEstado.DataTextField = "fc_Descripcion";
                 ddlEstado.DataBind();
+
+                ddlEdoPlaca.DataSource = dtEstados;
+                ddlEdoPlaca.DataValueField = "fi_Id";
+                ddlEdoPlaca.DataTextField = "fc_Descripcion";
+                ddlEdoPlaca.DataBind();
             }
         }
 

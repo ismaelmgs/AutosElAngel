@@ -429,7 +429,8 @@
                                             <asp:Label ID="lblUbiExpediente" runat="server" Text="Ubicación de Expediente:" CssClass="inputLabel"></asp:Label>
                                         </div>
                                         <div class="col-md-8">
-                                            <asp:TextBox ID="txtUbiExpediente" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                                            <asp:DropDownList ID="ddlSucursalExpediente" runat="server" CssClass="form-control" Width="100%">
+                                            </asp:DropDownList>
                                         </div>
                                     </div>
 
@@ -562,7 +563,8 @@
                                             <asp:Label ID="lblSucursalIngreso" runat="server" Text="Sucursal de Ingreso:" CssClass="inputLabel"></asp:Label>
                                         </div>
                                         <div class="col-md-8">
-                                            <asp:TextBox ID="txtSucursalIngreso" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                                            <asp:DropDownList ID="ddlSucursalIngreso" runat="server" CssClass="form-control" Width="100%">
+                                            </asp:DropDownList>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -570,7 +572,8 @@
                                             <asp:Label ID="lblTransmision" runat="server" Text="Transmisión:" CssClass="inputLabel"></asp:Label>
                                         </div>
                                         <div class="col-md-8">
-                                            <asp:TextBox ID="txtTransmision" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                                            <asp:DropDownList ID="ddlTransmision" runat="server" CssClass="form-control" Width="100%">
+                                            </asp:DropDownList>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -586,7 +589,8 @@
                                             <asp:Label ID="lblEdoPlaca" runat="server" Text="Placa (Estado):" CssClass="inputLabel"></asp:Label>
                                         </div>
                                         <div class="col-md-8">
-                                            <asp:TextBox ID="txtEdoPlaca" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                                            <asp:DropDownList ID="ddlEdoPlaca" runat="server" CssClass="form-control" Width="100%">
+                                            </asp:DropDownList>
                                         </div>
                                     </div>
                                     <div class="row">
