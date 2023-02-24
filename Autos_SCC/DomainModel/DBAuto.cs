@@ -153,7 +153,22 @@ namespace Autos_SCC.DomainModel
                                                                                             "@NumMotor", oEjecut.SNumMotor,
                                                                                             "@Tenencia", oEjecut.STenencia,
                                                                                             "@Factura", oEjecut.SFactura,
-                                                                                            "@Numero", oEjecut.SNumero);
+                                                                                            "@Numero", oEjecut.SNumero,
+                                                                                            "@fc_CveConsecutivo", oEjecut.sCveConsecutivo,
+                                                                                            "@fi_Consecutivo", oEjecut.iConsecutivo,
+                                                                                            "@fd_FechaIngreso", oEjecut.dtFechaIngreso,
+                                                                                            "@fi_SucursalIngreso", oEjecut.iIdSucursalIngreso,
+                                                                                            "@fi_SucursalExpediente", oEjecut.iIdSucursalExpediente,
+                                                                                            "@fi_Cls", oEjecut.iCls,
+                                                                                            "@fi_Transmision", oEjecut.iIdTransmision,
+                                                                                            "@fc_Proveedor", oEjecut.sProveedor,
+                                                                                            "@fm_PrecioToma", oEjecut.dPrecioToma,
+                                                                                            "@fi_TipoFactura", oEjecut.iIdTipoFactura,
+                                                                                            "@fi_EdoPlaca", oEjecut.iIdEstadoPlaca,
+                                                                                            "@fc_Duplicado", oEjecut.sDuplicado,
+                                                                                            "@fc_Tarjeta", oEjecut.sTarjeta,
+                                                                                            "@fc_Ine", oEjecut.sINE,
+                                                                                            "@fc_ContratoCV", oEjecut.sContratoCV);
                         }
                         else
                         {
@@ -192,7 +207,22 @@ namespace Autos_SCC.DomainModel
                                                                             "@NumMotor", oEjecut.SNumMotor,
                                                                             "@Tenencia", oEjecut.STenencia,
                                                                             "@Factura", oEjecut.SFactura,
-                                                                            "@Numero", oEjecut.SNumero);
+                                                                            "@Numero", oEjecut.SNumero,
+                                                                            "@fc_CveConsecutivo", oEjecut.sCveConsecutivo,
+                                                                            "@fi_Consecutivo", oEjecut.iConsecutivo,
+                                                                            "@fd_FechaIngreso", oEjecut.dtFechaIngreso,
+                                                                            "@fi_SucursalIngreso", oEjecut.iIdSucursalIngreso,
+                                                                            "@fi_SucursalExpediente", oEjecut.iIdSucursalExpediente,
+                                                                            "@fi_Cls", oEjecut.iCls,
+                                                                            "@fi_Transmision", oEjecut.iIdTransmision,
+                                                                            "@fc_Proveedor", oEjecut.sProveedor,
+                                                                            "@fm_PrecioToma", oEjecut.dPrecioToma,
+                                                                            "@fi_TipoFactura", oEjecut.iIdTipoFactura,
+                                                                            "@fi_EdoPlaca", oEjecut.iIdEstadoPlaca,
+                                                                            "@fc_Duplicado", oEjecut.sDuplicado,
+                                                                            "@fc_Tarjeta", oEjecut.sTarjeta,
+                                                                            "@fc_Ine", oEjecut.sINE,
+                                                                            "@fc_ContratoCV", oEjecut.sContratoCV);
 
                         //}
                         //else
