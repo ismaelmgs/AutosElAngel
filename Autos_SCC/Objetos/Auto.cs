@@ -106,32 +106,46 @@ namespace Autos_SCC.Objetos
 
         public int iConsecutivo { get => _iConsecutivo; set => _iConsecutivo = value; }
 
+        [Required(AllowEmptyStrings = false, ErrorMessage = "La fecha de ingreso es obligatoria. <br />")]
         public DateTime dtFechaIngreso { get => _dtFechaIngreso; set => _dtFechaIngreso = value; }
 
+        [Range(1, Int32.MaxValue, ErrorMessage = "La sucursal de ingreso es obligatoria. <br />")]
         public int iIdSucursalIngreso { get => _iIdSucursalIngreso; set => _iIdSucursalIngreso = value; }
 
+        [Range(1, Int32.MaxValue, ErrorMessage = "La ubicación del expediente es obligatoria. <br />")]
         public int iIdSucursalExpediente { get => _iIdSucursalExpediente; set => _iIdSucursalExpediente = value; }
 
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Cls obligatorio. <br />")]
         public int iCls { get => _iCls; set => _iCls = value; }
 
+        [Range(1, Int32.MaxValue, ErrorMessage = "La transmisión obligatoria. <br />")]
         public int iIdTransmision { get => _iIdTransmision; set => _iIdTransmision = value; }
 
+        [Required(AllowEmptyStrings = false, ErrorMessage = "El proveedor es obligatorio. <br />")]
         public string sProveedor { get => _sProveedor; set => _sProveedor = value; }
 
+        [Required(AllowEmptyStrings = false, ErrorMessage = "El precio toma es obligatorio. <br />")]
         public decimal dPrecioToma { get => _dPrecioToma; set => _dPrecioToma = value; }
 
+        [Range(1, Int32.MaxValue, ErrorMessage = "El tipo de factura es obligatoria. <br />")]
         public int iIdTipoFactura { get => _iIdTipoFactura; set => _iIdTipoFactura = value; }
 
+        [Range(1, Int32.MaxValue, ErrorMessage = "El estado al que pertenecen las placas es obligatorio. <br />")]
         public int iIdEstadoPlaca { get => _iIdEstadoPlaca; set => _iIdEstadoPlaca = value; }
 
+        [Required(AllowEmptyStrings = false, ErrorMessage = "El duplicado es obligatorio. <br />")]
         public string sDuplicado { get => _sDuplicado; set => _sDuplicado = value; }
 
+        [Required(AllowEmptyStrings = false, ErrorMessage = "La tarjeta de circulación es obligatoria. <br />")]
         public string sTarjeta { get => _sTarjeta; set => _sTarjeta = value; }
 
+        [Range(1, Int32.MaxValue, ErrorMessage = "El numero de dueños anteriores es obligatorio. <br />")]
         public int iNoDuenios { get => _iNoDuenios; set => _iNoDuenios = value; }
 
+        [Required(AllowEmptyStrings = false, ErrorMessage = "La INE es obligatoria. <br />")]
         public string sINE { get => _sINE; set => _sINE = value; }
 
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Contratos de compra/venta es obligatorio. <br />")]
         public string sContratoCV { get => _sContratoCV; set => _sContratoCV = value; }
 
     }

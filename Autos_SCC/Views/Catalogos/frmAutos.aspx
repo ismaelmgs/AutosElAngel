@@ -455,13 +455,21 @@
                                             <asp:Label ID="lblDuplicado" runat="server" Text="Duplicado:" CssClass="inputLabel"></asp:Label>
                                         </div>
                                         <div class="col-md-3">
-                                            <asp:TextBox ID="txtDuplicado" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                                            <asp:DropDownList ID="ddlDuplicado" runat="server" CssClass="form-control" Width="100%">
+                                                <asp:ListItem Text="Seleccione" Value="Sel" Selected="True"></asp:ListItem>
+                                                <asp:ListItem Text="Si" Value="Si"></asp:ListItem>
+                                                <asp:ListItem Text="No" Value="No"></asp:ListItem>
+                                            </asp:DropDownList>
                                         </div>
                                         <div class="col-md-2">
                                             <asp:Label ID="lblTarjeta" runat="server" Text="Tarjeta de Circulación:" CssClass="inputLabel"></asp:Label>
                                         </div>
                                         <div class="col-md-3">
-                                            <asp:TextBox ID="txtTarjeta" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                                            <asp:DropDownList ID="ddlTarjeta" runat="server" CssClass="form-control" Width="100%">
+                                                <asp:ListItem Text="Seleccione" Value="Sel" Selected="True"></asp:ListItem>
+                                                <asp:ListItem Text="Si" Value="Si"></asp:ListItem>
+                                                <asp:ListItem Text="No" Value="No"></asp:ListItem>
+                                            </asp:DropDownList>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -469,7 +477,11 @@
                                             <asp:Label ID="lblContrato" runat="server" Text="Contrato Compra/Venta:" CssClass="inputLabel"></asp:Label>
                                         </div>
                                         <div class="col-md-3">
-                                            <asp:TextBox ID="txtContrato" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                                            <asp:DropDownList ID="ddlContrato" runat="server" CssClass="form-control" Width="100%">
+                                                <asp:ListItem Text="Seleccione" Value="Sel" Selected="True"></asp:ListItem>
+                                                <asp:ListItem Text="Si" Value="Si"></asp:ListItem>
+                                                <asp:ListItem Text="No" Value="No"></asp:ListItem>
+                                            </asp:DropDownList>
                                         </div>
                                     </div>
                                 </div>
@@ -604,7 +616,11 @@
                                             <asp:Label ID="lblIne" runat="server" Text="INE:" CssClass="inputLabel"></asp:Label>
                                         </div>
                                         <div class="col-md-3">
-                                            <asp:TextBox ID="txtIne" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                                            <asp:DropDownList ID="ddlIne" runat="server" CssClass="form-control" Width="100%">
+                                                <asp:ListItem Text="Seleccione" Value="Sel" Selected="True"></asp:ListItem>
+                                                <asp:ListItem Text="Si" Value="Si"></asp:ListItem>
+                                                <asp:ListItem Text="No" Value="No"></asp:ListItem>
+                                            </asp:DropDownList>
                                         </div>
                                     </div>
                                 </div>

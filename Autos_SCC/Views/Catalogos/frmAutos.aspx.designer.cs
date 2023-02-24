@@ -562,13 +562,13 @@ namespace Autos_SCC.Views.Catalogos {
         protected global::System.Web.UI.WebControls.Label lblDuplicado;
         
         /// <summary>
-        /// Control txtDuplicado.
+        /// Control ddlDuplicado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDuplicado;
+        protected global::System.Web.UI.WebControls.DropDownList ddlDuplicado;
         
         /// <summary>
         /// Control lblTarjeta.
@@ -580,13 +580,13 @@ namespace Autos_SCC.Views.Catalogos {
         protected global::System.Web.UI.WebControls.Label lblTarjeta;
         
         /// <summary>
-        /// Control txtTarjeta.
+        /// Control ddlTarjeta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTarjeta;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTarjeta;
         
         /// <summary>
         /// Control lblContrato.
@@ -598,13 +598,13 @@ namespace Autos_SCC.Views.Catalogos {
         protected global::System.Web.UI.WebControls.Label lblContrato;
         
         /// <summary>
-        /// Control txtContrato.
+        /// Control ddlContrato.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtContrato;
+        protected global::System.Web.UI.WebControls.DropDownList ddlContrato;
         
         /// <summary>
         /// Control lblModelo.
@@ -895,13 +895,13 @@ namespace Autos_SCC.Views.Catalogos {
         protected global::System.Web.UI.WebControls.Label lblIne;
         
         /// <summary>
-        /// Control txtIne.
+        /// Control ddlIne.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtIne;
+        protected global::System.Web.UI.WebControls.DropDownList ddlIne;
         
         /// <summary>
         /// Control btnGuardar.

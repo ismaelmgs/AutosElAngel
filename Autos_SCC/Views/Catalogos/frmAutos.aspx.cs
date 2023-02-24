@@ -537,11 +537,11 @@ namespace Autos_SCC.Views.Catalogos
                     dPrecioToma = txtPrecioToma.Text.S().D(),
                     //iIdTipoFactura =
                     //iIdEstadoPlaca  =
-                    sDuplicado = txtDuplicado.Text.S(),
-                    sTarjeta = txtTarjeta.Text.S(),
+                    sDuplicado = ddlDuplicado.SelectedValue.S(),
+                    sTarjeta = ddlTarjeta.SelectedValue.S(),
                     iNoDuenios = txtDuenios.Text.S().I(),
-                    sINE = txtIne.Text.S(),
-                    sContratoCV = txtContrato.Text.S(),
+                    sINE = ddlIne.SelectedValue.S(),
+                    sContratoCV = ddlContrato.SelectedValue.S(),
                     sUsuario = Session["usuario"].S()
                 };
             }
@@ -584,11 +584,11 @@ namespace Autos_SCC.Views.Catalogos
                     txtPrecioToma.Text = oCat.dPrecioToma.S();
                     //iIdTipoFactura
                     //iIdEstadoPlaca
-                    txtDuplicado.Text = oCat.sDuplicado;
-                    txtTarjeta.Text = oCat.sTarjeta;
+                    ddlDuplicado.SelectedValue = oCat.sDuplicado;
+                    ddlTarjeta.SelectedValue = oCat.sTarjeta;
                     txtDuenios.Text = oCat.iNoDuenios.S();
-                    txtIne.Text = oCat.sINE;
-                    txtContrato.Text = oCat.sContratoCV;
+                    ddlIne.SelectedValue = oCat.sINE;
+                    ddlContrato.SelectedValue = oCat.sContratoCV;
                     ddlEstatus.SelectedValue = oCat.iStatus.S();
                 }
             }
