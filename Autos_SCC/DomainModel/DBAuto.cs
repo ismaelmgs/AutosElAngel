@@ -164,7 +164,23 @@ namespace Autos_SCC.DomainModel
                     SNumMotor = r["NumMotor"].S(),
                     STenencia = r["TenenciaHasta"].S(),
                     SFactura = r["Factura"].S(),
-                    SNumero = r["Numero"].S()
+                    SNumero = r["Numero"].S(),
+                    sCveConsecutivo = r["fc_CveConsecutivo"].S(),
+                    iConsecutivo = r["fi_Consecutivo"].S().I(),
+                    dtFechaIngreso = r["fd_FechaIngreso"].S().Dt(),
+                    iIdSucursalIngreso = r["fi_SucursalIngreso"].S().I(),
+                    iIdSucursalExpediente = r["fi_SucursalExpediente"].S().I(),
+                    iCls = r["fi_Cls"].S().I(),
+                    iIdTransmision = r["fi_Transmision"].S().I(),
+                    sProveedor = r["fc_Proveedor"].S(),
+                    dPrecioToma = r["fm_PrecioToma"].S().D(),
+                    iIdTipoFactura = r["fi_TipoFactura"].S().I(),
+                    iIdEstadoPlaca = r["fi_EdoPlaca"].S().I(),
+                    sDuplicado = r["fc_Duplicado"].S(),
+                    sTarjeta = r["fc_Tarjeta"].S(),
+                    iNoDuenios = r["fi_NoDuenios"].S().I(),
+                    sINE = r["fc_Ine"].S(),
+                    sContratoCV = r["fc_ContratoCV"].S(),
                 }).First();
             }
             catch
