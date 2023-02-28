@@ -133,19 +133,19 @@ namespace Autos_SCC.Objetos
         [Range(1, Int32.MaxValue, ErrorMessage = "El estado al que pertenecen las placas es obligatorio. <br />")]
         public int iIdEstadoPlaca { get => _iIdEstadoPlaca; set => _iIdEstadoPlaca = value; }
 
-        [Required(AllowEmptyStrings = false, ErrorMessage = "El duplicado es obligatorio. <br />")]
+        [RegularExpression("Si|No", ErrorMessage = "El duplicado es obligatorio. Si ó No <br />")]
         public string sDuplicado { get => _sDuplicado; set => _sDuplicado = value; }
 
-        [Required(AllowEmptyStrings = false, ErrorMessage = "La tarjeta de circulación es obligatoria. <br />")]
+        [RegularExpression("Si|No", ErrorMessage = "La tarjeta de circulación es obligatoria. Si ó No <br />")]
         public string sTarjeta { get => _sTarjeta; set => _sTarjeta = value; }
 
         [Range(1, Int32.MaxValue, ErrorMessage = "El numero de dueños anteriores es obligatorio. <br />")]
         public int iNoDuenios { get => _iNoDuenios; set => _iNoDuenios = value; }
 
-        [Required(AllowEmptyStrings = false, ErrorMessage = "La INE es obligatoria. <br />")]
+        [RegularExpression("Si|No", ErrorMessage = "La INE es obligatoria. Si ó No <br />")]
         public string sINE { get => _sINE; set => _sINE = value; }
 
-        [Required(AllowEmptyStrings = false, ErrorMessage = "Contratos de compra/venta es obligatorio. <br />")]
+        [RegularExpression("Si|No", ErrorMessage = "Contratos de compra/venta es obligatorio. Si ó No <br />")]
         public string sContratoCV { get => _sContratoCV; set => _sContratoCV = value; }
 
     }

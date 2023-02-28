@@ -393,8 +393,8 @@ namespace Autos_SCC.Views.Catalogos
                 ddlTipoFactura.Items.Clear();
 
                 ddlTipoFactura.DataSource = dtObj;
-                ddlTipoFactura.DataValueField = "fi_Id";
-                ddlTipoFactura.DataTextField = "fc_Descripcion";
+                ddlTipoFactura.DataValueField = "iId";
+                ddlTipoFactura.DataTextField = "sDescripcion";
                 ddlTipoFactura.DataBind();
 
                 //ddlTipoAuto_SelectedIndexChanged(null, EventArgs.Empty);
@@ -413,8 +413,8 @@ namespace Autos_SCC.Views.Catalogos
                 ddlTransmision.Items.Clear();
 
                 ddlTransmision.DataSource = dtObj;
-                ddlTransmision.DataValueField = "fi_Id";
-                ddlTransmision.DataTextField = "fc_Descripcion";
+                ddlTransmision.DataValueField = "iId";
+                ddlTransmision.DataTextField = "sDescripcion";
                 ddlTransmision.DataBind();
 
                 //ddlTipoAuto_SelectedIndexChanged(null, EventArgs.Empty);
@@ -569,14 +569,14 @@ namespace Autos_SCC.Views.Catalogos
                     SNumero = txtNumero.Text.S(),
                     iStatus = ddlEstatus.SelectedValue.S().I(),
                     dtFechaIngreso = txtFechaIngreso.Text.S().Dt(),
-                    //iIdSucursalIngreso = 
-                    //iIdSucursalExpediente =
+                    iIdSucursalIngreso = ddlSucursalIngreso.SelectedValue.S().I(),
+                    iIdSucursalExpediente = ddlSucursalExpediente.SelectedValue.S().I(),
                     iCls = txtCls.Text.S().I(),
-                    //iIdTransmision =
+                    iIdTransmision = ddlTransmision.SelectedValue.S().I(),
                     sProveedor = txtProveedor.Text.S(),
                     dPrecioToma = txtPrecioToma.Text.S().D(),
-                    //iIdTipoFactura =
-                    //iIdEstadoPlaca  =
+                    iIdTipoFactura = ddlTipoFactura.SelectedValue.S().I(),
+                    iIdEstadoPlaca = ddlEdoPlaca.SelectedValue.S().I(),
                     sDuplicado = ddlDuplicado.SelectedValue.S(),
                     sTarjeta = ddlTarjeta.SelectedValue.S(),
                     iNoDuenios = txtDuenios.Text.S().I(),
@@ -617,13 +617,13 @@ namespace Autos_SCC.Views.Catalogos
                     txtNumero.Text = oCat.SNumero.S();
 
                     txtFechaIngreso.Text = oCat.dtFechaIngreso.S();
-                    //iIdSucursalIngreso
-                    //iIdSucursalExpediente
+                    ddlSucursalIngreso.SelectedValue = oCat.iIdSucursalIngreso.S();
+                    ddlSucursalExpediente.SelectedValue = oCat.iIdSucursalExpediente.S();
                     txtCls.Text = oCat.iCls.S();
                     txtProveedor.Text = oCat.sProveedor;
                     txtPrecioToma.Text = oCat.dPrecioToma.S();
-                    //iIdTipoFactura
-                    //iIdEstadoPlaca
+                    ddlTipoFactura.SelectedValue = oCat.iIdTipoFactura.S();
+                    ddlEdoPlaca.SelectedValue = oCat.iIdEstadoPlaca.S();
                     ddlDuplicado.SelectedValue = oCat.sDuplicado;
                     ddlTarjeta.SelectedValue = oCat.sTarjeta;
                     txtDuenios.Text = oCat.iNoDuenios.S();

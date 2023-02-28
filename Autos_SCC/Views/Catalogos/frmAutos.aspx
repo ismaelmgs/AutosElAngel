@@ -429,7 +429,7 @@
                                             <asp:Label ID="lblUbiExpediente" runat="server" Text="Ubicación de Expediente:" CssClass="inputLabel"></asp:Label>
                                         </div>
                                         <div class="col-md-8">
-                                            <asp:DropDownList ID="ddlSucursalExpediente" runat="server" CssClass="form-control" Width="100%">
+                                            <asp:DropDownList ID="ddlSucursalExpediente" runat="server" AutoPostBack="True" CssClass="form-control" Width="100%">
                                             </asp:DropDownList>
                                         </div>
                                     </div>
@@ -447,7 +447,7 @@
                                             <asp:Label ID="lblTipoFactura" runat="server" Text="Tipo Factura:" CssClass="inputLabel"></asp:Label>
                                         </div>
                                         <div class="col-md-8">
-                                            <asp:DropDownList ID="ddlTipoFactura" runat="server" CssClass="form-control" Width="100%">
+                                            <asp:DropDownList ID="ddlTipoFactura" runat="server" AutoPostBack="True" CssClass="form-control" Width="100%">
                                             </asp:DropDownList>
                                         </div>
                                     </div>
@@ -576,7 +576,7 @@
                                             <asp:Label ID="lblSucursalIngreso" runat="server" Text="Sucursal de Ingreso:" CssClass="inputLabel"></asp:Label>
                                         </div>
                                         <div class="col-md-8">
-                                            <asp:DropDownList ID="ddlSucursalIngreso" runat="server" CssClass="form-control" Width="100%">
+                                            <asp:DropDownList ID="ddlSucursalIngreso" runat="server" AutoPostBack="True" CssClass="form-control" Width="100%">
                                             </asp:DropDownList>
                                         </div>
                                     </div>
@@ -585,7 +585,7 @@
                                             <asp:Label ID="lblTransmision" runat="server" Text="Transmisión:" CssClass="inputLabel"></asp:Label>
                                         </div>
                                         <div class="col-md-8">
-                                            <asp:DropDownList ID="ddlTransmision" runat="server" CssClass="form-control" Width="100%">
+                                            <asp:DropDownList ID="ddlTransmision" runat="server" AutoPostBack="True" CssClass="form-control" Width="100%">
                                             </asp:DropDownList>
                                         </div>
                                     </div>
@@ -602,7 +602,7 @@
                                             <asp:Label ID="lblEdoPlaca" runat="server" Text="Placa (Estado):" CssClass="inputLabel"></asp:Label>
                                         </div>
                                         <div class="col-md-8">
-                                            <asp:DropDownList ID="ddlEdoPlaca" runat="server" CssClass="form-control" Width="100%">
+                                            <asp:DropDownList ID="ddlEdoPlaca" runat="server" AutoPostBack="true" CssClass="form-control" Width="100%">
                                             </asp:DropDownList>
                                         </div>
                                     </div>

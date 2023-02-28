@@ -219,6 +219,7 @@ namespace Autos_SCC.DomainModel
                                                                                             "@fi_EdoPlaca", oEjecut.iIdEstadoPlaca,
                                                                                             "@fc_Duplicado", oEjecut.sDuplicado,
                                                                                             "@fc_Tarjeta", oEjecut.sTarjeta,
+                                                                                            "@fi_NoDuenios", oEjecut.iNoDuenios,
                                                                                             "@fc_Ine", oEjecut.sINE,
                                                                                             "@fc_ContratoCV", oEjecut.sContratoCV);
                         }
@@ -273,6 +274,7 @@ namespace Autos_SCC.DomainModel
                                                                             "@fi_EdoPlaca", oEjecut.iIdEstadoPlaca,
                                                                             "@fc_Duplicado", oEjecut.sDuplicado,
                                                                             "@fc_Tarjeta", oEjecut.sTarjeta,
+                                                                            "@fi_NoDuenios", oEjecut.iNoDuenios,
                                                                             "@fc_Ine", oEjecut.sINE,
                                                                             "@fc_ContratoCV", oEjecut.sContratoCV);
 
