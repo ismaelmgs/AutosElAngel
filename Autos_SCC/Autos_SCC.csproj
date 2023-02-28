@@ -512,6 +512,9 @@
     <Compile Include="Clases\Conversores.cs" />
     <Compile Include="Clases\Enumeraciones.cs" />
     <Compile Include="Clases\Utils.cs" />
+    <Compile Include="DomainModel\AAPDataContext.cs">
+      <DependentUpon>AAPDataContext.dbml</DependentUpon>
+    </Compile>
     <Compile Include="DomainModel\DBAbonos.cs" />
     <Compile Include="DomainModel\DBAutorizador.cs" />
     <Compile Include="DomainModel\DBCalificacion.cs" />
@@ -540,6 +543,8 @@
     <Compile Include="Interfaces\IViewTotalesCartera.cs" />
     <Compile Include="Objetos\AutosVen.cs" />
     <Compile Include="Objetos\Aval.cs" />
+    <Compile Include="Objetos\TipoFactura.cs" />
+    <Compile Include="Objetos\TipoTransmision.cs" />
     <Compile Include="Objetos\Transaccion.cs" />
     <Compile Include="Objetos\Autorizador.cs" />
     <Compile Include="Presenter\Abonos_Presenter.cs" />
@@ -876,6 +881,7 @@
     <Content Include="assets\icon\themify-icons\fonts\themify.eot" />
     <Content Include="assets\icon\themify-icons\fonts\themify.ttf" />
     <Content Include="assets\icon\themify-icons\fonts\themify.woff" />
+    <Content Include="ClassDiagram1.cd" />
     <None Include="DomainModel\AAPDataContext.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>AAPDataContext.designer.cs</LastGenOutput>

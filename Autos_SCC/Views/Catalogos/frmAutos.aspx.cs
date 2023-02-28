@@ -386,6 +386,46 @@ namespace Autos_SCC.Views.Catalogos
             }
 
         }
+        public void LoadTipoFactura(DataTable dtObj)
+        {
+            if (dtObj.Rows.Count > 0)
+            {
+                ddlTipoFactura.Items.Clear();
+
+                ddlTipoFactura.DataSource = dtObj;
+                ddlTipoFactura.DataValueField = "fi_Id";
+                ddlTipoFactura.DataTextField = "fc_Descripcion";
+                ddlTipoFactura.DataBind();
+
+                //ddlTipoAuto_SelectedIndexChanged(null, EventArgs.Empty);
+            }
+            else
+            {
+                ddlTipoFactura.Items.Clear();
+                ddlTipoFactura.Items.Add(new ListItem("Seleccione", "0"));
+            }
+
+        }
+        public void LoadTipoTransmision(DataTable dtObj)
+        {
+            if (dtObj.Rows.Count > 0)
+            {
+                ddlTransmision.Items.Clear();
+
+                ddlTransmision.DataSource = dtObj;
+                ddlTransmision.DataValueField = "fi_Id";
+                ddlTransmision.DataTextField = "fc_Descripcion";
+                ddlTransmision.DataBind();
+
+                //ddlTipoAuto_SelectedIndexChanged(null, EventArgs.Empty);
+            }
+            else
+            {
+                ddlTransmision.Items.Clear();
+                ddlTransmision.Items.Add(new ListItem("Seleccione", "0"));
+            }
+
+        }
 
         public void LoadVersiones(DataTable dtObj)
         {

@@ -25,6 +25,8 @@ namespace Autos_SCC.Interfaces
         void LoadTiposAuto(DataTable dtTiposAuto);
         void LoadSucursales(DataTable dtSuc);
         void LoadEstatusAuto(DataTable dtEst);
+        void LoadTipoFactura(DataTable dtEst);
+        void LoadTipoTransmision(DataTable dtEst);
         void LoadEstados(DataTable dtEstados);
         void MostrarMensaje(string sMensaje, string sCaption);
         

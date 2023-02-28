@@ -32,6 +32,8 @@ namespace Autos_SCC.Presenter
             oIView.LoadMarcas(new DBMarca().dtObjsCat);
             oIView.LoadSucursales(new DBSucursales().dtObj);
             oIView.LoadEstatusAuto(new DBAuto().dtObjCatStatus.Select("iActivo = 1").CopyToDataTable());
+            oIView.LoadTipoFactura(new DBAuto().dtObjCatTipoFacturas.Select("iActivo = 1").CopyToDataTable());
+            oIView.LoadTipoTransmision(new DBAuto().dtObjCatTipoTransmision.Select("iActivo = 1").CopyToDataTable());
             oIView.LoadObjects(oIGestCat.dtObjCat);
             oIView.LoadEstados(new DBCliente().dtGetEstados);
         }

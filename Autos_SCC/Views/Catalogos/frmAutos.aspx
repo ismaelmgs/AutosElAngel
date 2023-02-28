@@ -447,7 +447,8 @@
                                             <asp:Label ID="lblTipoFactura" runat="server" Text="Tipo Factura:" CssClass="inputLabel"></asp:Label>
                                         </div>
                                         <div class="col-md-8">
-                                            <asp:TextBox ID="txtTipoFactura" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                                            <asp:DropDownList ID="ddlTipoFactura" runat="server" CssClass="form-control" Width="100%">
+                                            </asp:DropDownList>
                                         </div>
                                     </div>
                                     <div class="row">
