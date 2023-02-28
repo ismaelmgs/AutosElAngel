@@ -53,6 +53,32 @@ namespace Autos_SCC.DomainModel
                 }
             }
         }
+        public DataTable dtObjCatTipoFacturas
+        {
+            get
+            {
+                try
+                {
+                    List<TipoFactura> oLst = new List<TipoFactura>();
+                    oLst = oDB.tbc_TipoFacturas.Where(r => r.fi_Activo == 1).Select(r => new TipoFactura()
+                    {
+                        iId = r.fi_Id,
+                        sDescripcion = r.fc_Descripcion,
+                        iActivo = r.fi_Activo,
+                        dtFechaUltMov = r.fd_FechaUltMovimiento,
+                        sUsuario = r.fc_Usuario
+                    }).ToList();
+
+                    return oLst.ConvertListToDataTable();
+
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+        }
 
         public bool DBObjExists(int iId)
         {

@@ -44,5 +44,17 @@
         <elementListCompartment Id="5f34016e-a6a1-4af2-9a68-4d51431fdea5" absoluteBounds="5.015, 5.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="3ceb31db-b467-48a0-b060-431cc07eae57" absoluteBounds="0.5, 4.625, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/AAPDataContextDataContext/tbc_TipoFacturas" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6d2d251b-fd55-4b21-a3b6-cf8efa04b9b4" absoluteBounds="0.51500000000000012, 5.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b1faaa20-391a-4b7b-a0ad-e646b4ff6d47" absoluteBounds="2.75, 4.625, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/AAPDataContextDataContext/tbc_TipoTransmision" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fa20b25a-a5d3-45fc-bbcb-1cc97aa81939" absoluteBounds="2.765, 5.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AAP_Autos" Class="AAPDataContextDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=HOME-PC\SQL2008R2;Initial Catalog=AAP_Autos;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="SqlDefault" Provider="System.Data.SqlClient" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=LAPTOP-QVLQVTGV;Initial Catalog=AAP_Autos;Integrated Security=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="SqlDefault" Provider="System.Data.SqlClient" />
   <Table Name="Catalogos.tbc_MarcaAuto" Member="tbc_MarcaAuto">
     <Type Name="tbc_MarcaAuto">
       <Column Name="fi_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -59,6 +59,24 @@
   </Table>
   <Table Name="Catalogos.tbc_Plazo" Member="tbc_Plazo">
     <Type Name="tbc_Plazo">
+      <Column Name="fi_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fc_Descripcion" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="fi_Activo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fc_Usuario" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="fd_FechaUltMovimiento" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="Catalogos.tbc_TipoFacturas" Member="tbc_TipoFacturas">
+    <Type Name="tbc_TipoFacturas">
+      <Column Name="fi_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fc_Descripcion" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="fi_Activo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fc_Usuario" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="fd_FechaUltMovimiento" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="Catalogos.tbc_TipoTransmision" Member="tbc_TipoTransmision">
+    <Type Name="tbc_TipoTransmision">
       <Column Name="fi_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="fc_Descripcion" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
       <Column Name="fi_Activo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
