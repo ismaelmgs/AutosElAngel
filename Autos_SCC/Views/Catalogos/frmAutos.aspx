@@ -419,15 +419,16 @@
                                         <div class="col-md-4">
                                             <asp:Label ID="lblFechaIngreso" runat="server" Text="Fecha de Ingreso:" CssClass="inputLabel"></asp:Label>
                                         </div>
-                                        <div class="col-md-8">
-                                            <div>
+                                        <div class="col-md-8 row">
+                                            <div class="col-md-6">
                                                 <asp:TextBox ID="txtFechaIngreso" runat="server" CssClass="form-control" Width="80%" Enabled="false"></asp:TextBox>
-                                                <asp:ImageButton ID="imgbtnCalendar" runat="server" ImageUrl="~/Images/Iconos/calendar.png" OnClick="imgbtnCalendar_Click" Width="27px" Height="27px"/>
                                             </div>
-                                            <div style="float:right; position: absolute; z-index: 3;">
+                                            <div class="col-md-6" style="margin:0 auto;">
+                                                <asp:ImageButton ID="imgbtnCalendar" runat="server" ImageUrl="~/Images/Iconos/calendar.png" OnClick="imgbtnCalendar_Click" Width="27px" Height="27px" style="position:absolute;"/>
+                                                <div style="float:right; position: absolute; z-index: 3;">
                                                 <asp:Calendar ID="cldFechaIngreso" runat="server" 
-			                                        BackColor="#FFFFCC" 
-			                                        BorderColor="#FFCC66" 
+			                                        BackColor="#fcfced" 
+			                                        BorderColor="#2879ff" 
 			                                        BorderWidth="1px" 
 			                                        DayNameFormat="Shortest" 
 			                                        Font-Names="Verdana" 
@@ -438,15 +439,17 @@
 			                                        Visible="false"
 			                                        Width="220px" 
 			                                        OnSelectionChanged="cldFechaIngreso_SelectionChanged">
-			                                        <DayHeaderStyle BackColor="#FFCC66" Font-Bold="True" Height="1px" />
-			                                        <NextPrevStyle Font-Size="9pt" ForeColor="#FFFFCC" />
-			                                        <OtherMonthDayStyle ForeColor="#CC9966" />
-			                                        <SelectedDayStyle BackColor="#CCCCFF" Font-Bold="True" />
-			                                        <SelectorStyle BackColor="#FFCC66" />
-			                                        <TitleStyle BackColor="#990000" Font-Bold="True" Font-Size="9pt" ForeColor="#FFFFCC" />
-			                                        <TodayDayStyle BackColor="#FFCC66" ForeColor="White" />
+			                                        <DayHeaderStyle BackColor="#b1c3e2" Font-Bold="True" Height="1px" />
+			                                        <NextPrevStyle Font-Size="9pt" ForeColor="#fcfced" />
+			                                        <OtherMonthDayStyle ForeColor="#d6d6d6" />
+			                                        <SelectedDayStyle BackColor="#158cba" Font-Bold="True" />
+			                                        <SelectorStyle BackColor="#b1c3e2" />
+			                                        <TitleStyle BackColor="#2879ff" Font-Bold="True" Font-Size="9pt" ForeColor="#FFFFCC" />
+			                                        <TodayDayStyle BackColor="#b1c3e2" ForeColor="White" />
 		                                        </asp:Calendar>
                                             </div>
+                                            </div>
+                                            
                                         </div>
                                     </div>
 
