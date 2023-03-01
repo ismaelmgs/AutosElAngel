@@ -335,29 +335,29 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-3" style="text-align:left;">
                                             <asp:Label ID="lblId" runat="server" Text="Id:" CssClass="inputLabel" />
                                         </div>
-                                        <div class="col-md-8">
+                                        <div class="col-md-9">
                                             <asp:TextBox ID="txtId" runat="server" Width="100%" class="inputCampo"
                                                 Enabled="False" CssClass="form-control"></asp:TextBox>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-3" style="text-align:left;">
                                             <asp:Label ID="lblMarca" runat="server" Text="Marca:" CssClass="inputLabel"></asp:Label>
                                         </div>
-                                        <div class="col-md-8">
+                                        <div class="col-md-9">
                                             <asp:DropDownList ID="ddlMarca" runat="server" OnSelectedIndexChanged="ddlMarca_SelectedIndexChanged"
                                                 AutoPostBack="True" CssClass="form-control" Width="100%">
                                             </asp:DropDownList>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-3" style="text-align:left;">
                                             <asp:Label ID="lblTipoAuto" runat="server" Text="Tipo:" CssClass="inputLabel"></asp:Label>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-4">
                                             <asp:DropDownList ID="ddlTipoAuto" runat="server" CssClass="form-control" Width="100%"
                                                 AutoPostBack="True"
                                                 OnSelectedIndexChanged="ddlTipoAuto_SelectedIndexChanged">
@@ -372,29 +372,29 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-3" style="text-align:left;">
                                             <asp:Label ID="lblPlaca" runat="server" Text="Placa:" CssClass="inputLabel"></asp:Label>
                                         </div>
-                                        <div class="col-md-8">
+                                        <div class="col-md-9">
                                             <asp:TextBox ID="txtPlaca" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
                                         </div>
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-3" style="text-align:left;">
                                             <asp:Label ID="lblEstado" runat="server" Text="Del Estado de:" CssClass="inputLabel"></asp:Label>
                                         </div>
-                                        <div class="col-md-8">
+                                        <div class="col-md-9">
                                             <asp:DropDownList ID="ddlEstado" runat="server" CssClass="form-control" Width="100%">
                                             </asp:DropDownList>
                                         </div>
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-3" style="text-align:left;">
                                             <asp:Label ID="lblNoSerie" runat="server" Text="No. Serie:" CssClass="inputLabel"></asp:Label>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-4">
                                             <asp:TextBox ID="txtNoSerie" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
                                         </div>
 
@@ -407,19 +407,19 @@
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-3" style="text-align:left;">
                                             <asp:Label ID="lblNumero" runat="server" Text="Con número:" CssClass="inputLabel"></asp:Label>
                                         </div>
-                                        <div class="col-md-8">
+                                        <div class="col-md-9">
                                             <asp:TextBox ID="txtNumero" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
                                         </div>
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-3" style="text-align:left;">
                                             <asp:Label ID="lblFechaIngreso" runat="server" Text="Fecha de Ingreso:" CssClass="inputLabel"></asp:Label>
                                         </div>
-                                        <div class="col-md-8 row">
+                                        <div class="col-md-9 row">
                                             <div class="col-md-6">
                                                 <asp:TextBox ID="txtFechaIngreso" runat="server" CssClass="form-control" Width="80%" Enabled="false"></asp:TextBox>
                                             </div>
@@ -454,37 +454,37 @@
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-3" style="text-align:left;">
                                             <asp:Label ID="lblUbiExpediente" runat="server" Text="Ubicación de Expediente:" CssClass="inputLabel"></asp:Label>
                                         </div>
-                                        <div class="col-md-8">
+                                        <div class="col-md-9">
                                             <asp:DropDownList ID="ddlSucursalExpediente" runat="server" AutoPostBack="True" CssClass="form-control" Width="100%">
                                             </asp:DropDownList>
                                         </div>
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-3" style="text-align:left;">
                                             <asp:Label ID="lblProveedor" runat="server" Text="Proveedor:" CssClass="inputLabel"></asp:Label>
                                         </div>
-                                        <div class="col-md-8">
+                                        <div class="col-md-9">
                                             <asp:TextBox ID="txtProveedor" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-3" style="text-align:left;">
                                             <asp:Label ID="lblTipoFactura" runat="server" Text="Tipo Factura:" CssClass="inputLabel"></asp:Label>
                                         </div>
-                                        <div class="col-md-8">
+                                        <div class="col-md-9">
                                             <asp:DropDownList ID="ddlTipoFactura" runat="server" AutoPostBack="True" CssClass="form-control" Width="100%">
                                             </asp:DropDownList>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-3" style="text-align:left;">
                                             <asp:Label ID="lblDuplicado" runat="server" Text="Duplicado:" CssClass="inputLabel"></asp:Label>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-4">
                                             <asp:DropDownList ID="ddlDuplicado" runat="server" CssClass="form-control" Width="100%">
                                                 <asp:ListItem Text="Seleccione" Value="Sel" Selected="True"></asp:ListItem>
                                                 <asp:ListItem Text="Si" Value="Si"></asp:ListItem>
@@ -503,10 +503,10 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-3" style="text-align:left;">
                                             <asp:Label ID="lblContrato" runat="server" Text="Contrato Compra/Venta:" CssClass="inputLabel"></asp:Label>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-4">
                                             <asp:DropDownList ID="ddlContrato" runat="server" CssClass="form-control" Width="100%">
                                                 <asp:ListItem Text="Seleccione" Value="Sel" Selected="True"></asp:ListItem>
                                                 <asp:ListItem Text="Si" Value="Si"></asp:ListItem>
@@ -517,10 +517,10 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-3" style="text-align:left;">
                                             <asp:Label ID="lblModelo" runat="server" Text="Modelo (año):" CssClass="inputLabel"></asp:Label>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-4">
                                             <asp:TextBox ID="txtModelo" runat="server" MaxLength="4" CssClass="form-control" Width="100%"></asp:TextBox>
                                             <cc1:FilteredTextBoxExtender ID="ftbModelo" runat="server" ValidChars="0123456789" FilterType="Numbers"
                                                 FilterMode="ValidChars" TargetControlID="txtModelo">
@@ -535,59 +535,59 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-3" style="text-align:left;">
                                             <asp:Label ID="lblSucursal" runat="server" Text="Sucursal:" CssClass="inputLabel"></asp:Label>
                                         </div>
-                                        <div class="col-md-8">
+                                        <div class="col-md-9">
                                             <asp:DropDownList ID="ddlSucursal" runat="server" CssClass="form-control" Width="100%">
                                             </asp:DropDownList>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-3" style="text-align:left;">
                                             <asp:Label ID="lblEstatus" runat="server" Text="Estatus:" CssClass="inputLabel" />
                                         </div>
-                                        <div class="col-md-8">
+                                        <div class="col-md-9">
                                             <asp:DropDownList ID="ddlEstatus" runat="server" CssClass="form-control" Width="100%">
                                             </asp:DropDownList>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-3" style="text-align:left;">
                                             <asp:Label ID="lblPrecio" runat="server" Text="Precio:" CssClass="inputLabel" />
                                         </div>
-                                        <div class="col-md-8">
+                                        <div class="col-md-9">
                                             <asp:TextBox ID="txtPrecio" runat="server" Width="100%" CssClass="form-control"></asp:TextBox>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-3" style="text-align:left;">
                                             <asp:Label ID="lblKilometraje" runat="server" Text="Kilometraje:" CssClass="inputLabel"></asp:Label>
                                         </div>
-                                        <div class="col-md-8">
+                                        <div class="col-md-9">
                                             <asp:TextBox ID="txtKilometraje" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
                                         </div>
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-3" style="text-align:left;">
                                             <asp:Label ID="lblNoMotor" runat="server" Text="No. de Motor:" CssClass="inputLabel"></asp:Label>
                                         </div>
-                                        <div class="col-md-8">
+                                        <div class="col-md-9">
                                             <asp:TextBox ID="txtNumMotor" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
                                         </div>
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-3" style="text-align:left;">
                                             <asp:Label ID="lblFactura" runat="server" Text="Factura de:" CssClass="inputLabel"></asp:Label>
                                         </div>
-                                        <div class="col-md-8">
+                                        <div class="col-md-9">
                                             <asp:TextBox ID="txtFactura" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-3" style="text-align:left;">
                                             <asp:Label ID="lblConsecutivo" runat="server" Text="Consecutivo:" CssClass="inputLabel"></asp:Label>
                                         </div>
                                         <div class="col-md-4">
@@ -601,45 +601,45 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-3" style="text-align:left;">
                                             <asp:Label ID="lblSucursalIngreso" runat="server" Text="Sucursal de Ingreso:" CssClass="inputLabel"></asp:Label>
                                         </div>
-                                        <div class="col-md-8">
+                                        <div class="col-md-9">
                                             <asp:DropDownList ID="ddlSucursalIngreso" runat="server" AutoPostBack="True" CssClass="form-control" Width="100%">
                                             </asp:DropDownList>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-3" style="text-align:left;">
                                             <asp:Label ID="lblTransmision" runat="server" Text="Transmisión:" CssClass="inputLabel"></asp:Label>
                                         </div>
-                                        <div class="col-md-8">
+                                        <div class="col-md-9">
                                             <asp:DropDownList ID="ddlTransmision" runat="server" AutoPostBack="True" CssClass="form-control" Width="100%">
                                             </asp:DropDownList>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-3" style="text-align:left;">
                                             <asp:Label ID="lblPrecioToma" runat="server" Text="Precio toma:" CssClass="inputLabel"></asp:Label>
                                         </div>
-                                        <div class="col-md-8">
+                                        <div class="col-md-9">
                                             <asp:TextBox ID="txtPrecioToma" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-3" style="text-align:left;">
                                             <asp:Label ID="lblEdoPlaca" runat="server" Text="Placa (Estado):" CssClass="inputLabel"></asp:Label>
                                         </div>
-                                        <div class="col-md-8">
+                                        <div class="col-md-9">
                                             <asp:DropDownList ID="ddlEdoPlaca" runat="server" AutoPostBack="true" CssClass="form-control" Width="100%">
                                             </asp:DropDownList>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-3" style="text-align:left;">
                                             <asp:Label ID="lblDuenios" runat="server" Text="Dueños:" CssClass="inputLabel"></asp:Label>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-4">
                                             <asp:TextBox ID="txtDuenios" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
                                         </div>
                                         <div class="col-md-2">
