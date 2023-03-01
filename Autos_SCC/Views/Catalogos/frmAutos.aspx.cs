@@ -734,5 +734,17 @@ namespace Autos_SCC.Views.Catalogos
             }
         }
         #endregion
+
+        protected void cldFechaIngreso_SelectionChanged(object sender, EventArgs e)
+        {
+            DateTime dt = cldFechaIngreso.SelectedDate;
+            txtFechaIngreso.Text = dt.ToString("dd/MM/yyyy");
+            cldFechaIngreso.Visible = false;
+        }
+
+        protected void imgbtnCalendar_Click(object sender, ImageClickEventArgs e)
+        {
+            cldFechaIngreso.Visible = true;
+        }
     }
 }

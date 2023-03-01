@@ -420,7 +420,31 @@
                                             <asp:Label ID="lblFechaIngreso" runat="server" Text="Fecha de Ingreso:" CssClass="inputLabel"></asp:Label>
                                         </div>
                                         <div class="col-md-8">
-                                            <asp:TextBox ID="txtFechaIngreso" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                                            <asp:TextBox ID="txtFechaIngreso" runat="server" CssClass="form-control" Width="100%" Enabled="false"></asp:TextBox>
+                                            <asp:ImageButton ID="imgbtnCalendar" runat="server" ImageUrl="~/images/calendar.gif" OnClick="imgbtnCalendar_Click" />
+                                            <div style="float:right; position: absolute; z-index: 3;">
+                                                <asp:Calendar ID="cldFechaIngreso" runat="server" 
+			                                        BackColor="#FFFFCC" 
+			                                        BorderColor="#FFCC66" 
+			                                        BorderWidth="1px" 
+			                                        DayNameFormat="Shortest" 
+			                                        Font-Names="Verdana" 
+			                                        Font-Size="8pt" 
+			                                        ForeColor="#663399" 
+			                                        Height="200px" 
+			                                        ShowGridLines="True"
+			                                        Visible="false"
+			                                        Width="220px" 
+			                                        OnSelectionChanged="cldFechaIngreso_SelectionChanged">
+			                                        <DayHeaderStyle BackColor="#FFCC66" Font-Bold="True" Height="1px" />
+			                                        <NextPrevStyle Font-Size="9pt" ForeColor="#FFFFCC" />
+			                                        <OtherMonthDayStyle ForeColor="#CC9966" />
+			                                        <SelectedDayStyle BackColor="#CCCCFF" Font-Bold="True" />
+			                                        <SelectorStyle BackColor="#FFCC66" />
+			                                        <TitleStyle BackColor="#990000" Font-Bold="True" Font-Size="9pt" ForeColor="#FFFFCC" />
+			                                        <TodayDayStyle BackColor="#FFCC66" ForeColor="White" />
+		                                        </asp:Calendar>
+                                            </div>
                                         </div>
                                     </div>
 

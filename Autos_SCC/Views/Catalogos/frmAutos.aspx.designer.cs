@@ -499,6 +499,24 @@ namespace Autos_SCC.Views.Catalogos {
         protected global::System.Web.UI.WebControls.TextBox txtFechaIngreso;
         
         /// <summary>
+        /// Control imgbtnCalendar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton imgbtnCalendar;
+        
+        /// <summary>
+        /// Control cldFechaIngreso.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar cldFechaIngreso;
+        
+        /// <summary>
         /// Control lblUbiExpediente.
         /// </summary>
         /// <remarks>
