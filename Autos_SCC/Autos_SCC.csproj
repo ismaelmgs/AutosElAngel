@@ -372,6 +372,7 @@
     <Content Include="Images\Iconos\acept.ico" />
     <Content Include="Images\Iconos\Amarillo.png" />
     <Content Include="Images\Iconos\Azul.png" />
+    <Content Include="Images\Iconos\calendar.png" />
     <Content Include="Images\Iconos\Catalogos.ico" />
     <Content Include="Images\Iconos\checkmark.png" />
     <Content Include="Images\Iconos\Clientes.ico" />

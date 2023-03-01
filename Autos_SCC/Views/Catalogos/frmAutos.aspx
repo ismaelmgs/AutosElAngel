@@ -420,8 +420,10 @@
                                             <asp:Label ID="lblFechaIngreso" runat="server" Text="Fecha de Ingreso:" CssClass="inputLabel"></asp:Label>
                                         </div>
                                         <div class="col-md-8">
-                                            <asp:TextBox ID="txtFechaIngreso" runat="server" CssClass="form-control" Width="100%" Enabled="false"></asp:TextBox>
-                                            <asp:ImageButton ID="imgbtnCalendar" runat="server" ImageUrl="~/images/calendar.gif" OnClick="imgbtnCalendar_Click" />
+                                            <div>
+                                                <asp:TextBox ID="txtFechaIngreso" runat="server" CssClass="form-control" Width="80%" Enabled="false"></asp:TextBox>
+                                                <asp:ImageButton ID="imgbtnCalendar" runat="server" ImageUrl="~/Images/Iconos/calendar.png" OnClick="imgbtnCalendar_Click" Width="27px" Height="27px"/>
+                                            </div>
                                             <div style="float:right; position: absolute; z-index: 3;">
                                                 <asp:Calendar ID="cldFechaIngreso" runat="server" 
 			                                        BackColor="#FFFFCC" 
