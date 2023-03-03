@@ -420,11 +420,11 @@
                                             <asp:Label ID="lblFechaIngreso" runat="server" Text="Fecha de Ingreso:" CssClass="inputLabel"></asp:Label>
                                         </div>
                                         <div class="col-md-9 row">
-                                            <div class="col-md-6">
+                                            <div class="col-md-7">
                                                 <asp:TextBox ID="txtFechaIngreso" runat="server" CssClass="form-control" Width="80%" Enabled="false"></asp:TextBox>
                                             </div>
-                                            <div class="col-md-6" style="margin:0 auto;">
-                                                <asp:ImageButton ID="imgbtnCalendar" runat="server" ImageUrl="~/Images/Iconos/calendar.png" OnClick="imgbtnCalendar_Click" Width="27px" Height="27px" style="position:absolute;"/>
+                                            <div class="col-md-5" style="margin:0 auto;">
+                                                <asp:ImageButton ID="imgbtnCalendar" runat="server" ImageUrl="~/Images/Iconos/calendar.png" OnClick="imgbtnCalendar_Click" Width="27px" Height="27px" style="position:absolute;margin-left:-90px;"/>
                                                 <div style="float:right; position: absolute; z-index: 3;">
                                                 <asp:Calendar ID="cldFechaIngreso" runat="server" 
 			                                        BackColor="#fcfced" 
@@ -594,10 +594,10 @@
                                             <asp:TextBox ID="txtConsecutivo" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
                                         </div>
                                         <div class="col-md-2">
-                                            <asp:Label ID="lblCls" runat="server" Text="Cls:" CssClass="inputLabel"></asp:Label>
+                                            <asp:Label ID="lblCls" runat="server" Text="Cilindros:" CssClass="inputLabel"></asp:Label>
                                         </div>
                                         <div class="col-md-2">
-                                            <asp:TextBox ID="txtCls" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                                            <asp:TextBox ID="txtCls" runat="server" CssClass="form-control" Width="155%"></asp:TextBox>
                                         </div>
                                     </div>
                                     <div class="row">
