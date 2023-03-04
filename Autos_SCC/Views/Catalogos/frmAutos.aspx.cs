@@ -620,6 +620,7 @@ namespace Autos_SCC.Views.Catalogos
                     ddlSucursalIngreso.SelectedValue = oCat.iIdSucursalIngreso.S();
                     ddlSucursalExpediente.SelectedValue = oCat.iIdSucursalExpediente.S();
                     txtCls.Text = oCat.iCls.S();
+                    ddlTransmision.SelectedValue = oCat.iIdTransmision.S();
                     txtProveedor.Text = oCat.sProveedor;
                     txtPrecioToma.Text = oCat.dPrecioToma.S();
                     ddlTipoFactura.SelectedValue = oCat.iIdTipoFactura.S();
