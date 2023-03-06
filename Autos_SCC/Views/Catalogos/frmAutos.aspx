@@ -336,7 +336,7 @@
                                 <div class="col-md-6">
                                     <div class="row">
                                         <div class="col-md-3" style="text-align:left;">
-                                            <asp:Label ID="lblId" runat="server" Text="Id:" CssClass="inputLabel" />
+                                            <asp:Label ID="lblId" runat="server" Text="Consecutivo:" CssClass="inputLabel" />
                                         </div>
                                         <div class="col-md-9">
                                             <asp:TextBox ID="txtId" runat="server" Width="100%" class="inputCampo"
@@ -423,8 +423,8 @@
                                             <div class="col-md-7">
                                                 <asp:TextBox ID="txtFechaIngreso" runat="server" CssClass="form-control" Width="80%" Enabled="false"></asp:TextBox>
                                             </div>
-                                            <div class="col-md-5" style="margin:0 auto;">
-                                                <asp:ImageButton ID="imgbtnCalendar" runat="server" ImageUrl="~/Images/Iconos/calendar.png" OnClick="imgbtnCalendar_Click" Width="27px" Height="27px" style="position:absolute;margin-left:-90px;"/>
+                                            <div class="col-md-5" style="text-align:left;">
+                                                <asp:ImageButton ID="imgbtnCalendar" runat="server" ImageUrl="~/Images/Iconos/calendar.png" OnClick="imgbtnCalendar_Click" Width="27px" Height="27px" style="position:absolute;margin-left:-40px;"/>
                                                 <div style="float:right; position: absolute; z-index: 3;">
                                                 <asp:Calendar ID="cldFechaIngreso" runat="server" 
 			                                        BackColor="#fcfced" 
@@ -588,10 +588,10 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-md-3" style="text-align:left;">
-                                            <asp:Label ID="lblConsecutivo" runat="server" Text="Consecutivo:" CssClass="inputLabel"></asp:Label>
+                                            <asp:Label ID="lblConsecutivo" runat="server" Text="Consecutivo:" CssClass="inputLabel" style="display:none;"></asp:Label>
                                         </div>
                                         <div class="col-md-4">
-                                            <asp:TextBox ID="txtConsecutivo" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                                            <asp:TextBox ID="txtConsecutivo" runat="server" CssClass="form-control" Width="100%" style="display:none;"></asp:TextBox>
                                         </div>
                                         <div class="col-md-2">
                                             <asp:Label ID="lblCls" runat="server" Text="Cilindros:" CssClass="inputLabel"></asp:Label>
