@@ -57,7 +57,7 @@ namespace Autos_SCC.Presenter
         protected override void NewObj_Presenter(object sender, EventArgs e)
         {
             LoadObjects_Presenter();
-            oIView.oAuto = new Auto();
+            oIView.oAuto = new Auto { dtFechaIngreso = DateTime.Now };
         }
 
         protected override void ObjSelected_Presenter(object sender, EventArgs e)

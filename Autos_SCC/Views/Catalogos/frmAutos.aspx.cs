@@ -92,6 +92,7 @@ namespace Autos_SCC.Views.Catalogos
                 ttlAuto.InnerText = "Edición de Autos";
                 btnGuardar.Text = "EDITAR";
                 btnLimpiar.Visible = false;
+                imgbtnCalendar.Visible = true;
                 UpaAgregarVehiculo.Update();
                 mpeAgregarVehiculo.Show();
             }
@@ -107,6 +108,7 @@ namespace Autos_SCC.Views.Catalogos
         {
             ttlAuto.InnerText = "Registro de Autos";
             btnGuardar.Text = "GUARDAR";
+            imgbtnCalendar.Visible = false;
             btnLimpiar.Visible = true;
             UpaAgregarVehiculo.Update();
             if (eNewObj != null)
@@ -739,7 +741,7 @@ namespace Autos_SCC.Views.Catalogos
         protected void cldFechaIngreso_SelectionChanged(object sender, EventArgs e)
         {
             DateTime dt = cldFechaIngreso.SelectedDate;
-            txtFechaIngreso.Text = dt.ToString("dd/MM/yyyy");
+            txtFechaIngreso.Text = dt.S();
             cldFechaIngreso.Visible = false;
         }
 
